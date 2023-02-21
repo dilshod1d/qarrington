@@ -1,0 +1,86 @@
+[
+    {
+        "type": "error",
+        "title": "Cover",
+        "amount": "2,540",
+        "pending": [
+            {
+                "type": "warning",
+                "title": "Cover",
+                "amount": "28,380",
+                "tooltip": "This cover is pending."
+            },
+            {
+                "type": "secondary",
+                "title": "Draft",
+                "amount": "45,550",
+                "tooltip": "This draft is pending."
+            }
+        ],
+        "approved": "True",
+        "createdAt": "10-02-2022"
+    },
+    {
+        "type": "error",
+        "title": "Draft",
+        "amount": "7,900",
+        "pending": [
+            {
+                "type": "warning",
+                "title": "Cover",
+                "amount": "28,380",
+                "tooltip": "This cover is pending."
+            },
+            {
+                "type": "secondary",
+                "title": "Draft",
+                "amount": "45,550",
+                "tooltip": "This draft is pending."
+            }
+        ],
+        "approved": "True",
+        "createdAt": "05-08-2022"
+    },
+    {
+        "type": "error",
+        "title": "Cover",
+        "amount": "6,200",
+        "pending": [
+            {
+                "type": "warning",
+                "title": "Cover",
+                "amount": "28,380",
+                "tooltip": "This cover is pending."
+            },
+            {
+                "type": "secondary",
+                "title": "Draft",
+                "amount": "45,550",
+                "tooltip": "This draft is pending."
+            }
+        ],
+        "approved": "True",
+        "createdAt": "12-11-2022"
+    },
+    {
+        "type": "error",
+        "title": "Draft",
+        "amount": "4,500",
+        "pending": [
+            {
+                "type": "warning",
+                "title": "Cover",
+                "amount": "28,380",
+                "tooltip": "This cover is pending."
+            },
+            {
+                "type": "secondary",
+                "title": "Draft",
+                "amount": "45,550",
+                "tooltip": "This draft is pending."
+            }
+        ],
+        "approved": "True",
+        "createdAt": "03-07-2022"
+    }
+]

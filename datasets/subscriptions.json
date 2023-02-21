@@ -1,0 +1,44 @@
+[
+    {
+        "subscriptionSlug": "alg",
+        "subscriptionListing": {
+            "listingName": "Algoma",
+            "listingTicker": "ALG",
+            "listingWebsite": "listingWebsite",
+            "listingDetail": "listingDetail",
+            "listingLogo": "/assets/media/subscriptions/algoma.png",
+            "listingUnits": "525,220"
+        },
+        "subscriptionPrice": {
+            "launchPrice": "25",
+            "currentPrice": "53"
+        },
+        "subscriptionTrack": {
+            "trackCurrentPrice": "45",
+            "trackPointInterval": "2.43",
+            "trackPercentInterval": "4.12",
+            "trackVariation": "primary"
+        },
+        "subscriptionStripeId": "subscriptionStripeId",
+        "subscriptionAccountId": "subscriptionAccountId",
+        "subscriptionIsApproved": "TRUE",
+        "subscriptionAccounts": [
+            {
+                "accountWhitelistTotal": "456",
+                "accountId": "accountId",
+                "accountIsCustomer": "TRUE",
+                "accountIsCreated": "accountIsCreated",
+                "accountPulledUnits": "328",
+                "accountPulledPrice": "25",
+                "accountPulledAmount": "8,200",
+                "accountWhitelistedAt": "accountWhitelistedAt"
+            }
+        ],
+        "subscriptionPayout": {
+            "payoutAmount": "850,000",
+            "payoutIsMade": "TRUE"
+        },
+        "subscriptionKey": "subscriptionKey",
+        "subscriptionSubmittedAt": "subscriptionSubmittedAt"
+    }
+]

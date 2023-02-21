@@ -1,0 +1,28 @@
+[
+    {
+        "pushSlug": "tw",
+        "pushPrice": "31",
+        "pushRequests": {
+            "requestPairId": "",
+            "requestUnits": "648",
+            "requestPrice": "34",
+            "requestAmount": "24,430",
+            "requestIsMatched": "TRUE",
+            "requestSubmittedAt": "10-10-2022",
+            "requestMatchedAt": "10-12-2022"
+        },
+        "pushSubscription": {
+            "subscriptionId": "subscriptionId",
+            "subscriptionName": "Twined",
+            "subscriptionLogo": "/assets/media/subscriptions/twined.png",
+            "subscriptionTicker": "TW",
+            "subscriptionUnits": "643",
+            "subscriptionBalance": "642,875"
+        },
+        "pushAccount": {
+            "accountId": "accountId",
+            "accountBalance": "43,985"
+        },
+        "pushUpdatedAt": "10-12-2022"
+    }
+]

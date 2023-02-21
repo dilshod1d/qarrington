@@ -1,0 +1,402 @@
+[
+  {
+    "lower": "home",
+    "proper": "Home",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/cottage.png"
+  },
+  {
+    "lower": "flight",
+    "proper": "Flight",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/airplane-front-view.png"
+  },
+  {
+    "lower": "travel",
+    "proper": "Travel",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/travel-agency.png"
+  },
+  {
+    "lower": "medication",
+    "proper": "Medication",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/pill.png"
+  },
+  {
+    "lower": "vacation",
+    "proper": "Vacation",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/beach--v1.png"
+  },
+  {
+    "lower": "ticket",
+    "proper": "Ticket",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/two-tickets.png"
+  },
+  {
+    "lower": "car",
+    "proper": "Car",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/sedan.png"
+  },
+  {
+    "lower": "business",
+    "proper": "Business",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/organization--v2.png"
+  },
+  {
+    "lower": "College",
+    "proper": "College",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/student-center.png"
+  },
+  {
+    "lower": "education",
+    "proper": "Education",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/reading--v1.png"
+  },
+  {
+    "lower": "tuition",
+    "proper": "Tuition",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/diploma--v1.png"
+  },
+  {
+    "lower": "medical",
+    "proper": "Medical",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/tonometer.png"
+  },
+  {
+    "lower": "holiday",
+    "proper": "Holiday",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/bungalow.png"
+  },
+  {
+    "lower": "wedding",
+    "proper": "Wedding",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/family--v2.png"
+  },
+  {
+    "lower": "household",
+    "proper": "Household",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/prefab-house.png"
+  },
+  {
+    "lower": "pet",
+    "proper": "Pet",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/dog-walking.png"
+  },
+  {
+    "lower": "leisure",
+    "proper": "Leisure",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/new-years-eve.png"
+  },
+  {
+    "lower": "mortgage",
+    "proper": "Mortgage",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/school-house.png"
+  },
+  {
+    "lower": "repair",
+    "proper": "Repair",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/car-service.png"
+  },
+  {
+    "lower": "rent",
+    "proper": "Rent",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/mortgage.png"
+  },
+  {
+    "lower": "investment",
+    "proper": "Investment",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/money-bag.png"
+  },
+  {
+    "lower": "hotel",
+    "proper": "Hotel",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/bedroom.png"
+  },
+  {
+    "lower": "visit",
+    "proper": "Visit",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/planet.png"
+  },
+  {
+    "lower": "advertising",
+    "proper": "Advertising",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/area-chart.png"
+  },
+  {
+    "lower": "marketing",
+    "proper": "Marketing",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/rebalance-portfolio.png"
+  },
+  {
+    "lower": "salary",
+    "proper": "Salary",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/money-yours.png"
+  },
+  {
+    "lower": "property",
+    "proper": "Property",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/real-estate.png"
+  },
+  {
+    "lower": "equipment",
+    "proper": "Equipment",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/interstate-plow-track.png"
+  },
+  {
+    "lower": "growth",
+    "proper": "Growth",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/statistics.png"
+  },
+  {
+    "lower": "food",
+    "proper": "Food",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/kawaii-french-fries.png"
+  },
+  {
+    "lower": "drink",
+    "proper": "Drink",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/glasses-1.png"
+  },
+  {
+    "lower": "university",
+    "proper": "University",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/courses.png"
+  },
+  {
+    "lower": "hospital",
+    "proper": "Hospital",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/hospital-insurance.png"
+  },
+  {
+    "lower": "dental",
+    "proper": "Dental",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/tooth-cracked.png"
+  },
+  {
+    "lower": "clothing",
+    "proper": "Clothing",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/clothes.png"
+  },
+  {
+    "lower": "electronic",
+    "proper": "Electronic",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/multiple-devices.png"
+  },
+  {
+    "lower": "footwear",
+    "proper": "Footwear",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/trainers.png"
+  },
+  {
+    "lower": "shopping",
+    "proper": "Shopping",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/shop.png"
+  },
+  {
+    "lower": "transportation",
+    "proper": "Transportation",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/airplane-tail-fin.png"
+  },
+  {
+    "lower": "school",
+    "proper": "School",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/school.png"
+  },
+  {
+    "lower": "bill",
+    "proper": "Bill",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/paid-bill.png"
+  },
+  {
+    "lower": "restaurant",
+    "proper": "Restaurant",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/country.png"
+  },
+  {
+    "lower": "cafe",
+    "proper": "Cafe",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/tea-cup--v1.png"
+  },
+  {
+    "lower": "pub",
+    "proper": "Pub",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/beer.png"
+  },
+  {
+    "lower": "meal",
+    "proper": "Meal",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/thanksgiving.png"
+  },
+  {
+    "lower": "trip",
+    "proper": "Trip",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/people-in-car.png"
+  },
+  {
+    "lower": "tour",
+    "proper": "Tour",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/worldwide-location.png"
+  },
+  {
+    "lower": "training",
+    "proper": "Training",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/training.png"
+  },
+  {
+    "lower": "freight",
+    "proper": "Freight",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/in-transit.png"
+  },
+  {
+    "lower": "shipping",
+    "proper": "Shipping",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/trailer-unloading.png"
+  },
+  {
+    "lower": "legal",
+    "proper": "Legal",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/auction.png"
+  },
+  {
+    "lower": "entertainment",
+    "proper": "Entertainment",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/musical-stories.png"
+  },
+  {
+    "lower": "communication",
+    "proper": "Communication",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/chat--v1.png"
+  },
+  {
+    "lower": "furniture",
+    "proper": "Furniture",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/wardrobe.png"
+  },
+  {
+    "lower": "therapy",
+    "proper": "Therapy",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/counselor.png"
+  },
+  {
+    "lower": "gift",
+    "proper": "Gift",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/gift.png"
+  },
+  {
+    "lower": "emergency",
+    "proper": "Emergency",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/emergency-exit.png"
+  },
+  {
+    "lower": "automobile",
+    "proper": "Automobile",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/fiat-500.png"
+  },
+  {
+    "lower": "debt",
+    "proper": "Debt",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/debt.png"
+  },
+  {
+    "lower": "loan",
+    "proper": "Loan",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/payment-history.png"
+  },
+  {
+    "lower": "gym",
+    "proper": "Gym",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/strength.png"
+  },
+  {
+    "lower": "family",
+    "proper": "Family",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/defend-family.png"
+  },
+  {
+    "lower": "Christmas",
+    "proper": "Christmas",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/confetti.png"
+  },
+  {
+    "lower": "recreation",
+    "proper": "Recreation",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/theme-park.png"
+  },
+  {
+    "lower": "maintenance",
+    "proper": "Maintenance",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/apartment.png"
+  },
+  {
+    "lower": "insurance",
+    "proper": "Insurance",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/guarantee.png"
+  },
+  {
+    "lower": "childcare",
+    "proper": "Childcare",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/children.png"
+  },
+  {
+    "lower": "office",
+    "proper": "Office",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/completed-task.png"
+  },
+  {
+    "lower": "van",
+    "proper": "Van",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/rv-campground.png"
+  },
+  {
+    "lower": "staff",
+    "proper": "Staff",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/organization-chart-people.png"
+  },
+  {
+    "lower": "employee",
+    "proper": "Employee",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/helping-hand.png"
+  },
+  {
+    "lower": "financial",
+    "proper": "Financial",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/cash-in-hand--v2.png"
+  },
+  {
+    "lower": "machinery",
+    "proper": "Machinery",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/loader.png"
+  },
+  {
+    "lower": "housing",
+    "proper": "Housing",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/city.png"
+  },
+  {
+    "lower": "treatment",
+    "proper": "Treatment",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/alzheimer.png"
+  },
+  {
+    "lower": "layoff",
+    "proper": "Layoff",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/permanent-job.png"
+  },
+  {
+    "lower": "company",
+    "proper": "Company",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/privacy-policy.png"
+  },
+  {
+    "lower": "construction",
+    "proper": "Construction",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/construction.png"
+  },
+  {
+    "lower": "divorce",
+    "proper": "Divorce",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/policy-document.png"
+  },
+  {
+    "lower": "children",
+    "proper": "Children",
+    "picture": "https://img.icons8.com/material-two-tone/96/null/cloud-user.png"
+  }
+]

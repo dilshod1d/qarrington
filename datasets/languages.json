@@ -1,0 +1,302 @@
+[
+  {
+    "code": "af",
+    "title": "Afrikaans"
+  },
+  {
+    "code": "sq",
+    "title": "Albanian"
+  },
+  {
+    "code": "am",
+    "title": "Amharic"
+  },
+  {
+    "code": "ar",
+    "title": "Arabic"
+  },
+  {
+    "code": "hy",
+    "title": "Armenian"
+  },
+  {
+    "code": "az",
+    "title": "Azerbaijani"
+  },
+  {
+    "code": "bn",
+    "title": "Bengali"
+  },
+  {
+    "code": "bs",
+    "title": "Bosnian"
+  },
+  {
+    "code": "bg",
+    "title": "Bulgarian"
+  },
+  {
+    "code": "ca",
+    "title": "Catalan"
+  },
+  {
+    "code": "zh",
+    "title": "Chinese "
+  },
+  {
+    "code": "zh-TW",
+    "title": "Chinese "
+  },
+  {
+    "code": "hr",
+    "title": "Croatian"
+  },
+  {
+    "code": "cs",
+    "title": "Czech"
+  },
+  {
+    "code": "da",
+    "title": "Danish"
+  },
+  {
+    "code": "fa-AF",
+    "title": "Dari"
+  },
+  {
+    "code": "nl",
+    "title": "Dutch"
+  },
+  {
+    "code": "en",
+    "title": "English"
+  },
+  {
+    "code": "et",
+    "title": "Estonian"
+  },
+  {
+    "code": "fa",
+    "title": "Farsi "
+  },
+  {
+    "code": "tl",
+    "title": "Filipino"
+  },
+  {
+    "code": "fi",
+    "title": "Finnish"
+  },
+  {
+    "code": "fr",
+    "title": "French"
+  },
+  {
+    "code": "fr-CA",
+    "title": "French "
+  },
+  {
+    "code": "ka",
+    "title": "Georgian"
+  },
+  {
+    "code": "de",
+    "title": "German"
+  },
+  {
+    "code": "el",
+    "title": "Greek"
+  },
+  {
+    "code": "gu",
+    "title": "Gujarati"
+  },
+  {
+    "code": "ht",
+    "title": "Creole"
+  },
+  {
+    "code": "ha",
+    "title": "Hausa"
+  },
+  {
+    "code": "he",
+    "title": "Hebrew"
+  },
+  {
+    "code": "hi",
+    "title": "Hindi"
+  },
+  {
+    "code": "hu",
+    "title": "Hungarian"
+  },
+  {
+    "code": "is",
+    "title": "Icelandic"
+  },
+  {
+    "code": "id",
+    "title": "Indonesian"
+  },
+  {
+    "code": "ga",
+    "title": "Irish"
+  },
+  {
+    "code": "it",
+    "title": "Italian"
+  },
+  {
+    "code": "ja",
+    "title": "Japanese"
+  },
+  {
+    "code": "kn",
+    "title": "Kannada"
+  },
+  {
+    "code": "kk",
+    "title": "Kazakh"
+  },
+  {
+    "code": "ko",
+    "title": "Korean"
+  },
+  {
+    "code": "lv",
+    "title": "Latvian"
+  },
+  {
+    "code": "lt",
+    "title": "Lithuanian"
+  },
+  {
+    "code": "mk",
+    "title": "Macedonian"
+  },
+  {
+    "code": "ms",
+    "title": "Malay"
+  },
+  {
+    "code": "ml",
+    "title": "Malayalam"
+  },
+  {
+    "code": "mt",
+    "title": "Maltese"
+  },
+  {
+    "code": "mr",
+    "title": "Marathi"
+  },
+  {
+    "code": "mn",
+    "title": "Mongolian"
+  },
+  {
+    "code": "no",
+    "title": "Norwegian "
+  },
+  {
+    "code": "ps",
+    "title": "Pashto"
+  },
+  {
+    "code": "pl",
+    "title": "Polish"
+  },
+  {
+    "code": "pt",
+    "title": "Portuguese "
+  },
+  {
+    "code": "pt-PT",
+    "title": "Portuguese "
+  },
+  {
+    "code": "pa",
+    "title": "Punjabi"
+  },
+  {
+    "code": "ro",
+    "title": "Romanian"
+  },
+  {
+    "code": "ru",
+    "title": "Russian"
+  },
+  {
+    "code": "sr",
+    "title": "Serbian"
+  },
+  {
+    "code": "si",
+    "title": "Sinhala"
+  },
+  {
+    "code": "sk",
+    "title": "Slovak"
+  },
+  {
+    "code": "sl",
+    "title": "Slovenian"
+  },
+  {
+    "code": "so",
+    "title": "Somali"
+  },
+  {
+    "code": "es",
+    "title": "Spanish"
+  },
+  {
+    "code": "es-MX",
+    "title": "Spanish "
+  },
+  {
+    "code": "sw",
+    "title": "Swahili"
+  },
+  {
+    "code": "sv",
+    "title": "Swedish"
+  },
+  {
+    "code": "ta",
+    "title": "Tamil"
+  },
+  {
+    "code": "te",
+    "title": "Telugu"
+  },
+  {
+    "code": "th",
+    "title": "Thai"
+  },
+  {
+    "code": "tr",
+    "title": "Turkish"
+  },
+  {
+    "code": "uk",
+    "title": "Ukrainian"
+  },
+  {
+    "code": "ur",
+    "title": "Urdu"
+  },
+  {
+    "code": "uz",
+    "title": "Uzbek"
+  },
+  {
+    "code": "vi",
+    "title": "Vietnamese"
+  },
+  {
+    "code": "cy",
+    "title": "Welsh"
+  }
+]

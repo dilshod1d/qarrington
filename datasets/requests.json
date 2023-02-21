@@ -1,0 +1,139 @@
+[
+    {
+        "info": {
+            "account": {
+                "_id": "accountId",
+                "name": "Mary"
+            }
+        },
+        "pulls": [
+            {
+                "info": {
+                    "url": "bo",
+                    "cost": "22",
+                    "units": "200"
+                },
+                "draft": {
+                    "_id": "draftId",
+                    "name": "Boundless",
+                    "image": "/assets/media/drafts/boundless.png",
+                    "ticker": "BO"
+                },
+                "amount": "25,000",
+                "balance": {
+                    "cost": {
+                        "pulled": "28",
+                        "current": "45"
+                    },
+                    "units": "826",
+                    "amount": "43,283",
+                    "tooltip": "this is one pull balance"
+                },
+                "isFilled": "dot",
+                "createdAt": "10-12-2022"
+            },
+            {
+                "info": {
+                    "url": "qa",
+                    "cost": "18",
+                    "units": "200"
+                },
+                "draft": {
+                    "_id": "draftId",
+                    "name": "Qarrington",
+                    "image": "/assets/media/drafts/qarrington.png",
+                    "ticker": "QA"
+                },
+                "balance": {
+                    "cost": {
+                        "pulled": "28",
+                        "current": "45"
+                    },
+                    "units": "826",
+                    "amount": "43,283",
+                    "tooltip": "this is one pull balance"
+                },
+                "isFilled": "dot",
+                "createdAt": "10-12-2022"
+            },
+            {
+                "info": {
+                    "url": "lyft",
+                    "cost": "32",
+                    "units": "200"
+                },
+                "draft": {
+                    "_id": "draftId",
+                    "name": "Lyft",
+                    "image": "/assets/media/drafts/lyft.png",
+                    "ticker": "LYFT"
+                },
+                "balance": {
+                    "cost": {
+                        "pulled": "28",
+                        "current": "45"
+                    },
+                    "units": "826",
+                    "amount": "43,283",
+                    "tooltip": "this is one pull balance"
+                },
+                "isFilled": "dot",
+                "createdAt": "10-12-2022"
+            }
+        ],
+        "pushes": [
+            {
+                "info": {
+                    "url": "ex",
+                    "cost": "45",
+                    "units": "432"
+                },
+                "draft": {
+                    "_id": "draftId",
+                    "name": "Expedia",
+                    "image": "/assets/media/drafts/expedia.png",
+                    "ticker": "EX"
+                },
+                "amount": "65,085",
+                "tooltip": "not sure yet",
+                "isFilled": "dot",
+                "createdAt": "10-12-2022"
+            },
+            {
+                "info": {
+                    "url": "bnb",
+                    "cost": "54",
+                    "units": "432"
+                },
+                "draft": {
+                    "_id": "draftId",
+                    "name": "Airbnb",
+                    "image": "/assets/media/drafts/airbnb.png",
+                    "ticker": "BNB"
+                },
+                "amount": "43,283",
+                "tooltip": "not sure yet",
+                "isFilled": "",
+                "createdAt": "10-12-2022"
+            }
+        ],
+        "balance": [
+            {
+                "set": "Pull",
+                "name": "Pulled Drafts",
+                "units": "839",
+                "amount": "98,289",
+                "tooltip": "This is the drafts you currently own.",
+                "postedAt": "10-12-2022"
+            },
+            {
+                "set": "Push",
+                "name": "Pushed Drafts",
+                "units": "353",
+                "amount": "28,289",
+                "tooltip": "This is the drafts you currently sold.",
+                "postedAt": "08-11-2022"
+            }
+        ]
+    }
+]
