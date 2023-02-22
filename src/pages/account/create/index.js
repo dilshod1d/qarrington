@@ -2,19 +2,23 @@ import React, { useState } from "react";
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
+import { green } from '@mui/material/colors';
 import Carousel from 'react-material-ui-carousel';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import { Avatar, Badge, Box, Button, Container, Grid, Hidden, Stack, styled, TextField, Tooltip, Typography } from '@mui/material';
-import useSWR from 'swr';
+import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
+import HistoryEduRoundedIcon from '@mui/icons-material/HistoryEduRounded';
+import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
+import { Avatar, Badge, Box, Button, Card, Container, Grid, Hidden, Stack, styled, TextField, Tooltip, Typography } from '@mui/material';
 
 const Page = () => {
 
-  const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher)
-
   const getSteps = () => {
     return [
-      "Account Key"
+      "Access Key",
+      "Secret Key",
+      "Email Address",
+      "Phone Number",
+      "First Name",
     ];
   }
 
@@ -24,11 +28,63 @@ const Page = () => {
       case 0:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Create a unique accountKey to use Qarrington without sharing your email." placement="top">
+            <Tooltip title="hint" placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="accountKey"
+                placeholder="Access Key"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 1:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="hint" placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="Secret Key"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 2:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="hint" placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="Email Address"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 3:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="hint" placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="Phone Number"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 4:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="hint" placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="First Name"
               />
             </Tooltip>
           </Stack>
@@ -120,21 +176,24 @@ const Page = () => {
                     {activeStep === steps.length ? (
                       <Stack spacing={1.2} sx={{ width: '100%', mb: 0 }}>
 
-                        <Link href="/">
-                          <Tooltip title="When you click on this button, your account will not be opened. However, you can always create a new account." placement="top">
+                        <Link href="/help">
+                          <Tooltip title="When you click this button, you will be redirected to our support route, where you can ask us literally anything." placement="top">
                             <Button
                               size="large"
                               sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
                               variant="outlined"
                               fullWidth={true}
                             >
-                              learn more about qarrington
+                              talk to the qarringtons
                             </Button>
                           </Tooltip>
                         </Link>
 
-                        <Link href="/account/connected">
-                          <Tooltip title="When you click on this button, you will be redirected to Stripe so you can connect your bank account to Qarrington." placement="top">
+                        <a href="https://stripe.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ textDecoration: 'none' }}>
+                          <Tooltip title="When you click on this button, you will be able to check the status of your account using the accountAccessKey." placement="top">
                             <Button
                               size="large"
                               sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
@@ -144,7 +203,7 @@ const Page = () => {
                               connect your bank account
                             </Button>
                           </Tooltip>
-                        </Link>
+                        </a>
 
                         <Button
                           style={FormButton}
@@ -186,7 +245,7 @@ const Page = () => {
 
                 <Box textAlign="center">
                   <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    By clicking the above button and submitting the above form, I hereby agree to the Service Terms and Privacy Policies governing my use of the Qarrington website.
+                    By clicking on the Register BUTTON or otherwise submitting this FORM, I do hereby agree with the Service Terms and Privacy Policies of the Qarrington website.
                   </Typography>
                 </Box>
 
@@ -210,9 +269,9 @@ const Page = () => {
             >
 
               <Container maxWidth="sm">
-                <Box textAlign="center">
+                <Box textAlign="center" mb={2}>
                   <Carousel>
-                    {data && Array.isArray(data) && data.slice(0, 5).map(({ _id, accountProfile, accountReview }) => (
+                    {underwriters && underwriters.map(({ _id, name, title, avatar, content, isActive }) => (
                       <Box key={_id}>
                         <Box
                           style={{
@@ -226,24 +285,78 @@ const Page = () => {
                               vertical: 'bottom',
                               horizontal: 'right'
                             }}
-                            variant={accountProfile.profileIsActive}
+                            variant={isActive}
                           >
                             <Avatar
                               style={{ width: 80, height: 80 }}
-                              alt={accountProfile.profileName}
-                              src={accountProfile.profileAvatar}
+                              alt={name}
+                              src={avatar}
                             />
                           </StyledBadge>
                         </Box>
                         <Box marginTop="16px">
-                          <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{accountProfile.profileName}</Typography>
-                          <Typography variant="body" component="div" gutterBottom>{accountProfile.profileTitle}</Typography>
-                          <Typography variant="h4" component="div" fontWeight="600">{accountReview.reviewContent}</Typography>
+                          <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{name}</Typography>
+                          <Typography variant="body" component="div" gutterBottom>{title}</Typography>
+                          <Typography variant="h5" component="div" fontWeight="600">{content}</Typography>
                         </Box>
                       </Box>
                     ))}
                   </Carousel>
                 </Box>
+
+                {/* principles start here */}
+
+                <Grid item xs={12} mt={2}>
+                  <Grid container spacing={1}>
+
+                    {principles && principles.map(({ _id, name, image, helper, content }) => (
+                      <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                        <Tooltip title={helper} placement="top">
+                          <Card style={{ padding: '22px' }}>
+                            <Box
+                              style={{
+                                display: 'flex',
+                                justifyContent: 'center'
+                              }}
+                            >
+                              <Badge
+                                overlap="circular"
+                                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                badgeContent={
+                                  <InfoRoundedIcon fontSize="small" color="primary" />
+                                }
+                              >
+                                <Avatar sx={{ bgcolor: green[200] }}>
+                                  {image}
+                                </Avatar>
+                              </Badge>
+                            </Box>
+                            <Box style={{ textAlign: 'center' }}>
+                              <Box mt={1.5}>
+                                <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
+                                  {name}
+                                </Typography>
+                                <Typography mt={0.5} variant="body2" fontWeight={600} color="secondary">
+                                  {content}
+                                </Typography>
+                              </Box>
+                            </Box>
+                          </Card>
+                        </Tooltip>
+                      </Grid>
+                    ))}
+
+                  </Grid>
+                </Grid>
+
+                <Box textAlign="center" mt={2}>
+                  <Typography component="span" variant="body2" fontWeight={600} color="black">
+                    It's easy to buy subscriptions with a credit/debit card or through a bank transfer. Also, you can link a bank account, which can be any bank, in any country, and in any currency.
+                  </Typography>
+                </Box>
+
+                {/* principles end here */}
+
               </Container>
 
             </GridWrapper>
@@ -278,6 +391,17 @@ const AccountButton = {
   color: '#2f3542',
   '&:hover': {
     backgroundColor: '#ffffff90'
+  }
+};
+
+const LinkItem = {
+  fontWeight: '700',
+  fontSize: '12px',
+  marginX: '4px',
+  textTransform: 'uppercase',
+  '&:hover': {
+    color: '#000',
+    backgroundColor: 'transparent'
   }
 };
 
@@ -331,3 +455,70 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
   },
 }));
+
+const underwriters = [
+  {
+    _id: 1,
+    name: "Amy",
+    title: "Partner @ Y Combinator",
+    avatar: "/assets/media/underwriters/amy.png",
+    content: "At YC, we see the lack of exits and interest from LPs as some of the dilemmas faced by many startup incubators and accelerators. Well then ... a subscription exchange is born.",
+    isActive: ""
+  },
+  {
+    _id: 2,
+    name: "Scott",
+    title: "Partner @ French Tech Visa",
+    avatar: "/assets/media/underwriters/scott.png",
+    content: "Working with Qarrington in today's global economic downturn has been an absolute game-changer for the startups we back through the French Tech Visa Program.",
+    isActive: "dot"
+  },
+  {
+    _id: 3,
+    name: "Ciara",
+    title: "Partner @ 500 StartUps",
+    avatar: "/assets/media/underwriters/ciara.png",
+    content: "Whether it's an accelerator like 500 StartUps or a venture capital firm like Accel, investing in 100 startups and expecting 1 unicorn exit in 10 years is beyond flawed.",
+    isActive: ""
+  },
+  {
+    _id: 4,
+    name: "Adam",
+    title: "Partner @ Gorilla Ventures",
+    avatar: "/assets/media/underwriters/adam.png",
+    content: "As a startup incubator, making 20 deals to hit ROI with 1 was tough for us. On Qarrington, we've seen the possibility of making 20 deals and hitting ROI from each.",
+    isActive: "dot"
+  },
+  {
+    _id: 5,
+    name: "Judy",
+    title: "Partner @ Chicago Angels",
+    avatar: "/assets/media/underwriters/judy.png",
+    content: "At Chicago Angels, the lack of liquidity is often an issue for us, but we're more than happy to be on a subscription exchange like Qarrington; the world's first of its kind.",
+    isActive: "dot"
+  }
+]
+
+const principles = [
+  {
+    _id: 1,
+    name: "Open",
+    image: <MeetingRoomRoundedIcon fontSize="small" />,
+    helper: "Primarily, you can always use your Qarrington account as an underwriter, as a company, or as a subscriber.",
+    content: "First of all, create a Qarrington account."
+  },
+  {
+    _id: 2,
+    name: "Connect",
+    image: <AccountBalanceRoundedIcon fontSize="small" />,
+    helper: "Each time you sell subscriptions, the subscription payouts will automatically be sent to your linked bank account.",
+    content: "After that, link your online bank account."
+  },
+  {
+    _id: 3,
+    name: "Pull",
+    image: <HistoryEduRoundedIcon fontSize="small" />,
+    helper: "If your account is approved, you will be able to buy and sell the subscriptions of the listed companies on Qarrington.",
+    content: "And finally, buy and sell subscriptions."
+  }
+]
