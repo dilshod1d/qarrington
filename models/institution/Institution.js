@@ -13,7 +13,7 @@ const InstitutionSchema = new mongoose.Schema({
   },
   institutionUnderwriters: [
     {
-      underwriterName: { type: String },
+      underwriterFirstName: { type: String },
       underwriterTitle: { type: String },
       underwriterAvatar: { type: String },
       underwriterStory: {
@@ -31,7 +31,9 @@ const InstitutionSchema = new mongoose.Schema({
       companyId: { type: String },
       companyName: { type: String },
       companyTicker: { type: String },
-      companyLogo: { type: String }
+      companyLogo: { type: String },
+      companyIsListed: { type: String },
+      companyStartedAt: { type: String }
     }
   ],
   institutionSlides: [
