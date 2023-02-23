@@ -34,8 +34,11 @@ import Footer from '../components/main/Footer';
 import useSWR from 'swr';
 import { Pagination } from '@mui/lab';
 import Carousel from 'react-material-ui-carousel';
+import packageJson from '../../package.json'
 
 const Page = () => {
+
+    console.log(packageJson.version)
 
     // const fetcher = (...args) => fetch(...args).then(res => res.json());
     // const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
