@@ -109,8 +109,6 @@ export const getServerSideProps = async (ctx) => {
   //     props: {}
   //   };
   // }
-  console.log('kfhkdjghjkfdgkjh', fields.length);
-
   return getServerSideSitemap(ctx, fields);
 };
 
