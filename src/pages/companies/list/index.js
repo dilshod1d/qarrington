@@ -33,9 +33,6 @@ const Page = () => {
       "start month",
       "start day",
       "start year",
-      "end month",
-      "end day",
-      "end year",
       "institution id",
       "founder id",
     ];
@@ -242,45 +239,6 @@ const Page = () => {
       case 15:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Which month does the company want the ISO to end? It can change anytime." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="end month"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 16:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Which day does the company want the ISO to end? This can change anytime." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="end day"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 17:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Which year does the company want the ISO to end? This can change anytime." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="end year"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 18:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="What's the unique identification string of the company's underwriter account?" placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
@@ -291,7 +249,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 19:
+      case 16:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="What is the unique identification string of the company's founder account?" placement="top">

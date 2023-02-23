@@ -1,0 +1,92 @@
+[
+    {
+        "companyTicker": "qar",
+        "companyListing": {
+            "listingName": "Qarrington",
+            "listingLogo": "/assets/media/companies/qarrington.png",
+            "listingProduct": "subscription exchange",
+            "listingHeadline": "buy and sell subscrriptions",
+            "listingDescription": "Qarrington is a subscription exchange",
+            "listingIndustry": "SaaS",
+            "listingWebsite": "https://qarrington.com",
+            "listingEmail": "team@qarrington.com",
+            "listingMarket": "International",
+            "listingIsSubmitted": {
+                "isSubmitted": "TRUE",
+                "isSubmittedAt": "05-08-202"
+            },
+            "listingIsListed": {
+                "isListed": "TRUE",
+                "isListedAt": "07-18-2022"
+            },
+            "listingIsLaunched": {
+                "isLaunched": "TRUE",
+                "isLaunchedAt": "08-28-2022"
+            }
+        },
+        "companyIso": {
+            "isoUnits": "5,000,000",
+            "isoPrice": "25",
+            "isoStart": {
+                "startMonth": "10",
+                "startDay": "25",
+                "startYear": "2022"
+            },
+            "isoTotalSubscribers": "3,540",
+            "isoSubscribers": [
+                {
+                    "subscriberId": "subscriberId",
+                    "subscriberUnits": "4,000",
+                    "subscriberPaidAt": "11-22-2022",
+                    "subscriberAsset": "100,000",
+                    "subscriberAddedAt": "09-21-2022"
+                },
+                {
+                    "subscriberId": "subscriberId",
+                    "subscriberUnits": "2,500",
+                    "subscriberPaidAt": "11-28-2022",
+                    "subscriberAsset": "250,500",
+                    "subscriberAddedAt": "09-25-2022",
+                    "subscriberslideCount": "7,450"
+                }
+            ],
+            "isoAmount": "27,000,000",
+            "isoAmountWiredAt": "12-24-2022"
+        },
+        "companySubscription": {
+            "subscriptionMarketCap": "120,000,000",
+            "subscriptionVolume": "2,500,000",
+            "subscriptionPrice": "48",
+            "subscriptionKey": "subscriptionKey",
+            "subscriptionUpdatedAt": "12-18-2022"
+        },
+        "companyUnderwriter": {
+            "underwriterAccount": {
+                "accountId": "accountId",
+                "accountStripeId": "accountStripeId"
+            }
+        },
+        "companyFounder": {
+            "founderAccount": {
+                "accountId": "accountId",
+                "accountStripeId": "accountStripeId"
+            }
+        },
+        "companySubscribers": [
+            {
+                "subscriberId": "subscriberId",
+                "subscriberHasAccess": "TRUE",
+                "subscriberUnits": "450",
+                "subscriberPrice": "46",
+                "subscriberNewCount": "54,000"
+            },
+            {
+                "subscriberId": "subscriberId",
+                "subscriberHasAccess": "TRUE",
+                "subscriberUnits": "280",
+                "subscriberPrice": "52",
+                "subscriberNewCount": "84,520"
+            }
+        ]
+    }
+]

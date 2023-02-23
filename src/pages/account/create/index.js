@@ -14,11 +14,11 @@ const Page = () => {
 
   const getSteps = () => {
     return [
-      "Access Key",
-      "Secret Key",
-      "Email Address",
-      "Phone Number",
-      "First Name",
+      "access key",
+      "secret key",
+      "contact email",
+      "contact number",
+      "first name",
     ];
   }
 
@@ -32,7 +32,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="Access Key"
+                placeholder="access key"
               />
             </Tooltip>
           </Stack>
@@ -45,7 +45,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="Secret Key"
+                placeholder="secret key"
               />
             </Tooltip>
           </Stack>
@@ -58,7 +58,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="Email Address"
+                placeholder="contact email"
               />
             </Tooltip>
           </Stack>
@@ -71,7 +71,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="Phone Number"
+                placeholder="contact number"
               />
             </Tooltip>
           </Stack>
@@ -84,7 +84,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="First Name"
+                placeholder="first name"
               />
             </Tooltip>
           </Stack>
