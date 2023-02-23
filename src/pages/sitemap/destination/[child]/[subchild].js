@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { getServerSideSitemap } from 'next-sitemap';
-import Destination from '../../../../../models/destination/Destination';
 import { childSitemapSize, pageUrlSize } from '../../../../config';
 
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL;
+const regex =
+  /((?:[\0-\x08\x0B\f\x0E-\x1F\uFFFD\uFFFE\uFFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]))/g;
 
 const extract_attr = (obj, ...args) => {
   let res = {};
@@ -13,6 +14,13 @@ const extract_attr = (obj, ...args) => {
 
   return res;
 };
+
+const sanitize = (str) =>
+  str
+    .replace(/\s+/g, '-')
+    .replace(/&(?!#?[a-z0-9]+;)/, '&amp;')
+    .replace(regex, '')
+    .toLowerCase();
 export const getServerSideProps = async (ctx) => {
   const { child, subchild } = ctx.params;
   let fields = [];
@@ -23,76 +31,73 @@ export const getServerSideProps = async (ctx) => {
 
       let totalOffset =
         page * childSitemapSize * pageUrlSize + offset * pageUrlSize;
-      // const count = await Destination.count();
-      const {count} = await extract_attr(
-        await axios.get(
-          `${process.env.NEXT_API_URL}destinations?query=destination-count`
-        ),
-        'count'
-      );
 
-      let iterations = Math.ceil(pageUrlSize / (count * 4));
+      try {
+        // const count = await Destination.count();
+        const { count } = await extract_attr(
+          await axios.get(
+            `${process.env.NEXT_API_URL}destinations?query=destination-count`
+          ),
+          'count'
+        );
 
-      const { destinations: destA } = extract_attr(
-        await axios.get(
-          `${process.env.NEXT_API_URL}destinations?query=destination-sitemap&iterations=${iterations}&offset=${offset}`
-        ),
-        'destinations'
-      );
-      const { destinations } = extract_attr(
-        await axios.get(
-          `${process.env.NEXT_API_URL}destinations?query=destination-distinct`
-        ),
-        'destinations'
-      );
+        let iterations = Math.ceil(pageUrlSize / (count * 4));
 
-      let i = 0;
-      destA.forEach((dA) => {
-        destinations.forEach((destination) => {
-          if (i >= pageUrlSize || dA.destinationFromUrl === destination) return;
-          fields.push({
-            loc: `${siteUrl}destination/${dA.destinationFromUrl
-              .replace(/\s+/g, '-')
-              .toLowerCase()}-to-${destination
-              .replace(/\s+/g, '-')
-              .toLowerCase()
-              .replace(/&(?!#?[a-z0-9]+;)/, '&amp;')}`,
-            lastmod: new Date().toISOString()
+        const { destinations: destA } = extract_attr(
+          await axios.get(
+            `${process.env.NEXT_API_URL}destinations?query=destination-sitemap&iterations=${iterations}&offset=${offset}`
+          ),
+          'destinations'
+        );
+        const { destinations } = extract_attr(
+          await axios.get(
+            `${process.env.NEXT_API_URL}destinations?query=destination-distinct`
+          ),
+          'destinations'
+        );
+
+        let i = 0;
+        destA.forEach((dA) => {
+          destinations.forEach((destination) => {
+            if (i >= pageUrlSize || dA.destinationFromUrl === destination)
+              return;
+
+            let To = destination
+                .replace(/\s+/g, '-')
+                .replace(/&(?!#?[a-z0-9]+;)/, '&amp;')
+                .replace(regex, '')
+                .toLowerCase(),
+              From = dA.destinationFromUrl
+                .replace(/\s+/g, '-')
+                .replace(/&(?!#?[a-z0-9]+;)/, '&amp;')
+                .replace(regex, '')
+                .toLowerCase();
+            fields.push({
+              loc: `${siteUrl}destination/${From}-to-${To}`,
+              lastmod: new Date().toISOString()
+            });
+            fields.push({
+              loc: `${siteUrl}destination/${To}-to-${From}`,
+              lastmod: new Date().toISOString()
+            });
+            fields.push({
+              loc: `${siteUrl}destination/${From}-from-${To}`,
+              lastmod: new Date().toISOString()
+            });
+            fields.push({
+              loc: `${siteUrl}destination/${To}-from-${From}`,
+              lastmod: new Date().toISOString()
+            });
+            i += 4;
           });
-          fields.push({
-            loc: `${siteUrl}destination/${destination
-              .replace(/\s+/g, '-')
-              .toLowerCase()}-to-${dA.destinationFromUrl
-              .replace(/\s+/g, '-')
-              .toLowerCase()
-              .replace(/&(?!#?[a-z0-9]+;)/, '&amp;')}`,
-            lastmod: new Date().toISOString()
-          });
-          fields.push({
-            loc: `${siteUrl}destination/${dA.destinationFromUrl
-              .replace(/\s+/g, '-')
-              .toLowerCase()}-from-${destination
-              .replace(/\s+/g, '-')
-              .toLowerCase()
-              .replace(/&(?!#?[a-z0-9]+;)/, '&amp;')}`,
-            lastmod: new Date().toISOString()
-          });
-          fields.push({
-            loc: `${siteUrl}destination/${destination
-              .replace(/\s+/g, '-')
-              .toLowerCase()}-from-${dA.destinationFromUrl
-              .replace(/\s+/g, '-')
-              .toLowerCase()
-              .replace(/&(?!#?[a-z0-9]+;)/, '&amp;')}`,
-            lastmod: new Date().toISOString()
-          });
-          i = +4;
         });
-      });
-      // const destinations = await Destination.find()
-      // .select('destinationFromUrl destinationToUrl')
-      // .limit(pageUrlSize)
-      // .skip(totalOffset);
+        // const destinations = await Destination.find()
+        // .select('destinationFromUrl destinationToUrl')
+        // .limit(pageUrlSize)
+        // .skip(totalOffset);
+      } catch (err) {
+        console.error('An Error Occured : ', err);
+      }
     }
   }
   // if (fields.length === 0) {
@@ -104,6 +109,7 @@ export const getServerSideProps = async (ctx) => {
   //     props: {}
   //   };
   // }
+  console.log('kfhkdjghjkfdgkjh', fields.length);
 
   return getServerSideSitemap(ctx, fields);
 };
