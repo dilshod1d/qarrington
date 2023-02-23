@@ -2,6 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
+import Carousel from 'react-material-ui-carousel';
 import Link from 'next/link';
 import HeaderMenu from '../../components/menus/HeaderMenu';
 import LeftGrid from '../../components/grids/LeftGrid';
@@ -126,27 +127,39 @@ const Page = () => {
 
                                 <form noValidate autoComplete='off'>
 
-                                    {data && Array.isArray(data) && data.slice(0, 1).map(({ _id, accountProfile, accountReview, accountConnections }) => (
-                                        <>
-                                            <Card key={_id} style={{ padding: '60px', marginBottom: '20px' }}>
-                                                <Box component="label" display="flex" justifyContent="center" marginBottom="16px">
-                                                    <Avatar
-                                                        style={{ width: 90, height: 90, marginBottom: '16px' }}
-                                                        variant="rounded"
-                                                        alt={accountProfile.profileName}
-                                                        src={accountProfile.profileAvatar}
-                                                    />
-                                                </Box>
-                                                <Box style={{ textAlign: 'center' }}>
-                                                    <Typography mt={0} mb={0} variant="h3" fontWeight={700}>{accountConnections}</Typography>
-                                                    <Typography mt={0} mb={1} variant="body2" fontWeight={600} color="secondary">CONNECTIONS</Typography>
-                                                    <Tooltip title="A draft is a programmable subscription that can be swapped or used to access the products of a technology company." placement="top">
-                                                        <Typography variant="body">Dear <b>{accountProfile.profileName}</b>, each time you refer an active contact, Qarrington will reward you and the contact with 1 Qarrington <b>draft</b> each.</Typography>
-                                                    </Tooltip>
-                                                </Box>
-                                            </Card>
-                                        </>
-                                    ))}
+                                    <Carousel>
+                                        {tasks && tasks.map(({ _id, name, route, detail, tooltip }) => (
+                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
+                                                <Card style={{ padding: '60px' }}>
+                                                    <Box style={{ textAlign: 'center' }}>
+                                                        <Box component="label" display="flex" justifyContent="center">
+                                                            <Avatar
+                                                                style={{ width: 90, height: 90 }}
+                                                                variant="rounded"
+                                                                alt="name"
+                                                                src="/assets/media/accounts/000.png"
+                                                            />
+                                                        </Box>
+                                                        <Box mt={1.5} mb={1.2}>
+                                                            <Typography variant="body">{detail}</Typography>
+                                                        </Box>
+                                                        <Link href={route}>
+                                                            <Tooltip title={tooltip} placement="top">
+                                                                <Button
+                                                                    size="medium"
+                                                                    sx={{ color: 'white', textTransform: 'uppercase', fontSize: '12px' }}
+                                                                    variant="contained"
+                                                                    fullWidth={false}
+                                                                >
+                                                                    {name}
+                                                                </Button>
+                                                            </Tooltip>
+                                                        </Link>
+                                                    </Box>
+                                                </Card>
+                                            </Grid>
+                                        ))}
+                                    </Carousel>
 
                                     {/* tab starts */}
 
@@ -498,10 +511,28 @@ const Page = () => {
 
 export default Page
 
+const BadgeButton = styled(Badge)(({ theme }) => ({
+    '& .MuiBadge-badge': {
+        right: 0,
+        top: -8,
+        border: `2px solid ${theme.palette.background.paper}`,
+        padding: '14px 12px',
+        textTransform: 'uppercase',
+        fontWeight: '700',
+        marginTop: '12px',
+        fontSize: '12px',
+        cursor: 'pointer',
+        '&.hover': {
+            color: '#000'
+        }
+    },
+}));
+
 const TabsWrapper = styled(TabList)(
     ({ theme }) => `
           &.MuiTabs-root {
             height: 0;
+            margin-top: 4px;
           }
     `
 );
@@ -514,12 +545,23 @@ const TabLabel = styled(Tab)(
     `
 );
 
-export async function getServerSideProps() {
-    const res = await fetch(`https://qarrington.com/api/accounts`);
-    const data = await res.json()
-    return {
-        props: {
-            item: data
-        }
+const tasks = [
+    {
+        name: "list",
+        route: "/companies/list",
+        detail: "In order to list a company, simply navigate to the listing page, provide the company details, and submit the company for approval.",
+        tooltip: "When you list a company, the company will only be submitted if the listing is executed by an approved underwriter."
+    },
+    {
+        name: "buy",
+        route: "/",
+        detail: "In order to buy a company's subscriptions, simply navigate to the homepage, search for the company, and click on the company.",
+        tooltip: "When you buy a subscription during launch, you cannot sell the subscription until after the lock period of 90 days."
+    },
+    {
+        name: "sell",
+        route: "/dashboard",
+        detail: "In order to sell a company's subscriptions, simply navigate to the portfolio section of your dashboard, and click on the company.",
+        tooltip: "When you sell a subscription after the lock period, your monthly access to the company's products will be revoked."
     }
-}
+]

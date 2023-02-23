@@ -1,0 +1,79 @@
+[
+    {
+        "institutionSlug": "blacks",
+        "institutionProfile": {
+            "profileName": "Blacks Capital",
+            "profileMarket": "International",
+            "profileSize": "4",
+            "profileLogo": "/assets/media/institutions/blacks.png",
+            "profileWebsite": "https://blacks.com",
+            "profileHeadline": "we back innovative companies",
+            "profileDescription": "We're a small venture capital firm that backs innovative companies from anywhere in the world."
+        },
+        "institutionUnderwriters": [
+            {
+                "underwriterName": "Kim Adams",
+                "underwriterTitle": "Venture Analyst",
+                "underwriterAvatar": "/assets/media/underwriters/kim.webp",
+                "underwriterStory": {
+                    "storyContent": "Before Qarrington, it was really hard for companies to raise funds from venture capital firms and harder for venture capital firms to raise funds from limited partners.",
+                    "storyIsApproved": "TRUE",
+                    "storyIsApprovedAt": "10-17-2022",
+                    "storySubmittedAt": "10-10-2022"
+                },
+                "underwriterIsActive": "dot",
+                "underwriterAccountId": "underwriterAccountId"
+            },
+            {
+                "underwriterName": "Steve Harrison",
+                "underwriterTitle": "Managing Partner",
+                "underwriterAvatar": "/assets/media/underwriters/steve.webp",
+                "underwriterStory": {
+                    "storyContent": "The fact that companies can now raise funds through an Initial Subscription Offering or ISO on a subscription exchange like Qarrington is beyond innovative.",
+                    "storyIsApproved": "TRUE",
+                    "storyIsApprovedAt": "11-22-2022",
+                    "storySubmittedAt": "11-15-2022"
+                },
+                "underwriterIsActive": "",
+                "underwriterAccountId": "underwriterAccountId"
+            }
+        ],
+        "institutionCompanies": [
+            {
+                "companyId": "companyId",
+                "companyName": "Spread",
+                "companyTicker": "spr",
+                "companyLogo": "/assets/media/companies/spread.png"
+            },
+            {
+                "companyId": "companyId",
+                "companyName": "Twined",
+                "companyTicker": "twn",
+                "companyLogo": "/assets/media/companies/twined.png"
+            }
+        ],
+        "institutionSlides": [
+            {
+                "slideName": "Total Companies",
+                "slideCount": "28",
+                "slideButton": "list",
+                "slideRoute": "/companies/list",
+                "slideDetail": "In order to list a company, simply navigate to the listing page, provide the company details, and submit the company for approval.",
+                "slideTooltip": "When you list a company, the company will only be submitted if the listing is executed by an approved underwriter."
+            },
+            {
+                "slideName": "Total Underwriters",
+                "slideCount": "12",
+                "slideButton": "invite",
+                "slideRoute": "/institutions/blacks/invite",
+                "slideDetail": "In order to list a company, simply navigate to the listing page, provide the company details, and submit the company for approval.",
+                "slideTooltip": "When you list a company, the company will only be submitted if the listing is executed by an approved underwriter."
+            }
+        ],
+        "institutionAccountId": "institutionAccountId",
+        "institutionIsApproved": "TRUE",
+        "institutionIsApprovedAt": "05-22-2022",
+        "institutionSubmittedAt": "05-15-2022",
+        "institutionUpdatedAt": "07-24-2022"
+    }
+]
