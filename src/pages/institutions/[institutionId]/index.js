@@ -4,7 +4,7 @@ import Link from 'next/link';
 import HeaderMenu from '../../../components/menus/HeaderMenu';
 import LeftGrid from '../../../components/grids/LeftGrid';
 import RightGrid from '../../../components/grids/RightGrid';
-import { Avatar, Badge, Box, Card, Container, Grid, Stack, styled, Tab, Tooltip, Typography } from '@mui/material';
+import { Avatar, Badge, Box, Button, Card, Container, Grid, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
@@ -54,9 +54,9 @@ const Page = ({ slug }) => {
                         <Grid container spacing={1}>
                             <Grid item xs={12}>
 
-                                <Carousel>
-                                    {institutions && institutions.slice(0, 1).map(({ _id, institutionSlides }) => (
-                                        <>
+                                {institutions && institutions.slice(0, 1).map(({ _id, institutionSlides }) => (
+                                    <>
+                                        <Carousel>
                                             {institutionSlides && institutionSlides.map(({ _id, slideName, slideCount, slideButton, slideRoute, slideDetail, slideTooltip }) => (
                                                 <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
                                                     <Card style={{ padding: '60px' }}>
@@ -77,7 +77,7 @@ const Page = ({ slug }) => {
                                                                         variant="contained"
                                                                         fullWidth={false}
                                                                     >
-                                                                        {slideName}
+                                                                        {slideButton}
                                                                     </Button>
                                                                 </Tooltip>
                                                             </Link>
@@ -85,9 +85,9 @@ const Page = ({ slug }) => {
                                                     </Card>
                                                 </Grid>
                                             ))}
-                                        </>
-                                    ))}
-                                </Carousel>
+                                        </Carousel>
+                                    </>
+                                ))}
 
                                 {/* tab starts */}
 
@@ -109,125 +109,196 @@ const Page = ({ slug }) => {
                                             scrollButtons="auto"
                                             aria-label="scrollable auto tabs example"
                                         >
-                                            <TabLabel label="Pulled" value="1" />
-                                            <TabLabel label="Pushed" value="2" />
+                                            <TabLabel label="Settings" value="1" />
+                                            <TabLabel label="Underwriters" value="2" />
+                                            <TabLabel label="Invitations" value="3" />
+                                            <TabLabel label="Companies" value="4" />
                                         </TabsWrapper>
                                     </Box>
 
                                     <Box style={{ marginBottom: '0px', marginTop: '16px' }}>
 
-                                        {/* pulled starts */}
+                                        {/* settings tab starts */}
 
                                         <TabPanel sx={{ padding: 0 }} value="1">
-                                            <Grid item xs={12} mb={2}>
-                                                <Grid container spacing={1}>
 
-                                                    {pulls && pulls.map(({ _id, pullSlug, pullPrice, pullRequests, pullSubscription, pullAccount, pullUpdatedAt }) => (
-                                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/subscription/${pullSlug}`}>
-                                                                <Card style={{ padding: '40px', cursor: 'pointer' }}>
-                                                                    <Box
-                                                                        style={{
-                                                                            display: 'flex',
-                                                                            justifyContent: 'center'
-                                                                        }}
-                                                                    >
-                                                                        <Stack direction="row" spacing={2}>
-                                                                            <Tooltip title={pullSubscription.subscriptionName} placement="top">
-                                                                                <StyledBadge
-                                                                                    overlap="circular"
-                                                                                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                                                                    variant={pullRequests.requestIsMatched}
-                                                                                >
-                                                                                    <Avatar alt={pullSubscription.subscriptionName} src={pullSubscription.subscriptionLogo}
-                                                                                        sx={{ height: '50px', width: '50px' }}
-                                                                                    />
-                                                                                </StyledBadge>
-                                                                            </Tooltip>
-                                                                        </Stack>
-                                                                    </Box>
-                                                                    <Box style={{ textAlign: 'center' }}>
-                                                                        <Box mt={1.5}>
-                                                                            <Typography variant="h5" fontWeight={700}>
-                                                                                {pullRequests.requestUnits}
-                                                                            </Typography>
-                                                                            <Typography variant="body2" fontWeight={500} color="secondary">
-                                                                                {pullSubscription.subscriptionTicker}
-                                                                            </Typography>
-                                                                        </Box>
-                                                                    </Box>
-                                                                </Card>
-                                                            </Link>
-                                                        </Grid>
-                                                    ))}
+                                            <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                <Typography variant="body" color="secondary" fontWeight={600}>
+                                                    One of the best things about Qarrington is the fact that we do not collect sensitive data in the frontend. We only do so in the backend.
+                                                </Typography>
+                                            </Card>
 
-                                                    <Grid item xs={12}>
-                                                        <Card style={{ padding: '60px', display: 'flex', justifyContent: 'center', marginTop: '0px' }}>
-                                                            <Stack spacing={2}>
-                                                                <Pagination count={10} variant="outlined" shape="rounded" />
-                                                            </Stack>
-                                                        </Card>
-                                                        <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                            <Typography variant="body2">
-                                                                When you make a pull request to buy the subscriptions of a listed company, the green dot shows that the request is yet to be filled. Otherwise, you won't see the dot.
-                                                            </Typography>
-                                                        </Box>
-                                                    </Grid>
+                                            {institutions && institutions.slice(0, 1).map(({ _id, institutionProfile, institutionSlug }) => (
 
-                                                </Grid>
-                                            </Grid>
+                                                <>
+                                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                        <Stack spacing={2} sx={{ width: '100%' }}>
+                                                            <Tooltip title="hint" placement="top">
+                                                                <TextField
+                                                                    required
+                                                                    id="outlined-required"
+                                                                    placeholder="item"
+                                                                    defaultValue={institutionProfile.profileName}
+                                                                    inputProps={{ style: { textAlign: 'center' } }}
+                                                                />
+                                                            </Tooltip>
+                                                            <Tooltip title="hint" placement="top">
+                                                                <TextField
+                                                                    required
+                                                                    id="outlined-required"
+                                                                    placeholder="item"
+                                                                    defaultValue={institutionProfile.profileMarket}
+                                                                    inputProps={{ style: { textAlign: 'center' } }}
+                                                                />
+                                                            </Tooltip>
+                                                        </Stack>
+                                                    </Card>
+
+                                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                        <Stack spacing={2} sx={{ width: '100%' }}>
+                                                            <Tooltip title="hint" placement="top">
+                                                                <TextField
+                                                                    required
+                                                                    id="outlined-required"
+                                                                    placeholder="item"
+                                                                    defaultValue={institutionProfile.profileLogo}
+                                                                    inputProps={{ style: { textAlign: 'center' } }}
+                                                                />
+                                                            </Tooltip>
+                                                            <Tooltip title="hint" placement="top">
+                                                                <TextField
+                                                                    required
+                                                                    id="outlined-required"
+                                                                    placeholder="item"
+                                                                    defaultValue={institutionProfile.profileWebsite}
+                                                                    inputProps={{ style: { textAlign: 'center' } }}
+                                                                />
+                                                            </Tooltip>
+                                                        </Stack>
+                                                    </Card>
+
+                                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                        <Stack spacing={2} sx={{ width: '100%' }}>
+                                                            <Tooltip title="hint" placement="top">
+                                                                <TextField
+                                                                    required
+                                                                    id="outlined-required"
+                                                                    placeholder="item"
+                                                                    defaultValue={institutionProfile.profileSize}
+                                                                    inputProps={{ style: { textAlign: 'center' } }}
+                                                                />
+                                                            </Tooltip>
+                                                            <Tooltip title="hint" placement="top">
+                                                                <TextField
+                                                                    required
+                                                                    id="outlined-required"
+                                                                    placeholder="item"
+                                                                    defaultValue={institutionSlug}
+                                                                    inputProps={{ style: { textAlign: 'center' } }}
+                                                                />
+                                                            </Tooltip>
+                                                        </Stack>
+                                                    </Card>
+
+                                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                        <Stack spacing={2} sx={{ width: '100%' }}>
+                                                            <Tooltip title="hint" placement="top">
+                                                                <TextField
+                                                                    required
+                                                                    id="outlined-required"
+                                                                    placeholder="item"
+                                                                    defaultValue={institutionProfile.profileHeadline}
+                                                                    inputProps={{ style: { textAlign: 'center' } }}
+                                                                />
+                                                            </Tooltip>
+                                                            <Tooltip title="hint" placement="top">
+                                                                <TextField
+                                                                    required
+                                                                    id="outlined-required"
+                                                                    placeholder="item"
+                                                                    defaultValue={institutionProfile.profileDescription}
+                                                                    inputProps={{ style: { textAlign: 'center' } }}
+                                                                />
+                                                            </Tooltip>
+                                                        </Stack>
+                                                    </Card>
+
+                                                </>
+
+                                            ))}
+
+                                            <Card style={{ padding: '60px', marginBottom: '0px' }}>
+                                                <Button
+                                                    size="large"
+                                                    sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                                                    variant="contained"
+                                                    fullWidth={true}
+                                                    type="submit"
+                                                >
+                                                    Savew
+                                                </Button>
+                                            </Card>
+
+                                            <Box style={{ textAlign: 'center', marginTop: '20px' }}>
+                                                <Typography variant="body2">
+                                                    Kindly note that it is very important to copy your secretToken and save it somewhere safe. If you lose, forget, or can't remember your accessToken, you can use your secretToken to recover your account. However, if you lose your secretToken, you'd be required to create a new Qarrington account. With that being said, kindly use your unique [ <b>https://qarrington.com/u/qid</b> ] invitation link to invite as many contacts as you can. Each time you refer an active contact, Qarrington will reward you and the contact with 1 Qarrington draft each.
+                                                </Typography>
+                                            </Box>
+
                                         </TabPanel>
 
-                                        {/* pulled stops */}
+                                        {/* settings tab stops */}
 
-                                        {/* pushed starts */}
+                                        {/* underwriters tab starts */}
 
                                         <TabPanel sx={{ padding: 0 }} value="2">
                                             <Grid item xs={12} mb={2}>
                                                 <Grid container spacing={1}>
 
-                                                    {pushes && pushes.map(({ _id, pushSlug, pushPrice, pushRequests, pushSubscription, pushAccount, pushUpdatedAt }) => (
-                                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/subscription/${pushSlug}`}>
-                                                                <Card style={{ padding: '40px', cursor: 'pointer' }}>
-                                                                    <Box
-                                                                        style={{
-                                                                            display: 'flex',
-                                                                            justifyContent: 'center'
-                                                                        }}
-                                                                    >
-                                                                        <Stack direction="row" spacing={2}>
-                                                                            <Tooltip title={pushSubscription.subscriptionName} placement="top">
+                                                    {institutions && institutions.slice(0, 1).map(({ _id, institutionUnderwriters }) => (
+                                                        <>
+                                                            {institutionUnderwriters && institutionUnderwriters.map(({ _id, underwriterName, underwriterTitle, underwriterAvatar, underwriterIsActive }) => (
+
+                                                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                                                                    <Card style={{ padding: '40px', cursor: 'pointer' }}>
+                                                                        <Box
+                                                                            style={{
+                                                                                display: 'flex',
+                                                                                justifyContent: 'center'
+                                                                            }}
+                                                                        >
+                                                                            <Stack direction="row" spacing={2}>
                                                                                 <StyledBadge
                                                                                     overlap="circular"
                                                                                     anchorOrigin={{
                                                                                         vertical: 'bottom',
                                                                                         horizontal: 'right'
                                                                                     }}
-                                                                                    variant={pushRequests.requestIsMatched}
+                                                                                    variant={underwriterIsActive}
                                                                                 >
                                                                                     <Avatar
                                                                                         style={{ width: 50, height: 50 }}
-                                                                                        alt={pushSubscription.subscriptionName}
-                                                                                        src={pushSubscription.subscriptionLogo}
+                                                                                        alt={underwriterName}
+                                                                                        src={underwriterAvatar}
                                                                                     />
                                                                                 </StyledBadge>
-                                                                            </Tooltip>
-                                                                        </Stack>
-                                                                    </Box>
-                                                                    <Box style={{ textAlign: 'center' }}>
-                                                                        <Box mt={1.5}>
-                                                                            <Typography variant="h5" fontWeight={700}>
-                                                                                {pushRequests.requestUnits}
-                                                                            </Typography>
-                                                                            <Typography variant="body2" fontWeight={500} color="secondary">
-                                                                                {pushSubscription.subscriptionTicker}
-                                                                            </Typography>
+                                                                            </Stack>
                                                                         </Box>
-                                                                    </Box>
-                                                                </Card>
-                                                            </Link>
-                                                        </Grid>
+                                                                        <Box style={{ textAlign: 'center' }}>
+                                                                            <Box mt={1.5}>
+                                                                                <Typography variant="h5" fontWeight={700}>
+                                                                                    {underwriterName}
+                                                                                </Typography>
+                                                                                <Typography variant="body2" fontWeight={500} color="secondary">
+                                                                                    {underwriterTitle}
+                                                                                </Typography>
+                                                                            </Box>
+                                                                        </Box>
+                                                                    </Card>
+                                                                </Grid>
+
+                                                            ))}
+                                                        </>
                                                     ))}
 
                                                     <Grid item xs={12}>
@@ -247,7 +318,122 @@ const Page = ({ slug }) => {
                                             </Grid>
                                         </TabPanel>
 
-                                        {/* pushed stops */}
+                                        {/* underwriters tab stops */}
+
+                                        {/* invitations tab starts */}
+
+                                        <TabPanel sx={{ padding: 0 }} value="3">
+
+                                            <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                <Typography variant="body" color="secondary" fontWeight={600}>
+                                                    svioa one of the best things about Qarrington is the fact that we do not collect sensitive data in the frontend. We only do so in the backend.
+                                                </Typography>
+                                            </Card>
+
+                                            <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                <Stack spacing={2} sx={{ width: '100%' }}>
+                                                    <Tooltip title="hint" placement="top">
+                                                        <TextField
+                                                            required
+                                                            id="outlined-required"
+                                                            placeholder="Underwriter Email"
+                                                            inputProps={{ style: { textAlign: 'center' } }}
+                                                        />
+                                                    </Tooltip>
+                                                    <Tooltip title="hint" placement="top">
+                                                        <TextField
+                                                            required
+                                                            id="outlined-required"
+                                                            placeholder="Underwriter Role"
+                                                            inputProps={{ style: { textAlign: 'center' } }}
+                                                        />
+                                                    </Tooltip>
+                                                </Stack>
+                                            </Card>
+
+                                            <Card style={{ padding: '60px', marginBottom: '0px' }}>
+                                                <Button
+                                                    size="large"
+                                                    sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                                                    variant="contained"
+                                                    fullWidth={true}
+                                                    type="submit"
+                                                >
+                                                    invite
+                                                </Button>
+                                            </Card>
+
+                                            <Box style={{ textAlign: 'center', marginTop: '20px' }}>
+                                                <Typography variant="body2">
+                                                    saviooo note that it is very important to copy your secretToken and save it somewhere safe. If you lose, forget, or can't remember your accessToken, you can use your secretToken to recover your account. However, if you lose your secretToken, you'd be required to create a new Qarrington account. With that being said, kindly use your unique [ <b>https://qarrington.com/u/qid</b> ] invitation link to invite as many contacts as you can. Each time you refer an active contact, Qarrington will reward you and the contact with 1 Qarrington draft each.
+                                                </Typography>
+                                            </Box>
+
+                                        </TabPanel>
+
+                                        {/* invitations tab stops */}
+
+                                        {/* companies tab starts */}
+
+                                        <TabPanel sx={{ padding: 0 }} value="4">
+                                            <Grid item xs={12} mb={2}>
+                                                <Grid container spacing={1}>
+
+                                                    {institutions && institutions.slice(0, 1).map(({ _id, institutionCompanies }) => (
+                                                        <>
+                                                            {institutionCompanies && institutionCompanies.map(({ _id, companyName, companyTicker, companyLogo }) => (
+
+                                                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                                                                    <Card style={{ padding: '40px', cursor: 'pointer' }}>
+                                                                        <Box
+                                                                            style={{
+                                                                                display: 'flex',
+                                                                                justifyContent: 'center'
+                                                                            }}
+                                                                        >
+                                                                            <Stack direction="row" spacing={2}>
+                                                                                <Avatar
+                                                                                    style={{ width: 50, height: 50 }}
+                                                                                    alt={companyName}
+                                                                                    src={companyLogo}
+                                                                                />
+                                                                            </Stack>
+                                                                        </Box>
+                                                                        <Box style={{ textAlign: 'center' }}>
+                                                                            <Box mt={1.5}>
+                                                                                <Typography variant="h5" fontWeight={700}>
+                                                                                    {companyName}
+                                                                                </Typography>
+                                                                                <Typography variant="body2" fontWeight={500} color="secondary">
+                                                                                    {companyTicker}
+                                                                                </Typography>
+                                                                            </Box>
+                                                                        </Box>
+                                                                    </Card>
+                                                                </Grid>
+
+                                                            ))}
+                                                        </>
+                                                    ))}
+
+                                                    <Grid item xs={12}>
+                                                        <Card style={{ padding: '60px', display: 'flex', justifyContent: 'center', marginTop: '0px' }}>
+                                                            <Stack spacing={2}>
+                                                                <Pagination count={10} variant="outlined" shape="rounded" />
+                                                            </Stack>
+                                                        </Card>
+                                                        <Box style={{ textAlign: 'center', marginTop: '20px' }}>
+                                                            <Typography variant="body2">
+                                                                Similar to pull requests, if the green dot is shown, it means that your push request to sell the subscriptions of a company isn't filled yet. Otherwise, you won't see the dot.
+                                                            </Typography>
+                                                        </Box>
+                                                    </Grid>
+
+                                                </Grid>
+                                            </Grid>
+                                        </TabPanel>
+
+                                        {/* companies tab stops */}
 
                                     </Box>
 
