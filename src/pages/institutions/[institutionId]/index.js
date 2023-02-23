@@ -114,7 +114,6 @@ const Page = ({ slug }) => {
                                                 <TabLabel label="Settings" value="1" />
                                                 <TabLabel label="Underwriters" value="2" />
                                                 <TabLabel label="Invitations" value="3" />
-                                                <TabLabel label="Companies" value="4" />
                                             </TabsWrapper>
                                         </Box>
 
@@ -335,7 +334,7 @@ const Page = ({ slug }) => {
 
                                                 <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                     <Typography variant="body" color="secondary" fontWeight={600}>
-                                                        svioa one of the best things about Qarrington is the fact that we do not collect sensitive data in the frontend. We only do so in the backend.
+                                                        svioa one of the best Qarrington is the fact that we do not collect sensitive data in the frontend. We only do so in the backend.
                                                     </Typography>
                                                 </Card>
 
@@ -381,84 +380,6 @@ const Page = ({ slug }) => {
                                             </TabPanel>
 
                                             {/* invitations tab stops */}
-
-                                            {/* companies tab starts */}
-
-                                            <TabPanel sx={{ padding: 0 }} value="4">
-
-                                                <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                    <Typography variant="body" color="secondary" fontWeight={600}>
-                                                        One of the best things about Qarrington is the fact that we do not collect sensitive data in the frontend. We only do so in the backend.
-                                                    </Typography>
-                                                </Card>
-
-                                                <Grid item xs={12} mb={2}>
-                                                    <Grid container spacing={1}>
-
-                                                        {institutions && institutions.slice(0, 1).map(({ _id, institutionCompanies }) => (
-                                                            <>
-                                                                {institutionCompanies && institutionCompanies.map(({ _id, companyName, companyTicker, companyLogo, companyIsListed, companyStartedAt }) => (
-
-                                                                    <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                                        <Card style={{ padding: '40px', cursor: 'pointer' }}>
-                                                                            <Box
-                                                                                style={{
-                                                                                    display: 'flex',
-                                                                                    justifyContent: 'center'
-                                                                                }}
-                                                                            >
-                                                                                <Stack direction="row" spacing={2}>
-                                                                                    <StyledBadge
-                                                                                        overlap="circular"
-                                                                                        anchorOrigin={{
-                                                                                            vertical: 'bottom',
-                                                                                            horizontal: 'right'
-                                                                                        }}
-                                                                                        variant={companyIsListed}
-                                                                                    >
-                                                                                        <Avatar
-                                                                                            style={{ width: 50, height: 50 }}
-                                                                                            alt={companyName}
-                                                                                            src={companyLogo}
-                                                                                        />
-                                                                                    </StyledBadge>
-                                                                                </Stack>
-                                                                            </Box>
-                                                                            <Box style={{ textAlign: 'center' }}>
-                                                                                <Box mt={1.5}>
-                                                                                    <Typography variant="h5" fontWeight={700}>
-                                                                                        {companyName}
-                                                                                    </Typography>
-                                                                                    <Typography variant="body2" fontWeight={500} color="secondary">
-                                                                                        {companyStartedAt}
-                                                                                    </Typography>
-                                                                                </Box>
-                                                                            </Box>
-                                                                        </Card>
-                                                                    </Grid>
-
-                                                                ))}
-                                                            </>
-                                                        ))}
-
-                                                        <Grid item xs={12}>
-                                                            <Card style={{ padding: '60px', display: 'flex', justifyContent: 'center', marginTop: '0px' }}>
-                                                                <Stack spacing={2}>
-                                                                    <Pagination count={10} variant="outlined" shape="rounded" />
-                                                                </Stack>
-                                                            </Card>
-                                                            <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                                <Typography variant="body2">
-                                                                    Similar to pull requests, if the green dot is shown, it means that your push request to sell the subscriptions of a company isn't filled yet. Otherwise, you won't see the dot.
-                                                                </Typography>
-                                                            </Box>
-                                                        </Grid>
-
-                                                    </Grid>
-                                                </Grid>
-                                            </TabPanel>
-
-                                            {/* companies tab stops */}
 
                                         </Box>
 
