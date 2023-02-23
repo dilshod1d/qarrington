@@ -1,11 +1,18 @@
+import axios from 'axios';
 import { getServerSideSitemap } from 'next-sitemap';
 import Destination from '../../../../../models/destination/Destination';
 import { childSitemapSize, pageUrlSize } from '../../../../config';
 
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL;
 
-const leading_zeros_format = (n, nPositions = 2) =>
-  String(n).padStart(nPositions, '0');
+const extract_attr = (obj, ...args) => {
+  let res = {};
+  if (Array.isArray(args)) {
+    args.forEach((arg) => (res[arg] = obj?.data[arg]));
+  }
+
+  return res;
+};
 export const getServerSideProps = async (ctx) => {
   const { child, subchild } = ctx.params;
   let fields = [];
@@ -16,23 +23,33 @@ export const getServerSideProps = async (ctx) => {
 
       let totalOffset =
         page * childSitemapSize * pageUrlSize + offset * pageUrlSize;
-      const count = await Destination.count();
+      // const count = await Destination.count();
+      const {count} = await extract_attr(
+        await axios.get(
+          `${process.env.NEXT_API_URL}destinations?query=destination-count`
+        ),
+        'count'
+      );
+
       let iterations = Math.ceil(pageUrlSize / (count * 4));
 
-      const destA = await Destination.find()
-        .select('destinationFromUrl')
-        .limit(iterations)
-        .skip(offset);
-      const destinations = await Destination.distinct('destinationToUrl');
+      const { destinations: destA } = extract_attr(
+        await axios.get(
+          `${process.env.NEXT_API_URL}destinations?query=destination-sitemap&iterations=${iterations}&offset=${offset}`
+        ),
+        'destinations'
+      );
+      const { destinations } = extract_attr(
+        await axios.get(
+          `${process.env.NEXT_API_URL}destinations?query=destination-distinct`
+        ),
+        'destinations'
+      );
 
       let i = 0;
       destA.forEach((dA) => {
         destinations.forEach((destination) => {
-          if (
-            i >= pageUrlSize ||
-            dA.destinationFromUrl === destination
-          )
-            return;
+          if (i >= pageUrlSize || dA.destinationFromUrl === destination) return;
           fields.push({
             loc: `${siteUrl}destination/${dA.destinationFromUrl
               .replace(/\s+/g, '-')
@@ -76,7 +93,6 @@ export const getServerSideProps = async (ctx) => {
       // .select('destinationFromUrl destinationToUrl')
       // .limit(pageUrlSize)
       // .skip(totalOffset);
-
     }
   }
   // if (fields.length === 0) {
