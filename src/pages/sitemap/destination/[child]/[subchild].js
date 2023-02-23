@@ -29,9 +29,6 @@ export const getServerSideProps = async (ctx) => {
       let page = Number(child);
       let offset = Number(subchild.slice(0, subchild.indexOf('.xml')));
 
-      let totalOffset =
-        page * childSitemapSize * pageUrlSize + offset * pageUrlSize;
-
       try {
         // const count = await Destination.count();
         const { count } = await extract_attr(
@@ -40,12 +37,15 @@ export const getServerSideProps = async (ctx) => {
           ),
           'count'
         );
+        let totalOffset = Math.floor((count/childSitemapSize)*page+offset  );
+        // let totalOffset =
+        //   page * childSitemapSize * pageUrlSize + offset * pageUrlSize;
 
         let iterations = Math.ceil(pageUrlSize / (count * 4));
 
         const { destinations: destA } = extract_attr(
           await axios.get(
-            `${process.env.NEXT_API_URL}destinations?query=destination-sitemap&iterations=${iterations}&offset=${offset}`
+            `${process.env.NEXT_API_URL}destinations?query=destination-sitemap&iterations=${iterations}&offset=${totalOffset}`
           ),
           'destinations'
         );
