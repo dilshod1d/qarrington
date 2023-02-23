@@ -15,12 +15,6 @@ const extract_attr = (obj, ...args) => {
   return res;
 };
 
-const sanitize = (str) =>
-  str
-    .replace(/\s+/g, '-')
-    .replace(/&(?!#?[a-z0-9]+;)/, '&amp;')
-    .replace(regex, '')
-    .toLowerCase();
 export const getServerSideProps = async (ctx) => {
   const { child, subchild } = ctx.params;
   let fields = [];
@@ -30,7 +24,6 @@ export const getServerSideProps = async (ctx) => {
       let offset = Number(subchild.slice(0, subchild.indexOf('.xml')));
 
       try {
-        // const count = await Destination.count();
         const { count } = await extract_attr(
           await axios.get(
             `${process.env.NEXT_API_URL}destinations?query=destination-count`
