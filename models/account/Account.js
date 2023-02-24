@@ -3,34 +3,48 @@ import mongoose from 'mongoose';
 const AccountSchema = new mongoose.Schema(
     {
         accountSlug: { type: String },
-        accountKey: { type: String },
+        accountReferrals: [
+            {
+                referralId: { type: String },
+                referralTotal: { type: String },
+                referralEarnings: { type: String }
+            }
+        ],
+        accountKeys: {
+            accessKey: { type: String },
+            secretKey: { type: String }
+        },
         accountProfile: {
-            profileName: { type: String },
+            profileFirstName: { type: String },
+            profileLastName: { type: String },
             profileTitle: { type: String },
             profileAvatar: { type: String },
-            profileIsActive: { type: String },
-            profileCreatedAt: { type: String },
+            profileIsActive: { type: String }
         },
-        accountContact: {
+        accountContacts: {
             contactEmail: { type: String },
-            contactNumber: { type: String },
-            contactAddress: { type: String },
+            contactEmail: { type: String },
+            contactLink: { type: String },
+            contactAddress: { type: String }
         },
-        accountConnections: { type: String },
-        accountReview: {
-            reviewContent: { type: String },
-            reviewIsApproved: { type: String },
-            reviewPostedAt: { type: String },
+        accountStories: {
+            storyTitle: { type: String },
+            storyContent: { type: String },
+            storyIsApproved: { type: String },
+            storyIsApprovedAt: { type: String },
+            storySubmittedAt: { type: String }
         },
-        accountBank: {
-            bankName: { type: String },
-            bankCountry: { type: String },
-            bankCurrency: { type: String },
-            bankAccountName: { type: String },
-            bankAccountNumber: { type: String },
-            bankRoutingNumber: { type: String },
+        accountCompany: {
+            companyId: { type: String },
+            companyName: { type: String },
+            companyEmail: { type: String },
+            companyWebsite: { type: String },
+            companyTicker: { type: String },
+            companyRoute: { type: String }
         },
         accountIsAdmin: { type: String },
+        accountStripeId: { type: String },
+        accountCreatedAt: { type: String }
     }
 );
 

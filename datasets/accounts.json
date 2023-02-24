@@ -1,343 +1,47 @@
 [
     {
-        "accountSlug": "stranger",
-        "accountKey": "accountKey",
+        "accountSlug": "kayra",
+        "accountReferrals": [
+            {
+                "referralId": "referralId",
+                "referralTotal": "846",
+                "referralEarnings": "2,850"
+            }
+        ],
+        "accountKeys": {
+            "accessKey": "accessKey",
+            "secretKey": "secretKey"
+        },
         "accountProfile": {
-            "profileName": "Stranger",
-            "profileAvatar": "/assets/media/accounts/000.png",
+            "profileFirstName": "Kayra",
+            "profileLastName": "Adams",
             "profileTitle": "Product Manager",
-            "profileIsActive": "dot",
-            "profileCreatedAt": "10-10-2020"
+            "profileAvatar": "/assets/media/accounts/female/114.webp",
+            "profileIsActive": "dot"
         },
-        "accountContact": {
-            "contactEmail": "",
-            "contactNumber": "",
-            "contactAddress": ""
+        "accountContacts": {
+            "contactEmail": "kayra@gmail.com",
+            "contactPhone": "+12344567890",
+            "contactLink": "https://linkedin.com/u/kayra-adams",
+            "contactAddress": "123 Kings Street, 98558 Bronx, NY / United States"
         },
-        "accountConnections": "",
-        "accountReview": {
-            "reviewContent": "Seeing Qarrington as the world's first draft exchange clearly shows how the subscription market will drastically change in the nearest future.",
-            "reviewIsApproved": "TRUE",
-            "reviewPostedAt": "reviewPostedAt"
+        "accountStories": {
+            "storyTitle": "I love being a Qarrington",
+            "storyContent": "As a startup incubator, making 20 deals to hit ROI with 1 was tough for us. On Qarrington, we've seen the possibility of making 20 deals and hitting ROI from each.",
+            "storyIsApproved": "TRUE",
+            "storyIsApprovedAt": "10-22-2022",
+            "storySubmittedAt": "10-21-2022"
         },
-        "accountBank": {
-            "bankName": "",
-            "bankCountry": "",
-            "bankCurrency": "",
-            "bankAccountName": "",
-            "bankAccountNumber": "",
-            "bankRoutingNumber": ""
+        "accountCompany": {
+            "companyId": "companyId",
+            "companyName": "Skimo",
+            "companyEmail": "team@skimo.com",
+            "companyWebsite": "skimo.com",
+            "companyTicker": "SKI",
+            "companyRoute": "https://qarrington.com/companies/ski"
         },
-        "accountIsAdmin": "FALSE"
-    },
-    {
-        "accountSlug": "kim",
-        "accountKey": "accountKey",
-        "accountProfile": {
-            "profileName": "Kim",
-            "profileAvatar": "/assets/media/accounts/000.png",
-            "profileTitle": "Product Manager",
-            "profileIsActive": "dot",
-            "profileCreatedAt": "10-10-2020"
-        },
-        "accountContact": {
-            "contactEmail": "",
-            "contactNumber": "",
-            "contactAddress": ""
-        },
-        "accountConnections": "",
-        "accountReview": {
-            "reviewContent": "As a frequent traveler, I was spending over $200 on monthly subscriptions. I'm glad that thru Qarrington, I can put my subscriptions to work for me.",
-            "reviewIsApproved": "TRUE",
-            "reviewPostedAt": "reviewPostedAt"
-        },
-        "accountBank": {
-            "bankName": "",
-            "bankCountry": "",
-            "bankCurrency": "",
-            "bankAccountName": "",
-            "bankAccountNumber": "",
-            "bankRoutingNumber": ""
-        },
-        "accountIsAdmin": "FALSE"
-    },
-    {
-        "accountSlug": "kim",
-        "accountKey": "accountKey",
-        "accountProfile": {
-            "profileName": "Kim",
-            "profileAvatar": "/assets/media/accounts/000.png",
-            "profileTitle": "Product Manager",
-            "profileIsActive": "dot",
-            "profileCreatedAt": "10-10-2020"
-        },
-        "accountContact": {
-            "contactEmail": "",
-            "contactNumber": "",
-            "contactAddress": ""
-        },
-        "accountConnections": "",
-        "accountReview": {
-            "reviewContent": "The fact that Qarrington lets me subscribe to online services while making passive income from buying and selling drafts is just beyond astonishing.",
-            "reviewIsApproved": "TRUE",
-            "reviewPostedAt": "reviewPostedAt"
-        },
-        "accountBank": {
-            "bankName": "",
-            "bankCountry": "",
-            "bankCurrency": "",
-            "bankAccountName": "",
-            "bankAccountNumber": "",
-            "bankRoutingNumber": ""
-        },
-        "accountIsAdmin": "FALSE"
-    },
-    {
-        "accountSlug": "kim",
-        "accountKey": "accountKey",
-        "accountProfile": {
-            "profileName": "Kim",
-            "profileAvatar": "/assets/media/accounts/000.png",
-            "profileTitle": "Product Manager",
-            "profileIsActive": "dot",
-            "profileCreatedAt": "10-10-2020"
-        },
-        "accountContact": {
-            "contactEmail": "",
-            "contactNumber": "",
-            "contactAddress": ""
-        },
-        "accountConnections": "",
-        "accountReview": {
-            "reviewContent": "In the past, a company could monetize its platform through subscriptions. Today, users can actually monetize their subscriptions with drafts. Genius!",
-            "reviewIsApproved": "TRUE",
-            "reviewPostedAt": "reviewPostedAt"
-        },
-        "accountBank": {
-            "bankName": "",
-            "bankCountry": "",
-            "bankCurrency": "",
-            "bankAccountName": "",
-            "bankAccountNumber": "",
-            "bankRoutingNumber": ""
-        },
-        "accountIsAdmin": "FALSE"
-    },
-    {
-        "accountSlug": "kim",
-        "accountKey": "accountKey",
-        "accountProfile": {
-            "profileName": "Kim",
-            "profileAvatar": "/assets/media/accounts/000.png",
-            "profileTitle": "Product Manager",
-            "profileIsActive": "dot",
-            "profileCreatedAt": "10-10-2020"
-        },
-        "accountContact": {
-            "contactEmail": "",
-            "contactNumber": "",
-            "contactAddress": ""
-        },
-        "accountConnections": "",
-        "accountReview": {
-            "reviewContent": "I'm an active stock & crypto enthusiast, but none of them is backend with anything. Knowing that drafts are backed by products is really amazing.",
-            "reviewIsApproved": "TRUE",
-            "reviewPostedAt": "reviewPostedAt"
-        },
-        "accountBank": {
-            "bankName": "",
-            "bankCountry": "",
-            "bankCurrency": "",
-            "bankAccountName": "",
-            "bankAccountNumber": "",
-            "bankRoutingNumber": ""
-        },
-        "accountIsAdmin": "FALSE"
-    },
-    {
-        "accountSlug": "kim",
-        "accountKey": "accountKey",
-        "accountProfile": {
-            "profileName": "Kim",
-            "profileAvatar": "/assets/media/accounts/000.png",
-            "profileTitle": "Product Manager",
-            "profileIsActive": "dot",
-            "profileCreatedAt": "10-10-2020"
-        },
-        "accountContact": {
-            "contactEmail": "",
-            "contactNumber": "",
-            "contactAddress": ""
-        },
-        "accountConnections": "",
-        "accountReview": {
-            "reviewContent": "Being a female founder, I'm so bumped that the future is finally here, where we can raise capital without sacrificing our gender, race, or culture.",
-            "reviewIsApproved": "TRUE",
-            "reviewPostedAt": "reviewPostedAt"
-        },
-        "accountBank": {
-            "bankName": "",
-            "bankCountry": "",
-            "bankCurrency": "",
-            "bankAccountName": "",
-            "bankAccountNumber": "",
-            "bankRoutingNumber": ""
-        },
-        "accountIsAdmin": "FALSE"
-    },
-    {
-        "accountSlug": "kim",
-        "accountKey": "accountKey",
-        "accountProfile": {
-            "profileName": "Kim",
-            "profileAvatar": "/assets/media/accounts/000.png",
-            "profileTitle": "Product Manager",
-            "profileIsActive": "dot",
-            "profileCreatedAt": "10-10-2020"
-        },
-        "accountContact": {
-            "contactEmail": "",
-            "contactNumber": "",
-            "contactAddress": ""
-        },
-        "accountConnections": "",
-        "accountReview": {
-            "reviewContent": "It took us more than 6 months to get a 'NO' from a VC. We can boldly say that Qarrington is going to be the best-ever mechanism to fund a startup.",
-            "reviewIsApproved": "TRUE",
-            "reviewPostedAt": "reviewPostedAt"
-        },
-        "accountBank": {
-            "bankName": "",
-            "bankCountry": "",
-            "bankCurrency": "",
-            "bankAccountName": "",
-            "bankAccountNumber": "",
-            "bankRoutingNumber": ""
-        },
-        "accountIsAdmin": "FALSE"
-    },
-    {
-        "accountSlug": "kim",
-        "accountKey": "accountKey",
-        "accountProfile": {
-            "profileName": "Kim",
-            "profileAvatar": "/assets/media/accounts/000.png",
-            "profileTitle": "Product Manager",
-            "profileIsActive": "dot",
-            "profileCreatedAt": "10-10-2020"
-        },
-        "accountContact": {
-            "contactEmail": "",
-            "contactNumber": "",
-            "contactAddress": ""
-        },
-        "accountConnections": "",
-        "accountReview": {
-            "reviewContent": "By 2024, I can see a lot of startups raising funds through drafts. Advancing our subscriptions to our users implies that we have a product-market fit.",
-            "reviewIsApproved": "TRUE",
-            "reviewPostedAt": "reviewPostedAt"
-        },
-        "accountBank": {
-            "bankName": "",
-            "bankCountry": "",
-            "bankCurrency": "",
-            "bankAccountName": "",
-            "bankAccountNumber": "",
-            "bankRoutingNumber": ""
-        },
-        "accountIsAdmin": "FALSE"
-    },
-    {
-        "accountSlug": "kim",
-        "accountKey": "accountKey",
-        "accountProfile": {
-            "profileName": "Kim",
-            "profileAvatar": "/assets/media/accounts/000.png",
-            "profileTitle": "Product Manager",
-            "profileIsActive": "dot",
-            "profileCreatedAt": "10-10-2020"
-        },
-        "accountContact": {
-            "contactEmail": "",
-            "contactNumber": "",
-            "contactAddress": ""
-        },
-        "accountConnections": "",
-        "accountReview": {
-            "reviewContent": "I've seen a lot of founders talking about the funding aspect of drafts. But, my team also sees drafts as a genius customer acquisition mechanism.",
-            "reviewIsApproved": "TRUE",
-            "reviewPostedAt": "reviewPostedAt"
-        },
-        "accountBank": {
-            "bankName": "",
-            "bankCountry": "",
-            "bankCurrency": "",
-            "bankAccountName": "",
-            "bankAccountNumber": "",
-            "bankRoutingNumber": ""
-        },
-        "accountIsAdmin": "FALSE"
-    },
-    {
-        "accountSlug": "kim",
-        "accountKey": "accountKey",
-        "accountProfile": {
-            "profileName": "Kim",
-            "profileAvatar": "/assets/media/accounts/000.png",
-            "profileTitle": "Product Manager",
-            "profileIsActive": "dot",
-            "profileCreatedAt": "10-10-2020"
-        },
-        "accountContact": {
-            "contactEmail": "",
-            "contactNumber": "",
-            "contactAddress": ""
-        },
-        "accountConnections": "",
-        "accountReview": {
-            "reviewContent": "As a minority founder, the ability to actually raise funds with drafts and without the pitch stage that's often filled with systemic racism is promising.",
-            "reviewIsApproved": "TRUE",
-            "reviewPostedAt": "reviewPostedAt"
-        },
-        "accountBank": {
-            "bankName": "",
-            "bankCountry": "",
-            "bankCurrency": "",
-            "bankAccountName": "",
-            "bankAccountNumber": "",
-            "bankRoutingNumber": ""
-        },
-        "accountIsAdmin": "FALSE"
-    },
-    {
-        "accountSlug": "kim",
-        "accountKey": "accountKey",
-        "accountProfile": {
-            "profileName": "Kim",
-            "profileAvatar": "/assets/media/accounts/000.png",
-            "profileTitle": "Product Manager",
-            "profileIsActive": "dot",
-            "profileCreatedAt": "10-10-2020"
-        },
-        "accountContact": {
-            "contactEmail": "",
-            "contactNumber": "",
-            "contactAddress": ""
-        },
-        "accountConnections": "",
-        "accountReview": {
-            "reviewContent": "As the current inflation continues, I can keep using online services while making passive income from my subscriptions. Qarrington? I'm grateful.",
-            "reviewIsApproved": "TRUE",
-            "reviewPostedAt": "reviewPostedAt"
-        },
-        "accountBank": {
-            "bankName": "",
-            "bankCountry": "",
-            "bankCurrency": "",
-            "bankAccountName": "",
-            "bankAccountNumber": "",
-            "bankRoutingNumber": ""
-        },
-        "accountIsAdmin": "FALSE"
+        "accountIsAdmin": "FALSE",
+        "accountStripeId": "accountStripeId",
+        "accountCreatedAt": "08-14-2022"
     }
 ]
