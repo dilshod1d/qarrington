@@ -66,7 +66,7 @@ const Page = () => {
                 </Typography>
 
                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  Qarrington is a subscription exchange, where you can buy and sell the subscriptions of technology companies to cover your expenses. It's like stocks & cryptos, but backed by products.
+                  Qarrington is a subscription exchange, where you can buy and sell the subscriptions of technology companies to cover your expenses. It's like stocks and cryptos, but backed by products.
                 </Typography>
 
               </Box>
