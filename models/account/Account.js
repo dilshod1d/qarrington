@@ -21,7 +21,7 @@ const AccountSchema = new mongoose.Schema(
         },
         accountContacts: {
             contactEmail: { type: String },
-            contactEmail: { type: String },
+            contactPhone: { type: String },
             contactLink: { type: String },
             contactAddress: { type: String }
         },

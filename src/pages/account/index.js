@@ -307,7 +307,7 @@ const Page = () => {
                                                                         id="outlined-required"
                                                                         placeholder="Email Address"
                                                                         defaultValue={accountContacts.contactEmail}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
+                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
                                                                 <Tooltip title="Phone Number" placement="top">
@@ -317,7 +317,7 @@ const Page = () => {
                                                                         id="outlined-required"
                                                                         placeholder="Phone Number"
                                                                         defaultValue={accountContacts.contactPhone}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
+                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
                                                             </Stack>
@@ -354,7 +354,7 @@ const Page = () => {
                                                                         id="outlined-required"
                                                                         placeholder="Account Id"
                                                                         defaultValue={_id}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
+                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
                                                                 <Tooltip title="Stripe Id" placement="top">
@@ -363,7 +363,7 @@ const Page = () => {
                                                                         id="outlined-required"
                                                                         placeholder="Stripe Id"
                                                                         defaultValue={accountStripeId}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
+                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
                                                             </Stack>
@@ -510,7 +510,7 @@ const Page = () => {
                                                                         id="outlined-required"
                                                                         placeholder="Account Slug"
                                                                         defaultValue={accountSlug}
-                                                                        sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
+                                                                        inputProps={{ style: { textAlign: 'center', textTransform: 'lowercase' } }}
                                                                     />
                                                                 </Tooltip>
                                                                 <Tooltip title="Invitation Link" placement="top">

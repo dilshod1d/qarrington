@@ -33,7 +33,7 @@ const Page = () => {
       "start month",
       "start day",
       "start year",
-      "institution id",
+      "underwriter id",
       "founder id",
     ];
   }
@@ -243,7 +243,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="institution id"
+                placeholder="underwriter id"
               />
             </Tooltip>
           </Stack>
@@ -371,18 +371,16 @@ const Page = () => {
                           </Button>
                         </Link>
 
-                        {institutions && institutions.slice(0, 1).map(({ _id, institutionSlug }) => (
-                          <Link key={_id} href={`/institutions/${institutionSlug}`}>
-                            <Button
-                              size="large"
-                              sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
-                              variant="contained"
-                              fullWidth={true}
-                            >
-                              manage companies
-                            </Button>
-                          </Link>
-                        ))}
+                        <Link href={`/companies`}>
+                          <Button
+                            size="large"
+                            sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                            variant="contained"
+                            fullWidth={true}
+                          >
+                            manage companies
+                          </Button>
+                        </Link>
 
                         <Button
                           style={FormButton}
