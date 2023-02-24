@@ -24,8 +24,6 @@ export const getServerSideProps = async (ctx) => {
       let offset = Number(subchild.slice(0, subchild.indexOf('.xml')));
 
       try {
-        let x = null;
-        x.go();
         const { count } = await extract_attr(
           await axios.get(
             `${process.env.NEXT_PUBLIC_API_URL}destinations?query=destination-count`
