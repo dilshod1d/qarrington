@@ -16,8 +16,8 @@ const Page = () => {
     return [
       "access key",
       "secret key",
-      "contact email",
-      "contact number",
+      "email address",
+      "phone number",
       "first name",
     ];
   }
@@ -58,7 +58,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="contact email"
+                placeholder="email address"
               />
             </Tooltip>
           </Stack>
@@ -71,7 +71,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="contact number"
+                placeholder="phone number"
               />
             </Tooltip>
           </Stack>

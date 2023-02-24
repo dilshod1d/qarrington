@@ -313,6 +313,7 @@ const Page = () => {
                                                                 <Tooltip title="Phone Number" placement="top">
                                                                     <TextField
                                                                         required
+                                                                        type="number"
                                                                         id="outlined-required"
                                                                         placeholder="Phone Number"
                                                                         defaultValue={accountContacts.contactPhone}
@@ -509,7 +510,7 @@ const Page = () => {
                                                                         id="outlined-required"
                                                                         placeholder="Account Slug"
                                                                         defaultValue={accountSlug}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
+                                                                        sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
                                                                     />
                                                                 </Tooltip>
                                                                 <Tooltip title="Invitation Link" placement="top">
@@ -518,7 +519,7 @@ const Page = () => {
                                                                         id="outlined-required"
                                                                         placeholder="Invitation Link"
                                                                         defaultValue={accountSlug}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
+                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
                                                             </Stack>
@@ -532,7 +533,7 @@ const Page = () => {
                                                                         id="outlined-required"
                                                                         placeholder="Referral Total"
                                                                         defaultValue={accountReferrals.referralTotal}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
+                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
                                                                 <Tooltip title="Referral Earnings" placement="top">
@@ -541,7 +542,7 @@ const Page = () => {
                                                                         id="outlined-required"
                                                                         placeholder="Referral Earnings"
                                                                         defaultValue={accountReferrals.referralEarnings}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
+                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
                                                             </Stack>

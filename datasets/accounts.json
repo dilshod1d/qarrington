@@ -1,13 +1,11 @@
 [
     {
         "accountSlug": "kayra",
-        "accountReferrals": [
-            {
-                "referralId": "referralId",
-                "referralTotal": "846",
-                "referralEarnings": "2,850"
-            }
-        ],
+        "accountReferrals": {
+            "referralId": "referralId",
+            "referralTotal": "846",
+            "referralEarnings": "2,850"
+        },
         "accountKeys": {
             "accessKey": "accessKey",
             "secretKey": "secretKey"

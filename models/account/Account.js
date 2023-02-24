@@ -3,13 +3,11 @@ import mongoose from 'mongoose';
 const AccountSchema = new mongoose.Schema(
     {
         accountSlug: { type: String },
-        accountReferrals: [
-            {
-                referralId: { type: String },
-                referralTotal: { type: String },
-                referralEarnings: { type: String }
-            }
-        ],
+        accountReferrals: {
+            referralId: { type: String },
+            referralTotal: { type: String },
+            referralEarnings: { type: String }
+        },
         accountKeys: {
             accessKey: { type: String },
             secretKey: { type: String }
