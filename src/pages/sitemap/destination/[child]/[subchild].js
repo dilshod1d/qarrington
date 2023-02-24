@@ -26,7 +26,8 @@ export const getServerSideProps = async (ctx) => {
       try {
         const { count } = await extract_attr(
           await axios.get(
-            `${process.env.NEXT_PUBLIC_APP_URL}api/destinations?query=destination-count`
+            `${process.env.NEXT_PUBLIC_APP_URL}api/destinations?query=destination-count`,
+            { headers: { 'Content-Type': 'application/json' } }
           ),
           'count'
         );
@@ -40,13 +41,15 @@ export const getServerSideProps = async (ctx) => {
 
         const { destinations: destA } = extract_attr(
           await axios.get(
-            `${process.env.NEXT_PUBLIC_APP_URL}api/destinations?query=destination-sitemap&iterations=${iterations}&offset=${totalOffset}`
+            `${process.env.NEXT_PUBLIC_APP_URL}api/destinations?query=destination-sitemap&iterations=${iterations}&offset=${totalOffset}`,
+            { headers: { 'Content-Type': 'application/json' } }
           ),
           'destinations'
         );
         const { destinations } = extract_attr(
           await axios.get(
-            `${process.env.NEXT_PUBLIC_APP_URL}api/destinations?query=destination-distinct`
+            `${process.env.NEXT_PUBLIC_APP_URL}api/destinations?query=destination-distinct`,
+            { headers: { 'Content-Type': 'application/json' } }
           ),
           'destinations'
         );
