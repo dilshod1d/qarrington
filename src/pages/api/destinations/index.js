@@ -7,7 +7,7 @@ async function handler(req, res) {
   const { destinationToUrl } = req.query;
   const { destinationFromUrl } = req.query;
 
-  dbConnect();
+  await dbConnect();
 
   // read items
 

@@ -5,7 +5,7 @@ async function handler(req, res) {
   const { method } = req;
   const { companyTicker } = req.query;
 
-  dbConnect();
+  await dbConnect();
 
   // read items
 

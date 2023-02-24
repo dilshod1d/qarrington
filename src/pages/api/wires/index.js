@@ -4,7 +4,7 @@ import Wire from '../../../../models/wire/Wire';
 async function handler(req, res) {
   const { method } = req;
 
-  dbConnect();
+  await dbConnect();
 
   // read items
 
