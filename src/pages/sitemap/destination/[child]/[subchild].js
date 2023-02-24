@@ -30,7 +30,9 @@ export const getServerSideProps = async (ctx) => {
           ),
           'count'
         );
-        let totalOffset = Math.floor((count/childSitemapSize)*page+offset  );
+        let totalOffset = Math.floor(
+          (count / childSitemapSize) * page + offset
+        );
         // let totalOffset =
         //   page * childSitemapSize * pageUrlSize + offset * pageUrlSize;
 
@@ -90,6 +92,15 @@ export const getServerSideProps = async (ctx) => {
         // .skip(totalOffset);
       } catch (err) {
         console.error('An Error Occured : ', err);
+        return {
+          // redirect: {
+          //   permanent: false,
+          //   destination: '/500'
+          // },
+          props: {
+            serverErrors: JSON.stringify(err, Object.getOwnPropertyNames(err))
+          }
+        };
       }
     }
   }
@@ -105,7 +116,11 @@ export const getServerSideProps = async (ctx) => {
   return getServerSideSitemap(ctx, fields);
 };
 
-export default function Sitemap() {}
+export default function Sitemap(props) {
+  console.log(props);
+
+  return <></>;
+}
 
 /*
 

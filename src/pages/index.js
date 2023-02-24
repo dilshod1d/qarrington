@@ -38,8 +38,6 @@ import packageJson from '../../package.json'
 
 const Page = () => {
 
-    console.log(packageJson.version)
-
     // const fetcher = (...args) => fetch(...args).then(res => res.json());
     // const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
     // const { data: subscriptions } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/subscriptions`, fetcher);
