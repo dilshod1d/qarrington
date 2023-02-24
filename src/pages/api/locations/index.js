@@ -5,7 +5,7 @@ async function handler(req, res) {
   const { method } = req;
   const { locationUrl } = req.query;
 
-  dbConnect();
+  await dbConnect();
 
   // read items
 

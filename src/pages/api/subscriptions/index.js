@@ -5,7 +5,7 @@ async function handler(req, res) {
   const { method } = req;
   const { subscriptionSlug } = req.query;
 
-  dbConnect();
+  await dbConnect();
 
   // read items
 

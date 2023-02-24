@@ -4,7 +4,7 @@ import Language from '../../../../models/language/Language';
 async function handler(req, res) {
   const { method } = req;
 
-  dbConnect();
+  await dbConnect();
 
   // read items
 

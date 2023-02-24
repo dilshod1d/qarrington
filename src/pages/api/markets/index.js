@@ -4,7 +4,7 @@ import Market from '../../../../models/market/Market';
 async function handler(req, res) {
   const { method } = req;
 
-  dbConnect();
+  await dbConnect();
 
   // read items
 

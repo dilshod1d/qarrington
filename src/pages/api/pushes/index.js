@@ -4,7 +4,7 @@ import Push from '../../../../models/push/Push';
 async function handler(req, res) {
   const { method } = req;
 
-  dbConnect();
+  await dbConnect();
 
   // read items
 
