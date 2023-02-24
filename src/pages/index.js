@@ -39,6 +39,8 @@ import packageJson from '../../package.json'
 const Page = () => {
 
     console.log(packageJson.version)
+    console.log(process.env.NEXT_PUBLIC_API_URL)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}unknown`, {method: "GET"})
 
     // const fetcher = (...args) => fetch(...args).then(res => res.json());
     // const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
