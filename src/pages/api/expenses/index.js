@@ -4,12 +4,13 @@ import Expense from '../../../../models/expense/Expense';
 async function handler(req, res) {
   const { method } = req;
   const { expenseUrl } = req.query;
+  const { query } = req.query;
 
   await dbConnect();
 
   // read items
 
-  if (method === "GET") {
+  if (method === 'GET') {
     if (expenseUrl) {
       try {
         const readItems = await Expense.findOne({ expenseUrl: expenseUrl });
@@ -19,8 +20,20 @@ async function handler(req, res) {
       }
     } else {
       try {
-        const readItems = await Expense.find();
-        res.status(200).json(readItems);
+        if (query === 'expense-count') {
+          const count = await Expense.count();
+          return res.status(200).json({ count });
+        } else if (query === 'expense-sitemap') {
+          const { offset } = req.query;
+          const expenses = await Expense.find()
+            .select({ expenseUrl: 1 })
+            .limit(1)
+            .skip(offset);
+          return res.status(200).json({ expenses });
+        } else {
+          const readItems = await Expense.find();
+          return res.status(200).json(readItems);
+        }
       } catch (err) {
         res.status(500).json(err);
       }
