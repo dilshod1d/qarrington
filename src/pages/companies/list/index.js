@@ -33,8 +33,8 @@ const Page = () => {
       "start month",
       "start day",
       "start year",
-      "underwriter id",
-      "founder id",
+      "companyUnderwriterAccountId",
+      "companyFounderAccountId",
     ];
   }
 
@@ -243,7 +243,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="underwriter id"
+                placeholder="companyUnderwriterAccountId"
               />
             </Tooltip>
           </Stack>
@@ -256,7 +256,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="founder id"
+                placeholder="companyFounderAccountId"
               />
             </Tooltip>
           </Stack>
