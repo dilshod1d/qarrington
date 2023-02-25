@@ -37,7 +37,10 @@ export const getServerSideProps = async (ctx) => {
           }
         };
       }
-      let expCount = await Expense.count();
+      const {data:{count: expCount}} = await axios.get(
+        `${process.env.NEXT_PUBLIC_APP_URL}api/expenses?query=expense-count`,
+        { headers: { 'Content-Type': 'application/json' } }
+      );
       let locCount = await Location.count();
       const totalRoutes = expCount * locCount;
       const nbrLocPages = Math.ceil(locCount / expenses_pageUrlSize);

@@ -22,7 +22,7 @@ async function handler(req, res) {
       
       try {
         if (query === 'expense-count') {
-          const count = await Destination.count();
+          const count = await Expense.count();
           return res.status(200).json({ count });
         }  else if (query === 'expense-sitemap') {
           const { offset } = req.query;
