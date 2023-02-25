@@ -4,6 +4,7 @@ import dbConnect from '../../../lib/dbConnect';
 async function handler(req, res) {
   const { method } = req;
   const { locationUrl } = req.query;
+  const { query } = req.query;
 
   await dbConnect();
 
@@ -19,8 +20,20 @@ async function handler(req, res) {
       }
     } else {
       try {
-        const readItems = await Location.find();
-        res.status(200).json(readItems);
+        if (query === 'location-count') {
+          const count = await Location.count();
+          return res.status(200).json({ count });
+        } else if (query === 'location-sitemap') {
+          const { offset, limit } = req.query;
+          const locations = await Location.find()
+            .select({ locationUrl: 1 })
+            .limit(limit)
+            .skip(offset || 0);
+          return res.status(200).json({ locations });
+        } else {
+          const readItems = await Location.find();
+          return res.status(200).json(readItems);
+        }
       } catch (err) {
         res.status(500).json(err);
       }

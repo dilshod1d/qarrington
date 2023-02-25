@@ -37,11 +37,18 @@ export const getServerSideProps = async (ctx) => {
           }
         };
       }
-      const {data:{count: expCount}} = await axios.get(
+      const {
+        data: { count: expCount }
+      } = await axios.get(
         `${process.env.NEXT_PUBLIC_APP_URL}api/expenses?query=expense-count`,
         { headers: { 'Content-Type': 'application/json' } }
       );
-      let locCount = await Location.count();
+      const {
+        data: { count: locCount }
+      } = await axios.get(
+        `${process.env.NEXT_PUBLIC_APP_URL}api/locations?query=location-count`,
+        { headers: { 'Content-Type': 'application/json' } }
+      );
       const totalRoutes = expCount * locCount;
       const nbrLocPages = Math.ceil(locCount / expenses_pageUrlSize);
 
@@ -66,10 +73,12 @@ export const getServerSideProps = async (ctx) => {
         { headers: { 'Content-Type': 'application/json' } }
       );
       // Get the locations
-      const locations = await Location.find()
-        .select({ locationUrl: 1 })
-        .limit(expenses_pageUrlSize)
-        .skip(offsetParam);
+      const {
+        data: { locations }
+      } = await axios.get(
+        `${process.env.NEXT_PUBLIC_APP_URL}api/locations?query=location-sitemap&limit=${expenses_pageUrlSize}&offset=${offsetParam}`,
+        { headers: { 'Content-Type': 'application/json' } }
+      );
       expenses.forEach((expense) => {
         const expenseUrl = expense.expenseUrl
           .replace(/\s+/g, '-')
