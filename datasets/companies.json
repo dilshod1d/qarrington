@@ -1,92 +1,109 @@
 [
     {
         "companyTicker": "qar",
-        "companyListing": {
-            "listingName": "Qarrington",
-            "listingLogo": "/assets/media/companies/qarrington.png",
-            "listingProduct": "subscription exchange",
-            "listingHeadline": "buy and sell subscrriptions",
-            "listingDescription": "Qarrington is a subscription exchange",
-            "listingIndustry": "SaaS",
-            "listingWebsite": "https://qarrington.com",
-            "listingEmail": "team@qarrington.com",
-            "listingMarket": "International",
-            "listingIsSubmitted": {
-                "isSubmitted": "TRUE",
-                "isSubmittedAt": "05-08-202"
-            },
-            "listingIsListed": {
-                "isListed": "TRUE",
-                "isListedAt": "07-18-2022"
-            },
-            "listingIsLaunched": {
-                "isLaunched": "TRUE",
-                "isLaunchedAt": "08-28-2022"
-            }
+        "companyDetails": {
+            "companyName": "Qarrington",
+            "companyLogo": "/assets/media/companies/qarrington.png",
+            "companyHeadline": "This is Qarrington Headline",
+            "companyProduct": "This is Qarrington Product",
+            "companyProductId": "VIZZrgpEOt",
+            "companyDescription": "This is Qarrington company description.",
+            "companyIndustry": "SaaS",
+            "companyWebsite": "https://qarrington.com",
+            "companyEmail": "team@qarrington.com",
+            "companyMarket": "International",
+            "companyKey": "q2WwbyJi52cixXqDlPQuBHkDkSUSygTY",
+            "companyWhitelist": "8,523"
         },
-        "companyIso": {
-            "isoUnits": "5,000,000",
-            "isoPrice": "25",
-            "isoStart": {
-                "startMonth": "10",
-                "startDay": "25",
-                "startYear": "2022"
+        "companyFounders": [
+            {
+                "companyFounderFirstName": "Kim",
+                "companyFounderAvatarUrl": "/assets/media/accounts/kim.webp",
+                "companyFounderIsActive": "dot",
+                "companyFounderCurrentTitle": "CEO",
+                "companyFounderAccountId": "XGFbLb5TpP",
+                "companyFounderIsCreatedAt": "02-04-2022",
+                "companyFounderIsUpdatedAt": "04-05-2023"
             },
-            "isoTotalSubscribers": "3,540",
-            "isoSubscribers": [
+            {
+                "companyFounderFirstName": "Jess",
+                "companyFounderAvatarUrl": "/assets/media/accounts/jess.webp",
+                "companyFounderIsActive": "dot",
+                "companyFounderCurrentTitle": "CTO",
+                "companyFounderAccountId": "XGFbLb5TpP",
+                "companyFounderIsCreatedAt": "02-04-2022",
+                "companyFounderIsUpdatedAt": "04-05-2023"
+            },
+            {
+                "companyFounderFirstName": "Alicia",
+                "companyFounderAvatarUrl": "/assets/media/accounts/alicia.webp",
+                "companyFounderIsActive": "",
+                "companyFounderCurrentTitle": "CMO",
+                "companyFounderAccountId": "XGFbLb5TpP",
+                "companyFounderIsCreatedAt": "02-04-2022",
+                "companyFounderIsUpdatedAt": "04-05-2023"
+            }
+        ],
+        "companyIso": {
+            "companyIsoUnits": "5,000,000",
+            "companyIsoPrice": "25",
+            "companyIsoDate": "05-05-2023",
+            "companyIsoSubscribers": [
                 {
-                    "subscriberId": "subscriberId",
-                    "subscriberUnits": "4,000",
-                    "subscriberPaidAt": "11-22-2022",
-                    "subscriberAsset": "100,000",
-                    "subscriberAddedAt": "09-21-2022"
-                },
-                {
-                    "subscriberId": "subscriberId",
-                    "subscriberUnits": "2,500",
-                    "subscriberPaidAt": "11-28-2022",
-                    "subscriberAsset": "250,500",
-                    "subscriberAddedAt": "09-25-2022",
-                    "subscriberslideCount": "7,450"
+                    "companySubscriberUnits": "543",
+                    "companySubscriberPaidAt": "05-06-2023",
+                    "companySubscriberPortfolio": "854,349",
+                    "companySubscriberAccountId": "iKVnWRGcJf",
+                    "companySubscriberAddedAt": "05-12-2023"
                 }
             ],
-            "isoAmount": "27,000,000",
-            "isoAmountWiredAt": "12-24-2022"
-        },
-        "companySubscription": {
-            "subscriptionMarketCap": "120,000,000",
-            "subscriptionVolume": "2,500,000",
-            "subscriptionPrice": "48",
-            "subscriptionKey": "subscriptionKey",
-            "subscriptionUpdatedAt": "12-18-2022"
-        },
-        "companyUnderwriter": {
-            "underwriterAccount": {
-                "accountId": "accountId",
-                "accountStripeId": "accountStripeId"
+            "companyIsoAmount": "8,234,540",
+            "companyIsoRaised": "6,439,500",
+            "companyIsoProceed": {
+                "companyIsoProceedIsMade": "TRUE",
+                "companyIsoProceedIsMadeTo": "79C331E34BC2F",
+                "companyIsoProceedIsMadeAt": "05-08-2023"
             }
         },
-        "companyFounder": {
-            "founderAccount": {
-                "accountId": "accountId",
-                "accountStripeId": "accountStripeId"
-            }
-        },
-        "companySubscribers": [
+        "companyCustomers": [
             {
-                "subscriberId": "subscriberId",
-                "subscriberHasAccess": "TRUE",
-                "subscriberUnits": "450",
-                "subscriberPrice": "46",
-                "subscriberNewCount": "54,000"
+                "companyCustomerFirstName": "Alex",
+                "companyCustomerAvatarUrl": "/assets/media/accounts/alex.webp",
+                "companyCustomerIsActive": "",
+                "companyCustomerCurrentTitle": "Real Estate Agent",
+                "companyCustomerAccountId": "823C217B3F72ACD1",
+                "companyCustomerIsCreated": "TRUE",
+                "companyCustomerIsCreatedAt": "07-14-2023"
             },
             {
-                "subscriberId": "subscriberId",
-                "subscriberHasAccess": "TRUE",
-                "subscriberUnits": "280",
-                "subscriberPrice": "52",
-                "subscriberNewCount": "84,520"
+                "companyCustomerFirstName": "Maria",
+                "companyCustomerAvatarUrl": "/assets/media/accounts/maria.webp",
+                "companyCustomerIsActive": "dot",
+                "companyCustomerCurrentTitle": "Social Media Specialist",
+                "companyCustomerAccountId": "823C217B3F72ACD1",
+                "companyCustomerIsCreated": "TRUE",
+                "companyCustomerIsCreatedAt": "07-14-2023"
             }
-        ]
+        ],
+        "companyAnalytics": [
+            {
+                "companyCapitalization": "8,434,504",
+                "companyVolume": "5,400,250",
+                "companyPrice": "45",
+                "companyPricePercentChange": "4.55",
+                "companyPricePointChange": "0.85",
+                "companyActiveCustomers": "52,329",
+                "companyIsAnalyzedAt": "11:45:05, 06-28-2023"
+            }
+        ],
+        "companyAccountId": "79C331E34BC2F",
+        "companyStatus": {
+            "companyIsSubmitted": "TRUE",
+            "companyIsSubmittedAt": "05-23-2023",
+            "companyIsListed": "TRUE",
+            "companyIsListedAt": "06-23-2023",
+            "companyIsLaunched": "TRUE",
+            "companyIsLaunchedAt": "05-17-2023"
+        }
     }
 ]

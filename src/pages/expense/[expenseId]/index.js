@@ -53,7 +53,7 @@ const Page = ({ url, name }) => {
                       alt="Qarrington Logo"
                       height={32}
                       width={32}
-                      src="/assets/media/logos/aa/primary.png"
+                      src="/assets/media/companies/qarrington.png"
                     />
                   </Link>
                 </Box>

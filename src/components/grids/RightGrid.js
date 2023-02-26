@@ -96,13 +96,13 @@ const Component = () => {
                   Opportunities
                 </Typography>
               </Link>
-              <Link href="/underwriters">
+              <Link href="/help">
                 <Typography
                   variant="body2"
                   color="secondary"
                   sx={BreadcrumbItem}
                 >
-                  Underwriters
+                  Help
                 </Typography>
               </Link>
               <Link href="/terms">
@@ -121,6 +121,15 @@ const Component = () => {
                   sx={BreadcrumbItem}
                 >
                   Privacy
+                </Typography>
+              </Link>
+              <Link href="/account/access">
+                <Typography
+                  variant="body2"
+                  color="secondary"
+                  sx={BreadcrumbItem}
+                >
+                  Login
                 </Typography>
               </Link>
             </Breadcrumbs>

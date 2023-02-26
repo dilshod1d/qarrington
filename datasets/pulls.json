@@ -1,28 +1,30 @@
 [
     {
-        "pullSlug": "qa",
-        "pullPrice": "56",
-        "pullRequests": {
-            "requestPairId": "",
-            "requestUnits": "648",
-            "requestPrice": "34",
-            "requestAmount": "24,430",
-            "requestIsMatched": "TRUE",
-            "requestSubmittedAt": "10-10-2022",
-            "requestMatchedAt": "10-12-2022"
-        },
-        "pullSubscription": {
-            "subscriptionId": "subscriptionId",
-            "subscriptionName": "Qarrington",
-            "subscriptionLogo": "/assets/media/subscriptions/qarrington.png",
-            "subscriptionTicker": "QA",
-            "subscriptionUnits": "643",
-            "subscriptionBalance": "642,875"
+        "pullTicker": "twn",
+        "pullUnits": "286",
+        "pullAmount": "54,062",
+        "pullCompany": {
+            "pullCompanyId": "d7dn44jsmje",
+            "pullCompanyName": "Twined",
+            "pullCompanyLogo": "/assets/media/companies/twined.png",
+            "pullCompanyUnits": "438",
+            "pullCompanyPortfolio": "76,248",
+            "pullCompanyPrice": "62",
+            "pullCompanyCost": "18"
         },
         "pullAccount": {
-            "accountId": "accountId",
-            "accountBalance": "43,985"
+            "pullAccountId": "h77eh4wwwj3",
+            "pullAccountPortfolio": "875,241"
         },
-        "pullUpdatedAt": "10-12-2022"
+        "pullStatus": {
+            "pullIsMatched": "TRUE",
+            "pullIsMatchedWith": "u7em4minn4kww",
+            "pullIsMatchedAt": "05-21-2023",
+            "pullIsTransferred": "TRUE",
+            "pullIsTransferredAt": "06-18-2023",
+            "pullIsSubmittedAt": "05-28-2023",
+            "pullIsCanceled": "FALSE",
+            "pullIsCanceledAt": ""
+        }
     }
 ]

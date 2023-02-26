@@ -3,17 +3,27 @@ import Push from '../../../../models/push/Push';
 
 async function handler(req, res) {
   const { method } = req;
+  const { pushTicker } = req.query;
 
   await dbConnect();
 
   // read items
 
   if (method === "GET") {
-    try {
-      const readItems = await Push.find();
-      res.status(200).json(readItems);
-    } catch (err) {
-      res.status(500).json(err);
+    if (pushTicker) {
+      try {
+        const readItems = await Push.findOne({ pushTicker: pushTicker });
+        res.status(200).json(readItems);
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    } else {
+      try {
+        const readItems = await Push.find();
+        res.status(200).json(readItems);
+      } catch (err) {
+        res.status(500).json(err);
+      }
     }
   }
 

@@ -3,16 +3,16 @@ import Pull from '../../../../models/pull/Pull';
 
 async function handler(req, res) {
   const { method } = req;
-  const { pullSlug } = req.query;
+  const { pullTicker } = req.query;
 
   await dbConnect();
 
   // read items
 
   if (method === "GET") {
-    if (pullSlug) {
+    if (pullTicker) {
       try {
-        const readItems = await Pull.findOne({ pullSlug: pullSlug });
+        const readItems = await Pull.findOne({ pullTicker: pullTicker });
         res.status(200).json(readItems);
       } catch (err) {
         res.status(500).json(err);

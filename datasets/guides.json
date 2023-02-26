@@ -1,0 +1,44 @@
+[
+  {
+    "guideForFounder": [
+      {
+        "guideForFounderIcon": "/assets/media/accounts/kim.webp",
+        "guideForFounderTitle": "Submit",
+        "guideForFounderContent": "First of all, submit a company for listing.",
+        "guideForFounderTooltip": "When you submit a company for listing, we will review the company to ensure it meets all our listing requirements."
+      },
+      {
+        "guideForFounderIcon": "/assets/media/accounts/sasha.webp",
+        "guideForFounderTitle": "List",
+        "guideForFounderContent": "Next, the company's ISO will be listed.",
+        "guideForFounderTooltip": "When a company is listed, the listing will start at 10:00 PM EST on the start date and end at 11:00 PM EST on the end date."
+      },
+      {
+        "guideForFounderIcon": "/assets/media/accounts/ciara.webp",
+        "guideForFounderTitle": "Launch",
+        "guideForFounderContent": "Finally, subscribers can buy the ISO.",
+        "guideForFounderTooltip": "When a company's ISO is launched on Qarrington, only the whitelisted subscribers can participate in the ISO."
+      }
+    ],
+    "guideForCustomer": [
+      {
+        "guideForCustomerIcon": "/assets/media/accounts/ciara.webp",
+        "guideForCustomerTitle": "Open",
+        "guideForCustomerContent": "First of all, create a Qarrington account.",
+        "guideForCustomerTooltip": "Primarily, you can always use your Qarrington account as an underwriter, as a company, or as a subscriber."
+      },
+      {
+        "guideForCustomerIcon": "/assets/media/accounts/judy.webp",
+        "guideForCustomerTitle": "Connect",
+        "guideForCustomerContent": "After that, link your online bank account.",
+        "guideForCustomerTooltip": "Each time you sell subscriptions, the subscription payouts will automatically be sent to your linked bank account."
+      },
+      {
+        "guideForCustomerIcon": "/assets/media/accounts/maria.webp",
+        "guideForCustomerTitle": "Pull",
+        "guideForCustomerContent": "And finally, buy and sell subscriptions.",
+        "guideForCustomerTooltip": "If your account is approved, you will be able to buy and sell the subscriptions of the listed companies on Qarrington."
+      }
+    ]
+  }
+]

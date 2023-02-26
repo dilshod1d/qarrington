@@ -9,8 +9,13 @@ import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
 import HistoryEduRoundedIcon from '@mui/icons-material/HistoryEduRounded';
 import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
 import { Avatar, Badge, Box, Button, Card, Container, Grid, Hidden, Stack, styled, TextField, Tooltip, Typography } from '@mui/material';
+import useSWR from 'swr';
 
 const Page = () => {
+
+  const fetcher = (...args) => fetch(...args).then(res => res.json());
+  const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
+  const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
 
   const getSteps = () => {
     return [
@@ -113,7 +118,7 @@ const Page = () => {
     <>
 
       <Head>
-        <title>Create Account • Qarrington</title>
+        <title>Open Account • Qarrington</title>
         <meta
           name="description"
           content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
@@ -149,7 +154,7 @@ const Page = () => {
                       alt="Qarrington Logo"
                       height={32}
                       width={32}
-                      src="/assets/media/logos/aa/primary.png"
+                      src="/assets/media/companies/qarrington.png"
                     />
                   </Link>
                 </Box>
@@ -270,38 +275,42 @@ const Page = () => {
 
               <Container maxWidth="sm">
                 <Box textAlign="center" mb={2}>
-                  <Carousel>
-                    {underwriters && underwriters.map(({ _id, name, title, avatar, content, isActive }) => (
-                      <Box key={_id}>
-                        <Box
-                          style={{
-                            display: 'flex',
-                            justifyContent: 'center'
-                          }}
-                        >
-                          <StyledBadge
-                            overlap="circular"
-                            anchorOrigin={{
-                              vertical: 'bottom',
-                              horizontal: 'right'
-                            }}
-                            variant={isActive}
-                          >
-                            <Avatar
-                              style={{ width: 80, height: 80 }}
-                              alt={name}
-                              src={avatar}
-                            />
-                          </StyledBadge>
-                        </Box>
-                        <Box marginTop="16px">
-                          <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{name}</Typography>
-                          <Typography variant="body" component="div" gutterBottom>{title}</Typography>
-                          <Typography variant="h5" component="div" fontWeight="600">{content}</Typography>
-                        </Box>
-                      </Box>
-                    ))}
-                  </Carousel>
+                  {stories && stories.map(({ _id, storyByFounder }) => (
+                    <>
+                      <Carousel>
+                        {storyByFounder && storyByFounder.map(({ _id, storyByFounderName, storyByFounderTitle, storyByFounderAvatar, storyByFounderContent, storyByFounderIsActive }) => (
+                          <Box key={_id}>
+                            <Box
+                              style={{
+                                display: 'flex',
+                                justifyContent: 'center'
+                              }}
+                            >
+                              <StyledBadge
+                                overlap="circular"
+                                anchorOrigin={{
+                                  vertical: 'bottom',
+                                  horizontal: 'right'
+                                }}
+                                variant={storyByFounderIsActive}
+                              >
+                                <Avatar
+                                  style={{ width: 80, height: 80 }}
+                                  alt={storyByFounderName}
+                                  src={storyByFounderAvatar}
+                                />
+                              </StyledBadge>
+                            </Box>
+                            <Box marginTop="16px">
+                              <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByFounderName}</Typography>
+                              <Typography variant="body" component="div" gutterBottom>{storyByFounderTitle}</Typography>
+                              <Typography variant="h5" component="div" fontWeight="600">{storyByFounderContent}</Typography>
+                            </Box>
+                          </Box>
+                        ))}
+                      </Carousel>
+                    </>
+                  ))}
                 </Box>
 
                 {/* principles start here */}
@@ -309,41 +318,45 @@ const Page = () => {
                 <Grid item xs={12} mt={2}>
                   <Grid container spacing={1}>
 
-                    {principles && principles.map(({ _id, name, image, helper, content }) => (
-                      <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                        <Tooltip title={helper} placement="top">
-                          <Card style={{ padding: '22px' }}>
-                            <Box
-                              style={{
-                                display: 'flex',
-                                justifyContent: 'center'
-                              }}
-                            >
-                              <Badge
-                                overlap="circular"
-                                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                badgeContent={
-                                  <InfoRoundedIcon fontSize="small" color="primary" />
-                                }
-                              >
-                                <Avatar sx={{ bgcolor: green[200] }}>
-                                  {image}
-                                </Avatar>
-                              </Badge>
-                            </Box>
-                            <Box style={{ textAlign: 'center' }}>
-                              <Box mt={1.5}>
-                                <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
-                                  {name}
-                                </Typography>
-                                <Typography mt={0.5} variant="body2" fontWeight={600} color="secondary">
-                                  {content}
-                                </Typography>
-                              </Box>
-                            </Box>
-                          </Card>
-                        </Tooltip>
-                      </Grid>
+                    {guides && guides.map(({ _id, guideForFounder, guideForCustomer }) => (
+                      <>
+                        {guideForCustomer && guideForCustomer.map(({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
+                          <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                            <Tooltip title={guideForCustomerTooltip} placement="top">
+                              <Card style={{ padding: '22px' }}>
+                                <Box
+                                  style={{
+                                    display: 'flex',
+                                    justifyContent: 'center'
+                                  }}
+                                >
+                                  <Badge
+                                    overlap="circular"
+                                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                    badgeContent={
+                                      <InfoRoundedIcon fontSize="small" color="primary" />
+                                    }
+                                  >
+                                    <Avatar sx={{ bgcolor: green[200] }}>
+                                      {guideForCustomerIcon}
+                                    </Avatar>
+                                  </Badge>
+                                </Box>
+                                <Box style={{ textAlign: 'center' }}>
+                                  <Box mt={1.5}>
+                                    <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
+                                      {guideForCustomerTitle}
+                                    </Typography>
+                                    <Typography mt={0.5} variant="body2" fontWeight={600} color="secondary">
+                                      {guideForCustomerContent}
+                                    </Typography>
+                                  </Box>
+                                </Box>
+                              </Card>
+                            </Tooltip>
+                          </Grid>
+                        ))}
+                      </>
                     ))}
 
                   </Grid>
@@ -455,49 +468,6 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
   },
 }));
-
-const underwriters = [
-  {
-    _id: 1,
-    name: "Amy",
-    title: "Partner @ Y Combinator",
-    avatar: "/assets/media/underwriters/amy.png",
-    content: "At YC, we see the lack of exits and interest from LPs as some of the dilemmas faced by many startup incubators and accelerators. Well then ... a subscription exchange is born.",
-    isActive: ""
-  },
-  {
-    _id: 2,
-    name: "Scott",
-    title: "Partner @ French Tech Visa",
-    avatar: "/assets/media/underwriters/scott.png",
-    content: "Working with Qarrington in today's global economic downturn has been an absolute game-changer for the startups we back through the French Tech Visa Program.",
-    isActive: "dot"
-  },
-  {
-    _id: 3,
-    name: "Ciara",
-    title: "Partner @ 500 StartUps",
-    avatar: "/assets/media/underwriters/ciara.png",
-    content: "Whether it's an accelerator like 500 StartUps or a venture capital firm like Accel, investing in 100 startups and expecting 1 unicorn exit in 10 years is beyond flawed.",
-    isActive: ""
-  },
-  {
-    _id: 4,
-    name: "Adam",
-    title: "Partner @ Gorilla Ventures",
-    avatar: "/assets/media/underwriters/adam.png",
-    content: "As a startup incubator, making 20 deals to hit ROI with 1 was tough for us. On Qarrington, we've seen the possibility of making 20 deals and hitting ROI from each.",
-    isActive: "dot"
-  },
-  {
-    _id: 5,
-    name: "Judy",
-    title: "Partner @ Chicago Angels",
-    avatar: "/assets/media/underwriters/judy.png",
-    content: "At Chicago Angels, the lack of liquidity is often an issue for us, but we're more than happy to be on a subscription exchange like Qarrington; the world's first of its kind.",
-    isActive: "dot"
-  }
-]
 
 const principles = [
   {

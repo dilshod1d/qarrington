@@ -1,45 +1,25 @@
 [
     {
-        "accountSlug": "kayra",
-        "accountReferrals": {
-            "referralId": "referralId",
-            "referralTotal": "846",
-            "referralEarnings": "2,850"
+        "accountDetails": {
+            "accountFirstName": "Kim",
+            "accountLastName": "Adams",
+            "accountAvatarUrl": "/assets/media/accounts/kim.webp",
+            "accountCurrentTitle": "Product Manager",
+            "accountIsActive": "dot",
+            "accountIsAdmin": "FALSE",
+            "accountStripeId": "XMdo0BtRvh"
         },
         "accountKeys": {
-            "accessKey": "accessKey",
-            "secretKey": "secretKey"
-        },
-        "accountProfile": {
-            "profileFirstName": "Kayra",
-            "profileLastName": "Adams",
-            "profileTitle": "Product Manager",
-            "profileAvatar": "/assets/media/accounts/female/114.webp",
-            "profileIsActive": "dot"
+            "accountAccessKey": "LESif6nvJo",
+            "accountSecretKey": "iKVnWRGcJf"
         },
         "accountContacts": {
-            "contactEmail": "kayra@gmail.com",
-            "contactPhone": "12344567890",
-            "contactLink": "https://linkedin.com/u/kayra-adams",
-            "contactAddress": "123 Kings Street, 98558 Bronx, NY / United States"
+            "accountEmailAddress": "kim@gmail.com",
+            "accountPhoneNumber": "+1234567890",
+            "accountSocialLink": "https://linkedin.com/u/kim_adams",
+            "accountHomeAddress": "123 Home Street, Brooklyn 76382 NY / United States"
         },
-        "accountStories": {
-            "storyTitle": "I love being a Qarrington",
-            "storyContent": "As a startup incubator, making 20 deals to hit ROI with 1 was tough for us. On Qarrington, we've seen the possibility of making 20 deals and hitting ROI from each.",
-            "storyIsApproved": "TRUE",
-            "storyIsApprovedAt": "10-22-2022",
-            "storySubmittedAt": "10-21-2022"
-        },
-        "accountCompany": {
-            "companyId": "companyId",
-            "companyName": "Skimo",
-            "companyEmail": "team@skimo.com",
-            "companyWebsite": "skimo.com",
-            "companyTicker": "SKI",
-            "companyRoute": "https://qarrington.com/companies/ski"
-        },
-        "accountIsAdmin": "FALSE",
-        "accountStripeId": "accountStripeId",
-        "accountCreatedAt": "08-14-2022"
+        "accountIsCreatedAt": "",
+        "accountIsUpdatedAt": ""
     }
 ]

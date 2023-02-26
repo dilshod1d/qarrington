@@ -1,79 +1,84 @@
 import mongoose from 'mongoose';
 
 const CompanySchema = new mongoose.Schema({
-  companyTicker: { type: String },
-  companyListing: {
-    listingName: { type: String },
-    listingLogo: { type: String },
-    listingProduct: { type: String },
-    listingHeadline: { type: String },
-    listingDescription: { type: String },
-    listingIndustry: { type: String },
-    listingWebsite: { type: String },
-    listingEmail: { type: String },
-    listingMarket: { type: String },
-    listingIsSubmitted: {
-      isSubmitted: { type: String },
-      isSubmittedAt: { type: String }
-    },
-    listingIsListed: {
-      isListed: { type: String },
-      isListedAt: { type: String }
-    },
-    listingIsLaunched: {
-      isLaunched: { type: String },
-      isLaunchedAt: { type: String }
-    }
+  companyTicker: { type: String }, // a unique three-letter symbol, also the stripe product name
+  companyDetails: {
+    companyName: { type: String },
+    companyLogo: { type: String },
+    companyHeadline: { type: String },
+    companyProduct: { type: String },
+    companyProductId: { type: String }, // stripe product id
+    companyDescription: { type: String },
+    companyIndustry: { type: String },
+    companyWebsite: { type: String },
+    companyEmail: { type: String },
+    companyMarket: { type: String },
+    companyKey: { type: String }, // a unique 12 characters
+    companyWhitelist: { type: String }, // the total number of whitelisted subscribers
   },
+  companyFounders: [
+    {
+      companyFounderFirstName: { type: String },
+      companyFounderAvatarUrl: { type: String },
+      companyFounderIsActive: { type: String },
+      companyFounderCurrentTitle: { type: String },
+      companyFounderAccountId: { type: String }, // the account id of the founder
+      companyFounderIsCreatedAt: { type: Date, default: Date.now }, // the main user can add a founder
+      companyFounderIsUpdatedAt: { type: Date, default: Date.now } // the main user can update a founder
+    }
+  ],
   companyIso: {
-    isoUnits: { type: String },
-    isoPrice: { type: String },
-    isoStart: {
-      startMonth: { type: String },
-      startDay: { type: String },
-      startYear: { type: String }
-    },
-    isoTotalSubscribers: { type: String },
-    isoSubscribers: [
+    companyIsoUnits: { type: String }, // the inital total subscriptions
+    companyIsoPrice: { type: String }, // the initial price per subscription
+    companyIsoDate: { type: String }, // iso will end 7 days after this date
+    companyIsoSubscribers: [ // the list of the whitelisted subscribers for the iso
       {
-        subscriberId: { type: String },
-        subscriberUnits: { type: String },
-        subscriberPaidAt: { type: String },
-        subscriberAsset: { type: String },
-        subscriberAddedAt: { type: String }
+        companySubscriberUnits: { type: String }, // the subscription units during the iso
+        companySubscriberPaidAt: { type: String }, // the subscriber's cheeckout date
+        companySubscriberPortfolio: { type: String }, // companySubscriberUnits * companyIsoPrice
+        companySubscriberAccountId: { type: String }, // the account id of the subscriber
+        companySubscriberAddedAt: { type: String } // the whitelisted date
       }
     ],
-    isoAmount: { type: String },
-    isoAmountWiredAt: { type: String }
-  },
-  companySubscription: {
-    subscriptionMarketCap: { type: String },
-    subscriptionVolume: { type: String },
-    subscriptionPrice: { type: String },
-    subscriptionKey: { type: String },
-    subscriptionUpdatedAt: { type: String }
-  },
-  companyUnderwriter: {
-    underwriterAccount: {
-      accountId: { type: String },
-      accountStripeId: { type: String }
+    companyIsoAmount: { type: String }, // companyIsoUnits * companyIsoPrice
+    companyIsoRaised: { type: String }, // total companySubscriberUnits * companyIsoPrice
+    companyIsoProceed: { // how companyIsoAmountRaised will be transfered
+      companyIsoProceedIsMade: { type: String }, // default is FALSE
+      companyIsoProceedIsMadeTo: { type: String }, // we will send to the main founder's accountId / accountStripeId
+      companyIsoProceedIsMadeAt: { type: String } //  we will send 90% of companyIsoAmountRaised 7 days after the iso
     }
   },
-  companyFounder: {
-    founderAccount: {
-      accountId: { type: String },
-      accountStripeId: { type: String }
-    }
-  },
-  companySubscribers: [
+  companyCustomers: [ // all iso subscribers will become customers after iso
     {
-      subscriberId: { type: String },
-      subscriberHasAccess: { type: String },
-      subscriberUnits: { type: String },
-      subscriberPrice: { type: String },
-      subscriberNewCount: { type: String }
+      companyCustomerFirstName: { type: String },
+      companyCustomerAvatarUrl: { type: String },
+      companyCustomerIsActive: { type: String },
+      companyCustomerCurrentTitle: { type: String },
+      companyCustomerAccountId: { type: String }, // the account id of the customer
+      companyCustomerIsCreated: { type: String }, // the company must use its companyKey to create customer thru REST API after iso
+      companyCustomerIsCreatedAt: { type: Date, default: Date.now } //  the date the customer is created thru REST API
     }
-  ]
+  ],
+  companyAnalytics: [ // the current and historical data of a company
+    {
+      companyCapitalization: { type: String }, // total companySubscriberUnits * companyPrice or companyIsoPrice
+      companyVolume: { type: String }, // total pullUnits
+      companyPrice: { type: String }, // total pullUnits ÷ pushUnits = X%
+      companyPricePercentChange: { type: String }, // the percentage difference btw current and previous companyPrice i.e. from 8.54 to 7.92 is +7.25%
+      companyPricePointChange: { type: String }, // the point difference btw current and previous companyPrice i.e. from 8.54 to 7.92 is +0.62
+      companyActiveCustomers: { type: String }, // total pullAccountIds of pullCompanyId
+      companyIsRecordedAt: { type: Date, default: Date.now } // update and save every 5 seconds
+    }
+  ],
+  companyAccountId: { type: String }, //  the account id of the company main user / first founder
+  companyStatus: {
+    companyIsSubmitted: { type: String },
+    companyIsSubmittedAt: { type: Date, default: Date.now }, // the day the company is created
+    companyIsListed: { type: String },
+    companyIsListedAt: { type: Date, default: Date.now }, // the day the company iso starts
+    companyIsLaunched: { type: String },
+    companyIsLaunchedAt: { type: Date, default: Date.now } // the day the company iso ends
+  }
 });
 
 export default mongoose.models.Company || mongoose.model('Company', CompanySchema);

@@ -2,55 +2,50 @@ import mongoose from 'mongoose';
 
 const InstitutionSchema = new mongoose.Schema({
   institutionSlug: { type: String },
-  institutionProfile: {
-    profileName: { type: String },
-    profileMarket: { type: String },
-    profileSize: { type: String },
-    profileLogo: { type: String },
-    profileWebsite: { type: String },
-    profileHeadline: { type: String },
-    profileDescription: { type: String }
+  institutionDetails: {
+    institutionName: { type: String },
+    institutionLogo: { type: String },
+    institutionMarket: { type: String },
+    institutionWebsite: { type: String },
+    institutionHeadline: { type: String },
+    institutionDescription: { type: String },
+    institutionSize: { type: String }
   },
   institutionUnderwriters: [
     {
-      underwriterFirstName: { type: String },
-      underwriterTitle: { type: String },
-      underwriterAvatar: { type: String },
-      underwriterStory: {
-        storyContent: { type: String },
-        storyIsApproved: { type: String },
-        storyIsApprovedAt: { type: String },
-        storySubmittedAt: { type: String }
-      },
-      underwriterIsActive: { type: String },
-      underwriterAccountId: { type: String }
+      institutionUnderwriterFirstName: { type: String },
+      institutionUnderwriterCurrentTitle: { type: String },
+      institutionUnderwriterAvatarUrl: { type: String },
+      institutionUnderwriterIsOnline: { type: String },
+      institutionUnderwriterUserId: { type: String },
+      institutionUnderwriterIsCreatedAt: { type: Date },
+      institutionUnderwriterIsRemovedAt: { type: Date },
+      institutionUnderwriterIsUpdatedAt: { type: Date }
     }
   ],
   institutionCompanies: [
     {
-      companyId: { type: String },
-      companyName: { type: String },
-      companyTicker: { type: String },
-      companyLogo: { type: String },
-      companyIsListed: { type: String },
-      companyStartedAt: { type: String }
+      institutionCompanyLogo: { type: String },
+      institutionCompanyName: { type: String },
+      institutionCompanyTicker: { type: String }
     }
   ],
   institutionSlides: [
     {
-      slideName: { type: String },
-      slideCount: { type: String },
-      slideButton: { type: String },
-      slideRoute: { type: String },
-      slideDetail: { type: String },
-      slideTooltip: { type: String }
+      institutionSlideName: { type: String },
+      institutionSlideCount: { type: String },
+      institutionSlideButton: { type: String },
+      institutionSlideRoute: { type: String },
+      institutionSlideDetail: { type: String },
+      institutionSlideTooltip: { type: String }
     }
   ],
-  institutionAccountId: { type: String },
+  institutionUserId: { type: String },
+  institutionIsSubmitted: { type: String },
+  institutionIsSubmittedAt: { type: Date },
   institutionIsApproved: { type: String },
-  institutionIsApprovedAt: { type: String },
-  institutionSubmittedAt: { type: String },
-  institutionUpdatedAt: { type: String }
+  institutionIsApprovedAt: { type: Date },
+  institutionUpdatedAt: { type: Date }
 });
 
 export default mongoose.models.Institution || mongoose.model('Institution', InstitutionSchema);

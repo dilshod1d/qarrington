@@ -2,30 +2,27 @@ import mongoose from 'mongoose';
 
 const PushSchema = new mongoose.Schema(
     {
-        pushSlug: { type: String },
-        pushPrice: { type: String },
-        pushRequests: {
-            requestPairId: { type: String },
-            requestUnits: { type: String },
-            requestPrice: { type: String },
-            requestAmount: { type: String },
-            requestIsMatched: { type: String },
-            requestSubmittedAt: { type: String },
-            requestMatchedAt: { type: String }
-        },
-        pushSubscription: {
-            subscriptionId: { type: String },
-            subscriptionName: { type: String },
-            subscriptionLogo: { type: String },
-            subscriptionTicker: { type: String },
-            subscriptionUnits: { type: String },
-            subscriptionBalance: { type: String }
+        pushTicker: { type: String }, // seller selects the company's subscription ticker they want to sell
+        pushUnits: { type: String }, // seller enters the subscription units they want to sell
+        pushAmount: { type: String }, //  we show the pushCompanyPrice * pushUnits
+        pushCompany: { // we show the below company details in the pushed tab of the seller dashboard
+            pushCompanyId: { type: String }, // the _id of the selected company
+            pushCompanyName: { type: String }, // the name of the selected company
+            pushCompanyLogo: { type: String }, // the logo of the selected company
         },
         pushAccount: {
-            accountId: { type: String },
-            accountBalance: { type: String }
+            pushAccountId: { type: String } // the _id of the seller account
         },
-        pushUpdatedAt: { type: String }
+        pushStatus: {
+            pushIsMatched: { type: String }, // we match pushTicker and pushUnits with pullTicker and pullUnits
+            pushIsMatchedWith: { type: String }, // the _id of the pull request that matched the push request
+            pushIsMatchedAt: { type: Date, default: Date.now }, // the date the push request is matched with the pull request
+            pushIsPaid: { type: String }, // we transfer the pullAmount/pushAmount from the admin stripe account to the seller's accountStripeId
+            pushIsPaidAt: { type: Date, default: Date.now }, // the date the transfer is made
+            pushIsSubmittedAt: { type: Date, default: Date.now }, // the date the push request is submitted
+            pushIsCanceled: { type: String }, // this will be TRUE if no match in 90 days, otherwise FALSE
+            pushIsCanceledAt: { type: Date, default: Date.now } // the date the push request is canceled
+        }
     },
 );
 

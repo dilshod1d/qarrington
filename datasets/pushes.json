@@ -1,28 +1,25 @@
 [
     {
-        "pushSlug": "tw",
-        "pushPrice": "31",
-        "pushRequests": {
-            "requestPairId": "",
-            "requestUnits": "648",
-            "requestPrice": "34",
-            "requestAmount": "24,430",
-            "requestIsMatched": "TRUE",
-            "requestSubmittedAt": "10-10-2022",
-            "requestMatchedAt": "10-12-2022"
-        },
-        "pushSubscription": {
-            "subscriptionId": "subscriptionId",
-            "subscriptionName": "Twined",
-            "subscriptionLogo": "/assets/media/subscriptions/twined.png",
-            "subscriptionTicker": "TW",
-            "subscriptionUnits": "643",
-            "subscriptionBalance": "642,875"
+        "pushTicker": "var",
+        "pushUnits": "187",
+        "pushAmount": "30,432",
+        "pushCompany": {
+            "pushCompanyId": "dd74j4j73jde",
+            "pushCompanyName": "Varozo",
+            "pushCompanyLogo": "/assets/media/companies/varozo.png"
         },
         "pushAccount": {
-            "accountId": "accountId",
-            "accountBalance": "43,985"
+            "pushAccountId": "kkdd7ndofj43"
         },
-        "pushUpdatedAt": "10-12-2022"
+        "pushStatus": {
+            "pushIsMatched": "TRUE",
+            "pushIsMatchedWith": ",kfafa783rm3www",
+            "pushIsMatchedAt": "04-28-2023",
+            "pushIsPaid": "TRUE",
+            "pushIsPaidAt": "02-23-2023",
+            "pushIsSubmittedAt": "04-21-2023",
+            "pushIsCanceled": "FALSE",
+            "pushIsCanceledAt": ""
+        }
     }
 ]
