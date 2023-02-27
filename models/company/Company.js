@@ -16,12 +16,16 @@ const CompanySchema = new mongoose.Schema({
     companySize: { type: String },
     companyKey: { type: String } // a unique 12 characters
   },
-  companyUser: {
-    companyTotalSubscribers: { type: String }, // the total whitelisted subscribers for the iso
-    companyTotalCustomers: { type: String }, // the current total users with active subscriptions
-    companyActiveCustomers: { type: String }, // the total customers the company has created thru its companyKey
-    companyInActiveCustomers: { type: String } // the total customers the company is yet to create
-  },
+  companyUser: [
+    {
+      companyUserType: { type: String }, // companyTotalSubscribers, companyTotalCustomers, companyActiveCustomers, and companyInActiveCustomers
+      companyUserTotal: { type: String }, // total subscribers during iso, subscribers during & after iso, customers created thru companyKey, and customers not created yet 
+      companyUserDetail: { type: String },
+      companyUserTooltip: { type: String },
+      companyUserButton: { type: String },
+      companyUserRoute: { type: String }
+    }
+  ],
   companyIso: {
     companyIsoUnits: { type: String }, // the inital total subscriptions
     companyIsoPrice: { type: String }, // the initial price per subscription

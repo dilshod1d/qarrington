@@ -1,299 +1,81 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import HeaderMenu from '../../components/menus/HeaderMenu';
-import LeftGrid from '../../components/grids/LeftGrid';
 import RightGrid from '../../components/grids/RightGrid';
-import { Avatar, Badge, Box, Button, Card, Container, Grid, Stack, styled, Tab, Tooltip, Typography } from '@mui/material';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
-import TabContext from '@mui/lab/TabContext';
+import { Avatar, Badge, Box, Card, Container, Grid, styled, Typography } from '@mui/material';
 import Footer from '../../components/main/Footer';
 import useSWR from 'swr';
-import { Pagination } from '@mui/lab';
+import Link from 'next/link';
 
 const Page = () => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
-    const { data: institutions } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/institutions`, fetcher);
-
-    const [value, setValue] = useState('1');
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
 
     return (
 
         <div>
 
             <Head>
-                <title>Manage Companies • Qarrington</title>
+                <title>Companies • Qarrington</title>
                 <meta
                     name="description"
-                    content="Qarrington is a subscription exchange that allows you to buy, sell, and exchange the subscriptions of your favorite technology companies with lower fees."
+                    content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
                 />
             </Head>
 
             <HeaderMenu />
 
             <Container>
-
                 <Grid container spacing={2}>
 
-                    {/* LeftGrid Starts Here */}
-
-                    <Grid item xs={12} md={6} lg={3}>
-                        <LeftGrid />
-                    </Grid>
-
-                    {/* LeftGrid Ends Here */}
-
-                    <Grid item xs={12} md={6} lg={6} mb={4}>
+                    <Grid item xs={12} md={6} lg={9} mb={4}>
                         <Grid container spacing={1}>
+
                             <Grid item xs={12}>
 
-                                {institutions && institutions.slice(0, 1).map(({ _id, institutionSlides }) => (
-                                    <>
-                                        {institutionSlides && institutionSlides.slice(0, 1).map(({ _id, slideName, slideCount, slideButton, slideRoute, slideDetail, slideTooltip }) => (
-                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
+                                <Grid item xs={12} mb={2}>
+                                    <Grid container spacing={2}>
+
+                                        {companies && Array.isArray(companies) && companies.map(({ _id, companyDetails }) => (
+                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
                                                 <Card style={{ padding: '60px' }}>
+                                                    <Box
+                                                        style={{
+                                                            display: 'flex',
+                                                            justifyContent: 'center'
+                                                        }}
+                                                    >
+                                                        <Avatar
+                                                            style={{ width: 50, height: 50 }}
+                                                            alt={companyDetails.companyName}
+                                                            src={companyDetails.companyLogo}
+                                                        />
+                                                    </Box>
                                                     <Box style={{ textAlign: 'center' }}>
-                                                        <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={0.5}>
-                                                            {slideCount}
-                                                        </Typography>
-                                                        <Typography variant="body2" fontWeight="700" color="secondary" textTransform="uppercase">{slideName}</Typography>
-                                                        <Box mt={1.5} mb={1.2}>
-                                                            <Typography variant="body">{slideDetail}</Typography>
+                                                        <Box mt={2.5} mb={2}>
+                                                            {companies && companies.slice(0, 1).map(({ _id, companyTicker }) => (
+                                                                <Link href={`/companies/${companyTicker}`}>
+                                                                    <Typography variant="h5" fontWeight={700} my={1.5} sx={NewsTitle}>
+                                                                        {companyDetails.companyDescription}
+                                                                    </Typography>
+                                                                </Link>
+                                                            ))}
                                                         </Box>
-                                                        <Link href={slideRoute}>
-                                                            <Tooltip title={slideTooltip} placement="top">
-                                                                <Button
-                                                                    size="medium"
-                                                                    sx={{ color: 'white', textTransform: 'uppercase', fontSize: '12px' }}
-                                                                    variant="contained"
-                                                                    fullWidth={false}
-                                                                >
-                                                                    {slideButton}
-                                                                </Button>
-                                                            </Tooltip>
-                                                        </Link>
+                                                        <Box>
+                                                            <Typography variant="body2" fontWeight={600} color="secondary">
+                                                                {companyDetails.companyName}
+                                                            </Typography>
+                                                        </Box>
                                                     </Box>
                                                 </Card>
                                             </Grid>
                                         ))}
-                                    </>
-                                ))}
 
-                                {/* tab starts */}
+                                    </Grid>
+                                </Grid>
 
-                                <TabContext value={value}>
-
-                                    <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                                        <TabsWrapper
-                                            onChange={handleChange}
-                                            indicatorColor="transparent"
-                                            TabIndicatorProps={{
-                                                sx: { backgroundColor: 'transparent', height: 4 }
-                                            }}
-                                            sx={{
-                                                "& button:hover": { backgroundColor: "#c7c7c7" },
-                                                "& button:active": { backgroundColor: "#b6b6b6" },
-                                                "& button.Mui-selected": { backgroundColor: "#a7a7a7" },
-                                                "& div.MuiTabs-scroller": { overflowY: "auto" },
-                                            }}
-                                            scrollButtons="auto"
-                                            aria-label="scrollable auto tabs example"
-                                        >
-                                            <TabLabel label="Submitted" value="1" />
-                                            <TabLabel label="Listed" value="2" />
-                                            <TabLabel label="Launched" value="3" />
-                                        </TabsWrapper>
-                                    </Box>
-
-                                    <Box style={{ marginBottom: '0px', marginTop: '16px' }}>
-
-                                        {/* submitted tab starts */}
-
-                                        <TabPanel sx={{ padding: 0 }} value="1">
-                                            <Grid item xs={12} mb={2}>
-                                                <Grid container spacing={1}>
-
-                                                    {companies && companies.slice(0, 2).map(({ _id, companyTicker, companyListing, companyIso }) => (
-                                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/companies/${companyTicker}`}>
-                                                                <Card style={{ padding: '40px', cursor: 'pointer' }}>
-                                                                    <Box
-                                                                        style={{
-                                                                            display: 'flex',
-                                                                            justifyContent: 'center'
-                                                                        }}
-                                                                    >
-                                                                        <Stack direction="row" spacing={2}>
-                                                                            <Tooltip title={companyListing.listingName} placement="top">
-                                                                                <Avatar alt={companyListing.listingName} src={companyListing.listingLogo}
-                                                                                    sx={{ height: '50px', width: '50px' }}
-                                                                                />
-                                                                            </Tooltip>
-                                                                        </Stack>
-                                                                    </Box>
-                                                                    <Box style={{ textAlign: 'center' }}>
-                                                                        <Box mt={1.5}>
-                                                                            <Typography variant="h5" fontWeight={700}>
-                                                                                {companyTicker}
-                                                                            </Typography>
-                                                                            <Typography variant="body2" fontWeight={500} color="secondary">
-                                                                                {companyListing.listingName}
-                                                                            </Typography>
-                                                                        </Box>
-                                                                    </Box>
-                                                                </Card>
-                                                            </Link>
-                                                        </Grid>
-                                                    ))}
-
-                                                    <Grid item xs={12}>
-                                                        <Card style={{ padding: '60px', display: 'flex', justifyContent: 'center', marginTop: '0px' }}>
-                                                            <Stack spacing={2}>
-                                                                <Pagination count={10} variant="outlined" shape="rounded" />
-                                                            </Stack>
-                                                        </Card>
-                                                        <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                            <Typography variant="body2">
-                                                                When you make a pull request to buy the subscriptions of a listed company, the green dot shows that the request is yet to be filled. Otherwise, you won't see the dot.
-                                                            </Typography>
-                                                        </Box>
-                                                    </Grid>
-
-                                                </Grid>
-                                            </Grid>
-                                        </TabPanel>
-
-                                        {/* submitted tab stops */}
-
-                                        {/* listed tab starts */}
-
-                                        <TabPanel sx={{ padding: 0 }} value="2">
-                                            <Grid item xs={12} mb={2}>
-                                                <Grid container spacing={1}>
-
-                                                    {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyListing, companyIso }) => (
-                                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/companies/${companyTicker}`}>
-                                                                <Card style={{ padding: '40px', cursor: 'pointer' }}>
-                                                                    <Box
-                                                                        style={{
-                                                                            display: 'flex',
-                                                                            justifyContent: 'center'
-                                                                        }}
-                                                                    >
-                                                                        <Stack direction="row" spacing={2}>
-                                                                            <Tooltip title={companyListing.listingName} placement="top">
-                                                                                <Avatar alt={companyListing.listingName} src={companyListing.listingLogo}
-                                                                                    sx={{ height: '50px', width: '50px' }}
-                                                                                />
-                                                                            </Tooltip>
-                                                                        </Stack>
-                                                                    </Box>
-                                                                    <Box style={{ textAlign: 'center' }}>
-                                                                        <Box mt={1.5}>
-                                                                            <Typography variant="h5" fontWeight={700}>
-                                                                                {companyTicker}
-                                                                            </Typography>
-                                                                            <Typography variant="body2" fontWeight={500} color="secondary">
-                                                                                {companyListing.listingName}
-                                                                            </Typography>
-                                                                        </Box>
-                                                                    </Box>
-                                                                </Card>
-                                                            </Link>
-                                                        </Grid>
-                                                    ))}
-
-                                                    <Grid item xs={12}>
-                                                        <Card style={{ padding: '60px', display: 'flex', justifyContent: 'center', marginTop: '0px' }}>
-                                                            <Stack spacing={2}>
-                                                                <Pagination count={10} variant="outlined" shape="rounded" />
-                                                            </Stack>
-                                                        </Card>
-                                                        <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                            <Typography variant="body2">
-                                                                When you make a pull request to buy the subscriptions of a listed company, the green dot shows that the request is yet to be filled. Otherwise, you won't see the dot.
-                                                            </Typography>
-                                                        </Box>
-                                                    </Grid>
-
-                                                </Grid>
-                                            </Grid>
-                                        </TabPanel>
-
-                                        {/* listed tab stops */}
-
-                                        {/* launched tab starts */}
-
-                                        <TabPanel sx={{ padding: 0 }} value="3">
-                                            <Grid item xs={12} mb={2}>
-                                                <Grid container spacing={1}>
-
-                                                    {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyListing, companyIso }) => (
-                                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/companies/${companyTicker}`}>
-                                                                <Card style={{ padding: '40px', cursor: 'pointer' }}>
-                                                                    <Box
-                                                                        style={{
-                                                                            display: 'flex',
-                                                                            justifyContent: 'center'
-                                                                        }}
-                                                                    >
-                                                                        <Stack direction="row" spacing={2}>
-                                                                            <Tooltip title={companyListing.listingName} placement="top">
-                                                                                <Avatar alt={companyListing.listingName} src={companyListing.listingLogo}
-                                                                                    sx={{ height: '50px', width: '50px' }}
-                                                                                />
-                                                                            </Tooltip>
-                                                                        </Stack>
-                                                                    </Box>
-                                                                    <Box style={{ textAlign: 'center' }}>
-                                                                        <Box mt={1.5}>
-                                                                            <Typography variant="h5" fontWeight={700}>
-                                                                                {companyTicker}
-                                                                            </Typography>
-                                                                            <Typography variant="body2" fontWeight={500} color="secondary">
-                                                                                {companyListing.listingName}
-                                                                            </Typography>
-                                                                        </Box>
-                                                                    </Box>
-                                                                </Card>
-                                                            </Link>
-                                                        </Grid>
-                                                    ))}
-
-                                                    <Grid item xs={12}>
-                                                        <Card style={{ padding: '60px', display: 'flex', justifyContent: 'center', marginTop: '0px' }}>
-                                                            <Stack spacing={2}>
-                                                                <Pagination count={10} variant="outlined" shape="rounded" />
-                                                            </Stack>
-                                                        </Card>
-                                                        <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                            <Typography variant="body2">
-                                                                When you make a pull request to buy the subscriptions of a listed company, the green dot shows that the request is yet to be filled. Otherwise, you won't see the dot.
-                                                            </Typography>
-                                                        </Box>
-                                                    </Grid>
-
-                                                </Grid>
-                                            </Grid>
-                                        </TabPanel>
-
-                                        {/* launched tab stops */}
-
-                                    </Box>
-
-                                </TabContext>
-
-                                {/* tab stops */}
-
+                                <Footer />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -303,9 +85,6 @@ const Page = () => {
                     </Grid>
 
                 </Grid>
-
-                <Footer />
-
             </Container>
 
         </div>
@@ -317,55 +96,90 @@ export default Page
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-        backgroundColor: '#44b700',
-        color: '#44b700',
-        boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-        '&::after': {
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            borderRadius: '50%',
-            animation: 'ripple 1.2s infinite ease-in-out',
-            border: '1px solid currentColor',
-            content: '""',
-        },
-    },
-    '@keyframes ripple': {
-        '0%': {
-            transform: 'scale(.8)',
-            opacity: 1,
-        },
-        '100%': {
-            transform: 'scale(2.4)',
-            opacity: 0,
-        },
-    },
-}));
-
-const TabsWrapper = styled(TabList)(
-    ({ theme }) => `
-          &.MuiTabs-root {
-            height: 0;
-            margin-top: 16px;
-          }
-    `
-);
-
-const TabLabel = styled(Tab)(
-    ({ theme }) => `
-          font-size: 12px;
-          font-weight: 700;
-          text-transform: uppercase;
-    `
-);
-
-const DraftBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-        right: 0,
-        top: -8,
+        right: -2,
+        top: 0,
         border: `2px solid ${theme.palette.background.paper}`,
         padding: '0 4px',
     },
 }));
+
+const NewsTitle = {
+    cursor: 'pointer',
+    color: '#000000',
+    '&:hover': {
+        color: '#2ed573'
+    }
+};
+
+const challenges = [
+    {
+        _id: 1,
+        image: "/assets/media/publishers/wsj.png",
+        source: "wsj",
+        content: "Inflation Creeps Into the Asian economies—‘My Salary Is the Same, but Everything Is Becoming More Expensive’.",
+        postedAt: "February 21, 2022"
+    },
+    {
+        _id: 2,
+        image: "/assets/media/publishers/cnbc.png",
+        source: "CNBC",
+        content: "Inflation in the eurozone is extremely high. Protestors in Italy used empty shopping trolleys to demonstrate high prices.",
+        postedAt: "October 31, 2022"
+    },
+    {
+        _id: 3,
+        image: "/assets/media/publishers/ft.png",
+        source: "FT",
+        content: "Many African economies have been hit hard by the global rise in prices ... across the continent struggle to cope.",
+        postedAt: "September 13, 2022"
+    },
+    {
+        _id: 4,
+        image: "/assets/media/publishers/fortune.png",
+        source: "Fortune",
+        content: "U.K.’s inflation just hit a 40-year high, and the government warned that some may struggle to afford food and heating.",
+        postedAt: "May 19, 2022"
+    },
+    {
+        _id: 5,
+        image: "/assets/media/publishers/bloomberg.png",
+        source: "Bloomberg",
+        content: "The American middle class is facing the biggest hit to its wealth in a generation going into the midterm election.",
+        postedAt: "October 26, 2022"
+    },
+    {
+        _id: 6,
+        image: "/assets/media/publishers/reuters.png",
+        source: "Reuters",
+        content: "Latin America's leaders have pulled no punches in the battle against inflation. The region has some of the highest interest rates.",
+        postedAt: "June 24, 2022"
+    },
+    {
+        _id: 7,
+        image: "/assets/media/publishers/aljazeera.png",
+        source: "Aljazeera",
+        content: "Turkey’s inflation is triggered by the lira’s decline as well as the economic consequences of Russia’s invasion of Ukraine.",
+        postedAt: "August 03, 2022"
+    },
+    {
+        _id: 8,
+        image: "/assets/media/publishers/forbes.png",
+        source: "Forbes",
+        content: "The higher costs of doing business have been passed onto customers, leaving everyday Australians materially worse off.",
+        postedAt: "December 01, 2022"
+    },
+    {
+        _id: 9,
+        image: "/assets/media/publishers/forbes.png",
+        source: "Forbes",
+        content: "The U.S. Chamber of Commerce found that 85% of small-business owners surveyed expressed concern about inflation.",
+        postedAt: "May 25, 2022"
+    },
+    {
+        _id: 10,
+        image: "/assets/media/publishers/fox.png",
+        source: "FOX",
+        content: "Inflation concerns hit a fever pitch for small business owners. Small business owners believe the 'worst is yet to come' on inflation.",
+        postedAt: "September 21, 2022"
+    }
+]

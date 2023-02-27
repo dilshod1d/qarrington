@@ -58,31 +58,37 @@ const Page = ({ slug }) => {
                                 <form noValidate autoComplete='off'>
 
                                     {companies && companies.slice(0, 1).map(({ _id, companyUser }) => (
-                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
-                                            <Card style={{ padding: '60px' }}>
-                                                <Box style={{ textAlign: 'center' }}>
-                                                    <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={0.5}>
-                                                        {companyUser.companyTotalSubscribers}
-                                                    </Typography>
-                                                    <Typography variant="body2" fontWeight="700" color="secondary" textTransform="uppercase">total subscribers</Typography>
-                                                    <Box mt={1.5} mb={1.2}>
-                                                        <Typography variant="body">In order to list a company, simply navigate to the listing page, provide the company details, and submit the company for approval.</Typography>
-                                                    </Box>
-                                                    <Link href="/companies/list">
-                                                        <Tooltip title="hint" placement="top">
-                                                            <Button
-                                                                size="medium"
-                                                                sx={{ color: 'white', textTransform: 'uppercase', fontSize: '12px' }}
-                                                                variant="contained"
-                                                                fullWidth={false}
-                                                            >
-                                                                list
-                                                            </Button>
-                                                        </Tooltip>
-                                                    </Link>
-                                                </Box>
-                                            </Card>
-                                        </Grid>
+                                        <>
+                                            <Carousel>
+                                                {companyUser && companyUser.map(({ _id, companyUserType, companyUserTotal, companyUserDetail, companyUserTooltip, companyUserButton, companyUserRoute }) => (
+                                                    <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
+                                                        <Card style={{ padding: '60px' }}>
+                                                            <Box style={{ textAlign: 'center' }}>
+                                                                <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={0.5}>
+                                                                    {companyUserTotal}
+                                                                </Typography>
+                                                                <Typography variant="body2" fontWeight="700" color="secondary" textTransform="uppercase">{companyUserType}</Typography>
+                                                                <Box mt={1.5} mb={1.2}>
+                                                                    <Typography variant="body">{companyUserDetail}</Typography>
+                                                                </Box>
+                                                                <Link href={companyUserRoute}>
+                                                                    <Tooltip title={companyUserTooltip} placement="top">
+                                                                        <Button
+                                                                            size="medium"
+                                                                            sx={{ color: 'white', textTransform: 'uppercase', fontSize: '12px' }}
+                                                                            variant="contained"
+                                                                            fullWidth={false}
+                                                                        >
+                                                                            {companyUserButton}
+                                                                        </Button>
+                                                                    </Tooltip>
+                                                                </Link>
+                                                            </Box>
+                                                        </Card>
+                                                    </Grid>
+                                                ))}
+                                            </Carousel>
+                                        </>
                                     ))}
 
                                     {/* tab starts */}
@@ -107,8 +113,7 @@ const Page = ({ slug }) => {
                                             >
                                                 <TabLabel label="Details" value="1" />
                                                 <TabLabel label="Iso" value="2" />
-                                                <TabLabel label="Users" value="3" />
-                                                <TabLabel label="Analytics" value="4" />
+                                                <TabLabel label="Analytics" value="3" />
                                             </TabsWrapper>
                                         </Box>
 
@@ -120,7 +125,7 @@ const Page = ({ slug }) => {
 
                                                 <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                     <Typography variant="body" color="secondary" fontWeight={600}>
-                                                        One of the best things about Qarrington is the fact that we do not collect sensitive data in the frontend. We only do so in the backend.
+                                                        Even though you can easily view your company details, you cannot make changes to the details. Please get in touch for more details.
                                                     </Typography>
                                                 </Card>
 
@@ -269,12 +274,6 @@ const Page = ({ slug }) => {
 
                                                 ))}
 
-                                                <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                    <Typography variant="body2">
-                                                        Kindly note that it is very important to copy your secretToken and save it somewhere safe. If you lose, forget, or can't remember your accessToken, you can use your secretToken to recover your account. However, if you lose your secretToken, you'd be required to create a new Qarrington account. With that being said, kindly use your unique [ <b>https://qarrington.com/u/qid</b> ] invitation link to invite as many contacts as you can. Each time you refer an active contact, Qarrington will reward you and the contact with 1 Qarrington draft each.
-                                                    </Typography>
-                                                </Box>
-
                                             </TabPanel>
 
                                             {/* details tab stops */}
@@ -285,7 +284,7 @@ const Page = ({ slug }) => {
 
                                                 <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                     <Typography variant="body" color="secondary" fontWeight={600}>
-                                                        One of the best things about Qarrington is the fact that we do not collect sensitive data in the frontend. We only do so in the backend.
+                                                        Basically, once your Initial Subscription Offering or ISO is launched, the launch will automatically end after 7 days at the specified time.
                                                     </Typography>
                                                 </Card>
 
@@ -365,96 +364,17 @@ const Page = ({ slug }) => {
 
                                                 ))}
 
-                                                <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                    <Typography variant="body2">
-                                                        Kindly note that it is very important to copy your secretToken and save it somewhere safe. If you lose, forget, or can't remember your accessToken, you can use your secretToken to recover your account. However, if you lose your secretToken, you'd be required to create a new Qarrington account. With that being said, kindly use your unique [ <b>https://qarrington.com/u/qid</b> ] invitation link to invite as many contacts as you can. Each time you refer an active contact, Qarrington will reward you and the contact with 1 Qarrington draft each.
-                                                    </Typography>
-                                                </Box>
-
                                             </TabPanel>
 
                                             {/* iso tab stops */}
 
-                                            {/* users tab starts */}
+                                            {/* analytics tab starts */}
 
                                             <TabPanel sx={{ padding: 0 }} value="3">
 
                                                 <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                     <Typography variant="body" color="secondary" fontWeight={600}>
-                                                        One of the best things about Qarrington is the fact that we do not collect sensitive data in the frontend. We only do so in the backend.
-                                                    </Typography>
-                                                </Card>
-
-                                                {companies && companies.slice(0, 1).map(({ _id, companyUser }) => (
-
-                                                    <>
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="total subscribers" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="total subscribers"
-                                                                        defaultValue={companyUser.companyTotalSubscribers}
-                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="total customers" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="total customers"
-                                                                        defaultValue={companyUser.companyTotalCustomers}
-                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
-
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="active customers" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="active customers"
-                                                                        defaultValue={companyUser.companyActiveCustomers}
-                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="inactive customers" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="inactive customers"
-                                                                        defaultValue={companyUser.companyInActiveCustomers}
-                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
-
-                                                    </>
-
-                                                ))}
-
-                                                <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                    <Typography variant="body2">
-                                                        Kindly note that it is very important to copy your secretToken and save it somewhere safe. If you lose, forget, or can't remember your accessToken, you can use your secretToken to recover your account. However, if you lose your secretToken, you'd be required to create a new Qarrington account. With that being said, kindly use your unique [ <b>https://qarrington.com/u/qid</b> ] invitation link to invite as many contacts as you can. Each time you refer an active contact, Qarrington will reward you and the contact with 1 Qarrington draft each.
-                                                    </Typography>
-                                                </Box>
-
-                                            </TabPanel>
-
-                                            {/* users tab stops */}
-
-                                            {/* analytics tab starts */}
-
-                                            <TabPanel sx={{ padding: 0 }} value="4">
-
-                                                <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                    <Typography variant="body" color="secondary" fontWeight={600}>
-                                                        One of the best things about Qarrington is the fact that we do not collect sensitive data in the frontend. We only do so in the backend.
+                                                        You can easily track the live performance of your company subscription, which is automatically updated every 5 seconds.
                                                     </Typography>
                                                 </Card>
 
@@ -558,12 +478,6 @@ const Page = ({ slug }) => {
                                                     </>
                                                 ))}
 
-                                                <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                    <Typography variant="body2">
-                                                        Kindly note that it is very important to copy your secretToken and save it somewhere safe. If you lose, forget, or can't remember your accessToken, you can use your secretToken to recover your account. However, if you lose your secretToken, you'd be required to create a new Qarrington account. With that being said, kindly use your unique [ <b>https://qarrington.com/u/qid</b> ] invitation link to invite as many contacts as you can. Each time you refer an active contact, Qarrington will reward you and the contact with 1 Qarrington draft each.
-                                                    </Typography>
-                                                </Box>
-
                                             </TabPanel>
 
                                             {/* analytics tab stops */}
@@ -573,6 +487,12 @@ const Page = ({ slug }) => {
                                     </TabContext>
 
                                     {/* tab stops */}
+
+                                    <Box style={{ textAlign: 'center', marginTop: '20px' }}>
+                                        <Typography variant="body2">
+                                        Once your company is listed on Qarrington, your Initial Subscription Offering or ISO will be launched at the date and time you have specified during the listing submission process. With that being said, the launch will last for a maximum of 7 days and the proceeds will be transferred to your connected bank account 7 days after the launch. Even though there are no costs in listing a company on Qarrington, we do charge 10% of the proceeds to cover our operational expenses.
+                                        </Typography>
+                                    </Box>
 
                                 </form>
 
@@ -646,7 +566,7 @@ const TabsWrapper = styled(TabList)(
     ({ theme }) => `
           &.MuiTabs-root {
             height: 0;
-            margin-top: 16px;
+            margin-top: 4px;
           }
     `
 );
