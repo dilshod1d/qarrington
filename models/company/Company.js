@@ -19,13 +19,13 @@ const CompanySchema = new mongoose.Schema({
   companyUser: {
     companyTotalSubscribers: { type: String }, // the total whitelisted subscribers for the iso
     companyTotalCustomers: { type: String }, // the current total users with active subscriptions
-    companyCustomersCreated: { type: String }, // the total customers the company has created thru its companyKey
-    companyCustomersNotCreated: { type: String } // the total customers the company is yet to create
+    companyActiveCustomers: { type: String }, // the total customers the company has created thru its companyKey
+    companyInActiveCustomers: { type: String } // the total customers the company is yet to create
   },
   companyIso: {
     companyIsoUnits: { type: String }, // the inital total subscriptions
     companyIsoPrice: { type: String }, // the initial price per subscription
-    companyIsoDate: { type: Date }, // iso will end 7 days after this date
+    companyIsoDate: { type: String }, // iso will end 7 days after this date
     companyIsoTime: { type: String }, // the time the iso will start on the date
     companyIsoSubscribers: [ // the list of the whitelisted subscribers for the iso
       {
@@ -53,13 +53,14 @@ const CompanySchema = new mongoose.Schema({
   ],
   companyAnalytics: [ // the current and historical data of a company
     {
+      companyCurrency: { type: String }, // the default currency of the is the USD
       companyCapitalization: { type: String }, // total companySubscriberUnits * companyPrice or companyIsoPrice
       companyVolume: { type: String }, // total pullUnits
       companyPrice: { type: String }, // total pullUnits ÷ pushUnits = X%
       companyPricePercentChange: { type: String }, // the percentage difference btw current and previous companyPrice i.e. from 8.54 to 7.92 is +7.25%
       companyPricePointChange: { type: String }, // the point difference btw current and previous companyPrice i.e. from 8.54 to 7.92 is +0.62
       companyActiveCustomers: { type: String }, // total pullAccountIds of pullCompanyId
-      companyIsRecordedAt: { type: Date, default: Date.now } // update and save every 5 seconds
+      companyIsRecordedAt: { type: String } // update and save every 5 seconds
     }
   ],
   companyAccountId: { type: String }, //  the account id that listed the company
