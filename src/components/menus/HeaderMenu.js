@@ -142,7 +142,7 @@ const Component = () => {
                 </Link>
 
                 <AvatarWrapper>
-                  <Link href="/underwriters/request">
+                  <Link href="/companies/list">
                     <Fab size="small" color="primary" aria-label="add">
                       <HistoryEduRoundedIcon sx={{ color: '#ffffff' }} />
                     </Fab>

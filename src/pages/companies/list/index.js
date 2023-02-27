@@ -14,27 +14,26 @@ import useSWR from 'swr';
 const Page = () => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data: institutions } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/institutions`, fetcher);
+  const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
+  const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
+  const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
 
   const getSteps = () => {
     return [
       "company ticker",
-      "listing name",
-      "listing logo",
-      "listing product",
-      "listing headline",
-      "listing description",
-      "listing industry",
-      "listing website",
-      "listing email",
-      "listing market",
-      "iso units",
-      "iso price",
-      "start month",
-      "start day",
-      "start year",
-      "companyUnderwriterAccountId",
-      "companyFounderAccountId",
+      "company name",
+      "company logo",
+      "company product",
+      "company headline",
+      "company description",
+      "company industry",
+      "company website",
+      "company email",
+      "company market",
+      "company iso units",
+      "company iso price",
+      "company iso date",
+      "company iso time",
     ];
   }
 
@@ -61,7 +60,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="listing name"
+                placeholder="company name"
               />
             </Tooltip>
           </Stack>
@@ -74,7 +73,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="listing logo"
+                placeholder="company logo"
               />
             </Tooltip>
           </Stack>
@@ -87,7 +86,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="listing product"
+                placeholder="company product"
               />
             </Tooltip>
           </Stack>
@@ -100,7 +99,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="listing headline"
+                placeholder="company headline"
               />
             </Tooltip>
           </Stack>
@@ -113,7 +112,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="listing description"
+                placeholder="company description"
               />
             </Tooltip>
           </Stack>
@@ -126,7 +125,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="listing industry"
+                placeholder="company industry"
               />
             </Tooltip>
           </Stack>
@@ -139,7 +138,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="listing website"
+                placeholder="company website"
               />
             </Tooltip>
           </Stack>
@@ -152,7 +151,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="listing email"
+                placeholder="company email"
               />
             </Tooltip>
           </Stack>
@@ -165,7 +164,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="listing market"
+                placeholder="company market"
               />
             </Tooltip>
           </Stack>
@@ -178,7 +177,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="iso units"
+                placeholder="company iso units"
               />
             </Tooltip>
           </Stack>
@@ -191,7 +190,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="iso price"
+                placeholder="company iso price"
               />
             </Tooltip>
           </Stack>
@@ -204,7 +203,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="start month"
+                placeholder="company iso date"
               />
             </Tooltip>
           </Stack>
@@ -213,50 +212,11 @@ const Page = () => {
       case 13:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Which day does the company want the ISO to start? This can change anytime." placement="top">
+            <Tooltip title="What time does the company want the ISO to start? It can change anytime." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="start day"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 14:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Which year does the company want the ISO to start? This can change anytime." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="start year"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 15:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the unique identification string of the company's underwriter account?" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="companyUnderwriterAccountId"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 16:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What is the unique identification string of the company's founder account?" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="companyFounderAccountId"
+                placeholder="company iso time"
               />
             </Tooltip>
           </Stack>
@@ -315,38 +275,31 @@ const Page = () => {
 
               <Box style={{ textAlign: 'center' }}>
 
-                <Box sx={{ cursor: 'pointer' }}>
+                <Box
+                  style={{
+                    display: 'flex',
+                    cursor: 'pointer',
+                    justifyContent: 'center'
+                  }}
+                >
                   <Link href="/">
-                    <Image
+                    <Avatar
+                      style={{ width: 40, height: 40 }}
                       alt="Qarrington Logo"
-                      height={32}
-                      width={32}
-                      src="/assets/media/logos/aa/primary.png"
+                      src="/assets/media/companies/qarrington.png"
                     />
                   </Link>
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
                   Help your portfolios raise funds through an ISO
-                  <Tooltip title="ISO subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
+                  <Tooltip title="ISO or subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
 
                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  If you're an existing underwriter with an approved institution, you can continue to list a company. Otherwise, kindly <Link href="/institutions/create">
-                    <Typography
-                      component="span"
-                      color="black"
-                      variant="h6"
-                      fontWeight="700"
-                      backgroundColor="#2ed57390"
-                      sx={{
-                        cursor: 'pointer', "&:hover": {
-                          color: '#2f3542',
-                          backgroundColor: '#2ed57350'
-                        }
-                      }}>click here</Typography></Link> to create an institution profile and add underwriters to the profile.
+                  Qarrington is a subscription exchange, where SaaS companies are listed so customers can participate in the Initial Subscription Offering (ISO) and buy/sell the subscriptions of companies.
                 </Typography>
 
               </Box>
@@ -371,16 +324,18 @@ const Page = () => {
                           </Button>
                         </Link>
 
-                        <Link href={`/companies`}>
-                          <Button
-                            size="large"
-                            sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
-                            variant="contained"
-                            fullWidth={true}
-                          >
-                            manage companies
-                          </Button>
-                        </Link>
+                        {companies && companies.slice(0, 1).map(({ _id, companyTicker }) => (
+                          <Link href={`/companies/${companyTicker}`}>
+                            <Button
+                              size="large"
+                              sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                              variant="contained"
+                              fullWidth={true}
+                            >
+                              manage company
+                            </Button>
+                          </Link>
+                        ))}
 
                         <Button
                           style={FormButton}
@@ -446,85 +401,102 @@ const Page = () => {
             >
 
               <Container maxWidth="sm">
-                <Box textAlign="center" mb={2}>
-                  <Carousel>
-                    {underwriters && underwriters.map(({ _id, name, title, avatar, content, isActive }) => (
-                      <Box key={_id}>
-                        <Box
-                          style={{
-                            display: 'flex',
-                            justifyContent: 'center'
-                          }}
-                        >
-                          <StyledBadge
-                            overlap="circular"
-                            anchorOrigin={{
-                              vertical: 'bottom',
-                              horizontal: 'right'
-                            }}
-                            variant={isActive}
-                          >
-                            <Avatar
-                              style={{ width: 80, height: 80 }}
-                              alt={name}
-                              src={avatar}
-                            />
-                          </StyledBadge>
-                        </Box>
-                        <Box marginTop="16px">
-                          <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{name}</Typography>
-                          <Typography variant="body" component="div" gutterBottom>{title}</Typography>
-                          <Typography variant="h5" component="div" fontWeight="600">{content}</Typography>
-                        </Box>
-                      </Box>
-                    ))}
-                  </Carousel>
-                </Box>
 
-                {/* principles start here */}
+                {/* tab starts */}
 
-                <Grid item xs={12} mt={2}>
-                  <Grid container spacing={1}>
+                <Box style={{ marginBottom: '0px', marginTop: '16px' }}>
 
-                    {principles && principles.map(({ _id, name, image, helper, content }) => (
-                      <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                        <Tooltip title={helper} placement="top">
-                          <Card style={{ padding: '22px' }}>
-                            <Box
-                              style={{
-                                display: 'flex',
-                                justifyContent: 'center'
-                              }}
-                            >
-                              <Badge
-                                overlap="circular"
-                                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                badgeContent={
-                                  <InfoRoundedIcon fontSize="small" color="primary" />
-                                }
+                  {/* founder tab starts */}
+
+                  <Box textAlign="center" mb={2}>
+                    {stories && stories.map(({ _id, storyByFounder }) => (
+                      <>
+                        <Carousel>
+                          {storyByFounder && storyByFounder.map(({ _id, storyByFounderName, storyByFounderTitle, storyByFounderAvatar, storyByFounderContent, storyByFounderIsActive }) => (
+                            <Box key={_id}>
+                              <Box
+                                style={{
+                                  display: 'flex',
+                                  justifyContent: 'center'
+                                }}
                               >
-                                <Avatar sx={{ bgcolor: green[200] }}>
-                                  {image}
-                                </Avatar>
-                              </Badge>
-                            </Box>
-                            <Box style={{ textAlign: 'center' }}>
-                              <Box mt={1.5}>
-                                <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
-                                  {name}
-                                </Typography>
-                                <Typography mt={0.5} variant="body2" fontWeight={600} color="secondary">
-                                  {content}
-                                </Typography>
+                                <StyledBadge
+                                  overlap="circular"
+                                  anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'right'
+                                  }}
+                                  variant={storyByFounderIsActive}
+                                >
+                                  <Avatar
+                                    style={{ width: 80, height: 80 }}
+                                    alt={storyByFounderName}
+                                    src={storyByFounderAvatar}
+                                  />
+                                </StyledBadge>
+                              </Box>
+                              <Box marginTop="16px">
+                                <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByFounderName}</Typography>
+                                <Typography variant="body" component="div" gutterBottom>{storyByFounderTitle}</Typography>
+                                <Typography variant="h5" component="div" fontWeight="600">{storyByFounderContent}</Typography>
                               </Box>
                             </Box>
-                          </Card>
-                        </Tooltip>
-                      </Grid>
+                          ))}
+                        </Carousel>
+                      </>
                     ))}
+                  </Box>
 
+                  <Grid item xs={12} mt={2}>
+                    <Grid container spacing={1}>
+                      {guides && guides.map(({ _id, guideForFounder }) => (
+                        <>
+                          {guideForFounder && guideForFounder.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
+                            <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                              <Tooltip title={guideForFounderTooltip} placement="top">
+                                <Card style={{ padding: '22px' }}>
+                                  <Box
+                                    style={{
+                                      display: 'flex',
+                                      justifyContent: 'center'
+                                    }}
+                                  >
+                                    <Badge
+                                      overlap="circular"
+                                      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                      badgeContent={
+                                        <InfoRoundedIcon fontSize="small" color="primary" />
+                                      }
+                                    >
+                                      <Avatar
+                                        style={{ width: 50, height: 50 }}
+                                        alt={guideForFounderTitle}
+                                        src={guideForFounderIcon}
+                                      />
+                                    </Badge>
+                                  </Box>
+                                  <Box style={{ textAlign: 'center' }}>
+                                    <Box mt={1.2}>
+                                      <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
+                                        {guideForFounderTitle}
+                                      </Typography>
+                                      <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
+                                        {guideForFounderContent}
+                                      </Typography>
+                                    </Box>
+                                  </Box>
+                                </Card>
+                              </Tooltip>
+                            </Grid>
+                          ))}
+                        </>
+                      ))}
+                    </Grid>
                   </Grid>
-                </Grid>
+
+                  {/* founder tab ends */}
+
+                </Box>
 
                 <Box textAlign="center" mt={2}>
                   <Typography component="span" variant="body2" fontWeight={600} color="black">
@@ -532,11 +504,12 @@ const Page = () => {
                   </Typography>
                 </Box>
 
-                {/* principles end here */}
+                {/* tab stops */}
 
               </Container>
 
             </GridWrapper>
+
           </Hidden>
 
           {/* right container ends */}

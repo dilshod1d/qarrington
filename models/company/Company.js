@@ -13,24 +13,20 @@ const CompanySchema = new mongoose.Schema({
     companyWebsite: { type: String },
     companyEmail: { type: String },
     companyMarket: { type: String },
-    companyKey: { type: String }, // a unique 12 characters
-    companyWhitelist: { type: String }, // the total number of whitelisted subscribers
+    companySize: { type: String },
+    companyKey: { type: String } // a unique 12 characters
   },
-  companyFounders: [
-    {
-      companyFounderFirstName: { type: String },
-      companyFounderAvatarUrl: { type: String },
-      companyFounderIsActive: { type: String },
-      companyFounderCurrentTitle: { type: String },
-      companyFounderAccountId: { type: String }, // the account id of the founder
-      companyFounderIsCreatedAt: { type: Date, default: Date.now }, // the main user can add a founder
-      companyFounderIsUpdatedAt: { type: Date, default: Date.now } // the main user can update a founder
-    }
-  ],
+  companyUser: {
+    companyTotalSubscribers: { type: String }, // the total whitelisted subscribers for the iso
+    companyTotalCustomers: { type: String }, // the current total users with active subscriptions
+    companyCustomersCreated: { type: String }, // the total customers the company has created thru its companyKey
+    companyCustomersNotCreated: { type: String } // the total customers the company is yet to create
+  },
   companyIso: {
     companyIsoUnits: { type: String }, // the inital total subscriptions
     companyIsoPrice: { type: String }, // the initial price per subscription
-    companyIsoDate: { type: String }, // iso will end 7 days after this date
+    companyIsoDate: { type: Date }, // iso will end 7 days after this date
+    companyIsoTime: { type: String }, // the time the iso will start on the date
     companyIsoSubscribers: [ // the list of the whitelisted subscribers for the iso
       {
         companySubscriberUnits: { type: String }, // the subscription units during the iso
@@ -44,16 +40,12 @@ const CompanySchema = new mongoose.Schema({
     companyIsoRaised: { type: String }, // total companySubscriberUnits * companyIsoPrice
     companyIsoProceed: { // how companyIsoAmountRaised will be transfered
       companyIsoProceedIsMade: { type: String }, // default is FALSE
-      companyIsoProceedIsMadeTo: { type: String }, // we will send to the main founder's accountId / accountStripeId
+      companyIsoProceedIsMadeTo: { type: String }, // we will send to the accountId's accountStripeId
       companyIsoProceedIsMadeAt: { type: String } //  we will send 90% of companyIsoAmountRaised 7 days after the iso
     }
   },
   companyCustomers: [ // all iso subscribers will become customers after iso
     {
-      companyCustomerFirstName: { type: String },
-      companyCustomerAvatarUrl: { type: String },
-      companyCustomerIsActive: { type: String },
-      companyCustomerCurrentTitle: { type: String },
       companyCustomerAccountId: { type: String }, // the account id of the customer
       companyCustomerIsCreated: { type: String }, // the company must use its companyKey to create customer thru REST API after iso
       companyCustomerIsCreatedAt: { type: Date, default: Date.now } //  the date the customer is created thru REST API
@@ -70,7 +62,7 @@ const CompanySchema = new mongoose.Schema({
       companyIsRecordedAt: { type: Date, default: Date.now } // update and save every 5 seconds
     }
   ],
-  companyAccountId: { type: String }, //  the account id of the company main user / first founder
+  companyAccountId: { type: String }, //  the account id that listed the company
   companyStatus: {
     companyIsSubmitted: { type: String },
     companyIsSubmittedAt: { type: Date, default: Date.now }, // the day the company is created

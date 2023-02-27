@@ -4,50 +4,28 @@
         "companyDetails": {
             "companyName": "Qarrington",
             "companyLogo": "/assets/media/companies/qarrington.png",
-            "companyHeadline": "This is Qarrington Headline",
-            "companyProduct": "This is Qarrington Product",
-            "companyProductId": "VIZZrgpEOt",
-            "companyDescription": "This is Qarrington company description.",
+            "companyHeadline": "This is the headline",
+            "companyProduct": "This is the company product description",
+            "companyProductId": "stripeProductId",
+            "companyDescription": "This is the company description.",
             "companyIndustry": "SaaS",
-            "companyWebsite": "https://qarrington.com",
-            "companyEmail": "team@qarrington.com",
+            "companyWebsite": "https://example.com",
+            "companyEmail": "email@example.com",
             "companyMarket": "International",
-            "companyKey": "q2WwbyJi52cixXqDlPQuBHkDkSUSygTY",
-            "companyWhitelist": "8,523"
+            "companySize": "42,850",
+            "companyKey": "q2WwbyJi52cixXqDlPQuBHkDkSUSygTY"
         },
-        "companyFounders": [
-            {
-                "companyFounderFirstName": "Kim",
-                "companyFounderAvatarUrl": "/assets/media/accounts/kim.webp",
-                "companyFounderIsActive": "dot",
-                "companyFounderCurrentTitle": "CEO",
-                "companyFounderAccountId": "XGFbLb5TpP",
-                "companyFounderIsCreatedAt": "02-04-2022",
-                "companyFounderIsUpdatedAt": "04-05-2023"
-            },
-            {
-                "companyFounderFirstName": "Jess",
-                "companyFounderAvatarUrl": "/assets/media/accounts/jess.webp",
-                "companyFounderIsActive": "dot",
-                "companyFounderCurrentTitle": "CTO",
-                "companyFounderAccountId": "XGFbLb5TpP",
-                "companyFounderIsCreatedAt": "02-04-2022",
-                "companyFounderIsUpdatedAt": "04-05-2023"
-            },
-            {
-                "companyFounderFirstName": "Alicia",
-                "companyFounderAvatarUrl": "/assets/media/accounts/alicia.webp",
-                "companyFounderIsActive": "",
-                "companyFounderCurrentTitle": "CMO",
-                "companyFounderAccountId": "XGFbLb5TpP",
-                "companyFounderIsCreatedAt": "02-04-2022",
-                "companyFounderIsUpdatedAt": "04-05-2023"
-            }
-        ],
+        "companyUser": {
+            "companyTotalSubscribers": "54,383",
+            "companyTotalCustomers": "85,892",
+            "companyCustomersCreated": "64,983",
+            "companyCustomersNotCreated": "21,902"
+        },
         "companyIso": {
             "companyIsoUnits": "5,000,000",
             "companyIsoPrice": "25",
             "companyIsoDate": "05-05-2023",
+            "companyIsoTime": "11:45",
             "companyIsoSubscribers": [
                 {
                     "companySubscriberUnits": "543",
@@ -67,19 +45,11 @@
         },
         "companyCustomers": [
             {
-                "companyCustomerFirstName": "Alex",
-                "companyCustomerAvatarUrl": "/assets/media/accounts/alex.webp",
-                "companyCustomerIsActive": "",
-                "companyCustomerCurrentTitle": "Real Estate Agent",
                 "companyCustomerAccountId": "823C217B3F72ACD1",
                 "companyCustomerIsCreated": "TRUE",
                 "companyCustomerIsCreatedAt": "07-14-2023"
             },
             {
-                "companyCustomerFirstName": "Maria",
-                "companyCustomerAvatarUrl": "/assets/media/accounts/maria.webp",
-                "companyCustomerIsActive": "dot",
-                "companyCustomerCurrentTitle": "Social Media Specialist",
                 "companyCustomerAccountId": "823C217B3F72ACD1",
                 "companyCustomerIsCreated": "TRUE",
                 "companyCustomerIsCreatedAt": "07-14-2023"
@@ -87,6 +57,7 @@
         ],
         "companyAnalytics": [
             {
+                "companyCurrency": "USD",
                 "companyCapitalization": "8,434,504",
                 "companyVolume": "5,400,250",
                 "companyPrice": "45",
