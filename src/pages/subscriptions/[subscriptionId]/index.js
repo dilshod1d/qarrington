@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import HeaderMenu from '../../../components/menus/HeaderMenu';
 import LeftGrid from '../../../components/grids/LeftGrid';
-import RightGrid from '../../../components/grids/RightGrid';
+import Price from '../../../components/charts/Price';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
@@ -272,7 +272,7 @@ const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <RightGrid />
+                        <Price />
                     </Grid>
 
                 </Grid>

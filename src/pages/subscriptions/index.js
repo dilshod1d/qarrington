@@ -56,7 +56,7 @@ const Page = () => {
                                                         <Box style={{ textAlign: 'center' }}>
                                                             <Tooltip title={companyDetails.companyName} placement="top">
                                                                 <Box>
-                                                                    {companyAnalytics && companyAnalytics.map(({ _id, companyPrice, companyPricePercentChange, companyPricePointChange }) => (
+                                                                    {companyAnalytics && companyAnalytics.slice(0, 1).map(({ _id, companyPrice, companyPricePercentChange, companyPricePointChange }) => (
                                                                         <>
                                                                             <Box textAlign="center" mt={1.5} mb={0.5}>
                                                                                 <Typography component="span" mr={0.2} variant="body2" fontWeight="700" color="black" textTransform="uppercase">

@@ -56,7 +56,7 @@ const Page = () => {
                                                         <Box style={{ textAlign: 'center' }}>
                                                             <Box>
                                                                 <Box textAlign="center" mt={1.5} mb={0.5}>
-                                                                    <Typography component="span" mr={0.2} variant="body2" fontWeight="700" color="black" textTransform="uppercase">
+                                                                    <Typography component="span" mr={0.2} variant="body" fontWeight="700" color="black" textTransform="uppercase">
                                                                         {companyDetails.companyName}
                                                                     </Typography>
                                                                 </Box>

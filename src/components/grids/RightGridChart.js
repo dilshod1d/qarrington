@@ -3,6 +3,7 @@ import Link from 'next/link';
 import useSWR from 'swr';
 import { Avatar, Box, Breadcrumbs, Button, Card, Grid, Typography } from '@mui/material';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import FooterMenu from '../menus/FooterMenu';
 
 const Component = () => {
 
@@ -105,81 +106,7 @@ const Component = () => {
 
           {/* chart stops */}
 
-          <Box style={footer} role="presentation">
-            <Breadcrumbs
-              separator="/"
-              aria-label="breadcrumb"
-              sx={{
-                '& ol': {
-                  justifyContent: 'center',
-                  fontSize: '12px',
-                  margin: 'auto',
-                  textDecoration: 'none'
-                }
-              }}
-            >
-              <Link href="/a/about">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  About
-                </Typography>
-              </Link>
-              <Link href="/a/products">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  Products
-                </Typography>
-              </Link>
-              <Link href="/a/solutions">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  Solutions
-                </Typography>
-              </Link>
-              <Link href="/a/mechanisms">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  Mechanisms
-                </Typography>
-              </Link>
-              <Link href="/a/preferences">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  Preferences
-                </Typography>
-              </Link>
-              <Link href="/">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  Logout
-                </Typography>
-              </Link>
-            </Breadcrumbs>
-          </Box>
-
-          <Box style={footerBrand}>
-            <Typography variant="body2" color="secondary">
-              Qarrington, Inc. © 2023
-            </Typography>
-          </Box>
+          <FooterMenu />
 
         </Grid>
       </Grid>

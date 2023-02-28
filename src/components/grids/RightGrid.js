@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
+import FooterMenu from '../menus/FooterMenu';
 
 const Component = () => {
   return (
@@ -56,90 +57,7 @@ const Component = () => {
             </Box>
           </Card>
 
-          <Box style={footer} role="presentation">
-            <Breadcrumbs
-              separator="/"
-              aria-label="breadcrumb"
-              sx={{
-                '& ol': {
-                  justifyContent: 'center',
-                  fontSize: '12px',
-                  margin: 'auto',
-                  textDecoration: 'none'
-                }
-              }}
-            >
-              <Link href="/about">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  About
-                </Typography>
-              </Link>
-              <Link href="/preferences">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  Preferences
-                </Typography>
-              </Link>
-              <Link href="/opportunities">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  Opportunities
-                </Typography>
-              </Link>
-              <Link href="/help">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  Help
-                </Typography>
-              </Link>
-              <Link href="/terms">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  Terms
-                </Typography>
-              </Link>
-              <Link href="/privacy">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  Privacy
-                </Typography>
-              </Link>
-              <Link href="/account/access">
-                <Typography
-                  variant="body2"
-                  color="secondary"
-                  sx={BreadcrumbItem}
-                >
-                  Login
-                </Typography>
-              </Link>
-            </Breadcrumbs>
-          </Box>
-
-          <Box style={footerBrand}>
-            <Typography variant="body2" color="secondary">
-              Qarrington, Inc. © 2023
-            </Typography>
-          </Box>
+          <FooterMenu />
 
           {/* RightGrid Ends Here */}
         </Grid>

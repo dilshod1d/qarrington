@@ -57,18 +57,18 @@ const Page = () => {
                                 {pulls && pulls.slice(0, 1).map(({ _id, pullAccount }) => (
                                     <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
                                         <Card style={{ padding: '80px', marginBottom: '16px' }}>
-                                            <Tooltip title="This is the total balance of all the subscriptions that you currently own." placement="top">
+                                            <Tooltip title="Portfolio" placement="top">
                                                 <Box textAlign="center">
-                                                    <DraftBadge badgeContent="USD" color="success" fontWeight={700}>
-                                                    </DraftBadge>
+                                                    <CurrencyBadge badgeContent="USD" color="success" fontWeight={700}>
+                                                    </CurrencyBadge>
                                                     <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={0.5}>
-                                                        {pullAccount.accountBalance}
+                                                        {pullAccount.pullAccountPortfolio}
                                                     </Typography>
                                                 </Box>
                                             </Tooltip>
                                             <Box textAlign="center">
                                                 <Typography variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
-                                                    account balance
+                                                    account portfolio
                                                 </Typography>
                                             </Box>
                                         </Card>
@@ -108,9 +108,9 @@ const Page = () => {
                                             <Grid item xs={12} mb={2}>
                                                 <Grid container spacing={1}>
 
-                                                    {pulls && pulls.map(({ _id, pullSlug, pullPrice, pullRequests, pullSubscription, pullAccount, pullUpdatedAt }) => (
+                                                    {pulls && pulls.map(({ _id, pullTicker, pullCompany, pullStatus }) => (
                                                         <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/subscription/${pullSlug}`}>
+                                                            <Link href={`/subscriptions/${pullTicker}`}>
                                                                 <Card style={{ padding: '40px', cursor: 'pointer' }}>
                                                                     <Box
                                                                         style={{
@@ -119,27 +119,31 @@ const Page = () => {
                                                                         }}
                                                                     >
                                                                         <Stack direction="row" spacing={2}>
-                                                                            <Tooltip title={pullSubscription.subscriptionName} placement="top">
-                                                                                <StyledBadge
-                                                                                    overlap="circular"
-                                                                                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                                                                    variant={pullRequests.requestIsMatched}
-                                                                                >
-                                                                                    <Avatar alt={pullSubscription.subscriptionName} src={pullSubscription.subscriptionLogo}
-                                                                                        sx={{ height: '50px', width: '50px' }}
-                                                                                    />
-                                                                                </StyledBadge>
-                                                                            </Tooltip>
+                                                                            <StyledBadge
+                                                                                overlap="circular"
+                                                                                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                                                                variant={pullStatus.pullIsMatched}
+                                                                            >
+                                                                                <Avatar alt={pullCompany.pullCompanyName} src={pullCompany.pullCompanyLogo}
+                                                                                    sx={{ height: '40px', width: '40px' }}
+                                                                                />
+                                                                            </StyledBadge>
                                                                         </Stack>
                                                                     </Box>
                                                                     <Box style={{ textAlign: 'center' }}>
-                                                                        <Box mt={1.5}>
-                                                                            <Typography variant="h5" fontWeight={700}>
-                                                                                {pullRequests.requestUnits}
-                                                                            </Typography>
-                                                                            <Typography variant="body2" fontWeight={500} color="secondary">
-                                                                                {pullSubscription.subscriptionTicker}
-                                                                            </Typography>
+                                                                        <Box style={{ textAlign: 'center' }}>
+                                                                            <Box>
+                                                                                <Box textAlign="center" mt={1.5} mb={0.5}>
+                                                                                    <Typography component="span" mr={0.2} variant="body" fontWeight="700" color="black" textTransform="uppercase">
+                                                                                        {pullCompany.pullCompanyName}
+                                                                                    </Typography>
+                                                                                </Box>
+                                                                                <Box>
+                                                                                    <Typography textTransform="uppercase" variant="body2" fontWeight={700} color="secondary">
+                                                                                        {pullTicker}
+                                                                                    </Typography>
+                                                                                </Box>
+                                                                            </Box>
                                                                         </Box>
                                                                     </Box>
                                                                 </Card>
@@ -155,7 +159,7 @@ const Page = () => {
                                                         </Card>
                                                         <Box style={{ textAlign: 'center', marginTop: '20px' }}>
                                                             <Typography variant="body2">
-                                                                When you make a pull request to buy the subscriptions of a listed company, the green dot shows that the request is yet to be filled. Otherwise, you won't see the dot.
+                                                                The above subscriptions are the subscriptions of companies that you currently own in your account portfolio. With that being said, kindly note that when you submit a pull request, the subscription will not be shown here unless the request is matched with a push request.
                                                             </Typography>
                                                         </Box>
                                                     </Grid>
@@ -172,9 +176,9 @@ const Page = () => {
                                             <Grid item xs={12} mb={2}>
                                                 <Grid container spacing={1}>
 
-                                                    {pushes && pushes.map(({ _id, pushSlug, pushPrice, pushRequests, pushSubscription, pushAccount, pushUpdatedAt }) => (
+                                                    {pushes && pushes.map(({ _id, pushTicker, pushCompany, pushStatus }) => (
                                                         <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/subscription/${pushSlug}`}>
+                                                            <Link href={`/subscriptions/${pushTicker}`}>
                                                                 <Card style={{ padding: '40px', cursor: 'pointer' }}>
                                                                     <Box
                                                                         style={{
@@ -183,32 +187,29 @@ const Page = () => {
                                                                         }}
                                                                     >
                                                                         <Stack direction="row" spacing={2}>
-                                                                            <Tooltip title={pushSubscription.subscriptionName} placement="top">
-                                                                                <StyledBadge
-                                                                                    overlap="circular"
-                                                                                    anchorOrigin={{
-                                                                                        vertical: 'bottom',
-                                                                                        horizontal: 'right'
-                                                                                    }}
-                                                                                    variant={pushRequests.requestIsMatched}
-                                                                                >
-                                                                                    <Avatar
-                                                                                        style={{ width: 50, height: 50 }}
-                                                                                        alt={pushSubscription.subscriptionName}
-                                                                                        src={pushSubscription.subscriptionLogo}
-                                                                                    />
-                                                                                </StyledBadge>
-                                                                            </Tooltip>
+                                                                            <StyledBadge
+                                                                                overlap="circular"
+                                                                                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                                                                variant={pushStatus.pushIsMatched}
+                                                                            >
+                                                                                <Avatar alt={pushCompany.pushCompanyName} src={pushCompany.pushCompanyLogo}
+                                                                                    sx={{ height: '40px', width: '40px' }}
+                                                                                />
+                                                                            </StyledBadge>
                                                                         </Stack>
                                                                     </Box>
                                                                     <Box style={{ textAlign: 'center' }}>
-                                                                        <Box mt={1.5}>
-                                                                            <Typography variant="h5" fontWeight={700}>
-                                                                                {pushRequests.requestUnits}
-                                                                            </Typography>
-                                                                            <Typography variant="body2" fontWeight={500} color="secondary">
-                                                                                {pushSubscription.subscriptionTicker}
-                                                                            </Typography>
+                                                                        <Box>
+                                                                            <Box textAlign="center" mt={1.5} mb={0.5}>
+                                                                                <Typography component="span" mr={0.2} variant="body" fontWeight="700" color="black" textTransform="uppercase">
+                                                                                    {pushCompany.pushCompanyName}
+                                                                                </Typography>
+                                                                            </Box>
+                                                                            <Box>
+                                                                                <Typography textTransform="uppercase" variant="body2" fontWeight={700} color="secondary">
+                                                                                    {pushTicker}
+                                                                                </Typography>
+                                                                            </Box>
                                                                         </Box>
                                                                     </Box>
                                                                 </Card>
@@ -224,7 +225,7 @@ const Page = () => {
                                                         </Card>
                                                         <Box style={{ textAlign: 'center', marginTop: '20px' }}>
                                                             <Typography variant="body2">
-                                                                Similar to pull requests, if the green dot is shown, it means that your push request to sell the subscriptions of a company isn't filled yet. Otherwise, you won't see the dot.
+                                                                The above subscriptions are the subscriptions that you recently pushed or sold. In addition to that, when you submit a push request to sell the subscriptions of a company, the subscriptions will not be shown in your dashboard unless the request is matched with a pull request.
                                                             </Typography>
                                                         </Box>
                                                     </Grid>
@@ -307,7 +308,7 @@ const TabLabel = styled(Tab)(
     `
 );
 
-const DraftBadge = styled(Badge)(({ theme }) => ({
+const CurrencyBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: 0,
         top: -8,
