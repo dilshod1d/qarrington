@@ -111,7 +111,7 @@ const Page = () => {
                                                             ))}
                                                         </Box>
                                                         {accounts && accounts.slice(0, 1).map(({ _id, accountDetails }) => (
-                                                            <Box mt={1.5}>
+                                                            <Box mt={1.5} key={_id}>
                                                                 <Typography component="span" variant="h4" fontWeight="500" color="black">Hi</Typography>
                                                                 <Typography component="span" mr={0.5} variant="h4" fontWeight="500" color="secondary">,</Typography>
                                                                 <Typography component="span" variant="h4" fontWeight="700" color="black">{accountDetails.accountFirstName}</Typography>

@@ -72,7 +72,7 @@ const Page = ({ slug }) => {
                                                                     <Typography variant="body">Track the number of whitelisted subscribers, total customers, active customers, and passive customers of your company with ease.</Typography>
                                                                 </Box>
                                                                 {companies && companies.slice(0, 1).map(({ _id, companyTicker }) => (
-                                                                    <Link href={`/${companyTicker}`}>
+                                                                    <Link key={_id} href={`/${companyTicker}`}>
                                                                         <Tooltip title="Prior to listing a company, the company must whitelist subscribers for its ISO and convert them to customers after the ISO." placement="top">
                                                                             <Button
                                                                                 size="medium"

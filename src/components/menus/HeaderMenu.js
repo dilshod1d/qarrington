@@ -117,10 +117,10 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="flex-end">
 
-                <Link href="/products">
+                <Link href="/dashboard">
                   <Box sx={{ marginRight: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      Products
+                      Dashboard
                     </Button>
                   </Box>
                 </Link>

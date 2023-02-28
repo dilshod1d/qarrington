@@ -232,7 +232,7 @@ const Page = ({ name, ticker, description, logo }) => {
                         </Link>
 
                         {companies && companies.slice(0, 1).map(({ _id, companyTicker }) => (
-                          <Link href={`/subscriptions/${companyTicker}`}>
+                          <Link key={_id} href={`/subscriptions/${companyTicker}`}>
                             <Button
                               size="large"
                               sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
