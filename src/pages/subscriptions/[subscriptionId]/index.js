@@ -1,17 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import HeaderMenu from '../../../components/menus/HeaderMenu';
 import LeftGrid from '../../../components/grids/LeftGrid';
 import RightGrid from '../../../components/grids/RightGrid';
-import { Badge, Box, Button, Card, Container, Grid, Stack, styled, Tooltip, Typography } from '@mui/material';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
+import TabContext from '@mui/lab/TabContext';
+import { Badge, Box, Button, Card, Container, Grid, Stack, styled, Tab, Tooltip, Typography } from '@mui/material';
 import Footer from '../../../components/main/Footer';
 import useSWR from 'swr';
+import RemoveCircleTwoToneIcon from '@mui/icons-material/RemoveCircleTwoTone';
+import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
 
 const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data: pulls } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/pulls`, fetcher);
+
+    const [value, setValue] = useState('1');
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
+    const [unit, setUnit] = useState(0);
+    const handleIncrease = () => {
+        setUnit(unit + 12)
+    }
+    const handleDecrease = () => {
+        if (unit > 0)
+            setUnit(unit - 12);
+    }
 
     return (
 
@@ -49,7 +69,7 @@ const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
                                     <Box textAlign="center" sx={{ marginBottom: '16px' }}>
                                         <Grid item xs={12} sm={6} md={6} lg={12}>
                                             <Card style={{ padding: '80px' }}>
-                                                <Tooltip title={`This is the balance of ${name} subscriptions that you currently own.`} placement="top">
+                                                <Tooltip title={`Portfolio`} placement="top">
                                                     <Box textAlign="center">
                                                         <CurrencyBadge badgeContent="USD" color="success" fontWeight={700}>
                                                         </CurrencyBadge>
@@ -92,43 +112,158 @@ const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
                                         </Grid>
                                     </Box>
 
-                                    <Card style={{ padding: '60px' }}>
-                                        <Stack spacing={2} sx={{ width: '100%' }}>
+                                    {/* tab starts */}
 
-                                            <Stack marginTop={0} direction="row" width="100%" spacing={2}>
-                                                <Link href={`/subscription/${slug}/pull`}>
-                                                    <Tooltip title={`Buy ${ticker}`} placement="top">
-                                                        <Button
-                                                            size="large"
-                                                            sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '13px' }}
-                                                            variant="contained"
-                                                            fullWidth={true}
-                                                        >
-                                                            Pull
-                                                        </Button>
-                                                    </Tooltip>
-                                                </Link>
-                                                <Link href={`/subscription/${slug}/push`}>
-                                                    <Tooltip title={`Sell ${ticker}`} placement="top">
-                                                        <Button
-                                                            size="large"
-                                                            sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '13px' }}
-                                                            variant="outlined"
-                                                            fullWidth={true}
-                                                        >
-                                                            Push
-                                                        </Button>
-                                                    </Tooltip>
-                                                </Link>
-                                            </Stack>
-                                        </Stack>
-                                    </Card>
+                                    <TabContext value={value}>
 
-                                    <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                        <Typography variant="body2">
-                                            Unlike stocks and cryptos that are backed literally by nothing, your subscriptions with a Qarrington company are backed by the underlying products of the company. With that being said, kindly keep in mind that subscriptions only give you access to a company's products and services, they neither represent investment nor ownership stakes in the firm, which in this case is, {name}.
-                                        </Typography>
-                                    </Box>
+                                        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                                            <TabsWrapper
+                                                onChange={handleChange}
+                                                indicatorColor="transparent"
+                                                TabIndicatorProps={{
+                                                    sx: { backgroundColor: 'transparent', height: 4 }
+                                                }}
+                                                sx={{
+                                                    "& button:hover": { backgroundColor: "#c7c7c7" },
+                                                    "& button:active": { backgroundColor: "#b6b6b6" },
+                                                    "& button.Mui-selected": { backgroundColor: "#a7a7a7" },
+                                                    "& div.MuiTabs-scroller": { overflowY: "auto" },
+                                                }}
+                                                scrollButtons="auto"
+                                                aria-label="scrollable auto tabs example"
+                                            >
+                                                <TabLabel label="Pull" value="1" />
+                                                <TabLabel label="Push" value="2" />
+                                            </TabsWrapper>
+                                        </Box>
+
+                                        <Box style={{ marginBottom: '0px', marginTop: '16px' }}>
+
+                                            {/* pull starts */}
+
+                                            <TabPanel sx={{ padding: 0 }} value="1">
+                                                <Card style={{ padding: '60px' }}>
+                                                    <Stack spacing={2} sx={{ width: '100%' }}>
+                                                        <Stack marginTop={0} direction="row" width="100%" spacing={2}>
+                                                            <Button
+                                                                size="large"
+                                                                sx={{ py: 1.2, textTransform: 'uppercase', fontSize: '12px' }}
+                                                                variant="outlined"
+                                                                color="secondary"
+                                                                fullWidth={false}
+                                                                onClick={handleDecrease}
+                                                            >
+                                                                <RemoveCircleTwoToneIcon />
+                                                            </Button>
+                                                            <Button
+                                                                disabled
+                                                                size="large"
+                                                                sx={{ py: 1.2, color: 'white', textTransform: 'uppercase', fontSize: '18px' }}
+                                                                variant="contained"
+                                                                fullWidth={true}
+                                                            >
+                                                                {`Transfer ${unit} USD`}
+                                                            </Button>
+                                                            <Button
+                                                                size="large"
+                                                                sx={{ py: 1.2, textTransform: 'uppercase', fontSize: '12px' }}
+                                                                variant="outlined"
+                                                                color="secondary"
+                                                                fullWidth={false}
+                                                                onClick={handleIncrease}
+                                                            >
+                                                                <AddCircleTwoToneIcon />
+                                                            </Button>
+                                                        </Stack>
+                                                        <Stack marginTop={0} direction="row" width="100%" spacing={2}>
+                                                            <Tooltip title="To receive the above subscription units in your portfolio, the below amount will be charged to your credit/debit card." placement="top">
+                                                                <Button
+                                                                    size="large"
+                                                                    sx={{ color: 'white', py: 1.8, textTransform: 'uppercase', fontSize: '14px' }}
+                                                                    variant="contained"
+                                                                    fullWidth={true}
+                                                                    type="submit"
+                                                                >
+                                                                    {`Receive ${unit} ${ticker}`}
+                                                                </Button>
+                                                            </Tooltip>
+                                                        </Stack>
+                                                    </Stack>
+                                                </Card>
+                                                <Box style={{ textAlign: 'center', marginTop: '20px' }}>
+                                                    <Typography variant="body2">
+                                                        When you buy a company's subscriptions, you will be able to use the subscription units to access the company's products and services. Each subscription unit gives you a month of access.
+                                                    </Typography>
+                                                </Box>
+                                            </TabPanel>
+
+                                            {/* pull stops */}
+
+                                            {/* push starts */}
+
+                                            <TabPanel sx={{ padding: 0 }} value="2">
+                                                <Card style={{ padding: '60px' }}>
+                                                    <Stack spacing={2} sx={{ width: '100%' }}>
+                                                        <Stack marginTop={0} direction="row" width="100%" spacing={2}>
+                                                            <Button
+                                                                size="large"
+                                                                sx={{ py: 1.2, textTransform: 'uppercase', fontSize: '12px' }}
+                                                                variant="outlined"
+                                                                color="secondary"
+                                                                fullWidth={false}
+                                                                onClick={handleDecrease}
+                                                            >
+                                                                <RemoveCircleTwoToneIcon />
+                                                            </Button>
+                                                            <Button
+                                                                disabled
+                                                                size="large"
+                                                                sx={{ py: 1.2, color: 'white', textTransform: 'uppercase', fontSize: '18px' }}
+                                                                variant="contained"
+                                                                fullWidth={true}
+                                                            >
+                                                                {`Receive ${unit} USD`}
+                                                            </Button>
+                                                            <Button
+                                                                size="large"
+                                                                sx={{ py: 1.2, textTransform: 'uppercase', fontSize: '12px' }}
+                                                                variant="outlined"
+                                                                color="secondary"
+                                                                fullWidth={false}
+                                                                onClick={handleIncrease}
+                                                            >
+                                                                <AddCircleTwoToneIcon />
+                                                            </Button>
+                                                        </Stack>
+                                                        <Stack marginTop={0} direction="row" width="100%" spacing={2}>
+                                                            <Tooltip title="To receive the above amount in your bank account, the below subscription units will be taken from your portfolio." placement="top">
+                                                                <Button
+                                                                    size="large"
+                                                                    sx={{ color: 'white', py: 1.8, textTransform: 'uppercase', fontSize: '14px' }}
+                                                                    variant="contained"
+                                                                    fullWidth={true}
+                                                                    type="submit"
+                                                                >
+                                                                    {`Transfer ${unit} ${ticker}`}
+                                                                </Button>
+                                                            </Tooltip>
+                                                        </Stack>
+                                                    </Stack>
+                                                </Card>
+                                                <Box style={{ textAlign: 'center', marginTop: '20px' }}>
+                                                    <Typography variant="body2">
+                                                        When you sell a company's subscriptions, the payout will automatically be transferred to your connected bank account. However, you might lose access to the company's products and services.
+                                                    </Typography>
+                                                </Box>
+                                            </TabPanel>
+
+                                            {/* push stops */}
+
+                                        </Box>
+
+                                    </TabContext>
+
+                                    {/* tab stops */}
 
                                 </form>
 
@@ -150,6 +285,23 @@ const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
 }
 
 export default Page
+
+const TabsWrapper = styled(TabList)(
+    ({ theme }) => `
+          &.MuiTabs-root {
+            height: 0;
+            margin-bottom: 0px;
+          }
+    `
+);
+
+const TabLabel = styled(Tab)(
+    ({ theme }) => `
+          font-size: 12px;
+          font-weight: 700;
+          text-transform: uppercase;
+    `
+);
 
 const CurrencyBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
