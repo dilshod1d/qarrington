@@ -60,6 +60,7 @@ const Page = ({ url, name }) => {
                   style={{
                     display: 'flex',
                     cursor: 'pointer',
+                    marginBottom: '20px',
                     justifyContent: 'center'
                   }}
                 >

@@ -9,11 +9,12 @@ import TabContext from '@mui/lab/TabContext';
 import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
 
-const Page = () => {
+const Page = ({ name, ticker, description, logo }) => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
+  const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
 
   const [value, setValue] = useState('1');
 
@@ -26,10 +27,12 @@ const Page = () => {
     <>
 
       <Head>
-        <title>Open Account • Qarrington</title>
+        <title>
+          Join the {name} ISO; Initial Subscription Offering • Qarrington
+        </title>
         <meta
           name="description"
-          content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
+          content={`When you join the whitelist for the ${name} subscription launch, you must add your phone number to your account to receive SMS 24hrs before the launch.`}
         />
       </Head>
 
@@ -64,24 +67,24 @@ const Page = () => {
                     justifyContent: 'center'
                   }}
                 >
-                  <Link href="/">
+                  <Tooltip sx={{ textTransform: 'uppercase' }} title={ticker} placement="top">
                     <Avatar
                       style={{ width: 40, height: 40 }}
-                      alt="Qarrington Logo"
-                      src="/assets/media/companies/qarrington.png"
+                      alt={name}
+                      src={logo}
                     />
-                  </Link>
+                  </Tooltip>
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  Cover your expenses with subscriptions
+                  Join the {name} subscription whitelist
                   <Tooltip title="Subscriptions only give you access to a company's products and services, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
 
                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  Qarrington is a subscription exchange, where you participate in the Initial Subscription Offering (ISO) & buy/sell the subscriptions of SaaS companies. It's like stocks but backed by SaaS products.
+                  {description}
                 </Typography>
 
               </Box>
@@ -92,22 +95,23 @@ const Page = () => {
 
                   <Stack spacing={1.2} sx={{ width: '100%' }}>
 
-                    <Tooltip title="Kindly create an accessKey to quickly access your Qarrington account without your personal data such as an email." placement="top">
+                    <Tooltip title="Kindly enter your email address. Once you do, you cannot change it because it'd be linked to your bank account." placement="top">
                       <TextField
                         sx={{ input: { textAlign: "center" } }}
                         required
-                        placeholder="access key"
+                        placeholder="email address"
                       />
                     </Tooltip>
 
                     <Button
                       size="large"
-                      sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                      sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
                       variant="contained"
                       fullWidth={true}
+                      color="secondary"
                       type="submit"
                     >
-                      connect
+                      continue
                     </Button>
 
                   </Stack>
@@ -122,23 +126,21 @@ const Page = () => {
                       mt: "20px"
                     }
                   }}>
-                  <Link href="/account/access">
-                    <Typography variant="body2" color="secondary" sx={Breadcrumb}>
-                      access account
-                    </Typography>
-                  </Link>
-
-                  <Link href="/account/recover">
-                    <Typography variant="body2" color="secondary" sx={Breadcrumb}>
-                      recover account
-                    </Typography>
-                  </Link>
+                  <Typography variant="body2" fontWeight={700} color="black">
+                    lower fees
+                  </Typography>
+                  <Typography variant="body2" fontWeight={700} color="black">
+                    global coverage
+                  </Typography>
+                  <Typography variant="body2" fontWeight={700} color="black">
+                    fewer risks
+                  </Typography>
 
                 </Breadcrumbs>
 
                 <Box textAlign="center">
                   <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    By clicking on the Connect BUTTON or otherwise submitting this FORM, I do hereby agree with the Service Terms and Privacy Policies of the Qarrington website.
+                    By clicking on the Continue BUTTON or otherwise submitting this FORM, I do hereby agree with the Service Terms and Privacy Policies of the Qarrington website.
                   </Typography>
                 </Box>
 
@@ -393,7 +395,6 @@ const Page = () => {
           {/* right container ends */}
 
         </Grid>
-
       </MainContent>
 
     </>
@@ -429,28 +430,6 @@ const Breadcrumb = {
   },
 };
 
-const MainContent = styled(Box)(
-  () => `
-    height: 100%;
-    display: flex;
-    flex: 1;
-    overflow: auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`
-);
-
-const GridWrapper = styled(Grid)(
-  ({ theme }) => `
-    background: ${theme.colors.gradients.green2};
-`
-);
-
-const Body = {
-  backgroundColor: "#ffffff"
-};
-
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     backgroundColor: '#44b700',
@@ -479,3 +458,44 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
   },
 }));
+
+const MainContent = styled(Box)(
+  () => `
+    height: 100%;
+    display: flex;
+    flex: 1;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+);
+
+const GridWrapper = styled(Grid)(
+  ({ theme }) => `
+    background: ${theme.colors.gradients.green2};
+`
+);
+
+const Body = {
+  backgroundColor: "#ffffff"
+};
+
+export async function getServerSideProps({ params }) {
+  try {
+    const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies?companyTicker=${params.companyId.replace(/\-/g, '+')}`)
+      .then((r) => r.json());
+    return {
+      props: {
+        name: results.companyDetails.companyName,
+        ticker: results.companyTicker,
+        description: results.companyDetails.companyDescription,
+        logo: results.companyDetails.companyLogo
+      }
+    };
+  } catch (error) {
+    return {
+      notFound: true
+    };
+  }
+}

@@ -103,15 +103,22 @@ const Page = () => {
                                                                     variant={accountDetails.accountIsActive}
                                                                 >
                                                                     <Avatar
-                                                                        style={{ width: 90, height: 90 }}
+                                                                        style={{ width: 80, height: 80 }}
                                                                         alt={accountDetails.accountFirstName}
                                                                         src={accountDetails.accountAvatarUrl}
                                                                     />
                                                                 </StyledBadge>
                                                             ))}
                                                         </Box>
-                                                        <Box mt={1.5} mb={1.2}>
-                                                            <Typography variant="body">{detail}</Typography>
+                                                        {accounts && accounts.slice(0, 1).map(({ _id, accountDetails }) => (
+                                                            <Box mt={1.5}>
+                                                                <Typography component="span" variant="h4" fontWeight="500" color="black">Hi</Typography>
+                                                                <Typography component="span" mr={0.5} variant="h4" fontWeight="500" color="secondary">,</Typography>
+                                                                <Typography component="span" variant="h4" fontWeight="700" color="black">{accountDetails.accountFirstName}</Typography>
+                                                            </Box>
+                                                        ))}
+                                                        <Box mt={0.8} mb={1.2}>
+                                                            <Typography variant="body">With your Qarrington account, you can <b>underwrite</b> and <b>list</b> companies. Also, you can <b>spread</b>, <b>buy</b>, and <b>sell</b> subscriptions.</Typography>
                                                         </Box>
                                                         <Link href={route}>
                                                             <Tooltip title={tooltip} placement="top">
@@ -449,21 +456,28 @@ const TabLabel = styled(Tab)(
 
 const tasks = [
     {
+        name: "underwrite",
+        route: "/companies/underwrite",
+        tooltip: "When you find, vet, and list a company, you get 10% of the company's Initial Subscription Offering or ISO proceeds.",
+    },
+    {
         name: "list",
         route: "/companies/list",
-        detail: "In order to list a company, simply navigate to the listing page, provide the company details, and submit the company for approval.",
-        tooltip: "When you list a company, the company will only be submitted if the listing is executed by an approved underwriter."
+        tooltip: "When you list your company on Qarrington, you can raise funds through an Initial Subscription Offering or ISO."
+    },
+    {
+        name: "spread",
+        route: "/subscriptions/spread",
+        tooltip: "When you buy subscriptions and sell them to your clients, you can keep the difference btw the pull and push price.",
     },
     {
         name: "buy",
-        route: "/",
-        detail: "In order to buy a company's subscriptions, simply navigate to the homepage, search for the company, and click on the company.",
-        tooltip: "When you buy a subscription during launch, you cannot sell the subscription until after the lock period of 90 days."
+        route: "/subscriptions",
+        tooltip: "When you buy subscriptions, you can sell the subscriptions or use them to access the listed company's products.",
     },
     {
         name: "sell",
         route: "/dashboard",
-        detail: "In order to sell a company's subscriptions, simply navigate to the portfolio section of your dashboard, and click on the company.",
-        tooltip: "When you sell a subscription after the lock period, your monthly access to the company's products will be revoked."
+        tooltip: "When you sell subscriptions, the payout will automatically be sent or paid to your connected bank account within days.",
     }
 ]

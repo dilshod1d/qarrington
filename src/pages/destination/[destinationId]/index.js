@@ -62,6 +62,7 @@ const Page = ({ from, to, preposition }) => {
                   style={{
                     display: 'flex',
                     cursor: 'pointer',
+                    marginBottom: '20px',
                     justifyContent: 'center'
                   }}
                 >

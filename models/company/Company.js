@@ -19,11 +19,7 @@ const CompanySchema = new mongoose.Schema({
   companyUser: [
     {
       companyUserType: { type: String }, // companyTotalSubscribers, companyTotalCustomers, companyActiveCustomers, and companyInActiveCustomers
-      companyUserTotal: { type: String }, // total subscribers during iso, subscribers during & after iso, customers created thru companyKey, and customers not created yet 
-      companyUserDetail: { type: String },
-      companyUserTooltip: { type: String },
-      companyUserButton: { type: String },
-      companyUserRoute: { type: String }
+      companyUserTotal: { type: String } // total subscribers during iso, subscribers during & after iso, customers created thru companyKey, and customers not created yet 
     }
   ],
   companyIso: {

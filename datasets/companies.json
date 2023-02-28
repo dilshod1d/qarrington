@@ -18,35 +18,19 @@
         "companyUser": [
             {
                 "companyUserType": "Total Subscribers",
-                "companyUserTotal": "45,584",
-                "companyUserDetail": "This is the total number of subscribers that have been whitelisted or were whitelisted for your Initial Subscription Offering or ISO.",
-                "companyUserTooltip": "Discover how Qarrington works with underwriters such as accelerators, angels, and venture capital firms.",
-                "companyUserButton": "Underwrite",
-                "companyUserRoute": "/companies/underwrite"
+                "companyUserTotal": "45,584"
             },
             {
                 "companyUserType": "Total Customers",
-                "companyUserTotal": "85,892",
-                "companyUserDetail": "This is calculated as the total number of customers that currently hold your company's subscriptions either from ISO or after.",
-                "companyUserTooltip": "In order to boost liquidity on Qarrington, we are always on the look for service providers, who are market makers.",
-                "companyUserButton": "Make",
-                "companyUserRoute": "/subscriptions/make"
+                "companyUserTotal": "85,892"
             },
             {
                 "companyUserType": "Active Customers",
-                "companyUserTotal": "64,086",
-                "companyUserDetail": "This is the total number of customers that have been created on your platform and given access to your company's products.",
-                "companyUserTooltip": "It's easy, fast, & safe to participate in an Initial Subscription Offering (ISO) or buy subscriptions with a credit/debit card.",
-                "companyUserButton": "Buy",
-                "companyUserRoute": "/subscriptions"
+                "companyUserTotal": "64,086"
             },
             {
-                "companyUserType": "InActive Customers",
-                "companyUserTotal": "21,806",
-                "companyUserDetail": "This is the total number of customers that have not been created yet and have not been given access to your company's products.",
-                "companyUserTooltip": "When you sell your subscriptions, the payout will automatically be sent or paid to your connected bank account.",
-                "companyUserButton": "Sell",
-                "companyUserRoute": "/dashboard"
+                "companyUserType": "Passive Customers",
+                "companyUserTotal": "21,806"
             }
         ],
         "companyIso": {

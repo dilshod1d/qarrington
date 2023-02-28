@@ -60,7 +60,7 @@ const Page = ({ slug }) => {
                                     {companies && companies.slice(0, 1).map(({ _id, companyUser }) => (
                                         <>
                                             <Carousel>
-                                                {companyUser && companyUser.map(({ _id, companyUserType, companyUserTotal, companyUserDetail, companyUserTooltip, companyUserButton, companyUserRoute }) => (
+                                                {companyUser && companyUser.map(({ _id, companyTicker, companyUserType, companyUserTotal, companyUserDetail, companyUserTooltip, companyUserButton, companyUserRoute }) => (
                                                     <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
                                                         <Card style={{ padding: '60px' }}>
                                                             <Box style={{ textAlign: 'center' }}>
@@ -69,20 +69,22 @@ const Page = ({ slug }) => {
                                                                 </Typography>
                                                                 <Typography variant="body2" fontWeight="700" color="secondary" textTransform="uppercase">{companyUserType}</Typography>
                                                                 <Box mt={1.5} mb={1.2}>
-                                                                    <Typography variant="body">{companyUserDetail}</Typography>
+                                                                    <Typography variant="body">Track the number of whitelisted subscribers, total customers, active customers, and passive customers of your company with ease.</Typography>
                                                                 </Box>
-                                                                <Link href={companyUserRoute}>
-                                                                    <Tooltip title={companyUserTooltip} placement="top">
-                                                                        <Button
-                                                                            size="medium"
-                                                                            sx={{ color: 'white', textTransform: 'uppercase', fontSize: '12px' }}
-                                                                            variant="contained"
-                                                                            fullWidth={false}
-                                                                        >
-                                                                            {companyUserButton}
-                                                                        </Button>
-                                                                    </Tooltip>
-                                                                </Link>
+                                                                {companies && companies.slice(0, 1).map(({ _id, companyTicker }) => (
+                                                                    <Link href={`/${companyTicker}`}>
+                                                                        <Tooltip title="Prior to listing a company, the company must whitelist subscribers for its ISO and convert them to customers after the ISO." placement="top">
+                                                                            <Button
+                                                                                size="medium"
+                                                                                sx={{ color: 'white', textTransform: 'uppercase', fontSize: '12px' }}
+                                                                                variant="contained"
+                                                                                fullWidth={false}
+                                                                            >
+                                                                                whitelist
+                                                                            </Button>
+                                                                        </Tooltip>
+                                                                    </Link>
+                                                                ))}
                                                             </Box>
                                                         </Card>
                                                     </Grid>
@@ -490,7 +492,7 @@ const Page = ({ slug }) => {
 
                                     <Box style={{ textAlign: 'center', marginTop: '20px' }}>
                                         <Typography variant="body2">
-                                        Once your company is listed on Qarrington, your Initial Subscription Offering or ISO will be launched at the date and time you have specified during the listing submission process. With that being said, the launch will last for a maximum of 7 days and the proceeds will be transferred to your connected bank account 7 days after the launch. Even though there are no costs in listing a company on Qarrington, we do charge 10% of the proceeds to cover our operational expenses.
+                                            Once your company is listed on Qarrington, your Initial Subscription Offering or ISO will be launched at the date and time you have specified during the listing submission process. With that being said, the launch will last for a maximum of 7 days and the proceeds will be transferred to your connected bank account 7 days after the launch. Even though there are no costs in listing a company on Qarrington, we do charge 10% of the proceeds to cover our operational expenses.
                                         </Typography>
                                     </Box>
 

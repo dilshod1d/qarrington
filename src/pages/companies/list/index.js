@@ -279,6 +279,7 @@ const Page = () => {
                   style={{
                     display: 'flex',
                     cursor: 'pointer',
+                    marginBottom: '20px',
                     justifyContent: 'center'
                   }}
                 >
@@ -292,14 +293,14 @@ const Page = () => {
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  Help your portfolios raise funds through an ISO
+                  Raise funds via Initial Subscription Offering
                   <Tooltip title="ISO or subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
 
                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  Qarrington is a subscription exchange, where SaaS companies are listed so customers can participate in the Initial Subscription Offering (ISO) and buy/sell the subscriptions of companies.
+                  Qarrington is a subscription exchange, where SaaS companies are listed so customers can participate in the Initial Subscription Offering (ISO) and buy/sell the subscriptions of the companies.
                 </Typography>
 
               </Box>
