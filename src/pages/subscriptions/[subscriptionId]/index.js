@@ -18,7 +18,7 @@ const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
         <div>
 
             <Head>
-                <title>{ticker} • Qarrington</title>
+                <title>{ticker} Subscriptions • Qarrington</title>
                 <meta
                     name="description"
                     content="Qarrington is a subscription exchange that allows you to buy, sell, and exchange the subscriptions of your favorite technology companies without fees."
@@ -51,8 +51,8 @@ const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
                                             <Card style={{ padding: '80px' }}>
                                                 <Tooltip title={`This is the balance of ${name} subscriptions that you currently own.`} placement="top">
                                                     <Box textAlign="center">
-                                                        <DraftBadge badgeContent="USD" color="success" fontWeight={700}>
-                                                        </DraftBadge>
+                                                        <CurrencyBadge badgeContent="USD" color="success" fontWeight={700}>
+                                                        </CurrencyBadge>
                                                         <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={0.5}>
                                                             {balance}
                                                         </Typography>
@@ -97,24 +97,28 @@ const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
 
                                             <Stack marginTop={0} direction="row" width="100%" spacing={2}>
                                                 <Link href={`/subscription/${slug}/pull`}>
-                                                    <Button
-                                                        size="large"
-                                                        sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '13px' }}
-                                                        variant="contained"
-                                                        fullWidth={true}
-                                                    >
-                                                        Pull
-                                                    </Button>
+                                                    <Tooltip title={`Buy ${ticker}`} placement="top">
+                                                        <Button
+                                                            size="large"
+                                                            sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '13px' }}
+                                                            variant="contained"
+                                                            fullWidth={true}
+                                                        >
+                                                            Pull
+                                                        </Button>
+                                                    </Tooltip>
                                                 </Link>
                                                 <Link href={`/subscription/${slug}/push`}>
-                                                    <Button
-                                                        size="large"
-                                                        sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '13px' }}
-                                                        variant="outlined"
-                                                        fullWidth={true}
-                                                    >
-                                                        Push
-                                                    </Button>
+                                                    <Tooltip title={`Sell ${ticker}`} placement="top">
+                                                        <Button
+                                                            size="large"
+                                                            sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '13px' }}
+                                                            variant="outlined"
+                                                            fullWidth={true}
+                                                        >
+                                                            Push
+                                                        </Button>
+                                                    </Tooltip>
                                                 </Link>
                                             </Stack>
                                         </Stack>
@@ -122,7 +126,7 @@ const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
 
                                     <Box style={{ textAlign: 'center', marginTop: '20px' }}>
                                         <Typography variant="body2">
-                                            Unlike stocks and cryptos that are backed literally with nothing, your subscriptions with a Qarrington company are backed by the underlying products of the company. With that being said, kindly keep in mind that subscriptions only give you access to a company's products and services, they neither represent investment nor ownership stakes in the firm, which in this case is, {name}.
+                                            Unlike stocks and cryptos that are backed literally by nothing, your subscriptions with a Qarrington company are backed by the underlying products of the company. With that being said, kindly keep in mind that subscriptions only give you access to a company's products and services, they neither represent investment nor ownership stakes in the firm, which in this case is, {name}.
                                         </Typography>
                                     </Box>
 
@@ -147,7 +151,7 @@ const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
 
 export default Page
 
-const DraftBadge = styled(Badge)(({ theme }) => ({
+const CurrencyBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: 0,
         top: -8,
@@ -158,17 +162,17 @@ const DraftBadge = styled(Badge)(({ theme }) => ({
 
 export async function getServerSideProps({ params }) {
     try {
-        const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/pulls?pullSlug=${params.subscriptionId.replace(/\-/g, '+')}`)
+        const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/pulls?pullTicker=${params.subscriptionId.replace(/\-/g, '+')}`)
             .then((r) => r.json());
         return {
             props: {
-                balance: results.pullSubscription.subscriptionBalance,
-                units: results.pullSubscription.subscriptionUnits,
-                price: results.pullPrice,
-                cost: results.pullRequests.requestPrice,
-                name: results.pullSubscription.subscriptionName,
-                ticker: results.pullSubscription.subscriptionTicker,
-                slug: results.pullSlug
+                balance: results.pullCompany.pullCompanyPortfolio,
+                units: results.pullCompany.pullCompanyUnits,
+                price: results.pullCompany.pullCompanyPrice,
+                cost: results.pullCompany.pullCompanyCost,
+                name: results.pullCompany.pullCompanyName,
+                ticker: results.pullTicker,
+                slug: results.pullTicker
             }
         };
     } catch (error) {

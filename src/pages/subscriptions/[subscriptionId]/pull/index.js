@@ -137,18 +137,17 @@ export default Page
 
 export async function getServerSideProps({ params }) {
     try {
-        const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/pulls?pullSlug=${params.subscriptionId.replace(/\-/g, '+')}`)
+        const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/pulls?pullTicker`)
             .then((r) => r.json());
         return {
             props: {
-                balance: results.pullSubscription.subscriptionBalance,
-                units: results.pullSubscription.subscriptionUnits,
-                price: results.pullPrice,
-                cost: results.pullRequests.requestPrice,
-                amount: results.pullRequests.requestAmount,
-                name: results.pullSubscription.subscriptionName,
-                ticker: results.pullSubscription.subscriptionTicker,
-                slug: results.pullSlug
+                balance: results.pullCompany.pullCompanyPortfolio,
+                units: results.pullCompany.pullCompanyUnits,
+                price: results.pullCompany.pullCompanyPrice,
+                cost: results.pullCompany.pullCompanyCost,
+                name: results.pullCompany.pullCompanyName,
+                ticker: results.pullTicker,
+                slug: results.pullTicker
             }
         };
     } catch (error) {
