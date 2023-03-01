@@ -71,8 +71,6 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                             <Card style={{ padding: '80px' }}>
                                                 <Tooltip title={`Portfolio`} placement="top">
                                                     <Box textAlign="center">
-                                                        {/* <CurrencyBadge badgeContent="USD" color="success" fontWeight={700}>
-                                                        </CurrencyBadge> */}
                                                         <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={0.5}>
                                                             {`$${balance}`}
                                                         </Typography>
@@ -110,12 +108,34 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                 </Box>
                                                 <Box mt={2} display="flex" justifyContent="center">
                                                     <Stack direction="row" spacing={1}>
-                                                        <Tooltip title="The Bid Price is the highest price you could buy this subscription. Kindly note that prices are updated in real-time." placement="top">
-                                                            <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#ff4757', color: 'white' }} >$24.87</Card>
-                                                        </Tooltip>
-                                                        <Tooltip title="The Ask Price is the lowest price you could sell this subscription. Kindly note that prices are updated in real-time." placement="top">
-                                                            <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#2ed573', color: 'white' }} >$26.29</Card>
-                                                        </Tooltip>
+                                                        {companies && companies.slice(0, 1).map(({ _id, companyAnalytics }) => (
+                                                            <>
+                                                                {companyAnalytics && companyAnalytics.slice(0, 1).map(({ _id, companyBids }) => (
+                                                                    <>
+                                                                        {companyBids && companyBids.slice(0, 1).map(({ _id, companyBidPrice }) => (
+                                                                            <Tooltip title="The Bid Price is the highest price you could buy this subscription. Kindly note that prices are updated in real-time." placement="top">
+                                                                                <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#ff4757', color: 'white' }} >${companyBidPrice}</Card>
+                                                                            </Tooltip>
+                                                                        ))}
+                                                                    </>
+                                                                ))}
+                                                            </>
+                                                        ))}
+                                                        {companies && companies.slice(0, 1).map(({ _id, companyAnalytics }) => (
+                                                            <>
+                                                                {companyAnalytics && companyAnalytics.slice(0, 1).map(({ _id, companyAsks }) => (
+                                                                    <>
+                                                                        {companyAsks && companyAsks.slice(0, 1).map(({ _id, companyAskPrice }) => (
+                                                                            <>
+                                                                                <Tooltip title="The Ask Price is the lowest price you could sell this subscription. Kindly note that prices are updated in real-time." placement="top">
+                                                                                    <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#2ed573', color: 'white' }} >${companyAskPrice}</Card>
+                                                                                </Tooltip>
+                                                                            </>
+                                                                        ))}
+                                                                    </>
+                                                                ))}
+                                                            </>
+                                                        ))}
                                                     </Stack>
                                                 </Box>
                                             </Card>

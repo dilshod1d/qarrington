@@ -74,13 +74,13 @@
                 "companyVolume": "400,250",
                 "companyBids": [
                     {
-                        "companyBidPrice": "21",
+                        "companyBidPrice": "22.45",
                         "companyBidUnit": "482"
                     }
                 ],
                 "companyAsks": [
                     {
-                        "companyAskPrice": "24",
+                        "companyAskPrice": "23.83",
                         "companyAskUnit": "287"
                     }
                 ],
