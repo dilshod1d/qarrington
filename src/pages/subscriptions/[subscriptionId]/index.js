@@ -7,13 +7,13 @@ import Price from '../../../components/charts/Price';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
-import { Badge, Box, Button, Card, Container, Grid, Stack, styled, Tab, Tooltip, Typography } from '@mui/material';
+import { Badge, Box, Button, Card, Container, Grid, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
 import Footer from '../../../components/main/Footer';
 import useSWR from 'swr';
 import RemoveCircleTwoToneIcon from '@mui/icons-material/RemoveCircleTwoTone';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
 
-const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
+const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data: pulls } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/pulls`, fetcher);
@@ -142,59 +142,46 @@ const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
                                             {/* pull starts */}
 
                                             <TabPanel sx={{ padding: 0 }} value="1">
-                                                <Card style={{ padding: '60px' }}>
-                                                    <Stack spacing={2} sx={{ width: '100%' }}>
-                                                        <Stack marginTop={0} direction="row" width="100%" spacing={2}>
-                                                            <Button
-                                                                size="large"
-                                                                sx={{ py: 1.2, textTransform: 'uppercase', fontSize: '12px' }}
-                                                                variant="outlined"
-                                                                color="secondary"
-                                                                fullWidth={false}
-                                                                onClick={handleDecrease}
-                                                            >
-                                                                <RemoveCircleTwoToneIcon />
-                                                            </Button>
-                                                            <Button
-                                                                disabled
-                                                                size="large"
-                                                                sx={{ py: 1.2, color: 'white', textTransform: 'uppercase', fontSize: '18px' }}
-                                                                variant="contained"
-                                                                fullWidth={true}
-                                                            >
-                                                                {`Transfer ${unit} USD`}
-                                                            </Button>
-                                                            <Button
-                                                                size="large"
-                                                                sx={{ py: 1.2, textTransform: 'uppercase', fontSize: '12px' }}
-                                                                variant="outlined"
-                                                                color="secondary"
-                                                                fullWidth={false}
-                                                                onClick={handleIncrease}
-                                                            >
-                                                                <AddCircleTwoToneIcon />
-                                                            </Button>
-                                                        </Stack>
-                                                        <Stack marginTop={0} direction="row" width="100%" spacing={2}>
-                                                            <Tooltip title="To receive the above subscription units in your portfolio, the below amount will be charged to your credit/debit card." placement="top">
-                                                                <Button
-                                                                    size="large"
-                                                                    sx={{ color: 'white', py: 1.8, textTransform: 'uppercase', fontSize: '14px' }}
-                                                                    variant="contained"
-                                                                    fullWidth={true}
-                                                                    type="submit"
-                                                                >
-                                                                    {`Receive ${unit} ${ticker}`}
-                                                                </Button>
+                                                <Grid item xs={12}>
+                                                    <Card style={{ padding: '60px' }}>
+                                                        <Stack spacing={1} sx={{ width: '100%' }}>
+                                                            <Tooltip title="Kindly specify the price you're willing to pay per subscription unit or leave the field blank to buy at the current price." placement="top">
+                                                                <TextField
+                                                                    sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
+                                                                    required
+                                                                    placeholder="pull price"
+                                                                    type="number"
+                                                                />
                                                             </Tooltip>
+                                                            <Tooltip title="Kindly specify the subscription units you'd like to buy. If there's no pair after 90 days, your request will be canceled." placement="top">
+                                                                <TextField
+                                                                    sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
+                                                                    required
+                                                                    placeholder="pull units"
+                                                                    type="number"
+                                                                />
+                                                            </Tooltip>
+                                                            <Stack marginTop={0} direction="row" width="100%" spacing={2}>
+                                                                <Tooltip title="To receive the above subscription units in your portfolio, this amount will be charged to your credit/debit card." placement="top">
+                                                                    <Button
+                                                                        size="large"
+                                                                        sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '14px' }}
+                                                                        variant="contained"
+                                                                        fullWidth={true}
+                                                                        type="submit"
+                                                                    >
+                                                                        {`Transfer ${amount} USD`}
+                                                                    </Button>
+                                                                </Tooltip>
+                                                            </Stack>
                                                         </Stack>
-                                                    </Stack>
-                                                </Card>
-                                                <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                    <Typography variant="body2">
-                                                        When you buy a company's subscriptions, you will be able to use the subscription units to access the company's products and services. Each subscription unit gives you a month of access.
-                                                    </Typography>
-                                                </Box>
+                                                    </Card>
+                                                    <Box style={{ textAlign: 'center', marginTop: '20px' }}>
+                                                        <Typography variant="body2">
+                                                            If there's no pair after 90 days and your pull request is canceled, you'll automatically be refunded. However, kindly note that the transaction fees are non-refundable. With that being said, when you buy a company's subscriptions, you will be able to use the subscription units to access the company's products and services. Each subscription unit gives you a month of access.
+                                                        </Typography>
+                                                    </Box>
+                                                </Grid>
                                             </TabPanel>
 
                                             {/* pull stops */}
@@ -202,59 +189,46 @@ const Page = ({ balance, units, price, cost, name, ticker, slug }) => {
                                             {/* push starts */}
 
                                             <TabPanel sx={{ padding: 0 }} value="2">
-                                                <Card style={{ padding: '60px' }}>
-                                                    <Stack spacing={2} sx={{ width: '100%' }}>
-                                                        <Stack marginTop={0} direction="row" width="100%" spacing={2}>
-                                                            <Button
-                                                                size="large"
-                                                                sx={{ py: 1.2, textTransform: 'uppercase', fontSize: '12px' }}
-                                                                variant="outlined"
-                                                                color="secondary"
-                                                                fullWidth={false}
-                                                                onClick={handleDecrease}
-                                                            >
-                                                                <RemoveCircleTwoToneIcon />
-                                                            </Button>
-                                                            <Button
-                                                                disabled
-                                                                size="large"
-                                                                sx={{ py: 1.2, color: 'white', textTransform: 'uppercase', fontSize: '18px' }}
-                                                                variant="contained"
-                                                                fullWidth={true}
-                                                            >
-                                                                {`Receive ${unit} USD`}
-                                                            </Button>
-                                                            <Button
-                                                                size="large"
-                                                                sx={{ py: 1.2, textTransform: 'uppercase', fontSize: '12px' }}
-                                                                variant="outlined"
-                                                                color="secondary"
-                                                                fullWidth={false}
-                                                                onClick={handleIncrease}
-                                                            >
-                                                                <AddCircleTwoToneIcon />
-                                                            </Button>
-                                                        </Stack>
-                                                        <Stack marginTop={0} direction="row" width="100%" spacing={2}>
-                                                            <Tooltip title="To receive the above amount in your bank account, the below subscription units will be taken from your portfolio." placement="top">
-                                                                <Button
-                                                                    size="large"
-                                                                    sx={{ color: 'white', py: 1.8, textTransform: 'uppercase', fontSize: '14px' }}
-                                                                    variant="contained"
-                                                                    fullWidth={true}
-                                                                    type="submit"
-                                                                >
-                                                                    {`Transfer ${unit} ${ticker}`}
-                                                                </Button>
+                                                <Grid item xs={12}>
+                                                    <Card style={{ padding: '60px' }}>
+                                                        <Stack spacing={1} sx={{ width: '100%' }}>
+                                                            <Tooltip title="Kindly specify the price you're willing to sell per subscription unit or leave the field blank to sell at the current price." placement="top">
+                                                                <TextField
+                                                                    sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
+                                                                    required
+                                                                    placeholder="push price"
+                                                                    type="number"
+                                                                />
                                                             </Tooltip>
+                                                            <Tooltip title="Kindly specify the subscription units you'd like to sell. If there's no pair after 90 days, your request will be canceled." placement="top">
+                                                                <TextField
+                                                                    sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
+                                                                    required
+                                                                    placeholder="push units"
+                                                                    type="number"
+                                                                />
+                                                            </Tooltip>
+                                                            <Stack marginTop={0} direction="row" width="100%" spacing={2}>
+                                                                <Tooltip title="To receive this amount in your bank account, the above subscription units will be taken from your portfolio." placement="top">
+                                                                    <Button
+                                                                        size="large"
+                                                                        sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '14px' }}
+                                                                        variant="contained"
+                                                                        fullWidth={true}
+                                                                        type="submit"
+                                                                    >
+                                                                        {`Receive ${amount} USD`}
+                                                                    </Button>
+                                                                </Tooltip>
+                                                            </Stack>
                                                         </Stack>
-                                                    </Stack>
-                                                </Card>
-                                                <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                                    <Typography variant="body2">
-                                                        When you sell a company's subscriptions, the payout will automatically be transferred to your connected bank account. However, you might lose access to the company's products and services.
-                                                    </Typography>
-                                                </Box>
+                                                    </Card>
+                                                    <Box style={{ textAlign: 'center', marginTop: '20px' }}>
+                                                        <Typography variant="body2">
+                                                        If there's no pair after 90 days and your push request is canceled, you'll still own the subscription units. In addition, no transaction fees will be charged because there's no payout. With that being said, when you sell a company's subscriptions, the payout will automatically be transferred to your connected bank account. However, you might lose access to the company's products and services.
+                                                        </Typography>
+                                                    </Box>
+                                                </Grid>
                                             </TabPanel>
 
                                             {/* push stops */}
@@ -324,7 +298,7 @@ export async function getServerSideProps({ params }) {
                 cost: results.pullCompany.pullCompanyCost,
                 name: results.pullCompany.pullCompanyName,
                 ticker: results.pullTicker,
-                slug: results.pullTicker
+                amount: results.pullAmount
             }
         };
     } catch (error) {
