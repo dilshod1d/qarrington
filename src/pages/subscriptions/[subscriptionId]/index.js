@@ -108,12 +108,14 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                         usd
                                                     </Typography>
                                                 </Box>
-                                                <Box mt={1.5} display="flex" justifyContent="center">
+                                                <Box mt={2} display="flex" justifyContent="center">
                                                     <Stack direction="row" spacing={1}>
-                                                        <Box sx={{ padding: '4px', fontSize: '12px', fontWeight: 600 }} variant="outlined">BID</Box>
-                                                        <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#ff4757', color: 'white' }} >$24.87</Card>
-                                                        <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#2ed573', color: 'white' }} >$26.29</Card>
-                                                        <Box sx={{ padding: '4px', fontSize: '12px', fontWeight: 600 }} variant="outlined">ASK</Box>
+                                                        <Tooltip title="The Bid Price is the highest price you could buy this subscription. Kindly note that prices are updated in real-time." placement="top">
+                                                            <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#ff4757', color: 'white' }} >$24.87</Card>
+                                                        </Tooltip>
+                                                        <Tooltip title="The Ask Price is the lowest price you could sell this subscription. Kindly note that prices are updated in real-time." placement="top">
+                                                            <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#2ed573', color: 'white' }} >$26.29</Card>
+                                                        </Tooltip>
                                                     </Stack>
                                                 </Box>
                                             </Card>
