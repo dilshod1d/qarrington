@@ -21,6 +21,17 @@ const AccountSchema = new mongoose.Schema(
             accountSocialLink: { type: String },
             accountHomeAddress: { type: String }
         },
+        accountAlerts: [
+            {
+                accountAlertLogo: { type: String },
+                accountAlertUnits: { type: String },
+                accountAlertTicker: { type: String },
+                accountAlertAmount: { type: String },
+                accountAlertType: { type: String },
+                accountAlertStatus: { type: String },
+                accountAlertIsDated: { type: String }
+            }
+        ],
         accountIsCreatedAt: { type: Date, default: Date.now },
         accountIsUpdatedAt: { type: Date, default: Date.now }
     }

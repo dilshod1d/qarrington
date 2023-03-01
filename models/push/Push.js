@@ -4,6 +4,7 @@ const PushSchema = new mongoose.Schema(
     {
         pushTicker: { type: String }, // seller selects the company's subscription ticker they want to sell
         pushUnits: { type: String }, // seller enters the subscription units they want to sell
+        pushPrice: { type: String }, // the price the seller wants to sell each subscription unit
         pushAmount: { type: String }, //  we show the pushCompanyPrice * pushUnits
         pushCompany: { // we show the below company details in the pushed tab of the seller dashboard
             pushCompanyId: { type: String }, // the _id of the selected company
@@ -17,8 +18,8 @@ const PushSchema = new mongoose.Schema(
             pushIsMatched: { type: String }, // we match pushTicker and pushUnits with pullTicker and pullUnits
             pushIsMatchedWith: { type: String }, // the _id of the pull request that matched the push request
             pushIsMatchedAt: { type: Date, default: Date.now }, // the date the push request is matched with the pull request
-            pushIsPaid: { type: String }, // we transfer the pullAmount/pushAmount from the admin stripe account to the seller's accountStripeId
-            pushIsPaidAt: { type: Date, default: Date.now }, // the date the transfer is made
+            pushIsTransferred: { type: String }, // we transfer the pullAmount/pushAmount from the admin stripe account to the seller's accountStripeId
+            pushIsTransferredAt: { type: Date, default: Date.now }, // the date the transfer is made
             pushIsSubmittedAt: { type: Date, default: Date.now }, // the date the push request is submitted
             pushIsCanceled: { type: String }, // this will be TRUE if no match in 90 days, otherwise FALSE
             pushIsCanceledAt: { type: Date, default: Date.now } // the date the push request is canceled

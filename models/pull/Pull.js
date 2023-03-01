@@ -4,6 +4,7 @@ const PullSchema = new mongoose.Schema(
     {
         pullTicker: { type: String }, // buyer selects the company's subscription ticker they want to buy
         pullUnits: { type: String }, // buyer enters the subscription units they want to buy
+        pullPrice: { type: String }, // the price the buyer wants to buy each subscription unit
         pullAmount: { type: String }, //  we show and charge pullCompanyPrice * pullUnits via Stripe
         pullCompany: { // we show the below company details in the pulled tab of the buyer dashboard
             pullCompanyId: { type: String }, // the _id of the selected company

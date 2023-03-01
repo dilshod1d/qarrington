@@ -16,7 +16,7 @@ import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
 const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data: pulls } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/pulls`, fetcher);
+    const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
 
     const [value, setValue] = useState('1');
 
@@ -71,15 +71,15 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                             <Card style={{ padding: '80px' }}>
                                                 <Tooltip title={`Portfolio`} placement="top">
                                                     <Box textAlign="center">
-                                                        <CurrencyBadge badgeContent="USD" color="success" fontWeight={700}>
-                                                        </CurrencyBadge>
+                                                        {/* <CurrencyBadge badgeContent="USD" color="success" fontWeight={700}>
+                                                        </CurrencyBadge> */}
                                                         <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={0.5}>
-                                                            {balance}
+                                                            {`$${balance}`}
                                                         </Typography>
                                                     </Box>
                                                 </Tooltip>
                                                 <Box textAlign="center" mt={1}>
-                                                    <Tooltip title="Pulled Price" placement="bottom">
+                                                    <Tooltip title="Pulled Price" placement="top">
                                                         <Typography component="span" mr={0.2} variant="body2" fontWeight="700" color="black" textTransform="uppercase">
                                                             {cost}
                                                         </Typography>
@@ -99,7 +99,7 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                     <Typography component="span" mx={1} variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
                                                         \
                                                     </Typography>
-                                                    <Tooltip title="Current Price" placement="bottom">
+                                                    <Tooltip title="Current Price" placement="top">
                                                         <Typography component="span" mr={0.2} variant="body2" fontWeight="700" color="black" textTransform="uppercase">
                                                             {price}
                                                         </Typography>
@@ -107,6 +107,14 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                     <Typography component="span" variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
                                                         usd
                                                     </Typography>
+                                                </Box>
+                                                <Box mt={1.5} display="flex" justifyContent="center">
+                                                    <Stack direction="row" spacing={1}>
+                                                        <Box sx={{ padding: '4px', fontSize: '12px', fontWeight: 600 }} variant="outlined">BID</Box>
+                                                        <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#ff4757', color: 'white' }} >$24.87</Card>
+                                                        <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#2ed573', color: 'white' }} >$26.29</Card>
+                                                        <Box sx={{ padding: '4px', fontSize: '12px', fontWeight: 600 }} variant="outlined">ASK</Box>
+                                                    </Stack>
                                                 </Box>
                                             </Card>
                                         </Grid>
@@ -178,7 +186,7 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                     </Card>
                                                     <Box style={{ textAlign: 'center', marginTop: '20px' }}>
                                                         <Typography variant="body2">
-                                                            If there's no pair after 90 days and your pull request is canceled, you'll automatically be refunded. However, kindly note that the transaction fees are non-refundable. With that being said, when you buy a company's subscriptions, you will be able to use the subscription units to access the company's products and services. Each subscription unit gives you a month of access.
+                                                            If the current price of a subscription matches or falls below your specified price, your pull request will automatically be executed. Otherwise, it will be on hold for 90 days. If there's no pair after 90 days and your pull request is canceled, you'll automatically be refunded. However, kindly note that the transaction fees are non-refundable. With that being said, when you buy a company's subscriptions, you will be able to use the subscription units to access the company's products. In addition to that, each subscription unit gives you a month of access to the company's products.
                                                         </Typography>
                                                     </Box>
                                                 </Grid>
@@ -225,7 +233,7 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                     </Card>
                                                     <Box style={{ textAlign: 'center', marginTop: '20px' }}>
                                                         <Typography variant="body2">
-                                                        If there's no pair after 90 days and your push request is canceled, you'll still own the subscription units. In addition, no transaction fees will be charged because there's no payout. With that being said, when you sell a company's subscriptions, the payout will automatically be transferred to your connected bank account. However, you might lose access to the company's products and services.
+                                                            If the current price of a subscription matches or rises above your specified price, your push request will automatically be executed. Otherwise, it will be on hold for 90 days. If there's no pair after 90 days and your push request is canceled, you'll still own the subscription units. In addition, no transaction fees will be charged because there's no payout. With that being said, when you sell a company's subscriptions, the payout will automatically be transferred to your connected bank account. However, you might lose access to the company's products and services.
                                                         </Typography>
                                                     </Box>
                                                 </Grid>
@@ -298,7 +306,8 @@ export async function getServerSideProps({ params }) {
                 cost: results.pullCompany.pullCompanyCost,
                 name: results.pullCompany.pullCompanyName,
                 ticker: results.pullTicker,
-                amount: results.pullAmount
+                amount: results.pullAmount,
+                ticker: results.pullTicker
             }
         };
     } catch (error) {

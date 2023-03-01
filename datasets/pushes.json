@@ -2,6 +2,7 @@
     {
         "pushTicker": "var",
         "pushUnits": "187",
+        "pullPrice": "25",
         "pushAmount": "30,432",
         "pushCompany": {
             "pushCompanyId": "dd74j4j73jde",
@@ -15,8 +16,8 @@
             "pushIsMatched": "TRUE",
             "pushIsMatchedWith": ",kfafa783rm3www",
             "pushIsMatchedAt": "04-28-2023",
-            "pushIsPaid": "TRUE",
-            "pushIsPaidAt": "02-23-2023",
+            "pushIsTransferred": "TRUE",
+            "pushIsTransferredAt": "02-23-2023",
             "pushIsSubmittedAt": "04-21-2023",
             "pushIsCanceled": "FALSE",
             "pushIsCanceledAt": ""

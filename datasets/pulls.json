@@ -2,6 +2,7 @@
     {
         "pullTicker": "twn",
         "pullUnits": "286",
+        "pullPrice": "29",
         "pullAmount": "54,062",
         "pullCompany": {
             "pullCompanyId": "d7dn44jsmje",

@@ -1,9 +1,9 @@
 [
     {
-        "companyTicker": "qar",
+        "companyTicker": "spr",
         "companyDetails": {
-            "companyName": "Qarrington",
-            "companyLogo": "/assets/media/companies/qarrington.png",
+            "companyName": "Spread",
+            "companyLogo": "/assets/media/companies/spread.png",
             "companyHeadline": "This is the headline",
             "companyProduct": "This is the company product description",
             "companyProductId": "stripeProductId",
@@ -72,6 +72,18 @@
                 "companyCurrency": "USD",
                 "companyCapitalization": "80,434,504",
                 "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
                 "companyPrice": "45.21",
                 "companyPriceVariant": "primary",
                 "companyPricePercentChange": "4.55",
@@ -83,6 +95,18 @@
                 "companyCurrency": "USD",
                 "companyCapitalization": "80,434,504",
                 "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
                 "companyPrice": "42.87",
                 "companyPriceVariant": "error",
                 "companyPricePercentChange": "4.55",
@@ -94,6 +118,18 @@
                 "companyCurrency": "USD",
                 "companyCapitalization": "80,434,504",
                 "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
                 "companyPrice": "38.42",
                 "companyPriceVariant": "error",
                 "companyPricePercentChange": "4.55",
@@ -105,6 +141,18 @@
                 "companyCurrency": "USD",
                 "companyCapitalization": "80,434,504",
                 "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
                 "companyPrice": "48.05",
                 "companyPriceVariant": "primary",
                 "companyPricePercentChange": "4.55",
@@ -116,6 +164,18 @@
                 "companyCurrency": "USD",
                 "companyCapitalization": "80,434,504",
                 "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
                 "companyPrice": "42.39",
                 "companyPriceVariant": "error",
                 "companyPricePercentChange": "4.55",
@@ -127,6 +187,18 @@
                 "companyCurrency": "USD",
                 "companyCapitalization": "80,434,504",
                 "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
                 "companyPrice": "49.75",
                 "companyPriceVariant": "primary",
                 "companyPricePercentChange": "4.55",
@@ -138,6 +210,18 @@
                 "companyCurrency": "USD",
                 "companyCapitalization": "80,434,504",
                 "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
                 "companyPrice": "52.76",
                 "companyPriceVariant": "primary",
                 "companyPricePercentChange": "4.55",

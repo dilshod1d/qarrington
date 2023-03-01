@@ -29,6 +29,7 @@ import TabContext from '@mui/lab/TabContext';
 import Footer from '../../components/main/Footer';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import useSWR from 'swr';
+import { Pagination } from '@mui/lab';
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
@@ -160,6 +161,7 @@ const Page = () => {
                                                 <TabLabel label="Details" value="1" />
                                                 <TabLabel label="Contacts" value="2" />
                                                 <TabLabel label="Keys" value="3" />
+                                                <TabLabel label="Alerts" value="4" />
                                             </TabsWrapper>
                                         </Box>
                                         <Box style={{ marginTop: '16px' }}>
@@ -374,6 +376,73 @@ const Page = () => {
                                             </TabPanel>
 
                                             {/* keys tab ends */}
+
+                                            {/* alerts tab starts */}
+
+                                            <TabPanel sx={{ padding: 0 }} value="4">
+                                                {accounts && Array.isArray(accounts) && accounts.slice(0, 1).map(({ _id, accountAlerts }) => (
+                                                    <>
+                                                        {accountAlerts && Array.isArray(accountAlerts) && accountAlerts.map(({ _id, accountAlertLogo, accountAlertUnits, accountAlertTicker, accountAlertAmount, accountAlertType, accountAlertStatus, accountAlertIsDated }) => (
+                                                            <>
+                                                                <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                                                        <Box>
+                                                                            <Avatar
+                                                                                style={{ width: 32, height: 32 }}
+                                                                                alt={accountAlertTicker}
+                                                                                src={accountAlertLogo}
+                                                                            />
+                                                                        </Box>
+                                                                        <Box mt={0.3} ml={1}>
+                                                                            <Typography mr={0.2} fontWeight={600} component="span" variant="body2" color="black">
+                                                                                {accountAlertUnits}
+                                                                            </Typography>
+                                                                            <Typography mr={0.5} fontWeight={600} component="span" variant="body2" color="secondary">
+                                                                                {accountAlertTicker}
+                                                                            </Typography>
+                                                                            <Typography mr={0.5} fontWeight={600} component="span" variant="body2" color="secondary">
+                                                                                {accountAlertType}
+                                                                            </Typography>
+                                                                            <Typography mr={0.5} fontWeight={600} component="span" variant="body2" color="secondary">
+                                                                                is
+                                                                            </Typography>
+                                                                            <Typography mr={0.5} fontWeight={600} component="span" variant="body2" color="secondary">
+                                                                                {accountAlertStatus}
+                                                                            </Typography>
+                                                                            <Typography mr={0.5} fontWeight={600} component="span" variant="body2" color="secondary">
+                                                                                for
+                                                                            </Typography>
+                                                                            <Typography mr={0.2} fontWeight={600} component="span" variant="body2" color="black">
+                                                                                {accountAlertAmount}
+                                                                            </Typography>
+                                                                            <Typography mr={0.5} fontWeight={600} component="span" variant="body2" color="secondary">
+                                                                                USD
+                                                                            </Typography>
+                                                                            <Typography mr={0.5} fontWeight={600} component="span" variant="body2" color="secondary">
+                                                                                on
+                                                                            </Typography>
+                                                                            <Typography mr={0} fontWeight={600} component="span" variant="body2" color="secondary">
+                                                                                {accountAlertIsDated}
+                                                                            </Typography>
+                                                                        </Box>
+                                                                    </Box>
+                                                                </Card>
+                                                            </>
+                                                        ))}
+                                                    </>
+                                                ))}
+
+                                                <Grid item xs={12}>
+                                                    <Card style={{ padding: '60px', display: 'flex', justifyContent: 'center', marginTop: '0px' }}>
+                                                        <Stack spacing={2}>
+                                                            <Pagination count={10} variant="outlined" shape="rounded" />
+                                                        </Stack>
+                                                    </Card>
+                                                </Grid>
+
+                                            </TabPanel>
+
+                                            {/* alerts tab ends */}
 
                                         </Box>
 

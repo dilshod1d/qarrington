@@ -19,6 +19,26 @@
             "accountSocialLink": "https://linkedin.com/u/kim_adams",
             "accountHomeAddress": "123 Home Street, Brooklyn 76382 NY / United States"
         },
+        "accountAlerts": [
+            {
+                "accountAlertLogo": "/assets/media/companies/spread.png",
+                "accountAlertUnits": "280",
+                "accountAlertTicker": "SPR",
+                "accountAlertAmount": "538,920",
+                "accountAlertType": "Pull",
+                "accountAlertStatus": "Submitted",
+                "accountAlertIsDated": "11-24-2023"
+            },
+            {
+                "accountAlertLogo": "/assets/media/companies/twined.png",
+                "accountAlertUnits": "827",
+                "accountAlertTicker": "TWN",
+                "accountAlertAmount": "743,802",
+                "accountAlertType": "Push",
+                "accountAlertStatus": "Matched",
+                "accountAlertIsDated": "08-19-2022"
+            }
+        ],
         "accountIsCreatedAt": "",
         "accountIsUpdatedAt": ""
     }
