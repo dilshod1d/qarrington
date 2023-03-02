@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 const PullSchema = new mongoose.Schema(
     {
         pullTicker: { type: String }, // buyer selects the company's subscription ticker they want to buy
-        pullUnits: { type: String }, // buyer enters the subscription units they want to buy
-        pullPrice: { type: String }, // the price the buyer wants to buy each subscription unit
+        pullUnits: { type: String }, // this must be a multiple of 5 ... 5 being the minimum
+        pullPrice: { type: String }, // this must be a normal number without fraction
         pullAmount: { type: String }, //  we show and charge pullCompanyPrice * pullUnits via Stripe
         pullCompany: { // we show the below company details in the pulled tab of the buyer dashboard
             pullCompanyId: { type: String }, // the _id of the selected company

@@ -175,11 +175,12 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                 <Grid item xs={12}>
                                                     <Card style={{ padding: '60px' }}>
                                                         <Stack spacing={1} sx={{ width: '100%' }}>
-                                                            <Tooltip title="Kindly specify the price you're willing to pay per subscription unit or leave the field blank to buy at the current price." placement="top">
+                                                            <Tooltip title="Kindly specify the maximum price you're willing to buy a subscription unit or leave blank to buy at the current lowest price." placement="top">
                                                                 <TextField
-                                                                    sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
+                                                                    sx={{ input: { textAlign: "center" } }}
                                                                     required
-                                                                    placeholder="pull price"
+                                                                    placeholder="currentLowestAskPrice"
+                                                                    defaultValue="currentLowestAskPrice"
                                                                     type="number"
                                                                 />
                                                             </Tooltip>
@@ -222,11 +223,12 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                 <Grid item xs={12}>
                                                     <Card style={{ padding: '60px' }}>
                                                         <Stack spacing={1} sx={{ width: '100%' }}>
-                                                            <Tooltip title="Kindly specify the price you're willing to sell per subscription unit or leave the field blank to sell at the current price." placement="top">
+                                                            <Tooltip title="Kindly specify the minimum price you're willing to sell a subscription unit or leave blank to sell at the current highest price." placement="top">
                                                                 <TextField
-                                                                    sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
+                                                                    sx={{ input: { textAlign: "center" } }}
                                                                     required
-                                                                    placeholder="push price"
+                                                                    placeholder="currentHighestBidPrice"
+                                                                    defaultValue="currentHighestBidPrice"
                                                                     type="number"
                                                                 />
                                                             </Tooltip>

@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 const PushSchema = new mongoose.Schema(
     {
         pushTicker: { type: String }, // seller selects the company's subscription ticker they want to sell
-        pushUnits: { type: String }, // seller enters the subscription units they want to sell
-        pushPrice: { type: String }, // the price the seller wants to sell each subscription unit
+        pushUnits: { type: String }, // this must be a multiple of 5 ... 5 being the minimum
+        pushPrice: { type: String }, // this must be a normal number without fraction
         pushAmount: { type: String }, //  we show the pushCompanyPrice * pushUnits
         pushCompany: { // we show the below company details in the pushed tab of the seller dashboard
             pushCompanyId: { type: String }, // the _id of the selected company
