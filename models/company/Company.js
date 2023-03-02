@@ -78,11 +78,11 @@ const CompanySchema = new mongoose.Schema({
   ],
   companyAccountId: { type: String }, //  the account id that listed the company
   companyStatus: {
-    companyIsSubmitted: { type: String },
+    companyIsSubmitted: { type: String }, // is the company submitted?
     companyIsSubmittedAt: { type: Date, default: Date.now }, // the day the company is created
-    companyIsListed: { type: String },
+    companyIsListed: { type: String }, // is the company listed?
     companyIsListedAt: { type: Date, default: Date.now }, // the day the company iso starts
-    companyIsLaunched: { type: String },
+    companyIsLaunched: { type: String }, // is the company launched?
     companyIsLaunchedAt: { type: Date, default: Date.now } // the day the company iso ends
   }
 });
