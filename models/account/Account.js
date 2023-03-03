@@ -9,6 +9,7 @@ const AccountSchema = new mongoose.Schema(
             accountCurrentTitle: { type: String },
             accountIsActive: { type: String },
             accountIsAdmin: { type: String },
+            accountIsMaker: { type: String },
             accountStripeId: { type: String }
         },
         accountKeys: {
