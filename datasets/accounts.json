@@ -16,9 +16,10 @@
         },
         "accountBank": {
             "accountCurrencyCode": "USD",
-            "accountIbanNumber": "1234567890",
+            "accountIbanNumber": "",
             "accountNumber": "4743477573739",
-            "accountRoutingNumber": "937447338443"
+            "accountRoutingNumber": "937447338443",
+            "accountSortCode": ""
         },
         "accountBusiness": {
             "accountBusinessName": "accountFirstName accountLastName",

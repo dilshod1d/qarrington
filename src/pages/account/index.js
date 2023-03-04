@@ -461,11 +461,11 @@ const Page = () => {
                                                                         inputProps={{ style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
-                                                                <Tooltip title="routing number" placement="top">
+                                                                <Tooltip title="routing number or sort code" placement="top">
                                                                     <TextField
                                                                         required
                                                                         id="outlined-required"
-                                                                        placeholder="routing number"
+                                                                        placeholder="routing number or sort code"
                                                                         defaultValue={accountBank.accountRoutingNumber}
                                                                         inputProps={{ style: { textAlign: 'center' } }}
                                                                     />
