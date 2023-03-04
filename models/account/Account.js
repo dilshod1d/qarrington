@@ -2,39 +2,57 @@ import mongoose from 'mongoose';
 
 const AccountSchema = new mongoose.Schema(
     {
-        accountDetails: {
+        accountProfile: {
             accountFirstName: { type: String },
             accountLastName: { type: String },
+            accountEmailAddress: { type: String },
+            accountHomeAddress: { type: String },
+            accountPhoneNumber: { type: String },
+            accountSocialLink: { type: String },
+            accountCountryName: { type: String },
+            accountZipCode: { type: String },
+            accountBirthDate: { type: String },
+            accountGovernmentId: { type: String },
             accountAvatarUrl: { type: String },
-            accountCurrentTitle: { type: String },
-            accountIsActive: { type: String },
-            accountIsAdmin: { type: String },
-            accountIsMaker: { type: String },
-            accountStripeId: { type: String }
+            accountCurrentTitle: { type: String }
+        },
+        accountBank: {
+            accountCurrencyCode: { type: String },
+            accountIbanNumber: { type: String },
+            accountNumber: { type: String },
+            accountRoutingNumber: { type: String }
+        },
+        accountBusiness: {
+            accountBusinessName: { type: String },
+            accountBusinessType: { type: String },
+            accountBusinessIndustry: { type: String },
+            accountBusinessWebsite: { type: String }
         },
         accountKeys: {
             accountAccessKey: { type: String },
             accountSecretKey: { type: String }
         },
-        accountContacts: {
-            accountEmailAddress: { type: String },
-            accountPhoneNumber: { type: String },
-            accountSocialLink: { type: String },
-            accountHomeAddress: { type: String }
+        accountStatus: {
+            accountIsActive: { type: String },
+            accountIsAdmin: { type: String },
+            accountIsMaker: { type: String },
+            accountIsVerified: { type: String },
+            accountIsVerifiedAt: { type: String }
         },
         accountAlerts: [
             {
                 accountAlertLogo: { type: String },
                 accountAlertUnits: { type: String },
                 accountAlertTicker: { type: String },
-                accountAlertAmount: { type: String },
+                accountAlertPrice: { type: String },
                 accountAlertType: { type: String },
                 accountAlertStatus: { type: String },
                 accountAlertIsDated: { type: String }
             }
         ],
-        accountIsCreatedAt: { type: Date, default: Date.now },
-        accountIsUpdatedAt: { type: Date, default: Date.now }
+        accountStripeId: { type: String },
+        accountIsCreatedAt: { type: Date },
+        accountIsUpdatedAt: { type: Date }
     }
 );
 

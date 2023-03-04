@@ -1,30 +1,49 @@
 [
     {
-        "accountDetails": {
+        "accountProfile": {
             "accountFirstName": "Kim",
             "accountLastName": "Adams",
+            "accountEmailAddress": "kim@gmail.com",
+            "accountHomeAddress": "123 Home Street, Brooklyn 76382 NY / United States",
+            "accountPhoneNumber": "+1234567890",
+            "accountSocialLink": "https://linkedin.com/u/kim_adams",
+            "accountCountryName": "United States",
+            "accountZipCode": "87384",
+            "accountBirthDate": "08-18-1995",
+            "accountGovernmentId": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
             "accountAvatarUrl": "/assets/media/accounts/kim.webp",
-            "accountCurrentTitle": "Product Manager",
-            "accountIsActive": "dot",
-            "accountIsAdmin": "FALSE",
-            "accountStripeId": "XMdo0BtRvh"
+            "accountCurrentTitle": "Product Manager"
+        },
+        "accountBank": {
+            "accountCurrencyCode": "USD",
+            "accountIbanNumber": "1234567890",
+            "accountNumber": "4743477573739",
+            "accountRoutingNumber": "937447338443"
+        },
+        "accountBusiness": {
+            "accountBusinessName": "accountFirstName accountLastName",
+            "accountBusinessType": "Individual",
+            "accountBusinessIndustry": "Software",
+            "accountBusinessWebsite": "accountSocialLink"
         },
         "accountKeys": {
             "accountAccessKey": "LESif6nvJo",
             "accountSecretKey": "iKVnWRGcJf"
         },
-        "accountContacts": {
-            "accountEmailAddress": "kim@gmail.com",
-            "accountPhoneNumber": "+1234567890",
-            "accountSocialLink": "https://linkedin.com/u/kim_adams",
-            "accountHomeAddress": "123 Home Street, Brooklyn 76382 NY / United States"
+        "accountStripeId": "j4884uih98489nw2",
+        "accountStatus": {
+            "accountIsActive": "dot",
+            "accountIsAdmin": "FALSE",
+            "accountIsMaker": "FALSE",
+            "accountIsVerified": "TRUE",
+            "accountIsVerifiedAt": "04-25-2022"
         },
         "accountAlerts": [
             {
                 "accountAlertLogo": "/assets/media/companies/spread.png",
                 "accountAlertUnits": "280",
                 "accountAlertTicker": "SPR",
-                "accountAlertAmount": "538,920",
+                "accountAlertPrice": "53",
                 "accountAlertType": "Pull",
                 "accountAlertStatus": "Submitted",
                 "accountAlertIsDated": "11-24-2023"
@@ -33,7 +52,7 @@
                 "accountAlertLogo": "/assets/media/companies/twined.png",
                 "accountAlertUnits": "827",
                 "accountAlertTicker": "TWN",
-                "accountAlertAmount": "743,802",
+                "accountAlertPrice": "74",
                 "accountAlertType": "Push",
                 "accountAlertStatus": "Matched",
                 "accountAlertIsDated": "08-19-2022"
