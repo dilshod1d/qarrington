@@ -31,7 +31,7 @@ const Component = () => {
                     <Avatar
                       variant="rounded"
                       alt="Setment Logo"
-                      src="/assets/media/logos/aa/primary-filled.png"
+                      src="/assets/media/logos/primary-filled.png"
                     />
                   </Link>
                 </LogoWrapper>

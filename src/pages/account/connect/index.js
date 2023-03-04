@@ -24,20 +24,22 @@ const Page = () => {
 
   const getSteps = () => {
     return [
-      "company ticker",
-      "company name",
-      "company logo",
-      "company product",
-      "company headline",
-      "company description",
-      "company industry",
-      "company website",
-      "company email",
-      "company market",
-      "company iso units",
-      "company iso price",
-      "company iso date",
-      "company iso time",
+      "first name",
+      "last name",
+      "email address",
+      "home address",
+      "phone number",
+      "social link",
+      "birth date",
+      "government id",
+      "country name",
+      "zip code",
+      "avatar url",
+      "current title",
+      "currency code",
+      "iban number",
+      "account number",
+      "routing number",
     ];
   }
 
@@ -51,7 +53,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
                 required
-                placeholder="company ticker"
+                placeholder="first name"
               />
             </Tooltip>
           </Stack>
@@ -64,7 +66,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company name"
+                placeholder="last name"
               />
             </Tooltip>
           </Stack>
@@ -77,7 +79,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company logo"
+                placeholder="email address"
               />
             </Tooltip>
           </Stack>
@@ -90,7 +92,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company product"
+                placeholder="home address"
               />
             </Tooltip>
           </Stack>
@@ -103,7 +105,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company headline"
+                placeholder="phone number"
               />
             </Tooltip>
           </Stack>
@@ -116,7 +118,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company description"
+                placeholder="social link"
               />
             </Tooltip>
           </Stack>
@@ -129,7 +131,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company industry"
+                placeholder="birth date"
               />
             </Tooltip>
           </Stack>
@@ -142,7 +144,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company website"
+                placeholder="government id"
               />
             </Tooltip>
           </Stack>
@@ -155,7 +157,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company email"
+                placeholder="country name"
               />
             </Tooltip>
           </Stack>
@@ -168,7 +170,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company market"
+                placeholder="zip code"
               />
             </Tooltip>
           </Stack>
@@ -181,7 +183,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company iso units"
+                placeholder="avatar url"
               />
             </Tooltip>
           </Stack>
@@ -194,7 +196,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company iso price"
+                placeholder="current title"
               />
             </Tooltip>
           </Stack>
@@ -207,7 +209,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company iso date"
+                placeholder="currency code"
               />
             </Tooltip>
           </Stack>
@@ -220,7 +222,33 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="company iso time"
+                placeholder="iban number"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 14:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="What time does the company want the ISO to start? It can change anytime." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="account number"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 15:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="What time does the company want the ISO to start? It can change anytime." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="routing number"
               />
             </Tooltip>
           </Stack>
@@ -329,18 +357,16 @@ const Page = () => {
                           </Button>
                         </Link>
 
-                        {companies && companies.slice(0, 1).map(({ _id, companyTicker }) => (
-                          <Link key={_id} href={`/companies/${companyTicker}`}>
-                            <Button
-                              size="large"
-                              sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
-                              variant="contained"
-                              fullWidth={true}
-                            >
-                              manage company
-                            </Button>
-                          </Link>
-                        ))}
+                        <Link href="/account">
+                          <Button
+                            size="large"
+                            sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                            variant="contained"
+                            fullWidth={true}
+                          >
+                            manage account
+                          </Button>
+                        </Link>
 
                         <Button
                           style={FormButton}
@@ -382,7 +408,7 @@ const Page = () => {
 
                 <Box textAlign="center">
                   <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    * An Initial Subscription Offering (ISO) is the process of listing a SaaS company on a subscription exchange so the company can advance its subscriptions to customers.
+                    By clicking on the Connect BUTTON or otherwise submitting this FORM, I do hereby agree with the Service Terms and Privacy Policies of the Qarrington website.
                   </Typography>
                 </Box>
 
