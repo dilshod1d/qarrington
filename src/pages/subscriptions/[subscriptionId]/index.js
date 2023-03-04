@@ -113,7 +113,7 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                                 {companyAnalytics && companyAnalytics.slice(0, 1).map(({ _id, companyBids }) => (
                                                                     <>
                                                                         {companyBids && companyBids.slice(0, 1).map(({ _id, companyBidPrice }) => (
-                                                                            <Tooltip title="The Bid Price is the highest price you could buy this subscription. Kindly note that prices are updated in real-time." placement="top">
+                                                                            <Tooltip key={_id} title="The Bid Price is the highest price you could buy this subscription. Kindly note that prices are updated in real-time." placement="top">
                                                                                 <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#ff4757', color: 'white' }} >${companyBidPrice}</Card>
                                                                             </Tooltip>
                                                                         ))}

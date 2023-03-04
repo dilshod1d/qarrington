@@ -100,7 +100,8 @@ const Component = () => {
                 <Typography fontWeight={500} variant="body2"
                   component="span" color="secondary"
                   style={{ textDecoration: 'none' }}>
-                  <a style={{ textDecoration: 'none', color: 'gray' }} href={`${companyDetails.companyWebsite}`} target="_blank"
+                  <a style={{ textDecoration: 'none', color: 'gray' }} href={`${companyDetails.companyWebsite}`}
+                    target="_blank"
                     rel="noopener noreferrer">
                     {companyDetails.companyName}
                   </a>

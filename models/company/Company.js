@@ -59,13 +59,13 @@ const CompanySchema = new mongoose.Schema({
       companyBids: [
         {
           companyBidPrice: { type: String }, // the pull price input by the buyer
-          companyBidUnit: { type: String } // the pull units input by the buyer
+          companyBidUnits: { type: String } // the pull units input by the buyer
         }
       ],
       companyAsks: [
         {
           companyAskPrice: { type: String }, // the push price input by the seller
-          companyAskUnit: { type: String } // the push units input by the seller
+          companyAskUnits: { type: String } // the push units input by the seller
         }
       ],
       companyPrice: { type: String }, // is when the highest companyBidPrice equals the lowest companyAskPrice

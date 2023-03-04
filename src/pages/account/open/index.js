@@ -107,7 +107,7 @@ const Page = () => {
                       fullWidth={true}
                       type="submit"
                     >
-                      connect
+                      continue
                     </Button>
 
                   </Stack>
@@ -138,7 +138,7 @@ const Page = () => {
 
                 <Box textAlign="center">
                   <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    By clicking on the Connect BUTTON or otherwise submitting this FORM, I do hereby agree with the Service Terms and Privacy Policies of the Qarrington website.
+                    By clicking on the Continue BUTTON or otherwise submitting this FORM, I do hereby agree with the Service Terms and Privacy Policies of the Qarrington website.
                   </Typography>
                 </Box>
 

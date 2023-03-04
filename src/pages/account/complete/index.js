@@ -291,7 +291,7 @@ const Page = () => {
     <>
 
       <Head>
-        <title>Connect Account • Qarrington</title>
+        <title>Complete Account • Qarrington</title>
         <meta
           name="description"
           content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
@@ -339,14 +339,14 @@ const Page = () => {
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  Raise funds via Initial Subscription Offering
+                Viola! You're about to become a Qarrington
                   <Tooltip title="ISO or subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
 
                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  Qarrington is a subscription exchange, where SaaS companies are listed so customers can participate in the Initial Subscription Offering (ISO) and buy/sell the subscriptions of the companies.
+                In order to facilitate payouts, you must answer <b>~15 questions</b> about your personal, business, and bank details for KYC purposes. You'd need a PDF link to your government-issued document.
                 </Typography>
 
               </Box>
@@ -422,7 +422,7 @@ const Page = () => {
 
                 <Box textAlign="center">
                   <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    By clicking on the Connect BUTTON or otherwise submitting this FORM, I do hereby agree with the Service Terms and Privacy Policies of the Qarrington website.
+                    By clicking on the Register BUTTON or otherwise submitting this FORM, I do hereby agree with the Service Terms and Privacy Policies of the Qarrington website.
                   </Typography>
                 </Box>
 
