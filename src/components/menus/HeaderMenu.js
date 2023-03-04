@@ -125,18 +125,18 @@ const Component = () => {
                   </Box>
                 </Link>
 
-                <Link href="/comparisons">
+                <Link href="/subscriptions">
                   <Box sx={{ marginRight: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      Comparisons
+                      Subscriptions
                     </Button>
                   </Box>
                 </Link>
 
-                <Link href="/plans">
+                <Link href="/account">
                   <Box sx={{ marginRight: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      Plans
+                      Account
                     </Button>
                   </Box>
                 </Link>
