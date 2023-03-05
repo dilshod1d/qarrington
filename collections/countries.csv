@@ -1,0 +1,117 @@
+countryName,countryCode,countryCurrency,countryCurrencyName,countryStatus
+Albania,AL,ALL,Lek,Active
+Algeria,DZ,DZD,Algerian Dinar,Preview
+Angola,AO,AOA,Kwanza,Preview
+Antigua and Barbuda,AG,XCD,East Caribbean Dollar,Active
+Argentina,AR,ARS,Argentine Peso,Active
+Armenia,AM,AMD,Armenian Dram,Active
+Australia,AU,AUD,Australian Dollar,Active
+Austria,AT,EUR,Euro,Active
+Azerbaijan,AZ,AZN,Azerbaijanian Manat,Preview
+Bahamas,BS,BSD,Bahamian Dollar,Preview
+Bahrain,BH,BHD,Bahraini Dinar,Active
+Bangladesh,BD,BDT,Taka,Preview
+Belgium,BE,EUR,Euro,Active
+Benin,BJ,XOF,CFA Franc BCEAO,Preview
+Bhutan,BT,INR,Indian Rupee,Preview
+Bosnia and Herzegovina,BA,BAM,Convertible Mark,Active
+Botswana,BW,BWP,Pula,Preview
+Brunei,BN,BND,Brunei Dollar,Preview
+Bulgaria,BG,BGN,Bulgarian Lev,Active
+Cambodia,KH,KHR,Riel,Active
+Canada,CA,CAD,Canadian Dollar,Active
+Chile,CL,CLP,Chilean Peso,Active
+Colombia,CO,COP,Colombian Peso,Active
+Costa Rica,CR,CRC,Costa Rican Colon,Active
+Croatia,HR,HRK,Kuna,onlyEuro
+Cyprus,CY,EUR,Euro,Active
+Czech Republic,CZ,CZK,Czech Koruna,onlyEuro
+Denmark,DK,DKK,Danish Krone,Active
+Dominican Republic,DO,DOP,Dominican Peso,Active
+Ecuador,EC,USD,US Dollar,Active
+Egypt,EG,EGP,Egyptian Pound,Active
+El Salvador,SV,USD,US Dollar,Active
+Estonia,EE,EUR,Euro,Active
+Ethiopia,ET,ETB,Ethiopian Birr,Active
+Finland,FI,EUR,Euro,Active
+France,FR,EUR,Euro,Active
+Gabon,GA,XAF,CFA Franc BEAC,Preview
+Gambia,GM,GMD,Dalasi,Active
+Germany,DE,EUR,Euro,Active
+Ghana,GH,GHS,Ghana Cedi,Active
+Greece,GR,EUR,Euro,Active
+Guatemala,GT,GTQ,Quetzal,Active
+Guyana,GY,GYD,Guyana Dollar,Active
+Hong Kong,HK,HKD,Hong Kong Dollar,Active
+Hungary,HU,HUF,Forint,Active
+Iceland,IS,ISK,Iceland Krona,onlyEuro
+India,IN,INR,Indian Rupee,Active
+Indonesia,ID,IDR,Rupiah,Active
+Ireland,IE,EUR,Euro,Active
+Israel,IL,ILS,New Israeli Sheqel,Active
+Italy,IT,EUR,Euro,Active
+Jamaica,JM,JMD,Jamaican Dollar,Active
+Japan,JP,JPY,Yen,Active
+Jordan,JO,JOD,Jordanian Dinar,Active
+Kenya,KE,KES,Kenyan Shilling,Active
+Kuwait,KW,KWD,Kuwaiti Dinar,Active
+Laos,LA,LAK,Kip,Preview
+Latvia,LV,EUR,Euro,Active
+Liechtenstein,LI,CHF,Swiss Franc,Active
+Lithuania,LT,EUR,Euro,Active
+Luxembourg,LU,EUR,Euro,Active
+Macau,MO,MOP,Pataca,Active
+Madagascar,MG,MGA,Malagasy Ariary,Active
+Malaysia,MY,MYR,Malaysian Ringgit,Active
+Malta,MT,EUR,Euro,Active
+Mauritius,MU,MUR,Mauritius Rupee,Active
+Mexico,MX,MXN,Mexican Peso,Active
+Moldova,MD,MDL,Moldovan Leu,Active
+Monaco,MC,EUR,Euro,Preview
+Mongolia,MN,MNT,Tugrik,Active
+Morocco,MA,MAD,Moroccan Dirham,Active
+Mozambique,MZ,MZN,Mozambique Metical,Preview
+Namibia,NA,NAD,Namibia Dollar,Active
+Namibia,NA,ZAR,Rand,Active
+Netherlands,NL,EUR,Euro,Active
+New Zealand,NZ,NZD,New Zealand Dollar,Active
+Niger,NE,XOF,CFA Franc BCEAO,Preview
+Nigeria,NG,NGN,Naira,Active
+North Macedonia,MK,MKD,Denar,Active
+Norway,NO,NOK,Norwegian Krone,Active
+Oman,OM,OMR,Rial Omani,Active
+Panama,PA,PAB,Balboa,Active
+Paraguay,PY,PYG,Guarani,Active
+Peru,PE,PEN,Nuevo Sol,Active
+Philippines,PH,PHP,Philippine Peso,Active
+Poland,PL,PLN,Zloty,Active
+Portugal,PT,EUR,Euro,Active
+Qatar,QA,QAR,Qatari Rial,Active
+Romania,RO,RON,Romanian Leu,Active
+Rwanda,RW,RWF,Rwanda Franc,Active
+Saint Lucia,LC,ECD,East Caribbean Dollar,Active
+San Marino,SM,EUR,Euro,Preview
+Saudi Arabia,SA,SAR,Saudi Riyal,Active
+Senegal,SN,XOF,CFA Franc BCEAO,Active
+Serbia,RS,RSD,Serbian Dinar,Active
+Singapore,SG,SGD,Singapore Dollar,Active
+Slovakia,SK,EUR,Euro,Active
+Slovenia,SI,EUR,Euro,Active
+South Africa,ZA,ZAR,Rand,Active
+South Korea,KR,KRW,Won,Active
+Spain,ES,EUR,Euro,Active
+Sri Lanka,LK,LKR,Sri Lanka Rupee,Active
+Sweden,SE,SEK,Swedish Krona,Active
+Switzerland,CH,CHF,Swiss Franc,onlyEuro
+Taiwan,TW,TWD,New Taiwan Dollar,Preview
+Tanzania,TZ,TZS,Tanzanian Shilling,Active
+Thailand,TH,THB,Baht,Active
+Trinidad and Tobago,TT,TTD,Trinidad and Tobago Dollar,Active
+Tunisia,TN,TND,Tunisian Dinar,Active
+Turkey,TR,TRY,Turkish Lira,Active
+United Arab Emirates,AE,AED,UAE Dirham,Active
+United Kingdom,GB,GBP,Pound Sterling,Active
+United States,US,USD,US Dollar,Active
+Uruguay,UY,UYU,Peso Uruguayo,Active
+Uzbekistan,UZ,UZS,Uzbekistan Sum,Active
+Vietnam,VN,VND,Dong,Active

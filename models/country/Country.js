@@ -2,7 +2,11 @@ import mongoose from 'mongoose';
 
 const CountrySchema = new mongoose.Schema({
 
-  countryCode: { type: String }
+  countryName: { type: String },
+  countryCode: { type: String },
+  countryCurrency: { type: String },
+  countryCurrencyName: { type: String },
+  countryStatus: { type: String }
 
 });
 

@@ -29,7 +29,7 @@ const Page = () => {
       "email address",
       "home address",
       "phone number",
-      "social link",
+      "id number",
       "birth date",
       "government id",
       "country code",
@@ -119,7 +119,7 @@ const Page = () => {
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="social link"
+                placeholder="id number"
               />
             </Tooltip>
           </Stack>

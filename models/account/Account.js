@@ -8,7 +8,7 @@ const AccountSchema = new mongoose.Schema(
             accountEmailAddress: { type: String },
             accountHomeAddress: { type: String },
             accountPhoneNumber: { type: String },
-            accountSocialLink: { type: String },
+            accountIdNumber: { type: String },
             accountCountryCode: { type: String },
             accountZipCode: { type: String },
             accountBirthDate: { type: String },
@@ -17,7 +17,7 @@ const AccountSchema = new mongoose.Schema(
             accountCurrentTitle: { type: String }
         },
         accountBank: {
-            accountCurrencyCode: { type: String },
+            accountCountryCurrency: { type: String },
             accountIbanNumber: { type: String },
             accountNumber: { type: String },
             accountRoutingNumber: { type: String }

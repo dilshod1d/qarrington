@@ -236,12 +236,12 @@ const Page = () => {
                                                                         inputProps={{ style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
-                                                                <Tooltip title="social link" placement="top">
+                                                                <Tooltip title="id number" placement="top">
                                                                     <TextField
                                                                         required
                                                                         id="outlined-required"
-                                                                        placeholder="social link"
-                                                                        defaultValue={accountProfile.accountSocialLink}
+                                                                        placeholder="id number"
+                                                                        defaultValue={accountProfile.accountIdNumber}
                                                                         inputProps={{ style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
