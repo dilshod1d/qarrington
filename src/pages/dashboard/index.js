@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import HeaderMenu from '../../components/menus/HeaderMenu';
-import LeftGrid from '../../components/grids/LeftGrid';
+import Menu from '../../components/cards/Menu';
 import RightGrid from '../../components/grids/RightGrid';
 import { Avatar, Badge, Box, Card, Container, Grid, Stack, styled, Tab, Tooltip, Typography } from '@mui/material';
 import TabList from '@mui/lab/TabList';
@@ -42,13 +42,13 @@ const Page = () => {
 
                 <Grid container spacing={2}>
 
-                    {/* LeftGrid Starts Here */}
+                    {/* Menu Starts Here */}
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <LeftGrid />
+                        <Menu />
                     </Grid>
 
-                    {/* LeftGrid Ends Here */}
+                    {/* Menu Ends Here */}
 
                     <Grid item xs={12} md={6} lg={6} mb={4}>
                         <Grid container spacing={1}>
