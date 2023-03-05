@@ -9,7 +9,7 @@ const AccountSchema = new mongoose.Schema(
             accountHomeAddress: { type: String },
             accountPhoneNumber: { type: String },
             accountSocialLink: { type: String },
-            accountCountryName: { type: String },
+            accountCountryCode: { type: String },
             accountZipCode: { type: String },
             accountBirthDate: { type: String },
             accountGovernmentId: { type: String },
