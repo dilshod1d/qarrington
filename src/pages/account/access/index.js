@@ -147,7 +147,7 @@ const Page = () => {
 
                 <Box textAlign="center">
                   <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    Once you log in to your account, kindly provide all the necessary account details and contacts for smooth payouts. Otherwise, your future payouts might be delayed.
+                    In order to sell subscriptions and receive payouts, you're required to provide verifiable personal, business, bank, and contact details from within your account.
                   </Typography>
                 </Box>
 

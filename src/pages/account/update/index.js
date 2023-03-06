@@ -14,7 +14,7 @@ const Page = () => {
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
-  const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
+  const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
 
   const [value, setValue] = useState('1');
 
@@ -24,33 +24,44 @@ const Page = () => {
 
   const getSteps = () => {
     return [
+      // personal details
       "first name",
       "last name",
-      "email address",
-      "home address",
-      "phone number",
-      "id number",
-      "birth date",
       "government id",
-      "country code",
-      "zip code",
-      "avatar url",
-      "current title",
-      "currency code",
+      "id number",
+      "home country",
+      "birth date",
+      // business details
+      "business name",
+      "business type",
+      "business industry",
+      "business website",
+      // bank details
+      "bank country",
+      "bank currency",
       "iban number",
       "account number",
       "routing number",
       "sort code",
+      // contact details
+      "email address",
+      "phone number",
+      "home address",
+      "zip code",
+      "city name",
+      "state name",
     ];
   }
 
   const getStepContent = (step) => {
     switch (step) {
 
+      // personal details
+
       case 0:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the unique three-letter symbol of the company? No special characters." placement="top">
+            <Tooltip title="Kindly provide your First Name exactly as it appears on your bank statement." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
                 required
@@ -63,7 +74,7 @@ const Page = () => {
       case 1:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the name of the company? This can either be the legal or DBA name." placement="top">
+            <Tooltip title="Kindly provide your Last Name exactly as it appears on your bank statements." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
@@ -76,72 +87,7 @@ const Page = () => {
       case 2:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the link to the company's logo? Please ensure the background is filled." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="email address"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 3:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the product that the company offers or will offer its future customers?" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="home address"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 4:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What is the catchy headline of the company? Please keep it simple & short." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="phone number"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 5:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="How would you break down what the company is or does to a 5yr or 95yr old?" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="id number"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 6:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="In which industry does the company operate it? Please keep it to 1 or 2 words." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="birth date"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 7:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the website of the company? This must be accessible to all customers." placement="top">
+            <Tooltip title="Kindly provide your Government-Issued ID as a link to the PNG or JPG image file." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
@@ -151,14 +97,84 @@ const Page = () => {
           </Stack>
         );
 
-      case 8:
+
+      case 3:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="How can customers get in touch with the company should they need any help?" placement="top">
+            <Tooltip title="Kindly provide the ID Number or SSN exactly as shown on the government id." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="country code"
+                placeholder="id number"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 4:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide the 2-letter code of the country, where the id was legally issued." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="home country"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 5:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide your Birth Date exactly as it appears on all your legal documents." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="birth date"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      // business details
+
+      case 6:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide your Business Name or Full Name if you don't have a business." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="business name"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 7:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="By default, your Business Type is set to Individual and you can't change it later." placement="top">
+              <TextField
+                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
+                required
+                placeholder="Individual"
+                defaultValue="Individual"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 8:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="By default, your Business Industry is set to SaaS and you cannot change it later." placement="top">
+              <TextField
+                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
+                required
+                placeholder="SaaS"
+                defaultValue="SaaS"
               />
             </Tooltip>
           </Stack>
@@ -167,24 +183,26 @@ const Page = () => {
       case 9:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="In which country are the majority of the company's customers based or located?" placement="top">
+            <Tooltip title="Kindly provide your Business Website or Social Link if you don't have a business." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="zip code / postal code"
+                placeholder="business website"
               />
             </Tooltip>
           </Stack>
         );
 
+      // bank details
+
       case 10:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="How many units of subscriptions does the company plan to issue for its ISO?" placement="top">
+            <Tooltip title="Kindly provide the 2-letter code of the country, where your bank is located." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="avatar url"
+                placeholder="bank country"
               />
             </Tooltip>
           </Stack>
@@ -193,11 +211,11 @@ const Page = () => {
       case 11:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the price per unit during the ISO? Please make sure that this is justifiable." placement="top">
+            <Tooltip title="Kindly provide the 3-letter code of the currency that your bank account uses." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
-                placeholder="current title"
+                placeholder="bank currency"
               />
             </Tooltip>
           </Stack>
@@ -206,20 +224,7 @@ const Page = () => {
       case 12:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Which month does the company want the ISO to start? It can change anytime." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="currency code"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 13:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What time does the company want the ISO to start? It can change anytime." placement="top">
+            <Tooltip title="Kindly provide your IBAN Number in case you don't have a bank Account Number." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
@@ -229,10 +234,10 @@ const Page = () => {
           </Stack>
         );
 
-      case 14:
+      case 13:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What time does the company want the ISO to start? It can change anytime." placement="top">
+            <Tooltip title="Kindly enter your bank Account Number in case you don't have an IBAN Number." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
@@ -242,10 +247,10 @@ const Page = () => {
           </Stack>
         );
 
-      case 15:
+      case 14:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What time does the company want the ISO to start? It can change anytime." placement="top">
+            <Tooltip title="Kindly provide your Routing Number if your bank is based or located in the U.S." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
@@ -255,10 +260,10 @@ const Page = () => {
           </Stack>
         );
 
-      case 16:
+      case 15:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What time does the company want the ISO to start? It can change anytime." placement="top">
+            <Tooltip title="Kindly provide your Sort Code in case your bank is based or located in the UK." placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
                 required
@@ -268,8 +273,89 @@ const Page = () => {
           </Stack>
         );
 
+      // contact details
+
+      case 16:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide your Email Address and once you do, you cannot change it later." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="email address"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 17:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide your Phone Number and once you do, you cannot change it later." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="phone number"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 18:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide your Home Address and once you do, you cannot change it later." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="home address"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 19:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide the zip code or postal code of your current residential address." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="zip code / postal code"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 20:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide the city, where you're currently located as a legal resident." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="city name"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 21:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide the state, where you're currently located as a legal resident." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="state name"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
       default:
         return "unknown step";
+
     }
   }
 
@@ -291,7 +377,7 @@ const Page = () => {
     <>
 
       <Head>
-        <title>Complete Account • Qarrington</title>
+        <title>Update Account • Qarrington</title>
         <meta
           name="description"
           content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
@@ -339,15 +425,17 @@ const Page = () => {
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                Viola! You're about to become a Qarrington
-                  <Tooltip title="ISO or subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
+                  Viola! You're about to become a Qarrington
+                  <Tooltip title="Subscriptions only give you access to a company's products and services, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
 
-                <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                In order to facilitate payouts, you must answer <b>~15 questions</b> about your personal, business, and bank details for KYC purposes. You'd need a PDF link to your government-issued document.
-                </Typography>
+                {accounts && accounts.slice(0, 1).map(({ _id, accountPersonal }) => (
+                  <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
+                    Dear {accountPersonal.accountFirstName}, in order to sell subscriptions on Qarrington and receive payouts to your bank account, you're required to provide verifiable <b>personal</b>, <b>business</b>, <b>bank</b>, and <b>contact</b> details.
+                  </Typography>
+                ))}
 
               </Box>
 
@@ -371,14 +459,14 @@ const Page = () => {
                           </Button>
                         </Link>
 
-                        <Link href="/account/access">
+                        <Link href="/account">
                           <Button
                             size="large"
                             sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
                             variant="contained"
                             fullWidth={true}
                           >
-                            access account
+                            manage account
                           </Button>
                         </Link>
 
@@ -388,7 +476,7 @@ const Page = () => {
                           color="secondary"
                           sx={{ fontSize: '12px', textTransform: 'uppercase' }}
                         >
-                          submitted
+                          updated
                         </Button>
 
                       </Stack>
@@ -402,7 +490,7 @@ const Page = () => {
                           fullWidth={true}
                           onClick={handleNext}
                         >
-                          {activeStep === steps.length - 1 ? "Register" : "Next"}
+                          {activeStep === steps.length - 1 ? "Save" : "Next"}
                         </Button>
                         <Button
                           style={FormButton}
@@ -422,7 +510,7 @@ const Page = () => {
 
                 <Box textAlign="center">
                   <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    By clicking on the Register BUTTON or otherwise submitting this FORM, I do hereby agree with the Service Terms and Privacy Policies of the Qarrington website.
+                    By clicking on the Save BUTTON or otherwise submitting this FORM, I do hereby agree with the Service Terms and Privacy Policies of the Qarrington website.
                   </Typography>
                 </Box>
 

@@ -1,31 +1,38 @@
 [
     {
-        "accountProfile": {
-            "accountFirstName": "Kim",
-            "accountLastName": "Adams",
-            "accountEmailAddress": "kim@gmail.com",
-            "accountHomeAddress": "123 Home Street, Brooklyn 76382 NY / United States",
-            "accountPhoneNumber": "+1234567890",
+        "accountPersonal": {
+            "accountFirstName": "Brenna",
+            "accountLastName": "Murphy",
+            "accountGovernmentId": "/assets/media/identifications/brenna.png",
             "accountIdNumber": "666784862",
-            "accountCountryCode": "CA",
-            "accountZipCode": "87384",
-            "accountBirthDate": "08-18-1995",
-            "accountGovernmentId": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-            "accountAvatarUrl": "/assets/media/accounts/kim.webp",
-            "accountCurrentTitle": "Product Manager"
+            "accountHomeCountry": "CA",
+            "accountBirthDate": "08-18-1995"
         },
         "accountBank": {
-            "accountCountryCurrency": "USD",
+            "accountBankCountry": "US",
+            "accountBankCurrency": "USD",
             "accountIbanNumber": "",
             "accountNumber": "4743477573739",
             "accountRoutingNumber": "937447338443",
             "accountSortCode": ""
         },
         "accountBusiness": {
-            "accountBusinessName": "accountFirstName accountLastName",
+            "accountBusinessName": "",
             "accountBusinessType": "Individual",
             "accountBusinessIndustry": "Software",
-            "accountBusinessWebsite": "accountSocialLink"
+            "accountBusinessWebsite": "https://linkedin.com/u/kim_adams"
+        },
+        "accountContact": {
+            "accountEmailAddress": "kim@gmail.com",
+            "accountPhoneNumber": "+1234567890",
+            "accountHomeAddress": "123 Home Street, Brooklyn 76382 NY / United States",
+            "accountZipCode": "74638",
+            "accountCityName": "Brooklyn",
+            "accountStateName": "New York"
+        },
+        "accountProfile": {
+            "accountAvatarUrl": "/assets/media/accounts/brenna.webp",
+            "accountCurrentTitle": "Product Manager"
         },
         "accountKeys": {
             "accountAccessKey": "LESif6nvJo",

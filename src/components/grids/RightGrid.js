@@ -47,7 +47,7 @@ const Component = () => {
               <Link href="/challenges">
                 <Button
                   size="medium"
-                  style={{ textTransform: 'uppercase', fontSize: '13px' }}
+                  style={{ textTransform: 'uppercase', fontSize: '12px' }}
                   variant="outlined"
                   fullWidth={true}
                 >
