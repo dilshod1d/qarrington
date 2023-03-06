@@ -20,7 +20,10 @@
             "accountBusinessName": "",
             "accountBusinessType": "Individual",
             "accountBusinessIndustry": "Software",
-            "accountBusinessWebsite": "https://linkedin.com/u/kim_adams"
+            "accountBusinessWebsite": "https://linkedin.com/u/kim_adams",
+            "accountBusinessAddress": "123 Business Street, Somewhere",
+            "accountBusinessCountry": "US",
+            "accountBusinessEmail": "support@business.com"
         },
         "accountContact": {
             "accountEmailAddress": "kim@gmail.com",
@@ -44,7 +47,8 @@
             "accountIsAdmin": "FALSE",
             "accountIsMaker": "FALSE",
             "accountIsVerified": "TRUE",
-            "accountIsVerifiedAt": "04-25-2022"
+            "accountIsVerifiedAt": "04-25-2022",
+            "accountCompletionRate": "4"
         },
         "accountAlerts": [
             {

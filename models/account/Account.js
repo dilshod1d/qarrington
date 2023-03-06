@@ -8,13 +8,16 @@ const AccountSchema = new mongoose.Schema(
             accountGovernmentId: { type: String },
             accountIdNumber: { type: String },
             accountBirthDate: { type: String },
-            accountHomeCountry: { type: String },
+            accountHomeCountry: { type: String }
         },
         accountBusiness: {
             accountBusinessName: { type: String },
             accountBusinessType: { type: String },
             accountBusinessIndustry: { type: String },
-            accountBusinessWebsite: { type: String }
+            accountBusinessWebsite: { type: String },
+            accountBusinessAddress: { type: String },
+            accountBusinessCountry: { type: String },
+            accountBusinessEmail: { type: String }
         },
         accountBank: {
             accountBankCountry: { type: String },
@@ -45,7 +48,8 @@ const AccountSchema = new mongoose.Schema(
             accountIsAdmin: { type: String },
             accountIsMaker: { type: String },
             accountIsVerified: { type: String },
-            accountIsVerifiedAt: { type: String }
+            accountIsVerifiedAt: { type: String },
+            accountCompletionRate: { type: String }
         },
         accountAlerts: [
             {

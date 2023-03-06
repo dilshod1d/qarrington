@@ -36,6 +36,9 @@ const Page = () => {
       "business type",
       "business industry",
       "business website",
+      "business address",
+      "business country",
+      "business email",
       // bank details
       "bank country",
       "bank currency",
@@ -193,9 +196,48 @@ const Page = () => {
           </Stack>
         );
 
+      case 10:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide your Business Address or leave it blank to use your Home Address." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="business address"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 11:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide your Business Country or leave it blank to use your Home Country." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="business country"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 12:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="Kindly provide your Business Email or leave it blank to use your Email Address." placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="business email"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
       // bank details
 
-      case 10:
+      case 13:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly provide the 2-letter code of the country, where your bank is located." placement="top">
@@ -208,7 +250,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 11:
+      case 14:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly provide the 3-letter code of the currency that your bank account uses." placement="top">
@@ -221,7 +263,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 12:
+      case 15:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly provide your IBAN Number in case you don't have a bank Account Number." placement="top">
@@ -234,7 +276,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 13:
+      case 16:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly enter your bank Account Number in case you don't have an IBAN Number." placement="top">
@@ -247,7 +289,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 14:
+      case 17:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly provide your Routing Number if your bank is based or located in the U.S." placement="top">
@@ -260,7 +302,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 15:
+      case 18:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly provide your Sort Code in case your bank is based or located in the UK." placement="top">
@@ -275,7 +317,7 @@ const Page = () => {
 
       // contact details
 
-      case 16:
+      case 19:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly provide your Email Address and once you do, you cannot change it later." placement="top">
@@ -288,7 +330,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 17:
+      case 20:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly provide your Phone Number and once you do, you cannot change it later." placement="top">
@@ -301,7 +343,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 18:
+      case 21:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly provide your Home Address and once you do, you cannot change it later." placement="top">
@@ -314,7 +356,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 19:
+      case 22:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly provide the zip code or postal code of your current residential address." placement="top">
@@ -327,7 +369,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 20:
+      case 23:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly provide the city, where you're currently located as a legal resident." placement="top">
@@ -340,7 +382,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 21:
+      case 24:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Kindly provide the state, where you're currently located as a legal resident." placement="top">

@@ -2,9 +2,7 @@ import React from 'react';
 import { Box, Button, Card, Grid, styled, Tooltip, Typography } from '@mui/material';
 import Link from 'next/link';
 import FooterMenu from '../menus/FooterMenu';
-import CircularProgress, {
-  circularProgressClasses,
-} from '@mui/material/CircularProgress';
+import CircularProgress from '@mui/material/CircularProgress';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import useSWR from 'swr';
@@ -35,10 +33,13 @@ const Component = () => {
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Card style={{ padding: '40px' }}>
-            <Box sx={{ flexGrow: 1 }}>
-              <Tooltip title="1%" placement="top">
-                <BorderLinearProgress variant="determinate" value={1} />
-              </Tooltip>
+            <Box display='flex' justifyContent='center' alignItems='center'>
+              {accounts && accounts.slice(0, 1).map(({ _id, accountStatus }) => (
+                <>
+                  <CircularProgress variant='determinate' size={80} thickness={6} value={accountStatus.accountCompletionRate} />
+                  <Typography variant='body2' fontWeight={600} position='absolute'>{accountStatus.accountCompletionRate}%</Typography>
+                </>
+              ))}
             </Box>
             <Box style={{ padding: '15px 0px 15px 0px', display: 'flex', justifyContent: 'center' }}>
               {accounts && accounts.slice(0, 1).map(({ _id, accountPersonal }) => (
