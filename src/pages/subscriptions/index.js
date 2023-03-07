@@ -37,7 +37,7 @@ const Page = () => {
                                 <Grid item xs={12} mb={2}>
                                     <Grid container spacing={2}>
 
-                                        {companies && companies.map(({ _id, companyTicker, companyDetails, companyAnalytics }) => (
+                                        {companies && companies.map(({ _id, companyTicker, companyListing, companyKpi }) => (
                                             <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                                 <Link href={`/subscriptions/${companyTicker}`}>
                                                     <Card style={{ padding: '60px', cursor: 'pointer' }}>
@@ -49,14 +49,14 @@ const Page = () => {
                                                         >
                                                             <Avatar
                                                                 style={{ width: 40, height: 40 }}
-                                                                alt={companyDetails.companyName}
-                                                                src={companyDetails.companyLogo}
+                                                                alt={companyListing.companyName}
+                                                                src={companyListing.companyLogo}
                                                             />
                                                         </Box>
                                                         <Box style={{ textAlign: 'center' }}>
-                                                            <Tooltip title={companyDetails.companyName} placement="top">
+                                                            <Tooltip title={companyListing.companyName} placement="top">
                                                                 <Box>
-                                                                    {companyAnalytics && companyAnalytics.slice(0, 1).map(({ _id, companyPrice, companyPricePercentChange, companyPricePointChange }) => (
+                                                                    {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyPrice, companyPricePercentChange, companyPricePointChange }) => (
                                                                         <>
                                                                             <Box textAlign="center" mt={1.5} mb={0.5}>
                                                                                 <Typography component="span" mr={0.2} variant="body2" fontWeight="700" color="black" textTransform="uppercase">

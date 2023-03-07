@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const CompanySchema = new mongoose.Schema({
   companyTicker: { type: String }, // a unique three-letter symbol, also the stripe product name
-  companyDetails: {
+  companyListing: {
     companyName: { type: String },
     companyLogo: { type: String },
     companyHeadline: { type: String },
@@ -51,7 +51,7 @@ const CompanySchema = new mongoose.Schema({
       companyCustomerIsCreatedAt: { type: Date, default: Date.now } //  the date the customer is created thru REST API
     }
   ],
-  companyAnalytics: [ // the current and historical data of a company
+  companyKpi: [ // the current and historical data of a company
     {
       companyCurrency: { type: String }, // the default currency of the is the USD
       companyCapitalization: { type: String }, // total companySubscriberUnits * companyPrice or companyIsoPrice

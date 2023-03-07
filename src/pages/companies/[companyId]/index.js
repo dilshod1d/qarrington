@@ -113,17 +113,17 @@ const Page = ({ slug }) => {
                                                 scrollButtons="auto"
                                                 aria-label="scrollable auto tabs example"
                                             >
-                                                <TabLabel label="Details" value="1" />
-                                                <TabLabel label="Iso" value="2" />
-                                                <TabLabel label="Analytics" value="3" />
+                                                <TabLabel label="Iso" value="1" />
+                                                <TabLabel label="Listing" value="2" />
+                                                <TabLabel label="Kpi" value="3" />
                                             </TabsWrapper>
                                         </Box>
 
                                         <Box style={{ marginTop: '16px' }}>
 
-                                            {/* details tab starts */}
+                                            {/* listing tab starts */}
 
-                                            <TabPanel sx={{ padding: 0 }} value="1">
+                                            <TabPanel sx={{ padding: 0 }} value="2">
 
                                                 <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                     <Typography variant="body" color="secondary" fontWeight={600}>
@@ -131,7 +131,7 @@ const Page = ({ slug }) => {
                                                     </Typography>
                                                 </Card>
 
-                                                {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyDetails }) => (
+                                                {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
 
                                                     <>
                                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
@@ -150,7 +150,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company name"
-                                                                        defaultValue={companyDetails.companyName}
+                                                                        defaultValue={companyListing.companyName}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
@@ -164,7 +164,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company headline"
-                                                                        defaultValue={companyDetails.companyHeadline}
+                                                                        defaultValue={companyListing.companyHeadline}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
@@ -173,7 +173,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company description"
-                                                                        defaultValue={companyDetails.companyDescription}
+                                                                        defaultValue={companyListing.companyDescription}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
@@ -187,7 +187,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company logo"
-                                                                        defaultValue={companyDetails.companyLogo}
+                                                                        defaultValue={companyListing.companyLogo}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
@@ -196,7 +196,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company product"
-                                                                        defaultValue={companyDetails.companyProduct}
+                                                                        defaultValue={companyListing.companyProduct}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
@@ -210,7 +210,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company market"
-                                                                        defaultValue={companyDetails.companyMarket}
+                                                                        defaultValue={companyListing.companyMarket}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
@@ -219,7 +219,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company industry"
-                                                                        defaultValue={companyDetails.companyIndustry}
+                                                                        defaultValue={companyListing.companyIndustry}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
@@ -233,7 +233,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company email"
-                                                                        defaultValue={companyDetails.companyEmail}
+                                                                        defaultValue={companyListing.companyEmail}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
@@ -242,7 +242,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company website"
-                                                                        defaultValue={companyDetails.companyWebsite}
+                                                                        defaultValue={companyListing.companyWebsite}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
@@ -256,7 +256,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company size"
-                                                                        defaultValue={companyDetails.companySize}
+                                                                        defaultValue={companyListing.companySize}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
@@ -265,7 +265,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company key"
-                                                                        defaultValue={companyDetails.companyKey}
+                                                                        defaultValue={companyListing.companyKey}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
@@ -278,11 +278,11 @@ const Page = ({ slug }) => {
 
                                             </TabPanel>
 
-                                            {/* details tab stops */}
+                                            {/* listing tab stops */}
 
                                             {/* iso tab starts */}
 
-                                            <TabPanel sx={{ padding: 0 }} value="2">
+                                            <TabPanel sx={{ padding: 0 }} value="1">
 
                                                 <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                     <Typography variant="body" color="secondary" fontWeight={600}>
@@ -370,7 +370,7 @@ const Page = ({ slug }) => {
 
                                             {/* iso tab stops */}
 
-                                            {/* analytics tab starts */}
+                                            {/* kpi tab starts */}
 
                                             <TabPanel sx={{ padding: 0 }} value="3">
 
@@ -380,9 +380,9 @@ const Page = ({ slug }) => {
                                                     </Typography>
                                                 </Card>
 
-                                                {companies && companies.slice(0, 1).map(({ _id, companyAnalytics }) => (
+                                                {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
                                                     <>
-                                                        {companyAnalytics && companyAnalytics.slice(0, 1).map(({ _id, companyCurrency, companyCapitalization, companyVolume, companyPrice, companyPricePercentChange, companyPricePointChange, companyActiveCustomers, companyIsRecordedAt }) => (
+                                                        {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyCurrency, companyCapitalization, companyVolume, companyPrice, companyPricePercentChange, companyPricePointChange, companyActiveCustomers, companyIsRecordedAt }) => (
                                                             <>
                                                                 <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                                     <Stack spacing={2} sx={{ width: '100%' }}>
@@ -482,7 +482,7 @@ const Page = ({ slug }) => {
 
                                             </TabPanel>
 
-                                            {/* analytics tab stops */}
+                                            {/* kpi tab stops */}
 
                                         </Box>
 

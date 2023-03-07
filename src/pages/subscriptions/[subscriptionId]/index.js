@@ -108,9 +108,9 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                 </Box>
                                                 <Box mt={2} display="flex" justifyContent="center">
                                                     <Stack direction="row" spacing={1}>
-                                                        {companies && companies.slice(0, 1).map(({ _id, companyAnalytics }) => (
+                                                        {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
                                                             <>
-                                                                {companyAnalytics && companyAnalytics.slice(0, 1).map(({ _id, companyBids }) => (
+                                                                {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyBids }) => (
                                                                     <>
                                                                         {companyBids && companyBids.slice(0, 1).map(({ _id, companyBidPrice }) => (
                                                                             <Tooltip key={_id} title="The Bid Price is the highest price you could buy this subscription. Kindly note that prices are updated in real-time." placement="top">
@@ -121,9 +121,9 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                                 ))}
                                                             </>
                                                         ))}
-                                                        {companies && companies.slice(0, 1).map(({ _id, companyAnalytics }) => (
+                                                        {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
                                                             <>
-                                                                {companyAnalytics && companyAnalytics.slice(0, 1).map(({ _id, companyAsks }) => (
+                                                                {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyAsks }) => (
                                                                     <>
                                                                         {companyAsks && companyAsks.slice(0, 1).map(({ _id, companyAskPrice }) => (
                                                                             <>

@@ -1,7 +1,7 @@
 [
     {
         "companyTicker": "spr",
-        "companyDetails": {
+        "companyListing": {
             "companyName": "Spread",
             "companyLogo": "/assets/media/companies/spread.png",
             "companyHeadline": "This is the headline",
@@ -67,7 +67,7 @@
                 "companyCustomerIsCreatedAt": "07-14-2023"
             }
         ],
-        "companyAnalytics": [
+        "companyKpi": [
             {
                 "companyCurrency": "USD",
                 "companyCapitalization": "80,434,504",
