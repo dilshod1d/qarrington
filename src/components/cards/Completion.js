@@ -58,7 +58,7 @@ const Component = () => {
             <Box>
               <Link href="/account/update">
                 <Button
-                  size="medium"
+                  size="large"
                   style={{ textTransform: 'uppercase', fontSize: '12px' }}
                   variant="outlined"
                   fullWidth={true}
