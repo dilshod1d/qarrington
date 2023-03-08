@@ -178,36 +178,30 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                     {picks && Array.isArray(picks) && picks.slice(0, 1).map(({ _id, pickPrice, pickAmount, pickUnits }) => (
                                                         <Card style={{ padding: '60px' }}>
                                                             <Stack spacing={1} sx={{ width: '100%' }}>
-                                                                <Tooltip title="Kindly specify the maximum price you're willing to buy a subscription unit or leave blank to buy at the current lowest price." placement="top">
-                                                                    <TextField
-                                                                        sx={{ input: { textAlign: "center" } }}
-                                                                        required disabled
-                                                                        placeholder="pick price"
-                                                                        defaultValue={pickPrice}
-                                                                        type="number"
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="Kindly specify the subscription units you'd like to buy. If there's no pair after 90 days, your request will be canceled." placement="top">
-                                                                    <TextField
-                                                                        sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                                                                        required disabled
-                                                                        placeholder="pick units"
-                                                                        defaultValue={pickUnits}
-                                                                        type="number"
-                                                                    />
-                                                                </Tooltip>
+                                                                <TextField
+                                                                    sx={{ input: { textAlign: "center" } }}
+                                                                    required disabled
+                                                                    placeholder="pick price"
+                                                                    defaultValue={pickPrice}
+                                                                    type="number"
+                                                                />
+                                                                <TextField
+                                                                    sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
+                                                                    required disabled
+                                                                    placeholder="pick units"
+                                                                    defaultValue={pickUnits}
+                                                                    type="number"
+                                                                />
                                                                 <Stack marginTop={0} direction="row" width="100%" spacing={2}>
-                                                                    <Tooltip title="To receive the above subscription units in your portfolio, this amount will be charged to your credit/debit card." placement="top">
-                                                                        <Button
-                                                                            size="large"
-                                                                            sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '14px' }}
-                                                                            variant="contained" disabled
-                                                                            fullWidth={true}
-                                                                            type="submit"
-                                                                        >
-                                                                            {`Transfer ${pickAmount} USD`}
-                                                                        </Button>
-                                                                    </Tooltip>
+                                                                    <Button
+                                                                        size="large"
+                                                                        sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '14px' }}
+                                                                        variant="contained" disabled
+                                                                        fullWidth={true}
+                                                                        type="submit"
+                                                                    >
+                                                                        {`Transfer ${pickAmount} USD`}
+                                                                    </Button>
                                                                 </Stack>
                                                             </Stack>
                                                         </Card>
