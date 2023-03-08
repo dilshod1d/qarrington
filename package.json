@@ -27,7 +27,7 @@
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
     "lodash.throttle": "^4.1.1",
-    "mongoose": "^6.7.3",
+    "mongoose": "^6.10.1",
     "mongoose-paginate-v2": "^1.7.1",
     "next": "^12.1.6",
     "next-api-paginate": "^1.1.0",
