@@ -23,7 +23,7 @@ const CompanySchema = new mongoose.Schema({
     }
   ],
   companyIso: {
-    companyIsoUnits: { type: String }, // the inital total subscriptions
+    companyIsoUnits: { type: String }, // the inital total subscription
     companyIsoPrice: { type: String }, // the initial price per subscription
     companyIsoDate: { type: String }, // iso will end 7 days after this date
     companyIsoTime: { type: String }, // the time the iso will start on the date
