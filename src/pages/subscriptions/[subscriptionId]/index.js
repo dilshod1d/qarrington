@@ -175,7 +175,7 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
 
                                             <TabPanel sx={{ padding: 0 }} value="1">
                                                 <Grid item xs={12}>
-                                                    {picks && Array.isArray(picks) && picks.slice(0, 1).map(({ _id, pickPrice, pickAmount }) => (
+                                                    {picks && Array.isArray(picks) && picks.slice(0, 1).map(({ _id, pickPrice, pickAmount, pickUnits }) => (
                                                         <Card style={{ padding: '60px' }}>
                                                             <Stack spacing={1} sx={{ width: '100%' }}>
                                                                 <Tooltip title="Kindly specify the maximum price you're willing to buy a subscription unit or leave blank to buy at the current lowest price." placement="top">
@@ -190,8 +190,9 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                                 <Tooltip title="Kindly specify the subscription units you'd like to buy. If there's no pair after 90 days, your request will be canceled." placement="top">
                                                                     <TextField
                                                                         sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                                                                        required
+                                                                        required disabled
                                                                         placeholder="pick units"
+                                                                        defaultValue={pickUnits}
                                                                         type="number"
                                                                     />
                                                                 </Tooltip>
@@ -200,7 +201,7 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                                         <Button
                                                                             size="large"
                                                                             sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '14px' }}
-                                                                            variant="contained"
+                                                                            variant="contained" disabled
                                                                             fullWidth={true}
                                                                             type="submit"
                                                                         >
