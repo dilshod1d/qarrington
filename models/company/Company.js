@@ -70,8 +70,8 @@ const CompanySchema = new mongoose.Schema({
       ],
       companyPrice: { type: String }, // is when the highest companyBidPrice equals the lowest companyAskPrice
       companyPriceVariant: { type: String }, // the value will be 'primary' if companyPrice is up, otherwise 'error'
-      companyPricePercentChange: { type: String }, // the percentage difference btw current and previous companyPrice i.e. from 8.54 to 7.92 is +7.25%
-      companyPricePointChange: { type: String }, // the point difference btw current and previous companyPrice i.e. from 8.54 to 7.92 is +0.62
+      companyPercentChange: { type: String }, // the percentage difference btw current and previous companyPrice i.e. from 8.54 to 7.92 is +7.25%
+      companyPointChange: { type: String }, // the point difference btw current and previous companyPrice i.e. from 8.54 to 7.92 is +0.62
       companyActiveCustomers: { type: String }, // total pullAccountIds of pullCompanyId
       companyIsRecordedAt: { type: String } // update and save every 5 seconds
     }

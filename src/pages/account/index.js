@@ -46,7 +46,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 const Page = () => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher)
+    const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
 
     const [value, setValue] = useState('1');
 

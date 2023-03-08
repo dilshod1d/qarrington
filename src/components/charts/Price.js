@@ -23,7 +23,7 @@ const Component = () => {
 
               {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyKpi, companyListing }) => (
                 <>
-                  {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyCurrency, companyCapitalization, companyVolume, companyPrice, companyPriceVariant, companyPricePercentChange, companyPricePointChange, companyActiveCustomers, companyIsRecordedAt }) => (
+                  {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyCurrency, companyCapitalization, companyVolume, companyPrice, companyPriceVariant, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
                     <Box key={_id} textAlign="center" marginBottom="10px">
                       <Box>
                         <Typography fontSize="32px" fontWeight={700} component="span" color="black">
@@ -33,13 +33,13 @@ const Component = () => {
 
                       <Box>
                         <Typography fontSize="16px" fontWeight={600} component="span" color={companyPriceVariant}>
-                          {`+${companyPricePointChange}`}
+                          {`+${companyPointChange}`}
                         </Typography>
                         <Typography variant="body2" component="span" color="secondary" marginX={0.5}>
                           \
                         </Typography>
                         <Typography fontSize="14px" fontWeight={600} component="span" color={companyPriceVariant}>
-                          {`+${companyPricePercentChange}`}%
+                          {`+${companyPercentChange}`}%
                         </Typography>
                       </Box>
 

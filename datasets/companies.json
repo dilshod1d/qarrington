@@ -86,8 +86,8 @@
                 ],
                 "companyPrice": "45.21",
                 "companyPriceVariant": "primary",
-                "companyPricePercentChange": "4.55",
-                "companyPricePointChange": "0.85",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
                 "companyActiveCustomers": "52,329",
                 "companyIsRecordedAt": "06-28-2023"
             },
@@ -109,8 +109,8 @@
                 ],
                 "companyPrice": "42.87",
                 "companyPriceVariant": "error",
-                "companyPricePercentChange": "4.55",
-                "companyPricePointChange": "0.85",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
                 "companyActiveCustomers": "52,329",
                 "companyIsRecordedAt": "06-28-2023"
             },
@@ -132,8 +132,8 @@
                 ],
                 "companyPrice": "38.42",
                 "companyPriceVariant": "error",
-                "companyPricePercentChange": "4.55",
-                "companyPricePointChange": "0.85",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
                 "companyActiveCustomers": "52,329",
                 "companyIsRecordedAt": "06-28-2023"
             },
@@ -155,8 +155,8 @@
                 ],
                 "companyPrice": "48.05",
                 "companyPriceVariant": "primary",
-                "companyPricePercentChange": "4.55",
-                "companyPricePointChange": "0.85",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
                 "companyActiveCustomers": "52,329",
                 "companyIsRecordedAt": "06-28-2023"
             },
@@ -178,8 +178,8 @@
                 ],
                 "companyPrice": "42.39",
                 "companyPriceVariant": "error",
-                "companyPricePercentChange": "4.55",
-                "companyPricePointChange": "0.85",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
                 "companyActiveCustomers": "52,329",
                 "companyIsRecordedAt": "06-28-2023"
             },
@@ -201,8 +201,8 @@
                 ],
                 "companyPrice": "49.75",
                 "companyPriceVariant": "primary",
-                "companyPricePercentChange": "4.55",
-                "companyPricePointChange": "0.85",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
                 "companyActiveCustomers": "52,329",
                 "companyIsRecordedAt": "06-28-2023"
             },
@@ -224,8 +224,8 @@
                 ],
                 "companyPrice": "52.76",
                 "companyPriceVariant": "primary",
-                "companyPricePercentChange": "4.55",
-                "companyPricePointChange": "0.85",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
                 "companyActiveCustomers": "52,329",
                 "companyIsRecordedAt": "06-28-2023"
             }

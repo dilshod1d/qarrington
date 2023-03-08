@@ -17,8 +17,9 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
+    const { data: picks } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/picks`, fetcher);
 
-    const [value, setValue] = useState('1');
+    const [value, setValue] = useState('2');
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -162,16 +163,67 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
                                                 scrollButtons="auto"
                                                 aria-label="scrollable auto tabs example"
                                             >
-                                                <TabLabel label="Pull" value="1" />
-                                                <TabLabel label="Push" value="2" />
+                                                <TabLabel label="Pick" value="1" />
+                                                <TabLabel label="Pull" value="2" />
+                                                <TabLabel label="Push" value="3" />
                                             </TabsWrapper>
                                         </Box>
 
                                         <Box style={{ marginBottom: '0px', marginTop: '16px' }}>
 
-                                            {/* pull starts */}
+                                            {/* pick starts */}
 
                                             <TabPanel sx={{ padding: 0 }} value="1">
+                                                <Grid item xs={12}>
+                                                    {picks && Array.isArray(picks) && picks.slice(0, 1).map(({ _id, pickPrice, pickAmount }) => (
+                                                        <Card style={{ padding: '60px' }}>
+                                                            <Stack spacing={1} sx={{ width: '100%' }}>
+                                                                <Tooltip title="Kindly specify the maximum price you're willing to buy a subscription unit or leave blank to buy at the current lowest price." placement="top">
+                                                                    <TextField
+                                                                        sx={{ input: { textAlign: "center" } }}
+                                                                        required disabled
+                                                                        placeholder="pick price"
+                                                                        defaultValue={pickPrice}
+                                                                        type="number"
+                                                                    />
+                                                                </Tooltip>
+                                                                <Tooltip title="Kindly specify the subscription units you'd like to buy. If there's no pair after 90 days, your request will be canceled." placement="top">
+                                                                    <TextField
+                                                                        sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
+                                                                        required
+                                                                        placeholder="pick units"
+                                                                        type="number"
+                                                                    />
+                                                                </Tooltip>
+                                                                <Stack marginTop={0} direction="row" width="100%" spacing={2}>
+                                                                    <Tooltip title="To receive the above subscription units in your portfolio, this amount will be charged to your credit/debit card." placement="top">
+                                                                        <Button
+                                                                            size="large"
+                                                                            sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '14px' }}
+                                                                            variant="contained"
+                                                                            fullWidth={true}
+                                                                            type="submit"
+                                                                        >
+                                                                            {`Transfer ${pickAmount} USD`}
+                                                                        </Button>
+                                                                    </Tooltip>
+                                                                </Stack>
+                                                            </Stack>
+                                                        </Card>
+                                                    ))}
+                                                    <Box style={{ textAlign: 'center', marginTop: '20px' }}>
+                                                        <Typography variant="body2">
+                                                            If the current price of a subscription matches or falls below your specified price, your pull request will automatically be executed. Otherwise, it will be on hold for 90 days. If there's no pair after 90 days and your pull request is canceled, you'll automatically be refunded. However, kindly note that the transaction fees are non-refundable. With that being said, when you buy a company's subscriptions, you will be able to use the subscription units to access the company's products. In addition to that, each subscription unit gives you a month of access to the company's products.
+                                                        </Typography>
+                                                    </Box>
+                                                </Grid>
+                                            </TabPanel>
+
+                                            {/* pick stops */}
+
+                                            {/* pull starts */}
+
+                                            <TabPanel sx={{ padding: 0 }} value="2">
                                                 <Grid item xs={12}>
                                                     <Card style={{ padding: '60px' }}>
                                                         <Stack spacing={1} sx={{ width: '100%' }}>
@@ -219,7 +271,7 @@ const Page = ({ balance, units, price, cost, name, ticker, amount }) => {
 
                                             {/* push starts */}
 
-                                            <TabPanel sx={{ padding: 0 }} value="2">
+                                            <TabPanel sx={{ padding: 0 }} value="3">
                                                 <Grid item xs={12}>
                                                     <Card style={{ padding: '60px' }}>
                                                         <Stack spacing={1} sx={{ width: '100%' }}>
