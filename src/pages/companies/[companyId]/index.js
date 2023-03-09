@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import HeaderMenu from '../../../components/menus/HeaderMenu';
 import LeftGrid from '../../../components/grids/LeftGrid';
-import RightGrid from '../../../components/grids/RightGrid';
+import Price from '../../../components/cards/Price';
 import { Avatar, Badge, Box, Button, Card, Container, Grid, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
@@ -503,7 +503,7 @@ const Page = ({ slug }) => {
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <RightGrid />
+                        <Price />
                     </Grid>
 
                 </Grid>
