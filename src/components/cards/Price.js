@@ -1,6 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 import { green } from '@mui/material/colors';
-import { Box, Card, Divider, Grid, Tooltip, Typography } from '@mui/material'
+import { Box, Breadcrumbs, Card, Divider, Grid, Tooltip, Typography } from '@mui/material'
 import FooterMenu from '../menus/FooterMenu';
 import useSWR from 'swr';
 
@@ -61,7 +62,7 @@ const Component = () => {
               </>
             ))}
 
-            <Grid item xs={12} mb={0}>
+            <Grid item xs={12} mt={1.5}>
               <Grid container spacing={1}>
                 {cubes && cubes.map(({ _id, date, price, variant }) => (
                   <Tooltip title={date} placement="top">
@@ -101,14 +102,14 @@ const Component = () => {
                     </Box>
                   </Grid>
                 </Tooltip>
-                {/* <Tooltip title="low" placement="top">
+                <Tooltip title="high" placement="top">
                   <Grid item xs={12} sm={6} md={6} lg={1}>
                     <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[700] }}>
                       <></>
                     </Box>
                   </Grid>
-                </Tooltip> */}
-                <Tooltip title="high" placement="top">
+                </Tooltip>
+                <Tooltip title="hot" placement="top">
                   <Grid item xs={12} sm={6} md={6} lg={1}>
                     <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[900] }}>
                       <></>
@@ -120,6 +121,113 @@ const Component = () => {
                 </Grid> */}
               </Grid>
             </Grid>
+
+            <Box role="presentation">
+              <Breadcrumbs
+                separator="|"
+                aria-label="breadcrumb"
+                sx={{
+                  '& ol': {
+                    justifyContent: 'center',
+                    fontSize: '12px',
+                    margin: '20px -20px -20px 0px',
+                    textDecoration: 'none'
+                  }
+                }}
+              >
+                <Link href="#">
+                  <Typography
+                    variant="body2"
+                    color="black"
+                    sx={PeriodItem}
+                  >
+                    N
+                  </Typography>
+                </Link>
+                <Link href="#">
+                  <Typography
+                    variant="body2"
+                    color="black"
+                    sx={PeriodItem}
+                  >
+                    H
+                  </Typography>
+                </Link>
+                <Link href="#">
+                  <Typography
+                    variant="body2"
+                    color="black"
+                    sx={PeriodItem}
+                  >
+                    D
+                  </Typography>
+                </Link>
+                <Link href="#">
+                  <Typography
+                    variant="body2"
+                    color="black"
+                    sx={PeriodItem}
+                  >
+                    W
+                  </Typography>
+                </Link>
+                <Link href="#">
+                  <Typography
+                    variant="body2"
+                    color="black"
+                    sx={PeriodItem}
+                  >
+                    M
+                  </Typography>
+                </Link>
+                <Link href="#">
+                  <Typography
+                    variant="body2"
+                    color="black"
+                    sx={PeriodItem}
+                  >
+                    Q
+                  </Typography>
+                </Link>
+                <Link href="#">
+                  <Typography
+                    variant="body2"
+                    color="black"
+                    sx={PeriodItem}
+                  >
+                    Y
+                  </Typography>
+                </Link>
+              </Breadcrumbs>
+            </Box>
+
+            <Box role="presentation">
+              <Breadcrumbs
+                separator="|"
+                aria-label="breadcrumb"
+                sx={{
+                  '& ol': {
+                    justifyContent: 'center',
+                    margin: '25px 0px 0px 0px',
+                    textDecoration: 'none'
+                  }
+                }}
+              >
+                {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
+                  <a style={{ textDecoration: 'none' }} href={`${companyListing.companyWebsite}`}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <Typography
+                      fontSize="11px"
+                      color="secondary"
+                      sx={DomainItem}
+                    >
+                      {companyListing.companyName}
+                    </Typography>
+                  </a>
+                ))}
+              </Breadcrumbs>
+            </Box>
 
           </Card>
 
@@ -133,6 +241,24 @@ const Component = () => {
 };
 
 export default Component;
+
+const PeriodItem = {
+  textTransform: 'uppercase',
+  cursor: 'pointer',
+  fontWeight: '700',
+  '&:hover': {
+    color: '#c5c5c5'
+  }
+};
+
+const DomainItem = {
+  textTransform: 'uppercase',
+  cursor: 'pointer',
+  fontWeight: '600',
+  '&:hover': {
+    color: '#000'
+  }
+};
 
 const Data2Item = {
   fontWeight: '600',
