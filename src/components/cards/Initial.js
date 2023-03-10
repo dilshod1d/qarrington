@@ -45,7 +45,7 @@ const Component = () => {
                     >
                       <Avatar
                         style={{ width: 50, height: 50 }}
-                        alt="hello"
+                        alt={companyListing.companyName}
                         src={companyListing.companyLogo}
                       />
                     </Badge>
