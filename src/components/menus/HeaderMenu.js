@@ -117,18 +117,18 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="flex-end">
 
-                <Link href="/dashboard">
-                  <Box sx={{ marginRight: -1.2 }}>
-                    <Button sx={MenuItem} variant='text' color='secondary'>
-                      Dashboard
-                    </Button>
-                  </Box>
-                </Link>
-
                 <Link href="/subscriptions">
                   <Box sx={{ marginRight: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
                       Subscriptions
+                    </Button>
+                  </Box>
+                </Link>
+
+                <Link href="/portfolio">
+                  <Box sx={{ marginRight: -1.2 }}>
+                    <Button sx={MenuItem} variant='text' color='secondary'>
+                      Portfolio
                     </Button>
                   </Box>
                 </Link>

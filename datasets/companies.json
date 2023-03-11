@@ -68,488 +68,490 @@
                 "companyCustomerIsCreatedAt": "07-14-2023"
             }
         ],
-        "companyKpi": {
-            "companyNow": [
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                },
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                }
-            ],
-            "companyMinute": [
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                },
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                }
-            ],
-            "companyHour": [
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                },
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                }
-            ],
-            "companyDay": [
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                },
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                }
-            ],
-            "companyWeek": [
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                },
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                }
-            ],
-            "companyMonth": [
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                },
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                }
-            ],
-            "companyQuarter": [
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                },
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                }
-            ],
-            "companyYear": [
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                },
-                {
-                    "companyCapitalization": "85,500,430",
-                    "companyVolume": "4,387,290",
-                    "companyBids": [
-                        {
-                            "companyBidPrice": "42.28",
-                            "companyBidUnits": "583"
-                        },
-                        {
-                            "companyBidPrice": "43.30",
-                            "companyBidUnits": "672"
-                        }
-                    ],
-                    "companyAsks": [
-                        {
-                            "companyAskPrice": "43.18",
-                            "companyAskUnits": "853"
-                        },
-                        {
-                            "companyAskPrice": "44.08",
-                            "companyAskUnits": "429"
-                        }
-                    ],
-                    "companyPrice": "41.85",
-                    "companyPercentChange": "2.86",
-                    "companyPointChange": "4.02",
-                    "companyActiveCustomers": "65,983",
-                    "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
-                }
-            ]
-        },
+        "companyKpi": [
+            {
+                "companyNow": [
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    },
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    }
+                ],
+                "companyToday": [
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    },
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    }
+                ],
+                "companyHour": [
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    },
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    }
+                ],
+                "companyDay": [
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    },
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    }
+                ],
+                "companyWeek": [
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    },
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    }
+                ],
+                "companyMonth": [
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    },
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    }
+                ],
+                "companyQuarter": [
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    },
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    }
+                ],
+                "companyYear": [
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    },
+                    {
+                        "companyCapitalization": "85,500,430",
+                        "companyVolume": "4,387,290",
+                        "companyBids": [
+                            {
+                                "companyBidPrice": "42.28",
+                                "companyBidUnits": "583"
+                            },
+                            {
+                                "companyBidPrice": "43.30",
+                                "companyBidUnits": "672"
+                            }
+                        ],
+                        "companyAsks": [
+                            {
+                                "companyAskPrice": "43.18",
+                                "companyAskUnits": "853"
+                            },
+                            {
+                                "companyAskPrice": "44.08",
+                                "companyAskUnits": "429"
+                            }
+                        ],
+                        "companyPrice": "41.85",
+                        "companyPercentChange": "2.86",
+                        "companyPointChange": "4.02",
+                        "companyActiveCustomers": "65,983",
+                        "companyIsRecordedAt": "Fri, May 22, 2023, 7:45 PM"
+                    }
+                ]
+            }
+        ],
         "companyAccountId": "79C331E34BC2F",
         "companyStatus": {
             "companyIsSubmitted": "TRUE",
