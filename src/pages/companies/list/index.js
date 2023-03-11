@@ -30,6 +30,7 @@ const Page = () => {
       "company website",
       "company email",
       "company market",
+      "company size",
       "company iso units",
       "company iso price",
       "company iso date",
@@ -170,7 +171,20 @@ const Page = () => {
           </Stack>
         );
 
-      case 10:
+        case 10:
+          return (
+            <Stack spacing={1.2} sx={{ width: '100%' }}>
+              <Tooltip title="How many monthly active customers or users does your company have for now?" placement="top">
+                <TextField
+                  sx={{ input: { textAlign: "center" } }}
+                  required
+                  placeholder="company size"
+                />
+              </Tooltip>
+            </Stack>
+          );
+
+      case 11:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="How many units of subscriptions does the company plan to issue for its ISO?" placement="top">
@@ -183,7 +197,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 11:
+      case 12:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="What's the price per unit during the ISO? Please make sure that this is justifiable." placement="top">
@@ -196,7 +210,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 12:
+      case 13:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Which month does the company want the ISO to start? It can change anytime." placement="top">
@@ -209,7 +223,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 13:
+      case 14:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="What time does the company want the ISO to start? It can change anytime." placement="top">

@@ -29,7 +29,7 @@ const Page = () => {
         <div>
 
             <Head>
-                <title>Dashboard • Qarrington</title>
+                <title>Portfolio • Qarrington</title>
                 <meta
                     name="description"
                     content="Qarrington is a subscription exchange that allows you to buy, sell, and exchange the subscriptions of your favorite technology companies with lower fees."

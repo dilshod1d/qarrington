@@ -25,3 +25,6 @@ sitemap-0.xml
 
 # Robots.txt
 robots.txt
+
+# others
+.docs

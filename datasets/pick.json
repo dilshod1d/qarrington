@@ -1,0 +1,18 @@
+[
+    {
+        "pickTicker": "twn",
+        "pickUnits": "286",
+        "pickPrice": "29",
+        "pickAmount": "54,062",
+        "pickCompany": {
+            "pickCompanyId": "d7dn44jsmje",
+            "pickCompanyName": "Twined",
+            "pickCompanyLogo": "/assets/media/companies/twined.png"
+        },
+        "pickAccountId": "h77eh4wwwj3",
+        "pickStatus": {
+            "pickIsTransferred": "TRUE",
+            "pickIsTransferredAt": "06-18-2023"
+        }
+    }
+]
