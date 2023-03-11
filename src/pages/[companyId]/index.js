@@ -28,7 +28,7 @@ const Page = ({ name, ticker, description, logo }) => {
 
       <Head>
         <title>
-          Join the {name} ISO; Initial Subscription Offering • Qarrington
+          Join the {name} ({ticker}) ISO; Initial Subscription Offering • Qarrington
         </title>
         <meta
           name="description"
@@ -483,14 +483,15 @@ const Body = {
 
 export async function getServerSideProps({ params }) {
   try {
-    const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies?companyTicker=${params.companyId.replace(/\-/g, '+')}`)
+    const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies?companySlug=${params.companyId.replace(/\-/g, '+')}`)
       .then((r) => r.json());
     return {
       props: {
-        name: results.companyDetails.companyName,
-        ticker: results.companyTicker,
-        description: results.companyDetails.companyDescription,
-        logo: results.companyDetails.companyLogo
+        name: results.companyListing.companyName,
+        slug: results.companySlug,
+        ticker: results.companyListing.companyTicker,
+        description: results.companyListing.companyDescription,
+        logo: results.companyListing.companyLogo
       }
     };
   } catch (error) {

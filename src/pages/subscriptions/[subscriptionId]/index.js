@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { green } from '@mui/material/colors';
 import HeaderMenu from '../../../components/menus/HeaderMenu';
 import LeftGrid from '../../../components/grids/LeftGrid';
-import Initial from '../../../components/cards/Initial';
+import RightGrid from '../../../components/grids/RightGrid';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
@@ -13,7 +13,7 @@ import Footer from '../../../components/main/Footer';
 import useSWR from 'swr';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 
-const Page = ({ ticker, name, logo, headline, product, description, industry, market, website, email, units, price, date, time }) => {
+const Page = ({ slug, ticker, name, logo, headline, product, description, industry, market, website, email, units, price, date, time }) => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
@@ -39,7 +39,7 @@ const Page = ({ ticker, name, logo, headline, product, description, industry, ma
         <div>
 
             <Head>
-                <title>hi Subscriptions • Qarrington</title>
+                <title>{name} ({ticker}) Subscriptions • Qarrington</title>
                 <meta
                     name="description"
                     content="Qarrington is a subscription exchange that allows you to buy, sell, and exchange the subscriptions of your favorite technology companies without fees."
@@ -71,7 +71,7 @@ const Page = ({ ticker, name, logo, headline, product, description, industry, ma
                                         <Grid item xs={12} sm={6} md={6} lg={12}>
                                             <Card style={{ padding: '60px', marginBottom: '10px' }}>
 
-                                                {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyKpi, companyListing }) => (
+                                                {companies && companies.slice(0, 1).map(({ _id, companyKpi, companyListing }) => (
                                                     <>
                                                         {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyCurrency, companyCapitalization, companyVolume, companyPrice, companyPriceVariant, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
                                                             <Box key={_id} textAlign="center" marginBottom="10px">
@@ -373,12 +373,10 @@ const Page = ({ ticker, name, logo, headline, product, description, industry, ma
                                                                 </Tooltip>
                                                             </Box>
                                                             <Box textAlign="center">
-                                                                <Tooltip title={`ISO Date`} placement="top">
-                                                                    <Typography mb={2} variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
-                                                                        Fri, May 25, 2023, 04:45 PM
-                                                                    </Typography>
-                                                                </Tooltip>
-                                                                <Link href="">
+                                                                <Typography mb={2} variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
+                                                                    Fri, May 25, 2023, 04:45 PM
+                                                                </Typography>
+                                                                <Link href={`/portfolio/${slug}`}>
                                                                     <Button
                                                                         size="medium"
                                                                         sx={{ color: 'white', textTransform: 'uppercase', fontSize: '12px' }}
@@ -660,7 +658,7 @@ const Page = ({ ticker, name, logo, headline, product, description, industry, ma
                                                                     </Box>
                                                                 </>
                                                             ))}
-                                                            <Link href={`/dashboard/${ticker}`}>
+                                                            <Link href={`/portfolio/${slug}`}>
                                                                 <Button
                                                                     size="medium"
                                                                     sx={{ color: 'white', textTransform: 'uppercase', fontSize: '12px' }}
@@ -696,7 +694,7 @@ const Page = ({ ticker, name, logo, headline, product, description, industry, ma
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Initial />
+                        <RightGrid />
                     </Grid>
 
                 </Grid>
@@ -798,11 +796,12 @@ const CurrencyBadge = styled(Badge)(({ theme }) => ({
 
 export async function getServerSideProps({ params }) {
     try {
-        const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies?companyTicker=${params.subscriptionId.replace(/\-/g, '+')}`)
+        const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies?companySlug=${params.subscriptionId.replace(/\-/g, '+')}`)
             .then((r) => r.json());
         return {
             props: {
-                ticker: results.companyTicker,
+                slug: results.companySlug,
+                ticker: results.companyListing.companyTicker,
                 name: results.companyListing.companyName,
                 logo: results.companyListing.companyLogo,
                 headline: results.companyListing.companyHeadline,

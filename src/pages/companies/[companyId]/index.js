@@ -60,7 +60,7 @@ const Page = ({ slug }) => {
                                     {companies && companies.slice(0, 1).map(({ _id, companyUser }) => (
                                         <>
                                             <Carousel>
-                                                {companyUser && companyUser.map(({ _id, companyTicker, companyUserType, companyUserTotal, companyUserDetail, companyUserTooltip, companyUserButton, companyUserRoute }) => (
+                                                {companyUser && companyUser.map(({ _id, companyListing, companyUserType, companyUserTotal, companyUserDetail, companyUserTooltip, companyUserButton, companyUserRoute }) => (
                                                     <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
                                                         <Card style={{ padding: '60px' }}>
                                                             <Box style={{ textAlign: 'center' }}>
@@ -71,8 +71,8 @@ const Page = ({ slug }) => {
                                                                 <Box mt={1.5} mb={1.2}>
                                                                     <Typography variant="body">Track the number of whitelisted subscribers, total customers, active customers, and passive customers of your company with ease.</Typography>
                                                                 </Box>
-                                                                {companies && companies.slice(0, 1).map(({ _id, companyTicker }) => (
-                                                                    <Link key={_id} href={`/${companyTicker}`}>
+                                                                {companies && companies.slice(0, 1).map(({ _id, companyListing }) => (
+                                                                    <Link key={_id} href={`/${companyListing.companyTicker}`}>
                                                                         <Tooltip title="Prior to listing a company, the company must whitelist subscribers for its ISO and convert them to customers after the ISO." placement="top">
                                                                             <Button
                                                                                 size="medium"
@@ -131,7 +131,7 @@ const Page = ({ slug }) => {
                                                     </Typography>
                                                 </Card>
 
-                                                {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
+                                                {companies && companies.slice(0, 1).map(({ _id, companyListing }) => (
 
                                                     <>
                                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
@@ -141,7 +141,7 @@ const Page = ({ slug }) => {
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="company ticker"
-                                                                        defaultValue={companyTicker}
+                                                                        defaultValue={companyListing.companyTicker}
                                                                         inputProps={{ readOnly: true, style: { textAlign: 'center', textTransform: 'uppercase' } }}
                                                                     />
                                                                 </Tooltip>
@@ -521,11 +521,12 @@ export default Page
 
 export async function getServerSideProps({ params }) {
     try {
-        const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies?companyTicker=${params.companyId.replace(/\-/g, '+')}`)
+        const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies?companySlug=${params.companyId.replace(/\-/g, '+')}`)
             .then((r) => r.json());
         return {
             props: {
-                slug: results.companyTicker
+                slug: results.companySlug,
+                ticker: results.companyListing.companyTicker
             }
         };
     } catch (error) {

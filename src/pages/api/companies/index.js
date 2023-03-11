@@ -3,16 +3,16 @@ import Company from '../../../../models/company/Company';
 
 async function handler(req, res) {
   const { method } = req;
-  const { companyTicker } = req.query;
+  const { companySlug } = req.query;
 
   await dbConnect();
 
   // read items
 
   if (method === "GET") {
-    if (companyTicker) {
+    if (companySlug) {
       try {
-        const readItems = await Company.findOne({ companyTicker: companyTicker });
+        const readItems = await Company.findOne({ companySlug: companySlug });
         res.status(200).json(readItems);
       } catch (err) {
         res.status(500).json(err);
