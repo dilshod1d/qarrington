@@ -112,7 +112,7 @@ const Page = () => {
 
                                                     {picks && picks.map(({ _id, pickTicker, pickCompany, pickStatus }) => (
                                                         <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/subscriptions/${pickTicker}`}>
+                                                            <Link href={`/portfolio/${pickTicker}`}>
                                                                 <Card style={{ padding: '40px', cursor: 'pointer' }}>
                                                                     <Box
                                                                         style={{
@@ -174,7 +174,7 @@ const Page = () => {
 
                                                     {pulls && pulls.map(({ _id, pullTicker, pullCompany, pullStatus }) => (
                                                         <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/subscriptions/${pullTicker}`}>
+                                                            <Link href={`/portfolio/${pullTicker}`}>
                                                                 <Card style={{ padding: '40px', cursor: 'pointer' }}>
                                                                     <Box
                                                                         style={{
@@ -242,7 +242,7 @@ const Page = () => {
 
                                                     {pushes && pushes.map(({ _id, pushTicker, pushCompany, pushStatus }) => (
                                                         <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/subscriptions/${pushTicker}`}>
+                                                            <Link href={`/portfolio/${pushTicker}`}>
                                                                 <Card style={{ padding: '40px', cursor: 'pointer' }}>
                                                                     <Box
                                                                         style={{

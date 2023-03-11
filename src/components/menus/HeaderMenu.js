@@ -36,18 +36,18 @@ const Component = () => {
                   </Link>
                 </LogoWrapper>
 
-                <Link href="/challenges">
+                <Link href="/companies">
                   <Box sx={{ marginLeft: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      Challenges
+                      Companies
                     </Button>
                   </Box>
                 </Link>
 
-                <Link href="/mechanisms">
+                <Link href="/subscriptions">
                   <Box sx={{ marginLeft: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      Mechanisms
+                      Subscriptions
                     </Button>
                   </Box>
                 </Link>

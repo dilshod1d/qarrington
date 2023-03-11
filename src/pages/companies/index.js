@@ -37,35 +37,29 @@ const Page = () => {
                                 <Grid item xs={12} mb={2}>
                                     <Grid container spacing={2}>
 
-                                        {companies && companies.map(({ _id, companyTicker, companyListing, companyKpi }) => (
-                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                <Link href={`/subscriptions/${companyTicker}`}>
+                                        {companies && companies.map(({ _id, companySlug, companyListing, companyKpi }) => (
+                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
+                                                <Link href={`/subscriptions/${companySlug}`}>
                                                     <Card style={{ padding: '60px', cursor: 'pointer' }}>
-                                                        <Box
-                                                            style={{
-                                                                display: 'flex',
-                                                                justifyContent: 'center'
-                                                            }}
-                                                        >
-                                                            <Avatar
-                                                                style={{ width: 40, height: 40 }}
-                                                                alt={companyListing.companyName}
-                                                                src={companyListing.companyLogo}
-                                                            />
-                                                        </Box>
                                                         <Box style={{ textAlign: 'center' }}>
-                                                            <Box>
-                                                                <Box textAlign="center" mt={1.5} mb={0.5}>
-                                                                    <Typography component="span" mr={0.2} variant="body" fontWeight="700" color="black" textTransform="uppercase">
-                                                                        {companyListing.companyName}
-                                                                    </Typography>
-                                                                </Box>
-                                                                <Box>
-                                                                    <Typography textTransform="uppercase" variant="body2" fontWeight={700} color="secondary">
-                                                                        {companyTicker}
-                                                                    </Typography>
-                                                                </Box>
+                                                            <Box
+                                                                style={{
+                                                                    display: 'flex',
+                                                                    justifyContent: 'center'
+                                                                }}
+                                                            >
+                                                                <Avatar
+                                                                    style={{ width: 40, height: 40 }}
+                                                                    alt={companyListing.companyName}
+                                                                    src={companyListing.companyLogo}
+                                                                />
                                                             </Box>
+                                                            <Typography variant="h5" fontWeight={700} my={1.5}>
+                                                                {companyListing.companyDescription}
+                                                            </Typography>
+                                                            <Typography textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
+                                                                {companyListing.companyName}
+                                                            </Typography>
                                                         </Box>
                                                     </Card>
                                                 </Link>
