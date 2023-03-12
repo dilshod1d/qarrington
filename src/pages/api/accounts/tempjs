@@ -1,0 +1,71 @@
+import dbConnect from '../../../lib/dbConnect';
+import Account from '../../../../models/account/Account';
+import handler, { initValidation, post, check } from "../../../middleware/handler"
+
+
+const validator = initValidation(
+	[
+        
+    ]
+)
+
+// define my middleware here and use it only for POST requests
+const httpHandler = async () => {
+	await dbConnect();
+	return handler.use(post(validator))
+
+		.get(async (req, res) => {
+
+		})
+		.post(async (req, res) => {
+			
+		})
+
+}
+
+export default handler = await httpHandler();
+
+
+export const config = {
+	api: {
+		responseLimit: false
+	}
+};
+
+AccountSchema.pre('save', function (next) {
+    try {
+        console.log(this.accountKeys)
+        if (!this.accountKeys.accountSecretKey) {
+            this.accountKeys.accountSecretKey = generateToken(12)
+        }
+    }
+    catch (err) {
+        console.log(err)
+    }
+    next()
+})
+
+AccountSchema.pre('save', function (next) {
+    try {
+        console.log("this", this)
+        const { accountContact, accountBank, accountBusiness, accountPersonal } = this
+        let allProfile = []
+        allProfile.length = accountContact.length + accountBank.length + accountBusiness.length + accountPersonal.length
+        this.accountCompletionRate = allProfile.length * 4
+    } catch (err) {
+        console.log(err)
+    }
+    next()
+})
+
+
+
+AccountSchema.methods.login = function () {
+    const token = generateToken(36)
+    this.accountKeys.accountToken = token;
+    return token
+}
+
+// AccountSchema.methods.compareAccessKey = async function (key) {
+//     return await bcrypt.compare(key, this.accountAccessKey)
+// }
