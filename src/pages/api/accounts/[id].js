@@ -12,7 +12,7 @@ async function handler(req, res) {
 
     if (method === "GET") {
         try {
-            const readItem = await Account.findBy_id(_id);
+            // const readItem = await Account.findBy_id(_id);
             res.status(200).json(readItem);
         } catch (err) {
             res.status(500).json(err);
