@@ -1,69 +1,48 @@
 import dbConnect from '../../../lib/dbConnect';
 import Account from '../../../../models/account/Account';
-import handler, { initValidation, post, check } from "../../../middleware/handler"
-import { generateToken, getHeaderAuth } from "../../../lib/auth"
 
-const validator = initValidation(
-	[
-		check('accessKey').isLength({ min: 13 }).withMessage('Access Key is less than required length'),
-	]
-)
+async function handler(req, res) {
+  const { method } = req;
+  const { accountSlug } = req.query;
 
-// define my middleware here and use it only for POST requests
-export default handler
-	.use(validator)
-	.post(async (req, res) => {
-		await dbConnect();
-		const accountAccessKey = req.body.accessKey;
-		const accountSecretKey = generateToken(13)
-		// res.status(200).json(req.body);
+  await dbConnect();
 
-		if (accountAccessKey) {
-			try {
-				let account = await Account.find({ $or: [{ 'accountKeys.accountAccessKey': accountAccessKey }, { 'accountKeys.accountSecretKey': accountSecretKey }] })
-				console.log(account)
-				if (account[0]) {
-					console.log("invalid")
-					res.status(400).json({ success: false, data: [], message: "Access Key Invalid" });
-					return;
-				}
-				console.log("end is not sync")
-				account = new Account({ accountKeys: { accountAccessKey, accountSecretKey } });
-				account.save()
+  // read items
 
-				res.status(200).json({success:true, data:[], message:"Account has been created successfully"});
-			}
-			catch (err) {
-				res.status(500).json("err");
-			}
-		} else {
-			res.status(400).json({ success: false, data: null, error: "Access Key is required" })
-		}
+  if (method === "GET") {
+    if (accountSlug) {
+      try {
+        const readItems = await Account.findOne({ accountSlug: accountSlug });
+        res.status(200).json(readItems);
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    } else {
+      try {
+        const readItems = await Account.find();
+        res.status(200).json(readItems);
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    }
+  }
 
-	})
-	.get(async (req, res) => {
-		await dbConnect();
-		try {
-			const token = getHeaderAuth(req)
-			if (!token) {
-				res.status(401).json({ success: false, data:null, message: "User not authenticated" });
-				// return;
-			}
-			// res.status(200).json(token)
-			const account = await Account.findOne({ "accountKeys.accountToken": token },{ "accountKeys.accountToken":0})
-			if(!account)
-				res.status(400).json({ success: false, data:null, message:"Account Not Found" })
-			res.status(200).json({ success: true, account })
+  // create item
 
-			// const createItem = await Account.create(req.body);
-			// res.status(201).json(createItem);
-		} catch (err) {
-			res.status(500).json(err);
-		}
-	})
+  if (method === 'POST') {
+    try {
+      const createItem = await Account.create(req.body);
+      res.status(201).json(createItem);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
+}
+
+export default handler;
 
 export const config = {
-	api: {
-		responseLimit: false
-	}
+  api: {
+    responseLimit: false
+  }
 };
