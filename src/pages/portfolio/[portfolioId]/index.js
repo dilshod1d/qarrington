@@ -114,12 +114,16 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                         <Stack direction="row" spacing={1}>
                                                             {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
                                                                 <>
-                                                                    {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyBids }) => (
+                                                                    {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                         <>
-                                                                            {companyBids && companyBids.slice(0, 1).map(({ _id, companyBidPrice }) => (
-                                                                                <Tooltip key={_id} title="The Bid Price is the highest price you could buy this subscription. Kindly note that prices are updated in real-time." placement="top">
-                                                                                    <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#ff4757', color: 'white' }} >${companyBidPrice}</Card>
-                                                                                </Tooltip>
+                                                                            {companyNow && companyNow.slice(0, 1).map(({ _id, companyBids }) => (
+                                                                                <>
+                                                                                    {companyBids && companyBids.slice(0, 1).map(({ _id, companyBidPrice, companyBidUnits }) => (
+                                                                                        <Tooltip key={_id} title="The Bid Price is the highest price you could buy this subscription. Kindly note that prices are updated in real-time." placement="top">
+                                                                                            <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#ff4757', color: 'white' }} >${companyBidPrice}</Card>
+                                                                                        </Tooltip>
+                                                                                    ))}
+                                                                                </>
                                                                             ))}
                                                                         </>
                                                                     ))}
@@ -127,13 +131,15 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                             ))}
                                                             {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
                                                                 <>
-                                                                    {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyAsks }) => (
+                                                                    {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                         <>
-                                                                            {companyAsks && companyAsks.slice(0, 1).map(({ _id, companyAskPrice }) => (
+                                                                            {companyNow && companyNow.slice(0, 1).map(({ _id, companyAsks }) => (
                                                                                 <>
-                                                                                    <Tooltip title="The Ask Price is the lowest price you could sell this subscription. Kindly note that prices are updated in real-time." placement="top">
-                                                                                        <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#2ed573', color: 'white' }} >${companyAskPrice}</Card>
-                                                                                    </Tooltip>
+                                                                                    {companyAsks && companyAsks.slice(0, 1).map(({ _id, companyAskPrice, companyAskUnits }) => (
+                                                                                        <Tooltip title="The Ask Price is the lowest price you could sell this subscription. Kindly note that prices are updated in real-time." placement="top">
+                                                                                            <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#2ed573', color: 'white' }} >${companyAskPrice}</Card>
+                                                                                        </Tooltip>
+                                                                                    ))}
                                                                                 </>
                                                                             ))}
                                                                         </>

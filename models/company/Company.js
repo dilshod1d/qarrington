@@ -52,176 +52,178 @@ const CompanySchema = new mongoose.Schema({
       companyCustomerIsCreatedAt: { type: Date, default: Date.now } //  the date the customer is created thru REST API
     }
   ],
-  companyKpi: {
-    companyNow: {
-      companyCapitalization: { type: String },
-      companyVolume: { type: String },
-      companyBids: [
-        {
-          companyBidPrice: { type: String },
-          companyBidUnits: { type: String }
-        }
-      ],
-      companyAsks: [
-        {
-          companyAskPrice: { type: String },
-          companyAskUnits: { type: String }
-        }
-      ],
-      companyPrice: { type: String },
-      companyPercentChange: { type: String },
-      companyPointChange: { type: String },
-      companyActiveCustomers: { type: String },
-      companyIsRecordedAt: { type: String }
-    },
-    companyMinute: {
-      companyCapitalization: { type: String },
-      companyVolume: { type: String },
-      companyBids: [
-        {
-          companyBidPrice: { type: String },
-          companyBidUnits: { type: String }
-        }
-      ],
-      companyAsks: [
-        {
-          companyAskPrice: { type: String },
-          companyAskUnits: { type: String }
-        }
-      ],
-      companyPrice: { type: String },
-      companyPercentChange: { type: String },
-      companyPointChange: { type: String },
-      companyActiveCustomers: { type: String },
-      companyIsRecordedAt: { type: String }
-    },
-    companyHour: {
-      companyCapitalization: { type: String },
-      companyVolume: { type: String },
-      companyBids: [
-        {
-          companyBidPrice: { type: String },
-          companyBidUnits: { type: String }
-        }
-      ],
-      companyAsks: [
-        {
-          companyAskPrice: { type: String },
-          companyAskUnits: { type: String }
-        }
-      ],
-      companyPrice: { type: String },
-      companyPercentChange: { type: String },
-      companyPointChange: { type: String },
-      companyActiveCustomers: { type: String },
-      companyIsRecordedAt: { type: String }
-    },
-    companyDay: {
-      companyCapitalization: { type: String },
-      companyVolume: { type: String },
-      companyBids: [
-        {
-          companyBidPrice: { type: String },
-          companyBidUnits: { type: String }
-        }
-      ],
-      companyAsks: [
-        {
-          companyAskPrice: { type: String },
-          companyAskUnits: { type: String }
-        }
-      ],
-      companyPrice: { type: String },
-      companyPercentChange: { type: String },
-      companyPointChange: { type: String },
-      companyActiveCustomers: { type: String },
-      companyIsRecordedAt: { type: String }
-    },
-    companyWeek: {
-      companyCapitalization: { type: String },
-      companyVolume: { type: String },
-      companyBids: [
-        {
-          companyBidPrice: { type: String },
-          companyBidUnits: { type: String }
-        }
-      ],
-      companyAsks: [
-        {
-          companyAskPrice: { type: String },
-          companyAskUnits: { type: String }
-        }
-      ],
-      companyPrice: { type: String },
-      companyPercentChange: { type: String },
-      companyPointChange: { type: String },
-      companyActiveCustomers: { type: String },
-      companyIsRecordedAt: { type: String }
-    },
-    companyMonth: {
-      companyCapitalization: { type: String },
-      companyVolume: { type: String },
-      companyBids: [
-        {
-          companyBidPrice: { type: String },
-          companyBidUnits: { type: String }
-        }
-      ],
-      companyAsks: [
-        {
-          companyAskPrice: { type: String },
-          companyAskUnits: { type: String }
-        }
-      ],
-      companyPrice: { type: String },
-      companyPercentChange: { type: String },
-      companyPointChange: { type: String },
-      companyActiveCustomers: { type: String },
-      companyIsRecordedAt: { type: String }
-    },
-    companyQuarter: {
-      companyCapitalization: { type: String },
-      companyVolume: { type: String },
-      companyBids: [
-        {
-          companyBidPrice: { type: String },
-          companyBidUnits: { type: String }
-        }
-      ],
-      companyAsks: [
-        {
-          companyAskPrice: { type: String },
-          companyAskUnits: { type: String }
-        }
-      ],
-      companyPrice: { type: String },
-      companyPercentChange: { type: String },
-      companyPointChange: { type: String },
-      companyActiveCustomers: { type: String },
-      companyIsRecordedAt: { type: String }
-    },
-    companyYear: {
-      companyCapitalization: { type: String },
-      companyVolume: { type: String },
-      companyBids: [
-        {
-          companyBidPrice: { type: String },
-          companyBidUnits: { type: String }
-        }
-      ],
-      companyAsks: [
-        {
-          companyAskPrice: { type: String },
-          companyAskUnits: { type: String }
-        }
-      ],
-      companyPrice: { type: String },
-      companyPercentChange: { type: String },
-      companyPointChange: { type: String },
-      companyActiveCustomers: { type: String },
-      companyIsRecordedAt: { type: String }
+  companyKpi: [
+    {
+      companyNow: [{
+        companyCapitalization: { type: String },
+        companyVolume: { type: String },
+        companyBids: [
+          {
+            companyBidPrice: { type: String },
+            companyBidUnits: { type: String }
+          }
+        ],
+        companyAsks: [
+          {
+            companyAskPrice: { type: String },
+            companyAskUnits: { type: String }
+          }
+        ],
+        companyPrice: { type: String },
+        companyPercentChange: { type: String },
+        companyPointChange: { type: String },
+        companyActiveCustomers: { type: String },
+        companyIsRecordedAt: { type: String }
+      }],
+      companyToday: [{
+        companyCapitalization: { type: String },
+        companyVolume: { type: String },
+        companyBids: [
+          {
+            companyBidPrice: { type: String },
+            companyBidUnits: { type: String }
+          }
+        ],
+        companyAsks: [
+          {
+            companyAskPrice: { type: String },
+            companyAskUnits: { type: String }
+          }
+        ],
+        companyPrice: { type: String },
+        companyPercentChange: { type: String },
+        companyPointChange: { type: String },
+        companyActiveCustomers: { type: String },
+        companyIsRecordedAt: { type: String }
+      }],
+      companyHour: [{
+        companyCapitalization: { type: String },
+        companyVolume: { type: String },
+        companyBids: [
+          {
+            companyBidPrice: { type: String },
+            companyBidUnits: { type: String }
+          }
+        ],
+        companyAsks: [
+          {
+            companyAskPrice: { type: String },
+            companyAskUnits: { type: String }
+          }
+        ],
+        companyPrice: { type: String },
+        companyPercentChange: { type: String },
+        companyPointChange: { type: String },
+        companyActiveCustomers: { type: String },
+        companyIsRecordedAt: { type: String }
+      }],
+      companyDay: {
+        companyCapitalization: { type: String },
+        companyVolume: { type: String },
+        companyBids: [
+          {
+            companyBidPrice: { type: String },
+            companyBidUnits: { type: String }
+          }
+        ],
+        companyAsks: [
+          {
+            companyAskPrice: { type: String },
+            companyAskUnits: { type: String }
+          }
+        ],
+        companyPrice: { type: String },
+        companyPercentChange: { type: String },
+        companyPointChange: { type: String },
+        companyActiveCustomers: { type: String },
+        companyIsRecordedAt: { type: String }
+      },
+      companyWeek: [{
+        companyCapitalization: { type: String },
+        companyVolume: { type: String },
+        companyBids: [
+          {
+            companyBidPrice: { type: String },
+            companyBidUnits: { type: String }
+          }
+        ],
+        companyAsks: [
+          {
+            companyAskPrice: { type: String },
+            companyAskUnits: { type: String }
+          }
+        ],
+        companyPrice: { type: String },
+        companyPercentChange: { type: String },
+        companyPointChange: { type: String },
+        companyActiveCustomers: { type: String },
+        companyIsRecordedAt: { type: String }
+      }],
+      companyMonth: [{
+        companyCapitalization: { type: String },
+        companyVolume: { type: String },
+        companyBids: [
+          {
+            companyBidPrice: { type: String },
+            companyBidUnits: { type: String }
+          }
+        ],
+        companyAsks: [
+          {
+            companyAskPrice: { type: String },
+            companyAskUnits: { type: String }
+          }
+        ],
+        companyPrice: { type: String },
+        companyPercentChange: { type: String },
+        companyPointChange: { type: String },
+        companyActiveCustomers: { type: String },
+        companyIsRecordedAt: { type: String }
+      }],
+      companyQuarter: [{
+        companyCapitalization: { type: String },
+        companyVolume: { type: String },
+        companyBids: [
+          {
+            companyBidPrice: { type: String },
+            companyBidUnits: { type: String }
+          }
+        ],
+        companyAsks: [
+          {
+            companyAskPrice: { type: String },
+            companyAskUnits: { type: String }
+          }
+        ],
+        companyPrice: { type: String },
+        companyPercentChange: { type: String },
+        companyPointChange: { type: String },
+        companyActiveCustomers: { type: String },
+        companyIsRecordedAt: { type: String }
+      }],
+      companyYear: [{
+        companyCapitalization: { type: String },
+        companyVolume: { type: String },
+        companyBids: [
+          {
+            companyBidPrice: { type: String },
+            companyBidUnits: { type: String }
+          }
+        ],
+        companyAsks: [
+          {
+            companyAskPrice: { type: String },
+            companyAskUnits: { type: String }
+          }
+        ],
+        companyPrice: { type: String },
+        companyPercentChange: { type: String },
+        companyPointChange: { type: String },
+        companyActiveCustomers: { type: String },
+        companyIsRecordedAt: { type: String }
+      }]
     }
-  },
+  ],
   companyAccountId: { type: String }, //  the account id that listed the company
   companyStatus: {
     companyIsSubmitted: { type: String }, // is the company submitted?
