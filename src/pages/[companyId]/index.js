@@ -77,21 +77,88 @@ const Page = ({ name, ticker, description, logo }) => {
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  Join the {name} subscription whitelist
+
+                  {/* countdown starts */}
+
+                  <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px', marginTop: '20px' }}>
+                    <Grid item xs={12}>
+                      <Grid container spacing={1}>
+                        <Grid item xs={12} sm={6} md={6} lg={3}>
+                          <Card style={{ padding: '10px 0px 20px 0px' }}>
+                            <Box style={{ textAlign: 'center' }}>
+                              <Box mt={1.2}>
+                                <Typography variant="h3" fontWeight={700} color="black">
+                                  00
+                                </Typography>
+                                <Typography mt={0.2} textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
+                                  days
+                                </Typography>
+                              </Box>
+                            </Box>
+                          </Card>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={6} lg={3}>
+                          <Card style={{ padding: '10px 0px 20px 0px' }}>
+                            <Box style={{ textAlign: 'center' }}>
+                              <Box mt={1.2}>
+                                <Typography variant="h3" fontWeight={700} color="black">
+                                  00
+                                </Typography>
+                                <Typography mt={0.2} textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
+                                  days
+                                </Typography>
+                              </Box>
+                            </Box>
+                          </Card>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={6} lg={3}>
+                          <Card style={{ padding: '10px 0px 20px 0px' }}>
+                            <Box style={{ textAlign: 'center' }}>
+                              <Box mt={1.2}>
+                                <Typography variant="h3" fontWeight={700} color="black">
+                                  00
+                                </Typography>
+                                <Typography mt={0.2} textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
+                                  days
+                                </Typography>
+                              </Box>
+                            </Box>
+                          </Card>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={6} lg={3}>
+                          <Card style={{ padding: '10px 0px 20px 0px' }}>
+                            <Box style={{ textAlign: 'center' }}>
+                              <Box mt={1.2}>
+                                <Typography variant="h3" fontWeight={700} color="black">
+                                  00
+                                </Typography>
+                                <Typography mt={0.2} textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
+                                  days
+                                </Typography>
+                              </Box>
+                            </Box>
+                          </Card>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </Box>
+
+                  {/* countdown ends */}
+
                   <Tooltip title="Subscriptions only give you access to a company's products and services, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
 
-                <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
+                {/* <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
                   {description}
-                </Typography>
+                </Typography> */}
 
               </Box>
 
               <form noValidate autoComplete="on">
 
-                <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px' }}>
+                <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px', marginTop: '-20px' }}>
 
                   <Stack spacing={1.2} sx={{ width: '100%' }}>
 
@@ -167,222 +234,105 @@ const Page = ({ name, ticker, description, logo }) => {
 
                 {/* tab starts */}
 
-                <TabContext value={value}>
+                <Box style={{ marginBottom: '0px', marginTop: '16px' }}>
 
-                  <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                    <TabsWrapper
-                      onChange={handleChange}
-                      indicatorColor="transparent"
-                      TabIndicatorProps={{
-                        sx: { backgroundColor: 'transparent', height: 4 }
-                      }}
-                      sx={{
-                        "& button:hover": { backgroundColor: "#ffffff" },
-                        "& button:active": { backgroundColor: "#b6b6b6" },
-                        "& button.Mui-selected": { backgroundColor: "#000000" },
-                        "& div.MuiTabs-scroller": { overflowY: "auto" },
-                      }}
-                      scrollButtons="auto"
-                      aria-label="scrollable auto tabs example"
-                    >
-                      <TabLabel label="Customer" value="1" />
-                      <TabLabel label="Founder" value="2" />
-                    </TabsWrapper>
+                  {/* founder tab starts */}
+
+                  <Box textAlign="center" mb={2}>
+                    {stories && stories.map(({ _id, storyByCustomer }) => (
+                      <>
+                        <Carousel>
+                          {storyByCustomer && storyByCustomer.map(({ _id, storyByCustomerName, storyByCustomerTitle, storyByCustomerAvatar, storyByCustomerContent, storyByCustomerIsActive }) => (
+                            <Box key={_id}>
+                              <Box
+                                style={{
+                                  display: 'flex',
+                                  justifyContent: 'center'
+                                }}
+                              >
+                                <StyledBadge
+                                  overlap="circular"
+                                  anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'right'
+                                  }}
+                                  variant={storyByCustomerIsActive}
+                                >
+                                  <Avatar
+                                    style={{ width: 80, height: 80 }}
+                                    alt={storyByCustomerName}
+                                    src={storyByCustomerAvatar}
+                                  />
+                                </StyledBadge>
+                              </Box>
+                              <Box marginTop="16px">
+                                <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByCustomerName}</Typography>
+                                <Typography variant="body" component="div" gutterBottom>{storyByCustomerTitle}</Typography>
+                                <Typography variant="h5" component="div" fontWeight="600">{storyByCustomerContent}</Typography>
+                              </Box>
+                            </Box>
+                          ))}
+                        </Carousel>
+                      </>
+                    ))}
                   </Box>
 
-                  <Box style={{ marginBottom: '0px', marginTop: '16px' }}>
-
-                    {/* customer tab starts */}
-
-                    <TabPanel sx={{ padding: 0 }} value="1">
-
-                      <Box textAlign="center" mb={2}>
-                        {stories && stories.map(({ _id, storyByCustomer }) => (
-                          <>
-                            <Carousel>
-                              {storyByCustomer && storyByCustomer.map(({ _id, storyByCustomerName, storyByCustomerTitle, storyByCustomerAvatar, storyByCustomerContent, storyByCustomerIsActive }) => (
-                                <Box key={_id}>
+                  <Grid item xs={12} mt={2}>
+                    <Grid container spacing={1}>
+                      {guides && guides.map(({ _id, guideForCustomer }) => (
+                        <>
+                          {guideForCustomer && guideForCustomer.map(({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
+                            <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                              <Tooltip title={guideForCustomerTooltip} placement="top">
+                                <Card style={{ padding: '22px' }}>
                                   <Box
                                     style={{
                                       display: 'flex',
                                       justifyContent: 'center'
                                     }}
                                   >
-                                    <StyledBadge
+                                    <Badge
                                       overlap="circular"
-                                      anchorOrigin={{
-                                        vertical: 'bottom',
-                                        horizontal: 'right'
-                                      }}
-                                      variant={storyByCustomerIsActive}
+                                      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                      badgeContent={
+                                        <InfoRoundedIcon fontSize="small" color="primary" />
+                                      }
                                     >
                                       <Avatar
-                                        style={{ width: 80, height: 80 }}
-                                        alt={storyByCustomerName}
-                                        src={storyByCustomerAvatar}
+                                        style={{ width: 50, height: 50 }}
+                                        alt={guideForCustomerTitle}
+                                        src={guideForCustomerIcon}
                                       />
-                                    </StyledBadge>
+                                    </Badge>
                                   </Box>
-                                  <Box marginTop="16px">
-                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByCustomerName}</Typography>
-                                    <Typography variant="body" component="div" gutterBottom>{storyByCustomerTitle}</Typography>
-                                    <Typography variant="h5" component="div" fontWeight="600">{storyByCustomerContent}</Typography>
+                                  <Box style={{ textAlign: 'center' }}>
+                                    <Box mt={1.2}>
+                                      <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
+                                        {guideForCustomerTitle}
+                                      </Typography>
+                                      <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
+                                        {guideForCustomerContent}
+                                      </Typography>
+                                    </Box>
                                   </Box>
-                                </Box>
-                              ))}
-                            </Carousel>
-                          </>
-                        ))}
-                      </Box>
-
-                      <Grid item xs={12} mt={2}>
-                        <Grid container spacing={1}>
-                          {guides && guides.map(({ _id, guideForCustomer }) => (
-                            <>
-                              {guideForCustomer && guideForCustomer.map(({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
-                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                  <Tooltip title={guideForCustomerTooltip} placement="top">
-                                    <Card style={{ padding: '22px' }}>
-                                      <Box
-                                        style={{
-                                          display: 'flex',
-                                          justifyContent: 'center'
-                                        }}
-                                      >
-                                        <Badge
-                                          overlap="circular"
-                                          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                          badgeContent={
-                                            <InfoRoundedIcon fontSize="small" color="primary" />
-                                          }
-                                        >
-                                          <Avatar
-                                            style={{ width: 50, height: 50 }}
-                                            alt={guideForCustomerTitle}
-                                            src={guideForCustomerIcon}
-                                          />
-                                        </Badge>
-                                      </Box>
-                                      <Box style={{ textAlign: 'center' }}>
-                                        <Box mt={1.2}>
-                                          <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
-                                            {guideForCustomerTitle}
-                                          </Typography>
-                                          <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
-                                            {guideForCustomerContent}
-                                          </Typography>
-                                        </Box>
-                                      </Box>
-                                    </Card>
-                                  </Tooltip>
-                                </Grid>
-                              ))}
-                            </>
+                                </Card>
+                              </Tooltip>
+                            </Grid>
                           ))}
-                        </Grid>
-                      </Grid>
+                        </>
+                      ))}
+                    </Grid>
+                  </Grid>
 
-                    </TabPanel>
+                  {/* founder tab ends */}
 
-                    {/* customer tab ends */}
+                </Box>
 
-                    {/* founder tab starts */}
-
-                    <TabPanel sx={{ padding: 0 }} value="2">
-
-                      <Box textAlign="center" mb={2}>
-                        {stories && stories.map(({ _id, storyByFounder }) => (
-                          <>
-                            <Carousel>
-                              {storyByFounder && storyByFounder.map(({ _id, storyByFounderName, storyByFounderTitle, storyByFounderAvatar, storyByFounderContent, storyByFounderIsActive }) => (
-                                <Box key={_id}>
-                                  <Box
-                                    style={{
-                                      display: 'flex',
-                                      justifyContent: 'center'
-                                    }}
-                                  >
-                                    <StyledBadge
-                                      overlap="circular"
-                                      anchorOrigin={{
-                                        vertical: 'bottom',
-                                        horizontal: 'right'
-                                      }}
-                                      variant={storyByFounderIsActive}
-                                    >
-                                      <Avatar
-                                        style={{ width: 80, height: 80 }}
-                                        alt={storyByFounderName}
-                                        src={storyByFounderAvatar}
-                                      />
-                                    </StyledBadge>
-                                  </Box>
-                                  <Box marginTop="16px">
-                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByFounderName}</Typography>
-                                    <Typography variant="body" component="div" gutterBottom>{storyByFounderTitle}</Typography>
-                                    <Typography variant="h5" component="div" fontWeight="600">{storyByFounderContent}</Typography>
-                                  </Box>
-                                </Box>
-                              ))}
-                            </Carousel>
-                          </>
-                        ))}
-                      </Box>
-
-                      <Grid item xs={12} mt={2}>
-                        <Grid container spacing={1}>
-                          {guides && guides.map(({ _id, guideForFounder }) => (
-                            <>
-                              {guideForFounder && guideForFounder.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
-                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                  <Tooltip title={guideForFounderTooltip} placement="top">
-                                    <Card style={{ padding: '22px' }}>
-                                      <Box
-                                        style={{
-                                          display: 'flex',
-                                          justifyContent: 'center'
-                                        }}
-                                      >
-                                        <Badge
-                                          overlap="circular"
-                                          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                          badgeContent={
-                                            <InfoRoundedIcon fontSize="small" color="primary" />
-                                          }
-                                        >
-                                          <Avatar
-                                            style={{ width: 50, height: 50 }}
-                                            alt={guideForFounderTitle}
-                                            src={guideForFounderIcon}
-                                          />
-                                        </Badge>
-                                      </Box>
-                                      <Box style={{ textAlign: 'center' }}>
-                                        <Box mt={1.2}>
-                                          <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
-                                            {guideForFounderTitle}
-                                          </Typography>
-                                          <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
-                                            {guideForFounderContent}
-                                          </Typography>
-                                        </Box>
-                                      </Box>
-                                    </Card>
-                                  </Tooltip>
-                                </Grid>
-                              ))}
-                            </>
-                          ))}
-                        </Grid>
-                      </Grid>
-
-                    </TabPanel>
-
-                    {/* founder tab ends */}
-
-                  </Box>
-
-                </TabContext>
+                <Box textAlign="center" mt={2}>
+                  <Typography component="span" variant="body2" fontWeight={600} color="black">
+                    Kindly note that a company will only be listed if the whitelist threshold is met before the start date. Otherwise, the start and end dates will be postponed by at least two weeks.
+                  </Typography>
+                </Box>
 
                 {/* tab stops */}
 

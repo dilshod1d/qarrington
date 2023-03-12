@@ -49,12 +49,12 @@ const Page = () => {
                                                                 }}
                                                             >
                                                                 <Avatar
-                                                                    style={{ width: 40, height: 40 }}
+                                                                    style={{ width: 50, height: 50 }}
                                                                     alt={companyListing.companyName}
                                                                     src={companyListing.companyLogo}
                                                                 />
                                                             </Box>
-                                                            <Typography variant="h5" fontWeight={700} my={1.5}>
+                                                            <Typography variant="h5" fontWeight={700} my={1.5} color="black">
                                                                 {companyListing.companyDescription}
                                                             </Typography>
                                                             <Typography textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
