@@ -63,96 +63,93 @@ const Page = ({ name, ticker, description, logo }) => {
                   style={{
                     display: 'flex',
                     cursor: 'pointer',
-                    marginBottom: '20px',
+                    marginBottom: '10px',
                     justifyContent: 'center'
                   }}
                 >
-                  <Tooltip sx={{ textTransform: 'uppercase' }} title={ticker} placement="top">
-                    <Avatar
-                      style={{ width: 40, height: 40 }}
-                      alt={name}
-                      src={logo}
-                    />
-                  </Tooltip>
+                  <Avatar
+                    style={{ width: 40, height: 40 }}
+                    alt={name}
+                    src={logo}
+                  />
                 </Box>
 
-                <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-
-                  {/* countdown starts */}
-
-                  <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px', marginTop: '20px' }}>
-                    <Grid item xs={12}>
-                      <Grid container spacing={1}>
-                        <Grid item xs={12} sm={6} md={6} lg={3}>
-                          <Card style={{ padding: '10px 0px 20px 0px' }}>
-                            <Box style={{ textAlign: 'center' }}>
-                              <Box mt={1.2}>
-                                <Typography variant="h3" fontWeight={700} color="black">
-                                  00
-                                </Typography>
-                                <Typography mt={0.2} textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
-                                  days
-                                </Typography>
-                              </Box>
-                            </Box>
-                          </Card>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={6} lg={3}>
-                          <Card style={{ padding: '10px 0px 20px 0px' }}>
-                            <Box style={{ textAlign: 'center' }}>
-                              <Box mt={1.2}>
-                                <Typography variant="h3" fontWeight={700} color="black">
-                                  00
-                                </Typography>
-                                <Typography mt={0.2} textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
-                                  days
-                                </Typography>
-                              </Box>
-                            </Box>
-                          </Card>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={6} lg={3}>
-                          <Card style={{ padding: '10px 0px 20px 0px' }}>
-                            <Box style={{ textAlign: 'center' }}>
-                              <Box mt={1.2}>
-                                <Typography variant="h3" fontWeight={700} color="black">
-                                  00
-                                </Typography>
-                                <Typography mt={0.2} textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
-                                  days
-                                </Typography>
-                              </Box>
-                            </Box>
-                          </Card>
-                        </Grid>
-                        <Grid item xs={12} sm={6} md={6} lg={3}>
-                          <Card style={{ padding: '10px 0px 20px 0px' }}>
-                            <Box style={{ textAlign: 'center' }}>
-                              <Box mt={1.2}>
-                                <Typography variant="h3" fontWeight={700} color="black">
-                                  00
-                                </Typography>
-                                <Typography mt={0.2} textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
-                                  days
-                                </Typography>
-                              </Box>
-                            </Box>
-                          </Card>
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </Box>
-
-                  {/* countdown ends */}
-
-                  <Tooltip title="Subscriptions only give you access to a company's products and services, they don't represent investments in the firm." placement="top">
-                    <InfoRoundedIcon fontSize="small" color="primary" />
-                  </Tooltip>
+                <Typography textTransform="uppercase" variant="body2" fontWeight={700} color="secondary">
+                  {name}
                 </Typography>
 
-                {/* <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  {description}
-                </Typography> */}
+                {/* countdown starts */}
+
+                <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px', marginTop: '20px' }}>
+                  <Grid item xs={12}>
+                    <Grid container spacing={1}>
+                      <Grid item xs={12} sm={6} md={6} lg={3}>
+                        <Card style={{ padding: '10px 0px 20px 0px' }}>
+                          <Box style={{ textAlign: 'center' }}>
+                            <Box mt={1.2}>
+                              <Typography variant="h3" fontWeight={700} color="black">
+                                00
+                              </Typography>
+                              <Typography mt={0.2} textTransform="uppercase" fontSize="10px" fontWeight={700} color="secondary">
+                                days
+                              </Typography>
+                            </Box>
+                          </Box>
+                        </Card>
+                      </Grid>
+                      <Grid item xs={12} sm={6} md={6} lg={3}>
+                        <Card style={{ padding: '10px 0px 20px 0px' }}>
+                          <Box style={{ textAlign: 'center' }}>
+                            <Box mt={1.2}>
+                              <Typography variant="h3" fontWeight={700} color="black">
+                                00
+                              </Typography>
+                              <Typography mt={0.2} textTransform="uppercase" fontSize="10px" fontWeight={700} color="secondary">
+                                hours
+                              </Typography>
+                            </Box>
+                          </Box>
+                        </Card>
+                      </Grid>
+                      <Grid item xs={12} sm={6} md={6} lg={3}>
+                        <Card style={{ padding: '10px 0px 20px 0px' }}>
+                          <Box style={{ textAlign: 'center' }}>
+                            <Box mt={1.2}>
+                              <Typography variant="h3" fontWeight={700} color="black">
+                                00
+                              </Typography>
+                              <Typography mt={0.2} textTransform="uppercase" fontSize="10px" fontWeight={700} color="secondary">
+                                minutes
+                              </Typography>
+                            </Box>
+                          </Box>
+                        </Card>
+                      </Grid>
+                      <Grid item xs={12} sm={6} md={6} lg={3}>
+                        <Card style={{ padding: '10px 0px 20px 0px' }}>
+                          <Box style={{ textAlign: 'center' }}>
+                            <Box mt={1.2}>
+                              <Typography variant="h3" fontWeight={700} color="black">
+                                00
+                              </Typography>
+                              <Typography mt={0.2} textTransform="uppercase" fontSize="10px" fontWeight={700} color="secondary">
+                                seconds
+                              </Typography>
+                            </Box>
+                          </Box>
+                        </Card>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Box>
+
+                {/* countdown ends */}
+
+                <Box my={1}>
+                  <Tooltip title={`The ${name} (${ticker}) ISO starts on Fri, May 20, 2023, at 11:45 PM EST and ends on Sat, May 27, 2023, at 11:45 PM EST.`} placement="top">
+                    <InfoRoundedIcon fontSize="small" color="primary" />
+                  </Tooltip>
+                </Box>
 
               </Box>
 
@@ -162,13 +159,11 @@ const Page = ({ name, ticker, description, logo }) => {
 
                   <Stack spacing={1.2} sx={{ width: '100%' }}>
 
-                    <Tooltip title="Kindly enter your email address. Once you do, you cannot change it because it'd be linked to your bank account." placement="top">
-                      <TextField
-                        sx={{ input: { textAlign: "center" } }}
-                        required
-                        placeholder="email address"
-                      />
-                    </Tooltip>
+                    <TextField
+                      sx={{ input: { textAlign: "center" } }}
+                      required
+                      placeholder="email address"
+                    />
 
                     <Button
                       size="large"
@@ -330,7 +325,7 @@ const Page = ({ name, ticker, description, logo }) => {
 
                 <Box textAlign="center" mt={2}>
                   <Typography component="span" variant="body2" fontWeight={600} color="black">
-                    Kindly note that a company will only be listed if the whitelist threshold is met before the start date. Otherwise, the start and end dates will be postponed by at least two weeks.
+                    An Initial Subscription Offering (ISO) allows you to buy the subscriptions of technology companies like {name} before they're listed on a subscription exchange.
                   </Typography>
                 </Box>
 
