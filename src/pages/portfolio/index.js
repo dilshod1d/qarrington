@@ -15,10 +15,11 @@ import { Pagination } from '@mui/lab';
 const Page = () => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
+    const { data: picks } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/picks`, fetcher);
     const { data: pulls } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/pulls`, fetcher);
-    const { data: pushes } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/pushes`, fetcher)
+    const { data: pushes } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/pushes`, fetcher);
 
-    const [value, setValue] = useState('1');
+    const [value, setValue] = useState('2');
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -29,7 +30,7 @@ const Page = () => {
         <div>
 
             <Head>
-                <title>Dashboard • Qarrington</title>
+                <title>Portfolio • Qarrington</title>
                 <meta
                     name="description"
                     content="Qarrington is a subscription exchange that allows you to buy, sell, and exchange the subscriptions of your favorite technology companies with lower fees."
@@ -95,22 +96,85 @@ const Page = () => {
                                             scrollButtons="auto"
                                             aria-label="scrollable auto tabs example"
                                         >
-                                            <TabLabel label="Pulled" value="1" />
-                                            <TabLabel label="Pushed" value="2" />
+                                            <TabLabel label="Picked" value="1" />
+                                            <TabLabel label="Pulled" value="2" />
+                                            <TabLabel label="Pushed" value="3" />
                                         </TabsWrapper>
                                     </Box>
 
                                     <Box style={{ marginBottom: '0px', marginTop: '16px' }}>
 
-                                        {/* pulled starts */}
+                                        {/* picked starts */}
 
                                         <TabPanel sx={{ padding: 0 }} value="1">
                                             <Grid item xs={12} mb={2}>
                                                 <Grid container spacing={1}>
 
+                                                    {picks && picks.map(({ _id, pickTicker, pickCompany, pickStatus }) => (
+                                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                                                            <Link href={`/portfolio/${pickTicker}`}>
+                                                                <Card style={{ padding: '40px', cursor: 'pointer' }}>
+                                                                    <Box
+                                                                        style={{
+                                                                            display: 'flex',
+                                                                            justifyContent: 'center'
+                                                                        }}
+                                                                    >
+                                                                        <Stack direction="row" spacing={2}>
+                                                                            <Avatar alt={pickCompany.pickCompanyName} src={pickCompany.pickCompanyLogo}
+                                                                                sx={{ height: '40px', width: '40px' }}
+                                                                            />
+                                                                        </Stack>
+                                                                    </Box>
+                                                                    <Box style={{ textAlign: 'center' }}>
+                                                                        <Box style={{ textAlign: 'center' }}>
+                                                                            <Box>
+                                                                                <Box textAlign="center" mt={1.5} mb={0.5}>
+                                                                                    <Typography component="span" mr={0.2} variant="body" fontWeight="700" color="black" textTransform="uppercase">
+                                                                                        {pickCompany.pickCompanyName}
+                                                                                    </Typography>
+                                                                                </Box>
+                                                                                <Box>
+                                                                                    <Typography textTransform="uppercase" variant="body2" fontWeight={700} color="secondary">
+                                                                                        {pickTicker}
+                                                                                    </Typography>
+                                                                                </Box>
+                                                                            </Box>
+                                                                        </Box>
+                                                                    </Box>
+                                                                </Card>
+                                                            </Link>
+                                                        </Grid>
+                                                    ))}
+
+                                                    <Grid item xs={12}>
+                                                        <Card style={{ padding: '60px', display: 'flex', justifyContent: 'center', marginTop: '0px' }}>
+                                                            <Stack spacing={2}>
+                                                                <Pagination count={10} variant="outlined" shape="rounded" />
+                                                            </Stack>
+                                                        </Card>
+                                                        <Box style={{ textAlign: 'center', marginTop: '20px' }}>
+                                                            <Typography variant="body2">
+                                                                The above subscriptions are the subscriptions of companies that you currently own in your account portfolio. With that being said, kindly note that when you submit a pull request, the subscription will not be shown here unless the request is matched with a push request.
+                                                            </Typography>
+                                                        </Box>
+                                                    </Grid>
+
+                                                </Grid>
+                                            </Grid>
+                                        </TabPanel>
+
+                                        {/* picked stops */}
+
+                                        {/* pulled starts */}
+
+                                        <TabPanel sx={{ padding: 0 }} value="2">
+                                            <Grid item xs={12} mb={2}>
+                                                <Grid container spacing={1}>
+
                                                     {pulls && pulls.map(({ _id, pullTicker, pullCompany, pullStatus }) => (
                                                         <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/subscriptions/${pullTicker}`}>
+                                                            <Link href={`/portfolio/${pullTicker}`}>
                                                                 <Card style={{ padding: '40px', cursor: 'pointer' }}>
                                                                     <Box
                                                                         style={{
@@ -172,13 +236,13 @@ const Page = () => {
 
                                         {/* pushed starts */}
 
-                                        <TabPanel sx={{ padding: 0 }} value="2">
+                                        <TabPanel sx={{ padding: 0 }} value="3">
                                             <Grid item xs={12} mb={2}>
                                                 <Grid container spacing={1}>
 
                                                     {pushes && pushes.map(({ _id, pushTicker, pushCompany, pushStatus }) => (
                                                         <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Link href={`/subscriptions/${pushTicker}`}>
+                                                            <Link href={`/portfolio/${pushTicker}`}>
                                                                 <Card style={{ padding: '40px', cursor: 'pointer' }}>
                                                                     <Box
                                                                         style={{

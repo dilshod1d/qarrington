@@ -1,0 +1,244 @@
+[
+    {
+        "companySlug": "spr",
+        "companyListing": {
+            "companyTicker": "SPR",
+            "companyName": "Spread",
+            "companyLogo": "/assets/media/companies/spread.png",
+            "companyHeadline": "This is the headline",
+            "companyProduct": "This is the company product description",
+            "companyProductId": "stripeProductId",
+            "companyDescription": "Qarrington is the world's first and largest subscription exchange, where you buy, sell, and transfer subscriptions with lower fees.",
+            "companyIndustry": "SaaS",
+            "companyWebsite": "https://example.com",
+            "companyEmail": "email@example.com",
+            "companyMarket": "International",
+            "companySize": "42,850",
+            "companyKey": "q2WwbyJi52cixXqDlPQuBHkDkSUSygTY"
+        },
+        "companyUser": [
+            {
+                "companyUserType": "Total Subscribers",
+                "companyUserTotal": "45,584"
+            },
+            {
+                "companyUserType": "Total Customers",
+                "companyUserTotal": "85,892"
+            },
+            {
+                "companyUserType": "Active Customers",
+                "companyUserTotal": "64,086"
+            },
+            {
+                "companyUserType": "Passive Customers",
+                "companyUserTotal": "21,806"
+            }
+        ],
+        "companyIso": {
+            "companyIsoUnits": "5,000,000",
+            "companyIsoPrice": "25",
+            "companyIsoDate": "05-05-2023",
+            "companyIsoTime": "11:45",
+            "companyIsoSubscribers": [
+                {
+                    "companySubscriberUnits": "543",
+                    "companySubscriberPaidAt": "05-06-2023",
+                    "companySubscriberPortfolio": "854,349",
+                    "companySubscriberAccountId": "iKVnWRGcJf",
+                    "companySubscriberAddedAt": "05-12-2023"
+                }
+            ],
+            "companyIsoAmount": "8,234,540",
+            "companyIsoRaised": "6,439,500",
+            "companyIsoProceed": {
+                "companyIsoProceedIsMade": "TRUE",
+                "companyIsoProceedIsMadeTo": "79C331E34BC2F",
+                "companyIsoProceedIsMadeAt": "05-08-2023"
+            }
+        },
+        "companyCustomers": [
+            {
+                "companyCustomerAccountId": "823C217B3F72ACD1",
+                "companyCustomerIsCreated": "TRUE",
+                "companyCustomerIsCreatedAt": "07-14-2023"
+            },
+            {
+                "companyCustomerAccountId": "823C217B3F72ACD1",
+                "companyCustomerIsCreated": "TRUE",
+                "companyCustomerIsCreatedAt": "07-14-2023"
+            }
+        ],
+        "companyKpi": [
+            {
+                "companyCurrency": "USD",
+                "companyCapitalization": "80,434,504",
+                "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "22.45",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "23.83",
+                        "companyAskUnit": "287"
+                    }
+                ],
+                "companyPrice": "45.21",
+                "companyPriceVariant": "primary",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
+                "companyActiveCustomers": "52,329",
+                "companyIsRecordedAt": "06-28-2023"
+            },
+            {
+                "companyCurrency": "USD",
+                "companyCapitalization": "80,434,504",
+                "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
+                "companyPrice": "42.87",
+                "companyPriceVariant": "error",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
+                "companyActiveCustomers": "52,329",
+                "companyIsRecordedAt": "06-28-2023"
+            },
+            {
+                "companyCurrency": "USD",
+                "companyCapitalization": "80,434,504",
+                "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
+                "companyPrice": "38.42",
+                "companyPriceVariant": "error",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
+                "companyActiveCustomers": "52,329",
+                "companyIsRecordedAt": "06-28-2023"
+            },
+            {
+                "companyCurrency": "USD",
+                "companyCapitalization": "80,434,504",
+                "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
+                "companyPrice": "48.05",
+                "companyPriceVariant": "primary",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
+                "companyActiveCustomers": "52,329",
+                "companyIsRecordedAt": "06-28-2023"
+            },
+            {
+                "companyCurrency": "USD",
+                "companyCapitalization": "80,434,504",
+                "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
+                "companyPrice": "42.39",
+                "companyPriceVariant": "error",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
+                "companyActiveCustomers": "52,329",
+                "companyIsRecordedAt": "06-28-2023"
+            },
+            {
+                "companyCurrency": "USD",
+                "companyCapitalization": "80,434,504",
+                "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
+                "companyPrice": "49.75",
+                "companyPriceVariant": "primary",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
+                "companyActiveCustomers": "52,329",
+                "companyIsRecordedAt": "06-28-2023"
+            },
+            {
+                "companyCurrency": "USD",
+                "companyCapitalization": "80,434,504",
+                "companyVolume": "400,250",
+                "companyBids": [
+                    {
+                        "companyBidPrice": "21",
+                        "companyBidUnit": "482"
+                    }
+                ],
+                "companyAsks": [
+                    {
+                        "companyAskPrice": "24",
+                        "companyAskUnit": "287"
+                    }
+                ],
+                "companyPrice": "52.76",
+                "companyPriceVariant": "primary",
+                "companyPercentChange": "4.55",
+                "companyPointChange": "0.85",
+                "companyActiveCustomers": "52,329",
+                "companyIsRecordedAt": "06-28-2023"
+            }
+        ],
+        "companyAccountId": "79C331E34BC2F",
+        "companyStatus": {
+            "companyIsSubmitted": "TRUE",
+            "companyIsSubmittedAt": "05-23-2023",
+            "companyIsListed": "TRUE",
+            "companyIsListedAt": "06-23-2023",
+            "companyIsLaunched": "TRUE",
+            "companyIsLaunchedAt": "05-17-2023"
+        }
+    }
+]
