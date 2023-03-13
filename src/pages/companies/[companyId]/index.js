@@ -57,7 +57,7 @@ const Page = ({ slug }) => {
 
                                 <form noValidate autoComplete='off'>
 
-                                    {companies && companies.slice(0, 1).map(({ _id, companyUser }) => (
+                                    {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyUser }) => (
                                         <>
                                             <Carousel>
                                                 {companyUser && companyUser.map(({ _id, companyListing, companyUserType, companyUserTotal, companyUserDetail, companyUserTooltip, companyUserButton, companyUserRoute }) => (
@@ -71,7 +71,7 @@ const Page = ({ slug }) => {
                                                                 <Box mt={1.5} mb={1.2}>
                                                                     <Typography variant="body">Track the number of whitelisted subscribers, total customers, active customers, and passive customers of your company with ease.</Typography>
                                                                 </Box>
-                                                                {companies && companies.slice(0, 1).map(({ _id, companyListing }) => (
+                                                                {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyListing }) => (
                                                                     <Link key={_id} href={`/${companyListing.companyTicker}`}>
                                                                         <Tooltip title="Prior to listing a company, the company must whitelist subscribers for its ISO and convert them to customers after the ISO." placement="top">
                                                                             <Button
@@ -131,7 +131,7 @@ const Page = ({ slug }) => {
                                                     </Typography>
                                                 </Card>
 
-                                                {companies && companies.slice(0, 1).map(({ _id, companyListing }) => (
+                                                {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyListing }) => (
 
                                                     <>
                                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
@@ -290,7 +290,7 @@ const Page = ({ slug }) => {
                                                     </Typography>
                                                 </Card>
 
-                                                {companies && companies.slice(0, 1).map(({ _id, companyIso }) => (
+                                                {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyIso }) => (
 
                                                     <>
                                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
@@ -380,7 +380,7 @@ const Page = ({ slug }) => {
                                                     </Typography>
                                                 </Card>
 
-                                                {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
+                                                {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                     <>
                                                         {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyCurrency, companyCapitalization, companyVolume, companyPrice, companyPricePercentChange, companyPricePointChange, companyActiveCustomers, companyIsRecordedAt }) => (
                                                             <>

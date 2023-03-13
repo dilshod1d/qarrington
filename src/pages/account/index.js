@@ -93,7 +93,7 @@ const Page = () => {
                                                 <Card style={{ padding: '60px' }}>
                                                     <Box style={{ textAlign: 'center' }}>
                                                         <Box component="label" display="flex" justifyContent="center">
-                                                            {accounts && accounts.slice(0, 1).map(({ _id, accountPersonal, accountStatus }) => (
+                                                            {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal, accountStatus }) => (
                                                                 <StyledBadge
                                                                     key={_id}
                                                                     overlap="circular"
@@ -103,7 +103,7 @@ const Page = () => {
                                                                     }}
                                                                     variant={accountStatus.accountIsActive}
                                                                 >
-                                                                    {accounts && accounts.slice(0, 1).map(({ _id, accountProfile }) => (
+                                                                    {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountProfile }) => (
                                                                         <Avatar
                                                                             style={{ width: 65, height: 65 }}
                                                                             alt={accountPersonal.accountFirstName}
@@ -113,7 +113,7 @@ const Page = () => {
                                                                 </StyledBadge>
                                                             ))}
                                                         </Box>
-                                                        {accounts && accounts.slice(0, 1).map(({ _id, accountPersonal }) => (
+                                                        {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal }) => (
                                                             <Box mt={1.5} key={_id}>
                                                                 <Typography component="span" variant="h4" fontWeight="500" color="black">Hi</Typography>
                                                                 <Typography component="span" mr={0.5} variant="h4" fontWeight="500" color="secondary">,</Typography>

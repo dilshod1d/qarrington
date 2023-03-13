@@ -70,7 +70,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                 <form noValidate autoComplete='off'>
 
                                     <Box textAlign="center" sx={{ marginBottom: '16px' }}>
-                                        {pulls && pulls.slice(0, 1).map(({ _id, pullCompany }) => (
+                                        {pulls && Array.isArray(pulls) && pulls?.slice(0, 1).map(({ _id, pullCompany }) => (
                                             <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
                                                 <Card style={{ padding: '80px' }}>
                                                     <Tooltip title={`Portfolio`} placement="top">
@@ -112,7 +112,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                     </Box>
                                                     <Box mt={2} display="flex" justifyContent="center">
                                                         <Stack direction="row" spacing={1}>
-                                                            {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
+                                                            {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                                 <>
                                                                     {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                         <>
@@ -129,7 +129,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                     ))}
                                                                 </>
                                                             ))}
-                                                            {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
+                                                            {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                                 <>
                                                                     {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                         <>

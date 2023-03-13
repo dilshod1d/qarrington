@@ -199,10 +199,10 @@ const Page = () => {
                     <TabPanel sx={{ padding: 0 }} value="1">
 
                       <Box textAlign="center" mb={2}>
-                        {stories && stories.map(({ _id, storyByCustomer }) => (
+                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByCustomer }) => (
                           <>
                             <Carousel>
-                              {storyByCustomer && storyByCustomer.map(({ _id, storyByCustomerName, storyByCustomerTitle, storyByCustomerAvatar, storyByCustomerContent, storyByCustomerIsActive }) => (
+                              {storyByCustomer && Array.isArray(storyByCustomer) && storyByCustomer?.map(({ _id, storyByCustomerName, storyByCustomerTitle, storyByCustomerAvatar, storyByCustomerContent, storyByCustomerIsActive }) => (
                                 <Box key={_id}>
                                   <Box
                                     style={{
@@ -239,9 +239,9 @@ const Page = () => {
 
                       <Grid item xs={12} mt={2}>
                         <Grid container spacing={1}>
-                          {guides && guides.map(({ _id, guideForCustomer }) => (
+                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForCustomer }) => (
                             <>
-                              {guideForCustomer && guideForCustomer.map(({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
+                              {guideForCustomer && Array.isArray(guideForCustomer) && guideForCustomer?.map(({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
                                 <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                   <Tooltip title={guideForCustomerTooltip} placement="top">
                                     <Card style={{ padding: '22px' }}>
@@ -293,10 +293,10 @@ const Page = () => {
                     <TabPanel sx={{ padding: 0 }} value="2">
 
                       <Box textAlign="center" mb={2}>
-                        {stories && stories.map(({ _id, storyByFounder }) => (
+                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByFounder }) => (
                           <>
                             <Carousel>
-                              {storyByFounder && storyByFounder.map(({ _id, storyByFounderName, storyByFounderTitle, storyByFounderAvatar, storyByFounderContent, storyByFounderIsActive }) => (
+                              {storyByFounder && Array.isArray(storyByFounder) && storyByFounder?.map(({ _id, storyByFounderName, storyByFounderTitle, storyByFounderAvatar, storyByFounderContent, storyByFounderIsActive }) => (
                                 <Box key={_id}>
                                   <Box
                                     style={{
@@ -333,9 +333,9 @@ const Page = () => {
 
                       <Grid item xs={12} mt={2}>
                         <Grid container spacing={1}>
-                          {guides && guides.map(({ _id, guideForFounder }) => (
+                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForFounder }) => (
                             <>
-                              {guideForFounder && guideForFounder.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
+                              {guideForFounder && Array.isArray(guideForFounder) && guideForFounder?.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
                                 <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                   <Tooltip title={guideForFounderTooltip} placement="top">
                                     <Card style={{ padding: '22px' }}>

@@ -55,7 +55,7 @@ const Page = () => {
                         <Grid container spacing={1}>
                             <Grid item xs={12}>
 
-                                {pulls && pulls.slice(0, 1).map(({ _id, pullAccount }) => (
+                                {pulls && Array.isArray(pulls) && pulls?.slice(0, 1).map(({ _id, pullAccount }) => (
                                     <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
                                         <Card style={{ padding: '80px', marginBottom: '16px' }}>
                                             <Tooltip title="Portfolio" placement="top">
@@ -110,7 +110,7 @@ const Page = () => {
                                             <Grid item xs={12} mb={2}>
                                                 <Grid container spacing={1}>
 
-                                                    {picks && picks.map(({ _id, pickTicker, pickCompany, pickStatus }) => (
+                                                    {picks && Array.isArray(picks) && picks?.map(({ _id, pickTicker, pickCompany, pickStatus }) => (
                                                         <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                                             <Link href={`/portfolio/${pickTicker}`}>
                                                                 <Card style={{ padding: '40px', cursor: 'pointer' }}>
@@ -172,7 +172,7 @@ const Page = () => {
                                             <Grid item xs={12} mb={2}>
                                                 <Grid container spacing={1}>
 
-                                                    {pulls && pulls.map(({ _id, pullTicker, pullCompany, pullStatus }) => (
+                                                    {pulls && Array.isArray(pulls) && pulls?.map(({ _id, pullTicker, pullCompany, pullStatus }) => (
                                                         <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                                             <Link href={`/portfolio/${pullTicker}`}>
                                                                 <Card style={{ padding: '40px', cursor: 'pointer' }}>
@@ -240,7 +240,7 @@ const Page = () => {
                                             <Grid item xs={12} mb={2}>
                                                 <Grid container spacing={1}>
 
-                                                    {pushes && pushes.map(({ _id, pushTicker, pushCompany, pushStatus }) => (
+                                                    {pushes && Array.isArray(pushes) && pushes?.map(({ _id, pushTicker, pushCompany, pushStatus }) => (
                                                         <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                                             <Link href={`/portfolio/${pushTicker}`}>
                                                                 <Card style={{ padding: '40px', cursor: 'pointer' }}>

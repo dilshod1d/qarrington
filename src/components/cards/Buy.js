@@ -33,7 +33,7 @@ const Component = () => {
 
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          {companies && companies.slice(0, 1).map(({ _id, companySlug, companyListing }) => (
+          {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companySlug, companyListing }) => (
             <Card style={{ padding: '40px' }}>
               {/* <Box display='flex' justifyContent='center' alignItems='center'>
                 <>

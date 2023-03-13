@@ -71,7 +71,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                         <Grid item xs={12} sm={6} md={6} lg={12}>
                                             <Card style={{ padding: '60px', marginBottom: '10px' }}>
 
-                                                {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
+                                                {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                     <>
                                                         {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                             <>
@@ -363,7 +363,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                             <TabPanel sx={{ padding: 0 }} value="3">
                                                 <Grid item xs={12}>
                                                     <Grid container spacing={1}>
-                                                        {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
+                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                             <>
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
@@ -386,7 +386,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 ))}
                                                             </>
                                                         ))}
-                                                        {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
+                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                             <>
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
@@ -409,7 +409,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 ))}
                                                             </>
                                                         ))}
-                                                        {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
+                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                             <>
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
@@ -432,7 +432,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 ))}
                                                             </>
                                                         ))}
-                                                        {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
+                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                             <>
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
@@ -455,7 +455,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 ))}
                                                             </>
                                                         ))}
-                                                        {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
+                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                             <>
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
@@ -478,7 +478,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 ))}
                                                             </>
                                                         ))}
-                                                        {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
+                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                             <>
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
@@ -510,7 +510,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                             {/* faq starts */}
 
                                             <TabPanel sx={{ padding: 0 }} value="4">
-                                                {companies && companies.slice(0, 1).map(({ _id, companyKpi }) => (
+                                                {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                     <>
                                                         {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                             <>
@@ -613,7 +613,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                     <Card style={{ padding: '80px' }}>
                                                         <Box style={{ textAlign: 'center' }}>
                                                             <Box component="label" display="flex" justifyContent="center">
-                                                                {accounts && accounts.slice(0, 1).map(({ _id, accountPersonal, accountStatus }) => (
+                                                                {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal, accountStatus }) => (
                                                                     <StyledBadge
                                                                         key={_id}
                                                                         overlap="circular"
@@ -623,7 +623,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                         }}
                                                                         variant={accountStatus.accountIsActive}
                                                                     >
-                                                                        {accounts && accounts.slice(0, 1).map(({ _id, accountProfile }) => (
+                                                                        {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountProfile }) => (
                                                                             <Avatar
                                                                                 style={{ width: 65, height: 65 }}
                                                                                 alt={accountPersonal.accountFirstName}
@@ -633,7 +633,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                     </StyledBadge>
                                                                 ))}
                                                             </Box>
-                                                            {accounts && accounts.slice(0, 1).map(({ _id, accountPersonal, accountContact }) => (
+                                                            {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal, accountContact }) => (
                                                                 <>
                                                                     <Box mt={1.5} key={_id}>
                                                                         <Typography mr={1} component="span" variant="h4" fontWeight="500" color="black">{accountPersonal.accountFirstName}</Typography>

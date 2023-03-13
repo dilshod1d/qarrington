@@ -34,7 +34,7 @@ const Component = () => {
         <Grid item xs={12}>
           <Card style={{ padding: '40px' }}>
             <Box display='flex' justifyContent='center' alignItems='center'>
-              {accounts && accounts.slice(0, 1).map(({ _id, accountStatus }) => (
+              {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountStatus }) => (
                 <>
                   <CircularProgress variant='determinate' size={80} thickness={6} value={accountStatus.accountCompletionRate} />
                   <Typography variant='body2' fontWeight={600} position='absolute'>{accountStatus.accountCompletionRate}%</Typography>
@@ -42,7 +42,7 @@ const Component = () => {
               ))}
             </Box>
             <Box style={{ padding: '15px 0px 15px 0px', display: 'flex', justifyContent: 'center' }}>
-              {accounts && accounts.slice(0, 1).map(({ _id, accountPersonal }) => (
+              {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal }) => (
                 <Typography
                   component="span"
                   variant="body"

@@ -21,7 +21,7 @@ const Component = () => {
           <Card style={{ paddingTop: '40px', marginBottom: '10px' }}>
             <Box width="100%" height="100%">
 
-              {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyKpi, companyListing }) => (
+              {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker, companyKpi, companyListing }) => (
                 <>
                   {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyCurrency, companyCapitalization, companyVolume, companyPrice, companyPriceVariant, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
                     <Box key={_id} textAlign="center" marginBottom="10px">
@@ -95,7 +95,7 @@ const Component = () => {
               </AreaChart>
 
             </Box>
-            {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
+            {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
               <Box key={_id} textAlign="center" marginBottom="40px">
                 <Typography fontWeight={500} variant="body2"
                   component="span" color="secondary"

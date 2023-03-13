@@ -21,7 +21,7 @@ const Component = () => {
 
           <Card style={{ padding: '40px', marginBottom: '10px' }}>
 
-            {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyKpi, companyListing }) => (
+            {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker, companyKpi, companyListing }) => (
               <>
                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyCurrency, companyCapitalization, companyVolume, companyPrice, companyPriceVariant, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
                   <Box key={_id} textAlign="center" marginBottom="10px">
@@ -213,7 +213,7 @@ const Component = () => {
                   }
                 }}
               >
-                {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
+                {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
                   <a style={{ textDecoration: 'none' }} href={`${companyListing.companyWebsite}`}
                     target="_blank"
                     rel="noopener noreferrer">
