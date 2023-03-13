@@ -50,7 +50,7 @@ const Component = () => {
                   fontWeight={500}
                   color="secondary"
                 >
-                  Dear {companyListing.companyTicker}, you must provide verifiable <Typography component="span" color="primary" fontWeight={600}>personal</Typography>, <Typography component="span" color="primary" fontWeight={600}>business</Typography>, <Typography component="span" color="primary" fontWeight={600}>bank</Typography>, and <Typography component="span" color="primary" fontWeight={600}>contact</Typography> details to receive payouts.
+                  Dear {companyListing.companyTicker}, you must enter verifiable <Typography component="span" color="primary" fontWeight={600}>personal</Typography>, <Typography component="span" color="primary" fontWeight={600}>business</Typography>, <Typography component="span" color="primary" fontWeight={600}>bank</Typography>, and <Typography component="span" color="primary" fontWeight={600}>contact</Typography> details to receive payouts.
                 </Typography>
               </Box>
               <Box>
