@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { green } from '@mui/material/colors';
 import HeaderMenu from '../../../components/menus/HeaderMenu';
 import LeftGrid from '../../../components/grids/LeftGrid';
-import RightGrid from '../../../components/grids/RightGrid';
+import Buy from '../../../components/cards/Buy';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
@@ -78,10 +78,10 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
                                                                     <Box key={_id} textAlign="center" marginBottom="10px">
                                                                         <Box>
-                                                                            <Typography mr={1} variant="h3" fontWeight={700} component="span" color="black">
+                                                                            <Typography mr={1} variant="h2" fontWeight={700} component="span" color="black">
                                                                                 ${companyPrice}
                                                                             </Typography>
-                                                                            <Typography variant="h3" fontWeight={700} component="span" color="primary">
+                                                                            <Typography variant="h2" fontWeight={700} component="span" color="primary">
                                                                                 +{companyPercentChange}%
                                                                             </Typography>
                                                                         </Box>
@@ -118,46 +118,6 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 </Grid>
                                                             </Tooltip>
                                                         ))}
-                                                    </Grid>
-                                                </Grid>
-
-                                                <Grid item xs={12} mt={1}>
-                                                    <Grid container spacing={1} display="flex" justifyContent="center">
-                                                        <Tooltip title="low" placement="top">
-                                                            <Grid item xs={12} sm={6} md={6} lg={1}>
-                                                                <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[100] }}>
-                                                                    <></>
-                                                                </Box>
-                                                            </Grid>
-                                                        </Tooltip>
-                                                        <Tooltip title="low" placement="top">
-                                                            <Grid item xs={12} sm={6} md={6} lg={1}>
-                                                                <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[300] }}>
-                                                                    <></>
-                                                                </Box>
-                                                            </Grid>
-                                                        </Tooltip>
-                                                        <Tooltip title="mid" placement="top">
-                                                            <Grid item xs={12} sm={6} md={6} lg={1}>
-                                                                <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[500] }}>
-                                                                    <></>
-                                                                </Box>
-                                                            </Grid>
-                                                        </Tooltip>
-                                                        <Tooltip title="high" placement="top">
-                                                            <Grid item xs={12} sm={6} md={6} lg={1}>
-                                                                <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[700] }}>
-                                                                    <></>
-                                                                </Box>
-                                                            </Grid>
-                                                        </Tooltip>
-                                                        <Tooltip title="hot" placement="top">
-                                                            <Grid item xs={12} sm={6} md={6} lg={1}>
-                                                                <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[900] }}>
-                                                                    <></>
-                                                                </Box>
-                                                            </Grid>
-                                                        </Tooltip>
                                                     </Grid>
                                                 </Grid>
 
@@ -726,7 +686,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <RightGrid />
+                        <Buy />
                     </Grid>
 
                 </Grid>
@@ -789,7 +749,7 @@ const DomainItem = {
 
 const Data2Item = {
     fontWeight: '600',
-    fontSize: '12px',
+    fontSize: '18px',
     marginRight: '4px'
 };
 
