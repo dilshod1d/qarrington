@@ -24,20 +24,19 @@ export default handler
 				console.log(account)
 				if (account[0]) {
 					console.log("invalid")
-					res.status(400).json({ success: false, data: [], message: "Access Key Invalid" });
+					res.status(400).json({ success: false, message: "Access Key Invalid" });
 					return;
 				}
-				console.log("end is not sync")
 				account = new Account({ accountKeys: { accountAccessKey, accountSecretKey } });
 				account.save()
 
-				res.status(200).json({success:true, data:[], message:"Account has been created successfully"});
+				res.status(200).json({success:true, message:"Account has been created successfully"});
 			}
 			catch (err) {
 				res.status(500).json("err");
 			}
 		} else {
-			res.status(400).json({ success: false, data: null, error: "Access Key is required" })
+			res.status(400).json({ success: false, error: "Access Key is required" })
 		}
 
 	})
@@ -46,14 +45,14 @@ export default handler
 		try {
 			const token = getHeaderAuth(req)
 			if (!token) {
-				res.status(401).json({ success: false, data:null, message: "User not authenticated" });
+				res.status(401).json({ success: false, message: "User not authenticated" });
 				// return;
 			}
 			// res.status(200).json(token)
 			const account = await Account.findOne({ "accountKeys.accountToken": token },{ "accountKeys.accountToken":0})
 			if(!account)
-				res.status(400).json({ success: false, data:null, message:"Account Not Found" })
-			res.status(200).json({ success: true, account })
+				res.status(400).json({ success: false, message:"Account Not Found" })
+			res.status(200).json({ success: true, data: { account } })
 
 			// const createItem = await Account.create(req.body);
 			// res.status(201).json(createItem);

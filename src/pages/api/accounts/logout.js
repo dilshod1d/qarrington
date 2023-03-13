@@ -1,7 +1,7 @@
 import dbConnect from '../../../lib/dbConnect';
 import Account from '../../../../models/account/Account';
 import handler, { initValidation, post, check } from "../../../middleware/handler"
-import { login } from "../../../lib/auth"
+import { getAuthAccount, login } from "../../../lib/auth"
 
 const validator = initValidation(
     [
@@ -11,17 +11,17 @@ const validator = initValidation(
 )
 
 // define my middleware here and use it only for POST requests
-export default handler.use(validator)
-    .post(async (req, res) => {
+export default handler
+    .get(async (req, res) => {
         await dbConnect();
         try {
-            const account = await Account.findOne({'accountKeys.accountAccessKey':req.body.accessKey})
-            .select("accountContact accountBank accountBusiness accountPersonal accountProfile accountStatus");
+            const account = await getAuthAccount(req)
             if(!account) {
                 res.status(404).json({ success:false, data:[], message:"Account not Found"})
             }
-            console.log("cons", account);
-            const token = login(account)
+            account.accountKeys.accountToken = undefined
+            account.save()
+            
             res.status(201).json({ success:true, data: { token, account }, message:"User login Successfully" });
         } catch (err) {
             res.status(500).json(err);

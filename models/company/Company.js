@@ -20,13 +20,13 @@ const CompanySchema = new mongoose.Schema({
   companyUser: [
     {
       companyUserType: { type: String }, // companyTotalSubscribers, companyTotalCustomers, companyActiveCustomers, and companyInActiveCustomers
-      companyUserTotal: { type: String } // total subscribers during iso, subscribers during & after iso, customers created thru companyKey, and customers not created yet 
+      companyUserTotal: { type: Number } // total subscribers during iso, subscribers during & after iso, customers created thru companyKey, and customers not created yet 
     }
   ],
   companyIso: {
-    companyIsoUnits: { type: String }, // the inital total subscription
-    companyIsoPrice: { type: String }, // the initial price per subscription
-    companyIsoDate: { type: String }, // iso will end 7 days after this date
+    companyIsoUnits: { type: Number }, // the inital total subscription
+    companyIsoPrice: { type: Number }, // the initial price per subscription
+    companyIsoDate: { type: Date }, // iso will end 7 days after this date
     companyIsoTime: { type: String }, // the time the iso will start on the date
     companyIsoSubscribers: [ // the list of the whitelisted subscribers for the iso
       {
@@ -37,10 +37,10 @@ const CompanySchema = new mongoose.Schema({
         companySubscriberAddedAt: { type: String } // the whitelisted date
       }
     ],
-    companyIsoAmount: { type: String }, // companyIsoUnits * companyIsoPrice
-    companyIsoRaised: { type: String }, // total companySubscriberUnits * companyIsoPrice
+    companyIsoAmount: { type: Number }, // companyIsoUnits * companyIsoPrice
+    companyIsoRaised: { type: Number }, // total companySubscriberUnits * companyIsoPrice
     companyIsoProceed: { // how companyIsoAmountRaised will be transfered
-      companyIsoProceedIsMade: { type: String }, // default is FALSE
+      companyIsoProceedIsMade: { type: String, default:false }, // default is FALSE
       companyIsoProceedIsMadeTo: { type: String }, // we will send to the accountId's accountStripeId
       companyIsoProceedIsMadeAt: { type: String } //  we will send 90% of companyIsoAmountRaised 7 days after the iso
     }

@@ -1,5 +1,6 @@
 import { check, validationResult } from 'express-validator'
 import nextConnect from 'next-connect';
+import multer from 'multer';
 
 const initValidation = (validations) => {
     return async (req, res, next) => {
@@ -16,14 +17,17 @@ const initValidation = (validations) => {
 
 // u can customize where your validator runs
 // for example u can use this for validate your PUT request :
-//          const put = (middleware) => {
-//              return nextConnect().put(middleware)
-//          }
+const post = (middleware) => {
+    return nextConnect().post(middleware)
+}
 
+const get = (middleware) => {
+    return nextConnect().get(middleware)
+}
 // when u call this its ONLY run in post request
 
 // u can set onError , onNoMatch and global middleware or etc
 //  handler = nextConnect({ onError, onNoMatch }).use(SOME_MIDDLEWARE) 
 const handler = nextConnect()
 export default handler
-export { initValidation, check/* Dont forget to use export your PUT middleware or other*/ }
+export { initValidation, check, post, get/* Dont forget to use export your PUT middleware or other*/ }
