@@ -27,7 +27,7 @@ const Component = () => {
       <Grid container spacing={1}>
         <Grid item xs={12}>
           {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
-            <Card style={{ padding: '40px' }}>
+            <Card key={_id} style={{ padding: '40px' }}>
               <Box style={{ padding: '0px', textAlign: 'center' }}>
                 <Tooltip title="An Initial Subscription Offering or ISO allows you to utilize and monetize your subscriptions with SaaS companies." placement="top">
                   <Box

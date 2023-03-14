@@ -110,8 +110,8 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                 <Grid item xs={12} mt={1.5}>
                                                     <Grid container spacing={1}>
                                                         {cubes && cubes.map(({ _id, date, price, variant }) => (
-                                                            <Tooltip title={date} placement="top">
-                                                                <Grid key={_id} item xs={12} sm={6} md={6} lg={1} mb={0}>
+                                                            <Tooltip key={_id} title={date} placement="top">
+                                                                <Grid item xs={12} sm={6} md={6} lg={1} mb={0}>
                                                                     <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[variant] }}>
                                                                         <></>
                                                                     </Box>
@@ -368,7 +368,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
                                                                         {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
                                                                                 <Card style={{ padding: '60px', textAlign: 'center' }}>
                                                                                     <Tooltip title="The total number of customers of this subscription is the number of all customers with the subscription." placement="top">
                                                                                         <InfoRoundedIcon sx={{ color: '#2ed573' }} />
@@ -391,7 +391,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
                                                                         {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
                                                                                 <Card style={{ padding: '60px', textAlign: 'center' }}>
                                                                                     <Tooltip title="The current price of this subscription is the last price at which the buy/pull and sell/push request are executed." placement="top">
                                                                                         <InfoRoundedIcon sx={{ color: '#2ed573' }} />
@@ -414,7 +414,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
                                                                         {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
                                                                                 <Card style={{ padding: '60px', textAlign: 'center', background: '#f5f5f5' }}>
                                                                                     <Tooltip title="The percent change of this subscription is calculated as the difference between the price 24 hours and 48 hours ago." placement="top">
                                                                                         <InfoRoundedIcon sx={{ color: '#2ed573' }} />
@@ -437,7 +437,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
                                                                         {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
                                                                                 <Card style={{ padding: '60px', textAlign: 'center', background: '#f5f5f5' }}>
                                                                                     <Tooltip title="The point change of this subscription is calculated as the difference between the price 24 hours and 48 hours ago." placement="top">
                                                                                         <InfoRoundedIcon sx={{ color: '#2ed573' }} />
@@ -460,7 +460,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
                                                                         {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
                                                                                 <Card style={{ padding: '60px', textAlign: 'center' }}>
                                                                                     <Tooltip title="The market cap of this subscription is calculated as the total subscriptions in supply multiplied by the current price." placement="top">
                                                                                         <InfoRoundedIcon sx={{ color: '#2ed573' }} />
@@ -483,7 +483,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                 {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                                     <>
                                                                         {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
                                                                                 <Card style={{ padding: '60px', textAlign: 'center' }}>
                                                                                     <Tooltip title="The trading volume of this subscription is calculated as the total number of subscriptions traded in the past 24hrs." placement="top">
                                                                                         <InfoRoundedIcon sx={{ color: '#2ed573' }} />
@@ -515,7 +515,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                         {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
                                                             <>
                                                                 {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                    <Grid item xs={12}>
+                                                                    <Grid key={_id} item xs={12}>
                                                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                                             <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
                                                                                 What is {ticker}?
@@ -625,6 +625,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                     >
                                                                         {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountProfile }) => (
                                                                             <Avatar
+                                                                                key={_id}
                                                                                 style={{ width: 65, height: 65 }}
                                                                                 alt={accountPersonal.accountFirstName}
                                                                                 src={accountProfile.accountAvatarUrl}

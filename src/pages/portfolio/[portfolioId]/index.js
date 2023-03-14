@@ -136,7 +136,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                             {companyNow && companyNow.slice(0, 1).map(({ _id, companyAsks }) => (
                                                                                 <>
                                                                                     {companyAsks && companyAsks.slice(0, 1).map(({ _id, companyAskPrice, companyAskUnits }) => (
-                                                                                        <Tooltip title="The Ask Price is the lowest price you could sell this subscription. Kindly note that prices are updated in real-time." placement="top">
+                                                                                        <Tooltip key={_id} title="The Ask Price is the lowest price you could sell this subscription. Kindly note that prices are updated in real-time." placement="top">
                                                                                             <Card sx={{ padding: '4px 8px 4px 8px', fontSize: '12px', fontWeight: 600, backgroundColor: '#2ed573', color: 'white' }} >${companyAskPrice}</Card>
                                                                                         </Tooltip>
                                                                                     ))}
@@ -186,7 +186,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                             <TabPanel sx={{ padding: 0 }} value="1">
                                                 <Grid item xs={12}>
                                                     {picks && Array.isArray(picks) && picks.slice(0, 1).map(({ _id, pickPrice, pickAmount, pickUnits }) => (
-                                                        <Card style={{ padding: '60px' }}>
+                                                        <Card key={_id} style={{ padding: '60px' }}>
                                                             <Stack spacing={1} sx={{ width: '100%' }}>
                                                                 <TextField
                                                                     sx={{ input: { textAlign: "center" } }}
@@ -231,7 +231,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                             <TabPanel sx={{ padding: 0 }} value="2">
                                                 <Grid item xs={12}>
                                                     {pulls && Array.isArray(pulls) && pulls.slice(0, 1).map(({ _id, pullPrice, pullAmount, pullUnits }) => (
-                                                        <Card style={{ padding: '60px' }}>
+                                                        <Card key={_id} style={{ padding: '60px' }}>
                                                             <Stack spacing={1} sx={{ width: '100%' }}>
                                                                 <Tooltip title="Kindly specify the maximum price you're willing to buy a subscription unit or leave blank to buy at the current lowest price." placement="top">
                                                                     <TextField
@@ -281,7 +281,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                             <TabPanel sx={{ padding: 0 }} value="3">
                                                 <Grid item xs={12}>
                                                     {pushes && Array.isArray(pushes) && pushes.slice(0, 1).map(({ _id, pushPrice, pushAmount, pushUnits }) => (
-                                                        <Card style={{ padding: '60px' }}>
+                                                        <Card key={_id} style={{ padding: '60px' }}>
                                                             <Stack spacing={1} sx={{ width: '100%' }}>
                                                                 <Tooltip title="Kindly specify the minimum price you're willing to sell a subscription unit or leave blank to sell at the current highest price." placement="top">
                                                                     <TextField

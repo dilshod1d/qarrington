@@ -474,7 +474,7 @@ const Page = () => {
                 </Typography>
 
                 {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal }) => (
-                  <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
+                  <Typography key={_id} variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
                     Dear {accountPersonal.accountFirstName}, in order to sell subscriptions on Qarrington and receive payouts to your bank account, you're required to provide verifiable <b>personal</b>, <b>business</b>, <b>bank</b>, and <b>contact</b> details.
                   </Typography>
                 ))}

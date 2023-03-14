@@ -65,8 +65,8 @@ const Component = () => {
             <Grid item xs={12} mt={1.5}>
               <Grid container spacing={1}>
                 {cubes && cubes.map(({ _id, date, price, variant }) => (
-                  <Tooltip title={date} placement="top">
-                    <Grid key={_id} item xs={12} sm={6} md={6} lg={1} mb={-0.5}>
+                  <Tooltip key={_id} title={date} placement="top">
+                    <Grid item xs={12} sm={6} md={6} lg={1} mb={-0.5}>
                       <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[variant] }}>
                         <></>
                       </Box>
@@ -214,7 +214,8 @@ const Component = () => {
                 }}
               >
                 {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
-                  <a style={{ textDecoration: 'none' }} href={`${companyListing.companyWebsite}`}
+                  <a key={_id} style={{ textDecoration: 'none' }}
+                    href={`${companyListing.companyWebsite}`}
                     target="_blank"
                     rel="noopener noreferrer">
                     <Typography

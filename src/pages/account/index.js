@@ -105,6 +105,7 @@ const Page = () => {
                                                                 >
                                                                     {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountProfile }) => (
                                                                         <Avatar
+                                                                            key={_id}
                                                                             style={{ width: 65, height: 65 }}
                                                                             alt={accountPersonal.accountFirstName}
                                                                             src={accountProfile.accountAvatarUrl}

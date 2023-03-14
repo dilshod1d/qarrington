@@ -44,6 +44,7 @@ const Component = () => {
             <Box style={{ padding: '15px 0px 15px 0px', display: 'flex', justifyContent: 'center' }}>
               {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal }) => (
                 <Typography
+                  key={_id}
                   component="span"
                   variant="body"
                   fontSize="13px"

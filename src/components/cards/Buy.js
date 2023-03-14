@@ -34,7 +34,7 @@ const Component = () => {
       <Grid container spacing={1}>
         <Grid item xs={12}>
           {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companySlug, companyListing }) => (
-            <Card style={{ padding: '40px' }}>
+            <Card key={_id} style={{ padding: '40px' }}>
               {/* <Box display='flex' justifyContent='center' alignItems='center'>
                 <>
                   <CircularProgress variant='determinate' size={80} thickness={6} value={accountStatus.accountCompletionRate} />
