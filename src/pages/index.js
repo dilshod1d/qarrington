@@ -25,7 +25,7 @@ const Page = () => {
     <>
       <Head>
         <title>
-          Nasda for SaaS • Qarrington
+          Nasdaq for SaaS • Qarrington
         </title>
         <meta
           name="description"
