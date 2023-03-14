@@ -37,7 +37,7 @@ const Page = () => {
                                 <Grid item xs={12} mb={2}>
                                     <Grid container spacing={2}>
 
-                                        {companies && companies.map(({ _id, companySlug, companyListing }) => (
+                                        {companies && Array.isArray(companies) && companies?.map(({ _id, companySlug, companyListing }) => (
                                             <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                                 <Link href={`/subscriptions/${companySlug}`}>
                                                     <Card style={{ padding: '60px', cursor: 'pointer' }}>
