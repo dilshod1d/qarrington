@@ -1,0 +1,14 @@
+[
+    {
+        "matchUnits": "286",
+        "matchPrice": "29",
+        "matchAmount": "54,062",
+        "matchCompany": {
+            "matchCompanyLogo": "/assets/media/companies/twined.png",
+            "matchCompanyName": "Winsta",
+            "matchCompanyTicker": "win"
+        },
+        "matchEntry": "48,398,382",
+        "matchIsAddedAt": "06-18-2023"
+    }
+]

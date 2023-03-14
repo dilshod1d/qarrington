@@ -1,43 +1,58 @@
 import mongoose from 'mongoose';
+import bcrypt from "bcrypt"
+import { generateToken } from "../../src/lib/auth"
 
 const AccountSchema = new mongoose.Schema(
     {
-        accountProfile: {
+        accountPersonal: {
             accountFirstName: { type: String },
             accountLastName: { type: String },
-            accountEmailAddress: { type: String },
-            accountHomeAddress: { type: String },
-            accountPhoneNumber: { type: String },
-            accountSocialLink: { type: String },
-            accountCountryName: { type: String },
-            accountZipCode: { type: String },
-            accountBirthDate: { type: String },
             accountGovernmentId: { type: String },
-            accountAvatarUrl: { type: String },
-            accountCurrentTitle: { type: String }
-        },
-        accountBank: {
-            accountCurrencyCode: { type: String },
-            accountIbanNumber: { type: String },
-            accountNumber: { type: String },
-            accountRoutingNumber: { type: String }
+            accountIdNumber: { type: String },
+            accountBirthDate: { type: String },
+            accountHomeCountry: { type: String }
         },
         accountBusiness: {
             accountBusinessName: { type: String },
             accountBusinessType: { type: String },
             accountBusinessIndustry: { type: String },
-            accountBusinessWebsite: { type: String }
+            accountBusinessWebsite: { type: String },
+            accountBusinessAddress: { type: String },
+            accountBusinessCountry: { type: String },
+            accountBusinessEmail: { type: String }
+        },
+        accountBank: {
+            accountBankCountry: { type: String },
+            accountBankCurrency: { type: String },
+            accountIbanNumber: { type: String },
+            accountNumber: { type: String },
+            accountRoutingNumber: { type: String },
+            accountSortCode: { type: String }
+        },
+        accountContact: {
+            accountEmailAddress: { type: String },
+            accountPhoneNumber: { type: String },
+            accountHomeAddress: { type: String },
+            accountZipCode: { type: String },
+            accountCityName: { type: String },
+            accountStateName: { type: String }
+        },
+        accountProfile: {
+            accountAvatarUrl: { type: String },
+            accountCurrentTitle: { type: String }
         },
         accountKeys: {
-            accountAccessKey: { type: String },
-            accountSecretKey: { type: String }
+            accountAccessKey: { type: String, unique: true, minlength: 12 },
+            accountSecretKey: { type: String, unique: true, minlength: 12, immutable: true },
+            accountToken: { type: String, unique: true },
         },
         accountStatus: {
             accountIsActive: { type: String },
             accountIsAdmin: { type: String },
             accountIsMaker: { type: String },
             accountIsVerified: { type: String },
-            accountIsVerifiedAt: { type: String }
+            accountIsVerifiedAt: { type: String },
+            accountCompletionRate: { type: Number }
         },
         accountAlerts: [
             {
@@ -51,9 +66,16 @@ const AccountSchema = new mongoose.Schema(
             }
         ],
         accountStripeId: { type: String },
-        accountIsCreatedAt: { type: Date },
+        accountIsCreatedAt: { type: Date, immutable: true },
         accountIsUpdatedAt: { type: Date }
     }
 );
+
+AccountSchema.methods.login = function () {
+    const token = generateToken(36)
+    this.accountKeys.accountToken = token;
+    return token
+}
+
 
 export default mongoose.models.Account || mongoose.model('Account', AccountSchema);

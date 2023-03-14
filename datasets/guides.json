@@ -1,43 +1,63 @@
 [
   {
+    "guideForUnderwriter": [
+      {
+        "guideForUnderwriterIcon": "",
+        "guideForUnderwriterTitle": "",
+        "guideForUnderwriterContent": "",
+        "guideForUnderwriterTooltip": ""
+      },
+      {
+        "guideForUnderwriterIcon": "",
+        "guideForUnderwriterTitle": "",
+        "guideForUnderwriterContent": "",
+        "guideForUnderwriterTooltip": ""
+      },
+      {
+        "guideForUnderwriterIcon": "",
+        "guideForUnderwriterTitle": "",
+        "guideForUnderwriterContent": "",
+        "guideForUnderwriterTooltip": ""
+      }
+    ],
     "guideForFounder": [
       {
-        "guideForFounderIcon": "/assets/media/accounts/kim.webp",
-        "guideForFounderTitle": "Submit",
-        "guideForFounderContent": "First of all, submit a company for listing.",
-        "guideForFounderTooltip": "When you submit a company for listing, we will review the company to ensure it meets all our listing requirements."
-      },
-      {
-        "guideForFounderIcon": "/assets/media/accounts/sasha.webp",
+        "guideForFounderIcon": "/assets/media/guides/list.png",
         "guideForFounderTitle": "List",
-        "guideForFounderContent": "Next, the company's ISO will be listed.",
-        "guideForFounderTooltip": "When a company is listed, the listing will start at 10:00 PM EST on the start date and end at 11:00 PM EST on the end date."
+        "guideForFounderContent": "Underwriter lists a company for ISO.",
+        "guideForFounderTooltip": "An underwriter can list a company for free, however, if a company wants to list directly, that comes with a cost."
       },
       {
-        "guideForFounderIcon": "/assets/media/accounts/ciara.webp",
-        "guideForFounderTitle": "Launch",
-        "guideForFounderContent": "Finally, subscribers can buy the ISO.",
-        "guideForFounderTooltip": "When a company's ISO is launched on Qarrington, only the whitelisted subscribers can participate in the ISO."
+        "guideForFounderIcon": "/assets/media/guides/whitelist.png",
+        "guideForFounderTitle": "Whitelist",
+        "guideForFounderContent": "Company whitelists customers for ISO.",
+        "guideForFounderTooltip": "Only the whitelisted customers will be able to buy the company's ISO, which will last no longer than 7 days."
+      },
+      {
+        "guideForFounderIcon": "/assets/media/guides/sell.png",
+        "guideForFounderTitle": "Sell",
+        "guideForFounderContent": "Customers subscribe to the company's ISO.",
+        "guideForFounderTooltip": "After the ISO, the underwriter gets 5%, the company gets 80%, and the maker gets 15% from the ISO proceeds."
       }
     ],
     "guideForCustomer": [
       {
-        "guideForCustomerIcon": "/assets/media/accounts/ciara.webp",
+        "guideForCustomerIcon": "/assets/media/guides/open.png",
         "guideForCustomerTitle": "Open",
-        "guideForCustomerContent": "First of all, create a Qarrington account.",
-        "guideForCustomerTooltip": "Primarily, you can always use your Qarrington account as an underwriter, as a company, or as a subscriber."
+        "guideForCustomerContent": "You must create a Qarrington account.",
+        "guideForCustomerTooltip": "Whether you're an underwriter, a founder, or an end user, you're required to have a verified Qarrington account."
       },
       {
-        "guideForCustomerIcon": "/assets/media/accounts/judy.webp",
+        "guideForCustomerIcon": "/assets/media/guides/connect.png",
         "guideForCustomerTitle": "Connect",
-        "guideForCustomerContent": "After that, link your online bank account.",
+        "guideForCustomerContent": "You must link your bank account.",
         "guideForCustomerTooltip": "Each time you sell subscriptions, the subscription payouts will automatically be sent to your linked bank account."
       },
       {
-        "guideForCustomerIcon": "/assets/media/accounts/maria.webp",
+        "guideForCustomerIcon": "/assets/media/guides/pull.png",
         "guideForCustomerTitle": "Pull",
-        "guideForCustomerContent": "And finally, buy and sell subscriptions.",
-        "guideForCustomerTooltip": "If your account is approved, you will be able to buy and sell the subscriptions of the listed companies on Qarrington."
+        "guideForCustomerContent": "You can buy an ISO or subscriptions.",
+        "guideForCustomerTooltip": "You can always buy/pull subscriptions, but your account must be verified before you can create a sell/push request."
       }
     ]
   }

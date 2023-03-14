@@ -1,0 +1,214 @@
+[
+    {
+        "trackVolumes": {
+            "trackNow": {
+                "trackValue": "283,923,983",
+                "trackChange": "0.92",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackMinute": {
+                "trackValue": "383,923,983",
+                "trackChange": "1.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackHour": {
+                "trackValue": "583,923,983",
+                "trackChange": "2.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackDay": {
+                "trackValue": "683,923,983",
+                "trackChange": "4.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackWeek": {
+                "trackValue": "783,923,983",
+                "trackChange": "8.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackMonth": {
+                "trackValue": "793,923,983",
+                "trackChange": "21.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackQuarter": {
+                "trackValue": "883,923,983",
+                "trackChange": "61.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackYear": {
+                "trackValue": "979,923,983",
+                "trackChange": "192.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            }
+        },
+        "trackAccounts": {
+            "trackNow": {
+                "trackValue": "283,328",
+                "trackChange": "0.92",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackMinute": {
+                "trackValue": "383,299",
+                "trackChange": "1.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackHour": {
+                "trackValue": "483,393",
+                "trackChange": "2.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackDay": {
+                "trackValue": "583,983",
+                "trackChange": "4.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackWeek": {
+                "trackValue": "683,920",
+                "trackChange": "8.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackMonth": {
+                "trackValue": "743,783",
+                "trackChange": "21.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackQuarter": {
+                "trackValue": "873,883",
+                "trackChange": "61.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackYear": {
+                "trackValue": "948,983",
+                "trackChange": "192.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            }
+        },
+        "trackCompanies": {
+            "trackNow": {
+                "trackValue": "283",
+                "trackChange": "0.92",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackMinute": {
+                "trackValue": "383",
+                "trackChange": "1.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackHour": {
+                "trackValue": "483",
+                "trackChange": "2.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackDay": {
+                "trackValue": "583",
+                "trackChange": "4.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackWeek": {
+                "trackValue": "683",
+                "trackChange": "8.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackMonth": {
+                "trackValue": "783",
+                "trackChange": "21.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackQuarter": {
+                "trackValue": "823",
+                "trackChange": "61.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackYear": {
+                "trackValue": "983",
+                "trackChange": "192.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            }
+        },
+        "trackCapitalizations": {
+            "trackNow": {
+                "trackValue": "283,923,983,539",
+                "trackChange": "0.92",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackMinute": {
+                "trackValue": "383,923,983,392",
+                "trackChange": "1.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackHour": {
+                "trackValue": "583,923,983,382",
+                "trackChange": "2.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackDay": {
+                "trackValue": "683,923,983,923",
+                "trackChange": "4.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackWeek": {
+                "trackValue": "783,923,983,932",
+                "trackChange": "8.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackMonth": {
+                "trackValue": "793,923,983,823",
+                "trackChange": "21.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackQuarter": {
+                "trackValue": "883,923,983,923",
+                "trackChange": "61.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackYear": {
+                "trackValue": "979,923,983,973",
+                "trackChange": "192.48",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            }
+        },
+        "trackCountries": {
+            "trackNow": {
+                "trackValue": "116",
+                "trackChange": "0.00",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackMinute": {
+                "trackValue": "116",
+                "trackChange": "0.00",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackHour": {
+                "trackValue": "116",
+                "trackChange": "0.00",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackDay": {
+                "trackValue": "116",
+                "trackChange": "0.00",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackWeek": {
+                "trackValue": "116",
+                "trackChange": "0.00",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackMonth": {
+                "trackValue": "116",
+                "trackChange": "0.00",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackQuarter": {
+                "trackValue": "116",
+                "trackChange": "0.00",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            },
+            "trackYear": {
+                "trackValue": "116",
+                "trackChange": "0.00",
+                "trackDatedAt": "Fri, May 28, 2023, 11:45 PM"
+            }
+        }
+    }
+]

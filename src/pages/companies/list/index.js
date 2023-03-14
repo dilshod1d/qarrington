@@ -30,6 +30,7 @@ const Page = () => {
       "company website",
       "company email",
       "company market",
+      "company size",
       "company iso units",
       "company iso price",
       "company iso date",
@@ -173,6 +174,19 @@ const Page = () => {
       case 10:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="How many monthly active customers or users does your company have for now?" placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="company size"
+              />
+            </Tooltip>
+          </Stack>
+        );
+
+      case 11:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="How many units of subscriptions does the company plan to issue for its ISO?" placement="top">
               <TextField
                 sx={{ input: { textAlign: "center" } }}
@@ -183,7 +197,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 11:
+      case 12:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="What's the price per unit during the ISO? Please make sure that this is justifiable." placement="top">
@@ -196,7 +210,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 12:
+      case 13:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="Which month does the company want the ISO to start? It can change anytime." placement="top">
@@ -209,7 +223,7 @@ const Page = () => {
           </Stack>
         );
 
-      case 13:
+      case 14:
         return (
           <Stack spacing={1.2} sx={{ width: '100%' }}>
             <Tooltip title="What time does the company want the ISO to start? It can change anytime." placement="top">
@@ -325,7 +339,7 @@ const Page = () => {
                           </Button>
                         </Link>
 
-                        {companies && companies.slice(0, 1).map(({ _id, companyTicker }) => (
+                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker }) => (
                           <Link key={_id} href={`/companies/${companyTicker}`}>
                             <Button
                               size="large"
@@ -410,10 +424,10 @@ const Page = () => {
                   {/* founder tab starts */}
 
                   <Box textAlign="center" mb={2}>
-                    {stories && stories.map(({ _id, storyByFounder }) => (
+                    {stories && Array.isArray(stories) && stories?.map(({ _id, storyByFounder }) => (
                       <>
                         <Carousel>
-                          {storyByFounder && storyByFounder.map(({ _id, storyByFounderName, storyByFounderTitle, storyByFounderAvatar, storyByFounderContent, storyByFounderIsActive }) => (
+                          {storyByFounder && Array.isArray(storyByFounder) && storyByFounder?.map(({ _id, storyByFounderName, storyByFounderTitle, storyByFounderAvatar, storyByFounderContent, storyByFounderIsActive }) => (
                             <Box key={_id}>
                               <Box
                                 style={{
@@ -450,9 +464,9 @@ const Page = () => {
 
                   <Grid item xs={12} mt={2}>
                     <Grid container spacing={1}>
-                      {guides && guides.map(({ _id, guideForFounder }) => (
+                      {guides && Array.isArray(guides) && guides?.map(({ _id, guideForFounder }) => (
                         <>
-                          {guideForFounder && guideForFounder.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
+                          {guideForFounder && Array.isArray(guideForFounder) && guideForFounder?.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
                             <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                               <Tooltip title={guideForFounderTooltip} placement="top">
                                 <Card style={{ padding: '22px' }}>

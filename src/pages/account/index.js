@@ -6,7 +6,7 @@ import Carousel from 'react-material-ui-carousel';
 import Link from 'next/link';
 import HeaderMenu from '../../components/menus/HeaderMenu';
 import LeftGrid from '../../components/grids/LeftGrid';
-import RightGrid from '../../components/grids/RightGrid';
+import Completion from '../../components/cards/Completion';
 import {
     Avatar,
     Badge,
@@ -46,7 +46,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 const Page = () => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher)
+    const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
 
     const [value, setValue] = useState('1');
 
@@ -93,7 +93,7 @@ const Page = () => {
                                                 <Card style={{ padding: '60px' }}>
                                                     <Box style={{ textAlign: 'center' }}>
                                                         <Box component="label" display="flex" justifyContent="center">
-                                                            {accounts && accounts.slice(0, 1).map(({ _id, accountProfile, accountStatus }) => (
+                                                            {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal, accountStatus }) => (
                                                                 <StyledBadge
                                                                     key={_id}
                                                                     overlap="circular"
@@ -103,19 +103,21 @@ const Page = () => {
                                                                     }}
                                                                     variant={accountStatus.accountIsActive}
                                                                 >
-                                                                    <Avatar
-                                                                        style={{ width: 80, height: 80 }}
-                                                                        alt={accountProfile.accountFirstName}
-                                                                        src={accountProfile.accountAvatarUrl}
-                                                                    />
+                                                                    {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountProfile }) => (
+                                                                        <Avatar
+                                                                            style={{ width: 65, height: 65 }}
+                                                                            alt={accountPersonal.accountFirstName}
+                                                                            src={accountProfile.accountAvatarUrl}
+                                                                        />
+                                                                    ))}
                                                                 </StyledBadge>
                                                             ))}
                                                         </Box>
-                                                        {accounts && accounts.slice(0, 1).map(({ _id, accountProfile }) => (
+                                                        {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal }) => (
                                                             <Box mt={1.5} key={_id}>
                                                                 <Typography component="span" variant="h4" fontWeight="500" color="black">Hi</Typography>
                                                                 <Typography component="span" mr={0.5} variant="h4" fontWeight="500" color="secondary">,</Typography>
-                                                                <Typography component="span" variant="h4" fontWeight="700" color="black">{accountProfile.accountFirstName}</Typography>
+                                                                <Typography component="span" variant="h4" fontWeight="700" color="black">{accountPersonal.accountFirstName}</Typography>
                                                             </Box>
                                                         ))}
                                                         <Box mt={0.8} mb={1.2}>
@@ -159,10 +161,8 @@ const Page = () => {
                                                 aria-label="scrollable auto tabs example"
                                             >
                                                 <TabLabel label="Profile" value="1" />
-                                                <TabLabel label="Business" value="2" />
-                                                <TabLabel label="Bank" value="3" />
-                                                <TabLabel label="Settings" value="4" />
-                                                <TabLabel label="Alerts" value="5" />
+                                                <TabLabel label="Settings" value="2" />
+                                                <TabLabel label="Alerts" value="3" />
                                             </TabsWrapper>
                                         </Box>
                                         <Box style={{ marginTop: '16px' }}>
@@ -179,124 +179,10 @@ const Page = () => {
                                                 {accounts && Array.isArray(accounts) && accounts.slice(0, 1).map(({ _id, accountProfile }) => (
 
                                                     <>
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="first name" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="first name"
-                                                                        defaultValue={accountProfile.accountFirstName}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="last name" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="last name"
-                                                                        defaultValue={accountProfile.accountLastName}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
 
                                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                             <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="email address" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="email address"
-                                                                        defaultValue={accountProfile.accountEmailAddress}
-                                                                        inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="home address" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="home address"
-                                                                        defaultValue={accountProfile.accountHomeAddress}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
-
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="phone number" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="phone number"
-                                                                        defaultValue={accountProfile.accountPhoneNumber}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="social link" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="social link"
-                                                                        defaultValue={accountProfile.accountSocialLink}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
-
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="country name" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="country name"
-                                                                        defaultValue={accountProfile.accountCountryName}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="zip code / postal code" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="zip code / postal code"
-                                                                        defaultValue={accountProfile.accountZipCode}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
-
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="birth date" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="birth date"
-                                                                        defaultValue={accountProfile.accountBirthDate}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="government id" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="government id"
-                                                                        defaultValue={accountProfile.accountGovernmentId}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
-
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="avatar url" placement="top">
+                                                                <Tooltip title="Kindly provide a link to your avatar so we know who you are as a Qarrington." placement="top">
                                                                     <TextField
                                                                         required
                                                                         id="outlined-required"
@@ -305,7 +191,7 @@ const Page = () => {
                                                                         inputProps={{ style: { textAlign: 'center' } }}
                                                                     />
                                                                 </Tooltip>
-                                                                <Tooltip title="current title" placement="top">
+                                                                <Tooltip title="Kindly provide your current job title so we know who you are as a Qarrington." placement="top">
                                                                     <TextField
                                                                         required
                                                                         id="outlined-required"
@@ -337,165 +223,9 @@ const Page = () => {
 
                                             {/* profile tab ends */}
 
-                                            {/* business tab starts */}
-
-                                            <TabPanel sx={{ padding: 0 }} value="2">
-                                                {accounts && Array.isArray(accounts) && accounts.slice(0, 1).map(({ _id, accountBusiness }) => (
-
-                                                    <>
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Typography variant="body" color="secondary" fontWeight={600}>
-                                                                On Qarrington, we take payout verifications very seriously. Thus, you must provide contact information that can easily be verified.
-                                                            </Typography>
-                                                        </Card>
-
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="business name" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="business name"
-                                                                        defaultValue={accountBusiness.accountBusinessName}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="business type" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="business type"
-                                                                        defaultValue={accountBusiness.accountBusinessType}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
-
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="business industry" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="business industry"
-                                                                        defaultValue={accountBusiness.accountBusinessIndustry}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="business website" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="business website"
-                                                                        defaultValue={accountBusiness.accountBusinessWebsite}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
-
-                                                    </>
-
-                                                ))}
-
-                                                <Card style={{ padding: '60px', marginBottom: '0px' }}>
-                                                    <Button
-                                                        size="large"
-                                                        sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
-                                                        variant="contained"
-                                                        fullWidth={true}
-                                                        type="submit"
-                                                    >
-                                                        save
-                                                    </Button>
-                                                </Card>
-
-                                            </TabPanel>
-
-                                            {/* business tab stops */}
-
-                                            {/* bank tab starts */}
-
-                                            <TabPanel sx={{ padding: 0 }} value="3">
-                                                {accounts && Array.isArray(accounts) && accounts.slice(0, 1).map(({ _id, accountBank }) => (
-
-                                                    <>
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Typography variant="body" color="secondary" fontWeight={600}>
-                                                                On Qarrington, we take payout verifications very seriously. Thus, you must provide contact information that can easily be verified.
-                                                            </Typography>
-                                                        </Card>
-
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="currency code" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="currency code"
-                                                                        defaultValue={accountBank.accountCurrencyCode}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="iban number" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="iban number"
-                                                                        defaultValue={accountBank.accountIbanNumber}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
-
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="account number" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="account number"
-                                                                        defaultValue={accountBank.accountNumber}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="routing number or sort code" placement="top">
-                                                                    <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="routing number or sort code"
-                                                                        defaultValue={accountBank.accountRoutingNumber}
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
-
-                                                    </>
-
-                                                ))}
-
-                                                <Card style={{ padding: '60px', marginBottom: '0px' }}>
-                                                    <Button
-                                                        size="large"
-                                                        sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
-                                                        variant="contained"
-                                                        fullWidth={true}
-                                                        type="submit"
-                                                    >
-                                                        save
-                                                    </Button>
-                                                </Card>
-
-                                            </TabPanel>
-
-                                            {/* bank tab stops */}
-
                                             {/* settings tab starts */}
 
-                                            <TabPanel sx={{ padding: 0 }} value="4">
+                                            <TabPanel sx={{ padding: 0 }} value="2">
                                                 {accounts && Array.isArray(accounts) && accounts.slice(0, 1).map(({ _id, accountKeys }) => (
 
                                                     <>
@@ -507,7 +237,7 @@ const Page = () => {
 
                                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                             <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="access key" placement="top">
+                                                                <Tooltip title="Kindly note that you can update the accessKey of your Qarrington account." placement="top">
                                                                     <TextField
                                                                         required
                                                                         id="outlined-required"
@@ -550,16 +280,16 @@ const Page = () => {
 
                                             {/* alerts tab starts */}
 
-                                            <TabPanel sx={{ padding: 0 }} value="5">
+                                            <TabPanel sx={{ padding: 0 }} value="3">
                                                 {accounts && Array.isArray(accounts) && accounts.slice(0, 1).map(({ _id, accountAlerts }) => (
                                                     <>
                                                         {accountAlerts && Array.isArray(accountAlerts) && accountAlerts.map(({ _id, accountAlertLogo, accountAlertUnits, accountAlertTicker, accountAlertPrice, accountAlertType, accountAlertStatus, accountAlertIsDated }) => (
                                                             <>
-                                                                <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                                <Card style={{ padding: '40px', marginBottom: '10px' }}>
                                                                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                                                         <Box>
                                                                             <Avatar
-                                                                                style={{ width: 32, height: 32 }}
+                                                                                style={{ width: 28, height: 28 }}
                                                                                 alt={accountAlertTicker}
                                                                                 src={accountAlertLogo}
                                                                             />
@@ -577,7 +307,7 @@ const Page = () => {
                                                                             <Typography mr={0.5} fontWeight={600} component="span" variant="body2" color="secondary">
                                                                                 is
                                                                             </Typography>
-                                                                            <Typography mr={0.5} fontWeight={600} component="span" variant="body2" color="secondary">
+                                                                            <Typography mr={0.5} fontWeight={600} component="span" variant="body2" color="black">
                                                                                 {accountAlertStatus}
                                                                             </Typography>
                                                                             <Typography mr={0.5} fontWeight={600} component="span" variant="body2" color="secondary">
@@ -634,7 +364,7 @@ const Page = () => {
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <RightGrid />
+                        <Completion />
                     </Grid>
 
                 </Grid>

@@ -37,9 +37,9 @@ const Page = () => {
                                 <Grid item xs={12} mb={2}>
                                     <Grid container spacing={2}>
 
-                                        {companies && companies.map(({ _id, companyTicker, companyDetails, companyAnalytics }) => (
+                                        {companies && Array.isArray(companies) && companies?.map(({ _id, companySlug, companyListing }) => (
                                             <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                <Link href={`/subscriptions/${companyTicker}`}>
+                                                <Link href={`/subscriptions/${companySlug}`}>
                                                     <Card style={{ padding: '60px', cursor: 'pointer' }}>
                                                         <Box
                                                             style={{
@@ -49,51 +49,23 @@ const Page = () => {
                                                         >
                                                             <Avatar
                                                                 style={{ width: 40, height: 40 }}
-                                                                alt={companyDetails.companyName}
-                                                                src={companyDetails.companyLogo}
+                                                                alt={companyListing.companyName}
+                                                                src={companyListing.companyLogo}
                                                             />
                                                         </Box>
                                                         <Box style={{ textAlign: 'center' }}>
-                                                            <Tooltip title={companyDetails.companyName} placement="top">
-                                                                <Box>
-                                                                    {companyAnalytics && companyAnalytics.slice(0, 1).map(({ _id, companyPrice, companyPricePercentChange, companyPricePointChange }) => (
-                                                                        <>
-                                                                            <Box textAlign="center" mt={1.5} mb={0.5}>
-                                                                                <Typography component="span" mr={0.2} variant="body2" fontWeight="700" color="black" textTransform="uppercase">
-                                                                                    {companyPrice}
-                                                                                </Typography>
-                                                                                <Typography component="span" variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
-                                                                                    usd
-                                                                                </Typography>
-                                                                                <Typography component="span" mx={0.5} variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
-                                                                                    /
-                                                                                </Typography>
-                                                                                <Typography component="span" mr={0.2} variant="body2" fontWeight="700" color="black" textTransform="uppercase">
-                                                                                    {companyPricePercentChange}
-                                                                                </Typography>
-                                                                                <Typography component="span" variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
-                                                                                    %
-                                                                                </Typography>
-                                                                                <Typography component="span" mx={0.5} variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
-                                                                                    \
-                                                                                </Typography>
-                                                                                <Typography component="span" mr={0.2} variant="body2" fontWeight="700" color="black" textTransform="uppercase">
-                                                                                    {companyPricePointChange}
-                                                                                </Typography>
-                                                                                <Typography component="span" variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
-                                                                                    pts
-                                                                                </Typography>
-                                                                            </Box>
-                                                                            <Box>
-                                                                                <Typography textTransform="uppercase" variant="body" fontWeight={700} color="secondary">
-                                                                                    {companyTicker}
-                                                                                </Typography>
-                                                                            </Box>
-                                                                        </>
-                                                                    ))}
+                                                            <Box>
+                                                                <Box textAlign="center" mt={1.5} mb={0.5}>
+                                                                    <Typography component="span" mr={0.2} variant="body" fontWeight="700" color="black" textTransform="uppercase">
+                                                                        {companyListing.companyName}
+                                                                    </Typography>
                                                                 </Box>
-
-                                                            </Tooltip>
+                                                                <Box>
+                                                                    <Typography textTransform="uppercase" variant="body2" fontWeight={700} color="secondary">
+                                                                        {companyListing.companyTicker}
+                                                                    </Typography>
+                                                                </Box>
+                                                            </Box>
                                                         </Box>
                                                     </Card>
                                                 </Link>

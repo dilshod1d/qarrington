@@ -2,6 +2,15 @@ import mongoose from 'mongoose';
 
 const StorySchema = new mongoose.Schema(
     {
+        storyByUnderwriter: [
+            {
+                storyByUnderwriterName: { type: String },
+                storyByUnderwriterTitle: { type: String },
+                storyByUnderwriterAvatar: { type: String },
+                storyByUnderwriterContent: { type: String },
+                storyByUnderwriterIsActive: { type: String }
+            }
+        ],
         storyByFounder: [
             {
                 storyByFounderName: { type: String },

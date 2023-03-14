@@ -21,9 +21,9 @@ const Component = () => {
           <Card style={{ paddingTop: '40px', marginBottom: '10px' }}>
             <Box width="100%" height="100%">
 
-              {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyAnalytics, companyDetails }) => (
+              {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker, companyKpi, companyListing }) => (
                 <>
-                  {companyAnalytics && companyAnalytics.slice(0, 1).map(({ _id, companyCurrency, companyCapitalization, companyVolume, companyPrice, companyPriceVariant, companyPricePercentChange, companyPricePointChange, companyActiveCustomers, companyIsRecordedAt }) => (
+                  {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyCurrency, companyCapitalization, companyVolume, companyPrice, companyPriceVariant, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
                     <Box key={_id} textAlign="center" marginBottom="10px">
                       <Box>
                         <Typography fontSize="32px" fontWeight={700} component="span" color="black">
@@ -33,13 +33,13 @@ const Component = () => {
 
                       <Box>
                         <Typography fontSize="16px" fontWeight={600} component="span" color={companyPriceVariant}>
-                          {`+${companyPricePointChange}`}
+                          {`+${companyPointChange}`}
                         </Typography>
                         <Typography variant="body2" component="span" color="secondary" marginX={0.5}>
                           \
                         </Typography>
                         <Typography fontSize="14px" fontWeight={600} component="span" color={companyPriceVariant}>
-                          {`+${companyPricePercentChange}`}%
+                          {`+${companyPercentChange}`}%
                         </Typography>
                       </Box>
 
@@ -73,9 +73,9 @@ const Component = () => {
                   bottom: 0,
                 }}
               >
-                <XAxis dataKey="companyAnalytics.companyIsRecordedAt" fontSize="12px" fontWeight={500} />
+                <XAxis dataKey="companyKpi.companyIsRecordedAt" fontSize="12px" fontWeight={500} />
                 <Tooltip />
-                <Area type="monotone" dataKey="companyAnalytics.companyPrice" stroke="#2ed573" fill="#7bed9f20" />
+                <Area type="monotone" dataKey="companyKpi.companyPrice" stroke="#2ed573" fill="#7bed9f20" />
               </AreaChart> */}
 
               <AreaChart
@@ -95,15 +95,15 @@ const Component = () => {
               </AreaChart>
 
             </Box>
-            {companies && companies.slice(0, 1).map(({ _id, companyTicker, companyDetails }) => (
+            {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
               <Box key={_id} textAlign="center" marginBottom="40px">
                 <Typography fontWeight={500} variant="body2"
                   component="span" color="secondary"
                   style={{ textDecoration: 'none' }}>
-                  <a style={{ textDecoration: 'none', color: 'gray' }} href={`${companyDetails.companyWebsite}`}
+                  <a style={{ textDecoration: 'none', color: 'gray' }} href={`${companyListing.companyWebsite}`}
                     target="_blank"
                     rel="noopener noreferrer">
-                    {companyDetails.companyName}
+                    {companyListing.companyName}
                   </a>
                 </Typography>
               </Box>
