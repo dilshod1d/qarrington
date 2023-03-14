@@ -15,7 +15,7 @@ const Page = () => {
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
 
-  const [value, setValue] = useState('1');
+  const [value, setValue] = useState('2');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -74,8 +74,8 @@ const Page = () => {
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  Raise funds through ISO, <Typography color="error" component="span" fontSize="42px" fontWeight="700"><s>SAFE</s></Typography>, <Typography color="error" component="span" fontSize="42px" fontWeight="700"><s>IPO</s></Typography>, <Typography color="error" component="span" fontSize="42px" fontWeight="700"><s>VC</s></Typography>, <Typography color="error" component="span" fontSize="42px" fontWeight="700"><s>SPAC</s></Typography>, <Typography color="error" component="span" fontSize="42px" fontWeight="700"><s>ICO</s></Typography>
-                  <Tooltip title="A SaaS Underwriter is an individual or institution responsible for listing a SaaS company on a subscription exchange." placement="top">
+                  Raise funds through ISO, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>SAFE</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>IPO</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>VC</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>SPAC</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>ICO</s></Typography>
+                  <Tooltip title="Subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
@@ -136,15 +136,21 @@ const Page = () => {
                       mt: "20px"
                     }
                   }}>
-                  <Link href="/account/access">
+                  <Link href="https://calendly.com/banjodeiyowun/qarrington">
                     <Typography variant="body2" color="secondary" sx={Breadcrumb}>
-                      access account
+                      lower fees
                     </Typography>
                   </Link>
 
-                  <Link href="/account/recover">
+                  <Link href="https://calendly.com/banjodeiyowun/qarrington">
                     <Typography variant="body2" color="secondary" sx={Breadcrumb}>
-                      recover account
+                      product-backed
+                    </Typography>
+                  </Link>
+
+                  <Link href="https://calendly.com/banjodeiyowun/qarrington">
+                    <Typography variant="body2" color="secondary" sx={Breadcrumb}>
+                      fewer risks
                     </Typography>
                   </Link>
 
@@ -152,7 +158,7 @@ const Page = () => {
 
                 <Box textAlign="center">
                   <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    Once you log in to your account, kindly provide all the necessary account details and contacts for smooth payouts. Otherwise, your future payouts might be delayed.
+                    Kindly note that before a company can be listed, the company must have whitelisted an acceptable number of customers for its <b>Initial Subscription Offering</b>.
                   </Typography>
                 </Box>
 
@@ -198,7 +204,8 @@ const Page = () => {
                       aria-label="scrollable auto tabs example"
                     >
                       <TabLabel label="Customer" value="1" />
-                      <TabLabel label="Founder" value="2" />
+                      <TabLabel label="Underwriter" value="2" />
+                      <TabLabel label="Founder" value="3" />
                     </TabsWrapper>
                   </Box>
 
@@ -298,9 +305,103 @@ const Page = () => {
 
                     {/* customer tab ends */}
 
-                    {/* founder tab starts */}
+                    {/* underwriter tab starts */}
 
                     <TabPanel sx={{ padding: 0 }} value="2">
+
+                      <Box textAlign="center" mb={2}>
+                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByUnderwriter }) => (
+                          <>
+                            <Carousel>
+                              {storyByUnderwriter && Array.isArray(storyByUnderwriter) && storyByUnderwriter?.map(({ _id, storyByUnderwriterName, storyByUnderwriterTitle, storyByUnderwriterAvatar, storyByUnderwriterContent, storyByUnderwriterIsActive }) => (
+                                <Box key={_id}>
+                                  <Box
+                                    style={{
+                                      display: 'flex',
+                                      justifyContent: 'center'
+                                    }}
+                                  >
+                                    <StyledBadge
+                                      overlap="circular"
+                                      anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'right'
+                                      }}
+                                      variant={storyByUnderwriterIsActive}
+                                    >
+                                      <Avatar
+                                        style={{ width: 80, height: 80 }}
+                                        alt={storyByUnderwriterName}
+                                        src={storyByUnderwriterAvatar}
+                                      />
+                                    </StyledBadge>
+                                  </Box>
+                                  <Box marginTop="16px">
+                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByUnderwriterName}</Typography>
+                                    <Typography variant="body" component="div" gutterBottom>{storyByUnderwriterTitle}</Typography>
+                                    <Typography variant="h5" component="div" fontWeight="600">{storyByUnderwriterContent}</Typography>
+                                  </Box>
+                                </Box>
+                              ))}
+                            </Carousel>
+                          </>
+                        ))}
+                      </Box>
+
+                      <Grid item xs={12} mt={2}>
+                        <Grid container spacing={1}>
+                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForFounder }) => (
+                            <>
+                              {guideForFounder && Array.isArray(guideForFounder) && guideForFounder?.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
+                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                                  <Tooltip title={guideForFounderTooltip} placement="top">
+                                    <Card style={{ padding: '22px' }}>
+                                      <Box
+                                        style={{
+                                          display: 'flex',
+                                          justifyContent: 'center'
+                                        }}
+                                      >
+                                        <Badge
+                                          overlap="circular"
+                                          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                          badgeContent={
+                                            <InfoRoundedIcon fontSize="small" color="primary" />
+                                          }
+                                        >
+                                          <Avatar
+                                            style={{ width: 50, height: 50 }}
+                                            alt={guideForFounderTitle}
+                                            src={guideForFounderIcon}
+                                          />
+                                        </Badge>
+                                      </Box>
+                                      <Box style={{ textAlign: 'center' }}>
+                                        <Box mt={1.2}>
+                                          <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
+                                            {guideForFounderTitle}
+                                          </Typography>
+                                          <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
+                                            {guideForFounderContent}
+                                          </Typography>
+                                        </Box>
+                                      </Box>
+                                    </Card>
+                                  </Tooltip>
+                                </Grid>
+                              ))}
+                            </>
+                          ))}
+                        </Grid>
+                      </Grid>
+
+                    </TabPanel>
+
+                    {/* underwriter tab ends */}
+
+                    {/* founder tab starts */}
+
+                    <TabPanel sx={{ padding: 0 }} value="3">
 
                       <Box textAlign="center" mb={2}>
                         {stories && Array.isArray(stories) && stories?.map(({ _id, storyByFounder }) => (

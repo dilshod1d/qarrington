@@ -171,18 +171,18 @@ const Page = () => {
           </Stack>
         );
 
-        case 10:
-          return (
-            <Stack spacing={1.2} sx={{ width: '100%' }}>
-              <Tooltip title="How many monthly active customers or users does your company have for now?" placement="top">
-                <TextField
-                  sx={{ input: { textAlign: "center" } }}
-                  required
-                  placeholder="company size"
-                />
-              </Tooltip>
-            </Stack>
-          );
+      case 10:
+        return (
+          <Stack spacing={1.2} sx={{ width: '100%' }}>
+            <Tooltip title="How many monthly active customers or users does your company have for now?" placement="top">
+              <TextField
+                sx={{ input: { textAlign: "center" } }}
+                required
+                placeholder="company size"
+              />
+            </Tooltip>
+          </Stack>
+        );
 
       case 11:
         return (

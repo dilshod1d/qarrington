@@ -190,7 +190,8 @@ const Page = ({ from, to, preposition }) => {
                       aria-label="scrollable auto tabs example"
                     >
                       <TabLabel label="Customer" value="1" />
-                      <TabLabel label="Founder" value="2" />
+                      <TabLabel label="Underwriter" value="2" />
+                      <TabLabel label="Founder" value="3" />
                     </TabsWrapper>
                   </Box>
 
@@ -290,9 +291,103 @@ const Page = ({ from, to, preposition }) => {
 
                     {/* customer tab ends */}
 
-                    {/* founder tab starts */}
+                    {/* underwriter tab starts */}
 
                     <TabPanel sx={{ padding: 0 }} value="2">
+
+                      <Box textAlign="center" mb={2}>
+                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByUnderwriter }) => (
+                          <>
+                            <Carousel>
+                              {storyByUnderwriter && Array.isArray(storyByUnderwriter) && storyByUnderwriter?.map(({ _id, storyByUnderwriterName, storyByUnderwriterTitle, storyByUnderwriterAvatar, storyByUnderwriterContent, storyByUnderwriterIsActive }) => (
+                                <Box key={_id}>
+                                  <Box
+                                    style={{
+                                      display: 'flex',
+                                      justifyContent: 'center'
+                                    }}
+                                  >
+                                    <StyledBadge
+                                      overlap="circular"
+                                      anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'right'
+                                      }}
+                                      variant={storyByUnderwriterIsActive}
+                                    >
+                                      <Avatar
+                                        style={{ width: 80, height: 80 }}
+                                        alt={storyByUnderwriterName}
+                                        src={storyByUnderwriterAvatar}
+                                      />
+                                    </StyledBadge>
+                                  </Box>
+                                  <Box marginTop="16px">
+                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByUnderwriterName}</Typography>
+                                    <Typography variant="body" component="div" gutterBottom>{storyByUnderwriterTitle}</Typography>
+                                    <Typography variant="h5" component="div" fontWeight="600">{storyByUnderwriterContent}</Typography>
+                                  </Box>
+                                </Box>
+                              ))}
+                            </Carousel>
+                          </>
+                        ))}
+                      </Box>
+
+                      <Grid item xs={12} mt={2}>
+                        <Grid container spacing={1}>
+                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForFounder }) => (
+                            <>
+                              {guideForFounder && Array.isArray(guideForFounder) && guideForFounder?.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
+                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                                  <Tooltip title={guideForFounderTooltip} placement="top">
+                                    <Card style={{ padding: '22px' }}>
+                                      <Box
+                                        style={{
+                                          display: 'flex',
+                                          justifyContent: 'center'
+                                        }}
+                                      >
+                                        <Badge
+                                          overlap="circular"
+                                          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                          badgeContent={
+                                            <InfoRoundedIcon fontSize="small" color="primary" />
+                                          }
+                                        >
+                                          <Avatar
+                                            style={{ width: 50, height: 50 }}
+                                            alt={guideForFounderTitle}
+                                            src={guideForFounderIcon}
+                                          />
+                                        </Badge>
+                                      </Box>
+                                      <Box style={{ textAlign: 'center' }}>
+                                        <Box mt={1.2}>
+                                          <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
+                                            {guideForFounderTitle}
+                                          </Typography>
+                                          <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
+                                            {guideForFounderContent}
+                                          </Typography>
+                                        </Box>
+                                      </Box>
+                                    </Card>
+                                  </Tooltip>
+                                </Grid>
+                              ))}
+                            </>
+                          ))}
+                        </Grid>
+                      </Grid>
+
+                    </TabPanel>
+
+                    {/* underwriter tab ends */}
+
+                    {/* founder tab starts */}
+
+                    <TabPanel sx={{ padding: 0 }} value="3">
 
                       <Box textAlign="center" mb={2}>
                         {stories && Array.isArray(stories) && stories?.map(({ _id, storyByFounder }) => (

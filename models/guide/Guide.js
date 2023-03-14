@@ -2,6 +2,14 @@ import mongoose from 'mongoose';
 
 const GuideSchema = new mongoose.Schema(
     {
+        guideForUnderwriter: [
+            {
+                guideForUnderwriterIcon: { type: String },
+                guideForUnderwriterTitle: { type: String },
+                guideForUnderwriterContent: { type: String },
+                guideForUnderwriterTooltip: { type: String }
+            }
+        ],
         guideForFounder: [
             {
                 guideForFounderIcon: { type: String },
