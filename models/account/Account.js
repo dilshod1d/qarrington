@@ -14,8 +14,8 @@ const AccountSchema = new mongoose.Schema(
         },
         accountBusiness: {
             accountBusinessName: { type: String },
-            accountBusinessType: { type: String },
-            accountBusinessIndustry: { type: String },
+            accountBusinessType: { type: String, default:'individual' },
+            accountBusinessIndustry: { type: String, default:'SaaS' },
             accountBusinessWebsite: { type: String },
             accountBusinessAddress: { type: String },
             accountBusinessCountry: { type: String },
