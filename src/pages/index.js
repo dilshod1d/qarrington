@@ -109,7 +109,7 @@ const Page = () => {
                         variant="outlined"
                         fullWidth={true}
                       >
-                        schedule a meeting
+                        talk to team
                       </Button>
                     </Link>
 
@@ -120,7 +120,7 @@ const Page = () => {
                         variant="contained"
                         fullWidth={true}
                       >
-                        talk to team
+                        join weekly q&a
                       </Button>
                     </Link>
 
