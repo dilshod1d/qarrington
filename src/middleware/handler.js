@@ -3,7 +3,9 @@ import nextConnect from 'next-connect';
 import multer from 'multer';
 
 const initValidation = (validations) => {
-    return async (req, res, next) => {
+        return async (req, res, next) => {
+        (() => {console.log("val",rdeq.body)})
+
         await Promise.all(validations.map((validation) => validation.run(req)))
         const errors = validationResult(req)
         if (errors.isEmpty()) return next()
@@ -24,10 +26,14 @@ const post = (middleware) => {
 const get = (middleware) => {
     return nextConnect().get(middleware)
 }
+
+const put = (middleware) => {
+    return nextConnect().put(middleware)
+}
 // when u call this its ONLY run in post request
 
 // u can set onError , onNoMatch and global middleware or etc
 //  handler = nextConnect({ onError, onNoMatch }).use(SOME_MIDDLEWARE) 
 const handler = nextConnect()
 export default handler
-export { initValidation, check, post, get/* Dont forget to use export your PUT middleware or other*/ }
+export { initValidation, check, post, get, put/* Dont forget to use export your PUT middleware or other*/ }

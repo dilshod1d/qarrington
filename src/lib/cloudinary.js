@@ -21,5 +21,16 @@ const createImage = async (img) => {
     }
 };
 
+const createFile = async (file) => {
+    try {
+        const parser = new DatauriParser();
+        const base64Image = parser.format(path.extname(file.originalname).toString(), file.buffer);
+        const uploadedImageResponse = await cloudinary.uploader.upload(base64Image.content, 'quarrington', { resource_type: 'image' });
+        return uploadedImageResponse;
+    }
+    catch (err) {
+        return err
+    }
+};
 export default cloudinary
 export { createImage }

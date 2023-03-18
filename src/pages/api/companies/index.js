@@ -3,8 +3,9 @@
 import dbConnect from '../../../lib/dbConnect';
 import Company from '../../../../models/company/Company';
 import handler, { initValidation, post, get, check } from "../../../middleware/handler"
+import auth from "../../../middleware/auth"
 import { createCustomer, createProduct } from "../../../lib/stripe"
-import { generateToken, getHeaderAuth } from "../../../lib/auth"
+import { generateToken, getHeaderAuth, getAuthAccount } from "../../../lib/auth"
 import { createImage } from "../../../lib/cloudinary.js"
 import multer from 'multer';
 
@@ -55,7 +56,7 @@ const formatReqObject = (req) => {
 }
 // define my middleware here and use it only for POST requests
 export default handler
-	.use(multer().any('companyLogo'))
+	.use(multer().any('companyLogo'), auth())
 	.post(async (req, res) => {
 		await dbConnect();
 		try {
@@ -72,7 +73,7 @@ export default handler
 				images:[imageUrl],
 				default_price_data:{
 					unit_amount_decimal:req.body.companyIsoPrice,
-					currency:"USD"
+					currency: req.body.companyCurrency
 				}
 
 			})
@@ -81,7 +82,9 @@ export default handler
 			company.companyListing.companyKey = generateToken(13)
 			company.companyListing.companyProductId = product.id
 			company.companyLogo = imageUrl
-			company.save();
+			const account = await getAuthAccount(req)
+			company.companyAccountId = account["_id"]
+			// company.save();
 			
 			res.status(201).json({ success: true, data: { company }, message: "Company listed successfully", });
 		} catch (err) {
