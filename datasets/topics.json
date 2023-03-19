@@ -1,0 +1,36 @@
+[
+    {
+        "topicUrl": "account",
+        "topicTags": [
+            {
+                "topicTagName": "tag1"
+            },
+            {
+                "topicTagName": "tag2"
+            },
+            {
+                "topicTagName": "tag3"
+            }
+        ],
+        "topicTitle": "Account",
+        "topicDetail": "Learn how to manage your account.",
+        "topicAddedAt": "Fri, Oct 25, 2023, 11:45 PM"
+    },
+    {
+        "topicUrl": "company",
+        "topicTags": [
+            {
+                "topicTagName": "tag4"
+            },
+            {
+                "topicTagName": "tag5"
+            },
+            {
+                "topicTagName": "tag6"
+            }
+        ],
+        "topicTitle": "Company",
+        "topicDetail": "Learn how to manage your company.",
+        "topicAddedAt": "Fri, Oct 25, 2023, 11:45 PM"
+    }
+]
