@@ -4,18 +4,53 @@ import HeaderMenu from '../../../components/menus/HeaderMenu';
 import RightGrid from '../../../components/grids/RightGrid';
 import { Avatar, Badge, Box, Card, Container, Divider, Grid, styled, Typography } from '@mui/material';
 import Footer from '../../../components/main/Footer';
+import { createClient } from 'contentful';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const Page = ({ topicUrl, topicName, topicTitle, topicDetail, topicSummary, topicPostedAt }) => {
+const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+})
+
+export async function getStaticPaths() {
+    const res = await client.getEntries({
+        content_type: "topic",
+    })
+
+    return {
+        paths: res.items.map((item) => ({
+            params: { topicId: item.fields.topicUrl },
+        })),
+        fallback: true,
+    };
+}
+
+export async function getStaticProps({ params }) {
+    const res = await client.getEntries({
+        content_type: "topic",
+        'fields.topicUrl': params.topicId
+    })
+
+    return {
+        props: {
+            topic: res.items[0],
+        },
+        revalidate: 60,
+    };
+}
+
+const Page = ({ topic }) => {
+    console.log(topic);
 
     return (
 
         <div>
 
             <Head>
-                <title>{topicTitle} • Qarrington</title>
+                <title>{topic.fields.topicTitle} • Qarrington</title>
                 <meta
                     name="description"
-                    content={topicDetail}
+                    content={topic.fields.topicDetail}
                 />
             </Head>
 
@@ -36,15 +71,15 @@ const Page = ({ topicUrl, topicName, topicTitle, topicDetail, topicSummary, topi
                                         <Grid item xs={12}>
                                             <Card style={{ padding: '80px 80px 100px 80px' }}>
                                                 <Typography variant="h1" fontWeight={700} color="black">
-                                                    {topicTitle}?
+                                                    {topic.fields.topicTitle}?
                                                 </Typography>
                                                 <Divider sx={{ my: 4 }} />
                                                 <Typography mt={1} variant="h5" fontWeight={500} color="secondary">
-                                                    {topicSummary}
+                                                    {topic.fields.topicSummary}
                                                 </Typography>
                                                 <Divider sx={{ my: 4 }} />
                                                 <Typography mt={1} variant="body" fontWeight={500} color="secondary">
-                                                    {topicDetail}
+                                                    {documentToReactComponents(topic.fields.topicDetail)}
                                                 </Typography>
                                             </Card>
                                         </Grid>
@@ -73,64 +108,3 @@ const Page = ({ topicUrl, topicName, topicTitle, topicDetail, topicSummary, topi
 }
 
 export default Page
-
-const StyledBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-        right: -2,
-        top: 0,
-        border: `2px solid ${theme.palette.background.paper}`,
-        padding: '0 4px',
-    },
-}));
-
-export async function getServerSideProps({ params }) {
-    try {
-        const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/topics?topicUrl=${params.topicId.replace(/\-/g, '+')}`)
-            .then((r) => r.json());
-        return {
-            props: {
-                topicUrl: results.topicUrl,
-                topicName: results.topicName,
-                topicTitle: results.topicTitle,
-                topicDetail: results.topicDetail,
-                topicSummary: results.topicSummary,
-                topicPostedAt: results.topicPostedAt
-            }
-        };
-    } catch (error) {
-        return {
-            notFound: true
-        };
-    }
-}
-
-const help = [
-    {
-        _id: 1,
-        name: "Alexa",
-        email: "account@qarrington.com",
-        avatar: "/assets/media/team/alexa.webp",
-        content: "On Qarrington, we remain at your service for any future questions you might have with your Qarrington account in general."
-    },
-    {
-        _id: 2,
-        name: "Dwight",
-        email: "business@qarrington.com",
-        avatar: "/assets/media/team/dwight.webp",
-        content: "If you have any further queries regarding how Qarrington works for businesses, kindly contact us through the below email."
-    },
-    {
-        _id: 3,
-        name: "Maria",
-        email: "consumer@qarrington.com",
-        avatar: "/assets/media/team/maria.webp",
-        content: "Should you need any further information on how Qarrington works for consumers, please get in touch with the below email."
-    },
-    {
-        _id: 4,
-        name: "Jenn",
-        email: "platform@qarrington.com",
-        avatar: "/assets/media/team/jenn.webp",
-        content: "If we can be of any further assistance on how Qarrington works for platforms, kindly let us know via the below email."
-    }
-]

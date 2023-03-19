@@ -1,11 +1,36 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import HeaderMenu from '../../components/menus/HeaderMenu';
 import RightGrid from '../../components/grids/RightGrid';
 import { Avatar, Badge, Box, Card, Container, Grid, styled, Typography } from '@mui/material';
 import Footer from '../../components/main/Footer';
+import { createClient } from 'contentful';
 
-const Page = () => {
+const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+})
+
+export async function getStaticProps() {
+    const res = await client.getEntries({
+        content_type: "topic"
+    })
+
+    return {
+        props: {
+            topics: res.items,
+        },
+        revalidate: 60,
+    }
+}
+
+// export async function getStaticPaths() {
+// }
+
+
+const Page = ({ topics }) => {
+    console.log(topics)
 
     return (
 
@@ -33,7 +58,17 @@ const Page = () => {
                                 <Grid item xs={12} mb={2}>
                                     <Grid container spacing={2}>
 
-                                        {help && help.map(({ _id, name, email, avatar, content }) => (
+                                        <>
+                                            {topics.map(topic => (
+                                                <li key={topic.sys.id}>
+                                                    <Link href={'/topics/' + topic.fields.topicUrl}>
+                                                        {topic.fields.topicTitle}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </>
+
+                                        {/* {help && help.map(({ _id, name, email, avatar, content }) => (
                                             <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
                                                 <Card style={{ padding: '60px' }}>
                                                     <Box
@@ -74,7 +109,7 @@ const Page = () => {
                                                     </Box>
                                                 </Card>
                                             </Grid>
-                                        ))}
+                                        ))} */}
 
                                     </Grid>
                                 </Grid>
@@ -109,34 +144,3 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         padding: '0 4px',
     },
 }));
-
-const help = [
-    {
-        _id: 1,
-        name: "Alexa",
-        email: "account@qarrington.com",
-        avatar: "/assets/media/team/alexa.webp",
-        content: "On Qarrington, we remain at your service for any future questions you might have with your Qarrington account in general."
-    },
-    {
-        _id: 2,
-        name: "Dwight",
-        email: "business@qarrington.com",
-        avatar: "/assets/media/team/dwight.webp",
-        content: "If you have any further queries regarding how Qarrington works for businesses, kindly contact us through the below email."
-    },
-    {
-        _id: 3,
-        name: "Maria",
-        email: "consumer@qarrington.com",
-        avatar: "/assets/media/team/maria.webp",
-        content: "Should you need any further information on how Qarrington works for consumers, please get in touch with the below email."
-    },
-    {
-        _id: 4,
-        name: "Jenn",
-        email: "platform@qarrington.com",
-        avatar: "/assets/media/team/jenn.webp",
-        content: "If we can be of any further assistance on how Qarrington works for platforms, kindly let us know via the below email."
-    }
-]
