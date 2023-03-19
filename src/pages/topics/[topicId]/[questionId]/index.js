@@ -4,8 +4,13 @@ import HeaderMenu from '../../../../components/menus/HeaderMenu';
 import RightGrid from '../../../../components/grids/RightGrid';
 import { Avatar, Badge, Box, Card, Container, Grid, styled, Typography } from '@mui/material';
 import Footer from '../../../../components/main/Footer';
+import useSWR from 'swr';
 
 const Page = ({ questionUrl, questionTags, questionTitle, questionDetail, questionTopicId, questionPostedAt }) => {
+
+    const fetcher = (...args) => fetch(...args).then(res => res.json());
+    const { data: topics } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/topics`, fetcher);
+    const { data: questions } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/questions`, fetcher);
 
     return (
 
@@ -33,48 +38,16 @@ const Page = ({ questionUrl, questionTags, questionTitle, questionDetail, questi
                                 <Grid item xs={12} mb={2}>
                                     <Grid container spacing={2}>
 
-                                        {help && help.map(({ _id, name, email, avatar, content }) => (
-                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
-                                                <Card style={{ padding: '60px' }}>
-                                                    <Box
-                                                        style={{
-                                                            display: 'flex',
-                                                            justifyContent: 'center'
-                                                        }}
-                                                    >
-                                                        <StyledBadge
-                                                            overlap="circular"
-                                                            anchorOrigin={{
-                                                                vertical: 'bottom',
-                                                                horizontal: 'right'
-                                                            }}
-                                                            variant="dot"
-                                                        >
-                                                            <Avatar
-                                                                style={{ width: 50, height: 50 }}
-                                                                alt={name}
-                                                                src={avatar}
-                                                            />
-                                                        </StyledBadge>
-                                                    </Box>
-                                                    <Box style={{ textAlign: 'center' }}>
-                                                        <Box mt={2}>
-                                                            <Typography variant="body" fontWeight={600} color="secondary">
-                                                                {name}
-                                                            </Typography>
-                                                            <Typography mt={1} variant="h5" fontWeight={700}>
-                                                                {content}
-                                                            </Typography>
-                                                        </Box>
-                                                        <Box mt={1}>
-                                                            <Typography variant="body2" fontWeight={600} color="secondary">
-                                                                {email}
-                                                            </Typography>
-                                                        </Box>
-                                                    </Box>
-                                                </Card>
-                                            </Grid>
-                                        ))}
+                                        <Grid item xs={12}>
+                                            <Card style={{ padding: '60px 60px 80px 60px' }}>
+                                                <Typography fontSize={`60px`} fontWeight={700} color="black">
+                                                    {questionTitle}?
+                                                </Typography>
+                                                <Typography mt={1} fontSize={`18px`} fontWeight={500} color="secondary">
+                                                    {questionDetail}
+                                                </Typography>
+                                            </Card>
+                                        </Grid>
 
                                     </Grid>
                                 </Grid>
