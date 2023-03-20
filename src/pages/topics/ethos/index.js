@@ -1,8 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import HeaderMenu from '../../../components/menus/HeaderMenu';
-import RightGrid from '../../../components/grids/RightGrid';
+import LeftSide from '../../../components/topics/LeftSide';
+import Navbar from '../../../components/topics/Navbar';
+import RightSide from '../../../components/topics/RightSide';
 import Footer from '../../../components/main/Footer';
 import { Avatar, Badge, Box, Card, Container, Grid, styled, Typography } from '@mui/material';
 import { createClient } from 'contentful';
@@ -40,7 +41,7 @@ const Page = ({ topicItem }) => {
                 />
             </Head>
 
-            <HeaderMenu />
+            <Navbar />
 
             <Container>
 
@@ -83,8 +84,8 @@ const Page = ({ topicItem }) => {
                         </Grid>
                     </Grid>
 
-                    <Grid item xs={12} md={6} lg={3}>
-                        <RightGrid />
+                    <Grid item xs>
+                        <RightSide />
                     </Grid>
 
                 </Grid>

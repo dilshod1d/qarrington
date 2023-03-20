@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import LeftGrid from '../../../../components/grids/LeftGrid';
+import LeftSide from '../../../../components/topics/LeftSide';
 import Navbar from '../../../../components/topics/Navbar';
-import RightGrid from '../../../../components/grids/RightGrid';
+import RightSide from '../../../../components/topics/RightSide';
 import Footer from '../../../../components/main/Footer';
 import { createClient } from 'contentful';
 
@@ -68,7 +68,7 @@ const Page = ({ topicItem }) => {
                     <Grid container spacing={2}>
 
                         <Grid item xs>
-                            <LeftGrid />
+                            <LeftSide />
                         </Grid>
 
                         <Grid mt={8} item xs={6}>
@@ -84,23 +84,11 @@ const Page = ({ topicItem }) => {
                                 <Typography mt={1} variant="body" fontWeight={500} color="secondary">
                                     {documentToReactComponents(topicItem.fields.topicDetail)}
                                 </Typography>
-                                <Typography mt={1} variant="body" fontWeight={500} color="secondary">
-                                    {documentToReactComponents(topicItem.fields.topicDetail)}
-                                </Typography>
-                                <Typography mt={1} variant="body" fontWeight={500} color="secondary">
-                                    {documentToReactComponents(topicItem.fields.topicDetail)}
-                                </Typography>
-                                <Typography mt={1} variant="body" fontWeight={500} color="secondary">
-                                    {documentToReactComponents(topicItem.fields.topicDetail)}
-                                </Typography>
-                                <Typography mt={1} variant="body" fontWeight={500} color="secondary">
-                                    {documentToReactComponents(topicItem.fields.topicDetail)}
-                                </Typography>
                             </Box>
                         </Grid>
 
                         <Grid item xs>
-                            <RightGrid />
+                            <RightSide />
                         </Grid>
 
                     </Grid>

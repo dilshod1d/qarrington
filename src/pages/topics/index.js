@@ -1,16 +1,17 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import HeaderMenu from '../../components/menus/HeaderMenu';
-import RightGrid from '../../components/grids/RightGrid';
+import LeftSide from '../../components/topics/LeftSide';
+import Navbar from '../../components/topics/Navbar';
+import RightSide from '../../components/topics/RightSide';
 import Footer from '../../components/main/Footer';
-import { Avatar, Badge, Box, Card, Container, Grid, styled, Typography } from '@mui/material';
+import { Avatar, Badge, Box, Card, Container, Divider, Grid, styled, Typography } from '@mui/material';
 
 const Page = () => {
 
     return (
 
-        <div>
+        <div style={{ backgroundColor: '#fff' }}>
 
             <Head>
                 <title>Topics • Qarrington</title>
@@ -20,66 +21,71 @@ const Page = () => {
                 />
             </Head>
 
-            <HeaderMenu />
+            <Navbar />
 
             <Container>
 
                 <Grid container spacing={2}>
 
-                    <Grid item xs={12} md={6} lg={9} mb={4}>
-                        <Grid container spacing={1}>
+                    <Grid item xs>
+                        <LeftSide />
+                    </Grid>
 
-                            <Grid item xs={12}>
+                    <Grid mt={8} item xs={6}>
+                        <Box style={{ padding: '100px 20px 20px 20px' }}>
+                            <Typography variant="h1" fontWeight={700} color="black">
+                                Hello.
+                            </Typography>
+                            <Divider sx={{ my: 2 }} />
+                            <Typography mt={1} mb={4} variant="h5" fontWeight={500} color="secondary">
+                                How are you.
+                            </Typography>
+                        </Box>
+                        <Grid item xs={12} mb={2}>
+                            <Grid container spacing={2}>
 
-                                <Grid item xs={12} mb={2}>
-                                    <Grid container spacing={2}>
-
-                                        {sections && Array.isArray(sections) && sections?.map(({ sectionId, sectionUrl, sectionIcon, sectionTitle, sectionDetail }) => (
-                                            <Grid key={sectionId} item xs={12} sm={6} md={6} lg={6}>
-                                                <Link href={`/topics/${sectionUrl}`}>
-                                                    <Card style={{ padding: '60px', cursor: 'pointer' }}>
-                                                        <Box
-                                                            style={{
-                                                                display: 'flex',
-                                                                justifyContent: 'center'
-                                                            }}
-                                                        >
-                                                            <Avatar
-                                                                style={{ width: 50, height: 50 }}
-                                                                alt={sectionDetail}
-                                                                src={sectionIcon}
-                                                            />
-                                                        </Box>
-                                                        <Box style={{ textAlign: 'center' }}>
-                                                            <Box mt={2}>
-                                                                <Typography variant="h5" fontWeight={600} color="secondary">
-                                                                    {sectionTitle}
-                                                                </Typography>
-                                                                <Typography mt={1} variant="body2" fontWeight={700}>
-                                                                    {sectionDetail}
-                                                                </Typography>
-                                                            </Box>
-                                                        </Box>
-                                                    </Card>
-                                                </Link>
-                                            </Grid>
-                                        ))}
-
+                                {sections && Array.isArray(sections) && sections?.map(({ sectionId, sectionUrl, sectionIcon, sectionTitle, sectionDetail }) => (
+                                    <Grid key={sectionId} item xs={12} sm={6} md={6} lg={6}>
+                                        <Link href={`/topics/${sectionUrl}`}>
+                                            <Card style={{ padding: '60px', cursor: 'pointer' }}>
+                                                <Box
+                                                    style={{
+                                                        display: 'flex',
+                                                        justifyContent: 'center'
+                                                    }}
+                                                >
+                                                    <Avatar
+                                                        style={{ width: 50, height: 50 }}
+                                                        alt={sectionDetail}
+                                                        src={sectionIcon}
+                                                    />
+                                                </Box>
+                                                <Box style={{ textAlign: 'center' }}>
+                                                    <Box mt={2}>
+                                                        <Typography variant="h5" fontWeight={600} color="secondary">
+                                                            {sectionTitle}
+                                                        </Typography>
+                                                        <Typography mt={1} variant="body2" fontWeight={700}>
+                                                            {sectionDetail}
+                                                        </Typography>
+                                                    </Box>
+                                                </Box>
+                                            </Card>
+                                        </Link>
                                     </Grid>
-                                </Grid>
-
-                                <Footer />
+                                ))}
 
                             </Grid>
-
                         </Grid>
                     </Grid>
 
-                    <Grid item xs={12} md={6} lg={3}>
-                        <RightGrid />
+                    <Grid item xs>
+                        <RightSide />
                     </Grid>
 
                 </Grid>
+
+                <Footer />
 
             </Container>
 
