@@ -12,34 +12,21 @@ const client = createClient({
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 })
 
-// export async function getStaticPaths() {
-//     const res = await client.getEntries({
-//         content_type: "ethos",
-//     })
-
-//     return {
-//         paths: res.items.map((item) => ({
-//             params: { topicId: item.fields.topicUrl },
-//         })),
-//         fallback: true,
-//     };
-// }
-
 export async function getStaticProps() {
     const res = await client.getEntries({
-        content_type: "ethos"
+        content_type: process.env.CONTENTFUL_ETHOS_MODEL,
     })
 
     return {
         props: {
-            ethoItem: res.items,
+            topicItem: res.items,
         },
         revalidate: 60,
     }
 }
 
-const Page = ({ ethoItem }) => {
-    console.log(ethoItem);
+const Page = ({ topicItem }) => {
+    console.log(topicItem);
 
     return (
 
@@ -67,15 +54,7 @@ const Page = ({ ethoItem }) => {
                                 <Grid item xs={12} mb={2}>
                                     <Grid container spacing={2}>
 
-                                        {/* {ethoItem.map(ethos => (
-                                            <li key={ethos.sys.id}>
-                                                <Link href={'/topics/ethos/' + ethos.fields.topicUrl}>
-                                                    {ethos.fields.topicTitle}
-                                                </Link>
-                                            </li>
-                                        ))} */}
-
-                                        {ethoItem.map(ethos => (
+                                        {topicItem.map(ethos => (
                                             <Grid key={ethos.sys.id} item xs={12} sm={6} md={6} lg={6}>
                                                 <Link href={`/topics/ethos/${ethos.fields.topicUrl}`}>
                                                     <Card style={{ padding: '60px', cursor: 'pointer' }}>
@@ -118,48 +97,3 @@ const Page = ({ ethoItem }) => {
 }
 
 export default Page
-
-const sections = [
-    {
-        sectionId: "1",
-        sectionUrl: "/users",
-        sectionIcon: "/assets/media/sections/users.png",
-        sectionTitle: "Users",
-        sectionDetail: "This is user section card detail."
-    },
-    {
-        sectionId: "2",
-        sectionUrl: "/underwriters",
-        sectionIcon: "/assets/media/sections/underwriters.png",
-        sectionTitle: "Underwriters",
-        sectionDetail: "This is underwriter section card detail."
-    },
-    {
-        sectionId: "3",
-        sectionUrl: "/founders",
-        sectionIcon: "/assets/media/sections/founders.png",
-        sectionTitle: "Founders",
-        sectionDetail: "This is founder section card detail."
-    },
-    {
-        sectionId: "4",
-        sectionUrl: "/ethos",
-        sectionIcon: "/assets/media/sections/ethos.png",
-        sectionTitle: "Ethos",
-        sectionDetail: "This is etho section card detail."
-    },
-    {
-        sectionId: "5",
-        sectionUrl: "/fundamentals",
-        sectionIcon: "/assets/media/sections/fundamentals.png",
-        sectionTitle: "Fundamentals",
-        sectionDetail: "This is fundamental section card detail."
-    },
-    {
-        sectionId: "6",
-        sectionUrl: "/guidelines",
-        sectionIcon: "/assets/media/sections/guidelines.png",
-        sectionTitle: "Guidelines",
-        sectionDetail: "This is guideline section card detail."
-    }
-]
