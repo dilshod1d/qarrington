@@ -76,11 +76,11 @@ const Page = ({ topicItem }) => {
                                 <Typography variant="h1" fontWeight={700} color="black">
                                     {topicItem.fields.topicTitle}?
                                 </Typography>
-                                <Divider sx={{ my: 4 }} />
+                                <Divider sx={{ my: 3 }} />
                                 <Typography mt={1} variant="h5" fontWeight={500} color="secondary">
                                     {topicItem.fields.topicSummary}
                                 </Typography>
-                                <Divider sx={{ my: 4 }} />
+                                <Divider sx={{ my: 3 }} />
                                 <Typography mt={1} variant="body" fontWeight={500} color="secondary">
                                     {documentToReactComponents(topicItem.fields.topicDetail)}
                                 </Typography>
