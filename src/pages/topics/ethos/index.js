@@ -1,19 +1,52 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import HeaderMenu from '../../components/menus/HeaderMenu';
-import RightGrid from '../../components/grids/RightGrid';
-import Footer from '../../components/main/Footer';
+import HeaderMenu from '../../../components/menus/HeaderMenu';
+import RightGrid from '../../../components/grids/RightGrid';
+import Footer from '../../../components/main/Footer';
 import { Avatar, Badge, Box, Card, Container, Grid, styled, Typography } from '@mui/material';
+import { createClient } from 'contentful';
 
-const Page = () => {
+const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+})
+
+// export async function getStaticPaths() {
+//     const res = await client.getEntries({
+//         content_type: "ethos",
+//     })
+
+//     return {
+//         paths: res.items.map((item) => ({
+//             params: { topicId: item.fields.topicUrl },
+//         })),
+//         fallback: true,
+//     };
+// }
+
+export async function getStaticProps() {
+    const res = await client.getEntries({
+        content_type: "ethos"
+    })
+
+    return {
+        props: {
+            ethoItem: res.items,
+        },
+        revalidate: 60,
+    }
+}
+
+const Page = ({ ethoItem }) => {
+    console.log(ethoItem);
 
     return (
 
         <div>
 
             <Head>
-                <title>Topics • Qarrington</title>
+                <title>Ethos • Qarrington</title>
                 <meta
                     name="description"
                     content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
@@ -34,29 +67,25 @@ const Page = () => {
                                 <Grid item xs={12} mb={2}>
                                     <Grid container spacing={2}>
 
-                                        {sections && Array.isArray(sections) && sections?.map(({ sectionId, sectionUrl, sectionIcon, sectionTitle, sectionDetail }) => (
-                                            <Grid key={sectionId} item xs={12} sm={6} md={6} lg={6}>
-                                                <Link href={`/topics/${sectionUrl}`}>
+                                        {/* {ethoItem.map(ethos => (
+                                            <li key={ethos.sys.id}>
+                                                <Link href={'/topics/ethos/' + ethos.fields.topicUrl}>
+                                                    {ethos.fields.topicTitle}
+                                                </Link>
+                                            </li>
+                                        ))} */}
+
+                                        {ethoItem.map(ethos => (
+                                            <Grid key={ethos.sys.id} item xs={12} sm={6} md={6} lg={6}>
+                                                <Link href={`/topics/ethos/${ethos.fields.topicUrl}`}>
                                                     <Card style={{ padding: '60px', cursor: 'pointer' }}>
-                                                        <Box
-                                                            style={{
-                                                                display: 'flex',
-                                                                justifyContent: 'center'
-                                                            }}
-                                                        >
-                                                            <Avatar
-                                                                style={{ width: 50, height: 50 }}
-                                                                alt={sectionDetail}
-                                                                src={sectionIcon}
-                                                            />
-                                                        </Box>
                                                         <Box style={{ textAlign: 'center' }}>
                                                             <Box mt={2}>
                                                                 <Typography variant="h5" fontWeight={600} color="secondary">
-                                                                    {sectionTitle}
+                                                                    {ethos.fields.topicTitle}
                                                                 </Typography>
                                                                 <Typography mt={1} variant="body2" fontWeight={700}>
-                                                                    {sectionDetail}
+                                                                    {ethos.fields.topicSummary}
                                                                 </Typography>
                                                             </Box>
                                                         </Box>
