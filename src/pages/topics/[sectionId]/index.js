@@ -120,12 +120,18 @@ const Page = ({ topicItem, sectionTitle }) => {
 export default Page
 
 export async function getStaticProps({ params }) {
+    const res = await client.getEntries({
+        content_type: 'ethos',
+        'fields.sectionUrl': params.sectionId
+    })
     const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/sections?sectionUrl=${params.sectionId.replace(/\-/g, '+')}`)
         .then((r) => r.json());
     return {
         props: {
+            topicItem: res.items[0],
             sectionModel: results.sectionUrl
-        }
+        },
+        revalidate: 60,
     };
 }
 
