@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-export const useAccount = () => {
+export const useAccount = (handleRedirect = true) => {
   const [account, setAccount] = useState(null)
   const [loading, setLoading] = useState(false)
   const [logged, setLogged] = useState(undefined)
@@ -12,11 +12,11 @@ export const useAccount = () => {
   const router = useRouter()
 
   useEffect(() => {
-      if(session?.status === 'loading') {
+      if(session?.status === 'loading' && handleRedirect) {
         setLoading(true)
         return
       }
-      if(session?.status === 'unauthenticated') {
+      if(session?.status === 'unauthenticated' && handleRedirect) {
         setLoading(false)
         setLogged(false)
         return router.push('/account/access')
@@ -30,7 +30,6 @@ export const useAccount = () => {
               const { data } = response
               const { account } = data
 
-              console.log("here")
               setAccount(account)
 
               setLoading(false)

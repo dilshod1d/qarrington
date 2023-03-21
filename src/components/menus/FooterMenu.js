@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { Button } from '@mui/material';
 
 const Component = () => {
-  const { logged } = useAccount()
+  const { logged } = useAccount(false)
   const router = useRouter()
 
   const handleLogin = (e) => {
