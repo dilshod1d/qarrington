@@ -1,8 +1,24 @@
-import React from 'react';
 import Link from 'next/link';
 import { Box, Breadcrumbs, Typography } from '@mui/material';
+import { signOut } from 'next-auth/react';
+import { useAccount } from '@hooks/useAccount';
+import { useRouter } from 'next/router';
+import { Button } from '@mui/material';
 
 const Component = () => {
+  const { logged } = useAccount()
+  const router = useRouter()
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    router.push('/account/access')
+  }
+
+  const handleLogout = async (e) => {
+    e.preventDefault()
+    await signOut()
+    router.push('/')
+  }
 
   return (
 
@@ -75,18 +91,38 @@ const Component = () => {
               Privacy
             </Typography>
           </Link>
-          <Link href="/account/access">
-            <Typography
-              variant="body2"
-              color="secondary"
-              sx={BreadcrumbItem}
-            >
-              Logout
-            </Typography>
-          </Link>
-        </Breadcrumbs>
-      </Box>
-
+          {
+            logged === undefined
+              ? null 
+              : logged
+                ? (<Button 
+                    style={buttonToggleLog}
+                    onClick={handleLogout}
+                  >
+                    <Typography
+                      variant="body2"
+                      color="secondary"
+                      sx={BreadcrumbItem}
+                    >
+                      Logout
+                    </Typography>
+                  </Button>)
+                : (<Button
+                    style={buttonToggleLog}
+                    onClick={handleLogin}
+                  >
+                  <Typography
+                    variant="body2"
+                    color="secondary"
+                    sx={BreadcrumbItem}
+                    
+                  >
+                    Login
+                  </Typography>
+                </Button>)
+            }
+          </Breadcrumbs>
+        </Box>
       <Box style={footerBrand}>
         <Typography variant="body2" color="secondary">
           Qarrington, Inc. © 2023
@@ -118,3 +154,15 @@ const footer = {
 const footerBrand = {
   textAlign: 'center'
 };
+
+const buttonToggleLog = {
+  padding: 0,
+  fontWeight: 500,
+  minWidth: 'auto',
+  height: 'min-content',
+  display: 'block',
+  backgroundColor: "transparent",
+  '&:hover': {
+    color: '#000',
+  }
+}
