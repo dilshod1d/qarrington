@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import LeftSide from '../../../../components/topics/LeftSide';
-import Navbar from '../../../../components/topics/Navbar';
-import RightSide from '../../../../components/topics/RightSide';
-import Footer from '../../../../components/main/Footer';
+import LeftSide from '../../../components/topics/LeftSide';
+import Navbar from '../../../components/topics/Navbar';
+import RightSide from '../../../components/topics/RightSide';
+import Footer from '../../../components/main/Footer';
 import { createClient } from 'contentful';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -16,7 +16,7 @@ const client = createClient({
 
 export async function getStaticPaths() {
     const res = await client.getEntries({
-        content_type: process.env.CONTENTFUL_ETHOS_MODEL,
+        content_type: process.env.CONTENTFUL_TOPICS_MODEL,
     })
 
     return {
@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const res = await client.getEntries({
-        content_type: process.env.CONTENTFUL_ETHOS_MODEL,
+        content_type: process.env.CONTENTFUL_TOPICS_MODEL,
         'fields.topicUrl': params.topicId
     })
 

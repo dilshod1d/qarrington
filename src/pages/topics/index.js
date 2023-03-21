@@ -15,8 +15,8 @@ const client = createClient({
 
 export async function getStaticProps() {
     const res = await client.getEntries({
-        content_type: process.env.CONTENTFUL_ETHOS_MODEL,
-    })
+        content_type: process.env.CONTENTFUL_TOPICS_MODEL,
+    });
 
     return {
         props: {
@@ -27,7 +27,6 @@ export async function getStaticProps() {
 }
 
 const Page = ({ topicItem }) => {
-    console.log(topicItem);
 
     return (
 
@@ -62,30 +61,15 @@ const Page = ({ topicItem }) => {
                             </Typography>
                         </Box>
                         <Grid item xs={12} mb={2}>
-                            <Grid container spacing={2}>
+                            <Grid container spacing={1}>
 
-                                {sections && Array.isArray(sections) && sections?.map(({ sectionId, sectionUrl, sectionIcon, sectionTitle, sectionDetail }) => (
-                                    <Grid key={sectionId} item xs={12} sm={6} md={6} lg={6}>
-                                        <Link href={`/topics/${sectionUrl}`}>
+                                {topicItem.slice(0, 2).map(topics => (
+                                    <Grid key={topics.sys.id} item xs={12}>
+                                        <Link href={`/topics/${topics.fields.topicUrl}`}>
                                             <Card style={{ padding: '20px 40px 40px 40px', cursor: 'pointer' }}>
-                                                {/* <Box
-                                                    style={{
-                                                        display: 'flex',
-                                                        justifyContent: 'center'
-                                                    }}
-                                                >
-                                                    <Avatar
-                                                        style={{ width: 50, height: 50 }}
-                                                        alt={sectionDetail}
-                                                        src={sectionIcon}
-                                                    />
-                                                </Box> */}
                                                 <Box mt={2}>
-                                                    <Typography gutterBottom variant="h6" fontWeight={700} color="black" textTransform="uppercase">
-                                                        {sectionTitle}
-                                                    </Typography>
-                                                    <Typography variant="body" fontWeight={600} color="secondary">
-                                                        {sectionDetail}
+                                                    <Typography variant="h6" fontWeight={700} color="black">
+                                                        {topics.fields.topicTitle}
                                                     </Typography>
                                                 </Box>
                                             </Card>
@@ -113,48 +97,3 @@ const Page = ({ topicItem }) => {
 }
 
 export default Page
-
-const sections = [
-    {
-        sectionId: "1",
-        sectionUrl: "/users",
-        sectionIcon: "/assets/media/sections/users.png",
-        sectionTitle: "🎨 Users",
-        sectionDetail: "Uncover how, when, and why digital buyers use Qarrington."
-    },
-    {
-        sectionId: "2",
-        sectionUrl: "/underwriters",
-        sectionIcon: "/assets/media/sections/underwriters.png",
-        sectionTitle: "✍️ Underwriters",
-        sectionDetail: "Discover how, when, and why underwriters use Qarrington."
-    },
-    {
-        sectionId: "3",
-        sectionUrl: "/founders",
-        sectionIcon: "/assets/media/sections/founders.png",
-        sectionTitle: "👨‍💻 Founders",
-        sectionDetail: "See how, when, & why startup founders utilize Qarrington."
-    },
-    {
-        sectionId: "4",
-        sectionUrl: "/ethos",
-        sectionIcon: "/assets/media/sections/ethos.png",
-        sectionTitle: "🏤 Ethos",
-        sectionDetail: "Get yourself familiar with what Qarrington is and does."
-    },
-    {
-        sectionId: "5",
-        sectionUrl: "/fundamentals",
-        sectionIcon: "/assets/media/sections/fundamentals.png",
-        sectionTitle: "🖱️ Fundamentals",
-        sectionDetail: "Explore how you can easily get started with Qarrington."
-    },
-    {
-        sectionId: "6",
-        sectionUrl: "/guidelines",
-        sectionIcon: "/assets/media/sections/guidelines.png",
-        sectionTitle: "⚖️ Guidelines",
-        sectionDetail: "Understand the rules and terms of using Qarrington."
-    }
-]
