@@ -1,12 +1,19 @@
 import dbConnect from '@lib/dbConnect';
 import Account from '@models/account/Account';
-import handler from "@middleware/handler"
+import handler, { check, initValidation } from "@middleware/handler"
 import { authenticate } from '@middleware/auth'
 import { generateToken } from "@lib/auth"
 
+const validator = initValidation(
+	[
+		check('accessKey').isLength({ min: 12 }).withMessage('Access Key is less than required length (12)'),
+	]
+)
+
+
 // define my middleware here and use it only for POST requests
 export default handler
-	.post(async (req, res) => {
+	.post(validator, async (req, res) => {
 		await dbConnect();
 		const accountAccessKey = req.body.accessKey
 		const accountSecretKey = generateToken(13)
@@ -32,8 +39,7 @@ export default handler
 		}
 
 	})
-	.use(authenticate)
-	.get(async (req, res) => {
+	.get(authenticate, async (req, res) => {
 		await dbConnect()
 		try {
 			const { id } = req
