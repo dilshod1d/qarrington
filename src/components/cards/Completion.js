@@ -1,11 +1,8 @@
-import React from 'react';
 import { Box, Button, Card, Grid, styled, Tooltip, Typography } from '@mui/material';
 import Link from 'next/link';
 import FooterMenu from '../menus/FooterMenu';
 import CircularProgress from '@mui/material/CircularProgress';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
-import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import useSWR from 'swr';
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
@@ -19,10 +16,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   },
 }));
 
-const Component = () => {
-
-  const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher)
+const Component = ({ account }) => {
 
   return (
 
@@ -34,26 +28,20 @@ const Component = () => {
         <Grid item xs={12}>
           <Card style={{ padding: '40px' }}>
             <Box display='flex' justifyContent='center' alignItems='center'>
-              {accounts && accounts.slice(0, 1).map(({ _id, accountStatus }) => (
-                <>
-                  <CircularProgress variant='determinate' size={80} thickness={6} value={accountStatus.accountCompletionRate} />
-                  <Typography variant='body2' fontWeight={600} position='absolute'>{accountStatus.accountCompletionRate}%</Typography>
-                </>
-              ))}
+              <CircularProgress variant='determinate' size={80} thickness={6} value={account?.accountStatus.accountCompletionRate} />
+              <Typography variant='body2' fontWeight={600} position='absolute'>{account?.accountStatus.accountCompletionRate}%</Typography>
             </Box>
             <Box style={{ padding: '15px 0px 15px 0px', display: 'flex', justifyContent: 'center' }}>
-              {accounts && accounts.slice(0, 1).map(({ _id, accountPersonal }) => (
-                <Typography
-                  component="span"
-                  variant="body"
-                  fontSize="13px"
-                  textAlign="center"
-                  fontWeight={500}
-                  color="secondary"
-                >
-                  Dear {accountPersonal.accountFirstName}, you must provide verifiable <Typography component="span" color="primary" fontWeight={600}>personal</Typography>, <Typography component="span" color="primary" fontWeight={600}>business</Typography>, <Typography component="span" color="primary" fontWeight={600}>bank</Typography>, and <Typography component="span" color="primary" fontWeight={600}>contact</Typography> details to receive payouts.
-                </Typography>
-              ))}
+              <Typography
+                component="span"
+                variant="body"
+                fontSize="13px"
+                textAlign="center"
+                fontWeight={500}
+                color="secondary"
+              >
+                Dear {account?.accountPersonal.accountFirstName}, you must provide verifiable <Typography component="span" color="primary" fontWeight={600}>personal</Typography>, <Typography component="span" color="primary" fontWeight={600}>business</Typography>, <Typography component="span" color="primary" fontWeight={600}>bank</Typography>, and <Typography component="span" color="primary" fontWeight={600}>contact</Typography> details to receive payouts.
+              </Typography>
             </Box>
             <Box>
               <Link href="/account/update">
