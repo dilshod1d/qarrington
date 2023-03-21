@@ -11,17 +11,16 @@ export default NextAuth({
       name: "Access key",
       credentials: {
         accessKey: { label: "Access key", type: "text" },
+        secretKey: { label: "Secret key", type: "text" }
       },
       async authorize(credentials, req) {
         // Add logic here to look up the user from the credentials supplied
-        const { accessKey } = credentials
-        const user = await Account.findOne({ "accountKeys.accountAccessKey": accessKey })
+        const { accessKey, secretKey } = credentials
+        const user = accessKey
+          ? await Account.findOne({ "accountKeys.accountAccessKey": accessKey })
+          : secretKey ? await Account.findOne({ "accountKeys.accountSecretKey": secretKey }) : null
 
-        if (user) {
-          return user
-        } else {
-          return null
-        }
+        return user ? user : null
       }
     })
   ],
@@ -29,6 +28,10 @@ export default NextAuth({
     strategy: "jwt",
   },
   callbacks: {
+    async session({ session, token }) {
+      session.user = { id: token.id };
+      return session;
+    },
     async jwt({ token, user }) {
       if (user) {
         token.id = user._id;
