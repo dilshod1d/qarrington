@@ -8,411 +8,279 @@ import Carousel from 'react-material-ui-carousel';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { Avatar, Badge, Box, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
+import { useEffect } from "react";
+import { updateAccount } from "@services/accounts-services";
 
 const Page = () => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
-  const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
+  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
 
+  const contentData = [
+    {
+      placeholder: "first name",
+      title: "Kindly provide your First Name exactly as it appears on your bank statement.",
+      required: true
+    },
+    {
+      placeholder: "last name",
+      title: "Kindly provide your Last Name exactly as it appears on your bank statement.",
+      required: true
+    },
+    {
+      placeholder: "government id",
+      title: "Kindly provide your Government-Issued ID as a link to the PNG or JPG image file.",
+      required: true
+    },
+    {
+      placeholder: "id number",
+      title: "Kindly provide the ID Number or SSN exactly as shown on the government id.",
+      required: true
+    },
+    {
+      placeholder: "home country",
+      title: "Kindly provide the 2-letter code of the country, where the id was legally issued.",
+      required: true
+    },
+    {
+      placeholder: "birth date",
+      title: "Kindly provide your Birth Date exactly as it appears on all your legal documents.",
+      required: true
+    },
+    {
+      placeholder: "business name",
+      title: "Kindly provide your Business Name or Full Name if you don't have a business.",
+      required: true
+    },
+    {
+      placeholder: "business type",
+      title: "By default, your Business Type is set to Individual and you can't change it later.",
+      required: true
+    },
+    {
+      placeholder: "business industry",
+      title: "By default, your Business Industry is set to SaaS and you cannot change it later.",
+      required: true
+    },
+    {
+      placeholder: "business website",
+      title: "Kindly provide your Business Website or Social Link if you don't have a business.",
+      required: true
+    },
+    {
+      placeholder: "business address",
+      title: "Kindly provide your Business Address or leave it blank to use your Home Address.",
+      required: true
+    },
+    {
+      placeholder: "business country",
+      title: "Kindly provide your Business Country or leave it blank to use your Home Country.",
+      required: true
+    },
+    {
+      placeholder: "business email",
+      title: "Kindly provide your Business Email or leave it blank to use your Email Address.",
+      required: true
+    },
+    {
+      placeholder: "bank country",
+      title: "Kindly provide the 2-letter code of the country, where your bank is located.",
+      required: true
+    },
+    {
+      placeholder: "bank currency",
+      title: "Kindly provide the 3-letter code of the currency that your bank account uses.",
+      required: true
+    },
+    {
+      placeholder: "iban number",
+      title: "Kindly provide your IBAN Number in case you don't have a bank Account Number.",
+      required: true
+    },
+    {
+      placeholder: "account number",
+      title: "Kindly enter your bank Account Number in case you don't have an IBAN Number.",
+      required: true
+    },
+    {
+      placeholder: "routing number",
+      title: "Kindly provide your Routing Number if your bank is based or located in the U.S.",
+      required: true
+    },
+    {
+      placeholder: "sort code",
+      title: "Kindly provide your Sort Code in case your bank is based or located in the UK.",
+      required: true
+    },
+    {
+      placeholder: "email address",
+      title: "Kindly provide your Email Address and once you do, you cannot change it later.",
+      required: true
+    },
+    {
+      placeholder: "phone number",
+      title: "Kindly provide your Phone Number and once you do, you cannot change it later.",
+      required: true
+    },
+    {
+      placeholder: "home address",
+      title: "Kindly provide your Home Address and once you do, you cannot change it later.",
+      required: true
+    },
+    {
+      placeholder: "zip code",
+      title: "Kindly provide the zip code or postal code of your current residential address.",
+      required: true
+    },
+    {
+      placeholder: "city name",
+      title: "Kindly provide the city, where you're currently located as a legal resident.",
+      required: true
+    },
+    {
+      placeholder: "state name",
+      title: "Kindly provide the state, where you're currently located as a legal resident.",
+      required: true
+    }
+  ];
+
+  const [account, setAccount] = useState(null)
   const [value, setValue] = useState('2');
+  const [steps, setSteps] = useState([])
+  const [stepsCount, setStepsCount] = useState(0)
+  const [inputValues, setInputValues] = useState({})
+  const [inputValue, setInputValue] = useState('')
+  const [stepContent, setStepContent] = useState(contentData[0])
+  const [activeStep, setActiveStep] = useState(0);
+  const [skippedSteps, setSkippedSteps] = useState([]);
+
+
+  useEffect(() => {
+    if (!error && data?.data) {
+        setAccount(data.data.account)
+    }
+  }, [data])
+
+  useEffect(() => {
+    if(account !== null) {
+      setSteps(getSteps())
+    }
+  }, [account])
+
+  useEffect(() => {
+    if(inputValues !== null && activeStep === 0) {
+      StepContent(0)
+    }
+  }, [inputValues])
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   const getSteps = () => {
-    return [
-      // personal details
-      "first name",
-      "last name",
-      "government id",
-      "id number",
-      "home country",
-      "birth date",
-      // business details
-      "business name",
-      "business type",
-      "business industry",
-      "business website",
-      "business address",
-      "business country",
-      "business email",
-      // bank details
-      "bank country",
-      "bank currency",
-      "iban number",
-      "account number",
-      "routing number",
-      "sort code",
-      // contact details
-      "email address",
-      "phone number",
-      "home address",
-      "zip code",
-      "city name",
-      "state name",
-    ];
-  }
 
-  const getStepContent = (step) => {
-    switch (step) {
-
-      // personal details
-
-      case 0:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your First Name exactly as it appears on your bank statement." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                required
-                placeholder="first name"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 1:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Last Name exactly as it appears on your bank statements." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="last name"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 2:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Government-Issued ID as a link to the PNG or JPG image file." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="government id"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-
-      case 3:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide the ID Number or SSN exactly as shown on the government id." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="id number"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 4:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide the 2-letter code of the country, where the id was legally issued." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="home country"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 5:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Birth Date exactly as it appears on all your legal documents." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="birth date"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      // business details
-
-      case 6:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Business Name or Full Name if you don't have a business." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="business name"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 7:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="By default, your Business Type is set to Individual and you can't change it later." placement="top">
-              <TextField
-                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                required
-                placeholder="Individual"
-                defaultValue="Individual"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 8:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="By default, your Business Industry is set to SaaS and you cannot change it later." placement="top">
-              <TextField
-                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                required
-                placeholder="SaaS"
-                defaultValue="SaaS"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 9:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Business Website or Social Link if you don't have a business." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="business website"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 10:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Business Address or leave it blank to use your Home Address." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="business address"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 11:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Business Country or leave it blank to use your Home Country." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="business country"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 12:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Business Email or leave it blank to use your Email Address." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="business email"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      // bank details
-
-      case 13:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide the 2-letter code of the country, where your bank is located." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="bank country"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 14:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide the 3-letter code of the currency that your bank account uses." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="bank currency"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 15:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your IBAN Number in case you don't have a bank Account Number." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="iban number"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 16:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly enter your bank Account Number in case you don't have an IBAN Number." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="account number"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 17:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Routing Number if your bank is based or located in the U.S." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="routing number"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 18:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Sort Code in case your bank is based or located in the UK." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="sort code"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      // contact details
-
-      case 19:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Email Address and once you do, you cannot change it later." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="email address"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 20:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Phone Number and once you do, you cannot change it later." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="phone number"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 21:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide your Home Address and once you do, you cannot change it later." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="home address"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 22:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide the zip code or postal code of your current residential address." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="zip code / postal code"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 23:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide the city, where you're currently located as a legal resident." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="city name"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 24:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Kindly provide the state, where you're currently located as a legal resident." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="state name"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      default:
-        return "unknown step";
-
+    const schema = {
+      accountPersonal: ["accountFirstName", "accountLastName", "accountGovernmentId", "accountIdNumber", "accountBirthDate", "accountHomeCountry"],
+      accountBusiness: ["accountBusinessName", "accountBusinessType", "accountBusinessIndustry", "accountBusinessWebsite", "accountBusinessAddress", "accountBusinessCountry", "accountBusinessEmail"],
+      accountBank: ["accountBankCountry", "accountBankCurrency", "accountIbanNumber", "accountNumber", "accountRoutingNumber", "accountSortCode"],
+      accountContact: ["accountEmailAddress", "accountPhoneNumber", "accountHomeAddress", "accountZipCode", "accountCityName", "accountStateName"],
     }
+
+    const previousInputs = {}
+    let count = 0
+
+    Object.keys(schema).forEach((key) => {
+      previousInputs[key] = {}
+      schema[key].forEach((keyValue) => {
+          // if(keyValue == "accountAccessKey" && req.body[keyValue].length > 13 )
+          if(account[key]) {
+            if (account[key][keyValue] && account[key][keyValue] != null) {
+              previousInputs[key][keyValue] = account[key][keyValue]
+            } else {
+              previousInputs[key][keyValue] = ''
+            }
+          } else {
+            previousInputs[key][keyValue] = ''
+          }
+          count++
+
+      })
+    })
+
+    setStepsCount(count)
+
+    setInputValues(previousInputs)
+
+    return schema
   }
 
-  const [activeStep, setActiveStep] = useState(0);
-  const [skippedSteps, setSkippedSteps] = useState([]);
-  const steps = getSteps();
+  const getStep = (position) => {
+    let count = 0
+    let currentStep
+
+    Object.keys(inputValues).forEach((key) => {
+      Object.keys(inputValues[key]).forEach((keyValue) => {
+        if(count === position && !currentStep) {
+          currentStep = inputValues[key][keyValue]
+        }
+        count++
+      })
+    })
+
+    return currentStep
+  }
+
+  const setStep = (position, value) => {
+    let count = 0
+    let inputValuesCopy = JSON.parse(JSON.stringify(inputValues))
+
+    Object.keys(inputValuesCopy).forEach((key) => {
+      Object.keys(inputValuesCopy[key]).forEach((keyValue) => {
+        if(count === position) {
+          inputValuesCopy[key][keyValue] = value
+        }
+        count++
+      })
+    })
+
+    setInputValues(inputValuesCopy)
+  }
 
   const handleNext = () => {
+
+    if(activeStep === stepsCount - 1) {
+      const obj = {}
+      Object.keys(inputValues).forEach((key) => {
+        Object.keys(inputValues[key]).forEach((keyValue) => {
+          if(inputValues[key][keyValue]) obj[keyValue] = inputValues[key][keyValue]
+        })
+      })
+      updateAccount(obj)
+    }
+
+    setInputValue('')
+    setStep(activeStep, inputValue)
     setActiveStep(activeStep + 1);
+    StepContent(activeStep + 1)
     setSkippedSteps(skippedSteps.filter((skipItem) => skipItem !== activeStep));
   };
 
   const handleBack = () => {
+    setInputValue('')
+    StepContent(activeStep - 1)
     setActiveStep(activeStep - 1);
   };
+
+
+  const StepContent = (step) => {
+
+    const currentStep = getStep(step)
+    currentStep && setInputValue(currentStep)
+
+    setStepContent(contentData[step])
+  }
 
   return (
 
@@ -473,11 +341,9 @@ const Page = () => {
                   </Tooltip>
                 </Typography>
 
-                {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal }) => (
-                  <Typography key={_id} variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    Dear {accountPersonal.accountFirstName}, in order to sell subscriptions on Qarrington and receive payouts to your bank account, you're required to provide verifiable <b>personal</b>, <b>business</b>, <b>bank</b>, and <b>contact</b> details.
-                  </Typography>
-                ))}
+                <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
+                  Dear {account?.accountPersonal?.accountFirstName}, in order to sell subscriptions on Qarrington and receive payouts to your bank account, you're required to provide verifiable <b>personal</b>, <b>business</b>, <b>bank</b>, and <b>contact</b> details.
+                </Typography>
 
               </Box>
 
@@ -487,7 +353,7 @@ const Page = () => {
 
                   <Stack spacing={1.2} sx={{ width: '100%' }}>
 
-                    {activeStep === steps.length ? (
+                    {activeStep === stepsCount ? (
                       <Stack spacing={1.2} sx={{ width: '100%', mb: 0 }}>
 
                         <Link href="/help">
@@ -524,7 +390,19 @@ const Page = () => {
                       </Stack>
                     ) : (
                       <>
-                        <form>{getStepContent(activeStep)}</form>
+                        <form>
+                        <Stack spacing={1.2} sx={{ width: '100%' }}>
+                          <Tooltip title={stepContent.title} placement="top">
+                            <TextField
+                              sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
+                              required={stepContent.required}
+                              placeholder={stepContent.placeholder}
+                              onChange={({ target }) => setInputValue(target.value)}
+                              value={inputValue}
+                            />
+                          </Tooltip>
+                        </Stack>
+                        </form>
                         <Button
                           size="large"
                           sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
@@ -532,7 +410,7 @@ const Page = () => {
                           fullWidth={true}
                           onClick={handleNext}
                         >
-                          {activeStep === steps.length - 1 ? "Save" : "Next"}
+                          {activeStep === stepsCount.length - 1 ? "Save" : "Next"}
                         </Button>
                         <Button
                           style={FormButton}
