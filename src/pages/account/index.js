@@ -107,20 +107,20 @@ const Page = () => {
                                                                     vertical: 'bottom',
                                                                     horizontal: 'right'
                                                                 }}
-                                                                variant={account?.accountStatus.accountIsActive}
+                                                                variant={account?.accountStatus?.accountIsActive}
                                                             >
                                                                 <Avatar
                                                                     key={_id}
                                                                     style={{ width: 65, height: 65 }}
-                                                                    alt={account?.accountPersonal.accountFirstName}
-                                                                    src={account?.accountProfile.accountAvatarUrl}
+                                                                    alt={account?.accountPersonal?.accountFirstName}
+                                                                    src={account?.accountProfile?.accountAvatarUrl}
                                                                 />
                                                             </StyledBadge>
                                                         </Box>
                                                             <Box mt={1.5} key={_id}>
                                                                 <Typography component="span" variant="h4" fontWeight="500" color="black">Hi</Typography>
                                                                 <Typography component="span" mr={0.5} variant="h4" fontWeight="500" color="secondary">,</Typography>
-                                                                <Typography component="span" variant="h4" fontWeight="700" color="black">{account?.accountPersonal.accountFirstName}</Typography>
+                                                                <Typography component="span" variant="h4" fontWeight="700" color="black">{account?.accountPersonal?.accountFirstName}</Typography>
                                                             </Box>
 
                                                         <Box mt={0.8} mb={1.2}>
@@ -186,7 +186,7 @@ const Page = () => {
                                                                     required
                                                                     id="outlined-required"
                                                                     placeholder="avatar url"
-                                                                    defaultValue={account?.accountProfile.accountAvatarUrl}
+                                                                    defaultValue={account?.accountProfile?.accountAvatarUrl}
                                                                     inputProps={{ style: { textAlign: 'center' } }}
                                                                 />
                                                             </Tooltip>
@@ -195,7 +195,7 @@ const Page = () => {
                                                                     required
                                                                     id="outlined-required"
                                                                     placeholder="current title"
-                                                                    defaultValue={account?.accountProfile.accountCurrentTitle}
+                                                                    defaultValue={account?.accountProfile?.accountCurrentTitle}
                                                                     inputProps={{ style: { textAlign: 'center' } }}
                                                                 />
                                                             </Tooltip>
@@ -235,7 +235,7 @@ const Page = () => {
                                                                 required
                                                                 id="outlined-required"
                                                                 placeholder="access key"
-                                                                defaultValue={account?.accountKeys.accountAccessKey}
+                                                                defaultValue={account?.accountKeys?.accountAccessKey}
                                                                 inputProps={{ style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
@@ -244,7 +244,7 @@ const Page = () => {
                                                                 required
                                                                 id="outlined-required"
                                                                 placeholder="secret key"
-                                                                defaultValue={account?.accountKeys.accountSecretKey}
+                                                                defaultValue={account?.accountKeys?.accountSecretKey}
                                                                 inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
