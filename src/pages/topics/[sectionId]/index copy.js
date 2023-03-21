@@ -7,27 +7,17 @@ import RightSide from '../../../components/topics/RightSide';
 import Footer from '../../../components/main/Footer';
 import { Avatar, Badge, Box, Card, Container, Divider, Grid, styled, Typography } from '@mui/material';
 import { createClient } from 'contentful';
+import useSWR from 'swr';
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
 })
 
-export async function getStaticProps() {
-    const res = await client.getEntries({
-        content_type: process.env.CONTENTFUL_ETHOS_MODEL,
-    })
-
-    return {
-        props: {
-            topicItem: res.items,
-        },
-        revalidate: 60,
-    }
-}
-
 const Page = ({ topicItem }) => {
-    console.log(topicItem);
+
+    const fetcher = (...args) => fetch(...args).then(res => res.json());
+    const { data: sections } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/sections`, fetcher);
 
     return (
 
@@ -54,11 +44,11 @@ const Page = ({ topicItem }) => {
                     <Grid mt={8} item xs={6}>
                         <Box style={{ padding: '100px 20px 20px 20px' }}>
                             <Typography variant="h1" fontWeight={700} color="black">
-                            Getting to know Qarrington & all.
+                                Getting to know Qarrington & all.
                             </Typography>
                             <Divider sx={{ my: 3 }} />
                             <Typography mt={1} mb={4} variant="h5" fontWeight={500} color="secondary">
-                            Get yourself familiar with what Qarrington is and does.
+                                Get yourself familiar with what Qarrington is and does.
                             </Typography>
                         </Box>
                         <Grid item xs={12} mb={2}>
@@ -128,6 +118,36 @@ const Page = ({ topicItem }) => {
 }
 
 export default Page
+
+export async function getStaticProps({ params }) {
+    const res = await client.getEntries({
+        content_type: {sectionUrl},
+        'fields.topicUrl': params.sectionId
+    })
+
+    return {
+        props: {
+            topicItem: res.items[0],
+        },
+        revalidate: 60,
+    };
+}
+
+export async function getStaticPaths({ params }) {
+    try {
+      const sectionItem = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/sections?sectionUrl=${params.sectionId.replace(/\-/g, '+')}`)
+        .then((r) => r.json());
+      return {
+        props: {
+            sectionLink: sectionItem.sectionUrl,
+        }
+      };
+    } catch (error) {
+      return {
+        notFound: true
+      };
+    }
+  }
 
 const sections = [
     {

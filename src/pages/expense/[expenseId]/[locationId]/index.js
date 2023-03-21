@@ -584,12 +584,15 @@ export async function getServerSideProps(context) {
   const { expenseId, locationId } = context.params;
   console.log(expenseId);
   const url = process.env.NEXT_PUBLIC_APP_URL;
+
   const locationResults = await fetch(
     `${url}/api/locations?locationUrl=${locationId.replace(/\-/g, '+')}`
   ).then((r) => r.json());
+
   const expenseResults = await fetch(
     `${url}/api/expenses?expenseUrl=${expenseId.replace(/\-/g, '+')}`
   ).then((r) => r.json());
+  
   console.log({ expenseResults });
   if (!locationResults || !expenseResults) {
     return {
