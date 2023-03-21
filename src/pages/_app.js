@@ -9,8 +9,8 @@ import createEmotionCache from '../createEmotionCache';
 // import { SidebarProvider } from 'src/contexts/SidebarContext';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import { GoogleOAuthProvider } from '@react-oauth/google';
-// import { GlobalUserContext } from 'src/contexts/GlobaluserContext';
+import { SessionProvider } from "next-auth/react"
+
 const clientSideEmotionCache = createEmotionCache();
 
 function App(props) {
@@ -21,9 +21,9 @@ function App(props) {
   Router.events.on('routeChangeError', nProgress.done);
   Router.events.on('routeChangeComplete', nProgress.done);
 
+
   return (
-    <GoogleOAuthProvider clientId="176816519540-oaj3a3dirdbbs7n42pg42s3r2itlr1ut.apps.googleusercontent.com">
-      <>
+    <SessionProvider session={pageProps.session}>
         <CacheProvider value={emotionCache}>
           <Head>
             <meta
@@ -40,8 +40,7 @@ function App(props) {
             </ThemeProvider>
           </>
         </CacheProvider>
-      </>
-    </GoogleOAuthProvider>
+    </SessionProvider>
   );
 }
 

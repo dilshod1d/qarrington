@@ -1,18 +1,15 @@
-import Account from '../../models/account/Account';
-import { getAuthAccount } from '../lib/auth';
+import { getToken } from "next-auth/jwt"
 
-const auth = () => {
-    return async (req, res, next) => {
-        if (req.headers.authorization) {
-            const account = await getAuthAccount(req)
-            if (!account)
-                res.status(401).json({ success: false, data: null, error: "User not authenticated" })
-            next()
-        }
-        else {
-            res.status(401).json({ success: false, data: null, error: "User not authenticated" })
-        }
+export const authenticate = async (req, res, next) => {
+  try {
+    const token = await getToken({ req })
+    if (!token) {
+      return res.status(401).json({ error: 'token missing or invalid' })
     }
-}
 
-export default auth
+    req.id = token.id
+    next()
+  } catch (error) {
+    console.log(error)
+  }
+}

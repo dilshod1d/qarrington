@@ -8,6 +8,8 @@ import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
 import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
+import { createAccount } from "@services/accounts-services";
+import { useRouter } from "next/router";
 
 const Page = () => {
 
@@ -15,11 +17,26 @@ const Page = () => {
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
 
+  const router = useRouter()
+
   const [value, setValue] = useState('2');
+  const [accessKey, setAccessKey] = useState('')
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await createAccount({ accessKey })
+      if(!res?.error) {
+        router.push('/account/access')
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
 
@@ -86,7 +103,7 @@ const Page = () => {
 
               </Box>
 
-              <form noValidate autoComplete="on">
+              <form noValidate autoComplete="on" onSubmit={handleSubmit}>
 
                 <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px' }}>
 
@@ -97,6 +114,8 @@ const Page = () => {
                         sx={{ input: { textAlign: "center" } }}
                         required
                         placeholder="access key"
+                        onChange={({ target }) => setAccessKey(target.value)}
+                        value={accessKey}
                       />
                     </Tooltip>
 

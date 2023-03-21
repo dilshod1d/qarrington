@@ -4,7 +4,7 @@ import multer from 'multer';
 
 const initValidation = (validations) => {
         return async (req, res, next) => {
-        (() => {console.log("val",rdeq.body)})
+        (() => {console.log("val", req.body)})
 
         await Promise.all(validations.map((validation) => validation.run(req)))
         const errors = validationResult(req)
