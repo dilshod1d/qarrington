@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from 'next/link';
 import Head from 'next/head';
 import Carousel from 'react-material-ui-carousel';
@@ -10,8 +10,12 @@ import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden,
 import useSWR from 'swr';
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/router'
+import { useAccount } from "@hooks/useAccount";
+import { useEffect } from "react";
 
 const Page = () => {
+  const { logged } = useAccount()
+
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
@@ -25,6 +29,10 @@ const Page = () => {
     setValue(newValue);
   };
 
+  useEffect(() => {
+    if(logged) router.push('/account')
+  }, [logged])
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const options = { redirect: false, accessKey }
@@ -33,7 +41,7 @@ const Page = () => {
     router.push('/account')
   }
 
-  return (
+  return logged === undefined || logged ? null : (
 
     <>
 
@@ -120,6 +128,7 @@ const Page = () => {
                         placeholder="access key"
                         onChange={({ target}) => setAccessKey(target.value)}
                         value={accessKey}
+                        disabled={logged === undefined}
                       />
                     </Tooltip>
 
@@ -129,6 +138,7 @@ const Page = () => {
                       variant="contained"
                       fullWidth={true}
                       type="submit"
+                      disabled={logged === undefined}
                     >
                       Login
                     </Button>
