@@ -58,28 +58,28 @@ const Page = ({ topicItem }) => {
                             </Typography>
                             <Divider sx={{ my: 3 }} />
                             <Typography mt={1} mb={1} variant="h5" fontWeight={500} color="secondary">
-                                In ~5 seconds, you can find answers to over 75k questions.
+                                In ~5 seconds, you can find answers to more than 75k topical questions. If you're unable to do so, kindly shoot us an email.
                             </Typography>
                         </Box>
                         <Grid item xs={12} mb={2}>
                             <Grid container spacing={0.1}>
 
-                                {topicItem.slice(0, 2).map(topics => (
+                                {topicItem.slice(0, 5).map(topics => (
                                     <Grid key={topics.sys.id} item xs={12}>
-                                        <ListItemButton sx={{ borderBottom: 1, borderColor: '#e7e7e7' }}>
-                                            <Link href={`/topics/${topics.fields.topicUrl}`}>
-                                                <Box sx={{ padding: '20px 40px 40px 40px' }}>
-                                                    <Box mt={2}>
-                                                        <Typography gutterBottom variant="h4" fontWeight={700} color="black">
-                                                            {topics.fields.topicTitle}
+                                        <Box sx={{ borderBottom: 1, borderColor: '#e7e7e7' }}>
+                                            <Box sx={{ padding: '20px 40px 40px 40px' }}>
+                                                <Box mt={2}>
+                                                    <Link href={`/topics/${topics.fields.topicUrl}`}>
+                                                        <Typography sx={TopicTitle} gutterBottom variant="h3" fontWeight={800} color="black">
+                                                            {topics.fields.topicTitle}?
                                                         </Typography>
-                                                        <Typography textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
-                                                            {`tag`}
-                                                        </Typography>
-                                                    </Box>
+                                                    </Link>
+                                                    <Typography textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
+                                                        {`tag`}
+                                                    </Typography>
                                                 </Box>
-                                            </Link>
-                                        </ListItemButton>
+                                            </Box>
+                                        </Box>
                                     </Grid>
                                 ))}
 
@@ -103,3 +103,11 @@ const Page = ({ topicItem }) => {
 }
 
 export default Page
+
+const TopicTitle = {
+    cursor: 'pointer',
+    color: '#000000',
+    '&:hover': {
+        color: '#2ed573'
+    }
+};
