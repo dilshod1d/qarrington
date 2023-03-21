@@ -8,9 +8,10 @@ import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
 import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
-import { signIn, useSession } from "next-auth/react";
-import { useEffect } from "react";
+import { updateAccount } from "@services/accounts-services";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { useSession } from "next-auth/react";
 
 const Page = () => {
 
@@ -18,12 +19,18 @@ const Page = () => {
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
 
-  const [value, setValue] = useState('2');
-  const [secretKey, setSecretKey] = useState('')
-  const [wantToChangeKey, setWantToChangeKey] = useState(false)
-  
-  const session = useSession()
   const router = useRouter()
+  const { id } = router.query
+  const session = useSession()
+
+  const [value, setValue] = useState('2');
+  const [accountAccessKey, setAccountAccessKey] = useState('')
+
+  useEffect(() => {
+    if(id !== session?.data?.user?.id) {
+      router.push('/')
+    }
+  }, [session])
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -31,25 +38,22 @@ const Page = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const options = { redirect: false, secretKey }
-    const res = await signIn("credentials", options)
-    if(res?.error) return console.log("error register")
-    console.log(res)
-    setWantToChangeKey(true)
+    try {
+      const res = await updateAccount({ accountAccessKey })
+      if(!res?.error) {
+        router.push('/account')
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
-  useEffect(() => {
-    if (session.status === "authenticated" && wantToChangeKey) {
-      router.push(`/account/open/${session.data.user.id}`)
-    }
-  }, [session, wantToChangeKey])
-
-  return (
+  return session?.status === "loading" ? null : (
 
     <>
 
       <Head>
-        <title>Recover Account • Qarrington</title>
+        <title>Open Account • Qarrington</title>
         <meta
           name="description"
           content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
@@ -97,14 +101,14 @@ const Page = () => {
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  If you have lost your accessKey, no worries
+                  Viola! You're about to change your access key
                   <Tooltip title="Subscriptions only give you access to a company's products and services, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
 
                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  It's ok to forget or misplace your accessKey, if that's your case, kindly enter your secretKey below to recover it. If you can't remember your secretKey either, you'd need a new account.
+                  Please submit a new access key, try not to forget it this time!
                 </Typography>
 
               </Box>
@@ -115,13 +119,13 @@ const Page = () => {
 
                   <Stack spacing={1.2} sx={{ width: '100%' }}>
 
-                    <Tooltip title="Kindly provide your secretKey below to quickly reset or recover your Qarrington account without your email address." placement="top">
+                    <Tooltip title="Kindly create an accessKey to quickly access your Qarrington account without your personal data such as an email." placement="top">
                       <TextField
                         sx={{ input: { textAlign: "center" } }}
                         required
-                        placeholder="secret key"
-                        onChange={({ target }) => setSecretKey(target.value)}
-                        value={secretKey}
+                        placeholder="new access key"
+                        onChange={({ target }) => setAccountAccessKey(target.value)}
+                        value={accountAccessKey}
                       />
                     </Tooltip>
 
@@ -132,7 +136,7 @@ const Page = () => {
                       fullWidth={true}
                       type="submit"
                     >
-                      continue
+                      done
                     </Button>
 
                   </Stack>
@@ -147,12 +151,6 @@ const Page = () => {
                       mt: "20px"
                     }
                   }}>
-                  <Link href="/account/open">
-                    <Typography variant="body2" color="secondary" sx={Breadcrumb}>
-                      open account
-                    </Typography>
-                  </Link>
-
                   <Link href="/account/access">
                     <Typography variant="body2" color="secondary" sx={Breadcrumb}>
                       access account
@@ -160,12 +158,6 @@ const Page = () => {
                   </Link>
 
                 </Breadcrumbs>
-
-                <Box textAlign="center">
-                  <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    In order to sell subscriptions and receive payouts, you're required to provide verifiable personal, business, bank, and contact details from within your account.
-                  </Typography>
-                </Box>
 
               </form>
 
