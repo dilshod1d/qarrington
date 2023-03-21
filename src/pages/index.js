@@ -1,406 +1,595 @@
-import React, { Component, useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
-import Image from 'next/image';
+import React, { useState } from "react";
 import Link from 'next/link';
-import HeaderMenu from '../components/menus/HeaderMenu';
-import LeftGrid from '../components/grids/LeftGrid';
-import RightGrid from '../components/grids/RightGrid';
-import {
-    Avatar,
-    Badge,
-    Box,
-    Breadcrumbs,
-    Button,
-    ButtonGroup,
-    Card,
-    CardMedia,
-    Container,
-    Grid,
-    imageListItemBarClasses,
-    List,
-    ListItem,
-    Stack,
-    styled,
-    Tab,
-    TextField,
-    Tooltip,
-    Typography
-} from '@mui/material';
+import Head from 'next/head';
+import Carousel from 'react-material-ui-carousel';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
-import Footer from '../components/main/Footer';
+import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
-import { Pagination } from '@mui/lab';
-import Carousel from 'react-material-ui-carousel';
-import packageJson from '../../package.json'
 
 const Page = () => {
 
-    // const fetcher = (...args) => fetch(...args).then(res => res.json());
-    // const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
-    // const { data: subscriptions } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/subscriptions`, fetcher);
+  const fetcher = (...args) => fetch(...args).then(res => res.json());
+  const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
+  const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
 
-    return (
+  const [value, setValue] = useState('2');
 
-        <div>
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
-            <Head>
-                <title>Nasdaq for SaaS • Qarrington</title>
-                <meta
-                    name="description"
-                    content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
-                />
-            </Head>
+  return (
+    <>
+      <Head>
+        <title>
+          Nasdaq for SaaS • Qarrington
+        </title>
+        <meta
+          name="description"
+          content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
+        />
+      </Head>
 
-            <HeaderMenu />
+      <MainContent style={Body}>
 
-            <Container>
+        <Grid
+          container
+          sx={{ height: '100%' }}
+          alignItems="stretch"
+          spacing={0}
+        >
 
-                <Grid container spacing={2}>
+          {/* left container starts */}
 
-                    {/* LeftGrid Starts Here */}
+          <Grid
+            xs={12}
+            md={6}
+            alignItems="center"
+            display="flex"
+            justifyContent="center"
+            item
+          >
+            <Container maxWidth="sm">
 
-                    <Grid item xs={12} md={6} lg={3}>
-                        <LeftGrid />
-                    </Grid>
+              <Box style={{ textAlign: 'center' }}>
 
-                    {/* LeftGrid Ends Here */}
+                <Box
+                  style={{
+                    display: 'flex',
+                    cursor: 'pointer',
+                    marginBottom: '20px',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Link href="/">
+                    <Avatar
+                      style={{ width: 40, height: 40 }}
+                      alt="Qarrington Logo"
+                      src="/assets/media/companies/qarrington.png"
+                    />
+                  </Link>
+                </Box>
 
-                    <Grid item xs={12} md={6} lg={6} mb={4}>
-                        <Grid container spacing={1}>
+                <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
+                  Raise funds through ISO, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>SAFE</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>IPO</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>VC</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>SPAC</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>ICO</s></Typography>
+                  <Tooltip title="Subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
+                    <InfoRoundedIcon fontSize="small" color="primary" />
+                  </Tooltip>
+                </Typography>
 
-                            <Grid item xs={12}>
+                <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
+                  Imagine a subscription exchange, where startups can raise funds thru <Tooltip title="This is the process of listing a company on a subscription exchange, where its subscriptions can be sold to customers." placement="top">
+                    <Typography
+                      component="span"
+                      fontWeight={700}
+                      color="primary"
+                      variant="h6"
+                      sx={{
+                        "&:hover": {
+                          color: '#000'
+                        }
+                      }}>Initial Subscription Offering</Typography></Tooltip>. If you want to list a company as a <b>founder</b> or list other companies as an <b>underwriter</b>, we're here.
+                </Typography>
 
-                                                                {/* intro starts */}
+              </Box>
 
-                                                                <Grid item xs={12} mb={2}>
-                                    <Grid container spacing={2}>
+              <form noValidate autoComplete="on">
 
-                                        <Grid item xs={12}>
-                                            <Link href="/account/create">
-                                                <Card style={{ padding: '60px', cursor: 'pointer' }}>
-                                                    <Typography variant="body" fontWeight={600}>
-                                                    On Qarrington, we don't just pride ourselves as the world's first subscription exchange, we also aim to be the largest of its kind.
-                                                    </Typography>
-                                                </Card>
-                                            </Link>
-                                        </Grid>
+                <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px' }}>
 
-                                    </Grid>
-                                </Grid>
+                  <Stack spacing={1.2} sx={{ width: '100%' }}>
 
-                                {/* intro ends */}
+                    <Link href="https://calendly.com/banjodeiyowun/qarrington">
+                      <Button
+                        size="large"
+                        sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                        variant="outlined"
+                        fullWidth={true}
+                      >
+                        talk to team
+                      </Button>
+                    </Link>
 
-                                <Grid container spacing={2}>
+                    <Link href="https://calendly.com/banjodeiyowun/qarrington">
+                      <Button
+                        size="large"
+                        sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                        variant="contained"
+                        fullWidth={true}
+                      >
+                        join weekly q&a
+                      </Button>
+                    </Link>
 
-                                    {subscriptions && subscriptions.map(({ _id, name, image, ticker, variant, movement }) => (
-                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                            <Link href={``}>
-                                                <Card style={{ padding: '40px', cursor: 'pointer' }}>
-                                                    <Box
-                                                        style={{
-                                                            display: 'flex',
-                                                            justifyContent: 'center'
-                                                        }}
-                                                    >
-                                                        <Avatar
-                                                            style={{ width: 40, height: 40 }}
-                                                            alt={name}
-                                                            src={image}
-                                                        />
-                                                    </Box>
-                                                    <Box style={{ textAlign: 'center' }}>
-                                                        <Tooltip title={name} placement="top">
-                                                            <Box>
-                                                                <Box mt={1} mb={0.5}>
-                                                                    <Typography component="span" variant="h6" color={variant} fontWeight={700}>
-                                                                        {movement}
-                                                                    </Typography>
-                                                                    <Typography component="span" variant="body2" fontWeight={500} color="secondary">
-                                                                        %
-                                                                    </Typography>
-                                                                </Box>
-                                                                <Box>
-                                                                    <Typography variant="body2" fontWeight={700} color="secondary">
-                                                                        {ticker}
-                                                                    </Typography>
-                                                                </Box>
-                                                            </Box>
-                                                        </Tooltip>
-                                                    </Box>
-                                                </Card>
-                                            </Link>
-                                        </Grid>
-                                    ))}
+                  </Stack>
 
-                                </Grid>
+                </Box>
 
-                            </Grid>
-                        </Grid>
-                    </Grid>
+                <Breadcrumbs separator="/" aria-label="breadcrumb"
+                  sx={{
+                    "& ol": {
+                      justifyContent: "center",
+                      margin: "auto",
+                      mt: "20px"
+                    }
+                  }}>
+                  <Link href="https://calendly.com/banjodeiyowun/qarrington">
+                    <Typography variant="body2" color="secondary" sx={Breadcrumb}>
+                      lower fees
+                    </Typography>
+                  </Link>
 
-                    <Grid item xs={12} md={6} lg={3}>
-                        <RightGrid />
-                    </Grid>
+                  <Link href="https://calendly.com/banjodeiyowun/qarrington">
+                    <Typography variant="body2" color="secondary" sx={Breadcrumb}>
+                      product-backed
+                    </Typography>
+                  </Link>
 
-                </Grid>
-                <Footer />
+                  <Link href="https://calendly.com/banjodeiyowun/qarrington">
+                    <Typography variant="body2" color="secondary" sx={Breadcrumb}>
+                      fewer risks
+                    </Typography>
+                  </Link>
+
+                </Breadcrumbs>
+
+                <Box textAlign="center">
+                  <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
+                    Kindly note that before a company can be listed, the company must have whitelisted an acceptable number of customers for its <b>Initial Subscription Offering</b>.
+                  </Typography>
+                </Box>
+
+              </form>
+
             </Container>
+          </Grid>
 
-        </div>
+          {/* left container ends */}
 
-    )
+          {/* right container starts */}
+
+          <Hidden mdDown>
+            <GridWrapper
+              xs={12}
+              md={6}
+              alignItems="center"
+              display="flex"
+              justifyContent="center"
+              item
+            >
+
+              <Container maxWidth="sm">
+
+                {/* tab starts */}
+
+                <TabContext value={value}>
+
+                  <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    <TabsWrapper
+                      onChange={handleChange}
+                      indicatorColor="transparent"
+                      TabIndicatorProps={{
+                        sx: { backgroundColor: 'transparent', height: 4 }
+                      }}
+                      sx={{
+                        "& button:hover": { backgroundColor: "#ffffff" },
+                        "& button:active": { backgroundColor: "#b6b6b6" },
+                        "& button.Mui-selected": { backgroundColor: "#000000" },
+                        "& div.MuiTabs-scroller": { overflowY: "auto" },
+                      }}
+                      scrollButtons="auto"
+                      aria-label="scrollable auto tabs example"
+                    >
+                      <TabLabel label="Customer" value="1" />
+                      <TabLabel label="Underwriter" value="2" />
+                      <TabLabel label="Founder" value="3" />
+                    </TabsWrapper>
+                  </Box>
+
+                  <Box style={{ marginBottom: '0px', marginTop: '16px' }}>
+
+                    {/* customer tab starts */}
+
+                    <TabPanel sx={{ padding: 0 }} value="1">
+
+                      <Box textAlign="center" mb={2}>
+                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByCustomer }) => (
+                          <>
+                            <Carousel>
+                              {storyByCustomer && Array.isArray(storyByCustomer) && storyByCustomer?.map(({ _id, storyByCustomerName, storyByCustomerTitle, storyByCustomerAvatar, storyByCustomerContent, storyByCustomerIsActive }) => (
+                                <Box key={_id}>
+                                  <Box
+                                    style={{
+                                      display: 'flex',
+                                      justifyContent: 'center'
+                                    }}
+                                  >
+                                    <StyledBadge
+                                      overlap="circular"
+                                      anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'right'
+                                      }}
+                                      variant={storyByCustomerIsActive}
+                                    >
+                                      <Avatar
+                                        style={{ width: 80, height: 80 }}
+                                        alt={storyByCustomerName}
+                                        src={storyByCustomerAvatar}
+                                      />
+                                    </StyledBadge>
+                                  </Box>
+                                  <Box marginTop="16px">
+                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByCustomerName}</Typography>
+                                    <Typography variant="body" component="div" gutterBottom>{storyByCustomerTitle}</Typography>
+                                    <Typography variant="h5" component="div" fontWeight="600">{storyByCustomerContent}</Typography>
+                                  </Box>
+                                </Box>
+                              ))}
+                            </Carousel>
+                          </>
+                        ))}
+                      </Box>
+
+                      <Grid item xs={12} mt={2}>
+                        <Grid container spacing={1}>
+                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForCustomer }) => (
+                            <>
+                              {guideForCustomer && Array.isArray(guideForCustomer) && guideForCustomer?.map(({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
+                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                                  <Tooltip title={guideForCustomerTooltip} placement="top">
+                                    <Card style={{ padding: '22px' }}>
+                                      <Box
+                                        style={{
+                                          display: 'flex',
+                                          justifyContent: 'center'
+                                        }}
+                                      >
+                                        <Badge
+                                          overlap="circular"
+                                          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                          badgeContent={
+                                            <InfoRoundedIcon fontSize="small" color="primary" />
+                                          }
+                                        >
+                                          <Avatar
+                                            style={{ width: 50, height: 50 }}
+                                            alt={guideForCustomerTitle}
+                                            src={guideForCustomerIcon}
+                                          />
+                                        </Badge>
+                                      </Box>
+                                      <Box style={{ textAlign: 'center' }}>
+                                        <Box mt={1.2}>
+                                          <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
+                                            {guideForCustomerTitle}
+                                          </Typography>
+                                          <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
+                                            {guideForCustomerContent}
+                                          </Typography>
+                                        </Box>
+                                      </Box>
+                                    </Card>
+                                  </Tooltip>
+                                </Grid>
+                              ))}
+                            </>
+                          ))}
+                        </Grid>
+                      </Grid>
+
+                    </TabPanel>
+
+                    {/* customer tab ends */}
+
+                    {/* underwriter tab starts */}
+
+                    <TabPanel sx={{ padding: 0 }} value="2">
+
+                      <Box textAlign="center" mb={2}>
+                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByUnderwriter }) => (
+                          <>
+                            <Carousel>
+                              {storyByUnderwriter && Array.isArray(storyByUnderwriter) && storyByUnderwriter?.map(({ _id, storyByUnderwriterName, storyByUnderwriterTitle, storyByUnderwriterAvatar, storyByUnderwriterContent, storyByUnderwriterIsActive }) => (
+                                <Box key={_id}>
+                                  <Box
+                                    style={{
+                                      display: 'flex',
+                                      justifyContent: 'center'
+                                    }}
+                                  >
+                                    <StyledBadge
+                                      overlap="circular"
+                                      anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'right'
+                                      }}
+                                      variant={storyByUnderwriterIsActive}
+                                    >
+                                      <Avatar
+                                        style={{ width: 80, height: 80 }}
+                                        alt={storyByUnderwriterName}
+                                        src={storyByUnderwriterAvatar}
+                                      />
+                                    </StyledBadge>
+                                  </Box>
+                                  <Box marginTop="16px">
+                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByUnderwriterName}</Typography>
+                                    <Typography variant="body" component="div" gutterBottom>{storyByUnderwriterTitle}</Typography>
+                                    <Typography variant="h5" component="div" fontWeight="600">{storyByUnderwriterContent}</Typography>
+                                  </Box>
+                                </Box>
+                              ))}
+                            </Carousel>
+                          </>
+                        ))}
+                      </Box>
+
+                      <Grid item xs={12} mt={2}>
+                        <Grid container spacing={1}>
+                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForFounder }) => (
+                            <>
+                              {guideForFounder && Array.isArray(guideForFounder) && guideForFounder?.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
+                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                                  <Tooltip title={guideForFounderTooltip} placement="top">
+                                    <Card style={{ padding: '22px' }}>
+                                      <Box
+                                        style={{
+                                          display: 'flex',
+                                          justifyContent: 'center'
+                                        }}
+                                      >
+                                        <Badge
+                                          overlap="circular"
+                                          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                          badgeContent={
+                                            <InfoRoundedIcon fontSize="small" color="primary" />
+                                          }
+                                        >
+                                          <Avatar
+                                            style={{ width: 50, height: 50 }}
+                                            alt={guideForFounderTitle}
+                                            src={guideForFounderIcon}
+                                          />
+                                        </Badge>
+                                      </Box>
+                                      <Box style={{ textAlign: 'center' }}>
+                                        <Box mt={1.2}>
+                                          <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
+                                            {guideForFounderTitle}
+                                          </Typography>
+                                          <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
+                                            {guideForFounderContent}
+                                          </Typography>
+                                        </Box>
+                                      </Box>
+                                    </Card>
+                                  </Tooltip>
+                                </Grid>
+                              ))}
+                            </>
+                          ))}
+                        </Grid>
+                      </Grid>
+
+                    </TabPanel>
+
+                    {/* underwriter tab ends */}
+
+                    {/* founder tab starts */}
+
+                    <TabPanel sx={{ padding: 0 }} value="3">
+
+                      <Box textAlign="center" mb={2}>
+                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByFounder }) => (
+                          <>
+                            <Carousel>
+                              {storyByFounder && Array.isArray(storyByFounder) && storyByFounder?.map(({ _id, storyByFounderName, storyByFounderTitle, storyByFounderAvatar, storyByFounderContent, storyByFounderIsActive }) => (
+                                <Box key={_id}>
+                                  <Box
+                                    style={{
+                                      display: 'flex',
+                                      justifyContent: 'center'
+                                    }}
+                                  >
+                                    <StyledBadge
+                                      overlap="circular"
+                                      anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'right'
+                                      }}
+                                      variant={storyByFounderIsActive}
+                                    >
+                                      <Avatar
+                                        style={{ width: 80, height: 80 }}
+                                        alt={storyByFounderName}
+                                        src={storyByFounderAvatar}
+                                      />
+                                    </StyledBadge>
+                                  </Box>
+                                  <Box marginTop="16px">
+                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByFounderName}</Typography>
+                                    <Typography variant="body" component="div" gutterBottom>{storyByFounderTitle}</Typography>
+                                    <Typography variant="h5" component="div" fontWeight="600">{storyByFounderContent}</Typography>
+                                  </Box>
+                                </Box>
+                              ))}
+                            </Carousel>
+                          </>
+                        ))}
+                      </Box>
+
+                      <Grid item xs={12} mt={2}>
+                        <Grid container spacing={1}>
+                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForFounder }) => (
+                            <>
+                              {guideForFounder && Array.isArray(guideForFounder) && guideForFounder?.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
+                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                                  <Tooltip title={guideForFounderTooltip} placement="top">
+                                    <Card style={{ padding: '22px' }}>
+                                      <Box
+                                        style={{
+                                          display: 'flex',
+                                          justifyContent: 'center'
+                                        }}
+                                      >
+                                        <Badge
+                                          overlap="circular"
+                                          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                          badgeContent={
+                                            <InfoRoundedIcon fontSize="small" color="primary" />
+                                          }
+                                        >
+                                          <Avatar
+                                            style={{ width: 50, height: 50 }}
+                                            alt={guideForFounderTitle}
+                                            src={guideForFounderIcon}
+                                          />
+                                        </Badge>
+                                      </Box>
+                                      <Box style={{ textAlign: 'center' }}>
+                                        <Box mt={1.2}>
+                                          <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
+                                            {guideForFounderTitle}
+                                          </Typography>
+                                          <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
+                                            {guideForFounderContent}
+                                          </Typography>
+                                        </Box>
+                                      </Box>
+                                    </Card>
+                                  </Tooltip>
+                                </Grid>
+                              ))}
+                            </>
+                          ))}
+                        </Grid>
+                      </Grid>
+
+                    </TabPanel>
+
+                    {/* founder tab ends */}
+
+                  </Box>
+
+                </TabContext>
+
+                {/* tab stops */}
+
+              </Container>
+
+            </GridWrapper>
+
+          </Hidden>
+
+          {/* right container ends */}
+
+        </Grid>
+      </MainContent>
+
+    </>
+
+  );
+
 }
 
-export default Page
-
-const StyledBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-        backgroundColor: '#44b700',
-        color: '#44b700',
-        boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-        '&::after': {
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            borderRadius: '50%',
-            animation: 'ripple 1.2s infinite ease-in-out',
-            border: '1px solid currentColor',
-            content: '""',
-        },
-    },
-    '@keyframes ripple': {
-        '0%': {
-            transform: 'scale(.8)',
-            opacity: 1,
-        },
-        '100%': {
-            transform: 'scale(2.4)',
-            opacity: 0,
-        },
-    },
-}));
+export default Page;
 
 const TabsWrapper = styled(TabList)(
-    ({ theme }) => `
-          &.MuiTabs-root {
-            height: 0;
-          }
-    `
+  ({ theme }) => `
+        &.MuiTabs-root {
+          height: 0;
+          margin-bottom: 16px;
+        }
+  `
 );
 
 const TabLabel = styled(Tab)(
-    ({ theme }) => `
-          font-size: 12px;
-          font-weight: 700;
-          text-transform: uppercase;
-    `
+  ({ theme }) => `
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+  `
 );
 
-const DraftBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-        right: 0,
-        top: -8,
-        border: `2px solid ${theme.palette.background.paper}`,
-        padding: '0 4px',
-    },
-}));
+const Breadcrumb = {
+  cursor: "pointer",
+  fontWeight: "500",
+  "&:hover": {
+    color: '#000'
+  },
+};
 
-const subscriptions = [
-    {
-        _id: 1,
-        name: "Birdio",
-        image: "/assets/media/companies/birdio.png",
-        ticker: "BRD",
-        variant: "primary",
-        movement: "2.74"
+const MainContent = styled(Box)(
+  () => `
+    height: 100%;
+    display: flex;
+    flex: 1;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+);
+
+const GridWrapper = styled(Grid)(
+  ({ theme }) => `
+    background: ${theme.colors.gradients.green2};
+`
+);
+
+const Body = {
+  backgroundColor: "#ffffff"
+};
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    backgroundColor: '#44b700',
+    color: '#44b700',
+    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
+    '&::after': {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      borderRadius: '50%',
+      animation: 'ripple 1.2s infinite ease-in-out',
+      border: '1px solid currentColor',
+      content: '""',
     },
-    {
-        _id: 2,
-        name: "Wiskie",
-        image: "/assets/media/companies/wiskie.png",
-        ticker: "WSK",
-        variant: "error",
-        movement: "0.59"
+  },
+  '@keyframes ripple': {
+    '0%': {
+      transform: 'scale(.8)',
+      opacity: 1,
     },
-    {
-        _id: 3,
-        name: "Qarrington",
-        image: "/assets/media/companies/qarrington.png",
-        ticker: "QA",
-        variant: "primary",
-        movement: "1.62"
+    '100%': {
+      transform: 'scale(2.4)',
+      opacity: 0,
     },
-    {
-        _id: 4,
-        name: "Twined",
-        image: "/assets/media/companies/twined.png",
-        ticker: "TWN",
-        variant: "primary",
-        movement: "4.10"
-    },
-    {
-        _id: 5,
-        name: "Spread",
-        image: "/assets/media/companies/spread.png",
-        ticker: "SPR",
-        variant: "error",
-        movement: "2.38"
-    },
-    {
-        _id: 6,
-        name: "Swind",
-        image: "/assets/media/companies/swind.png",
-        ticker: "SWI",
-        variant: "primary",
-        movement: "5.04"
-    },
-    {
-        _id: 7,
-        name: "Highland",
-        image: "/assets/media/companies/highland.png",
-        ticker: "HIGH",
-        variant: "error",
-        movement: "3.08"
-    },
-    {
-        _id: 8,
-        name: "Algoma",
-        image: "/assets/media/companies/algoma.png",
-        ticker: "ALG",
-        variant: "primary",
-        movement: "5.15"
-    },
-    {
-        _id: 9,
-        name: "Splash",
-        image: "/assets/media/companies/splash.png",
-        ticker: "SPH",
-        variant: "primary",
-        movement: "1.49"
-    },
-    {
-        _id: 10,
-        name: "Varozo",
-        image: "/assets/media/companies/varozo.png",
-        ticker: "VAR",
-        variant: "primary",
-        movement: "5.74"
-    },
-    {
-        _id: 11,
-        name: "Klasic",
-        image: "/assets/media/companies/klasic.png",
-        ticker: "KSC",
-        variant: "primary",
-        movement: "4.48"
-    },
-    {
-        _id: 12,
-        name: "Humble",
-        image: "/assets/media/companies/humble.png",
-        ticker: "HUM",
-        variant: "primary",
-        movement: "3.72"
-    },
-    {
-        _id: 13,
-        name: "Wask",
-        image: "/assets/media/companies/wask.png",
-        ticker: "WAS",
-        variant: "primary",
-        movement: "4.09"
-    },
-    {
-        _id: 14,
-        name: "Crossborder",
-        image: "/assets/media/companies/crossborder.png",
-        ticker: "CROSS",
-        variant: "primary",
-        movement: "2.07"
-    },
-    {
-        _id: 15,
-        name: "Bright",
-        image: "/assets/media/companies/bright.png",
-        ticker: "BRT",
-        variant: "primary",
-        movement: "4.82"
-    },
-    {
-        _id: 16,
-        name: "Cirkle",
-        image: "/assets/media/companies/cirkle.png",
-        ticker: "CKL",
-        variant: "error",
-        movement: "4.21"
-    },
-    {
-        _id: 17,
-        name: "PawPaw",
-        image: "/assets/media/companies/pawpaw.png",
-        ticker: "PAW",
-        variant: "primary",
-        movement: "1.87"
-    },
-    {
-        _id: 18,
-        name: "Pinner",
-        image: "/assets/media/companies/pinner.png",
-        ticker: "PIN",
-        variant: "primary",
-        movement: "3.28"
-    },
-    {
-        _id: 19,
-        name: "Splitted",
-        image: "/assets/media/companies/splitted.png",
-        ticker: "SPLIT",
-        variant: "primary",
-        movement: "6.05"
-    },
-    {
-        _id: 20,
-        name: "Jasper",
-        image: "/assets/media/companies/jasper.png",
-        ticker: "JAS",
-        variant: "primary",
-        movement: "1.87"
-    },
-    {
-        _id: 21,
-        name: "Urban",
-        image: "/assets/media/companies/urban.png",
-        ticker: "URB",
-        variant: "primary",
-        movement: "5.72"
-    },
-    {
-        _id: 22,
-        name: "Winsta",
-        image: "/assets/media/companies/winsta.png",
-        ticker: "WIN",
-        variant: "primary",
-        movement: "3.09"
-    },
-    {
-        _id: 23,
-        name: "Babooze",
-        image: "/assets/media/companies/babooze.png",
-        ticker: "BAB",
-        variant: "error",
-        movement: "4.04"
-    },
-    {
-        _id: 24,
-        name: "Boosto",
-        image: "/assets/media/companies/boosto.png",
-        ticker: "BST",
-        variant: "primary",
-        movement: "3.73"
-    }
-]
+  },
+}));

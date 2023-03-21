@@ -1,89 +1,112 @@
 [
   {
+    "storyByUnderwriter": [
+      {
+        "storyByUnderwriterName": "Galia",
+        "storyByUnderwriterTitle": "Partner @ Brake Capital",
+        "storyByUnderwriterAvatar": "/assets/media/underwriters/galia.webp",
+        "storyByUnderwriterContent": "At BC, we see the lack of exits and interest from LPs as some of the dilemmas faced by many startup incubators and accelerators. Well then ... a subscription exchange is born.",
+        "storyByUnderwriterIsActive": "dot"
+      },
+      {
+        "storyByUnderwriterName": "Fabian",
+        "storyByUnderwriterTitle": "Partner @ French Tech Visa",
+        "storyByUnderwriterAvatar": "/assets/media/underwriters/fabian.webp",
+        "storyByUnderwriterContent": "Working with Qarrington in today's global economic downturn has been an absolute game-changer for the startups we back through the French Tech Visa Program.",
+        "storyByUnderwriterIsActive": ""
+      },
+      {
+        "storyByUnderwriterName": "Hadar",
+        "storyByUnderwriterTitle": "Partner @ Lemonade Funds",
+        "storyByUnderwriterAvatar": "/assets/media/underwriters/hadar.webp",
+        "storyByUnderwriterContent": "Whether it's a Fund like Lemonade or a venture capital firm like Accel, investing in 100 startups and expecting 1 unicorn exit in 10 years is beyond flawed.",
+        "storyByUnderwriterIsActive": "dot"
+      },
+      {
+        "storyByUnderwriterName": "Chris",
+        "storyByUnderwriterTitle": "Partner @ Gorilla Ventures",
+        "storyByUnderwriterAvatar": "/assets/media/underwriters/chris.webp",
+        "storyByUnderwriterContent": "As a startup incubator, making 20 deals to hit ROI with 1 was tough for us. On Qarrington, we've seen the possibility of making 20 deals and hitting ROI from each.",
+        "storyByUnderwriterIsActive": "dot"
+      },
+      {
+        "storyByUnderwriterName": "Stephanie",
+        "storyByUnderwriterTitle": "Partner @ Chicago Angels",
+        "storyByUnderwriterAvatar": "/assets/media/underwriters/stephanie.webp",
+        "storyByUnderwriterContent": "At Chicago Angels, the lack of liquidity is often an issue for us, but we're more than happy to be on a subscription exchange like Qarrington; the world's first of its kind.",
+        "storyByUnderwriterIsActive": ""
+      }
+    ],
     "storyByFounder": [
       {
-        "storyByFounderName": "Amy",
-        "storyByFounderTitle": "Partner @ Bright Capital",
-        "storyByFounderAvatar": "/assets/media/accounts/amy.webp",
-        "storyByFounderContent": "At BC, we see the lack of exits and interest from LPs as some of the dilemmas faced by many startup incubators and accelerators. Well then ... a subscription exchange is born.",
-        "storyByFounderIsActive": "dot"
-      },
-      {
-        "storyByFounderName": "Chris",
-        "storyByFounderTitle": "Founder @ LogicMind",
-        "storyByFounderAvatar": "/assets/media/accounts/chris.webp",
+        "storyByFounderName": "Ashleigh",
+        "storyByFounderTitle": "Founder @ Varozo",
+        "storyByFounderAvatar": "/assets/media/founders/ashleigh.webp",
         "storyByFounderContent": "When we were raising our last round, we had to sacrifice the entire control of the company we built while being homeless. How I wish I knew about Qarrington back then.",
-        "storyByFounderIsActive": "dot"
-      },
-      {
-        "storyByFounderName": "Scott",
-        "storyByFounderTitle": "Partner @ French Tech Visa",
-        "storyByFounderAvatar": "/assets/media/accounts/scott.webp",
-        "storyByFounderContent": "Working with Qarrington in today's global economic downturn has been an absolute game-changer for the startups we back through the French Tech Visa Program.",
         "storyByFounderIsActive": ""
       },
       {
-        "storyByFounderName": "Ciara",
-        "storyByFounderTitle": "Partner @ 500 StartUps",
-        "storyByFounderAvatar": "/assets/media/accounts/ciara.webp",
-        "storyByFounderContent": "Whether it's an accelerator like 500 StartUps or a venture capital firm like Accel, investing in 100 startups and expecting 1 unicorn exit in 10 years is beyond flawed.",
+        "storyByFounderName": "Itay",
+        "storyByFounderTitle": "Founder @ Spread",
+        "storyByFounderAvatar": "/assets/media/founders/itay.webp",
+        "storyByFounderContent": "If YC could reverse its late-stage investment rounds, that's a clear sign that 2023 would be really tough for the majority of startup companies. Here we come, Qarrington.",
         "storyByFounderIsActive": "dot"
       },
       {
-        "storyByFounderName": "Adam",
-        "storyByFounderTitle": "Partner @ Gorilla Ventures",
-        "storyByFounderAvatar": "/assets/media/accounts/adam.webp",
-        "storyByFounderContent": "As a startup incubator, making 20 deals to hit ROI with 1 was tough for us. On Qarrington, we've seen the possibility of making 20 deals and hitting ROI from each.",
-        "storyByFounderIsActive": "dot"
+        "storyByFounderName": "Susie",
+        "storyByFounderTitle": "Founder @ Winsta",
+        "storyByFounderAvatar": "/assets/media/founders/susie.webp",
+        "storyByFounderContent": "I bet Qarrington is on the right track because most venture capital firms would find it hard to bet on founders. They've been hit so hard by the recent bank runs in the U.S.",
+        "storyByFounderIsActive": ""
       },
       {
-        "storyByFounderName": "Rosie",
-        "storyByFounderTitle": "Founder @ Kiddos",
-        "storyByFounderAvatar": "/assets/media/accounts/rosie.webp",
+        "storyByFounderName": "Kapil",
+        "storyByFounderTitle": "Founder @ Bright",
+        "storyByFounderAvatar": "/assets/media/founders/kapil.webp",
         "storyByFounderContent": "For most technology companies, equity dilution is often a nightmare. I can see Qarrington might eventually become the go-to exchange for thousands of SaaS companies.",
         "storyByFounderIsActive": ""
       },
       {
-        "storyByFounderName": "Judy",
-        "storyByFounderTitle": "Partner @ Chicago Angels",
-        "storyByFounderAvatar": "/assets/media/accounts/judy.webp",
-        "storyByFounderContent": "At Chicago Angels, the lack of liquidity is often an issue for us, but we're more than happy to be on a subscription exchange like Qarrington; the world's first of its kind.",
-        "storyByFounderIsActive": ""
+        "storyByFounderName": "Elle",
+        "storyByFounderTitle": "Founder @ Urban",
+        "storyByFounderAvatar": "/assets/media/founders/elle.webp",
+        "storyByFounderContent": "I'm really looking forward to what Qarrington could do to support early-stage startups because it seems that raising funds from customers instead of investors might work.",
+        "storyByFounderIsActive": "dot"
       }
     ],
     "storyByCustomer": [
       {
-        "storyByCustomerName": "Alicia",
+        "storyByCustomerName": "Busra",
         "storyByCustomerTitle": "Social Media Specialist",
-        "storyByCustomerAvatar": "/assets/media/accounts/alicia.webp",
+        "storyByCustomerAvatar": "/assets/media/customers/busra.webp",
         "storyByCustomerContent": "Even though I'm not new to stocks and cryptocurrencies, the market volatility can be unbearable. For me, using Qarrington is just like hedging my monthly subscriptions. ",
         "storyByCustomerIsActive": ""
       },
       {
-        "storyByCustomerName": "Jess",
+        "storyByCustomerName": "Biswa",
         "storyByCustomerTitle": "Real Estate Agent",
-        "storyByCustomerAvatar": "/assets/media/accounts/jess.webp",
+        "storyByCustomerAvatar": "/assets/media/customers/biswa.webp",
         "storyByCustomerContent": "I spend more than $200 per month on subscription services. Using Qarrington is helping me to put my subscriptions to work while making passing income.",
         "storyByCustomerIsActive": "dot"
       },
       {
-        "storyByCustomerName": "Kim",
+        "storyByCustomerName": "Glan",
         "storyByCustomerTitle": "Account Manager",
-        "storyByCustomerAvatar": "/assets/media/accounts/kim.webp",
+        "storyByCustomerAvatar": "/assets/media/customers/glan.webp",
         "storyByCustomerContent": "I'm so much into the idea, the values, and the interface of Qarrington. I mean, what else can I say about the exchange? It's so easy, smooth, and safe to use.",
         "storyByCustomerIsActive": "dot"
       },
       {
-        "storyByCustomerName": "Sasha",
+        "storyByCustomerName": "Ruby",
         "storyByCustomerTitle": "Sales Executive",
-        "storyByCustomerAvatar": "/assets/media/accounts/sasha.webp",
+        "storyByCustomerAvatar": "/assets/media/customers/ruby.webp",
         "storyByCustomerContent": "It used to be bullish stocks, thanks to Qarrington because we now have bullish subscriptions. Just how genius! I just wish there are more listed companies soon.",
         "storyByCustomerIsActive": "dot"
       },
       {
-        "storyByCustomerName": "Alex",
+        "storyByCustomerName": "Ifeoma",
         "storyByCustomerTitle": "Retail Banker",
-        "storyByCustomerAvatar": "/assets/media/accounts/alex.webp",
+        "storyByCustomerAvatar": "/assets/media/customers/ifeoma.webp",
         "storyByCustomerContent": "When I subscribe to a platform, all I get are the features of the platform. However, Qarrington has made it possible for me to also make some side hustle from my subscription.",
         "storyByCustomerIsActive": ""
       }

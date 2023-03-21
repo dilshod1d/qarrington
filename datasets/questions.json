@@ -1,0 +1,38 @@
+[
+    {
+        "questionUrl": "open an account",
+        "questionTags": [
+            {
+                "questionTagName": "tag01"
+            },
+            {
+                "questionTagName": "tag02"
+            },
+            {
+                "questionTagName": "tag03"
+            }
+        ],
+        "questionTitle": "How to open an account",
+        "questionDetail": "Navigate to that route and click register.",
+        "questionTopicId": "37fh7h7h37wh33",
+        "questionPostedAt": "Fri, Oct 25, 2023, 11:45 PM"
+    },
+    {
+        "questionUrl": "list a company",
+        "questionTags": [
+            {
+                "questionTagName": "tag04"
+            },
+            {
+                "questionTagName": "tag05"
+            },
+            {
+                "questionTagName": "tag06"
+            }
+        ],
+        "questionTitle": "How to list a company",
+        "questionDetail": "Navigate to that route and click submit.",
+        "questionTopicId": "jdd7h4hau4bba73h",
+        "questionPostedAt": "Fri, Oct 25, 2023, 11:45 PM"
+    }
+]

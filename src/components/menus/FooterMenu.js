@@ -81,7 +81,7 @@ const Component = () => {
               color="secondary"
               sx={BreadcrumbItem}
             >
-              Login
+              Logout
             </Typography>
           </Link>
         </Breadcrumbs>

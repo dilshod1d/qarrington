@@ -37,7 +37,7 @@ const Page = () => {
                                 <Grid item xs={12} mb={2}>
                                     <Grid container spacing={2}>
 
-                                        {companies && companies.map(({ _id, companySlug, companyListing, companyKpi }) => (
+                                        {companies && Array.isArray(companies) && companies?.map(({ _id, companySlug, companyListing, companyKpi }) => (
                                             <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
                                                 <Link href={`/subscriptions/${companySlug}`}>
                                                     <Card style={{ padding: '60px', cursor: 'pointer' }}>
@@ -49,12 +49,12 @@ const Page = () => {
                                                                 }}
                                                             >
                                                                 <Avatar
-                                                                    style={{ width: 40, height: 40 }}
+                                                                    style={{ width: 50, height: 50 }}
                                                                     alt={companyListing.companyName}
                                                                     src={companyListing.companyLogo}
                                                                 />
                                                             </Box>
-                                                            <Typography variant="h5" fontWeight={700} my={1.5}>
+                                                            <Typography variant="h5" fontWeight={700} my={1.5} color="black">
                                                                 {companyListing.companyDescription}
                                                             </Typography>
                                                             <Typography textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">

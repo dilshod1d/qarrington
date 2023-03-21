@@ -45,7 +45,7 @@ const Component = () => {
                     <SmallAvatar alt="Qarrington Logo" src="/assets/media/subscriptions/qarrington.png" />
                   }
                 >
-                  {accounts && accounts.slice(0, 1).map(({ _id, accountProfile }) => (
+                  {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountProfile }) => (
                     <Avatar key={_id} style={{ width: 60, height: 60 }}
                       alt={accountProfile.accountFirstName}
                       src={accountProfile.accountAvatarUrl} />
@@ -73,8 +73,8 @@ const Component = () => {
 
                 <Tooltip title="My Company" placement="top">
                   <IconButtonWrapper>
-                    {companies && companies.slice(0, 1).map(({ _id, companyTicker }) => (
-                      <Link key={_id} href={`/companies/${companyTicker}`}>
+                    {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companySlug }) => (
+                      <Link key={_id} href={`/companies/${companySlug}`}>
                         <InsightsTwoToneIcon />
                       </Link>
                     ))}

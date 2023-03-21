@@ -100,9 +100,8 @@ const Page = () => {
                                                 <Card style={{ padding: '60px' }}>
                                                     <Box style={{ textAlign: 'center' }}>
                                                         <Box component="label" display="flex" justifyContent="center">
-
                                                             <StyledBadge
-
+                                                                key={_id}
                                                                 overlap="circular"
                                                                 anchorOrigin={{
                                                                     vertical: 'bottom',
@@ -110,18 +109,15 @@ const Page = () => {
                                                                 }}
                                                                 variant={account?.accountStatus.accountIsActive}
                                                             >
-
-                                                            <Avatar
-                                                                style={{ width: 65, height: 65 }}
-                                                                alt={account?.accountPersonal.accountFirstName}
-                                                                src={account?.accountProfile.accountAvatarUrl}
-                                                            />
-
-                                                        </StyledBadge>
-                                                        
+                                                                <Avatar
+                                                                    key={_id}
+                                                                    style={{ width: 65, height: 65 }}
+                                                                    alt={account?.accountPersonal.accountFirstName}
+                                                                    src={account?.accountProfile.accountAvatarUrl}
+                                                                />
+                                                            </StyledBadge>
                                                         </Box>
-                                                            <Box mt={1.5}>
-
+                                                            <Box mt={1.5} key={_id}>
                                                                 <Typography component="span" variant="h4" fontWeight="500" color="black">Hi</Typography>
                                                                 <Typography component="span" mr={0.5} variant="h4" fontWeight="500" color="secondary">,</Typography>
                                                                 <Typography component="span" variant="h4" fontWeight="700" color="black">{account?.accountPersonal.accountFirstName}</Typography>

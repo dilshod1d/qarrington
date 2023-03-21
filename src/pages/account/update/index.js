@@ -16,7 +16,7 @@ const Page = () => {
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
   const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
 
-  const [value, setValue] = useState('1');
+  const [value, setValue] = useState('2');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -473,8 +473,8 @@ const Page = () => {
                   </Tooltip>
                 </Typography>
 
-                {accounts && accounts.slice(0, 1).map(({ _id, accountPersonal }) => (
-                  <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
+                {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal }) => (
+                  <Typography key={_id} variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
                     Dear {accountPersonal.accountFirstName}, in order to sell subscriptions on Qarrington and receive payouts to your bank account, you're required to provide verifiable <b>personal</b>, <b>business</b>, <b>bank</b>, and <b>contact</b> details.
                   </Typography>
                 ))}
@@ -598,7 +598,8 @@ const Page = () => {
                       aria-label="scrollable auto tabs example"
                     >
                       <TabLabel label="Customer" value="1" />
-                      <TabLabel label="Founder" value="2" />
+                      <TabLabel label="Underwriter" value="2" />
+                      <TabLabel label="Founder" value="3" />
                     </TabsWrapper>
                   </Box>
 
@@ -609,10 +610,10 @@ const Page = () => {
                     <TabPanel sx={{ padding: 0 }} value="1">
 
                       <Box textAlign="center" mb={2}>
-                        {stories && stories.map(({ _id, storyByCustomer }) => (
+                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByCustomer }) => (
                           <>
                             <Carousel>
-                              {storyByCustomer && storyByCustomer.map(({ _id, storyByCustomerName, storyByCustomerTitle, storyByCustomerAvatar, storyByCustomerContent, storyByCustomerIsActive }) => (
+                              {storyByCustomer && Array.isArray(storyByCustomer) && storyByCustomer?.map(({ _id, storyByCustomerName, storyByCustomerTitle, storyByCustomerAvatar, storyByCustomerContent, storyByCustomerIsActive }) => (
                                 <Box key={_id}>
                                   <Box
                                     style={{
@@ -649,9 +650,9 @@ const Page = () => {
 
                       <Grid item xs={12} mt={2}>
                         <Grid container spacing={1}>
-                          {guides && guides.map(({ _id, guideForCustomer }) => (
+                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForCustomer }) => (
                             <>
-                              {guideForCustomer && guideForCustomer.map(({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
+                              {guideForCustomer && Array.isArray(guideForCustomer) && guideForCustomer?.map(({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
                                 <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                   <Tooltip title={guideForCustomerTooltip} placement="top">
                                     <Card style={{ padding: '22px' }}>
@@ -698,15 +699,109 @@ const Page = () => {
 
                     {/* customer tab ends */}
 
-                    {/* founder tab starts */}
+                    {/* underwriter tab starts */}
 
                     <TabPanel sx={{ padding: 0 }} value="2">
 
                       <Box textAlign="center" mb={2}>
-                        {stories && stories.map(({ _id, storyByFounder }) => (
+                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByUnderwriter }) => (
                           <>
                             <Carousel>
-                              {storyByFounder && storyByFounder.map(({ _id, storyByFounderName, storyByFounderTitle, storyByFounderAvatar, storyByFounderContent, storyByFounderIsActive }) => (
+                              {storyByUnderwriter && Array.isArray(storyByUnderwriter) && storyByUnderwriter?.map(({ _id, storyByUnderwriterName, storyByUnderwriterTitle, storyByUnderwriterAvatar, storyByUnderwriterContent, storyByUnderwriterIsActive }) => (
+                                <Box key={_id}>
+                                  <Box
+                                    style={{
+                                      display: 'flex',
+                                      justifyContent: 'center'
+                                    }}
+                                  >
+                                    <StyledBadge
+                                      overlap="circular"
+                                      anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'right'
+                                      }}
+                                      variant={storyByUnderwriterIsActive}
+                                    >
+                                      <Avatar
+                                        style={{ width: 80, height: 80 }}
+                                        alt={storyByUnderwriterName}
+                                        src={storyByUnderwriterAvatar}
+                                      />
+                                    </StyledBadge>
+                                  </Box>
+                                  <Box marginTop="16px">
+                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByUnderwriterName}</Typography>
+                                    <Typography variant="body" component="div" gutterBottom>{storyByUnderwriterTitle}</Typography>
+                                    <Typography variant="h5" component="div" fontWeight="600">{storyByUnderwriterContent}</Typography>
+                                  </Box>
+                                </Box>
+                              ))}
+                            </Carousel>
+                          </>
+                        ))}
+                      </Box>
+
+                      <Grid item xs={12} mt={2}>
+                        <Grid container spacing={1}>
+                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForFounder }) => (
+                            <>
+                              {guideForFounder && Array.isArray(guideForFounder) && guideForFounder?.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
+                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                                  <Tooltip title={guideForFounderTooltip} placement="top">
+                                    <Card style={{ padding: '22px' }}>
+                                      <Box
+                                        style={{
+                                          display: 'flex',
+                                          justifyContent: 'center'
+                                        }}
+                                      >
+                                        <Badge
+                                          overlap="circular"
+                                          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                                          badgeContent={
+                                            <InfoRoundedIcon fontSize="small" color="primary" />
+                                          }
+                                        >
+                                          <Avatar
+                                            style={{ width: 50, height: 50 }}
+                                            alt={guideForFounderTitle}
+                                            src={guideForFounderIcon}
+                                          />
+                                        </Badge>
+                                      </Box>
+                                      <Box style={{ textAlign: 'center' }}>
+                                        <Box mt={1.2}>
+                                          <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
+                                            {guideForFounderTitle}
+                                          </Typography>
+                                          <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
+                                            {guideForFounderContent}
+                                          </Typography>
+                                        </Box>
+                                      </Box>
+                                    </Card>
+                                  </Tooltip>
+                                </Grid>
+                              ))}
+                            </>
+                          ))}
+                        </Grid>
+                      </Grid>
+
+                    </TabPanel>
+
+                    {/* underwriter tab ends */}
+
+                    {/* founder tab starts */}
+
+                    <TabPanel sx={{ padding: 0 }} value="3">
+
+                      <Box textAlign="center" mb={2}>
+                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByFounder }) => (
+                          <>
+                            <Carousel>
+                              {storyByFounder && Array.isArray(storyByFounder) && storyByFounder?.map(({ _id, storyByFounderName, storyByFounderTitle, storyByFounderAvatar, storyByFounderContent, storyByFounderIsActive }) => (
                                 <Box key={_id}>
                                   <Box
                                     style={{
@@ -743,9 +838,9 @@ const Page = () => {
 
                       <Grid item xs={12} mt={2}>
                         <Grid container spacing={1}>
-                          {guides && guides.map(({ _id, guideForFounder }) => (
+                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForFounder }) => (
                             <>
-                              {guideForFounder && guideForFounder.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
+                              {guideForFounder && Array.isArray(guideForFounder) && guideForFounder?.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
                                 <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                   <Tooltip title={guideForFounderTooltip} placement="top">
                                     <Card style={{ padding: '22px' }}>

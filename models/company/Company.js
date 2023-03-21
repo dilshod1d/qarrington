@@ -72,6 +72,7 @@ const CompanySchema = new mongoose.Schema({
         companyPrice: { type: String },
         companyPercentChange: { type: String },
         companyPointChange: { type: String },
+        companyVariant: { type: String },
         companyActiveCustomers: { type: String },
         companyIsRecordedAt: { type: String }
       }],
@@ -93,6 +94,7 @@ const CompanySchema = new mongoose.Schema({
         companyPrice: { type: String },
         companyPercentChange: { type: String },
         companyPointChange: { type: String },
+        companyVariant: { type: String },
         companyActiveCustomers: { type: String },
         companyIsRecordedAt: { type: String }
       }],
@@ -114,6 +116,7 @@ const CompanySchema = new mongoose.Schema({
         companyPrice: { type: String },
         companyPercentChange: { type: String },
         companyPointChange: { type: String },
+        companyVariant: { type: String },
         companyActiveCustomers: { type: String },
         companyIsRecordedAt: { type: String }
       }],
@@ -135,6 +138,7 @@ const CompanySchema = new mongoose.Schema({
         companyPrice: { type: String },
         companyPercentChange: { type: String },
         companyPointChange: { type: String },
+        companyVariant: { type: String },
         companyActiveCustomers: { type: String },
         companyIsRecordedAt: { type: String }
       },
@@ -156,6 +160,7 @@ const CompanySchema = new mongoose.Schema({
         companyPrice: { type: String },
         companyPercentChange: { type: String },
         companyPointChange: { type: String },
+        companyVariant: { type: String },
         companyActiveCustomers: { type: String },
         companyIsRecordedAt: { type: String }
       }],
@@ -177,6 +182,7 @@ const CompanySchema = new mongoose.Schema({
         companyPrice: { type: String },
         companyPercentChange: { type: String },
         companyPointChange: { type: String },
+        companyVariant: { type: String },
         companyActiveCustomers: { type: String },
         companyIsRecordedAt: { type: String }
       }],
@@ -198,6 +204,7 @@ const CompanySchema = new mongoose.Schema({
         companyPrice: { type: String },
         companyPercentChange: { type: String },
         companyPointChange: { type: String },
+        companyVariant: { type: String },
         companyActiveCustomers: { type: String },
         companyIsRecordedAt: { type: String }
       }],
@@ -219,6 +226,7 @@ const CompanySchema = new mongoose.Schema({
         companyPrice: { type: String },
         companyPercentChange: { type: String },
         companyPointChange: { type: String },
+        companyVariant: { type: String },
         companyActiveCustomers: { type: String },
         companyIsRecordedAt: { type: String }
       }]

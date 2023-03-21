@@ -1170,7 +1170,7 @@ export const PureLightTheme = createTheme({
     '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
     h1: {
       fontWeight: 700,
-      fontSize: 50
+      fontSize: 60
     },
     h2: {
       fontWeight: 700,
