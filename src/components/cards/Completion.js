@@ -28,8 +28,8 @@ const Component = ({ account }) => {
         <Grid item xs={12}>
           <Card style={{ padding: '40px' }}>
             <Box display='flex' justifyContent='center' alignItems='center'>
-                <CircularProgress variant='determinate' size={80} thickness={6} value={accountStatus.accountCompletionRate} />
-                <Typography variant='body2' fontWeight={600} position='absolute'>{accountStatus.accountCompletionRate}%</Typography>
+                <CircularProgress variant='determinate' size={80} thickness={6} value={account?.accountStatus.accountCompletionRate} />
+                <Typography variant='body2' fontWeight={600} position='absolute'>{account?.accountStatus.accountCompletionRate}%</Typography>
             </Box>
             <Box style={{ padding: '15px 0px 15px 0px', display: 'flex', justifyContent: 'center' }}>
               <Typography
@@ -40,7 +40,7 @@ const Component = ({ account }) => {
                 fontWeight={500}
                 color="secondary"
               >
-                Dear {accountPersonal.accountFirstName}, you must provide verifiable <Typography component="span" color="primary" fontWeight={600}>personal</Typography>, <Typography component="span" color="primary" fontWeight={600}>business</Typography>, <Typography component="span" color="primary" fontWeight={600}>bank</Typography>, and <Typography component="span" color="primary" fontWeight={600}>contact</Typography> details to receive payouts.
+                Dear {account?.accountPersonal.accountFirstName}, you must provide verifiable <Typography component="span" color="primary" fontWeight={600}>personal</Typography>, <Typography component="span" color="primary" fontWeight={600}>business</Typography>, <Typography component="span" color="primary" fontWeight={600}>bank</Typography>, and <Typography component="span" color="primary" fontWeight={600}>contact</Typography> details to receive payouts.
               </Typography>
             </Box>
             <Box>
