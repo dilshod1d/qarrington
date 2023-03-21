@@ -10,14 +10,9 @@ import { Avatar, Badge, Box, Button, Card, Container, Grid, Hidden, Stack, style
 import useSWR from 'swr';
 import { useEffect } from "react";
 import { updateAccount } from "@services/accounts-services";
+import { useAccount } from "@hooks/useAccount";
 
 const Page = () => {
-
-  const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
-  const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
-  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
-
   const contentData = [
     {
       placeholder: "first name",
@@ -146,9 +141,12 @@ const Page = () => {
     }
   ];
 
-  const [account, setAccount] = useState(null)
+  const fetcher = (...args) => fetch(...args).then(res => res.json());
+  const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
+  const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
+  const { account } = useAccount()
+
   const [value, setValue] = useState('2');
-  const [steps, setSteps] = useState([])
   const [stepsCount, setStepsCount] = useState(0)
   const [inputValues, setInputValues] = useState({})
   const [inputValue, setInputValue] = useState('')
@@ -158,14 +156,8 @@ const Page = () => {
 
 
   useEffect(() => {
-    if (!error && data?.data) {
-        setAccount(data.data.account)
-    }
-  }, [data])
-
-  useEffect(() => {
     if(account !== null) {
-      setSteps(getSteps())
+      getSteps()
     }
   }, [account])
 
@@ -210,7 +202,6 @@ const Page = () => {
     })
 
     setStepsCount(count)
-
     setInputValues(previousInputs)
 
     return schema
@@ -282,7 +273,7 @@ const Page = () => {
     setStepContent(contentData[step])
   }
 
-  return (
+  return !account ? null : (
 
     <>
 
