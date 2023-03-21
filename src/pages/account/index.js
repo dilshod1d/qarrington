@@ -1,8 +1,5 @@
-import React, { Component, useState, useEffect } from 'react';
-import { useSession, getSession } from 'next-auth/react'
-import { useRouter } from 'next/router';
+import { useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Carousel from 'react-material-ui-carousel';
 import Link from 'next/link';
 import HeaderMenu from '../../components/menus/HeaderMenu';
@@ -14,7 +11,6 @@ import {
     Box,
     Button,
     Card,
-    CardMedia,
     Container,
     Grid,
     Stack,
@@ -29,8 +25,8 @@ import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
 import Footer from '../../components/main/Footer';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
-import useSWR from 'swr';
 import { Pagination } from '@mui/lab';
+import { useAccount } from '@hooks/useAccount';
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
@@ -45,15 +41,7 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 }));
 
 const Page = () => {
-    const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
-    const [account, setAccount] = useState(null)
-
-    useEffect(() => {
-        if (!error && data?.data) {
-            setAccount(data.data.account)
-        }
-    }, [data])
+    const { account } = useAccount()
 
     const [value, setValue] = useState('1');
 
@@ -61,7 +49,7 @@ const Page = () => {
         setValue(newValue);
     };
 
-    return (
+    return !account ? null : (
 
         <div>
 
