@@ -5,8 +5,9 @@ import LeftSide from '../../components/topics/LeftSide';
 import Navbar from '../../components/topics/Navbar';
 import RightSide from '../../components/topics/RightSide';
 import Footer from '../../components/main/Footer';
-import { Avatar, Badge, Box, Card, Container, Divider, Grid, styled, Typography } from '@mui/material';
+import { Avatar, Badge, Box, Card, Container, Divider, Grid, List, ListItem, ListItemButton, ListItemText, styled, Typography } from '@mui/material';
 import { createClient } from 'contentful';
+import { CardActionArea } from '@mui/material';
 
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -53,27 +54,32 @@ const Page = ({ topicItem }) => {
                     <Grid mt={8} item xs={6}>
                         <Box style={{ padding: '100px 20px 20px 20px' }}>
                             <Typography variant="h1" fontWeight={700} color="black">
-                                Discover answers to 50k questions.
+                                Discover answers to 75k questions.
                             </Typography>
                             <Divider sx={{ my: 3 }} />
-                            <Typography mt={1} mb={4} variant="h5" fontWeight={500} color="secondary">
-                                In less than 5 seconds, you can find answers to over 50,000 questions. If you're unable to do so, kindly send us an email.
+                            <Typography mt={1} mb={1} variant="h5" fontWeight={500} color="secondary">
+                                In ~5 seconds, you can find answers to over 75k questions.
                             </Typography>
                         </Box>
                         <Grid item xs={12} mb={2}>
-                            <Grid container spacing={1}>
+                            <Grid container spacing={0.1}>
 
                                 {topicItem.slice(0, 2).map(topics => (
                                     <Grid key={topics.sys.id} item xs={12}>
-                                        <Link href={`/topics/${topics.fields.topicUrl}`}>
-                                            <Card style={{ padding: '20px 40px 40px 40px', cursor: 'pointer' }}>
-                                                <Box mt={2}>
-                                                    <Typography variant="h6" fontWeight={700} color="black">
-                                                        {topics.fields.topicTitle}
-                                                    </Typography>
+                                        <ListItemButton sx={{ borderBottom: 1, borderColor: '#e7e7e7' }}>
+                                            <Link href={`/topics/${topics.fields.topicUrl}`}>
+                                                <Box sx={{ padding: '20px 40px 40px 40px' }}>
+                                                    <Box mt={2}>
+                                                        <Typography gutterBottom variant="h4" fontWeight={700} color="black">
+                                                            {topics.fields.topicTitle}
+                                                        </Typography>
+                                                        <Typography textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
+                                                            {`tag`}
+                                                        </Typography>
+                                                    </Box>
                                                 </Box>
-                                            </Card>
-                                        </Link>
+                                            </Link>
+                                        </ListItemButton>
                                     </Grid>
                                 ))}
 

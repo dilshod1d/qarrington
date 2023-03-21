@@ -51,7 +51,7 @@ const Page = ({ topicItem }) => {
                 <title>{topicItem.fields.topicTitle} • Qarrington</title>
                 <meta
                     name="description"
-                    content={topicItem.fields.topicDetail}
+                    content={topicItem.fields.topicSummary}
                 />
             </Head>
 
