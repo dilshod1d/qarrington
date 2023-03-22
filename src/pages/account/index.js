@@ -51,9 +51,9 @@ const Page = () => {
 
     const [value, setValue] = useState('1');
     
-    const [accountAccessKey, setAccountAccessKey] = useState()
-    const [accountAvatarUrl, setAccountAvatarUrl] = useState()
-    const [accountCurrentTitle, setAccountCurrentTitle] = useState()
+    const [accountAccessKey, setAccountAccessKey] = useState('')
+    const [accountAvatarUrl, setAccountAvatarUrl] = useState('')
+    const [accountCurrentTitle, setAccountCurrentTitle] = useState('')
 
     const [avatarUrlError, setAvatarUrlError] = useState('')
     const [accessKeyError, setAccessKeyError] = useState(null)
@@ -238,7 +238,6 @@ const Page = () => {
                                                                     required
                                                                     id="outlined-required"
                                                                     placeholder="avatar url"
-                                                                    defaultValue={account?.accountProfile?.accountAvatarUrl}
                                                                     onChange={({ target }) => setAccountAvatarUrl(target.value)}
                                                                     value={accountAvatarUrl}
                                                                     inputProps={{ style: { textAlign: 'center' } }}
@@ -251,7 +250,6 @@ const Page = () => {
                                                                     required
                                                                     id="outlined-required"
                                                                     placeholder="current title"
-                                                                    defaultValue={account?.accountProfile?.accountCurrentTitle}
                                                                     onChange={({ target }) => setAccountCurrentTitle(target.value)}
                                                                     value={accountCurrentTitle}
                                                                     inputProps={{ style: { textAlign: 'center' } }}
