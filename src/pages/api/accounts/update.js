@@ -1,15 +1,16 @@
-import dbConnect from '../../../lib/dbConnect';
-import Account from '../../../../models/account/Account';
-import handler, { check, put, initValidation } from "../../../middleware/handler"
-import { getHeaderAuth, getAuthAccount } from "../../../lib/auth"
-import auth from "../../../middleware/auth"
-import { createCustomAccount, createPerson, listPersons, uploadVef } from '../../../lib/stripe';
+import dbConnect from '@lib/dbConnect';
+import Account from '@models/account/Account';
+import handler, { check, put, initValidation } from "@middleware/handler"
+import { authenticate } from "@middleware/auth"
+import { createCustomAccount, createPerson, listPersons, uploadVef } from '@lib/stripe';
 import multer from "multer"
-import { createImage } from '../../../lib/cloudinary';
+const upload = multer()
+import { createImage } from '@lib/cloudinary';
+import { getAccountCompletionRate } from '@helpers/accounts-helpers';
 
 const validator = initValidation(
     [
-        check("accountAccessKey").optional().isLength({ min: 13 }).withMessage("Invalid access key"),
+        check("accountAccessKey").optional().isLength({ min: 12, max: 12 }).withMessage("Invalid access key, it has to be at least 12 chars long"),
         check("accountIdNumber").optional().isNumeric().withMessage("Account Id is not a number"),
         check("accountIbanNumber").optional().isNumeric().withMessage("accountIbanNumber is not a number"),
         check("accountNumber").optional().isNumeric().withMessage("accountNumber is not a number"),
@@ -30,6 +31,7 @@ const formatReqObject = (req, account) => {
         accountKeys: ["accountAccessKey"],
     }
     const data = {}
+
 
     Object.keys(schema).forEach((key) => {
         if (typeof (schema[key]) == 'object' && schema[key][0]) {
@@ -52,27 +54,6 @@ const formatReqObject = (req, account) => {
 
     // accountGovernmentId, accountIdNumber, accountBusinessName, accountBusinessWebsite, accountBusinessAddress, accountBusinessCountry, accountHomeAddress, accountZipCode, accountCityName, and accountStateName. However, we will only allow the user to enter/view their accountFirstName, accountLastName, accountHomeCountry, accountBirthDate, accountBusinessEmail, accountBankCountry, accountBankCurrency, accountIbanNumber, accountNumber, accountRoutingNumber, accountSortCode, accountEmailAddress, and accountPhoneNumber.
     return data
-}
-
-const getAccountCompletionRate = (account) => {
-    const accountContact = account.accountContact
-    const accountBank = account.accountBank
-    // console.log("account_get_rate", accountContact)
-
-    const accountBusiness = account.accountBusiness
-    const accountPersonal = account.accountPersonal
-
-    let sum = 0;
-    sum += Object.entries(accountContact).filter(e => e[1] != undefined).length
-    sum += Object.entries(accountBank).filter(e => e[1] != undefined).length
-
-    sum += Object.entries(accountBusiness).filter(e => e[1] != undefined).length
-    sum += Object.entries(accountPersonal).filter(e => e[1] != undefined).length
-
-    // const sum = Number(Object.keys(accountContact).length) + Number(Object.keys(accountBank).length) + Number(Object.keys(accountBusiness).length) + Number(Object.keys(accountPersonal).length)
-    // console.log("sum", sum)
-    let accountCompletionRate = sum * 4
-    return accountCompletionRate
 }
 
 const deleteUnmuttable = (req) => {
@@ -134,16 +115,19 @@ const uploadStripeAccountId = async (file, id) => {
     console.log("uploadCreateStripeAcc", upload)
 }
 
-export default handler.use(multer().any(), auth(), put(validator))
+export default handler.use(authenticate, upload.single('accountAvatar'), upload.single('accountGovernmentId'), put(validator))
     .put(async (req, res) => {
         // return req.headers
         try {
             await dbConnect();
-            const account = await getAuthAccount(req, { "accountKeys.accountToken": 0 })
-            const formdata = formatReqObject(req, account)
-            const token = await getHeaderAuth(req)
+            const { id } = req
 
-            await Account.updateOne({ "accountKeys.accountToken": token }, [{ $set: formdata }]);
+            const formdata = formatReqObject(req)
+            
+            const account = await Account.findByIdAndUpdate(id, [{ $set: formdata }], {
+                new: true
+            });
+
             const completionRate = getAccountCompletionRate(account)
 
             account.accountStatus.accountCompletionRate = completionRate
@@ -153,8 +137,8 @@ export default handler.use(multer().any(), auth(), put(validator))
                 account.accountStripeId = acc.id
             }
 
-            let accountAvatar = req.files.filter(e => e.fieldname == "accountAvatar")[0]
-            let accountGovId = req.files.filter(e => e.fieldname == "accountGovernmentId")[0]
+            let accountAvatar = req.files?.filter(e => e.fieldname == "accountAvatar")[0]
+            let accountGovId = req.files?.filter(e => e.fieldname == "accountGovernmentId")[0]
             let accountGovIdUrl = ''
 
             // console.log(accountGovId, req.files)
@@ -180,7 +164,7 @@ export default handler.use(multer().any(), auth(), put(validator))
                 accountAvatar = await createImage(accountAvatar)
                 account.accountProfile.accountAvatarUrl = accountAvatar.url
             }
-            account.save();
+            await account.save();
 
             res.status(201).json({ success: true, data: { account }, message: "Account update successfully" });
         } catch (err) {
@@ -192,6 +176,5 @@ export default handler.use(multer().any(), auth(), put(validator))
 export const config = {
     api: {
         responseLimit: false,
-        bodyParser: false
     }
 };

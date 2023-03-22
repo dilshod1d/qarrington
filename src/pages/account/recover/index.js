@@ -8,6 +8,10 @@ import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
 import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
+import { signIn, useSession } from "next-auth/react";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { useRef } from "react";
 
 const Page = () => {
 
@@ -16,12 +20,42 @@ const Page = () => {
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
 
   const [value, setValue] = useState('2');
+  const [secretKey, setSecretKey] = useState('')
+  const [error, setError] = useState('')
+  const isPrevAuthenticate = useRef(null)
+  
+  const session = useSession()
+  const router = useRouter()
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  return (
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const options = { redirect: false, secretKey }
+    const res = await signIn("credentials", options)
+    if(res?.error) {
+      return setError("Secret key doesn't match any account")
+    }
+  }
+
+  useEffect(() => {
+    if (session.status === "unauthenticated") isPrevAuthenticate.current = true
+    
+    if (session.status === "authenticated" && !isPrevAuthenticate.current) {
+      router.push(`/account`)
+    } else if (session.status === "authenticated" && isPrevAuthenticate.current) {
+      router.push(`/account/open/${session.data.user.id}`)
+    }
+  }, [session])
+
+  const handleInputChange = (e) => {
+    setSecretKey(e.target.value)
+    setError('')
+  }
+
+  return session?.status === "loading" || session?.status === "authenticated" ? null : (
 
     <>
 
@@ -86,7 +120,7 @@ const Page = () => {
 
               </Box>
 
-              <form noValidate autoComplete="on">
+              <form noValidate autoComplete="on" onSubmit={handleSubmit}>
 
                 <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px' }}>
 
@@ -97,6 +131,10 @@ const Page = () => {
                         sx={{ input: { textAlign: "center" } }}
                         required
                         placeholder="secret key"
+                        error={error !== ''}
+                        helperText={error}
+                        onChange={handleInputChange}
+                        value={secretKey}
                       />
                     </Tooltip>
 

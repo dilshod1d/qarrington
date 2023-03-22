@@ -10,6 +10,7 @@ import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden,
 import useSWR from 'swr';
 import { createAccount } from "@services/accounts-services";
 import { useRouter } from "next/router";
+import { removeSpaces } from "@helpers/helpers";
 
 const Page = () => {
 
@@ -21,6 +22,7 @@ const Page = () => {
 
   const [value, setValue] = useState('2');
   const [accessKey, setAccessKey] = useState('')
+  const [error, setError] = useState(null)
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -35,6 +37,17 @@ const Page = () => {
       }
     } catch (error) {
       console.log(error)
+    }
+  }
+
+  const handleInputChange = (e) => {
+    const valueWithoutSpaces = removeSpaces(e.target.value)
+    setAccessKey(valueWithoutSpaces)
+    
+    if(valueWithoutSpaces.length !== 12) {
+      setError("Access key has to be 12 characters long")
+    } else {
+      setError("")
     }
   }
 
@@ -114,7 +127,9 @@ const Page = () => {
                         sx={{ input: { textAlign: "center" } }}
                         required
                         placeholder="access key"
-                        onChange={({ target }) => setAccessKey(target.value)}
+                        error={error !== '' && error !== null}
+                        helperText={error}
+                        onChange={handleInputChange}
                         value={accessKey}
                       />
                     </Tooltip>
@@ -125,6 +140,7 @@ const Page = () => {
                       variant="contained"
                       fullWidth={true}
                       type="submit"
+                      disabled={error === null || error !== ''}
                     >
                       register
                     </Button>

@@ -1,8 +1,5 @@
-import React, { Component, useState, useEffect } from 'react';
-import { useSession, getSession } from 'next-auth/react'
-import { useRouter } from 'next/router';
+import { useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Carousel from 'react-material-ui-carousel';
 import Link from 'next/link';
 import HeaderMenu from '../../components/menus/HeaderMenu';
@@ -14,7 +11,6 @@ import {
     Box,
     Button,
     Card,
-    CardMedia,
     Container,
     Grid,
     Stack,
@@ -29,8 +25,13 @@ import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
 import Footer from '../../components/main/Footer';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
-import useSWR from 'swr';
 import { Pagination } from '@mui/lab';
+import { useAccount } from '@hooks/useAccount';
+import { useEffect } from 'react';
+import { checkIfUrlIsValidImage } from '@helpers/accounts-helpers';
+import { updateAccount } from '@services/accounts-services';
+import { useRouter } from 'next/router';
+import { removeSpaces } from '@helpers/helpers';
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
@@ -45,23 +46,76 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 }));
 
 const Page = () => {
-    const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
-    const [account, setAccount] = useState(null)
-
-    useEffect(() => {
-        if (!error && data?.data) {
-            setAccount(data.data.account)
-        }
-    }, [data])
+    const { account } = useAccount()
+    const router = useRouter()
 
     const [value, setValue] = useState('1');
+    
+    const [accountAccessKey, setAccountAccessKey] = useState()
+    const [accountAvatarUrl, setAccountAvatarUrl] = useState()
+    const [accountCurrentTitle, setAccountCurrentTitle] = useState()
+
+    const [avatarUrlError, setAvatarUrlError] = useState('')
+    const [accessKeyError, setAccessKeyError] = useState(null)
+    
+    useEffect(() => {
+        if(account) {
+            setAccountAccessKey(account.accountKeys.accountAccessKey)
+            setAccountAvatarUrl(account?.accountProfile?.accountAvatarUrl || '')
+            setAccountCurrentTitle(account?.accountProfile?.accountCurrentTitle || '')
+        }
+    }, [account])
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
-    return (
+    const handleChangeAccountAccessKey = (e) => {
+        const valueWithoutSpaces = removeSpaces(e.target.value)
+        setAccountAccessKey(valueWithoutSpaces)
+        
+        if(valueWithoutSpaces.length !== 12) {
+            setAccessKeyError("Access key has to be 12 characters long")
+        } else {
+            setAccessKeyError("")
+        }
+    }
+
+    const handleSaveAvatarAndTitle = async (e) => {
+        e.preventDefault()
+        const isImage = await checkIfUrlIsValidImage(accountAvatarUrl)
+        if(!isImage) {
+            return setAvatarUrlError("The provided url is not a valid image")
+        } else {
+            setAvatarUrlError('')
+        }
+        
+        try {
+            const res = await updateAccount({ accountCurrentTitle, accountAvatarUrl })
+            if(!res?.error) {
+                router.reload()
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const handleSaveAccessKey = async (e) => {
+        e.preventDefault()
+
+        if(accountAccessKey.length === 12) {
+            try {
+                const res = await updateAccount({ accountAccessKey })
+                if(!res?.error) {
+                    router.reload()
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    }
+    
+    return !account ? null : (
 
         <div>
 
@@ -101,7 +155,6 @@ const Page = () => {
                                                     <Box style={{ textAlign: 'center' }}>
                                                         <Box component="label" display="flex" justifyContent="center">
                                                             <StyledBadge
-                                                                key={_id}
                                                                 overlap="circular"
                                                                 anchorOrigin={{
                                                                     vertical: 'bottom',
@@ -110,14 +163,13 @@ const Page = () => {
                                                                 variant={account?.accountStatus?.accountIsActive}
                                                             >
                                                                 <Avatar
-                                                                    key={_id}
                                                                     style={{ width: 65, height: 65 }}
                                                                     alt={account?.accountPersonal?.accountFirstName}
                                                                     src={account?.accountProfile?.accountAvatarUrl}
                                                                 />
                                                             </StyledBadge>
                                                         </Box>
-                                                            <Box mt={1.5} key={_id}>
+                                                            <Box mt={1.5}>
                                                                 <Typography component="span" variant="h4" fontWeight="500" color="black">Hi</Typography>
                                                                 <Typography component="span" mr={0.5} variant="h4" fontWeight="500" color="secondary">,</Typography>
                                                                 <Typography component="span" variant="h4" fontWeight="700" color="black">{account?.accountPersonal?.accountFirstName}</Typography>
@@ -187,7 +239,11 @@ const Page = () => {
                                                                     id="outlined-required"
                                                                     placeholder="avatar url"
                                                                     defaultValue={account?.accountProfile?.accountAvatarUrl}
+                                                                    onChange={({ target }) => setAccountAvatarUrl(target.value)}
+                                                                    value={accountAvatarUrl}
                                                                     inputProps={{ style: { textAlign: 'center' } }}
+                                                                    error={avatarUrlError !== ''}
+                                                                    helperText={avatarUrlError}
                                                                 />
                                                             </Tooltip>
                                                             <Tooltip title="Kindly provide your current job title so we know who you are as a Qarrington." placement="top">
@@ -196,6 +252,8 @@ const Page = () => {
                                                                     id="outlined-required"
                                                                     placeholder="current title"
                                                                     defaultValue={account?.accountProfile?.accountCurrentTitle}
+                                                                    onChange={({ target }) => setAccountCurrentTitle(target.value)}
+                                                                    value={accountCurrentTitle}
                                                                     inputProps={{ style: { textAlign: 'center' } }}
                                                                 />
                                                             </Tooltip>
@@ -209,6 +267,7 @@ const Page = () => {
                                                         variant="contained"
                                                         fullWidth={true}
                                                         type="submit"
+                                                        onClick={handleSaveAvatarAndTitle}
                                                     >
                                                         save
                                                     </Button>
@@ -236,6 +295,10 @@ const Page = () => {
                                                                 id="outlined-required"
                                                                 placeholder="access key"
                                                                 defaultValue={account?.accountKeys?.accountAccessKey}
+                                                                onChange={handleChangeAccountAccessKey}
+                                                                value={accountAccessKey}
+                                                                error={accessKeyError !== '' && accessKeyError !== null}
+                                                                helperText={accessKeyError}
                                                                 inputProps={{ style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
@@ -258,6 +321,7 @@ const Page = () => {
                                                         variant="contained"
                                                         fullWidth={true}
                                                         type="submit"
+                                                        onClick={handleSaveAccessKey}
                                                     >
                                                         save
                                                     </Button>
