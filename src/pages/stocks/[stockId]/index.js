@@ -9,7 +9,6 @@ import useSWR from 'swr';
 const Page = ({ name, ticker }) => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
 
   const [value, setValue] = useState('1');
@@ -169,10 +168,9 @@ const Page = ({ name, ticker }) => {
                   {/* founder tab starts */}
 
                   <Box textAlign="center" mb={2}>
-                    {stories && Array.isArray(stories) && stories?.map(({ _id, storyByCustomer }) => (
-                      <>
+                    
                         <Carousel>
-                          {storyByCustomer && Array.isArray(storyByCustomer) && storyByCustomer?.map(({ _id, storyByCustomerName, storyByCustomerTitle, storyByCustomerAvatar, storyByCustomerContent, storyByCustomerIsActive }) => (
+                          {stories && Array.isArray(stories) && stories?.map(({ _id, storyByInvestorName, storyByInvestorTitle, storyByInvestorAvatar, storyByInvestorContent, storyByInvestorIsActive }) => (
                             <Box key={_id}>
                               <Box
                                 style={{
@@ -186,25 +184,24 @@ const Page = ({ name, ticker }) => {
                                     vertical: 'bottom',
                                     horizontal: 'right'
                                   }}
-                                  variant={storyByCustomerIsActive}
+                                  variant={storyByInvestorIsActive}
                                 >
                                   <Avatar
                                     style={{ width: 80, height: 80 }}
-                                    alt={storyByCustomerName}
-                                    src={storyByCustomerAvatar}
+                                    alt={storyByInvestorName}
+                                    src={storyByInvestorAvatar}
                                   />
                                 </StyledBadge>
                               </Box>
                               <Box marginTop="16px">
-                                <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByCustomerName}</Typography>
-                                <Typography variant="body" component="div" gutterBottom>{storyByCustomerTitle}</Typography>
-                                <Typography variant="h5" component="div" fontWeight="600">{storyByCustomerContent}</Typography>
+                                <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByInvestorName}</Typography>
+                                <Typography variant="body" component="div" gutterBottom>{storyByInvestorTitle}</Typography>
+                                <Typography variant="h5" component="div" fontWeight="600">{storyByInvestorContent}</Typography>
                               </Box>
                             </Box>
                           ))}
                         </Carousel>
-                      </>
-                    ))}
+                      
                   </Box>
 
                   <Grid item xs={12} mt={2}>
@@ -360,3 +357,41 @@ export async function getStaticPaths() {
     fallback: false
   }
 }
+
+const stories = [
+  {
+    storyByInvestorName: "Galia",
+    storyByInvestorTitle: "Partner @ Brake Capital",
+    storyByInvestorAvatar: "/assets/media/underwriters/galia.webp",
+    storyByInvestorContent: "At the NASDAQ, the lack of exits and interest from LPs are the major dilemmas faced by many startup incubators and accelerators. Well then ... a subscription exchange is born.",
+    storyByInvestorIsActive: "dot"
+  },
+  {
+    storyByInvestorName: "Fabian",
+    storyByInvestorTitle: "Partner @ French Tech Visa",
+    storyByInvestorAvatar: "/assets/media/underwriters/fabian.webp",
+    storyByInvestorContent: "Working with Qarrington in today's global economic downturn has been an absolute game-changer for the startups we back through the French Tech Visa Program.",
+    storyByInvestorIsActive: ""
+  },
+  {
+    storyByInvestorName: "Hadar",
+    storyByInvestorTitle: "Partner @ Lemonade Funds",
+    storyByInvestorAvatar: "/assets/media/underwriters/hadar.webp",
+    storyByInvestorContent: "Whether it's a Fund like Lemonade or a venture capital firm like Accel, investing in 100 startups and expecting 1 unicorn exit in 10 years is beyond flawed.",
+    storyByInvestorIsActive: "dot"
+  },
+  {
+    storyByInvestorName: "Chris",
+    storyByInvestorTitle: "Partner @ Gorilla Ventures",
+    storyByInvestorAvatar: "/assets/media/underwriters/chris.webp",
+    storyByInvestorContent: "As a startup incubator, making 20 deals to hit ROI with 1 was tough for us. On Qarrington, we've seen the possibility of making 20 deals and hitting ROI from each.",
+    storyByInvestorIsActive: "dot"
+  },
+  {
+    storyByInvestorName: "Stephanie",
+    storyByInvestorTitle: "Partner @ Chicago Angels",
+    storyByInvestorAvatar: "/assets/media/underwriters/stephanie.webp",
+    storyByInvestorContent: "At Chicago Angels, the lack of liquidity is often an issue for us, but we're more than happy to be on a subscription exchange like Qarrington; the world's first of its kind.",
+    storyByInvestorIsActive: ""
+  }
+]
