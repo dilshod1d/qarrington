@@ -6,7 +6,7 @@ import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
-import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
+import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography, Snackbar } from '@mui/material';
 import useSWR from 'swr';
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/router'
@@ -15,7 +15,8 @@ import { useEffect } from "react";
 
 const Page = () => {
   const { logged } = useAccount()
-  const [error, setError] = useState('')
+  const [error, setError] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
@@ -40,14 +41,20 @@ const Page = () => {
     const res = await signIn("credentials", options)
     console.log(res)
     if(res?.error) {
-      return setError("Access key doesn't exist")
+      setErrorMsg("Access key doesn't exist")
+      setError(true)
+      return 
     }
     router.push('/account')
   }
 
   const handleInputChange = (e) => {
     setAccessKey(e.target.value)
-    setError('')
+    setError(false)
+  }
+
+  const handleClose = () => {
+    setErrorMsg('')
   }
 
   return logged === undefined || logged ? null : (
@@ -135,14 +142,20 @@ const Page = () => {
                         sx={{ input: { textAlign: "center" } }}
                         required
                         placeholder="access key"
-                        error={error !== ''}
-                        helperText={error}
+                        error={error}
                         onChange={handleInputChange}
                         value={accessKey}
                         disabled={logged === undefined}
                       />
                     </Tooltip>
-
+                    <Snackbar
+                      anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                      open={errorMsg !== ''}
+                      message={errorMsg}
+                      autoHideDuration={3000}
+                      onClose={handleClose}
+                      sx={{ '&>div':{ textAlign:"center", width:"inherit", display: "flex", justifyContent: "center" } }}
+                    />
                     <Button
                       size="large"
                       sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
