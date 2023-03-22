@@ -11,6 +11,7 @@ import useSWR from 'swr';
 import { signIn, useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { useRef } from "react";
 
 const Page = () => {
 
@@ -20,8 +21,8 @@ const Page = () => {
 
   const [value, setValue] = useState('2');
   const [secretKey, setSecretKey] = useState('')
-  const [wantToChangeKey, setWantToChangeKey] = useState(false)
   const [error, setError] = useState('')
+  const isPrevAuthenticate = useRef(null)
   
   const session = useSession()
   const router = useRouter()
@@ -37,21 +38,24 @@ const Page = () => {
     if(res?.error) {
       return setError("Secret key doesn't match any account")
     }
-    setWantToChangeKey(true)
   }
 
   useEffect(() => {
-    if (session.status === "authenticated" && wantToChangeKey) {
+    if (session.status === "unauthenticated") isPrevAuthenticate.current = true
+    
+    if (session.status === "authenticated" && !isPrevAuthenticate.current) {
+      router.push(`/account`)
+    } else if (session.status === "authenticated" && isPrevAuthenticate.current) {
       router.push(`/account/open/${session.data.user.id}`)
     }
-  }, [session, wantToChangeKey])
+  }, [session])
 
   const handleInputChange = (e) => {
     setSecretKey(e.target.value)
     setError('')
   }
 
-  return (
+  return session?.status === "loading" || session?.status === "authenticated" ? null : (
 
     <>
 
