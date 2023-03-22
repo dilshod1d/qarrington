@@ -12,6 +12,7 @@ import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useAccount } from "@hooks/useAccount";
 import { useEffect } from "react";
+import { removeSpaces } from "@helpers/helpers";
 
 const Page = () => {
   const { logged } = useAccount()
@@ -49,7 +50,8 @@ const Page = () => {
   }
 
   const handleInputChange = (e) => {
-    setAccessKey(e.target.value)
+    const newInput = removeSpaces(e.target.value)
+    newInput.length <= 12 && setAccessKey(newInput)
     setError(false)
   }
 
