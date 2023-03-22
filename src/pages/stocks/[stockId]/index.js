@@ -9,7 +9,7 @@ import TabContext from '@mui/lab/TabContext';
 import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
 
-const Page = ({ ticker }) => {
+const Page = ({ ticker, koko }) => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
@@ -141,7 +141,7 @@ const Page = ({ ticker }) => {
 
                 <Box textAlign="center">
                   <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    Once you log in to your account, kindly provide all the necessary account details and contacts for smooth payouts. Otherwise, your future payouts might be delayed.
+                    Once {koko.stockTicker} you log in to your account, kindly provide all the necessary account details and contacts for smooth payouts. Otherwise, your future payouts might be delayed.
                   </Typography>
                 </Box>
 
@@ -340,14 +340,12 @@ const Body = {
   backgroundColor: "#ffffff"
 };
 
-export async function getStaticProps(context) {
-  const stockId = context.params.stockId
-  const stockItem = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl/${stockId}`)
+export async function getStaticProps({ params }) {
+  const stockItem = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl${params.stockId}`)
     .then((r) => r.json());
   return {
     props: {
-      name: stockItem.stockName,
-      ticker: stockItem.stockTicker
+      koko: stockItem
     }
   };
 }
@@ -355,8 +353,8 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const stockItem = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl`).then((r) => r.json());
   return {
-    paths: stockItem.map(item => {
-      const stockId = item.stockUrl;
+    paths: stockItem.map(koko => {
+      const stockId = koko.stockUrl;
       return {
         params: {
           stockId
