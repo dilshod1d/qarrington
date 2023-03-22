@@ -1,18 +1,18 @@
 import dbConnect from '../../../lib/dbConnect';
-import Question from '../../../../models/question/Question';
+import Question from '../../../../models/stock/Stock';
 
 async function handler(req, res) {
   const { method } = req;
-  const { questionUrl } = req.query;
+  const { stockUrl } = req.query;
 
   await dbConnect();
 
   // read items
 
   if (method === "GET") {
-    if (questionUrl) {
+    if (stockUrl) {
       try {
-        const readItems = await Question.findOne({ questionUrl: questionUrl });
+        const readItems = await Question.findOne({ stockUrl: stockUrl });
         res.status(200).json(readItems);
       } catch (err) {
         res.status(500).json(err);
