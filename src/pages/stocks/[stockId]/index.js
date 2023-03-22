@@ -3,18 +3,14 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Carousel from 'react-material-ui-carousel';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
-import TabContext from '@mui/lab/TabContext';
-import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
+import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
 
-const Page = ({ ticker, koko }) => {
+const Page = ({ name, ticker }) => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
-  const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
 
   const [value, setValue] = useState('1');
 
@@ -32,7 +28,7 @@ const Page = ({ ticker, koko }) => {
         </title>
         <meta
           name="description"
-          content={`Buy and sell the subscriptions of innovative startup companies. It's like buying {ticker} stock, but instead of shares, it's product-backed subscriptions.`}
+          content={`Buy and sell the subscriptions of innovative startup companies. It's like buying ${ticker} stock, but instead of shares, it's product-backed subscriptions.`}
         />
       </Head>
 
@@ -141,7 +137,7 @@ const Page = ({ ticker, koko }) => {
 
                 <Box textAlign="center">
                   <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    Once {koko.stockTicker} you log in to your account, kindly provide all the necessary account details and contacts for smooth payouts. Otherwise, your future payouts might be delayed.
+                    Once {ticker} you log in to your account, kindly provide all the necessary account details and contacts for smooth payouts. Otherwise, your future payouts might be delayed.
                   </Typography>
                 </Box>
 
@@ -341,20 +337,20 @@ const Body = {
 };
 
 export async function getStaticProps({ params }) {
-  const stockItem = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl${params.stockId}`)
-    .then((r) => r.json());
+  const stockItem = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl=${params.stockId}`).then(r => r.json());
   return {
     props: {
-      koko: stockItem
+      name: stockItem.stockName,
+      ticker: stockItem.stockTicker
     }
-  };
+  }
 }
 
 export async function getStaticPaths() {
-  const stockItem = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl`).then((r) => r.json());
+  const stockItems = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl`).then((r) => r.json());
   return {
-    paths: stockItem.map(koko => {
-      const stockId = koko.stockUrl;
+    paths: stockItems.map(item => {
+      const stockId = item.stockUrl;
       return {
         params: {
           stockId
