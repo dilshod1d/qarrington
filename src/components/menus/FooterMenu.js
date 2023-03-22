@@ -16,8 +16,9 @@ const Component = () => {
 
   const handleLogout = async (e) => {
     e.preventDefault()
-    await signOut()
-    router.push('/')
+    router.push('/').then(() => {
+      signOut()
+    })
   }
 
   return (
