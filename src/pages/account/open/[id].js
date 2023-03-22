@@ -27,8 +27,9 @@ const Page = () => {
   const [accountAccessKey, setAccountAccessKey] = useState('')
 
   useEffect(() => {
+    console.log(session)
     if(id !== session?.data?.user?.id) {
-      router.push('/')
+      router.push('/account/access')
     }
   }, [session])
 
@@ -48,7 +49,7 @@ const Page = () => {
     }
   }
 
-  return session?.status === "loading" ? null : (
+  return session?.status === "loading" || session?.status === "unauthenticated" || !session ? null : (
 
     <>
 
