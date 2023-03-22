@@ -9,7 +9,7 @@ import TabContext from '@mui/lab/TabContext';
 import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
 
-const Page = ({ name, ticker, description, logo }) => {
+const Page = ({ ticker }) => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
@@ -289,31 +289,6 @@ const Page = ({ name, ticker, description, logo }) => {
 
 export default Page;
 
-const TabsWrapper = styled(TabList)(
-  ({ theme }) => `
-        &.MuiTabs-root {
-          height: 0;
-          margin-bottom: 16px;
-        }
-  `
-);
-
-const TabLabel = styled(Tab)(
-  ({ theme }) => `
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-  `
-);
-
-const Breadcrumb = {
-  cursor: "pointer",
-  fontWeight: "500",
-  "&:hover": {
-    color: '#000'
-  },
-};
-
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     backgroundColor: '#44b700',
@@ -365,19 +340,29 @@ const Body = {
   backgroundColor: "#ffffff"
 };
 
-export async function getServerSideProps({ params }) {
-  try {
-    const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl=${params.stockId.replace(/\-/g, '+')}`)
-      .then((r) => r.json());
-    return {
-      props: {
-        name: results.stockName,
-        ticker: results.stockTicker
+export async function getStaticProps(context) {
+  const stockId = context.params.stockId
+  const stockItem = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl/${stockId}`)
+    .then((r) => r.json());
+  return {
+    props: {
+      name: stockItem.stockName,
+      ticker: stockItem.stockTicker
+    }
+  };
+}
+
+export async function getStaticPaths() {
+  const stockItem = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl`).then((r) => r.json());
+  return {
+    paths: stockItem.map(item => {
+      const stockId = item.stockUrl;
+      return {
+        params: {
+          stockId
+        }
       }
-    };
-  } catch (error) {
-    return {
-      notFound: true
-    };
+    }),
+    fallback: false
   }
 }
