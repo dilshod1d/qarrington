@@ -10,7 +10,7 @@ import { createImage } from '@lib/cloudinary';
 
 const validator = initValidation(
     [
-        check("accountAccessKey").optional().isLength({ min: 12 }).withMessage("Invalid access key, it has to be at least 12 chars long"),
+        check("accountAccessKey").optional().isLength({ min: 12, max: 12 }).withMessage("Invalid access key, it has to be at least 12 chars long"),
         check("accountIdNumber").optional().isNumeric().withMessage("Account Id is not a number"),
         check("accountIbanNumber").optional().isNumeric().withMessage("accountIbanNumber is not a number"),
         check("accountNumber").optional().isNumeric().withMessage("accountNumber is not a number"),

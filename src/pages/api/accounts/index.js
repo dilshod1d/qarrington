@@ -3,10 +3,11 @@ import Account from '@models/account/Account';
 import handler, { check, initValidation } from "@middleware/handler"
 import { authenticate } from '@middleware/auth'
 import { generateToken } from "@lib/auth"
+import { removeSpaces } from '@helpers/helpers';
 
 const validator = initValidation(
 	[
-		check('accessKey').isLength({ min: 12 }).withMessage('Access Key is less than required length (12)'),
+		check('accessKey').isLength({ min: 12, max: 12 }).withMessage('Access Key is less than required length (12)'),
 	]
 )
 
@@ -15,8 +16,9 @@ const validator = initValidation(
 export default handler
 	.post(validator, async (req, res) => {
 		await dbConnect();
-		const accountAccessKey = req.body.accessKey
-		const accountSecretKey = generateToken(13)
+		const accountAccessKey = removeSpaces(req.body.accessKey) 
+		if(accountAccessKey.length < 12 || accountAccessKey.length > 12) return res.status(400).json({ success: false, message: "Invalid access key" })
+		const accountSecretKey = generateToken(12)
 
 		if (accountAccessKey) {
 			try {

@@ -42,8 +42,8 @@ const AccountSchema = new mongoose.Schema(
             accountCurrentTitle: { type: String }
         },
         accountKeys: {
-            accountAccessKey: { type: String, unique: true, minlength: 12 },
-            accountSecretKey: { type: String, unique: true, minlength: 12, immutable: true },
+            accountAccessKey: { type: String, unique: true, minlength: 12, maxlength: 12 },
+            accountSecretKey: { type: String, unique: true, minlength: 12, maxlength: 12, immutable: true },
             accountToken: { type: String, unique: true },
         },
         accountStatus: {

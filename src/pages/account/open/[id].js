@@ -12,6 +12,7 @@ import { updateAccount } from "@services/accounts-services";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useSession } from "next-auth/react";
+import { removeSpaces } from "@helpers/helpers";
 
 const Page = () => {
 
@@ -51,10 +52,11 @@ const Page = () => {
   }
 
   const handleInputChange = (e) => {
-    setAccountAccessKey(e.target.value)
+    const valueWithoutSpaces = removeSpaces(e.target.value)
+    setAccountAccessKey(valueWithoutSpaces)
     
-    if(e.target.value.length < 12) {
-      setError("Access key has to be at least 12 characters long")
+    if(valueWithoutSpaces.length !== 12) {
+      setError("Access key has to be 12 characters long")
     } else {
       setError("")
     }

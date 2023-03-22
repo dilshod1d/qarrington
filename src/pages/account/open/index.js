@@ -10,6 +10,7 @@ import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden,
 import useSWR from 'swr';
 import { createAccount } from "@services/accounts-services";
 import { useRouter } from "next/router";
+import { removeSpaces } from "@helpers/helpers";
 
 const Page = () => {
 
@@ -40,10 +41,11 @@ const Page = () => {
   }
 
   const handleInputChange = (e) => {
-    setAccessKey(e.target.value)
+    const valueWithoutSpaces = removeSpaces(e.target.value)
+    setAccessKey(valueWithoutSpaces)
     
-    if(e.target.value.length < 12) {
-      setError("Access key has to be at least 12 characters long")
+    if(valueWithoutSpaces.length !== 12) {
+      setError("Access key has to be 12 characters long")
     } else {
       setError("")
     }
