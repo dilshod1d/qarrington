@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from 'next/link';
 import Head from 'next/head';
 import TabList from '@mui/lab/TabList';
@@ -6,272 +6,72 @@ import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
 import Carousel from 'react-material-ui-carousel';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import { Avatar, Badge, Box, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
+import { Avatar, Badge, Box, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography, Snackbar, Autocomplete, createFilterOptions } from '@mui/material';
 import useSWR from 'swr';
 import { useEffect } from "react";
 import { updateAccount } from "@services/accounts-services";
 import { useAccount } from "@hooks/useAccount";
+import { useUpdateAccount } from "@hooks/useUpdateAccount";
+import { parseToObj } from "@helpers/accounts-update-helpers";
 
 const Page = () => {
-  const contentData = [
-    {
-      placeholder: "first name",
-      title: "Kindly provide your First Name exactly as it appears on your bank statement.",
-      required: true
-    },
-    {
-      placeholder: "last name",
-      title: "Kindly provide your Last Name exactly as it appears on your bank statement.",
-      required: true
-    },
-    {
-      placeholder: "government id",
-      title: "Kindly provide your Government-Issued ID as a link to the PNG or JPG image file.",
-      required: true
-    },
-    {
-      placeholder: "id number",
-      title: "Kindly provide the ID Number or SSN exactly as shown on the government id.",
-      required: true
-    },
-    {
-      placeholder: "home country",
-      title: "Kindly provide the 2-letter code of the country, where the id was legally issued.",
-      required: true
-    },
-    {
-      placeholder: "birth date",
-      title: "Kindly provide your Birth Date exactly as it appears on all your legal documents.",
-      required: true
-    },
-    {
-      placeholder: "business name",
-      title: "Kindly provide your Business Name or Full Name if you don't have a business.",
-      required: true
-    },
-    {
-      placeholder: "business type",
-      title: "By default, your Business Type is set to Individual and you can't change it later.",
-      required: true
-    },
-    {
-      placeholder: "business industry",
-      title: "By default, your Business Industry is set to SaaS and you cannot change it later.",
-      required: true
-    },
-    {
-      placeholder: "business website",
-      title: "Kindly provide your Business Website or Social Link if you don't have a business.",
-      required: true
-    },
-    {
-      placeholder: "business address",
-      title: "Kindly provide your Business Address or leave it blank to use your Home Address.",
-      required: true
-    },
-    {
-      placeholder: "business country",
-      title: "Kindly provide your Business Country or leave it blank to use your Home Country.",
-      required: true
-    },
-    {
-      placeholder: "business email",
-      title: "Kindly provide your Business Email or leave it blank to use your Email Address.",
-      required: true
-    },
-    {
-      placeholder: "bank country",
-      title: "Kindly provide the 2-letter code of the country, where your bank is located.",
-      required: true
-    },
-    {
-      placeholder: "bank currency",
-      title: "Kindly provide the 3-letter code of the currency that your bank account uses.",
-      required: true
-    },
-    {
-      placeholder: "iban number",
-      title: "Kindly provide your IBAN Number in case you don't have a bank Account Number.",
-      required: true
-    },
-    {
-      placeholder: "account number",
-      title: "Kindly enter your bank Account Number in case you don't have an IBAN Number.",
-      required: true
-    },
-    {
-      placeholder: "routing number",
-      title: "Kindly provide your Routing Number if your bank is based or located in the U.S.",
-      required: true
-    },
-    {
-      placeholder: "sort code",
-      title: "Kindly provide your Sort Code in case your bank is based or located in the UK.",
-      required: true
-    },
-    {
-      placeholder: "email address",
-      title: "Kindly provide your Email Address and once you do, you cannot change it later.",
-      required: true
-    },
-    {
-      placeholder: "phone number",
-      title: "Kindly provide your Phone Number and once you do, you cannot change it later.",
-      required: true
-    },
-    {
-      placeholder: "home address",
-      title: "Kindly provide your Home Address and once you do, you cannot change it later.",
-      required: true
-    },
-    {
-      placeholder: "zip code",
-      title: "Kindly provide the zip code or postal code of your current residential address.",
-      required: true
-    },
-    {
-      placeholder: "city name",
-      title: "Kindly provide the city, where you're currently located as a legal resident.",
-      required: true
-    },
-    {
-      placeholder: "state name",
-      title: "Kindly provide the state, where you're currently located as a legal resident.",
-      required: true
-    }
-  ];
-
+  const OPTIONS_LIMIT = 3
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
+
   const { account } = useAccount()
-
-  const [value, setValue] = useState('2');
-  const [stepsCount, setStepsCount] = useState(0)
-  const [inputValues, setInputValues] = useState({})
+  const { contentData, currentContentData, goNext, goBack, error, errorMsg, cleanError, cleanErrorMsg, finish, lastInput } = useUpdateAccount({ account })
   const [inputValue, setInputValue] = useState('')
-  const [stepContent, setStepContent] = useState(contentData[0])
-  const [activeStep, setActiveStep] = useState(0);
-  const [skippedSteps, setSkippedSteps] = useState([]);
 
-
-  useEffect(() => {
-    if(account !== null) {
-      getSteps()
-    }
-  }, [account])
-
-  useEffect(() => {
-    if(inputValues !== null && activeStep === 0) {
-      StepContent(0)
-    }
-  }, [inputValues])
+  const [value, setValue] = useState('2')
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-  };
+  }
 
-  const getSteps = () => {
-
-    const schema = {
-      accountPersonal: ["accountFirstName", "accountLastName", "accountGovernmentId", "accountIdNumber", "accountBirthDate", "accountHomeCountry"],
-      accountBusiness: ["accountBusinessName", "accountBusinessType", "accountBusinessIndustry", "accountBusinessWebsite", "accountBusinessAddress", "accountBusinessCountry", "accountBusinessEmail"],
-      accountBank: ["accountBankCountry", "accountBankCurrency", "accountIbanNumber", "accountNumber", "accountRoutingNumber", "accountSortCode"],
-      accountContact: ["accountEmailAddress", "accountPhoneNumber", "accountHomeAddress", "accountZipCode", "accountCityName", "accountStateName"],
+  const handleInputChange = (e) => {
+    const newInput = typeof e === "string" ? e : e.target.value
+    cleanError()
+    if(currentContentData.canModify) {
+      setInputValue(currentContentData.inputConstraints(inputValue, newInput))
     }
-
-    const previousInputs = {}
-    let count = 0
-
-    Object.keys(schema).forEach((key) => {
-      previousInputs[key] = {}
-      schema[key].forEach((keyValue) => {
-          // if(keyValue == "accountAccessKey" && req.body[keyValue].length > 13 )
-          if(account[key]) {
-            if (account[key][keyValue] && account[key][keyValue] != null) {
-              previousInputs[key][keyValue] = account[key][keyValue]
-            } else {
-              previousInputs[key][keyValue] = ''
-            }
-          } else {
-            previousInputs[key][keyValue] = ''
-          }
-          count++
-
-      })
-    })
-
-    setStepsCount(count)
-    setInputValues(previousInputs)
-
-    return schema
   }
 
-  const getStep = (position) => {
-    let count = 0
-    let currentStep
-
-    Object.keys(inputValues).forEach((key) => {
-      Object.keys(inputValues[key]).forEach((keyValue) => {
-        if(count === position && !currentStep) {
-          currentStep = inputValues[key][keyValue]
-        }
-        count++
-      })
-    })
-
-    return currentStep
+  const handleNext = (e) => { 
+    e.preventDefault()
+    goNext({ inputValue, setInputValue }) 
   }
-
-  const setStep = (position, value) => {
-    let count = 0
-    let inputValuesCopy = JSON.parse(JSON.stringify(inputValues))
-
-    Object.keys(inputValuesCopy).forEach((key) => {
-      Object.keys(inputValuesCopy[key]).forEach((keyValue) => {
-        if(count === position) {
-          inputValuesCopy[key][keyValue] = value
-        }
-        count++
-      })
-    })
-
-    setInputValues(inputValuesCopy)
-  }
-
-  const handleNext = () => {
-
-    if(activeStep === stepsCount - 1) {
-      const obj = {}
-      Object.keys(inputValues).forEach((key) => {
-        Object.keys(inputValues[key]).forEach((keyValue) => {
-          if(inputValues[key][keyValue]) obj[keyValue] = inputValues[key][keyValue]
-        })
-      })
-      updateAccount(obj)
-    }
-
-    setInputValue('')
-    setStep(activeStep, inputValue)
-    setActiveStep(activeStep + 1);
-    StepContent(activeStep + 1)
-    setSkippedSteps(skippedSteps.filter((skipItem) => skipItem !== activeStep));
-  };
 
   const handleBack = () => {
-    setInputValue('')
-    StepContent(activeStep - 1)
-    setActiveStep(activeStep - 1);
-  };
-
-
-  const StepContent = (step) => {
-
-    const currentStep = getStep(step)
-    currentStep && setInputValue(currentStep)
-
-    setStepContent(contentData[step])
+    goBack({ inputValue, setInputValue })
   }
+
+  const filterOptions = createFilterOptions({
+    limit: OPTIONS_LIMIT
+  });
+
+
+  useEffect(() => {
+    if(currentContentData) {
+      setInputValue(currentContentData.defaultValue)
+    }
+  }, [currentContentData])
+
+  useEffect(() => {
+    const update = async () => {
+      try {
+        const toSend = parseToObj(contentData)
+        const res = await updateAccount(toSend)
+        if(res.status >= 200 && res.status < 300) return
+
+        console.log("Something went wrong!")
+      } catch {
+        console.log(error)
+      }
+    }
+    if(finish) update()
+  }, [finish])
 
   return !account ? null : (
 
@@ -333,18 +133,18 @@ const Page = () => {
                 </Typography>
 
                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  Dear {account?.accountPersonal?.accountFirstName}, in order to sell subscriptions on Qarrington and receive payouts to your bank account, you're required to provide verifiable <b>personal</b>, <b>business</b>, <b>bank</b>, and <b>contact</b> details.
+                  Dear {account?.accountPersonal?.accountFirstName ? account?.accountPersonal?.accountFirstName : "guest" }, in order to sell subscriptions on Qarrington and receive payouts to your bank account, you're required to provide verifiable <b>personal</b>, <b>business</b>, <b>bank</b>, and <b>contact</b> details.
                 </Typography>
 
               </Box>
 
-              <form noValidate autoComplete="on">
+              <form noValidate autoComplete="on" onSubmit={handleNext}>
 
                 <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px' }}>
 
                   <Stack spacing={1.2} sx={{ width: '100%' }}>
 
-                    {activeStep === stepsCount ? (
+                    {finish || !currentContentData ? (
                       <Stack spacing={1.2} sx={{ width: '100%', mb: 0 }}>
 
                         <Link href="/help">
@@ -381,19 +181,44 @@ const Page = () => {
                       </Stack>
                     ) : (
                       <>
-                        <form>
                         <Stack spacing={1.2} sx={{ width: '100%' }}>
-                          <Tooltip title={stepContent.title} placement="top">
-                            <TextField
-                              sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                              required={stepContent.required}
-                              placeholder={stepContent.placeholder}
-                              onChange={({ target }) => setInputValue(target.value)}
-                              value={inputValue}
-                            />
+                          <Tooltip title={currentContentData.title} placement="top">
+                            {
+                              currentContentData?.options?.length > 0 
+                                ? (<Autocomplete
+                                  filterOptions={filterOptions}
+                                  options={currentContentData.options}
+                                  onInputChange={(e, value) => handleInputChange(value)}
+                                  value={inputValue}
+                                  isOptionEqualToValue={() => true}
+                                  sx={{ button: { textAlign: "center" }, '& .MuiAutocomplete-inputRoot': { padding: "9px !important" }, svg: { display: "none" }, button: { display: "none"} }}
+                                  renderInput={(params) => 
+                                    <TextField 
+                                      {...params} 
+                                      sx={{ input: { textAlign: "center" } }}
+                                      placeholder={currentContentData.placeholder}
+                                    />}
+                                />) : (
+                                <TextField
+                                  sx={{ input: { textAlign: "center" } }}
+                                  readOnly={!currentContentData.canModify}
+                                  placeholder={currentContentData.placeholder}
+                                  onChange={handleInputChange}
+                                  value={inputValue}
+                                  error={error}
+                                />
+                              )
+                            }
                           </Tooltip>
                         </Stack>
-                        </form>
+                        <Snackbar
+                          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                          open={errorMsg !== ''}
+                          message={errorMsg}
+                          autoHideDuration={3000}
+                          onClose={cleanErrorMsg}
+                          sx={{ '&>div':{ textAlign:"center", width:"inherit", display: "flex", justifyContent: "center" } }}
+                        />
                         <Button
                           size="large"
                           sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
@@ -401,11 +226,11 @@ const Page = () => {
                           fullWidth={true}
                           onClick={handleNext}
                         >
-                          {activeStep === stepsCount.length - 1 ? "Save" : "Next"}
+                          {lastInput ? "Save" : "Next"}
                         </Button>
                         <Button
                           style={FormButton}
-                          disabled={activeStep === 0}
+                          disabled={finish}
                           onClick={handleBack}
                           color="secondary"
                           sx={{ fontSize: '12px', textTransform: 'uppercase' }}
@@ -863,356 +688,3 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
   },
 }));
-
-const countries = [
-  [
-    {
-      name: "Albania"
-    },
-    {
-      name: "Algeria"
-    },
-    {
-      name: "Angola"
-    },
-    {
-      name: "Antigua & Barbuda"
-    },
-    {
-      name: "Argentina"
-    },
-    {
-      name: "Armenia"
-    },
-    {
-      name: "Australia"
-    },
-    {
-      name: "Austria"
-    },
-    {
-      name: "Azerbaijan"
-    },
-    {
-      name: "Bahamas"
-    },
-    {
-      name: "Bahrain"
-    },
-    {
-      name: "Bangladesh"
-    },
-    {
-      name: "Belgium"
-    },
-    {
-      name: "Benin"
-    },
-    {
-      name: "Bhutan"
-    },
-    {
-      name: "Bolivia"
-    },
-    {
-      name: "Bosnia & Herzegovina"
-    },
-    {
-      name: "Botswana"
-    },
-    {
-      name: "Brunei"
-    },
-    {
-      name: "Bulgaria"
-    },
-    {
-      name: "Cambodia"
-    },
-    {
-      name: "Canada"
-    },
-    {
-      name: "Chile"
-    },
-    {
-      name: "Colombia"
-    },
-    {
-      name: "Costa Rica"
-    },
-    {
-      name: "Côte d’Ivoire"
-    },
-    {
-      name: "Croatia"
-    },
-    {
-      name: "Cyprus"
-    },
-    {
-      name: "Czech Republic"
-    },
-    {
-      name: "Denmark"
-    },
-    {
-      name: "Dominican Republic"
-    },
-    {
-      name: "Ecuador"
-    },
-    {
-      name: "Egypt"
-    },
-    {
-      name: "El Salvador"
-    },
-    {
-      name: "Estonia"
-    },
-    {
-      name: "Ethiopia"
-    },
-    {
-      name: "Finland"
-    },
-    {
-      name: "France"
-    },
-    {
-      name: "Gabon"
-    },
-    {
-      name: "Gambia"
-    },
-    {
-      name: "Germany"
-    },
-    {
-      name: "Ghana"
-    },
-    {
-      name: "Greece"
-    },
-    {
-      name: "Guatemala"
-    },
-    {
-      name: "Guyana"
-    },
-    {
-      name: "Hong Kong"
-    },
-    {
-      name: "Hungary"
-    },
-    {
-      name: "Iceland"
-    },
-    {
-      name: "India"
-    },
-    {
-      name: "Indonesia"
-    },
-    {
-      name: "Ireland"
-    },
-    {
-      name: "Israel"
-    },
-    {
-      name: "Italy"
-    },
-    {
-      name: "Jamaica"
-    },
-    {
-      name: "Japan"
-    },
-    {
-      name: "Jordan"
-    },
-    {
-      name: "Kenya"
-    },
-    {
-      name: "Kuwait"
-    },
-    {
-      name: "Laos"
-    },
-    {
-      name: "Latvia"
-    },
-    {
-      name: "Liechtenstein"
-    },
-    {
-      name: "Lithuania"
-    },
-    {
-      name: "Luxembourg"
-    },
-    {
-      name: "Macao SAR China"
-    },
-    {
-      name: "Madagascar"
-    },
-    {
-      name: "Malaysia"
-    },
-    {
-      name: "Malta"
-    },
-    {
-      name: "Mauritius"
-    },
-    {
-      name: "Mexico"
-    },
-    {
-      name: "Moldova"
-    },
-    {
-      name: "Monaco"
-    },
-    {
-      name: "Mongolia"
-    },
-    {
-      name: "Morocco"
-    },
-    {
-      name: "Mozambique"
-    },
-    {
-      name: "Namibia"
-    },
-    {
-      name: "Netherlands"
-    },
-    {
-      name: "New Zealand"
-    },
-    {
-      name: "Niger"
-    },
-    {
-      name: "Nigeria"
-    },
-    {
-      name: "North Macedonia"
-    },
-    {
-      name: "Norway"
-    },
-    {
-      name: "Oman"
-    },
-    {
-      name: "Panama"
-    },
-    {
-      name: "Paraguay"
-    },
-    {
-      name: "Peru"
-    },
-    {
-      name: "Philippines"
-    },
-    {
-      name: "Poland"
-    },
-    {
-      name: "Portugal"
-    },
-    {
-      name: "Qatar"
-    },
-    {
-      name: "Romania"
-    },
-    {
-      name: "Rwanda"
-    },
-    {
-      name: "San Marino"
-    },
-    {
-      name: "Saudi Arabia"
-    },
-    {
-      name: "Senegal"
-    },
-    {
-      name: "Serbia"
-    },
-    {
-      name: "Singapore"
-    },
-    {
-      name: "Slovakia"
-    },
-    {
-      name: "Slovenia"
-    },
-    {
-      name: "South Africa"
-    },
-    {
-      name: "South Korea"
-    },
-    {
-      name: "Spain"
-    },
-    {
-      name: "Sri Lanka"
-    },
-    {
-      name: "St. Lucia"
-    },
-    {
-      name: "Sweden"
-    },
-    {
-      name: "Switzerland"
-    },
-    {
-      name: "Taiwan"
-    },
-    {
-      name: "Tanzania"
-    },
-    {
-      name: "Thailand"
-    },
-    {
-      name: "Trinidad & Tobago"
-    },
-    {
-      name: "Tunisia"
-    },
-    {
-      name: "Turkey"
-    },
-    {
-      name: "United Arab Emirates"
-    },
-    {
-      name: "United Kingdom"
-    },
-    {
-      name: "Uruguay"
-    },
-    {
-      name: "Uzbekistan"
-    },
-    {
-      name: "Vietnam"
-    }
-  ]
-]
