@@ -25,6 +25,7 @@ const Page = () => {
 
   const [value, setValue] = useState('2');
   const [accountAccessKey, setAccountAccessKey] = useState('')
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     console.log(session)
@@ -46,6 +47,16 @@ const Page = () => {
       }
     } catch (error) {
       console.log(error)
+    }
+  }
+
+  const handleInputChange = (e) => {
+    setAccountAccessKey(e.target.value)
+    
+    if(e.target.value.length < 12) {
+      setError("Access key has to be at least 12 characters long")
+    } else {
+      setError("")
     }
   }
 
@@ -125,7 +136,9 @@ const Page = () => {
                         sx={{ input: { textAlign: "center" } }}
                         required
                         placeholder="new access key"
-                        onChange={({ target }) => setAccountAccessKey(target.value)}
+                        error={error !== '' && error !== null}
+                        helperText={error}
+                        onChange={handleInputChange}
                         value={accountAccessKey}
                       />
                     </Tooltip>
@@ -136,6 +149,7 @@ const Page = () => {
                       variant="contained"
                       fullWidth={true}
                       type="submit"
+                      disabled={error === null || error !== ''}
                     >
                       done
                     </Button>

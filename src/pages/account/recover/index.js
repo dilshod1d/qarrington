@@ -21,6 +21,7 @@ const Page = () => {
   const [value, setValue] = useState('2');
   const [secretKey, setSecretKey] = useState('')
   const [wantToChangeKey, setWantToChangeKey] = useState(false)
+  const [error, setError] = useState('')
   
   const session = useSession()
   const router = useRouter()
@@ -33,8 +34,9 @@ const Page = () => {
     e.preventDefault()
     const options = { redirect: false, secretKey }
     const res = await signIn("credentials", options)
-    if(res?.error) return console.log("error register")
-    console.log(res)
+    if(res?.error) {
+      return setError("Secret key doesn't match any account")
+    }
     setWantToChangeKey(true)
   }
 
@@ -43,6 +45,11 @@ const Page = () => {
       router.push(`/account/open/${session.data.user.id}`)
     }
   }, [session, wantToChangeKey])
+
+  const handleInputChange = (e) => {
+    setSecretKey(e.target.value)
+    setError('')
+  }
 
   return (
 
@@ -120,7 +127,9 @@ const Page = () => {
                         sx={{ input: { textAlign: "center" } }}
                         required
                         placeholder="secret key"
-                        onChange={({ target }) => setSecretKey(target.value)}
+                        error={error !== ''}
+                        helperText={error}
+                        onChange={handleInputChange}
                         value={secretKey}
                       />
                     </Tooltip>

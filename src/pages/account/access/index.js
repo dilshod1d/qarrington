@@ -15,6 +15,7 @@ import { useEffect } from "react";
 
 const Page = () => {
   const { logged } = useAccount()
+  const [error, setError] = useState('')
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
@@ -37,8 +38,16 @@ const Page = () => {
     e.preventDefault()
     const options = { redirect: false, accessKey }
     const res = await signIn("credentials", options)
-    if(res?.error) return console.log("error register")
+    console.log(res)
+    if(res?.error) {
+      return setError("Access key doesn't exist")
+    }
     router.push('/account')
+  }
+
+  const handleInputChange = (e) => {
+    setAccessKey(e.target.value)
+    setError('')
   }
 
   return logged === undefined || logged ? null : (
@@ -126,7 +135,9 @@ const Page = () => {
                         sx={{ input: { textAlign: "center" } }}
                         required
                         placeholder="access key"
-                        onChange={({ target}) => setAccessKey(target.value)}
+                        error={error !== ''}
+                        helperText={error}
+                        onChange={handleInputChange}
                         value={accessKey}
                         disabled={logged === undefined}
                       />

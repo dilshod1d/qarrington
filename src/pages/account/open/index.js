@@ -21,6 +21,7 @@ const Page = () => {
 
   const [value, setValue] = useState('2');
   const [accessKey, setAccessKey] = useState('')
+  const [error, setError] = useState(null)
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -35,6 +36,16 @@ const Page = () => {
       }
     } catch (error) {
       console.log(error)
+    }
+  }
+
+  const handleInputChange = (e) => {
+    setAccessKey(e.target.value)
+    
+    if(e.target.value.length < 12) {
+      setError("Access key has to be at least 12 characters long")
+    } else {
+      setError("")
     }
   }
 
@@ -114,7 +125,9 @@ const Page = () => {
                         sx={{ input: { textAlign: "center" } }}
                         required
                         placeholder="access key"
-                        onChange={({ target }) => setAccessKey(target.value)}
+                        error={error !== '' && error !== null}
+                        helperText={error}
+                        onChange={handleInputChange}
                         value={accessKey}
                       />
                     </Tooltip>
@@ -125,6 +138,7 @@ const Page = () => {
                       variant="contained"
                       fullWidth={true}
                       type="submit"
+                      disabled={error === null || error !== ''}
                     >
                       register
                     </Button>
