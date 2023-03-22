@@ -1,12 +1,12 @@
 import dbConnect from '@lib/dbConnect';
 import Account from '@models/account/Account';
 import handler, { check, put, initValidation } from "@middleware/handler"
-import { getHeaderAuth, getAuthAccount } from "@lib/auth"
 import { authenticate } from "@middleware/auth"
 import { createCustomAccount, createPerson, listPersons, uploadVef } from '@lib/stripe';
 import multer from "multer"
 const upload = multer()
 import { createImage } from '@lib/cloudinary';
+import { getAccountCompletionRate } from '@helpers/accounts-helpers';
 
 const validator = initValidation(
     [
@@ -54,27 +54,6 @@ const formatReqObject = (req, account) => {
 
     // accountGovernmentId, accountIdNumber, accountBusinessName, accountBusinessWebsite, accountBusinessAddress, accountBusinessCountry, accountHomeAddress, accountZipCode, accountCityName, and accountStateName. However, we will only allow the user to enter/view their accountFirstName, accountLastName, accountHomeCountry, accountBirthDate, accountBusinessEmail, accountBankCountry, accountBankCurrency, accountIbanNumber, accountNumber, accountRoutingNumber, accountSortCode, accountEmailAddress, and accountPhoneNumber.
     return data
-}
-
-const getAccountCompletionRate = (account) => {
-    const accountContact = account.accountContact
-    const accountBank = account.accountBank
-    // console.log("account_get_rate", accountContact)
-
-    const accountBusiness = account.accountBusiness
-    const accountPersonal = account.accountPersonal
-
-    let sum = 0;
-    sum += Object.entries(accountContact).filter(e => e[1] != undefined).length
-    sum += Object.entries(accountBank).filter(e => e[1] != undefined).length
-
-    sum += Object.entries(accountBusiness).filter(e => e[1] != undefined).length
-    sum += Object.entries(accountPersonal).filter(e => e[1] != undefined).length
-
-    // const sum = Number(Object.keys(accountContact).length) + Number(Object.keys(accountBank).length) + Number(Object.keys(accountBusiness).length) + Number(Object.keys(accountPersonal).length)
-    // console.log("sum", sum)
-    let accountCompletionRate = sum * 4
-    return accountCompletionRate
 }
 
 const deleteUnmuttable = (req) => {

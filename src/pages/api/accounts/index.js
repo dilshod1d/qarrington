@@ -4,6 +4,7 @@ import handler, { check, initValidation } from "@middleware/handler"
 import { authenticate } from '@middleware/auth'
 import { generateToken } from "@lib/auth"
 import { removeSpaces } from '@helpers/helpers';
+import { getAccountCompletionRate } from '@helpers/accounts-helpers';
 
 const validator = initValidation(
 	[
@@ -29,6 +30,8 @@ export default handler
 					return;
 				}
 				account = new Account({ accountKeys: { accountAccessKey, accountSecretKey } })
+				const completionRate = getAccountCompletionRate(account)
+				account.accountStatus.accountCompletionRate = completionRate
 				account.save()
 
 				res.status(200).json({success:true, message:"Account has been created successfully"})
