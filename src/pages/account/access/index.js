@@ -12,7 +12,6 @@ import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useAccount } from "@hooks/useAccount";
 import { useEffect } from "react";
-import { removeSpaces } from "@helpers/helpers";
 import { useValidation } from "@hooks/useValidation";
 
 const Page = () => {

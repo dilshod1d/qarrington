@@ -6,11 +6,11 @@ import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
-import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
+import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography, Snackbar } from '@mui/material';
 import useSWR from 'swr';
 import { createAccount } from "@services/accounts-services";
 import { useRouter } from "next/router";
-import { removeSpaces } from "@helpers/helpers";
+import { useValidation } from "@hooks/useValidation";
 
 const Page = () => {
 
@@ -18,11 +18,12 @@ const Page = () => {
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
 
+  const [accessKey, setAccessKey, { error, errorMsg }, cleanErrorMsg, throwError] = useValidation({ errorMsg: "Access needs to be 12 characters long", allowSpaces: false, limitCharacters: 12 })
+
+
   const router = useRouter()
 
   const [value, setValue] = useState('2');
-  const [accessKey, setAccessKey] = useState('')
-  const [error, setError] = useState(null)
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -34,21 +35,17 @@ const Page = () => {
       const res = await createAccount({ accessKey })
       if(!res?.error) {
         router.push('/account/access')
+      } else if (res?.error) {
+        throwError()
       }
     } catch (error) {
       console.log(error)
+      throwError()
     }
   }
 
   const handleInputChange = (e) => {
-    const valueWithoutSpaces = removeSpaces(e.target.value)
-    setAccessKey(valueWithoutSpaces)
-    
-    if(valueWithoutSpaces.length !== 12) {
-      setError("Access key has to be 12 characters long")
-    } else {
-      setError("")
-    }
+    setAccessKey(e.target.value)
   }
 
   return (
@@ -127,20 +124,26 @@ const Page = () => {
                         sx={{ input: { textAlign: "center" } }}
                         required
                         placeholder="access key"
-                        error={error !== '' && error !== null}
-                        helperText={error}
+                        error={error}
                         onChange={handleInputChange}
                         value={accessKey}
                       />
                     </Tooltip>
-
+                    <Snackbar
+                      anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                      open={errorMsg !== ''}
+                      message={errorMsg}
+                      autoHideDuration={3000}
+                      onClose={cleanErrorMsg}
+                      sx={{ '&>div':{ textAlign:"center", width:"inherit", display: "flex", justifyContent: "center" } }}
+                    />
                     <Button
                       size="large"
                       sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
                       variant="contained"
                       fullWidth={true}
                       type="submit"
-                      disabled={error === null || error !== ''}
+                      disabled={error}
                     >
                       register
                     </Button>

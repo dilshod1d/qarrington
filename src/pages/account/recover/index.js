@@ -6,22 +6,22 @@ import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
-import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
+import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography, Snackbar } from '@mui/material';
 import useSWR from 'swr';
 import { signIn, useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useRef } from "react";
+import { useValidation } from "@hooks/useValidation";
 
 const Page = () => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
+  const [secretKey, setSecretKey, { error, errorMsg }, cleanErrorMsg, throwError] = useValidation({ errorMsg: "Secret key doesn't match any account", allowSpaces: false, limitCharacters: 12 })
 
   const [value, setValue] = useState('2');
-  const [secretKey, setSecretKey] = useState('')
-  const [error, setError] = useState('')
   const isPrevAuthenticate = useRef(null)
   
   const session = useSession()
@@ -36,7 +36,8 @@ const Page = () => {
     const options = { redirect: false, secretKey }
     const res = await signIn("credentials", options)
     if(res?.error) {
-      return setError("Secret key doesn't match any account")
+      throwError()
+      return
     }
   }
 
@@ -52,7 +53,6 @@ const Page = () => {
 
   const handleInputChange = (e) => {
     setSecretKey(e.target.value)
-    setError('')
   }
 
   return session?.status === "loading" || session?.status === "authenticated" ? null : (
@@ -131,13 +131,19 @@ const Page = () => {
                         sx={{ input: { textAlign: "center" } }}
                         required
                         placeholder="secret key"
-                        error={error !== ''}
-                        helperText={error}
+                        error={error}
                         onChange={handleInputChange}
                         value={secretKey}
                       />
                     </Tooltip>
-
+                    <Snackbar
+                      anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                      open={errorMsg !== ''}
+                      message={errorMsg}
+                      autoHideDuration={3000}
+                      onClose={cleanErrorMsg}
+                      sx={{ '&>div':{ textAlign:"center", width:"inherit", display: "flex", justifyContent: "center" } }}
+                    />
                     <Button
                       size="large"
                       sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
