@@ -1,12 +1,9 @@
-import dbConnect from '@lib/dbConnect';
-import Account from '@models/account/Account';
+import dbConnect from '@lib/dbConnect'
+import Account from '@models/account/Account'
 import handler, { check, put, initValidation } from "@middleware/handler"
 import { authenticate } from "@middleware/auth"
-import { createCustomAccount, createPerson, listPersons, uploadVef } from '@lib/stripe';
-import multer from "multer"
-const upload = multer()
-import { createImage } from '@lib/cloudinary';
-import { getAccountCompletionRate } from '@helpers/accounts-helpers';
+import { createCustomAccount, createStripeImage } from '@lib/stripe'
+import { getAccountCompletionRate } from '@helpers/accounts-helpers'
 
 const validator = initValidation(
     [
@@ -37,7 +34,6 @@ const formatReqObject = (req, account) => {
         if (typeof (schema[key]) == 'object' && schema[key][0]) {
             data[key] = {}
             schema[key].forEach((keyValue) => {
-                // if(keyValue == "accountAccessKey" && req.body[keyValue].length > 13 )
                 if (req.body[keyValue] && req.body[keyValue] != null) {
                     data[key][keyValue] = req.body[keyValue]
                 }
@@ -56,117 +52,102 @@ const formatReqObject = (req, account) => {
     return data
 }
 
-const deleteUnmuttable = (req) => {
-    if (req.body.accountKeys) {
-        delete (req.body.accountKeys.accountSecretKey)
-        delete (req.body.accountKeys.accountToken)
+const createStripeAccount = async (req, account, front) => {
+    const email = account.accountBusiness.accountBusinessEmail || account.accountContact.accountEmailAddress
+    const country = account.accountBusiness.accountBusinessCountry || account.accountPersonal.accountHomeCountry
+    const dob = {
+        day: account.accountPersonal.accountBirthDate.split('-')[1],
+        month: account.accountPersonal.accountBirthDate.split('-')[0],
+        year: account.accountPersonal.accountBirthDate.split('-')[2]
     }
-    delete (req.body.accountStatus)
-    return req;
-}
 
-const createStripeAccount = async (req, account, res) => {
-    const name = account.accountBusiness.accountBusinessName ?? account.accountPersonal.accountFirstName + ' ' + account.accountPersonal.accountLastName
-    const email = account.accountBusiness.accountBusinessEmail ?? account.accountPersonal.accountEmailAddress
-    const country = account.accountBusiness.accountBusinessCountry ?? account.accountPersonal.accountHomeCountry
-    let address = account.accountBusiness.accountBusinessAddress ?? account.accountPersonal.accountHomeAddress
-
-    const neededForStripeId = [
-        country,
-        email,
-        address,
-        name,
-    ]
-    if (neededForStripeId.filter(e => e == null || e == undefined)[0]) {
-        // account.save();
-        // res.status("200").json({sucess:true, data:{account, neededForStripeId}, message:"Account has been updated successfully", errors:["Stripe Account not created"]})
-        return
+    const individualAddres = {
+        line1: account.accountContact.accountHomeAddress,
+        postal_code: account.accountContact.accountZipCode,
+        city: account.accountContact.accountCityName,
+        state: account.accountContact.accountStateName
     }
-    const stripeAccount = await createCustomAccount({
+
+    const companyAddress = {
+        line1: account.accountBusiness.accountBusinessAddress || account.accountContact.accountHomeAddress,
+        country: account.accountBusiness.accountBusinessCountry || account.accountPersonal.accountHomeCountry,
+    }
+    
+    const data = {
         type: 'custom',
         country,
-        email,
         business_type: "individual",
+        business_profile: {
+            url: account.accountBusiness.accountBusinessWebsite,
+            mcc: "5734"
+        },
+        company: {
+            address: companyAddress,
+            name: account.accountBusiness.accountBusinessName || (account.accountPersonal.accountFirstName + " " + account.accountPersonal.accountLastName)
+        },
+        individual: {
+            first_name: account.accountPersonal?.accountFirstName,
+            last_name: account.accountPersonal?.accountLastName,
+            dob,
+            address: individualAddres,
+            email,
+            phone: account.accountContact?.accountPhoneNumber,
+            id_number: account.accountPersonal?.accountIdNumber,
+            verification: {
+                document: {
+                    front: front.id,
+                }
+            }
+        },
         capabilities: {
             card_payments: { requested: true },
             transfers: { requested: true },
         },
-        company: {
-            name,
-            address: {
-                line1: address[0],
-                city: req.body.accountCityName ?? '',
-                // postal_code:req.body.accountZipCode
-
-            },
-        },
-        default_currency: req.body.accountCountryCurrency,
         tos_acceptance: {
-            service_agreement: 'full'
-        }
+            ip: req.connection.remoteAddress,
+            date: Math.floor(Date.now() / 1000)
+        },
+        external_account: {
+            object: "bank_account",
+            country: account.accountBank.accountBankCountry,
+            currency: account.accountBank.accountBankCurrency,
+            routing_number: account.accountBank.accountRoutingNumber,
+            account_number: account.accountBank.accountNumber
+        },
+        default_currency: account.accountBank?.accountBankCurrency
+    }
 
-    })
+    const stripeAccount = await createCustomAccount(data)
     return stripeAccount
 
 }
 
-const uploadStripeAccountId = async (file, id) => {
-    const upload = await uploadVef(file, id)
-    console.log("uploadCreateStripeAcc", upload)
-}
-
-export default handler.use(authenticate, upload.single('accountAvatar'), upload.single('accountGovernmentId'), put(validator))
+export default handler.use(authenticate, put(validator))
     .put(async (req, res) => {
-        // return req.headers
         try {
             await dbConnect();
             const { id } = req
 
             const formdata = formatReqObject(req)
+            const account = await Account.findByIdAndUpdate(id, [{ $set: formdata }], { new: true })
             
-            const account = await Account.findByIdAndUpdate(id, [{ $set: formdata }], {
-                new: true
-            });
-
             const completionRate = getAccountCompletionRate(account)
-
             account.accountStatus.accountCompletionRate = completionRate
 
-            if (completionRate > 80 && (account.accountStripeId == null || account.accountStripeId == undefined)) {
-                let acc = await createStripeAccount(req, account, res)
+            if (completionRate > 80 && !account.accountStripeId) {
+                const front = await createStripeImage(req.body.accountGovernmentId)
+                if (front?.error) return res.status(400).json({ success: false, message: "Failed to load account government ID image", error: front.error });
+
+                const acc = await createStripeAccount(req, account, front)
+                if (acc?.error) return res.status(400).json({ success: false, message: "Failed to create Stripe account", error: acc.error  });
+
                 account.accountStripeId = acc.id
+                await account.save()
+                return res.status(201).json({ success: true, data: { account }, message: "Stripe account created successfully" });
             }
 
-            let accountAvatar = req.files?.filter(e => e.fieldname == "accountAvatar")[0]
-            let accountGovId = req.files?.filter(e => e.fieldname == "accountGovernmentId")[0]
-            let accountGovIdUrl = ''
-
-            // console.log(accountGovId, req.files)
-            if (accountGovId && !account.accountPersonal.accountGovernmentId) {
-                let accountGovID = await createImage(accountGovId)
-                accountGovIdUrl = accountGovID.url
-                let person = await listPersons(account.accountStripeId)
-                person = person.data[0]
-                // console.log("person", person)
-
-                if (person == null || person == undefined)
-                    person = await createPerson(account.accountStripeId, {
-                        first_name: account.accountPersonal.accountFirstName,
-                        last_name: account.accountPersonal.accountLastName,
-                        id_number: account.accountPersonal.accountIdNumber,
-                        email: account.accountPersonal.accountEmailAddress
-                    })
-
-                const upload = uploadStripeAccountId(accountGovId, account.accountStripeId, person.id)
-                console.log("upload", upload)
-            }
-            if (accountAvatar) {
-                accountAvatar = await createImage(accountAvatar)
-                account.accountProfile.accountAvatarUrl = accountAvatar.url
-            }
-            await account.save();
-
-            res.status(201).json({ success: true, data: { account }, message: "Account update successfully" });
+            await account.save()
+            res.status(201).json({ success: true, data: { account }, message: "Account updated successfully" });
         } catch (err) {
             res.status(500).json(err);
         }

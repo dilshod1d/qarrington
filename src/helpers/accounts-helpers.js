@@ -20,8 +20,12 @@ export const getAccountCompletionRate = (account) => {
 }
 
 export const checkIfUrlIsValidImage = async (url) => {
-  const res = await fetch(url)
-  const buff = await res.blob()
-
-  return buff.type.startsWith('image/')
+  try {
+    const res = await fetch(url)
+    const buff = await res.blob()
+  
+    return buff.type.startsWith('image/')
+  } catch {
+    return false
+  }
 }

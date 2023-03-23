@@ -12,18 +12,17 @@ import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useAccount } from "@hooks/useAccount";
 import { useEffect } from "react";
+import { useValidation } from "@hooks/useValidation";
 
 const Page = () => {
   const { logged } = useAccount()
-  const [error, setError] = useState(false)
-  const [errorMsg, setErrorMsg] = useState('')
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
 
   const [value, setValue] = useState('2');
-  const [accessKey, setAccessKey] = useState('')
+  const [accessKey, setAccessKey, { error, errorMsg }, cleanErrorMsg, throwError] = useValidation({ errorMsg: "Access key doesn't exist", allowSpaces: false, limitCharacters: 12 })
 
   const router = useRouter()
 
@@ -41,8 +40,7 @@ const Page = () => {
     const res = await signIn("credentials", options)
     console.log(res)
     if(res?.error) {
-      setErrorMsg("Access key doesn't exist")
-      setError(true)
+      throwError()
       return 
     }
     router.push('/account')
@@ -50,11 +48,6 @@ const Page = () => {
 
   const handleInputChange = (e) => {
     setAccessKey(e.target.value)
-    setError(false)
-  }
-
-  const handleClose = () => {
-    setErrorMsg('')
   }
 
   return logged === undefined || logged ? null : (
@@ -153,7 +146,7 @@ const Page = () => {
                       open={errorMsg !== ''}
                       message={errorMsg}
                       autoHideDuration={3000}
-                      onClose={handleClose}
+                      onClose={cleanErrorMsg}
                       sx={{ '&>div':{ textAlign:"center", width:"inherit", display: "flex", justifyContent: "center" } }}
                     />
                     <Button

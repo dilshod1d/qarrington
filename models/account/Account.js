@@ -66,8 +66,8 @@ const AccountSchema = new mongoose.Schema(
             }
         ],
         accountStripeId: { type: String },
-        accountIsCreatedAt: { type: Date, immutable: true },
-        accountIsUpdatedAt: { type: Date }
+        accountIsCreatedAt: { type: Date, immutable: true, default: Date.now },
+        accountIsUpdatedAt: { type: Date, default: Date.now }
     }
 );
 

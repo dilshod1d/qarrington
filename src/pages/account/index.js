@@ -18,14 +18,15 @@ import {
     Tab,
     TextField,
     Tooltip,
-    Typography
+    Typography,
+    Snackbar,
+    Pagination
 } from '@mui/material';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
 import Footer from '../../components/main/Footer';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
-import { Pagination } from '@mui/lab';
 import { useAccount } from '@hooks/useAccount';
 import { useEffect } from 'react';
 import { checkIfUrlIsValidImage } from '@helpers/accounts-helpers';
@@ -51,12 +52,15 @@ const Page = () => {
 
     const [value, setValue] = useState('1');
     
-    const [accountAccessKey, setAccountAccessKey] = useState()
-    const [accountAvatarUrl, setAccountAvatarUrl] = useState()
-    const [accountCurrentTitle, setAccountCurrentTitle] = useState()
+    const [accountAccessKey, setAccountAccessKey] = useState('')
+    const [accountAvatarUrl, setAccountAvatarUrl] = useState('')
+    const [accountCurrentTitle, setAccountCurrentTitle] = useState('')
 
     const [avatarUrlError, setAvatarUrlError] = useState('')
-    const [accessKeyError, setAccessKeyError] = useState(null)
+    const [accessKeyError, setAccessKeyError] = useState('')
+
+    const [avatarUrlErrorStatus, setAvatarUrlErrorStatus] = useState(false)
+    const [accessKeyErrorStatus, setAccessKeyErrorStatus] = useState(false)
     
     useEffect(() => {
         if(account) {
@@ -71,29 +75,31 @@ const Page = () => {
     };
 
     const handleChangeAccountAccessKey = (e) => {
+        setAccessKeyErrorStatus(false)
         const valueWithoutSpaces = removeSpaces(e.target.value)
-        setAccountAccessKey(valueWithoutSpaces)
-        
-        if(valueWithoutSpaces.length !== 12) {
-            setAccessKeyError("Access key has to be 12 characters long")
-        } else {
-            setAccessKeyError("")
+        if(valueWithoutSpaces.length <= 12) {
+            setAccountAccessKey(valueWithoutSpaces)
         }
     }
 
     const handleSaveAvatarAndTitle = async (e) => {
         e.preventDefault()
         const isImage = await checkIfUrlIsValidImage(accountAvatarUrl)
-        if(!isImage) {
-            return setAvatarUrlError("The provided url is not a valid image")
+        if(!isImage && accountAvatarUrl) {
+            setAvatarUrlError("The provided url is not a valid image")
+            setAvatarUrlErrorStatus(true)
+            return
         } else {
             setAvatarUrlError('')
         }
         
         try {
-            const res = await updateAccount({ accountCurrentTitle, accountAvatarUrl })
+            const res = accountAvatarUrl ? await updateAccount({ accountCurrentTitle, accountAvatarUrl }) : await updateAccount({ accountCurrentTitle }) 
             if(!res?.error) {
+                setAvatarUrlErrorStatus(false)
                 router.reload()
+            } else {
+                setAvatarUrlErrorStatus(true)
             }
         } catch (error) {
             console.log(error)
@@ -108,11 +114,29 @@ const Page = () => {
                 const res = await updateAccount({ accountAccessKey })
                 if(!res?.error) {
                     router.reload()
+                    setAccessKeyErrorStatus(false)
+                    setAccessKeyError("")
+                } else {
+                    setAccessKeyError("Access key need to be 12 characters long")
+                    setAccessKeyErrorStatus(true)
                 }
             } catch (error) {
+                setAccessKeyError("Access key need to be 12 characters long")
+                setAccessKeyErrorStatus(true)
                 console.log(error)
             }
+        } else {
+            setAccessKeyError("Access key need to be 12 characters long")
+            setAccessKeyErrorStatus(true)
         }
+    }
+
+    const handleCloseAvatarErrorMsg = () => {
+        setAvatarUrlError("")
+    }
+
+    const handleCloseAccessKeyMsg = () => {
+        setAccessKeyError("")
     }
     
     return !account ? null : (
@@ -238,12 +262,13 @@ const Page = () => {
                                                                     required
                                                                     id="outlined-required"
                                                                     placeholder="avatar url"
-                                                                    defaultValue={account?.accountProfile?.accountAvatarUrl}
-                                                                    onChange={({ target }) => setAccountAvatarUrl(target.value)}
+                                                                    onChange={({ target }) => { 
+                                                                        setAvatarUrlErrorStatus(false)
+                                                                        setAccountAvatarUrl(target.value)
+                                                                    }}
                                                                     value={accountAvatarUrl}
                                                                     inputProps={{ style: { textAlign: 'center' } }}
-                                                                    error={avatarUrlError !== ''}
-                                                                    helperText={avatarUrlError}
+                                                                    error={avatarUrlErrorStatus}
                                                                 />
                                                             </Tooltip>
                                                             <Tooltip title="Kindly provide your current job title so we know who you are as a Qarrington." placement="top">
@@ -251,7 +276,6 @@ const Page = () => {
                                                                     required
                                                                     id="outlined-required"
                                                                     placeholder="current title"
-                                                                    defaultValue={account?.accountProfile?.accountCurrentTitle}
                                                                     onChange={({ target }) => setAccountCurrentTitle(target.value)}
                                                                     value={accountCurrentTitle}
                                                                     inputProps={{ style: { textAlign: 'center' } }}
@@ -272,6 +296,14 @@ const Page = () => {
                                                         save
                                                     </Button>
                                                 </Card>
+                                                <Snackbar
+                                                    anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                                                    open={avatarUrlError !== ''}
+                                                    message={avatarUrlError}
+                                                    autoHideDuration={3000}
+                                                    onClose={handleCloseAvatarErrorMsg}
+                                                    sx={{ '&>div':{ textAlign:"center", width:"inherit", display: "flex", justifyContent: "center" } }}
+                                                />
 
                                             </TabPanel>
 
@@ -297,8 +329,7 @@ const Page = () => {
                                                                 defaultValue={account?.accountKeys?.accountAccessKey}
                                                                 onChange={handleChangeAccountAccessKey}
                                                                 value={accountAccessKey}
-                                                                error={accessKeyError !== '' && accessKeyError !== null}
-                                                                helperText={accessKeyError}
+                                                                error={accessKeyErrorStatus}
                                                                 inputProps={{ style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
@@ -313,6 +344,14 @@ const Page = () => {
                                                         </Tooltip>
                                                     </Stack>
                                                 </Card>
+                                                <Snackbar
+                                                    anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                                                    open={accessKeyError !== ''}
+                                                    message={accessKeyError}
+                                                    autoHideDuration={3000}
+                                                    onClose={handleCloseAccessKeyMsg}
+                                                    sx={{ '&>div':{ textAlign:"center", width:"inherit", display: "flex", justifyContent: "center" } }}
+                                                />
 
                                                 <Card style={{ padding: '60px', marginBottom: '0px' }}>
                                                     <Button
