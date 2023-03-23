@@ -1,258 +1,68 @@
 import React, { useState } from "react";
 import Link from 'next/link';
 import Head from 'next/head';
-import Image from 'next/image';
-import { green } from '@mui/material/colors';
-import Carousel from 'react-material-ui-carousel';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
+import { green } from '@mui/material/colors';
+import Image from 'next/image';
+import Carousel from 'react-material-ui-carousel';
 import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
 import HistoryEduRoundedIcon from '@mui/icons-material/HistoryEduRounded';
 import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
-import { Avatar, Badge, Box, Button, Card, Container, Grid, Hidden, Stack, styled, TextField, Tooltip, Typography } from '@mui/material';
+import { Avatar, Badge, Box, Button, Card, Container, Grid, Hidden, Stack, styled, TextField, Tooltip, Typography, Snackbar } from '@mui/material';
 import useSWR from 'swr';
+import { useCompaniesList } from "@hooks/useCompaniesList";
+import { useEffect } from "react";
+import { parseToObj } from "@helpers/companies-list-helpers";
+import { createCompany } from "@services/companies-services";
+
 
 const Page = () => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
-  const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
+  const [company, setCompany] = useState(null)
 
-  const getSteps = () => {
-    return [
-      "company ticker",
-      "company name",
-      "company logo",
-      "company product",
-      "company headline",
-      "company description",
-      "company industry",
-      "company website",
-      "company email",
-      "company market",
-      "company size",
-      "company iso units",
-      "company iso price",
-      "company iso date",
-      "company iso time",
-    ];
+  const { contentData, currentContentData, goNext, goBack, error, errorMsg, cleanError, cleanErrorMsg, finish, lastInput } = useCompaniesList()
+  const [inputValue, setInputValue] = useState('')
+
+  const handleInputChange = (e) => {
+    const newInput = e.target.value
+    cleanError()
+    setInputValue(currentContentData.inputConstraints(inputValue, newInput))
   }
 
-  const getStepContent = (step) => {
-    switch (step) {
-
-      case 0:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the unique three-letter symbol of the company? No special characters." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                required
-                placeholder="company ticker"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 1:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the name of the company? This can either be the legal or DBA name." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company name"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 2:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the link to the company's logo? Please ensure the background is filled." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company logo"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 3:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the product that the company offers or will offer its future customers?" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company product"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 4:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What is the catchy headline of the company? Please keep it simple & short." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company headline"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 5:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="How would you break down what the company is or does to a 5yr or 95yr old?" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company description"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 6:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="In which industry does the company operate it? Please keep it to 1 or 2 words." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company industry"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 7:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the website of the company? This must be accessible to all customers." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company website"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 8:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="How can customers get in touch with the company should they need any help?" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company email"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 9:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="In which country are the majority of the company's customers based or located?" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company market"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 10:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="How many monthly active customers or users does your company have for now?" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company size"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 11:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="How many units of subscriptions does the company plan to issue for its ISO?" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company iso units"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 12:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What's the price per unit during the ISO? Please make sure that this is justifiable." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company iso price"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 13:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="Which month does the company want the ISO to start? It can change anytime." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company iso date"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 14:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="What time does the company want the ISO to start? It can change anytime." placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center" } }}
-                required
-                placeholder="company iso time"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      default:
-        return "unknown step";
-    }
+  const handleNext = (e) => { 
+    e.preventDefault()
+    goNext({ inputValue, setInputValue }) 
   }
-
-  const [activeStep, setActiveStep] = useState(0);
-  const [skippedSteps, setSkippedSteps] = useState([]);
-  const steps = getSteps();
-
-  const handleNext = () => {
-    setActiveStep(activeStep + 1);
-    setSkippedSteps(skippedSteps.filter((skipItem) => skipItem !== activeStep));
-  };
 
   const handleBack = () => {
-    setActiveStep(activeStep - 1);
-  };
+    goBack({ inputValue, setInputValue })
+  }
+
+  useEffect(() => {
+    if(currentContentData) {
+      setInputValue(currentContentData.savedValue)
+    }
+  }, [currentContentData])
+
+  useEffect(() => {
+    const listCompany = async () => {
+      try {
+        const toSend = parseToObj(contentData)
+        const res = await createCompany(toSend)
+        if(res.status >= 200 && res.status < 300) {
+          const { data } = res
+          return setCompany(data.data.company)
+        } 
+        console.log("Something went wrong!")
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    if (finish) listCompany()
+  }, [finish])
 
   return (
 
@@ -319,13 +129,13 @@ const Page = () => {
 
               </Box>
 
-              <form noValidate autoComplete="on">
+              <form noValidate autoComplete="on" onSubmit={handleNext}>
 
                 <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px' }}>
 
                   <Stack spacing={1.2} sx={{ width: '100%' }}>
 
-                    {activeStep === steps.length ? (
+                    {finish || !currentContentData ? (
                       <Stack spacing={1.2} sx={{ width: '100%', mb: 0 }}>
 
                         <Link href="/help">
@@ -338,9 +148,8 @@ const Page = () => {
                             get some help
                           </Button>
                         </Link>
-
-                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker }) => (
-                          <Link key={_id} href={`/companies/${companyTicker}`}>
+                        {company && 
+                          <Link href={`/companies/${company._id}`}>
                             <Button
                               size="large"
                               sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
@@ -350,8 +159,7 @@ const Page = () => {
                               manage company
                             </Button>
                           </Link>
-                        ))}
-
+                        }
                         <Button
                           style={FormButton}
                           disabled
@@ -364,7 +172,25 @@ const Page = () => {
                       </Stack>
                     ) : (
                       <>
-                        <form>{getStepContent(activeStep)}</form>
+                        <Stack spacing={1.2} sx={{ width: '100%' }}>
+                          <Tooltip title={currentContentData.title} placement="top">
+                            <TextField
+                              sx={{ input: { textAlign: "center" } }}
+                              placeholder={currentContentData.placeholder}
+                              onChange={handleInputChange}
+                              value={inputValue}
+                              error={error}
+                            />
+                          </Tooltip>
+                        </Stack>
+                        <Snackbar
+                          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                          open={errorMsg !== ''}
+                          message={errorMsg}
+                          autoHideDuration={3000}
+                          onClose={cleanErrorMsg}
+                          sx={{ '&>div':{ textAlign:"center", width:"inherit", display: "flex", justifyContent: "center" } }}
+                        />
                         <Button
                           size="large"
                           sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
@@ -372,11 +198,10 @@ const Page = () => {
                           fullWidth={true}
                           onClick={handleNext}
                         >
-                          {activeStep === steps.length - 1 ? "Register" : "Next"}
+                          {lastInput ? "Register" : "Next"}
                         </Button>
                         <Button
                           style={FormButton}
-                          disabled={activeStep === 0}
                           onClick={handleBack}
                           color="secondary"
                           sx={{ fontSize: '12px', textTransform: 'uppercase' }}

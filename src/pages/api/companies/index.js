@@ -1,13 +1,11 @@
 // companyTicker, companyName, companyLogo, companyProduct, companyHeadline, companyDescription, companyIndustry, companyWebsite, 
 // companyEmail, companyMarket, companySize, companyIsoUnits, companyIsoPrice, companyIsoDate, and companyIsoTime.
-import dbConnect from '../../../lib/dbConnect';
-import Company from '../../../../models/company/Company';
-import handler, { initValidation, post, get, check } from "../../../middleware/handler"
-import auth from "../../../middleware/auth"
-import { createCustomer, createProduct } from "../../../lib/stripe"
-import { generateToken, getHeaderAuth, getAuthAccount } from "../../../lib/auth"
-import { createImage } from "../../../lib/cloudinary.js"
-import multer from 'multer';
+import dbConnect from '@lib/dbConnect';
+import Company from '@models/company/Company';
+import handler, { initValidation, check } from "@middleware/handler"
+import { authenticate } from "@middleware/auth"
+import { createProduct } from "@lib/stripe"
+import { generateToken } from "@lib/auth"
 
 const postVal = initValidation([
 	check('companyTicker').notEmpty().withMessage('Company Ticker is invalid'),
@@ -26,15 +24,13 @@ const postVal = initValidation([
 	check('companyIsoDate').notEmpty().withMessage('Invalid Company Iso Date'),
 	check('companyIsoTime').notEmpty().withMessage('Invalid Company Iso Time'),
 ])
-const getVal = initValidation([
-	check('secretKey').isLength({ min: 13 }).withMessage('Secret Key is invalid'),
-])
 
 const formatReqObject = (req) => {
 	const details = {
 		companyListing: {
 			companyTicker: req.body.companyTicker,
 			companyName: req.body.companyName,
+			companyLogo: req.body.companyLogo,
 			companyHeadline: req.body.companyHeadline,
 			companyProduct: req.body.companyProduct,
 			companyProductId: req.body.company, // stripe product id
@@ -46,65 +42,71 @@ const formatReqObject = (req) => {
 			companySize: req.body.companySize,
 		},
 		companyIso: {
-			companyIsoUnits: req.body.companyIsoUnits, // the inital total subscription
-			companyIsoPrice: req.body.companyIsoPrice, // the initial price per subscription
+			companyIsoUnits: Number(req.body.companyIsoUnits), // the inital total subscription
+			companyIsoPrice: Number(req.body.companyIsoPrice), // the initial price per subscription
 			companyIsoDate: req.body.companyIsoDate, // iso will end 7 days after this date
 			companyIsoTime: req.body.companyIsoTime,
 		}
 	}
 	return details
 }
-// define my middleware here and use it only for POST requests
+
 export default handler
-	.use(multer().any('companyLogo'), auth())
-	.post(async (req, res) => {
+	.post(authenticate, async (req, res) => {
 		await dbConnect();
 		try {
-			const image = req.files[0];
 			const companyDetail = formatReqObject(req)
 
-			const createdImage = await createImage(image);
-			const imageUrl = createdImage.url;
+			const company = await new Company(companyDetail)
 
-			const company = new Company(companyDetail)
 			const product = await createProduct({
-				name:req.body.companyTicker,
+				name: req.body.companyTicker,
 				description:req.body.companyDescription,
-				images:[imageUrl],
+				images: [req.body.companyLogo],
 				default_price_data:{
-					unit_amount_decimal:req.body.companyIsoPrice,
-					currency: req.body.companyCurrency
+					unit_amount_decimal: req.body.companyIsoPrice,
+					currency: "usd"
 				}
-
 			})
-			console.log("product", product)
-
-			company.companyListing.companyKey = generateToken(13)
-			company.companyListing.companyProductId = product.id
-			company.companyLogo = imageUrl
-			const account = await getAuthAccount(req)
-			company.companyAccountId = account["_id"]
-			// company.save();
 			
-			res.status(201).json({ success: true, data: { company }, message: "Company listed successfully", });
+			company.companyListing.companyKey = generateToken(12)
+			company.companyListing.companyProductId = product.id
+			company.companyLogo = req.body.companyLogo
+			company.companyAccountId = req.id
+			await company.save()
+			
+			res.status(201).json({ success: true, data: { company }, message: "Company listed successfully", })
 		} catch (err) {
 			res.status(500).json(err);
 		}
 	})
 	.get(async (req, res) => {
-		await dbConnect();
-		try {
-			res.status(201).json({ success: true, message: "Secret Key exists" });
-		} catch (err) {
-			res.status(500).json(err);
+		await dbConnect()
+
+		const { companyId } = req.query
+		if(companyId) {
+			try {
+				const company = await Company.findById(companyId)
+				if(!company) return res.status(400).json({ success: false, message: "Company not found" })
+				return res.status(201).json({ success: true, data: company, message: "Secret Key exists" })
+
+			} catch (err) {
+				return res.status(500).json(err)
+			}
 		}
+
+		try {
+			res.status(201).json({ success: true, message: "Secret Key exists" })
+		} catch (err) {
+			res.status(500).json(err)
+		}
+		
 	})
 
 
 
 export const config = {
 	api: {
-		responseLimit: false,
-		bodyParser: false
+		responseLimit: false
 	}
 };

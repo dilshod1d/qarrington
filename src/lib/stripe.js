@@ -12,17 +12,6 @@ import initStripe from "stripe"
 //     }
 // }
 
-// const createProduct = async (data) => {
-//     try {
-//         const stripe = await initStripe(process.env.STRIPE_SECRET_KEY)
-//         return stripe.products.create(data)
-//     }
-//     catch (err) {
-//         console.log(err.messsage)
-//         // return err
-//     }
-// }
-
 // const createPerson = async (account, data) => {
 //     try {
 //         const stripe = await initStripe(process.env.STRIPE_SECRET_KEY)
@@ -48,6 +37,17 @@ import initStripe from "stripe"
 const startStripe = async () => {
     const stripe = await initStripe(process.env.STRIPE_SECRET_KEY);
     return stripe
+}
+
+export const createProduct = async (data) => {
+    try {
+        const stripe = await startStripe()
+        return stripe.products.create(data)
+    }
+    catch (err) {
+        console.log(err.messsage)
+        // return err
+    }
 }
 
 export const createStripeImage = async (url) => {
