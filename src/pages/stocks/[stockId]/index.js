@@ -5,6 +5,8 @@ import Carousel from 'react-material-ui-carousel';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
+import dbConnect from "@lib/dbConnect";
+import Stock from '@models/stock/Stock'
 
 const Page = ({ name, ticker }) => {
 
@@ -334,7 +336,8 @@ const Body = {
 };
 
 export async function getStaticProps({ params }) {
-  const stockItem = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl=${params.stockId}`).then(r => r.json());
+  await dbConnect()
+  const stockItem = await Stock.findOne({ stockUrl: params.stockId });
   return {
     props: {
       name: stockItem.stockName,
@@ -344,7 +347,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const stockItems = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockUrl`).then((r) => r.json());
+  await dbConnect()
+  const stockItems = await Stock.find();
   return {
     paths: stockItems.map(item => {
       const stockId = item.stockUrl;
