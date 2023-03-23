@@ -17,7 +17,7 @@ export const useCompaniesList = () => {
   }, [])
 
   const goNext = async ({ inputValue, setInputValue }) => {
-    if (await currentContentData.validate(inputValue) || !inputValue) {
+    if (await currentContentData.validate(inputValue) && inputValue.length > 0) {
       const updatedContentData = updateContent({ prevContent: contentData, currentStep, inputValue })
       setContentData(updatedContentData)
       setError(false)

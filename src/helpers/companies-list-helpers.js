@@ -9,7 +9,7 @@ export const getContentData = () => {
       savedValue: '',
       validate: (input) => {
         const regex = /^[a-zA-Z]+$/
-        return regex.test(input)
+        return regex.test(input) && input.length === 3
       },
       inputConstraints: (prev, input) => {
         if(input.length > 3 || !/^[a-zA-Z]+$/.test(input)) return prev
