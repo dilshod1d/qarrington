@@ -1,18 +1,18 @@
 import dbConnect from '../../../lib/dbConnect';
-import Question from '../../../../models/question/Question';
+import Question from '../../../../models/crypto/Crypto';
 
 async function handler(req, res) {
   const { method } = req;
-  const { questionUrl } = req.query;
+  const { cryptoUrl } = req.query;
 
   await dbConnect();
 
   // read items
 
   if (method === "GET") {
-    if (questionUrl) {
+    if (cryptoUrl) {
       try {
-        const readItems = await Question.findOne({ questionUrl: questionUrl });
+        const readItems = await Question.findOne({ cryptoUrl: cryptoUrl });
         res.status(200).json(readItems);
       } catch (err) {
         res.status(500).json(err);

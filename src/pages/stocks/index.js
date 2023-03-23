@@ -1,58 +1,22 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import LeftSide from '../../../components/topics/LeftSide';
-import Navbar from '../../../components/topics/Navbar';
-import RightSide from '../../../components/topics/RightSide';
-import Footer from '../../../components/main/Footer';
-import { createClient } from 'contentful';
+import Navbar from '../../components/topics/Navbar';
+import Footer from '../../components/main/Footer';
 
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Box, Breadcrumbs, Button, Card, Container, Divider, Grid, Stack, TextField, Tooltip, Typography } from '@mui/material';
 
-const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-})
-
-export async function getStaticPaths() {
-    const res = await client.getEntries({
-        content_type: process.env.CONTENTFUL_TOPICS_MODEL,
-    })
-
-    return {
-        paths: res.items.map((item) => ({
-            params: { topicId: item.fields.topicUrl },
-        })),
-        fallback: true,
-    };
-}
-
-export async function getStaticProps({ params }) {
-    const res = await client.getEntries({
-        content_type: process.env.CONTENTFUL_TOPICS_MODEL,
-        'fields.topicUrl': params.topicId
-    })
-
-    return {
-        props: {
-            topicItem: res.items[0],
-        },
-        revalidate: 60,
-    };
-}
-
-const Page = ({ topicItem }) => {
+const Page = () => {
 
     return (
 
         <>
 
             <Head>
-                <title>{topicItem.fields.topicTitle} • Qarrington</title>
+                <title>Stocks • Qarrington</title>
                 <meta
                     name="description"
-                    content={topicItem.fields.topicSummary}
+                    content="hello stocks."
                 />
             </Head>
 
@@ -75,18 +39,18 @@ const Page = ({ topicItem }) => {
                         <Grid my={8} item xs={7}>
                             <Box style={{ padding: '100px 0px 0px 0px' }}>
                                 <Typography variant="h1" fontWeight={700} color="black">
-                                    {topicItem.fields.topicTitle}?
+                                    What is Qarrington?
                                 </Typography>
                                 <Divider sx={{ my: 3 }} />
                                 <Typography mt={1} variant="h5" fontWeight={500} color="secondary">
-                                    {topicItem.fields.topicSummary}
+                                    Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions.
                                 </Typography>
                                 <Divider sx={{ my: 3 }} />
                                 <Typography mt={1} variant="body" fontWeight={500} color="secondary">
-                                    {documentToReactComponents(topicItem.fields.topicDetail)}
+                                    Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions. Imagine a stock exchange such as Nasdaq, where company shares are bought and sold, however, instead of shares, it's subscriptions, which are fully backed by products and services offered by the listed companies on Qarrington.
                                 </Typography>
                             </Box>
-                            <Box mb={4}>
+                            <Box mt={1.5} mb={4}>
                                 <Typography variant="body" fontWeight={500} color="secondary">
                                     If you think this topic is not helpful enough and you would like to talk to one of our account managers, you can always email us using the below form and we'd try to reply within 12hrs.
                                 </Typography>
@@ -303,8 +267,4 @@ const footer = {
     display: 'flex',
     justifyContent: 'center',
     padding: '20px 20px 10px 20px'
-};
-
-const footerBrand = {
-    textAlign: 'center'
 };
