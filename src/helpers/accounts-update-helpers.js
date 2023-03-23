@@ -76,7 +76,7 @@ export const getContentData = ({ countries, account }) => {
       canModify: account?.accountPersonal?.accountHomeCountry === undefined || '',
       defaultValue: account?.accountPersonal?.accountHomeCountry || '',
       validate: (input) => {
-        return countryCodeList.includes(input)
+        return countryCodeList.includes(input.toUpperCase())
       },
       inputConstraints: (prev, input) => {
         if(input.length > 2) return prev
@@ -198,7 +198,7 @@ export const getContentData = ({ countries, account }) => {
       canModify: true,
       defaultValue: account?.accountBusiness?.accountBusinessCountry || '',
       validate: (input) => {
-        return countryCodeList.includes(input)
+        return countryCodeList.includes(input.toUpperCase())
       },
       inputConstraints: (prev, input) => {
         if(input.length > 2) return prev
@@ -230,7 +230,7 @@ export const getContentData = ({ countries, account }) => {
       canModify: account?.accountBank?.accountBankCountry === undefined || '',
       defaultValue: account?.accountBank?.accountBankCountry || '',
       validate: (input) => {
-        return countryCodeList.includes(input)
+        return countryCodeList.includes(input.toUpperCase())
       },
       inputConstraints: (prev, input) => {
         if(input.length > 2) return prev
@@ -436,7 +436,6 @@ export const updateContent = ({ prevContent, currentStep, inputValue, countries 
 
 export const parseToObj = (dataArray) => {
   return dataArray.reduce((acc, { objName, defaultValue }) => {
-    console.log(defaultValue)
     if (defaultValue) acc[objName] = defaultValue
     return acc
   }, {})
