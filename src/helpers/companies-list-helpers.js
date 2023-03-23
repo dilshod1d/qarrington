@@ -12,7 +12,7 @@ export const getContentData = () => {
         return regex.test(input)
       },
       inputConstraints: (prev, input) => {
-        if(input.length > 3) return prev
+        if(input.length > 3 || !/^[a-zA-Z]+$/.test(input)) return prev
         return input
       },
       error: "Invalid input"
@@ -179,27 +179,45 @@ export const getContentData = () => {
       error: "Invalid input"
     },
     {
-      placeholder: "company iso date",
+      placeholder: "company iso date (mm-dd-yyyy)",
       objName: "companyIsoDate",
-      title: "Which month does the company want the ISO to start? It can change anytime.",
+      title: "Which date does the company want the ISO to start? It can change anytime.",
       savedValue: '',
       validate: (input) => {
-        return true
+        const regex = /^(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])-\d{4}$/
+        return regex.test(input)
       },
       inputConstraints: (prev, input) => {
-        return input
+        if(prev.length < input.length && input.length === 11) return prev
+
+        if(prev.length < input.length && (input.at(-1) === '/' || input.at(-1) === '-')) return prev + "-"
+
+        if(/^[0-9]+$/.test(input.at(-1)) || (prev.length > input.length)) {
+          if(input.length === 3 && prev.length === 2) {
+            return input.slice(0, 2) + '-' + input.at(-1)
+          }
+
+          if(input.length === 6 && prev.length === 5) {
+            return input.slice(0, 5) + '-' + input.at(-1)
+          }
+          return input
+        }
+        return prev
       },
       error: "Invalid input"
     },
     {
-      placeholder: "company iso time",
+      placeholder: "company iso time (hh:mm)",
       objName: "companyIsoTime",
       title: "What time does the company want the ISO to start? It can change anytime.",
       savedValue: '',
       validate: (input) => {
-        return true
+        const regex = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/
+        return regex.test(input)
       },
       inputConstraints: (prev, input) => {
+        if(input.length === 3 && prev.length < input.length) { return input.slice(0, 2) + ":" + input.at(-1) }
+        if(input.length === 6) return prev
         return input
       },
       error: "Invalid input"
