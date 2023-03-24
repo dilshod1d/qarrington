@@ -1,26 +1,91 @@
-import React, { useState } from "react";
-import Link from 'next/link';
-import Head from 'next/head';
-import Carousel from 'react-material-ui-carousel';
-import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
-import TabContext from '@mui/lab/TabContext';
-import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material';
+import { useState, useRef, useEffect } from "react"
+import Head from 'next/head'
+import Carousel from 'react-material-ui-carousel'
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded'
+import TabList from '@mui/lab/TabList'
+import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography } from '@mui/material'
 import useSWR from 'swr';
+import Company from "@models/company/Company"
+import dbConnect from "@lib/dbConnect"
+import { useSession } from "next-auth/react"
+import { useRouter } from "next/router"
+import { subscribeToCompany } from "@services/companies-services"
 
-const Page = ({ name, ticker, description, logo }) => {
+const Page = ({ name, ticker, description, logo, secondsLeft }) => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
   const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
+  const seconds = useRef()
+  const currTime = useRef(Date.now())
+  const session = useSession()
+  const router = useRouter()
+
+  const [time, setTime] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  })
+
+  useEffect(() => {
+    seconds.current = Number(secondsLeft)
+
+    const timer = () => {
+      const days = Math.floor(seconds.current/24/60/60);
+      const hoursLeft = Math.floor((seconds.current) - (days*86400));
+      const hours = Math.floor(hoursLeft/3600);
+      const minutesLeft = Math.floor((hoursLeft) - (hours*3600));
+      const minutes = Math.floor(minutesLeft/60);
+      const remainingSeconds = seconds.current % 60;
+  
+      function pad(n) {
+        return (n < 10 ? "0" + n : n);
+      }
+
+      if (seconds.current === 0) {
+        clearInterval(countdownTimer)
+      } else {
+        seconds.current -= 1;
+      }
+  
+      setTime({
+        days: pad(days),
+        hours: pad(hours),
+        minutes: pad(minutes),
+        seconds: pad(remainingSeconds)
+      })
+    }
+
+    timer()
+    const countdownTimer = setInterval(timer, 1000)
+
+    return () => clearInterval(countdownTimer)
+  }, [secondsLeft])
 
   const [value, setValue] = useState('1');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if(session.status === "loading") return
+
+    if(session.status === "authenticated") {
+      const response = await subscribeToCompany({ accountId: session.data.user.id, companySlug: ticker.toLowerCase() })
+      if(response?.error) {
+        console.log("Something went wrong!")
+        return null
+      }
+      return router.push('/account')
+    } else {
+      return router.push('/account/open?companySlug=' + ticker.toLowerCase())
+    }
+  }
 
   return (
 
@@ -88,7 +153,7 @@ const Page = ({ name, ticker, description, logo }) => {
                           <Box style={{ textAlign: 'center' }}>
                             <Box mt={1.2}>
                               <Typography variant="h3" fontWeight={700} color="black">
-                                00
+                                {time.days}
                               </Typography>
                               <Typography mt={0.2} textTransform="uppercase" fontSize="10px" fontWeight={700} color="secondary">
                                 days
@@ -102,7 +167,7 @@ const Page = ({ name, ticker, description, logo }) => {
                           <Box style={{ textAlign: 'center' }}>
                             <Box mt={1.2}>
                               <Typography variant="h3" fontWeight={700} color="black">
-                                00
+                              {time.hours}
                               </Typography>
                               <Typography mt={0.2} textTransform="uppercase" fontSize="10px" fontWeight={700} color="secondary">
                                 hours
@@ -116,7 +181,7 @@ const Page = ({ name, ticker, description, logo }) => {
                           <Box style={{ textAlign: 'center' }}>
                             <Box mt={1.2}>
                               <Typography variant="h3" fontWeight={700} color="black">
-                                00
+                                {time.minutes}
                               </Typography>
                               <Typography mt={0.2} textTransform="uppercase" fontSize="10px" fontWeight={700} color="secondary">
                                 minutes
@@ -130,7 +195,7 @@ const Page = ({ name, ticker, description, logo }) => {
                           <Box style={{ textAlign: 'center' }}>
                             <Box mt={1.2}>
                               <Typography variant="h3" fontWeight={700} color="black">
-                                00
+                                {time.seconds}
                               </Typography>
                               <Typography mt={0.2} textTransform="uppercase" fontSize="10px" fontWeight={700} color="secondary">
                                 seconds
@@ -146,14 +211,14 @@ const Page = ({ name, ticker, description, logo }) => {
                 {/* countdown ends */}
 
                 <Box my={1}>
-                  <Tooltip title={`The ${name} (${ticker}) ISO starts on Fri, May 20, 2023, at 11:45 PM EST and ends on Sat, May 27, 2023, at 11:45 PM EST.`} placement="top">
+                  <Tooltip title={`The ${name} (${ticker}) ISO starts on ${new Date(currTime.current + (secondsLeft * 1000))} and ends on ${new Date(currTime.current + (secondsLeft * 1000) + (7*24*60*60*1000))}`} placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Box>
 
               </Box>
 
-              <form noValidate autoComplete="on">
+              <form noValidate autoComplete="on" onSubmit={handleSubmit}>
 
                 <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px', marginTop: '-20px' }}>
 
@@ -426,22 +491,32 @@ const Body = {
   backgroundColor: "#ffffff"
 };
 
+
 export async function getServerSideProps({ params }) {
   try {
-    const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies?companySlug=${params.companyId.replace(/\-/g, '+')}`)
-      .then((r) => r.json());
-    return {
-      props: {
-        name: results.companyListing.companyName,
-        slug: results.companySlug,
-        ticker: results.companyListing.companyTicker,
-        description: results.companyListing.companyDescription,
-        logo: results.companyListing.companyLogo
+      await dbConnect()
+      const company = await Company.findOne({ companySlug: params.companyId })
+      const parsedCompany = JSON.parse(JSON.stringify(company))
+
+      const hour = parsedCompany.companyIso.companyIsoTime
+      const isoTime = new Date(parsedCompany.companyIso.companyIsoDate.split('T')[0] + "T" + (hour.split(':')[0].length === 1 ? ('0' + hour) : hour) + ":00.000+00:00")
+      const now = new Date(Date.now())
+
+      const secondsLeft = Math.floor((isoTime - now)/1000)
+
+      return {
+          props: {
+              name: parsedCompany.companyListing.companyName,
+              slug: parsedCompany.companySlug,
+              ticker: parsedCompany.companyListing.companyTicker,
+              description: parsedCompany.companyListing.companyDescription,
+              logo: parsedCompany.companyListing.companyLogo,
+              secondsLeft
+          }
       }
-    };
   } catch (error) {
-    return {
-      notFound: true
-    };
+      return {
+          notFound: true
+      }
   }
 }
