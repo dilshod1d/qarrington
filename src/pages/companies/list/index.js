@@ -51,11 +51,11 @@ const Page = () => {
     const listCompany = async () => {
       try {
         const toSend = parseToObj(contentData)
-        const res = await createCompany(toSend)
-        if(res.status >= 200 && res.status < 300) {
-          const { data } = res
-          return setCompany(data.data.company)
-        } 
+        const company = await createCompany(toSend)
+
+        if(company) {
+          return setCompany(company)
+        }
         console.log("Something went wrong!")
       } catch (error) {
         console.log(error)
