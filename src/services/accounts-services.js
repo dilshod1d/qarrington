@@ -7,11 +7,18 @@ export const getUserAccount = () => {
   return axios.get(url)
 }
 
-export const createAccount = ({ accessKey }) => {
+export const createAccount = async ({ accessKey }) => {
   const url = `${apiUrl}/accounts`
-  return axios.post(url, {
-    accessKey
-  })
+  try {
+    const response = await axios.post(url, {
+      accessKey
+    })
+
+    if(response.status !== 201) return null
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 export const updateAccount = (data) => {
