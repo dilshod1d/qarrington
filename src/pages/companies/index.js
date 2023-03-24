@@ -1,17 +1,13 @@
-import React from 'react';
 import Head from 'next/head';
 import HeaderMenu from '../../components/menus/HeaderMenu';
 import RightGrid from '../../components/grids/RightGrid';
 import { Avatar, Badge, Box, Card, Container, Grid, Pagination, Stack, styled, Tooltip, Typography } from '@mui/material';
 import Footer from '../../components/main/Footer';
-import useSWR from 'swr';
 import Link from 'next/link';
+import Company from '@models/company/Company';
+import dbConnect from '@lib/dbConnect';
 
-const Page = () => {
-
-    const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
-
+const Page = ({ companies }) => {
     return (
 
         <div>
@@ -37,9 +33,9 @@ const Page = () => {
                                 <Grid item xs={12} mb={2}>
                                     <Grid container spacing={2}>
 
-                                        {companies && Array.isArray(companies) && companies?.map(({ _id, companySlug, companyListing, companyKpi }) => (
-                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
-                                                <Link href={`/subscriptions/${companySlug}`}>
+                                        {companies && Array.isArray(companies) && companies?.map(({ id, companySlug, companyListing, isoDate }) => (
+                                            <Grid key={id} item xs={12} sm={6} md={6} lg={6}>
+                                                <Link href={new Date(isoDate) > new Date(Date.now()) ? `/${companySlug}` : `/portfolio/${companySlug}`}>
                                                     <Card style={{ padding: '60px', cursor: 'pointer' }}>
                                                         <Box style={{ textAlign: 'center' }}>
                                                             <Box
@@ -93,3 +89,27 @@ const Page = () => {
 }
 
 export default Page
+
+
+export async function getServerSideProps({ params }) {
+    try {
+        await dbConnect()
+        const companies = await Company.find()
+        return {
+            props: {
+                companies: JSON.parse(JSON.stringify(companies)).map(({ _id, companySlug, companyListing, companyIso }) => {
+                    return {
+                        id: _id.toString(),
+                        companySlug,
+                        companyListing,
+                        isoDate: companyIso.companyIsoDate
+                    }
+                })
+            }
+        };
+    } catch (error) {
+        return {
+            notFound: true
+        };
+    }
+}
