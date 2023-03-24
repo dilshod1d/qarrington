@@ -27,15 +27,13 @@ export const useAccount = (handleRedirect = true) => {
               const { data: response, status } = await getUserAccount()
               if(status !== 200) return router.push('/account/access')
               
-              const { data } = response
-              const { account } = data
+              const { data: account } = response
 
               setAccount(account)
 
               setLoading(false)
               setLogged(true)
           } catch (error) {
-              console.log(error)
               setLoading(false)
               setLogged(false)
           }
