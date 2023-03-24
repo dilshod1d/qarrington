@@ -92,7 +92,7 @@ export const getStaticPaths = async () => {
     const res = await client.getEntries({
         content_type: 'topics'
     });
-    const paths = res.items.map(item => {
+    const paths = res.items && res.items.map(item => {
         return {
             params: { topicId: item.fields.topicUrl }
         }
