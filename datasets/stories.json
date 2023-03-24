@@ -77,14 +77,14 @@
     "storyByCustomer": [
       {
         "storyByCustomerName": "Busra",
-        "storyByCustomerTitle": "Social Media Specialist",
+        "storyByCustomerTitle": "Business Consultant",
         "storyByCustomerAvatar": "/assets/media/customers/busra.webp",
         "storyByCustomerContent": "Even though I'm not new to stocks and cryptocurrencies, the market volatility can be unbearable. For me, using Qarrington is just like hedging my monthly subscriptions. ",
         "storyByCustomerIsActive": ""
       },
       {
         "storyByCustomerName": "Biswa",
-        "storyByCustomerTitle": "Real Estate Agent",
+        "storyByCustomerTitle": "Executive Assistant",
         "storyByCustomerAvatar": "/assets/media/customers/biswa.webp",
         "storyByCustomerContent": "I spend more than $200 per month on subscription services. Using Qarrington is helping me to put my subscriptions to work while making passing income.",
         "storyByCustomerIsActive": "dot"
@@ -109,6 +109,80 @@
         "storyByCustomerAvatar": "/assets/media/customers/ifeoma.webp",
         "storyByCustomerContent": "When I subscribe to a platform, all I get are the features of the platform. However, Qarrington has made it possible for me to also make some side hustle from my subscription.",
         "storyByCustomerIsActive": ""
+      }
+    ],
+    "storyByTrader": [
+      {
+        "storyByTraderName": "Debbie",
+        "storyByTraderTitle": "Marketing Specialist",
+        "storyByTraderAvatar": "/assets/media/traders/debbie.webp",
+        "storyByTraderContent": "I've been buying shares for years, but things have been rough in the market this year. So, I do see subscriptions as a path. I thank Qarrington for such an opportunity.",
+        "storyByTraderIsActive": ""
+      },
+      {
+        "storyByTraderName": "Lee",
+        "storyByTraderTitle": "Insurance Broker",
+        "storyByTraderAvatar": "/assets/media/traders/lee.webp",
+        "storyByTraderContent": "In the past, I've rushed into tech IPOs just to learn in the end that they were just hype by investment banks and VCs, who are not involved with any startup ISOs on Qarrington.",
+        "storyByTraderIsActive": "dot"
+      },
+      {
+        "storyByTraderName": "Karen",
+        "storyByTraderTitle": "Content Manager",
+        "storyByTraderAvatar": "/assets/media/traders/karen.webp",
+        "storyByTraderContent": "What I like the most about Qarrington is that my subscriptions are actually backed by innovative products. That's something you can't get when you bet on stocks.",
+        "storyByTraderIsActive": ""
+      },
+      {
+        "storyByTraderName": "Paul",
+        "storyByTraderTitle": "Information Architect",
+        "storyByTraderAvatar": "/assets/media/traders/paul.webp",
+        "storyByTraderContent": "I'm not American, which means I don't have access to buy shares of companies listed on a U.S. stock exchange. But thanks to Qarrington for changing this with subscriptions.",
+        "storyByTraderIsActive": "dot"
+      },
+      {
+        "storyByTraderName": "Donrinda",
+        "storyByTraderTitle": "Interior Designer",
+        "storyByTraderAvatar": "/assets/media/traders/donrinda.webp",
+        "storyByTraderContent": "I bought Zillow & Tesla shares without using Zillow or driving Tesla. With Qarrington, I can monetize my subscriptions with startups that I believe in their products.",
+        "storyByTraderIsActive": "dot"
+      }
+    ],
+    "storyByHodler": [
+      {
+        "storyByHodlerName": "Bill",
+        "storyByHodlerTitle": "Mechanical Engineer",
+        "storyByHodlerAvatar": "/assets/media/hodlers/bill.webp",
+        "storyByHodlerContent": "I'm a huge believer in the cryptocurrency space, however, the number of fraudulent transactions is just out of control. I think Qarrington is doing amazing with subscriptions.",
+        "storyByHodlerIsActive": ""
+      },
+      {
+        "storyByHodlerName": "Kelly",
+        "storyByHodlerTitle": "Sales Executive",
+        "storyByHodlerAvatar": "/assets/media/hodlers/kelly.webp",
+        "storyByHodlerContent": "In 2014, I bought my first bitcoin not knowing that a few years later, the market would be filled with tons of bad actors. I'm happy to see what Qarrington is doing.",
+        "storyByHodlerIsActive": "dot"
+      },
+      {
+        "storyByHodlerName": "James",
+        "storyByHodlerTitle": "Database Administrator",
+        "storyByHodlerAvatar": "/assets/media/hodlers/james.webp",
+        "storyByHodlerContent": "If you're from the U.S., you'd know how hard it is to get into crypto because of the strict regulations. That's what Qarrington doesn't have when buying subscriptions.",
+        "storyByHodlerIsActive": "dot"
+      },
+      {
+        "storyByHodlerName": "Hannah",
+        "storyByHodlerTitle": "Movie Director",
+        "storyByHodlerAvatar": "/assets/media/hodlers/hannah.webp",
+        "storyByHodlerContent": "While cryptocurrency sounds interesting, no crypto wallet is secured. But Qarrington doesn't hold funds because I can sell subscriptions directly to my bank account.",
+        "storyByHodlerIsActive": ""
+      },
+      {
+        "storyByHodlerName": "Zack",
+        "storyByHodlerTitle": "Corporate Attorney",
+        "storyByHodlerAvatar": "/assets/media/hodlers/zack.webp",
+        "storyByHodlerContent": "I like Qarrington because both the risks and rewards of buying subscriptions are moderate. However, the risk of buying cryptos seems to be bigger than the rewards.",
+        "storyByHodlerIsActive": "dot"
       }
     ]
   }

@@ -11,10 +11,10 @@ const Page = () => {
         <>
 
             <Head>
-                <title>Stocks • Qarrington</title>
+                <title>Cryptos • Qarrington</title>
                 <meta
                     name="description"
-                    content={`Buy, sell, & transfer the subscriptions of innovative startup companies. It's like buying stocks, but instead of shares, it's product-backed subscriptions.`}
+                    content={`Buy, sell, & transfer the subscriptions of innovative startup companies. It's like buying cryptos, but instead of coins, it's product-backed subscriptions.`}
                 />
             </Head>
 
@@ -32,18 +32,18 @@ const Page = () => {
 
                             <Box style={{ padding: '100px 0px 0px 0px' }}>
                                 <Typography variant="h1" fontWeight={700} color="black">
-                                    How subscriptions can outperform the stock market in the future.
+                                    How subscriptions can outperform the crypto market in the future.
                                 </Typography>
                                 <Divider sx={{ my: 3 }} />
                                 <Typography mt={1} variant="h5" fontWeight={500} color="secondary">
-                                    Buy, sell, and transfer the subscriptions of innovative startup companies. It's like buying stocks, but instead of shares, it's product-backed subscriptions.
+                                    Buy, sell, and transfer the subscriptions of innovative startup companies. It's like buying cryptos, but instead of coins, it's product-backed subscriptions.
                                 </Typography>
                                 <Divider sx={{ my: 3 }} />
                                 <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
-                                    In the late 1400s, the stock market was designed in Antwerp, Belgium based on the mechanism known as the Naked Asset Model (NAM), a system where financial assets such as currencies, shares, and cryptocurrencies are literally backed by nothing. Even though the subscription market is still in its early stage, each subscription unit sold or bought on a subscription exchange like Qarrington ... is fully backed by the underlying products and services of the listed companies.
+                                    Technically, the cryptocurrency market is an innovative space that is believed to play a critical role in the future financial market in several countries. Even though the rewards can be enormous, the risks involved are considered to outweigh the returns. With that being said, since subscriptions are mostly used to access digital products rather than for investment purposes, the rewards and risks involved in buying the subscriptions of an early-stage startup company are usually moderate.
                                 </Typography>
                                 <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
-                                    For example, if today, you bet the sum of $25,000 on a company's stock, and by tomorrow morning, the price of the stock goes to $0, that's it. On the contrary to that, if you buy the subscriptions of an early-stage innovative technology company for the same amount and the price tanks to $0 the following day, you'd still have access to the products and services offered by the startup.
+                                    The introduction of a cryptocurrency i.e. bitcoin is an amazing mechanism for the global economy, but there's no single use case for the asset other than for investment purposes, which makes bitcoin and every single cryptocurrency to be radically volatile. Not only that subscriptions can be bought, sold, and transferred, but they can also be used to access problem-solving products.
                                 </Typography>
                             </Box>
 

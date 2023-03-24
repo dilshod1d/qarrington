@@ -28,6 +28,24 @@ const StorySchema = new mongoose.Schema(
                 storyByCustomerContent: { type: String },
                 storyByCustomerIsActive: { type: String }
             }
+        ],
+        storyByTrader: [
+            {
+                storyByTraderName: { type: String },
+                storyByTraderTitle: { type: String },
+                storyByTraderAvatar: { type: String },
+                storyByTraderContent: { type: String },
+                storyByTraderIsActive: { type: String }
+            }
+        ],
+        storyByHodler: [
+            {
+                storyByHodlerName: { type: String },
+                storyByHodlerTitle: { type: String },
+                storyByHodlerAvatar: { type: String },
+                storyByHodlerContent: { type: String },
+                storyByHodlerIsActive: { type: String }
+            }
         ]
     }
 );
