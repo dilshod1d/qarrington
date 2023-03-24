@@ -1,146 +1,113 @@
 import React from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
-import HeaderMenu from '../../components/menus/HeaderMenu';
-import RightGrid from '../../components/grids/RightGrid';
-import { Avatar, Badge, Box, Card, Container, Grid, styled, Typography } from '@mui/material';
-import Footer from '../../components/main/Footer';
+import Navbar from '../../components/topics/Navbar';
+import Footer from '../../components/topics/Footer';
+import { Avatar, Badge, Box, Card, Container, Divider, Grid, styled, Typography } from '@mui/material';
 
 const Page = () => {
 
     return (
 
-        <div>
+        <>
 
             <Head>
                 <title>About • Qarrington</title>
                 <meta
                     name="description"
-                    content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
+                    content={`Buy, sell, & transfer the subscriptions of innovative startup companies. It's like buying cryptos, but instead of coins, it's product-backed subscriptions.`}
                 />
             </Head>
 
-            <HeaderMenu />
+            <Grid style={{ backgroundColor: '#fff' }}>
 
-            <Container>
+                <Navbar />
 
-                <Grid container spacing={2}>
+                <Container style={{ backgroundColor: '#fff' }}>
+                    <Grid container spacing={2}>
 
-                    <Grid item xs={12} md={6} lg={9} mb={4}>
-                        <Grid container spacing={1}>
+                        <Grid item xs>
+                            {/* <LeftSide /> */}
+                        </Grid>
 
-                            <Grid item xs={12}>
+                        <Grid my={8} item xs={7}>
 
-                                <Grid item xs={12} mb={2}>
-                                    <Grid container spacing={2}>
+                            <Box style={{ padding: '0px 0px 0px 0px' }}>
+                                <Typography variant="h1" fontWeight={700} color="black">
+                                    Buy, sell, and transfer the subscriptions of startup companies.
+                                </Typography>
+                                <Divider sx={{ my: 3 }} />
+                                <Typography mt={1} variant="h5" fontWeight={500} color="secondary">
+                                    Qarrington is a subscription exchange, where everyone can buy, sell, and transfer the subscriptions of early-stage startup companies with lower fees.
+                                </Typography>
+                            </Box>
 
-                                        <Grid item xs={12}>
+                            {/* card starts */}
+
+                            <Grid item xs={12} my={4}>
+                                <Grid container spacing={1}>
+
+                                    {team && team.map(({ _id, name, isActive, avatar, content }) => (
+                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
                                             <Card style={{ padding: '60px' }}>
-                                                <Box>
-                                                    <Typography mb={1.2} variant="h3" fontWeight={700} color="black">
-                                                        Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees.
-                                                    </Typography>
-                                                    <Typography variant="body" fontWeight={600} color="secondary">
-                                                    Unlike stocks and cryptos that are backed literally with nothing, your subscriptions with a Qarrington company are backed by the underlying products of the company. Technically, subscriptions only give you access to a company's products and services, they neither represent investment nor ownership stakes in the firm.
-                                                    </Typography>
+                                                <Box
+                                                    style={{
+                                                        display: 'flex',
+                                                        justifyContent: 'center'
+                                                    }}
+                                                >
+                                                    <StyledBadge
+                                                        overlap="circular"
+                                                        anchorOrigin={{
+                                                            vertical: 'bottom',
+                                                            horizontal: 'right'
+                                                        }}
+                                                        variant={isActive}
+                                                    >
+                                                        <Avatar
+                                                            style={{ width: 50, height: 50 }}
+                                                            alt={name}
+                                                            src={avatar}
+                                                        />
+                                                    </StyledBadge>
+                                                </Box>
+                                                <Box mt={2} style={{ textAlign: 'center' }}>
+                                                    <Box mb={1}>
+                                                        <Typography gutterBottom variant="h4" fontWeight={700} color="black">
+                                                            {name}
+                                                        </Typography>
+                                                    </Box>
+                                                    <Box>
+                                                        <Typography variant="body" fontWeight={600} color="secondary">
+                                                            {content}
+                                                        </Typography>
+                                                    </Box>
                                                 </Box>
                                             </Card>
                                         </Grid>
+                                    ))}
 
-                                    </Grid>
                                 </Grid>
-
-
-                                {/* intro starts */}
-
-                                <Grid item xs={12} mb={2}>
-                                    <Grid container spacing={2}>
-
-                                        <Grid item xs={12} sm={6} md={6} lg={6}>
-                                            <Link href="mailto:careers@qarrington.com?subject=Becoming a Qarrington">
-                                                <Card style={{ padding: '60px', color: 'white', backgroundColor: '#2f3542', cursor: 'pointer' }}>
-                                                    <Typography variant="body" fontWeight={600}>
-                                                        If you are interestd in becoming a Qarrington, feel free to email us a brief about yourself.
-                                                    </Typography>
-                                                </Card>
-                                            </Link>
-                                        </Grid>
-
-                                        <Grid item xs={12} sm={6} md={6} lg={6}>
-                                            <Link href="/help">
-                                                <Card style={{ padding: '60px', color: 'white', backgroundColor: '#2ed573', cursor: 'pointer' }}>
-                                                    <Typography variant="body" fontWeight={600}>
-                                                        If you really enjoy what we do at Qarrington but need more information, kindly email us.
-                                                    </Typography>
-                                                </Card>
-                                            </Link>
-                                        </Grid>
-
-                                    </Grid>
-                                </Grid>
-
-                                {/* intro ends */}
-
-                                <Grid item xs={12} mb={2}>
-                                    <Grid container spacing={2}>
-
-                                        {help && help.map(({ _id, name, isActive, avatar, content }) => (
-                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                <Card style={{ padding: '60px' }}>
-                                                    <Box
-                                                        style={{
-                                                            display: 'flex',
-                                                            justifyContent: 'center'
-                                                        }}
-                                                    >
-                                                        <StyledBadge
-                                                            overlap="circular"
-                                                            anchorOrigin={{
-                                                                vertical: 'bottom',
-                                                                horizontal: 'right'
-                                                            }}
-                                                            variant={isActive}
-                                                        >
-                                                            <Avatar
-                                                                style={{ width: 50, height: 50 }}
-                                                                alt={name}
-                                                                src={avatar}
-                                                            />
-                                                        </StyledBadge>
-                                                    </Box>
-                                                    <Box style={{ textAlign: 'center' }}>
-                                                        <Box mt={2}>
-                                                            <Typography variant="h4" fontWeight={700} color="black">
-                                                                {name}
-                                                            </Typography>
-                                                            <Typography mt={1} variant="body2" fontWeight={600} color="secondary">
-                                                                {content}
-                                                            </Typography>
-                                                        </Box>
-                                                    </Box>
-                                                </Card>
-                                            </Grid>
-                                        ))}
-
-                                    </Grid>
-                                </Grid>
-
-                                <Footer />
-
                             </Grid>
 
+                            {/* card ends */}
+
+                            {/* footer starts */}
+
+                            <Footer />
+
+                            {/* footer ends */}
+
                         </Grid>
+
+                        <Grid item xs>
+                            {/* <RightSide /> */}
+                        </Grid>
+
                     </Grid>
+                </Container>
+            </Grid >
 
-                    <Grid item xs={12} md={6} lg={3}>
-                        <RightGrid />
-                    </Grid>
-
-                </Grid>
-
-            </Container>
-
-        </div>
+        </>
 
     )
 }
@@ -176,21 +143,13 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
 }));
 
-const CardTitle = {
-    cursor: 'pointer',
-    color: '#2ed573',
-    '&:hover': {
-        color: '#000000'
-    }
-};
-
-const help = [
+const team = [
     {
         _id: 1,
         name: "Jenn",
         email: "account@qarrington.com",
         avatar: "/assets/media/team/jenn.webp",
-        content: "I joined Qarrington to help build the world's largest subscription models.",
+        content: "I joined Qarrington to help build the world's largest subscription models for startup companies.",
         isActive: "dot"
     },
     {
@@ -198,7 +157,7 @@ const help = [
         name: "Banjo",
         email: "business@qarrington.com",
         avatar: "/assets/media/team/banjo.webp",
-        content: "I created Qarrington with a single purpose; to become the Nasdaq for SaaS.",
+        content: "I created Qarrington with an unequivocal purpose, which is to become the Nasdaq for SaaS.",
         isActive: "dot"
     },
     {
@@ -206,7 +165,7 @@ const help = [
         name: "Esra",
         email: "consumer@qarrington.com",
         avatar: "/assets/media/team/esra.webp",
-        content: "I joined Qarrington to support Banjo's vision to commoditize subscriptions.",
+        content: "I joined Qarrington to support Banjo's vision to commoditize subscriptions for everyone.",
         isActive: ""
     },
     {
@@ -214,7 +173,7 @@ const help = [
         name: "Dwight",
         email: "consumer@qarrington.com",
         avatar: "/assets/media/team/dwight.webp",
-        content: "I joined Qarrington to give more power to consumers during hard times.",
+        content: "I joined Qarrington to give more purchasing power to startups & their users during hard times.",
         isActive: ""
     },
     {
@@ -222,7 +181,7 @@ const help = [
         name: "Maria",
         email: "consumer@qarrington.com",
         avatar: "/assets/media/team/maria.webp",
-        content: "I joined Qarrington to help businesses and consumers boost purchasing power.",
+        content: "I joined Qarrington to help startup companies raise capital that is equity and debt free.",
         isActive: ""
     },
     {
@@ -230,7 +189,7 @@ const help = [
         name: "Alexa",
         email: "consumer@qarrington.com",
         avatar: "/assets/media/team/alexa.webp",
-        content: "I joined Qarrington to make subscription businesses more than subscriptions.",
+        content: "I joined Qarrington to make subscription-based businesses more than subscriptions.",
         isActive: "dot"
     }
 ]

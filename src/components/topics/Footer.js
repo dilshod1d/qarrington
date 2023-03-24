@@ -115,24 +115,6 @@ const Component = () => {
                 Products
               </Typography>
             </Link>
-            <Link href="/mechanisms">
-              <Typography
-                variant="body2"
-                color="secondary"
-                sx={BreadcrumbItem}
-              >
-                Mechanisms
-              </Typography>
-            </Link>
-            <Link href="/opportunities">
-              <Typography
-                variant="body2"
-                color="secondary"
-                sx={BreadcrumbItem}
-              >
-                Opportunities
-              </Typography>
-            </Link>
             <Link href="/comparisons">
               <Typography
                 variant="body2"
@@ -160,22 +142,22 @@ const Component = () => {
                 Help
               </Typography>
             </Link>
-            <Link href="/destination">
+            <Link href="/users">
               <Typography
                 variant="body2"
                 color="secondary"
                 sx={BreadcrumbItem}
               >
-                Destination
+                Users
               </Typography>
             </Link>
-            <Link href="/expense">
+            <Link href="/resources">
               <Typography
                 variant="body2"
                 color="secondary"
                 sx={BreadcrumbItem}
               >
-                Expense
+                Resources
               </Typography>
             </Link>
             <Link href="/stocks">

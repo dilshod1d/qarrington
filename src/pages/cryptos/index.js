@@ -18,9 +18,10 @@ const Page = () => {
                 />
             </Head>
 
-            <Navbar />
-
             <Grid style={{ backgroundColor: '#fff' }}>
+
+                <Navbar />
+
                 <Container style={{ backgroundColor: '#fff' }}>
                     <Grid container spacing={2}>
 
@@ -30,7 +31,7 @@ const Page = () => {
 
                         <Grid my={8} item xs={7}>
 
-                            <Box style={{ padding: '100px 0px 0px 0px' }}>
+                            <Box style={{ padding: '0px 0px 0px 0px' }}>
                                 <Typography variant="h1" fontWeight={700} color="black">
                                     How subscriptions can outperform the crypto market in the future.
                                 </Typography>

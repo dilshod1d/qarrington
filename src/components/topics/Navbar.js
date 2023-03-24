@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import SearchIcon from '@mui/icons-material/Search';
+import TickerMenu from '../../components/menus/TickerMenu';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { Button, Fab, InputBase, Tooltip } from '@mui/material';
 import QrCodeRoundedIcon from '@mui/icons-material/QrCodeRounded';
@@ -40,26 +41,26 @@ const Component = () => {
                   </Link>
                 </LogoWrapper>
 
-                <Link href="/ethos">
+                <Link href="/topics">
                   <Box sx={{ marginLeft: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      ethos
+                      topics
                     </Button>
                   </Box>
                 </Link>
 
-                <Link href="/fundamentals">
+                <Link href="/stocks">
                   <Box sx={{ marginLeft: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      fundamentals
+                      stocks
                     </Button>
                   </Box>
                 </Link>
 
-                <Link href="/guidelines">
+                <Link href="/cryptos">
                   <Box sx={{ marginLeft: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      guidelines
+                      cryptos
                     </Button>
                   </Box>
                 </Link>
@@ -79,7 +80,7 @@ const Component = () => {
                     p: '2px 4px',
                     display: 'flex',
                     alignItems: 'center',
-                    width: 450
+                    width: 600
                   }}
                 >
                   <Link href="/">
@@ -91,7 +92,7 @@ const Component = () => {
                   </Link>
                   <InputBase
                     sx={{ ml: 1, flex: 1 }}
-                    placeholder="Search tickers, companies, or products ..."
+                    placeholder="Search to find answers to 75k questions ..."
                     inputProps={{ 'aria-label': 'search Qarrington' }}
                   />
 
@@ -121,6 +122,14 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="flex-end">
 
+                <Link href="/about">
+                  <Box sx={{ marginRight: -1.2 }}>
+                    <Button sx={MenuItem} variant='text' color='secondary'>
+                      about
+                    </Button>
+                  </Box>
+                </Link>
+
                 <Link href="/users">
                   <Box sx={{ marginRight: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
@@ -129,24 +138,16 @@ const Component = () => {
                   </Box>
                 </Link>
 
-                <Link href="/underwriters">
+                <Link href="/resources">
                   <Box sx={{ marginRight: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      underwriters
-                    </Button>
-                  </Box>
-                </Link>
-
-                <Link href="/founders">
-                  <Box sx={{ marginRight: -1.2 }}>
-                    <Button sx={MenuItem} variant='text' color='secondary'>
-                      founders
+                      resources
                     </Button>
                   </Box>
                 </Link>
 
                 <AvatarWrapper>
-                  <Link href="/portfolio">
+                  <Link href="/account">
                     <Fab size="small" color="primary" aria-label="add">
                       <HistoryEduRoundedIcon sx={{ color: '#ffffff' }} />
                     </Fab>
@@ -162,6 +163,8 @@ const Component = () => {
       </HeaderCard>
 
       {/* header ends */}
+
+      <TickerMenu />
 
     </>
 
@@ -181,10 +184,9 @@ const MenuItem = {
   }
 };
 
-const HeaderCard = styled(Box)(
+const HeaderCard = styled(Card)(
   ({ theme }) => `
   width: 100%;
-  background-color: #fff;
   position: fixed;
   border-radius: 0;
   display: flex;
