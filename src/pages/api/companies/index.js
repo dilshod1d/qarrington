@@ -1,13 +1,10 @@
-// companyTicker, companyName, companyLogo, companyProduct, companyHeadline, companyDescription, companyIndustry, companyWebsite, 
-// companyEmail, companyMarket, companySize, companyIsoUnits, companyIsoPrice, companyIsoDate, and companyIsoTime.
 import dbConnect from '@lib/dbConnect';
 import Company from '@models/company/Company';
-import handler, { initValidation, check } from "@middleware/handler"
-import { authenticate } from "@middleware/auth"
+import { validate, check } from '@lib/validations'
 import { createProduct } from "@lib/stripe"
-import { generateToken } from "@lib/auth"
+import { generateToken, getCurrentUserId } from "@lib/auth"
 
-const postVal = initValidation([
+const validations = [
 	check('companyTicker').notEmpty().withMessage('Company Ticker is invalid'),
 	check('companyName').notEmpty().withMessage('Company Name is invalid'),
 	check('companyLogo').notEmpty().withMessage('Company Logo is invalid'),
@@ -23,7 +20,7 @@ const postVal = initValidation([
 	check('companyIsoPrice').notEmpty().withMessage('Invalid Company Iso Price'),
 	check('companyIsoDate').notEmpty().withMessage('Invalid Company Iso Date'),
 	check('companyIsoTime').notEmpty().withMessage('Invalid Company Iso Time'),
-])
+]
 
 const formatReqObject = (req) => {
 	const details = {
@@ -51,9 +48,49 @@ const formatReqObject = (req) => {
 	return details
 }
 
-export default handler
-	.post(authenticate, async (req, res) => {
-		await dbConnect();
+
+export default async function handler(req, res) {
+	await dbConnect()
+	
+	if(req.method === 'GET') {
+		const id = await getCurrentUserId(req)
+		if(!id) return res.status(401).json({ success: false, message: 'Token missing or invalid' })
+
+		const { sortBy, limit } = req.query
+
+		try {
+			const { companyId } = req.query
+			if(companyId) {
+				const company = await Company.findById(companyId)
+				if(!company) return res.status(400).json({ success: false, message: "Company not found" })
+
+				return res.status(201).json({ success: true, data: company })
+			}
+
+			let companies = await Company.find()
+			if(sortBy === "companyCapitalization") {
+				companies = companies.filter(({ companyKpi }) => {
+					if(companyKpi) {
+						const { companyNow } = companyKpi
+						if(companyNow.data[0]) {
+							const { companyCapitalization } = companyNow.data[0]
+							if(companyCapitalization) return true
+						}
+					}
+					return false
+				}).sort((a, b) => b.companyKpi.companyNow.data[0].companyCapitalization - a.companyKpi.companyNow.data[0].companyCapitalization)
+			}
+
+			return res.status(201).json({ success: true, data: limit ? companies.slice(0, limit) : companies })
+		} catch (error) {
+			return res.status(500).json(error)
+		}
+	} else if (req.method === 'POST') {
+		await validate(validations, req, res)
+
+		const id = await getCurrentUserId(req)
+		if(!id) return res.status(401).json({ success: false, message: 'User not logged in, unable to create company' })
+
 		try {
 			const companyDetail = formatReqObject(req)
 
@@ -61,52 +98,134 @@ export default handler
 
 			const product = await createProduct({
 				name: req.body.companyTicker,
-				description:req.body.companyDescription,
+				description: req.body.companyDescription,
 				images: [req.body.companyLogo],
-				default_price_data:{
-					unit_amount_decimal: req.body.companyIsoPrice,
+				default_price_data: {
+					unit_amount_decimal: Number(req.body.companyIsoPrice)*100,
 					currency: "usd"
 				}
 			})
 			
+			company.companySlug = req.body.companyTicker.toLowerCase()
 			company.companyListing.companyKey = generateToken(12)
 			company.companyListing.companyProductId = product.id
 			company.companyLogo = req.body.companyLogo
-			company.companyAccountId = req.id
+			company.companyAccountId = id
+
+			company.companyUser = [{
+					companyUserType: "Total Subscribers",
+					companyUserTotal: 0
+				},
+				{
+					companyUserType: "Total Customers",
+					companyUserTotal: 0
+				},
+				{
+					companyUserType: "Active Customers",
+					companyUserTotal: 0
+				},
+				{
+					companyUserType: "Passive Customers",
+					companyUserTotal: 0
+				}
+			]
+
 			await company.save()
 			
-			res.status(201).json({ success: true, data: { company }, message: "Company listed successfully", })
-		} catch (err) {
-			res.status(500).json(err);
+			return res.status(201).json({ success: true, data: company, message: "Company listed successfully", })
+		} catch (error) {
+			return res.status(500).json(error)
 		}
-	})
-	.get(async (req, res) => {
-		await dbConnect()
+	} else if (req.method === "PUT") {
+			const { companySlug } = req.body
+			if(!companySlug) return res.status(400).json({ success: false, message: "Invalid company name" })
 
-		const { companyId } = req.query
-		if(companyId) {
 			try {
-				const company = await Company.findById(companyId)
-				if(!company) return res.status(400).json({ success: false, message: "Company not found" })
-				return res.status(201).json({ success: true, data: company, message: "Secret Key exists" })
+				const id = await getCurrentUserId(req) || req.body.companySubscriberAccountId
+				if(!id) return res.status(401).json({ success: false, message: 'Token missing or invalid' })
+				
+				const company = await Company.findOne({ companySlug: companySlug })
 
-			} catch (err) {
-				return res.status(500).json(err)
-			}
-		}
+				const { companySubscriberAccountId } = req.body
+				if(companySubscriberAccountId) {
+					company.companyIso.companyIsoSubscribers = [...company.companyIso.companyIsoSubscribers, {
+						companySubscriberAccountId,
+						companySubscriberAddedAt: Date.now()
+					}]
 
-		try {
-			res.status(201).json({ success: true, message: "Secret Key exists" })
+					company.companyUser.map(({ companyUserType, companyUserTotal }) => {
+						if (companyUserType === "Total Subscribers") {
+
+							if (company.companyIso.companyIsoSubscribers.length > 1000) {
+								company.companyStatus.companyIsLaunched = true,
+								company.companyStatus.companyIsLaunchedAt = Date.now()
+							}
+
+							return {
+								companyUserType,
+								companyUserTotal: company.companyIso.companyIsoSubscribers.length
+							}
+						}
+						return {
+							companyUserType,
+							companyUserTotal
+						}
+					})
+
+					await company.save()
+					return res.status(200).json({ success: true, company, message: "Suscriber added successfully" })
+				}
+
+				await company.save()
+				return res.status(200).json({ success: true, company, message: "Company updated successfully" })
 		} catch (err) {
-			res.status(500).json(err)
+				return res.status(500).json(err)
 		}
-		
-	})
-
-
-
-export const config = {
-	api: {
-		responseLimit: false
 	}
-};
+}
+
+// const validations = [
+//     check("accountAccessKey").optional().isLength({ min: 12, max: 12 }).withMessage("Invalid access key, it has to be at least 12 chars long"),
+//     check("accountIdNumber").optional().isNumeric().withMessage("Account Id is not a number"),
+//     check("accountIbanNumber").optional().isNumeric().withMessage("accountIbanNumber is not a number"),
+//     check("accountNumber").optional().isNumeric().withMessage("accountNumber is not a number"),
+//     check("accountRoutingNumber").optional().isNumeric().withMessage("accountRoutingNumber is not a number"),
+//     check("accountHomeCountry").optional().isLength({ min: 2, max: 2 }).withMessage("Account home country is not valid"),
+//     check("accountBusinessCountry").optional().isLength({ min: 2, max: 2 }).withMessage("accountBusinessCountry is not valid"),
+//     check("accountEmailAddress").optional().isEmail().withMessage("accountEmailAddress is not a proper email address"),
+//     check("accountBusinessEmail").optional().isEmail().withMessage("accountBusinessEmail is not a proper email address"),
+// ]
+
+// const formatReqObject = (req) => {
+//     const schema = {
+//         accountPersonal: ["accountFirstName", "accountLastName", "accountIdNumber", "accountBirthDate", "accountHomeCountry"],
+//         accountBusiness: ["accountBusinessName", "accountBusinessType", "accountBusinessIndustry", "accountBusinessWebsite", "accountBusinessAddress", "accountBusinessCountry", "accountBusinessEmail"],
+//         accountBank: ["accountBankCountry", "accountBankCurrency", "accountIbanNumber", "accountNumber", "accountRoutingNumber", "accountSortCode"],
+//         accountContact: ["accountEmailAddress", "accountPhoneNumber", "accountHomeAddress", "accountZipCode", "accountCityName", "accountStateName"],
+//         accountProfile: ["accountAvatarUrl", "accountCurrentTitle"],
+//         accountKeys: ["accountAccessKey"],
+//     }
+//     const data = {}
+
+
+//     Object.keys(schema).forEach((key) => {
+//         if (typeof (schema[key]) == 'object' && schema[key][0]) {
+//             data[key] = {}
+//             schema[key].forEach((keyValue) => {
+//                 if (req.body[keyValue] && req.body[keyValue] != null) {
+//                     data[key][keyValue] = req.body[keyValue]
+//                 }
+//             })
+//             if (Object.entries(data[key]) < 1) {
+//                 delete (data[key])
+//             }
+//         }
+//         else {
+//             if (req.body[key])
+//                 data[key] = req.body[key]
+//         }
+//     })
+
+//     return data
+// }
+

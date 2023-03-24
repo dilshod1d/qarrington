@@ -1,24 +1,23 @@
 import dbConnect from '@lib/dbConnect'
 import Account from '@models/account/Account'
-import handler, { check, put, initValidation } from "@middleware/handler"
-import { authenticate } from "@middleware/auth"
+import { check, validate } from '@lib/validations'
 import { createCustomAccount, createStripeImage } from '@lib/stripe'
 import { getAccountCompletionRate } from '@helpers/accounts-helpers'
+import { getCurrentUserId } from '@lib/auth'
 
-const validator = initValidation(
-    [
-        check("accountAccessKey").optional().isLength({ min: 12, max: 12 }).withMessage("Invalid access key, it has to be at least 12 chars long"),
-        check("accountIdNumber").optional().isNumeric().withMessage("Account Id is not a number"),
-        check("accountIbanNumber").optional().isNumeric().withMessage("accountIbanNumber is not a number"),
-        check("accountNumber").optional().isNumeric().withMessage("accountNumber is not a number"),
-        check("accountRoutingNumber").optional().isNumeric().withMessage("accountRoutingNumber is not a number"),
-        check("accountHomeCountry").optional().isLength({ min: 2, max: 2 }).withMessage("Account home country is not valid"),
-        check("accountBusinessCountry").optional().isLength({ min: 2, max: 2 }).withMessage("accountBusinessCountry is not valid"),
-        check("accountEmailAddress").optional().isEmail().withMessage("accountEmailAddress is not a proper email address"),
-        check("accountBusinessEmail").optional().isEmail().withMessage("accountBusinessEmail is not a proper email address"),
-    ]
-)
-const formatReqObject = (req, account) => {
+const validations = [
+    check("accountAccessKey").optional().isLength({ min: 12, max: 12 }).withMessage("Invalid access key, it has to be at least 12 chars long"),
+    check("accountIdNumber").optional().isNumeric().withMessage("Account Id is not a number"),
+    check("accountIbanNumber").optional().isNumeric().withMessage("accountIbanNumber is not a number"),
+    check("accountNumber").optional().isNumeric().withMessage("accountNumber is not a number"),
+    check("accountRoutingNumber").optional().isNumeric().withMessage("accountRoutingNumber is not a number"),
+    check("accountHomeCountry").optional().isLength({ min: 2, max: 2 }).withMessage("Account home country is not valid"),
+    check("accountBusinessCountry").optional().isLength({ min: 2, max: 2 }).withMessage("accountBusinessCountry is not valid"),
+    check("accountEmailAddress").optional().isEmail().withMessage("accountEmailAddress is not a proper email address"),
+    check("accountBusinessEmail").optional().isEmail().withMessage("accountBusinessEmail is not a proper email address"),
+]
+
+const formatReqObject = (req) => {
     const schema = {
         accountPersonal: ["accountFirstName", "accountLastName", "accountIdNumber", "accountBirthDate", "accountHomeCountry"],
         accountBusiness: ["accountBusinessName", "accountBusinessType", "accountBusinessIndustry", "accountBusinessWebsite", "accountBusinessAddress", "accountBusinessCountry", "accountBusinessEmail"],
@@ -48,7 +47,6 @@ const formatReqObject = (req, account) => {
         }
     })
 
-    // accountGovernmentId, accountIdNumber, accountBusinessName, accountBusinessWebsite, accountBusinessAddress, accountBusinessCountry, accountHomeAddress, accountZipCode, accountCityName, and accountStateName. However, we will only allow the user to enter/view their accountFirstName, accountLastName, accountHomeCountry, accountBirthDate, accountBusinessEmail, accountBankCountry, accountBankCurrency, accountIbanNumber, accountNumber, accountRoutingNumber, accountSortCode, accountEmailAddress, and accountPhoneNumber.
     return data
 }
 
@@ -122,40 +120,40 @@ const createStripeAccount = async (req, account, front) => {
 
 }
 
-export default handler.use(authenticate, put(validator))
-    .put(async (req, res) => {
-        try {
-            await dbConnect();
-            const { id } = req
+export default async function handler(req, res) {
+    await dbConnect()
 
+    if(req.method === 'PUT') {
+        await validate(validations, req, res)
+        try {
+            const id = await getCurrentUserId(req)
+            if(!id) return res.status(401).json({ success: false, message: 'Token missing or invalid' })
+            
             const formdata = formatReqObject(req)
             const account = await Account.findByIdAndUpdate(id, [{ $set: formdata }], { new: true })
             
             const completionRate = getAccountCompletionRate(account)
             account.accountStatus.accountCompletionRate = completionRate
-
-            if (completionRate > 80 && !account.accountStripeId) {
+            account.accountIsUpdatedAt = Date.now()
+            
+            await account.save()
+            if (completionRate >= 80 && !account.accountStripeId && req.body.accountGovernmentId) {
                 const front = await createStripeImage(req.body.accountGovernmentId)
                 if (front?.error) return res.status(400).json({ success: false, message: "Failed to load account government ID image", error: front.error });
-
+                
                 const acc = await createStripeAccount(req, account, front)
                 if (acc?.error) return res.status(400).json({ success: false, message: "Failed to create Stripe account", error: acc.error  });
-
                 account.accountStripeId = acc.id
+                account.accountStatus.accountIsVerified = true
+                
                 await account.save()
-                return res.status(201).json({ success: true, data: { account }, message: "Stripe account created successfully" });
+                return res.status(201).json({ success: true, data: account, message: "Stripe account created successfully" });
             }
 
             await account.save()
-            res.status(201).json({ success: true, data: { account }, message: "Account updated successfully" });
+            return res.status(200).json({ success: true, data: account, message: "Account updated successfully" });
         } catch (err) {
-            res.status(500).json(err);
+            return res.status(500).json(err);
         }
-    })
-
-
-export const config = {
-    api: {
-        responseLimit: false,
     }
-};
+}
