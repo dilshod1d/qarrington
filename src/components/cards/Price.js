@@ -1,78 +1,115 @@
 import React from 'react';
 import Link from 'next/link';
-import { green } from '@mui/material/colors';
+import { green, grey } from '@mui/material/colors';
 import { Box, Breadcrumbs, Card, Divider, Grid, Tooltip, Typography } from '@mui/material'
 import FooterMenu from '../menus/FooterMenu';
 import useSWR from 'swr';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { Button } from '@mui/material';
 
-const Component = () => {
+const dictionary = {
+  N: "companyNow",
+  H: "companyHour",
+  D: "companyDay",
+  W: "companyWeek",
+  M: "companyMonth",
+  Y: "companyYear"
+}
 
-  const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
+const Component = ({ kpi }) => {
+  const [currentKpi, setCurrentKpi] = useState([])
 
-  return (
+  const handleChange = (e, lettter) => {
+    e.preventDefault()
+    const key = dictionary[lettter]
+    const currentKpi = kpi[key]
+    const data = currentKpi.data.slice(0, 60)
+    setCurrentKpi(
+      new Array(60).fill(null).map((n, i) => {
+        if (data[i]) return data[i]
+        return null
+      }).reverse()
+    )
+    console.log(kpi[key])
+  }
 
+  useEffect(() => {
+    if(kpi) {
+      const key = dictionary["N"]
+      const currentKpi = kpi[key]
+      const data = currentKpi.data.slice(0, 60)
+      setCurrentKpi(
+        new Array(60).fill(null).map((n, i) => {
+          if (data[i]) return data[i]
+          return null
+        }).reverse()
+      )
+    }
+  }, [kpi])
+
+  return !kpi ? null : (
     <div style={{ position: 'sticky', top: '100px' }}>
 
       <Grid container spacing={1}>
         <Grid item xs={12}>
 
           {/* chart starts */}
-
           <Card style={{ padding: '40px', marginBottom: '10px' }}>
+            <Box textAlign="center" marginBottom="10px">
+              <Box>
+                <Typography fontSize="32px" fontWeight={700} component="span" color="black">
+                  ${kpi.companyNow.data.length > 0 ? kpi.companyNow.data[0].companyPrice : 'n/a'}
+                </Typography>
+              </Box>
 
-            {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker, companyKpi, companyListing }) => (
-              <>
-                {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyCurrency, companyCapitalization, companyVolume, companyPrice, companyPriceVariant, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                  <Box key={_id} textAlign="center" marginBottom="10px">
-                    <Box>
-                      <Typography fontSize="32px" fontWeight={700} component="span" color="black">
-                        ${companyPrice}
-                      </Typography>
-                    </Box>
+              <Box>
+                <Typography fontSize="16px" fontWeight={600} component="span" color={kpi.companyPriceVariant}>
+                  {`+${kpi.companyNow.data.length > 0 ? kpi.companyNow.data[0].companyPointChange : 'n/a'}`}
+                </Typography>
+                <Typography variant="body2" component="span" color="secondary" marginX={0.5}>
+                  \
+                </Typography>
+                <Typography fontSize="14px" fontWeight={600} component="span" color={kpi.companyPriceVariant}>
+                  {`${kpi.companyNow.data.length > 0 ? (kpi.companyNow.data[0].companyPercentChange + "%") : 'n/a'}`}
+                </Typography>
+              </Box>
 
-                    <Box>
-                      <Typography fontSize="16px" fontWeight={600} component="span" color={companyPriceVariant}>
-                        {`+${companyPointChange}`}
-                      </Typography>
-                      <Typography variant="body2" component="span" color="secondary" marginX={0.5}>
-                        \
-                      </Typography>
-                      <Typography fontSize="14px" fontWeight={600} component="span" color={companyPriceVariant}>
-                        {`+${companyPercentChange}`}%
-                      </Typography>
-                    </Box>
-
-                    <Box>
-                      <Typography style={Data2Item} component="span" color="black">
-                        {companyVolume}
-                      </Typography>
-                      <Typography style={Data2Helper} component="span" color="secondary">
-                        Vol
-                      </Typography>
-                      <Typography style={Data2Item} component="span" color="black">
-                        {`${companyCapitalization}`}
-                      </Typography>
-                      <Typography style={Data2Helper} component="span" color="secondary">
-                        Cap
-                      </Typography>
-                    </Box>
-                  </Box>
-                ))}
-              </>
-            ))}
-
+              <Box>
+                <Typography style={Data2Item} component="span" color="black">
+                  {kpi.companyNow.data.length > 0 ? kpi.companyNow.data[0].companyVolume : 'n/a'}
+                </Typography>
+                <Typography style={Data2Helper} component="span" color="secondary">
+                  Vol
+                </Typography>
+                <Typography style={Data2Item} component="span" color="black">
+                  {`${kpi.companyNow.data.length > 0 ? kpi.companyNow.data[0].companyCapitalization : 'n/a'}`}
+                </Typography>
+                <Typography style={Data2Helper} component="span" color="secondary">
+                  Cap
+                </Typography>
+              </Box>
+            </Box>
             <Grid item xs={12} mt={1.5}>
               <Grid container spacing={1}>
-                {cubes && cubes.map(({ _id, date, price, variant }) => (
-                  <Tooltip key={_id} title={date} placement="top">
-                    <Grid item xs={12} sm={6} md={6} lg={1} mb={-0.5}>
-                      <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[variant] }}>
-                        <></>
-                      </Box>
-                    </Grid>
-                  </Tooltip>
-                ))}
+                {currentKpi.map((data, id) => (
+                  data ? 
+                    (<Tooltip key={data._id} title={data.companyIsRecordedAt} placement="top">
+                      <Grid item xs={12} sm={6} md={6} lg={1} mb={-0.5}>
+                        <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[data.companyVariant] }}>
+                          <></>
+                        </Box>
+                      </Grid>
+                    </Tooltip>
+                    ) : (
+                    <Tooltip key={id} title={"no data"} placement="top">
+                      <Grid item xs={12} sm={6} md={6} lg={1} mb={-0.5}>
+                        <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: grey["500"] }}>
+                          <></>
+                        </Box>
+                      </Grid>
+                    </Tooltip>
+                )))}
               </Grid>
             </Grid>
 
@@ -135,69 +172,18 @@ const Component = () => {
                   }
                 }}
               >
-                <Link href="#">
-                  <Typography
-                    variant="body2"
-                    color="black"
-                    sx={PeriodItem}
-                  >
-                    N
-                  </Typography>
-                </Link>
-                <Link href="#">
-                  <Typography
-                    variant="body2"
-                    color="black"
-                    sx={PeriodItem}
-                  >
-                    H
-                  </Typography>
-                </Link>
-                <Link href="#">
-                  <Typography
-                    variant="body2"
-                    color="black"
-                    sx={PeriodItem}
-                  >
-                    D
-                  </Typography>
-                </Link>
-                <Link href="#">
-                  <Typography
-                    variant="body2"
-                    color="black"
-                    sx={PeriodItem}
-                  >
-                    W
-                  </Typography>
-                </Link>
-                <Link href="#">
-                  <Typography
-                    variant="body2"
-                    color="black"
-                    sx={PeriodItem}
-                  >
-                    M
-                  </Typography>
-                </Link>
-                <Link href="#">
-                  <Typography
-                    variant="body2"
-                    color="black"
-                    sx={PeriodItem}
-                  >
-                    Q
-                  </Typography>
-                </Link>
-                <Link href="#">
-                  <Typography
-                    variant="body2"
-                    color="black"
-                    sx={PeriodItem}
-                  >
-                    Y
-                  </Typography>
-                </Link>
+                {Object.keys(dictionary).map((letter) => {
+                  return (
+                  <Button key={letter} onClick={(e) => handleChange(e, letter)} sx={ButtonItem}>
+                    <Typography
+                      variant="body2"
+                      color="black"
+                      sx={PeriodItem}
+                    >
+                      {letter}
+                    </Typography>
+                  </Button>
+                )})}
               </Breadcrumbs>
             </Box>
 
@@ -213,7 +199,7 @@ const Component = () => {
                   }
                 }}
               >
-                {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
+                {/* {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker, companyListing }) => (
                   <a key={_id} style={{ textDecoration: 'none' }}
                     href={`${companyListing.companyWebsite}`}
                     target="_blank"
@@ -226,7 +212,7 @@ const Component = () => {
                       {companyListing.companyName}
                     </Typography>
                   </a>
-                ))}
+                ))} */}
               </Breadcrumbs>
             </Box>
 
@@ -247,10 +233,32 @@ const PeriodItem = {
   textTransform: 'uppercase',
   cursor: 'pointer',
   fontWeight: '700',
+  display: 'block',
+  padding: 0,
+  fontWeight: 500,
+  minWidth: 'auto',
+  height: 'min-content',
+  backgroundColor: "transparent",
   '&:hover': {
     color: '#c5c5c5'
   }
-};
+}
+
+const ButtonItem = {
+  textTransform: 'uppercase',
+  cursor: 'pointer',
+  fontWeight: '700',
+  display: 'block',
+  padding: 0,
+  fontWeight: 500,
+  minWidth: 'auto',
+  height: 'min-content',
+  backgroundColor: "transparent",
+  '&:hover': {
+    color: '#c5c5c5',
+    backgroundColor: "transparent",
+  }
+}
 
 const DomainItem = {
   textTransform: 'uppercase',
