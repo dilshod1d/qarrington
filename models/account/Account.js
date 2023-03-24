@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import bcrypt from "bcrypt"
-import { generateToken } from "../../src/lib/auth"
 
 const AccountSchema = new mongoose.Schema(
     {
@@ -43,15 +41,14 @@ const AccountSchema = new mongoose.Schema(
         },
         accountKeys: {
             accountAccessKey: { type: String, unique: true, minlength: 12, maxlength: 12 },
-            accountSecretKey: { type: String, unique: true, minlength: 12, maxlength: 12, immutable: true },
-            accountToken: { type: String, unique: true },
+            accountSecretKey: { type: String, unique: true, minlength: 12, maxlength: 12, immutable: true }
         },
         accountStatus: {
-            accountIsActive: { type: String },
-            accountIsAdmin: { type: String },
-            accountIsMaker: { type: String },
-            accountIsVerified: { type: String },
-            accountIsVerifiedAt: { type: String },
+            accountIsActive: { type: Boolean, default: false },
+            accountIsAdmin: { type: Boolean, default: false },
+            accountIsMaker: { type: Boolean },
+            accountIsVerified: { type: Boolean, default: false },
+            accountIsVerifiedAt: { type: Date },
             accountCompletionRate: { type: Number }
         },
         accountAlerts: [
@@ -69,13 +66,7 @@ const AccountSchema = new mongoose.Schema(
         accountIsCreatedAt: { type: Date, immutable: true, default: Date.now },
         accountIsUpdatedAt: { type: Date, default: Date.now }
     }
-);
-
-AccountSchema.methods.login = function () {
-    const token = generateToken(36)
-    this.accountKeys.accountToken = token;
-    return token
-}
+)
 
 
 export default mongoose.models.Account || mongoose.model('Account', AccountSchema);
