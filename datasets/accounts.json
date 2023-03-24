@@ -1,76 +1,82 @@
-[
-    {
-        "accountPersonal": {
-            "accountFirstName": "Brenna",
-            "accountLastName": "Murphy",
-            "accountGovernmentId": "/assets/media/identifications/brenna.png",
-            "accountIdNumber": "666784862",
-            "accountHomeCountry": "CA",
-            "accountBirthDate": "08-18-1995"
+[{
+    "_id": {
+        "$oid": "6418639268642429bed88b7b"
+    },
+    "accountPersonal": {
+        "accountFirstName": "Ramona",
+        "accountLastName": "Murphy",
+        "accountGovernmentId": "https://images.unsplash.com/photo-1670272498380-eb330b61f3cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "accountIdNumber": "666784862",
+        "accountHomeCountry": "CA",
+        "accountBirthDate": "08-18-1995"
+    },
+    "accountBank": {
+        "accountBankCountry": "US",
+        "accountBankCurrency": "USD",
+        "accountIbanNumber": "",
+        "accountNumber": "000123456789",
+        "accountRoutingNumber": "110000000",
+        "accountSortCode": ""
+    },
+    "accountBusiness": {
+        "accountBusinessName": "",
+        "accountBusinessType": "Individual",
+        "accountBusinessIndustry": "SaaS",
+        "accountBusinessWebsite": "https://linkedin.com/u/kim_adams",
+        "accountBusinessAddress": "209 Ocean Ave #2604, Jersey City, NJ 07305, Estados Unidos",
+        "accountBusinessCountry": "US",
+        "accountBusinessEmail": "support@business.com"
+    },
+    "accountContact": {
+        "accountEmailAddress": "kim@gmail.com",
+        "accountPhoneNumber": "+14844760102",
+        "accountHomeAddress": "209 Ocean Ave #2604, Jersey City, NJ 07305, Estados Unidos",
+        "accountZipCode": "11201",
+        "accountCityName": "Brooklyn",
+        "accountStateName": "NY"
+    },
+    "accountProfile": {
+        "accountAvatarUrl": "https://images.unsplash.com/photo-1670272498380-eb330b61f3cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "accountCurrentTitle": "Product Manager"
+    },
+    "accountKeys": {
+        "accountAccessKey": "888888888888",
+        "accountSecretKey": "123123123123",
+        "accountToken": "null"
+    },
+    "accountStatus": {
+        "accountIsActive": true,
+        "accountIsAdmin": false,
+        "accountIsMaker": false,
+        "accountIsVerified": true,
+        "accountIsVerifiedAt": "04-25-2022",
+        "accountCompletionRate": 100
+    },
+    "accountAlerts": [
+        {
+            "accountAlertLogo": "/assets/media/companies/spread.png",
+            "accountAlertUnits": "280",
+            "accountAlertTicker": "SPR",
+            "accountAlertPrice": "53",
+            "accountAlertType": "Pull",
+            "accountAlertStatus": "Submitted",
+            "accountAlertIsDated": "11-24-2023"
         },
-        "accountBank": {
-            "accountBankCountry": "US",
-            "accountBankCurrency": "USD",
-            "accountIbanNumber": "",
-            "accountNumber": "4743477573739",
-            "accountRoutingNumber": "937447338443",
-            "accountSortCode": ""
-        },
-        "accountBusiness": {
-            "accountBusinessName": "",
-            "accountBusinessType": "Individual",
-            "accountBusinessIndustry": "Software",
-            "accountBusinessWebsite": "https://linkedin.com/u/kim_adams",
-            "accountBusinessAddress": "123 Business Street, Somewhere",
-            "accountBusinessCountry": "US",
-            "accountBusinessEmail": "support@business.com"
-        },
-        "accountContact": {
-            "accountEmailAddress": "kim@gmail.com",
-            "accountPhoneNumber": "+1234567890",
-            "accountHomeAddress": "123 Home Street, Brooklyn 76382 NY / United States",
-            "accountZipCode": "74638",
-            "accountCityName": "Brooklyn",
-            "accountStateName": "New York"
-        },
-        "accountProfile": {
-            "accountAvatarUrl": "/assets/media/accounts/brenna.webp",
-            "accountCurrentTitle": "Product Manager"
-        },
-        "accountKeys": {
-            "accountAccessKey": "LESif6nvJo",
-            "accountSecretKey": "iKVnWRGcJf"
-        },
-        "accountStripeId": "j4884uih98489nw2",
-        "accountStatus": {
-            "accountIsActive": "dot",
-            "accountIsAdmin": "FALSE",
-            "accountIsMaker": "FALSE",
-            "accountIsVerified": "TRUE",
-            "accountIsVerifiedAt": "04-25-2022",
-            "accountCompletionRate": "4"
-        },
-        "accountAlerts": [
-            {
-                "accountAlertLogo": "/assets/media/companies/spread.png",
-                "accountAlertUnits": "280",
-                "accountAlertTicker": "SPR",
-                "accountAlertPrice": "53",
-                "accountAlertType": "Pull",
-                "accountAlertStatus": "Submitted",
-                "accountAlertIsDated": "11-24-2023"
-            },
-            {
-                "accountAlertLogo": "/assets/media/companies/twined.png",
-                "accountAlertUnits": "827",
-                "accountAlertTicker": "TWN",
-                "accountAlertPrice": "74",
-                "accountAlertType": "Push",
-                "accountAlertStatus": "Matched",
-                "accountAlertIsDated": "08-19-2022"
-            }
-        ],
-        "accountIsCreatedAt": "",
-        "accountIsUpdatedAt": ""
-    }
-]
+        {
+            "accountAlertLogo": "/assets/media/companies/twined.png",
+            "accountAlertUnits": "827",
+            "accountAlertTicker": "TWN",
+            "accountAlertPrice": "74",
+            "accountAlertType": "Push",
+            "accountAlertStatus": "Matched",
+            "accountAlertIsDated": "08-19-2022"
+        }
+    ],
+    "accountIsCreatedAt": {
+        "$date": "2023-03-23T17:19:09.873Z"
+    },
+    "accountIsUpdatedAt": {
+        "$date": "2023-03-24T07:55:55.561Z"
+    },
+    "accountStripeId": "acct_1MorWyQMohFRYsBm"
+}]
