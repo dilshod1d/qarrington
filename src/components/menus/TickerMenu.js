@@ -16,11 +16,14 @@ import {
 import Link from 'next/link';
 import useSWR from 'swr';
 import Marquee from "react-fast-marquee";
+import { getCompaniesWithBestCap } from '@services/companies-services';
 
 const Component = () => {
+  const [companies, setCompanies] = useState([])
 
-  // const fetcher = (...args) => fetch(...args).then(res => res.json());
-  // const { data: subscriptions } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/subscriptions`, fetcher);
+  useEffect(() => {
+    (async () => setCompanies(await getCompaniesWithBestCap({ quantity: 20 })))()
+  }, [])
 
   return (
 
@@ -31,11 +34,11 @@ const Component = () => {
             <Grid item xs={12} mb={2}>
               <Grid container spacing={0}>
 
-                {Array.isArray(subscriptions) && subscriptions.map(({ _id, name, image, ticker, variant, movement }) => (
+                {companies.map(({ _id, companyListing, companyKpi }) => (
                   <Grid key={_id} mt={0} mb={-2} mx={0.5}>
 
-                    <Link href={``}>
-                      <Tooltip title={name} placement="top">
+                    <Link href={`/subscription/${companyListing.companyTicker.toLowerCase()}`}>
+                      <Tooltip title={companyListing.companyName} placement="top">
                         <Card style={{ padding: '16px', cursor: 'pointer' }}>
                           <Box
                             style={{
@@ -45,14 +48,14 @@ const Component = () => {
                           >
                             <Avatar
                               style={{ width: 24, height: 24 }}
-                              alt={name}
-                              src={image}
+                              alt={companyListing.companyName}
+                              src={companyListing.companyLogo}
                             />
                           </Box>
                           <Box style={{ textAlign: 'center' }}>
                             <Box mt={0.5}>
-                              <Typography component="span" variant="body2" color={variant} fontWeight={500}>
-                                {movement}
+                              <Typography component="span" variant="body2" color='primary' fontWeight={500}>
+                                {companyKpi.companyDay.data[0] ? companyKpi.companyDay.data[0].companyPercentChange.toFixed(2) : '0.00'}
                               </Typography>
                               <Typography component="span" variant="body2" fontWeight={400} color="secondary">
                                 %
