@@ -12,6 +12,8 @@ import Footer from '../../../components/main/Footer';
 import useSWR from 'swr';
 import RemoveCircleTwoToneIcon from '@mui/icons-material/RemoveCircleTwoTone';
 import AddCircleTwoToneIcon from '@mui/icons-material/AddCircleTwoTone';
+import dbConnect from '@lib/dbConnect';
+import Company from '@models/company/Company';
 
 const Page = ({ slug, ticker, name, logo, headline, product, description, industry, market, website, email, units, price, date, time }) => {
 
@@ -381,25 +383,27 @@ const CurrencyBadge = styled(Badge)(({ theme }) => ({
 
 export async function getServerSideProps({ params }) {
     try {
-        const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies?companySlug=${params.portfolioId.replace(/\-/g, '+')}`)
-            .then((r) => r.json());
+        await dbConnect()
+        const { portfolioId } = params
+        const company = await Company.findOne({ companySlug: portfolioId.toLowerCase()})
+        const parsedCompany = JSON.parse(JSON.stringify(company))
         return {
             props: {
-                slug: results.companySlug,
-                ticker: results.companyListing.companyTicker,
-                name: results.companyListing.companyName,
-                logo: results.companyListing.companyLogo,
-                headline: results.companyListing.companyHeadline,
-                product: results.companyListing.companyProduct,
-                description: results.companyListing.companyDescription,
-                industry: results.companyListing.companyIndustry,
-                market: results.companyListing.companyMarket,
-                website: results.companyListing.companyWebsite,
-                email: results.companyListing.companyEmail,
-                units: results.companyIso.companyIsoUnits,
-                price: results.companyIso.companyIsoPrice,
-                date: results.companyIso.companyIsoDate,
-                time: results.companyIso.companyIsoTime
+                slug: parsedCompany.companySlug,
+                ticker: parsedCompany.companyListing.companyTicker,
+                name: parsedCompany.companyListing.companyName,
+                logo: parsedCompany.companyListing.companyLogo,
+                headline: parsedCompany.companyListing.companyHeadline,
+                product: parsedCompany.companyListing.companyProduct,
+                description: parsedCompany.companyListing.companyDescription,
+                industry: parsedCompany.companyListing.companyIndustry,
+                market: parsedCompany.companyListing.companyMarket,
+                website: parsedCompany.companyListing.companyWebsite,
+                email: parsedCompany.companyListing.companyEmail,
+                units: parsedCompany.companyIso.companyIsoUnits,
+                price: parsedCompany.companyIso.companyIsoPrice,
+                date: parsedCompany.companyIso.companyIsoDate,
+                time: parsedCompany.companyIso.companyIsoTime
             }
         };
     } catch (error) {
@@ -408,26 +412,3 @@ export async function getServerSideProps({ params }) {
         };
     }
 }
-
-// export async function getServerSideProps({ params }) {
-//     try {
-//         const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/pulls?pullTicker=${params.portfolioId.replace(/\-/g, '+')}`)
-//             .then((r) => r.json());
-//         return {
-//             props: {
-//                 balance: results.pullCompany.pullCompanyPortfolio,
-//                 units: results.pullCompany.pullCompanyUnits,
-//                 price: results.pullCompany.pullCompanyPrice,
-//                 cost: results.pullCompany.pullCompanyCost,
-//                 name: results.pullCompany.pullCompanyName,
-//                 ticker: results.pullTicker,
-//                 amount: results.pullAmount,
-//                 ticker: results.pullTicker
-//             }
-//         };
-//     } catch (error) {
-//         return {
-//             notFound: true
-//         };
-//     }
-// }
