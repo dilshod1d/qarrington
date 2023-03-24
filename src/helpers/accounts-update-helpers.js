@@ -13,8 +13,7 @@ export const getContentData = ({ countries, account }) => {
       canModify: account?.accountPersonal?.accountFirstName === undefined || '',
       defaultValue: account?.accountPersonal?.accountFirstName || '',
       validate: (input) => {
-        const regex = /^[a-zA-Z]+$/
-        return regex.test(input)
+        return true
       },
       inputConstraints: (prev, input) => {
         return input
@@ -29,8 +28,7 @@ export const getContentData = ({ countries, account }) => {
       canModify: account?.accountPersonal?.accountLastName === undefined || '',
       defaultValue: account?.accountPersonal?.accountLastName || '',
       validate: (input) => {
-        const regex = /^[a-zA-Z]+$/
-        return regex.test(input)
+        return true
       },
       inputConstraints: (prev, input) => {
         return input
