@@ -12,11 +12,15 @@ import Footer from '@components/main/Footer';
 import Carousel from 'react-material-ui-carousel';
 import { useRouter } from 'next/router';
 import { getCompanyBy } from '@services/companies-services';
+import dbConnect from '@lib/dbConnect';
+import Company from '@models/company/Company';
+import { useSession } from 'next-auth/react';
 
 
-const Page = () => {
+const Page = ({ basicCompany }) => {
     const [value, setValue] = useState('1');
-    const [company, setCompany] = useState()
+    const session = useSession()
+    const [company, setCompany] = useState(basicCompany)
     const router = useRouter()
 
     const handleChange = (event, newValue) => {
@@ -24,17 +28,28 @@ const Page = () => {
     };
 
     useEffect(() => {
-        const getCompany = async () => {
-            const response = await getCompanyBy({ id: router.query.companyId })
-            if(response?.error) return router.push('/')
-            const { data } = response
-            setCompany(data)
+        if(session.status === "loading") return
+        if(session.status === "unauthenticated") {
+            router.push('/account/access')
         }
 
-        if(router?.query?.companyId) getCompany()
-    }, [router])
+        if(!company?.companyStatus?.companyIsListed || !company || company?.companyAccountId !== session?.data?.user?.id) {
+            router.push('/companies')
+        }
+    }, [company, session])
 
-    return !company ? null : (
+    useEffect(() => {
+        const refetchData = async () => {
+            const newData = await getCompanyBy({ id: company._id })
+            if(newData.success) {
+                setCompany(newData.data)
+            }
+        }
+        const interval =  setInterval(refetchData, 5000)
+        return () => clearInterval(interval)
+    }, [])
+
+    return !company?.companyStatus?.companyIsListed || !company || session.status === "loading" || session.status === "unauthenticated" || company?.companyAccountId !== session?.data?.user?.id ? null : (
 
         <div>
 
@@ -73,7 +88,7 @@ const Page = () => {
                                                 <Card style={{ padding: '60px' }}>
                                                     <Box style={{ textAlign: 'center' }}>
                                                         <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={0.5}>
-                                                            {companyUserTotal}
+                                                            {companyUserTotal !== 0 ? companyUserTotal : "n/a"}
                                                         </Typography>
                                                         <Typography variant="body2" fontWeight="700" color="secondary" textTransform="uppercase">{companyUserType}</Typography>
                                                         <Box mt={1.5} mb={1.2}>
@@ -278,13 +293,12 @@ const Page = () => {
                                             {/* iso tab starts */}
 
                                             <TabPanel sx={{ padding: 0 }} value="1">
-
                                                 <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                     <Typography variant="body" color="secondary" fontWeight={600}>
                                                         Basically, once your Initial Subscription Offering or ISO is launched, the launch will automatically end after 7 days at the specified time.
                                                     </Typography>
                                                 </Card>
-                                    
+                                
                                                 <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                     <Stack spacing={2} sx={{ width: '100%' }}>
                                                         <Tooltip title="iso units" placement="top">
@@ -338,7 +352,7 @@ const Page = () => {
                                                                 required
                                                                 id="outlined-required"
                                                                 placeholder="iso amount"
-                                                                defaultValue={company.companyIso?.companyIsoAmount}
+                                                                defaultValue={company.companyIso?.companyIsoAmount ? company.companyIso.companyIsoAmount : 'n/a'}
                                                                 inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
@@ -347,7 +361,7 @@ const Page = () => {
                                                                 required
                                                                 id="outlined-required"
                                                                 placeholder="iso raised"
-                                                                defaultValue={company.companyIso?.companyIsoRaised}
+                                                                defaultValue={company.companyIso?.companyIsoRaised ? company.companyIso.companyIsoRaised : 'n/a'}
                                                                 inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
@@ -355,117 +369,109 @@ const Page = () => {
                                                 </Card>
 
                                             </TabPanel>
+                                        {/* iso tab stops */}
 
-                                            {/* iso tab stops */}
+                                        {/* kpi tab starts */}
 
-                                            {/* kpi tab starts */}
+                                        <TabPanel sx={{ padding: 0 }} value="3">
 
-                                            <TabPanel sx={{ padding: 0 }} value="3">
+                                            <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                <Typography variant="body" color="secondary" fontWeight={600}>
+                                                    You can easily track the live performance of your company subscription, which is automatically updated every 5 seconds.
+                                                </Typography>
+                                            </Card>
 
                                                 <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                    <Typography variant="body" color="secondary" fontWeight={600}>
-                                                        You can easily track the live performance of your company subscription, which is automatically updated every 5 seconds.
-                                                    </Typography>
+                                                    <Stack spacing={2} sx={{ width: '100%' }}>
+                                                        <Tooltip title="company capitalization" placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="company capitalization"
+                                                                defaultValue={company.companyKpi.companyNow.data.length > 0 ? company.companyKpi.companyNow.data[0].companyCapitalization : 'n/a'}
+                                                                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                        <Tooltip title="company volume" placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="company volume"
+                                                                defaultValue={company.companyKpi.companyNow.data.length > 0 ? company.companyKpi.companyNow.data[0].companyVolume : 'n/a'}
+                                                                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                    </Stack>
                                                 </Card>
 
-                                                {company.companyKpi?.map(({ companyNow }, id) => {
-                                                    return (
-                                                        <div key={id}>
-                                                            <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                                <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                    <Tooltip title="company capitalization" placement="top">
-                                                                        <TextField
-                                                                            required
-                                                                            id="outlined-required"
-                                                                            placeholder="company capitalization"
-                                                                            defaultValue={companyNow.length > 0 && companyNow[0].companyCapitalization}
-                                                                            inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                        />
-                                                                    </Tooltip>
-                                                                    <Tooltip title="company volume" placement="top">
-                                                                        <TextField
-                                                                            required
-                                                                            id="outlined-required"
-                                                                            placeholder="company volume"
-                                                                            defaultValue={companyNow.length > 0 && companyNow[0].companyVolume}
-                                                                            inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                        />
-                                                                    </Tooltip>
-                                                                </Stack>
-                                                            </Card>
+                                                <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                    <Stack spacing={2} sx={{ width: '100%' }}>
+                                                        <Tooltip title="company price" placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="company price"
+                                                                defaultValue={company.companyKpi.companyNow.data.length > 0 ? company.companyKpi.companyNow.data[0].companyPrice : 'n/a'}
+                                                                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                        <Tooltip title="company currency" placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="company currency"
+                                                                defaultValue={company.companyKpi.companyNow.data.length > 0 ? company.companyKpi.companyNow.data[0].companyCurrency ? company.companyKpi.companyNow.data[0].companyCurrency : 'n/a' : 'n/a' }
+                                                                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                    </Stack>
+                                                </Card>
 
-                                                            <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                                <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                    <Tooltip title="company price" placement="top">
-                                                                        <TextField
-                                                                            required
-                                                                            id="outlined-required"
-                                                                            placeholder="company price"
-                                                                            defaultValue={companyNow.length > 0 && companyNow[0].companyPrice}
-                                                                            inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                        />
-                                                                    </Tooltip>
-                                                                    <Tooltip title="company currency" placement="top">
-                                                                        <TextField
-                                                                            required
-                                                                            id="outlined-required"
-                                                                            placeholder="company currency"
-                                                                            defaultValue={companyNow.length > 0 && companyNow[0].companyCurrency}
-                                                                            inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                        />
-                                                                    </Tooltip>
-                                                                </Stack>
-                                                            </Card>
+                                                <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                    <Stack spacing={2} sx={{ width: '100%' }}>
+                                                        <Tooltip title="company point" placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="company point"
+                                                                defaultValue={company.companyKpi.companyNow.data.length > 0 ? company.companyKpi.companyNow.data[0].companyPointChange : 'n/a'}
+                                                                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                        <Tooltip title="company percent" placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="company percent"
+                                                                defaultValue={company.companyKpi.companyNow.data.length > 0 ? `${company.companyKpi.companyNow.data[0].companyPercentChange}%` : 'n/a'}
+                                                                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                    </Stack>
+                                                </Card>
 
-                                                            <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                                <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                    <Tooltip title="company point" placement="top">
-                                                                        <TextField
-                                                                            required
-                                                                            id="outlined-required"
-                                                                            placeholder="company point"
-                                                                            defaultValue={companyNow.length > 0 && companyNow[0].companyPointChange}
-                                                                            inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                        />
-                                                                    </Tooltip>
-                                                                    <Tooltip title="company percent" placement="top">
-                                                                        <TextField
-                                                                            required
-                                                                            id="outlined-required"
-                                                                            placeholder="company percent"
-                                                                            defaultValue={companyNow.length > 0 && companyNow[0].companyPercentChange}
-                                                                            inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                        />
-                                                                    </Tooltip>
-                                                                </Stack>
-                                                            </Card>
-
-                                                            <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                                <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                    <Tooltip title="active customers" placement="top">
-                                                                        <TextField
-                                                                            required
-                                                                            id="outlined-required"
-                                                                            placeholder="active customers"
-                                                                            defaultValue={companyNow.length > 0 && companyNow[0].companyActiveCustomers}
-                                                                            inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                        />
-                                                                    </Tooltip>
-                                                                    <Tooltip title="recorded date" placement="top">
-                                                                        <TextField
-                                                                            required
-                                                                            id="outlined-required"
-                                                                            placeholder="recorded date"
-                                                                            defaultValue={companyNow.length > 0 && companyNow[0].companyIsRecordedAt}
-                                                                            inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
-                                                                        />
-                                                                    </Tooltip>
-                                                                </Stack>
-                                                            </Card>
-                                                        </div>
-                                                    )}
-                                                )}
-
+                                                <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                    <Stack spacing={2} sx={{ width: '100%' }}>
+                                                        <Tooltip title="active customers" placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="active customers"
+                                                                defaultValue={company.companyKpi.companyNow.data.length > 0 ? company.companyKpi.companyNow.data[0].companyActiveCustomers : 'n/a'}
+                                                                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                        <Tooltip title="recorded date" placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="recorded date"
+                                                                defaultValue={company.companyKpi.companyNow.data.length > 0 ? company.companyKpi.companyNow.data[0].companyIsRecordedAt : 'n/a'}
+                                                                inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                    </Stack>
+                                                </Card>
                                             </TabPanel>
 
                                             {/* kpi tab stops */}
@@ -489,7 +495,7 @@ const Page = () => {
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Price />
+                        <Price kpi={company.companyKpi} />
                     </Grid>
 
                 </Grid>
@@ -504,6 +510,23 @@ const Page = () => {
 }
 
 export default Page
+
+export async function getServerSideProps({ params }) {
+    try {
+        await dbConnect()
+        const company = await Company.findById(params.companyId)
+        return {
+            props: {
+                basicCompany: JSON.parse(JSON.stringify(company))
+            }
+        };
+    } catch (error) {
+        return {
+            notFound: true
+        };
+    }
+}
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
