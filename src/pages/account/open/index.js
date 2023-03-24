@@ -11,9 +11,9 @@ import useSWR from 'swr';
 import { createAccount } from "@services/accounts-services";
 import { useRouter } from "next/router";
 import { useValidation } from "@hooks/useValidation";
+import { subscribeToCompany } from "@services/companies-services";
 
 const Page = () => {
-
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
@@ -33,9 +33,11 @@ const Page = () => {
     e.preventDefault()
     try {
       const res = await createAccount({ accessKey })
-      if(!res?.error) {
+      if(res?.success) {
+        const { companySlug } = router.query
+        if (companySlug) await subscribeToCompany({ accountId: res.data.id, companySlug })
         router.push('/account/access')
-      } else if (res?.error) {
+      } else {
         throwError()
       }
     } catch (error) {
