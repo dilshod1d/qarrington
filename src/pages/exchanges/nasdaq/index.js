@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Navbar from '../../components/topics/Navbar';
-import Footer from '../../components/topics/Footer';
+import Navbar from '../../../components/topics/Navbar';
+import Footer from '../../../components/topics/Footer';
 import { Box, Container, Divider, Grid, Typography } from '@mui/material';
 
 const Page = () => {
@@ -11,7 +11,7 @@ const Page = () => {
         <>
 
             <Head>
-                <title>Stocks • Qarrington</title>
+                <title>Nasdaq • Qarrington</title>
                 <meta
                     name="description"
                     content={`Buy, sell, & transfer the subscriptions of innovative startup companies. It's like buying stocks, but instead of shares, it's product-backed subscriptions.`}

@@ -1,18 +1,18 @@
 import dbConnect from '../../../lib/dbConnect';
-import Question from '../../../../models/stock/Stock';
+import Question from '../../../../models/share/Share';
 
 async function handler(req, res) {
   const { method } = req;
-  const { stockRoute } = req.query;
+  const { shareRoute } = req.query;
 
   await dbConnect();
 
   // read items
 
   if (method === "GET") {
-    if (stockRoute) {
+    if (shareRoute) {
       try {
-        const readItems = await Question.findOne({ stockRoute: stockRoute });
+        const readItems = await Question.findOne({ shareRoute: shareRoute });
         res.status(200).json(readItems);
       } catch (err) {
         res.status(500).json(err);

@@ -134,31 +134,13 @@ const Component = () => {
                 Users
               </Typography>
             </Link>
-            <Link href="/resources">
+            <Link href="/exchanges">
               <Typography
                 variant="body2"
                 color="secondary"
                 sx={BreadcrumbItem}
               >
-                Resources
-              </Typography>
-            </Link>
-            <Link href="/stocks">
-              <Typography
-                variant="body2"
-                color="secondary"
-                sx={BreadcrumbItem}
-              >
-                Stocks
-              </Typography>
-            </Link>
-            <Link href="/cryptos">
-              <Typography
-                variant="body2"
-                color="secondary"
-                sx={BreadcrumbItem}
-              >
-                Cryptos
+                Exchanges
               </Typography>
             </Link>
             <Link href="/topics/terms">

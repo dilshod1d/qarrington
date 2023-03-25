@@ -1,5002 +1,5002 @@
 [
   {
-    "cryptoUrl": "btc",
     "cryptoName": "Bitcoin",
+    "cryptoRoute": "btc",
     "cryptoTicker": "BTC"
   },
   {
-    "cryptoUrl": "eth",
     "cryptoName": "Ethereum",
+    "cryptoRoute": "eth",
     "cryptoTicker": "ETH"
   },
   {
-    "cryptoUrl": "usdt",
     "cryptoName": "Tether",
+    "cryptoRoute": "usdt",
     "cryptoTicker": "USDT"
   },
   {
-    "cryptoUrl": "bnb",
     "cryptoName": "BNB",
+    "cryptoRoute": "bnb",
     "cryptoTicker": "BNB"
   },
   {
-    "cryptoUrl": "usdc",
     "cryptoName": "USD Coin",
+    "cryptoRoute": "usdc",
     "cryptoTicker": "USDC"
   },
   {
-    "cryptoUrl": "xrp",
     "cryptoName": "XRP",
+    "cryptoRoute": "xrp",
     "cryptoTicker": "XRP"
   },
   {
-    "cryptoUrl": "ada",
     "cryptoName": "Cardano",
+    "cryptoRoute": "ada",
     "cryptoTicker": "ADA"
   },
   {
-    "cryptoUrl": "doge",
     "cryptoName": "Dogecoin",
+    "cryptoRoute": "doge",
     "cryptoTicker": "DOGE"
   },
   {
-    "cryptoUrl": "matic",
     "cryptoName": "Polygon",
+    "cryptoRoute": "matic",
     "cryptoTicker": "MATIC"
   },
   {
-    "cryptoUrl": "sol",
     "cryptoName": "Solana",
+    "cryptoRoute": "sol",
     "cryptoTicker": "SOL"
   },
   {
-    "cryptoUrl": "busd",
     "cryptoName": "Binance USD",
+    "cryptoRoute": "busd",
     "cryptoTicker": "BUSD"
   },
   {
-    "cryptoUrl": "dot",
     "cryptoName": "Polkadot",
+    "cryptoRoute": "dot",
     "cryptoTicker": "DOT"
   },
   {
-    "cryptoUrl": "ltc",
     "cryptoName": "Litecoin",
+    "cryptoRoute": "ltc",
     "cryptoTicker": "LTC"
   },
   {
-    "cryptoUrl": "shib",
     "cryptoName": "Shiba Inu",
+    "cryptoRoute": "shib",
     "cryptoTicker": "SHIB"
   },
   {
-    "cryptoUrl": "trx",
     "cryptoName": "TRON",
+    "cryptoRoute": "trx",
     "cryptoTicker": "TRX"
   },
   {
-    "cryptoUrl": "avax",
     "cryptoName": "Avalanche",
+    "cryptoRoute": "avax",
     "cryptoTicker": "AVAX"
   },
   {
-    "cryptoUrl": "dai",
     "cryptoName": "Dai",
+    "cryptoRoute": "dai",
     "cryptoTicker": "DAI"
   },
   {
-    "cryptoUrl": "uni",
     "cryptoName": "Uniswap",
+    "cryptoRoute": "uni",
     "cryptoTicker": "UNI"
   },
   {
-    "cryptoUrl": "wbtc",
     "cryptoName": "Wrapped Bitcoin",
+    "cryptoRoute": "wbtc",
     "cryptoTicker": "WBTC"
   },
   {
-    "cryptoUrl": "link",
     "cryptoName": "Chainlink",
+    "cryptoRoute": "link",
     "cryptoTicker": "LINK"
   },
   {
-    "cryptoUrl": "atom",
     "cryptoName": "Cosmos",
+    "cryptoRoute": "atom",
     "cryptoTicker": "ATOM"
   },
   {
-    "cryptoUrl": "leo",
     "cryptoName": "UNUS SED LEO",
+    "cryptoRoute": "leo",
     "cryptoTicker": "LEO"
   },
   {
-    "cryptoUrl": "etc",
     "cryptoName": "Ethereum Classic",
+    "cryptoRoute": "etc",
     "cryptoTicker": "ETC"
   },
   {
-    "cryptoUrl": "ton",
     "cryptoName": "Toncoin",
+    "cryptoRoute": "ton",
     "cryptoTicker": "TON"
   },
   {
-    "cryptoUrl": "xmr",
     "cryptoName": "Monero",
+    "cryptoRoute": "xmr",
     "cryptoTicker": "XMR"
   },
   {
-    "cryptoUrl": "okb",
     "cryptoName": "OKB",
+    "cryptoRoute": "okb",
     "cryptoTicker": "OKB"
   },
   {
-    "cryptoUrl": "bch",
     "cryptoName": "Bitcoin Cash",
+    "cryptoRoute": "bch",
     "cryptoTicker": "BCH"
   },
   {
-    "cryptoUrl": "xlm",
     "cryptoName": "Stellar",
+    "cryptoRoute": "xlm",
     "cryptoTicker": "XLM"
   },
   {
-    "cryptoUrl": "fil",
     "cryptoName": "Filecoin",
+    "cryptoRoute": "fil",
     "cryptoTicker": "FIL"
   },
   {
-    "cryptoUrl": "apt",
     "cryptoName": "Aptos",
+    "cryptoRoute": "apt",
     "cryptoTicker": "APT"
   },
   {
-    "cryptoUrl": "tusd",
     "cryptoName": "TrueUSD",
+    "cryptoRoute": "tusd",
     "cryptoTicker": "TUSD"
   },
   {
-    "cryptoUrl": "ldo",
     "cryptoName": "Lido DAO",
+    "cryptoRoute": "ldo",
     "cryptoTicker": "LDO"
   },
   {
-    "cryptoUrl": "hbar",
     "cryptoName": "Hedera",
+    "cryptoRoute": "hbar",
     "cryptoTicker": "HBAR"
   },
   {
-    "cryptoUrl": "cro",
     "cryptoName": "Cronos",
+    "cryptoRoute": "cro",
     "cryptoTicker": "CRO"
   },
   {
-    "cryptoUrl": "near",
     "cryptoName": "NEAR Protocol",
+    "cryptoRoute": "near",
     "cryptoTicker": "NEAR"
   },
   {
-    "cryptoUrl": "vet",
     "cryptoName": "VeChain",
+    "cryptoRoute": "vet",
     "cryptoTicker": "VET"
   },
   {
-    "cryptoUrl": "stx",
     "cryptoName": "Stacks",
+    "cryptoRoute": "stx",
     "cryptoTicker": "STX"
   },
   {
-    "cryptoUrl": "algo",
     "cryptoName": "Algorand",
+    "cryptoRoute": "algo",
     "cryptoTicker": "ALGO"
   },
   {
-    "cryptoUrl": "icp",
     "cryptoName": "Internet Computer",
+    "cryptoRoute": "icp",
     "cryptoTicker": "ICP"
   },
   {
-    "cryptoUrl": "qnt",
     "cryptoName": "Quant",
+    "cryptoRoute": "qnt",
     "cryptoTicker": "QNT"
   },
   {
-    "cryptoUrl": "ape",
     "cryptoName": "ApeCoin",
+    "cryptoRoute": "ape",
     "cryptoTicker": "APE"
   },
   {
-    "cryptoUrl": "grt",
     "cryptoName": "The Graph",
+    "cryptoRoute": "grt",
     "cryptoTicker": "GRT"
   },
   {
-    "cryptoUrl": "ftm",
     "cryptoName": "Fantom",
+    "cryptoRoute": "ftm",
     "cryptoTicker": "FTM"
   },
   {
-    "cryptoUrl": "eos",
     "cryptoName": "EOS",
+    "cryptoRoute": "eos",
     "cryptoTicker": "EOS"
   },
   {
-    "cryptoUrl": "bit",
     "cryptoName": "BitDAO",
+    "cryptoRoute": "bit",
     "cryptoTicker": "BIT"
   },
   {
-    "cryptoUrl": "mana",
     "cryptoName": "Decentraland",
+    "cryptoRoute": "mana",
     "cryptoTicker": "MANA"
   },
   {
-    "cryptoUrl": "aave",
     "cryptoName": "Aave",
+    "cryptoRoute": "aave",
     "cryptoTicker": "AAVE"
   },
   {
-    "cryptoUrl": "egld",
     "cryptoName": "MultiversX",
+    "cryptoRoute": "egld",
     "cryptoTicker": "EGLD"
   },
   {
-    "cryptoUrl": "imx",
     "cryptoName": "Immutable",
+    "cryptoRoute": "imx",
     "cryptoTicker": "IMX"
   },
   {
-    "cryptoUrl": "xtz",
     "cryptoName": "Tezos",
+    "cryptoRoute": "xtz",
     "cryptoTicker": "XTZ"
   },
   {
-    "cryptoUrl": "flow",
     "cryptoName": "Flow",
+    "cryptoRoute": "flow",
     "cryptoTicker": "FLOW"
   },
   {
-    "cryptoUrl": "cfx",
     "cryptoName": "Conflux",
+    "cryptoRoute": "cfx",
     "cryptoTicker": "CFX"
   },
   {
-    "cryptoUrl": "theta",
     "cryptoName": "Theta Network",
+    "cryptoRoute": "theta",
     "cryptoTicker": "THETA"
   },
   {
-    "cryptoUrl": "axs",
     "cryptoName": "Axie Infinity",
+    "cryptoRoute": "axs",
     "cryptoTicker": "AXS"
   },
   {
-    "cryptoUrl": "sand",
     "cryptoName": "The Sandbox",
+    "cryptoRoute": "sand",
     "cryptoTicker": "SAND"
   },
   {
-    "cryptoUrl": "kcs",
     "cryptoName": "KuCoin Token",
+    "cryptoRoute": "kcs",
     "cryptoTicker": "KCS"
   },
   {
-    "cryptoUrl": "usdp",
     "cryptoName": "Pax Dollar",
+    "cryptoRoute": "usdp",
     "cryptoTicker": "USDP"
   },
   {
-    "cryptoUrl": "neo",
     "cryptoName": "Neo",
+    "cryptoRoute": "neo",
     "cryptoTicker": "NEO"
   },
   {
-    "cryptoUrl": "chz",
     "cryptoName": "Chiliz",
+    "cryptoRoute": "chz",
     "cryptoTicker": "CHZ"
   },
   {
-    "cryptoUrl": "op",
     "cryptoName": "Optimism",
+    "cryptoRoute": "op",
     "cryptoTicker": "OP"
   },
   {
-    "cryptoUrl": "rpl",
     "cryptoName": "Rocket Pool",
+    "cryptoRoute": "rpl",
     "cryptoTicker": "RPL"
   },
   {
-    "cryptoUrl": "lunc",
     "cryptoName": "Terra Classic",
+    "cryptoRoute": "lunc",
     "cryptoTicker": "LUNC"
   },
   {
-    "cryptoUrl": "usdd",
     "cryptoName": "USDD",
+    "cryptoRoute": "usdd",
     "cryptoTicker": "USDD"
   },
   {
-    "cryptoUrl": "mina",
     "cryptoName": "Mina",
+    "cryptoRoute": "mina",
     "cryptoTicker": "MINA"
   },
   {
-    "cryptoUrl": "crv",
     "cryptoName": "Curve DAO Token",
+    "cryptoRoute": "crv",
     "cryptoTicker": "CRV"
   },
   {
-    "cryptoUrl": "klay",
     "cryptoName": "Klaytn",
+    "cryptoRoute": "klay",
     "cryptoTicker": "KLAY"
   },
   {
-    "cryptoUrl": "bsv",
     "cryptoName": "Bitcoin SV",
+    "cryptoRoute": "bsv",
     "cryptoTicker": "BSV"
   },
   {
-    "cryptoUrl": "snx",
     "cryptoName": "Synthetix",
+    "cryptoRoute": "snx",
     "cryptoTicker": "SNX"
   },
   {
-    "cryptoUrl": "cake",
     "cryptoName": "PancakeSwap",
+    "cryptoRoute": "cake",
     "cryptoTicker": "CAKE"
   },
   {
-    "cryptoUrl": "gmx",
     "cryptoName": "GMX",
+    "cryptoRoute": "gmx",
     "cryptoTicker": "GMX"
   },
   {
-    "cryptoUrl": "mkr",
     "cryptoName": "Maker",
+    "cryptoRoute": "mkr",
     "cryptoTicker": "MKR"
   },
   {
-    "cryptoUrl": "dash",
     "cryptoName": "Dash",
+    "cryptoRoute": "dash",
     "cryptoTicker": "DASH"
   },
   {
-    "cryptoUrl": "gusd",
     "cryptoName": "Gemini Dollar",
+    "cryptoRoute": "gusd",
     "cryptoTicker": "GUSD"
   },
   {
-    "cryptoUrl": "agix",
     "cryptoName": "SingularityNET",
+    "cryptoRoute": "agix",
     "cryptoTicker": "AGIX"
   },
   {
-    "cryptoUrl": "xec",
     "cryptoName": "eCash",
+    "cryptoRoute": "xec",
     "cryptoTicker": "XEC"
   },
   {
-    "cryptoUrl": "fxs",
     "cryptoName": "Frax Share",
+    "cryptoRoute": "fxs",
     "cryptoTicker": "FXS"
   },
   {
-    "cryptoUrl": "ht",
     "cryptoName": "Huobi Token",
+    "cryptoRoute": "ht",
     "cryptoTicker": "HT"
   },
   {
-    "cryptoUrl": "btt",
     "cryptoName": "BitTorrent(New)",
+    "cryptoRoute": "btt",
     "cryptoTicker": "BTT"
   },
   {
-    "cryptoUrl": "miota",
     "cryptoName": "IOTA",
+    "cryptoRoute": "miota",
     "cryptoTicker": "MIOTA"
   },
   {
-    "cryptoUrl": "zec",
     "cryptoName": "Zcash",
+    "cryptoRoute": "zec",
     "cryptoTicker": "ZEC"
   },
   {
-    "cryptoUrl": "gt",
     "cryptoName": "GateToken",
+    "cryptoRoute": "gt",
     "cryptoTicker": "GT"
   },
   {
-    "cryptoUrl": "xdc",
     "cryptoName": "XDC Network",
+    "cryptoRoute": "xdc",
     "cryptoTicker": "XDC"
   },
   {
-    "cryptoUrl": "paxg",
     "cryptoName": "PAX Gold",
+    "cryptoRoute": "paxg",
     "cryptoTicker": "PAXG"
   },
   {
-    "cryptoUrl": "twt",
     "cryptoName": "Trust Wallet Token",
+    "cryptoRoute": "twt",
     "cryptoTicker": "TWT"
   },
   {
-    "cryptoUrl": "rndr",
     "cryptoName": "Render Token",
+    "cryptoRoute": "rndr",
     "cryptoTicker": "RNDR"
   },
   {
-    "cryptoUrl": "lrc",
     "cryptoName": "Loopring",
+    "cryptoRoute": "lrc",
     "cryptoTicker": "LRC"
   },
   {
-    "cryptoUrl": "rune",
     "cryptoName": "THORChain",
+    "cryptoRoute": "rune",
     "cryptoTicker": "RUNE"
   },
   {
-    "cryptoUrl": "zil",
     "cryptoName": "Zilliqa",
+    "cryptoRoute": "zil",
     "cryptoTicker": "ZIL"
   },
   {
-    "cryptoUrl": "1inch",
     "cryptoName": "1inch Network",
+    "cryptoRoute": "1inch",
     "cryptoTicker": "1INCH"
   },
   {
-    "cryptoUrl": "fei",
     "cryptoName": "Fei USD",
+    "cryptoRoute": "fei",
     "cryptoTicker": "FEI"
   },
   {
-    "cryptoUrl": "mask",
     "cryptoName": "Mask Network",
+    "cryptoRoute": "mask",
     "cryptoTicker": "MASK"
   },
   {
-    "cryptoUrl": "cvx",
     "cryptoName": "Convex Finance",
+    "cryptoRoute": "cvx",
     "cryptoTicker": "CVX"
   },
   {
-    "cryptoUrl": "osmo",
     "cryptoName": "Osmosis",
+    "cryptoRoute": "osmo",
     "cryptoTicker": "OSMO"
   },
   {
-    "cryptoUrl": "cspr",
     "cryptoName": "Casper",
+    "cryptoRoute": "cspr",
     "cryptoTicker": "CSPR"
   },
   {
-    "cryptoUrl": "kava",
     "cryptoName": "Kava",
+    "cryptoRoute": "kava",
     "cryptoTicker": "KAVA"
   },
   {
-    "cryptoUrl": "enj",
     "cryptoName": "Enjin Coin",
+    "cryptoRoute": "enj",
     "cryptoTicker": "ENJ"
   },
   {
-    "cryptoUrl": "dydx",
     "cryptoName": "dYdX",
+    "cryptoRoute": "dydx",
     "cryptoTicker": "DYDX"
   },
   {
-    "cryptoUrl": "nexo",
     "cryptoName": "Nexo",
+    "cryptoRoute": "nexo",
     "cryptoTicker": "NEXO"
   },
   {
-    "cryptoUrl": "flr",
     "cryptoName": "Flare",
+    "cryptoRoute": "flr",
     "cryptoTicker": "FLR"
   },
   {
-    "cryptoUrl": "magic",
     "cryptoName": "MAGIC",
+    "cryptoRoute": "magic",
     "cryptoTicker": "MAGIC"
   },
   {
-    "cryptoUrl": "ethw",
     "cryptoName": "EthereumPoW",
+    "cryptoRoute": "ethw",
     "cryptoTicker": "ETHW"
   },
   {
-    "cryptoUrl": "t",
     "cryptoName": "Threshold",
+    "cryptoRoute": "t",
     "cryptoTicker": "T"
   },
   {
-    "cryptoUrl": "ssv",
     "cryptoName": "ssv.network",
+    "cryptoRoute": "ssv",
     "cryptoTicker": "SSV"
   },
   {
-    "cryptoUrl": "bat",
     "cryptoName": "Basic Attention Token",
+    "cryptoRoute": "bat",
     "cryptoTicker": "BAT"
   },
   {
-    "cryptoUrl": "xem",
     "cryptoName": "NEM",
+    "cryptoRoute": "xem",
     "cryptoTicker": "XEM"
   },
   {
-    "cryptoUrl": "woo",
     "cryptoName": "WOO Network",
+    "cryptoRoute": "woo",
     "cryptoTicker": "WOO"
   },
   {
-    "cryptoUrl": "floki",
     "cryptoName": "FLOKI",
+    "cryptoRoute": "floki",
     "cryptoTicker": "FLOKI"
   },
   {
-    "cryptoUrl": "qtum",
     "cryptoName": "Qtum",
+    "cryptoRoute": "qtum",
     "cryptoTicker": "QTUM"
   },
   {
-    "cryptoUrl": "luna",
     "cryptoName": "Terra",
+    "cryptoRoute": "luna",
     "cryptoTicker": "LUNA"
   },
   {
-    "cryptoUrl": "rose",
     "cryptoName": "Oasis Network",
+    "cryptoRoute": "rose",
     "cryptoTicker": "ROSE"
   },
   {
-    "cryptoUrl": "tfuel",
     "cryptoName": "Theta Fuel",
+    "cryptoRoute": "tfuel",
     "cryptoTicker": "TFUEL"
   },
   {
-    "cryptoUrl": "rvn",
     "cryptoName": "Ravencoin",
+    "cryptoRoute": "rvn",
     "cryptoTicker": "RVN"
   },
   {
-    "cryptoUrl": "ankr",
     "cryptoName": "Ankr",
+    "cryptoRoute": "ankr",
     "cryptoTicker": "ANKR"
   },
   {
-    "cryptoUrl": "comp",
     "cryptoName": "Compound",
+    "cryptoRoute": "comp",
     "cryptoTicker": "COMP"
   },
   {
-    "cryptoUrl": "bal",
     "cryptoName": "Balancer",
+    "cryptoRoute": "bal",
     "cryptoTicker": "BAL"
   },
   {
-    "cryptoUrl": "hot",
     "cryptoName": "Holo",
+    "cryptoRoute": "hot",
     "cryptoTicker": "HOT"
   },
   {
-    "cryptoUrl": "fet",
     "cryptoName": "Fetch.ai",
+    "cryptoRoute": "fet",
     "cryptoTicker": "FET"
   },
   {
-    "cryptoUrl": "yfi",
     "cryptoName": "yearn.finance",
+    "cryptoRoute": "yfi",
     "cryptoTicker": "YFI"
   },
   {
-    "cryptoUrl": "inj",
     "cryptoName": "Injective",
+    "cryptoRoute": "inj",
     "cryptoTicker": "INJ"
   },
   {
-    "cryptoUrl": "mob",
     "cryptoName": "MobileCoin",
+    "cryptoRoute": "mob",
     "cryptoTicker": "MOB"
   },
   {
-    "cryptoUrl": "celo",
     "cryptoName": "Celo",
+    "cryptoRoute": "celo",
     "cryptoTicker": "CELO"
   },
   {
-    "cryptoUrl": "dcr",
     "cryptoName": "Decred",
+    "cryptoRoute": "dcr",
     "cryptoTicker": "DCR"
   },
   {
-    "cryptoUrl": "ksm",
     "cryptoName": "Kusama",
+    "cryptoRoute": "ksm",
     "cryptoTicker": "KSM"
   },
   {
-    "cryptoUrl": "gala",
     "cryptoName": "Gala",
+    "cryptoRoute": "gala",
     "cryptoTicker": "GALA"
   },
   {
-    "cryptoUrl": "one",
     "cryptoName": "Harmony",
+    "cryptoRoute": "one",
     "cryptoTicker": "ONE"
   },
   {
-    "cryptoUrl": "ar",
     "cryptoName": "Arweave",
+    "cryptoRoute": "ar",
     "cryptoTicker": "AR"
   },
   {
-    "cryptoUrl": "gno",
     "cryptoName": "Gnosis",
+    "cryptoRoute": "gno",
     "cryptoTicker": "GNO"
   },
   {
-    "cryptoUrl": "btg",
     "cryptoName": "Bitcoin Gold",
+    "cryptoRoute": "btg",
     "cryptoTicker": "BTG"
   },
   {
-    "cryptoUrl": "astr",
     "cryptoName": "Astar",
+    "cryptoRoute": "astr",
     "cryptoTicker": "ASTR"
   },
   {
-    "cryptoUrl": "ens",
     "cryptoName": "Ethereum Name Service",
+    "cryptoRoute": "ens",
     "cryptoTicker": "ENS"
   },
   {
-    "cryptoUrl": "audio",
     "cryptoName": "Audius",
+    "cryptoRoute": "audio",
     "cryptoTicker": "AUDIO"
   },
   {
-    "cryptoUrl": "ln",
     "cryptoName": "LINK",
+    "cryptoRoute": "ln",
     "cryptoTicker": "LN"
   },
   {
-    "cryptoUrl": "bone",
     "cryptoName": "Bone ShibaSwap",
+    "cryptoRoute": "bone",
     "cryptoTicker": "BONE"
   },
   {
-    "cryptoUrl": "xch",
     "cryptoName": "Chia",
+    "cryptoRoute": "xch",
     "cryptoTicker": "XCH"
   },
   {
-    "cryptoUrl": "blur",
     "cryptoName": "Blur",
+    "cryptoRoute": "blur",
     "cryptoTicker": "BLUR"
   },
   {
-    "cryptoUrl": "omg",
     "cryptoName": "OMG Network",
+    "cryptoRoute": "omg",
     "cryptoTicker": "OMG"
   },
   {
-    "cryptoUrl": "waves",
     "cryptoName": "Waves",
+    "cryptoRoute": "waves",
     "cryptoTicker": "WAVES"
   },
   {
-    "cryptoUrl": "glm",
     "cryptoName": "Golem",
+    "cryptoRoute": "glm",
     "cryptoTicker": "GLM"
   },
   {
-    "cryptoUrl": "sushi",
     "cryptoName": "SushiSwap",
+    "cryptoRoute": "sushi",
     "cryptoTicker": "SUSHI"
   },
   {
-    "cryptoUrl": "ckb",
     "cryptoName": "Nervos Network",
+    "cryptoRoute": "ckb",
     "cryptoTicker": "CKB"
   },
   {
-    "cryptoUrl": "gmt",
     "cryptoName": "STEPN",
+    "cryptoRoute": "gmt",
     "cryptoTicker": "GMT"
   },
   {
-    "cryptoUrl": "iotx",
     "cryptoName": "IoTeX",
+    "cryptoRoute": "iotx",
     "cryptoTicker": "IOTX"
   },
   {
-    "cryptoUrl": "glmr",
     "cryptoName": "Moonbeam",
+    "cryptoRoute": "glmr",
     "cryptoTicker": "GLMR"
   },
   {
-    "cryptoUrl": "jst",
     "cryptoName": "JUST",
+    "cryptoRoute": "jst",
     "cryptoTicker": "JST"
   },
   {
-    "cryptoUrl": "jasmy",
     "cryptoName": "JasmyCoin",
+    "cryptoRoute": "jasmy",
     "cryptoTicker": "JASMY"
   },
   {
-    "cryptoUrl": "kda",
     "cryptoName": "Kadena",
+    "cryptoRoute": "kda",
     "cryptoTicker": "KDA"
   },
   {
-    "cryptoUrl": "ocean",
     "cryptoName": "Ocean Protocol",
+    "cryptoRoute": "ocean",
     "cryptoTicker": "OCEAN"
   },
   {
-    "cryptoUrl": "dao",
     "cryptoName": "DAO Maker",
+    "cryptoRoute": "dao",
     "cryptoTicker": "DAO"
   },
   {
-    "cryptoUrl": "sc",
     "cryptoName": "Siacoin",
+    "cryptoRoute": "sc",
     "cryptoTicker": "SC"
   },
   {
-    "cryptoUrl": "ustc",
     "cryptoName": "TerraClassicUSD",
+    "cryptoRoute": "ustc",
     "cryptoTicker": "USTC"
   },
   {
-    "cryptoUrl": "band",
     "cryptoName": "Band Protocol",
+    "cryptoRoute": "band",
     "cryptoTicker": "BAND"
   },
   {
-    "cryptoUrl": "lqty",
     "cryptoName": "Liquity",
+    "cryptoRoute": "lqty",
     "cryptoTicker": "LQTY"
   },
   {
-    "cryptoUrl": "icx",
     "cryptoName": "ICON",
+    "cryptoRoute": "icx",
     "cryptoTicker": "ICX"
   },
   {
-    "cryptoUrl": "iost",
     "cryptoName": "IOST",
+    "cryptoRoute": "iost",
     "cryptoTicker": "IOST"
   },
   {
-    "cryptoUrl": "mx",
     "cryptoName": "MX TOKEN",
+    "cryptoRoute": "mx",
     "cryptoTicker": "MX"
   },
   {
-    "cryptoUrl": "ont",
     "cryptoName": "Ontology",
+    "cryptoRoute": "ont",
     "cryptoTicker": "ONT"
   },
   {
-    "cryptoUrl": "xym",
     "cryptoName": "Symbol",
+    "cryptoRoute": "xym",
     "cryptoTicker": "XYM"
   },
   {
-    "cryptoUrl": "bico",
     "cryptoName": "Biconomy",
+    "cryptoRoute": "bico",
     "cryptoTicker": "BICO"
   },
   {
-    "cryptoUrl": "zrx",
     "cryptoName": "0x",
+    "cryptoRoute": "zrx",
     "cryptoTicker": "ZRX"
   },
   {
-    "cryptoUrl": "elon",
     "cryptoName": "Dogelon Mars",
+    "cryptoRoute": "elon",
     "cryptoTicker": "ELON"
   },
   {
-    "cryptoUrl": "hive",
     "cryptoName": "Hive",
+    "cryptoRoute": "hive",
     "cryptoTicker": "HIVE"
   },
   {
-    "cryptoUrl": "brise",
     "cryptoName": "Bitgert",
+    "cryptoRoute": "brise",
     "cryptoTicker": "BRISE"
   },
   {
-    "cryptoUrl": "chsb",
     "cryptoName": "SwissBorg",
+    "cryptoRoute": "chsb",
     "cryptoTicker": "CHSB"
   },
   {
-    "cryptoUrl": "lpt",
     "cryptoName": "Livepeer",
+    "cryptoRoute": "lpt",
     "cryptoTicker": "LPT"
   },
   {
-    "cryptoUrl": "flux",
     "cryptoName": "Flux",
+    "cryptoRoute": "flux",
     "cryptoTicker": "FLUX"
   },
   {
-    "cryptoUrl": "ach",
     "cryptoName": "Alchemy Pay",
+    "cryptoRoute": "ach",
     "cryptoTicker": "ACH"
   },
   {
-    "cryptoUrl": "rsr",
     "cryptoName": "Reserve Rights",
+    "cryptoRoute": "rsr",
     "cryptoTicker": "RSR"
   },
   {
-    "cryptoUrl": "elf",
     "cryptoName": "aelf",
+    "cryptoRoute": "elf",
     "cryptoTicker": "ELF"
   },
   {
-    "cryptoUrl": "celr",
     "cryptoName": "Celer Network",
+    "cryptoRoute": "celr",
     "cryptoTicker": "CELR"
   },
   {
-    "cryptoUrl": "keep",
     "cryptoName": "Keep Network",
+    "cryptoRoute": "keep",
     "cryptoTicker": "KEEP"
   },
   {
-    "cryptoUrl": "bora",
     "cryptoName": "BORA",
+    "cryptoRoute": "bora",
     "cryptoTicker": "BORA"
   },
   {
-    "cryptoUrl": "poly",
     "cryptoName": "Polymath",
+    "cryptoRoute": "poly",
     "cryptoTicker": "POLY"
   },
   {
-    "cryptoUrl": "hnt",
     "cryptoName": "Helium",
+    "cryptoRoute": "hnt",
     "cryptoTicker": "HNT"
   },
   {
-    "cryptoUrl": "rlc",
     "cryptoName": "iExec RLC",
+    "cryptoRoute": "rlc",
     "cryptoTicker": "RLC"
   },
   {
-    "cryptoUrl": "waxp",
     "cryptoName": "WAX",
+    "cryptoRoute": "waxp",
     "cryptoTicker": "WAXP"
   },
   {
-    "cryptoUrl": "sfp",
     "cryptoName": "SafePal",
+    "cryptoRoute": "sfp",
     "cryptoTicker": "SFP"
   },
   {
-    "cryptoUrl": "skl",
     "cryptoName": "SKALE",
+    "cryptoRoute": "skl",
     "cryptoTicker": "SKL"
   },
   {
-    "cryptoUrl": "amp",
     "cryptoName": "Amp",
+    "cryptoRoute": "amp",
     "cryptoTicker": "AMP"
   },
   {
-    "cryptoUrl": "bnx",
     "cryptoName": "BinaryX",
+    "cryptoRoute": "bnx",
     "cryptoTicker": "BNX"
   },
   {
-    "cryptoUrl": "id",
     "cryptoName": "SPACE ID",
+    "cryptoRoute": "id",
     "cryptoTicker": "ID"
   },
   {
-    "cryptoUrl": "ilv",
     "cryptoName": "Illuvium",
+    "cryptoRoute": "ilv",
     "cryptoTicker": "ILV"
   },
   {
-    "cryptoUrl": "ever",
     "cryptoName": "Everscale",
+    "cryptoRoute": "ever",
     "cryptoTicker": "EVER"
   },
   {
-    "cryptoUrl": "dgb",
     "cryptoName": "DigiByte",
+    "cryptoRoute": "dgb",
     "cryptoTicker": "DGB"
   },
   {
-    "cryptoUrl": "sxp",
     "cryptoName": "Solar",
+    "cryptoRoute": "sxp",
     "cryptoTicker": "SXP"
   },
   {
-    "cryptoUrl": "storj",
     "cryptoName": "Storj",
+    "cryptoRoute": "storj",
     "cryptoTicker": "STORJ"
   },
   {
-    "cryptoUrl": "core",
     "cryptoName": "Core",
+    "cryptoRoute": "core",
     "cryptoTicker": "CORE"
   },
   {
-    "cryptoUrl": "rif",
     "cryptoName": "RSK Infrastructure Framework",
+    "cryptoRoute": "rif",
     "cryptoTicker": "RIF"
   },
   {
-    "cryptoUrl": "uma",
     "cryptoName": "UMA",
+    "cryptoRoute": "uma",
     "cryptoTicker": "UMA"
   },
   {
-    "cryptoUrl": "multi",
     "cryptoName": "Multichain",
+    "cryptoRoute": "multi",
     "cryptoTicker": "MULTI"
   },
   {
-    "cryptoUrl": "zen",
     "cryptoName": "Horizen",
+    "cryptoRoute": "zen",
     "cryptoTicker": "ZEN"
   },
   {
-    "cryptoUrl": "gtc",
     "cryptoName": "Gitcoin",
+    "cryptoRoute": "gtc",
     "cryptoTicker": "GTC"
   },
   {
-    "cryptoUrl": "lsk",
     "cryptoName": "Lisk",
+    "cryptoRoute": "lsk",
     "cryptoTicker": "LSK"
   },
   {
-    "cryptoUrl": "sys",
     "cryptoName": "Syscoin",
+    "cryptoRoute": "sys",
     "cryptoTicker": "SYS"
   },
   {
-    "cryptoUrl": "syn",
     "cryptoName": "Synapse",
+    "cryptoRoute": "syn",
     "cryptoTicker": "SYN"
   },
   {
-    "cryptoUrl": "api3",
     "cryptoName": "API3",
+    "cryptoRoute": "api3",
     "cryptoTicker": "API3"
   },
   {
-    "cryptoUrl": "btrst",
     "cryptoName": "Braintrust",
+    "cryptoRoute": "btrst",
     "cryptoTicker": "BTRST"
   },
   {
-    "cryptoUrl": "axl",
     "cryptoName": "Axelar",
+    "cryptoRoute": "axl",
     "cryptoTicker": "AXL"
   },
   {
-    "cryptoUrl": "joe",
     "cryptoName": "JOE",
+    "cryptoRoute": "joe",
     "cryptoTicker": "JOE"
   },
   {
-    "cryptoUrl": "trac",
     "cryptoName": "OriginTrail",
+    "cryptoRoute": "trac",
     "cryptoTicker": "TRAC"
   },
   {
-    "cryptoUrl": "rbn",
     "cryptoName": "Ribbon Finance",
+    "cryptoRoute": "rbn",
     "cryptoTicker": "RBN"
   },
   {
-    "cryptoUrl": "hex",
     "cryptoName": "HEX",
+    "cryptoRoute": "hex",
     "cryptoTicker": "HEX"
   },
   {
-    "cryptoUrl": "steth",
     "cryptoName": "Lido Staked ETH",
+    "cryptoRoute": "steth",
     "cryptoTicker": "stETH"
   },
   {
-    "cryptoUrl": "wtrx",
     "cryptoName": "Wrapped TRON",
+    "cryptoRoute": "wtrx",
     "cryptoTicker": "WTRX"
   },
   {
-    "cryptoUrl": "tmg",
     "cryptoName": "T-mac DAO",
+    "cryptoRoute": "tmg",
     "cryptoTicker": "TMG"
   },
   {
-    "cryptoUrl": "btcb",
     "cryptoName": "Bitcoin BEP2",
+    "cryptoRoute": "btcb",
     "cryptoTicker": "BTCB"
   },
   {
-    "cryptoUrl": "wbnb",
     "cryptoName": "Wrapped BNB",
+    "cryptoRoute": "wbnb",
     "cryptoTicker": "WBNB"
   },
   {
-    "cryptoUrl": "hbtc",
     "cryptoName": "Huobi BTC",
+    "cryptoRoute": "hbtc",
     "cryptoTicker": "HBTC"
   },
   {
-    "cryptoUrl": "frax",
     "cryptoName": "Frax",
+    "cryptoRoute": "frax",
     "cryptoTicker": "FRAX"
   },
   {
-    "cryptoUrl": "bttold",
     "cryptoName": "BitTorrent",
+    "cryptoRoute": "bttold",
     "cryptoTicker": "BTTOLD"
   },
   {
-    "cryptoUrl": "tnc",
     "cryptoName": "TNC Coin",
+    "cryptoRoute": "tnc",
     "cryptoTicker": "TNC"
   },
   {
-    "cryptoUrl": "bgb",
     "cryptoName": "Bitget Token",
+    "cryptoRoute": "bgb",
     "cryptoTicker": "BGB"
   },
   {
-    "cryptoUrl": "xaut",
     "cryptoName": "Tether Gold",
+    "cryptoRoute": "xaut",
     "cryptoTicker": "XAUT"
   },
   {
-    "cryptoUrl": "ftt",
     "cryptoName": "FTX Token",
+    "cryptoRoute": "ftt",
     "cryptoTicker": "FTT"
   },
   {
-    "cryptoUrl": "xrd",
     "cryptoName": "Radix",
+    "cryptoRoute": "xrd",
     "cryptoTicker": "XRD"
   },
   {
-    "cryptoUrl": "dfi",
     "cryptoName": "DeFiChain",
+    "cryptoRoute": "dfi",
     "cryptoTicker": "DFI"
   },
   {
-    "cryptoUrl": "nxm",
     "cryptoName": "NXM",
+    "cryptoRoute": "nxm",
     "cryptoTicker": "NXM"
   },
   {
-    "cryptoUrl": "wemix",
     "cryptoName": "WEMIX",
+    "cryptoRoute": "wemix",
     "cryptoTicker": "WEMIX"
   },
   {
-    "cryptoUrl": "usdj",
     "cryptoName": "USDJ",
+    "cryptoRoute": "usdj",
     "cryptoTicker": "USDJ"
   },
   {
-    "cryptoUrl": "kas",
     "cryptoName": "Kaspa",
+    "cryptoRoute": "kas",
     "cryptoTicker": "KAS"
   },
   {
-    "cryptoUrl": "lusd",
     "cryptoName": "Liquity USD",
+    "cryptoRoute": "lusd",
     "cryptoTicker": "LUSD"
   },
   {
-    "cryptoUrl": "babydoge",
     "cryptoName": "Baby Doge Coin",
+    "cryptoRoute": "babydoge",
     "cryptoTicker": "BabyDoge"
   },
   {
-    "cryptoUrl": "astrafer",
     "cryptoName": "Astrafer",
+    "cryptoRoute": "astrafer",
     "cryptoTicker": "ASTRAFER"
   },
   {
-    "cryptoUrl": "gns",
     "cryptoName": "Gains Network",
+    "cryptoRoute": "gns",
     "cryptoTicker": "GNS"
   },
   {
-    "cryptoUrl": "bdx",
     "cryptoName": "Beldex",
+    "cryptoRoute": "bdx",
     "cryptoTicker": "BDX"
   },
   {
-    "cryptoUrl": "edgt",
     "cryptoName": "Edgecoin",
+    "cryptoRoute": "edgt",
     "cryptoTicker": "EDGT"
   },
   {
-    "cryptoUrl": "ron",
     "cryptoName": "Ronin",
+    "cryptoRoute": "ron",
     "cryptoTicker": "RON"
   },
   {
-    "cryptoUrl": "mv",
     "cryptoName": "GensoKishi Metaverse",
+    "cryptoRoute": "mv",
     "cryptoTicker": "MV"
   },
   {
-    "cryptoUrl": "wever",
     "cryptoName": "Wrapped Everscale",
+    "cryptoRoute": "wever",
     "cryptoTicker": "WEVER"
   },
   {
-    "cryptoUrl": "vbg",
     "cryptoName": "Vibing",
+    "cryptoRoute": "vbg",
     "cryptoTicker": "VBG"
   },
   {
-    "cryptoUrl": "lyxe",
     "cryptoName": "LUKSO",
+    "cryptoRoute": "lyxe",
     "cryptoTicker": "LYXe"
   },
   {
-    "cryptoUrl": "ali",
     "cryptoName": "Artificial Liquid Intelligence",
+    "cryptoRoute": "ali",
     "cryptoTicker": "ALI"
   },
   {
-    "cryptoUrl": "eurs",
     "cryptoName": "STASIS EURO",
+    "cryptoRoute": "eurs",
     "cryptoTicker": "EURS"
   },
   {
-    "cryptoUrl": "tel",
     "cryptoName": "Telcoin",
+    "cryptoRoute": "tel",
     "cryptoTicker": "TEL"
   },
   {
-    "cryptoUrl": "rbn",
     "cryptoName": "Ribbon Finance",
+    "cryptoRoute": "rbn",
     "cryptoTicker": "RBN"
   },
   {
-    "cryptoUrl": "metis",
     "cryptoName": "MetisDAO",
+    "cryptoRoute": "metis",
     "cryptoTicker": "METIS"
   },
   {
-    "cryptoUrl": "hft",
     "cryptoName": "Hashflow",
+    "cryptoRoute": "hft",
     "cryptoTicker": "HFT"
   },
   {
-    "cryptoUrl": "pla",
     "cryptoName": "PlayDapp",
+    "cryptoRoute": "pla",
     "cryptoTicker": "PLA"
   },
   {
-    "cryptoUrl": "pundix",
     "cryptoName": "Pundi X (New)",
+    "cryptoRoute": "pundix",
     "cryptoTicker": "PUNDIX"
   },
   {
-    "cryptoUrl": "vvs",
     "cryptoName": "VVS Finance",
+    "cryptoRoute": "vvs",
     "cryptoTicker": "VVS"
   },
   {
-    "cryptoUrl": "xno",
     "cryptoName": "Nano",
+    "cryptoRoute": "xno",
     "cryptoTicker": "XNO"
   },
   {
-    "cryptoUrl": "med",
     "cryptoName": "MediBloc",
+    "cryptoRoute": "med",
     "cryptoTicker": "MED"
   },
   {
-    "cryptoUrl": "knc",
     "cryptoName": "Kyber Network Crystal v2",
+    "cryptoRoute": "knc",
     "cryptoTicker": "KNC"
   },
   {
-    "cryptoUrl": "sure",
     "cryptoName": "inSure DeFi",
+    "cryptoRoute": "sure",
     "cryptoTicker": "SURE"
   },
   {
-    "cryptoUrl": "slp",
     "cryptoName": "Smooth Love Potion",
+    "cryptoRoute": "slp",
     "cryptoTicker": "SLP"
   },
   {
-    "cryptoUrl": "people",
     "cryptoName": "ConstitutionDAO",
+    "cryptoRoute": "people",
     "cryptoTicker": "PEOPLE"
   },
   {
-    "cryptoUrl": "stg",
     "cryptoName": "Stargate Finance",
+    "cryptoRoute": "stg",
     "cryptoTicker": "STG"
   },
   {
-    "cryptoUrl": "mc",
     "cryptoName": "Merit Circle",
+    "cryptoRoute": "mc",
     "cryptoTicker": "MC"
   },
   {
-    "cryptoUrl": "cfg",
     "cryptoName": "Centrifuge",
+    "cryptoRoute": "cfg",
     "cryptoTicker": "CFG"
   },
   {
-    "cryptoUrl": "cocos",
     "cryptoName": "Cocos-BCX",
+    "cryptoRoute": "cocos",
     "cryptoTicker": "COCOS"
   },
   {
-    "cryptoUrl": "nft",
     "cryptoName": "APENFT",
+    "cryptoRoute": "nft",
     "cryptoTicker": "NFT"
   },
   {
-    "cryptoUrl": "renbtc",
     "cryptoName": "renBTC",
+    "cryptoRoute": "renbtc",
     "cryptoTicker": "RENBTC"
   },
   {
-    "cryptoUrl": "ren",
     "cryptoName": "Ren",
+    "cryptoRoute": "ren",
     "cryptoTicker": "REN"
   },
   {
-    "cryptoUrl": "scrt",
     "cryptoName": "Secret",
+    "cryptoRoute": "scrt",
     "cryptoTicker": "SCRT"
   },
   {
-    "cryptoUrl": "nmr",
     "cryptoName": "Numeraire",
+    "cryptoRoute": "nmr",
     "cryptoTicker": "NMR"
   },
   {
-    "cryptoUrl": "snt",
     "cryptoName": "Status",
+    "cryptoRoute": "snt",
     "cryptoTicker": "SNT"
   },
   {
-    "cryptoUrl": "cvc",
     "cryptoName": "Civic",
+    "cryptoRoute": "cvc",
     "cryptoTicker": "CVC"
   },
   {
-    "cryptoUrl": "ewt",
     "cryptoName": "Energy Web Token",
+    "cryptoRoute": "ewt",
     "cryptoTicker": "EWT"
   },
   {
-    "cryptoUrl": "dent",
     "cryptoName": "Dent",
+    "cryptoRoute": "dent",
     "cryptoTicker": "DENT"
   },
   {
-    "cryptoUrl": "vusdc",
     "cryptoName": "Venus USDC",
+    "cryptoRoute": "vusdc",
     "cryptoTicker": "vUSDC"
   },
   {
-    "cryptoUrl": "chr",
     "cryptoName": "Chromia",
+    "cryptoRoute": "chr",
     "cryptoTicker": "CHR"
   },
   {
-    "cryptoUrl": "dexe",
     "cryptoName": "DeXe",
+    "cryptoRoute": "dexe",
     "cryptoTicker": "DEXE"
   },
   {
-    "cryptoUrl": "pyr",
     "cryptoName": "Vulcan Forged PYR",
+    "cryptoRoute": "pyr",
     "cryptoTicker": "PYR"
   },
   {
-    "cryptoUrl": "nym",
     "cryptoName": "NYM",
+    "cryptoRoute": "nym",
     "cryptoTicker": "NYM"
   },
   {
-    "cryptoUrl": "hook",
     "cryptoName": "Hooked Protocol",
+    "cryptoRoute": "hook",
     "cryptoTicker": "HOOK"
   },
   {
-    "cryptoUrl": "polyx",
     "cryptoName": "Polymesh",
+    "cryptoRoute": "polyx",
     "cryptoTicker": "POLYX"
   },
   {
-    "cryptoUrl": "rad",
     "cryptoName": "Radicle",
+    "cryptoRoute": "rad",
     "cryptoTicker": "RAD"
   },
   {
-    "cryptoUrl": "ctsi",
     "cryptoName": "Cartesi",
+    "cryptoRoute": "ctsi",
     "cryptoTicker": "CTSI"
   },
   {
-    "cryptoUrl": "rbtc",
     "cryptoName": "Rootstock Smart Bitcoin",
+    "cryptoRoute": "rbtc",
     "cryptoTicker": "RBTC"
   },
   {
-    "cryptoUrl": "req",
     "cryptoName": "Request",
+    "cryptoRoute": "req",
     "cryptoTicker": "REQ"
   },
   {
-    "cryptoUrl": "vgx",
     "cryptoName": "Voyager Token",
+    "cryptoRoute": "vgx",
     "cryptoTicker": "VGX"
   },
   {
-    "cryptoUrl": "mbx",
     "cryptoName": "MARBLEX",
+    "cryptoRoute": "mbx",
     "cryptoTicker": "MBX"
   },
   {
-    "cryptoUrl": "ong",
     "cryptoName": "Ontology Gas",
+    "cryptoRoute": "ong",
     "cryptoTicker": "ONG"
   },
   {
-    "cryptoUrl": "gal",
     "cryptoName": "Galxe",
+    "cryptoRoute": "gal",
     "cryptoTicker": "GAL"
   },
   {
-    "cryptoUrl": "locus",
     "cryptoName": "Locus Chain",
+    "cryptoRoute": "locus",
     "cryptoTicker": "LOCUS"
   },
   {
-    "cryptoUrl": "usdx",
     "cryptoName": "USDX [Kava]",
+    "cryptoRoute": "usdx",
     "cryptoTicker": "USDX"
   },
   {
-    "cryptoUrl": "nu",
     "cryptoName": "NuCypher",
+    "cryptoRoute": "nu",
     "cryptoTicker": "NU"
   },
   {
-    "cryptoUrl": "mnw",
     "cryptoName": "Morpheus.Network",
+    "cryptoRoute": "mnw",
     "cryptoTicker": "MNW"
   },
   {
-    "cryptoUrl": "ant",
     "cryptoName": "Aragon",
+    "cryptoRoute": "ant",
     "cryptoTicker": "ANT"
   },
   {
-    "cryptoUrl": "hum",
     "cryptoName": "Humanscape",
+    "cryptoRoute": "hum",
     "cryptoTicker": "HUM"
   },
   {
-    "cryptoUrl": "mvl",
     "cryptoName": "MVL",
+    "cryptoRoute": "mvl",
     "cryptoTicker": "MVL"
   },
   {
-    "cryptoUrl": "rep",
     "cryptoName": "Augur",
+    "cryptoRoute": "rep",
     "cryptoTicker": "REP"
   },
   {
-    "cryptoUrl": "prom",
     "cryptoName": "Prom",
+    "cryptoRoute": "prom",
     "cryptoTicker": "PROM"
   },
   {
-    "cryptoUrl": "dodo",
     "cryptoName": "DODO",
+    "cryptoRoute": "dodo",
     "cryptoTicker": "DODO"
   },
   {
-    "cryptoUrl": "bnt",
     "cryptoName": "Bancor",
+    "cryptoRoute": "bnt",
     "cryptoTicker": "BNT"
   },
   {
-    "cryptoUrl": "mbox",
     "cryptoName": "MOBOX",
+    "cryptoRoute": "mbox",
     "cryptoTicker": "MBOX"
   },
   {
-    "cryptoUrl": "dka",
     "cryptoName": "dKargo",
+    "cryptoRoute": "dka",
     "cryptoTicker": "DKA"
   },
   {
-    "cryptoUrl": "stpt",
     "cryptoName": "STP",
+    "cryptoRoute": "stpt",
     "cryptoTicker": "STPT"
   },
   {
-    "cryptoUrl": "xcn",
     "cryptoName": "Onyxcoin",
+    "cryptoRoute": "xcn",
     "cryptoTicker": "XCN"
   },
   {
-    "cryptoUrl": "orbs",
     "cryptoName": "Orbs",
+    "cryptoRoute": "orbs",
     "cryptoTicker": "ORBS"
   },
   {
-    "cryptoUrl": "erg",
     "cryptoName": "Ergo",
+    "cryptoRoute": "erg",
     "cryptoTicker": "ERG"
   },
   {
-    "cryptoUrl": "ardr",
     "cryptoName": "Ardor",
+    "cryptoRoute": "ardr",
     "cryptoTicker": "ARDR"
   },
   {
-    "cryptoUrl": "steem",
     "cryptoName": "Steem",
+    "cryptoRoute": "steem",
     "cryptoTicker": "STEEM"
   },
   {
-    "cryptoUrl": "powr",
     "cryptoName": "Powerledger",
+    "cryptoRoute": "powr",
     "cryptoTicker": "POWR"
   },
   {
-    "cryptoUrl": "deso",
     "cryptoName": "Decentralized Social",
+    "cryptoRoute": "deso",
     "cryptoTicker": "DESO"
   },
   {
-    "cryptoUrl": "abbc",
     "cryptoName": "ABBC Coin",
+    "cryptoRoute": "abbc",
     "cryptoTicker": "ABBC"
   },
   {
-    "cryptoUrl": "coti",
     "cryptoName": "COTI",
+    "cryptoRoute": "coti",
     "cryptoTicker": "COTI"
   },
   {
-    "cryptoUrl": "cel",
     "cryptoName": "Celsius",
+    "cryptoRoute": "cel",
     "cryptoTicker": "CEL"
   },
   {
-    "cryptoUrl": "vtho",
     "cryptoName": "VeThor Token",
+    "cryptoRoute": "vtho",
     "cryptoTicker": "VTHO"
   },
   {
-    "cryptoUrl": "dero",
     "cryptoName": "Dero",
+    "cryptoRoute": "dero",
     "cryptoTicker": "DERO"
   },
   {
-    "cryptoUrl": "alpha",
     "cryptoName": "Alpha Venture DAO",
+    "cryptoRoute": "alpha",
     "cryptoTicker": "ALPHA"
   },
   {
-    "cryptoUrl": "avinoc",
     "cryptoName": "AVINOC",
+    "cryptoRoute": "avinoc",
     "cryptoTicker": "AVINOC"
   },
   {
-    "cryptoUrl": "xpla",
     "cryptoName": "XPLA",
+    "cryptoRoute": "xpla",
     "cryptoTicker": "XPLA"
   },
   {
-    "cryptoUrl": "volt",
     "cryptoName": "Volt Inu V2",
+    "cryptoRoute": "volt",
     "cryptoTicker": "VOLT"
   },
   {
-    "cryptoUrl": "solo",
     "cryptoName": "Sologenic",
+    "cryptoRoute": "solo",
     "cryptoTicker": "SOLO"
   },
   {
-    "cryptoUrl": "pha",
     "cryptoName": "Phala Network",
+    "cryptoRoute": "pha",
     "cryptoTicker": "PHA"
   },
   {
-    "cryptoUrl": "win",
     "cryptoName": "WINkLink",
+    "cryptoRoute": "win",
     "cryptoTicker": "WIN"
   },
   {
-    "cryptoUrl": "xcad",
     "cryptoName": "XCAD Network",
+    "cryptoRoute": "xcad",
     "cryptoTicker": "XCAD"
   },
   {
-    "cryptoUrl": "fx",
     "cryptoName": "Function X",
+    "cryptoRoute": "fx",
     "cryptoTicker": "FX"
   },
   {
-    "cryptoUrl": "iq",
     "cryptoName": "IQ",
+    "cryptoRoute": "iq",
     "cryptoTicker": "IQ"
   },
   {
-    "cryptoUrl": "tru",
     "cryptoName": "TrueFi",
+    "cryptoRoute": "tru",
     "cryptoTicker": "TRU"
   },
   {
-    "cryptoUrl": "loom",
     "cryptoName": "Loom Network",
+    "cryptoRoute": "loom",
     "cryptoTicker": "LOOM"
   },
   {
-    "cryptoUrl": "strax",
     "cryptoName": "Stratis",
+    "cryptoRoute": "strax",
     "cryptoTicker": "STRAX"
   },
   {
-    "cryptoUrl": "nkn",
     "cryptoName": "NKN",
+    "cryptoRoute": "nkn",
     "cryptoTicker": "NKN"
   },
   {
-    "cryptoUrl": "cqt",
     "cryptoName": "Covalent",
+    "cryptoRoute": "cqt",
     "cryptoTicker": "CQT"
   },
   {
-    "cryptoUrl": "pond",
     "cryptoName": "Marlin",
+    "cryptoRoute": "pond",
     "cryptoTicker": "POND"
   },
   {
-    "cryptoUrl": "dusk",
     "cryptoName": "Dusk Network",
+    "cryptoRoute": "dusk",
     "cryptoTicker": "DUSK"
   },
   {
-    "cryptoUrl": "ctc",
     "cryptoName": "Creditcoin",
+    "cryptoRoute": "ctc",
     "cryptoTicker": "CTC"
   },
   {
-    "cryptoUrl": "mrs",
     "cryptoName": "Metars Genesis",
+    "cryptoRoute": "mrs",
     "cryptoTicker": "MRS"
   },
   {
-    "cryptoUrl": "tomi",
     "cryptoName": "tomiNet",
+    "cryptoRoute": "tomi",
     "cryptoTicker": "TOMI"
   },
   {
-    "cryptoUrl": "mtl",
     "cryptoName": "Metal DAO",
+    "cryptoRoute": "mtl",
     "cryptoTicker": "MTL"
   },
   {
-    "cryptoUrl": "rly",
     "cryptoName": "Rally",
+    "cryptoRoute": "rly",
     "cryptoTicker": "RLY"
   },
   {
-    "cryptoUrl": "fun",
     "cryptoName": "FUNToken",
+    "cryptoRoute": "fun",
     "cryptoTicker": "FUN"
   },
   {
-    "cryptoUrl": "saitama",
     "cryptoName": "Saitama",
+    "cryptoRoute": "saitama",
     "cryptoTicker": "SAITAMA"
   },
   {
-    "cryptoUrl": "high",
     "cryptoName": "Highstreet",
+    "cryptoRoute": "high",
     "cryptoTicker": "HIGH"
   },
   {
-    "cryptoUrl": "spell",
     "cryptoName": "Spell Token",
+    "cryptoRoute": "spell",
     "cryptoTicker": "SPELL"
   },
   {
-    "cryptoUrl": "mdx",
     "cryptoName": "Mdex",
+    "cryptoRoute": "mdx",
     "cryptoTicker": "MDX"
   },
   {
-    "cryptoUrl": "pendle",
     "cryptoName": "Pendle",
+    "cryptoRoute": "pendle",
     "cryptoTicker": "PENDLE"
   },
   {
-    "cryptoUrl": "bfc",
     "cryptoName": "Bifrost",
+    "cryptoRoute": "bfc",
     "cryptoTicker": "BFC"
   },
   {
-    "cryptoUrl": "ceek",
     "cryptoName": "CEEK VR",
+    "cryptoRoute": "ceek",
     "cryptoTicker": "CEEK"
   },
   {
-    "cryptoUrl": "xvs",
     "cryptoName": "Venus",
+    "cryptoRoute": "xvs",
     "cryptoTicker": "XVS"
   },
   {
-    "cryptoUrl": "arrr",
     "cryptoName": "Pirate Chain",
+    "cryptoRoute": "arrr",
     "cryptoTicker": "ARRR"
   },
   {
-    "cryptoUrl": "alice",
     "cryptoName": "MyNeighborAlice",
+    "cryptoRoute": "alice",
     "cryptoTicker": "ALICE"
   },
   {
-    "cryptoUrl": "aura",
     "cryptoName": "Aura Finance",
+    "cryptoRoute": "aura",
     "cryptoTicker": "AURA"
   },
   {
-    "cryptoUrl": "mlk",
     "cryptoName": "MiL.k",
+    "cryptoRoute": "mlk",
     "cryptoTicker": "MLK"
   },
   {
-    "cryptoUrl": "looks",
     "cryptoName": "LooksRare",
+    "cryptoRoute": "looks",
     "cryptoTicker": "LOOKS"
   },
   {
-    "cryptoUrl": "wnxm",
     "cryptoName": "Wrapped NXM",
+    "cryptoRoute": "wnxm",
     "cryptoTicker": "WNXM"
   },
   {
-    "cryptoUrl": "qkc",
     "cryptoName": "QuarkChain",
+    "cryptoRoute": "qkc",
     "cryptoTicker": "QKC"
   },
   {
-    "cryptoUrl": "uos",
     "cryptoName": "Ultra",
+    "cryptoRoute": "uos",
     "cryptoTicker": "UOS"
   },
   {
-    "cryptoUrl": "tlm",
     "cryptoName": "Alien Worlds",
+    "cryptoRoute": "tlm",
     "cryptoTicker": "TLM"
   },
   {
-    "cryptoUrl": "wmt",
     "cryptoName": "World Mobile Token",
+    "cryptoRoute": "wmt",
     "cryptoTicker": "WMT"
   },
   {
-    "cryptoUrl": "ctk",
     "cryptoName": "Shentu",
+    "cryptoRoute": "ctk",
     "cryptoTicker": "CTK"
   },
   {
-    "cryptoUrl": "axel",
     "cryptoName": "AXEL",
+    "cryptoRoute": "axel",
     "cryptoTicker": "AXEL"
   },
   {
-    "cryptoUrl": "bsw",
     "cryptoName": "Biswap",
+    "cryptoRoute": "bsw",
     "cryptoTicker": "BSW"
   },
   {
-    "cryptoUrl": "tsuka",
     "cryptoName": "Dejitaru Tsuka",
+    "cryptoRoute": "tsuka",
     "cryptoTicker": "TSUKA"
   },
   {
-    "cryptoUrl": "xyo",
     "cryptoName": "XYO",
+    "cryptoRoute": "xyo",
     "cryptoTicker": "XYO"
   },
   {
-    "cryptoUrl": "ccd",
     "cryptoName": "Concordium",
+    "cryptoRoute": "ccd",
     "cryptoTicker": "CCD"
   },
   {
-    "cryptoUrl": "vra",
     "cryptoName": "Verasity",
+    "cryptoRoute": "vra",
     "cryptoTicker": "VRA"
   },
   {
-    "cryptoUrl": "lcx",
     "cryptoName": "LCX",
+    "cryptoRoute": "lcx",
     "cryptoTicker": "LCX"
   },
   {
-    "cryptoUrl": "wrx",
     "cryptoName": "WazirX",
+    "cryptoRoute": "wrx",
     "cryptoTicker": "WRX"
   },
   {
-    "cryptoUrl": "del",
     "cryptoName": "Decimal",
+    "cryptoRoute": "del",
     "cryptoTicker": "DEL"
   },
   {
-    "cryptoUrl": "veri",
     "cryptoName": "Veritaseum",
+    "cryptoRoute": "veri",
     "cryptoTicker": "VERI"
   },
   {
-    "cryptoUrl": "grv",
     "cryptoName": "Grove Coin",
+    "cryptoRoute": "grv",
     "cryptoTicker": "GRV"
   },
   {
-    "cryptoUrl": "dag",
     "cryptoName": "Constellation",
+    "cryptoRoute": "dag",
     "cryptoTicker": "DAG"
   },
   {
-    "cryptoUrl": "raca",
     "cryptoName": "RACA",
+    "cryptoRoute": "raca",
     "cryptoTicker": "RACA"
   },
   {
-    "cryptoUrl": "ygg",
     "cryptoName": "Yield Guild Games",
+    "cryptoRoute": "ygg",
     "cryptoTicker": "YGG"
   },
   {
-    "cryptoUrl": "orc",
     "cryptoName": "Orbit Chain",
+    "cryptoRoute": "orc",
     "cryptoTicker": "ORC"
   },
   {
-    "cryptoUrl": "core",
     "cryptoName": "cVault.finance",
+    "cryptoRoute": "core",
     "cryptoTicker": "CORE"
   },
   {
-    "cryptoUrl": "sun",
     "cryptoName": "Sun (New)",
+    "cryptoRoute": "sun",
     "cryptoTicker": "SUN"
   },
   {
-    "cryptoUrl": "reef",
     "cryptoName": "Reef",
+    "cryptoRoute": "reef",
     "cryptoTicker": "REEF"
   },
   {
-    "cryptoUrl": "aca",
     "cryptoName": "Acala Token",
+    "cryptoRoute": "aca",
     "cryptoTicker": "ACA"
   },
   {
-    "cryptoUrl": "oxt",
     "cryptoName": "Orchid",
+    "cryptoRoute": "oxt",
     "cryptoTicker": "OXT"
   },
   {
-    "cryptoUrl": "fncy",
     "cryptoName": "FNCY",
+    "cryptoRoute": "fncy",
     "cryptoTicker": "FNCY"
   },
   {
-    "cryptoUrl": "srm",
     "cryptoName": "Serum",
+    "cryptoRoute": "srm",
     "cryptoTicker": "SRM"
   },
   {
-    "cryptoUrl": "vbusd",
     "cryptoName": "Venus BUSD",
+    "cryptoRoute": "vbusd",
     "cryptoTicker": "vBUSD"
   },
   {
-    "cryptoUrl": "lat",
     "cryptoName": "PlatON",
+    "cryptoRoute": "lat",
     "cryptoTicker": "LAT"
   },
   {
-    "cryptoUrl": "xsgd",
     "cryptoName": "XSGD",
+    "cryptoRoute": "xsgd",
     "cryptoTicker": "XSGD"
   },
   {
-    "cryptoUrl": "vega",
     "cryptoName": "Vega Protocol",
+    "cryptoRoute": "vega",
     "cryptoTicker": "VEGA"
   },
   {
-    "cryptoUrl": "beta",
     "cryptoName": "Beta Finance",
+    "cryptoRoute": "beta",
     "cryptoTicker": "BETA"
   },
   {
-    "cryptoUrl": "ogn",
     "cryptoName": "Origin Protocol",
+    "cryptoRoute": "ogn",
     "cryptoTicker": "OGN"
   },
   {
-    "cryptoUrl": "quack",
     "cryptoName": "RichQUACK.com",
+    "cryptoRoute": "quack",
     "cryptoTicker": "QUACK"
   },
   {
-    "cryptoUrl": "iris",
     "cryptoName": "IRISnet",
+    "cryptoRoute": "iris",
     "cryptoTicker": "IRIS"
   },
   {
-    "cryptoUrl": "badger",
     "cryptoName": "Badger DAO",
+    "cryptoRoute": "badger",
     "cryptoTicker": "BADGER"
   },
   {
-    "cryptoUrl": "perp",
     "cryptoName": "Perpetual Protocol",
+    "cryptoRoute": "perp",
     "cryptoTicker": "PERP"
   },
   {
-    "cryptoUrl": "stmx",
     "cryptoName": "StormX",
+    "cryptoRoute": "stmx",
     "cryptoTicker": "STMX"
   },
   {
-    "cryptoUrl": "vai",
     "cryptoName": "Vai",
+    "cryptoRoute": "vai",
     "cryptoTicker": "VAI"
   },
   {
-    "cryptoUrl": "rss3",
     "cryptoName": "RSS3",
+    "cryptoRoute": "rss3",
     "cryptoTicker": "RSS3"
   },
   {
-    "cryptoUrl": "movr",
     "cryptoName": "Moonriver",
+    "cryptoRoute": "movr",
     "cryptoTicker": "MOVR"
   },
   {
-    "cryptoUrl": "dar",
     "cryptoName": "Mines of Dalarnia",
+    "cryptoRoute": "dar",
     "cryptoTicker": "DAR"
   },
   {
-    "cryptoUrl": "ankreth",
     "cryptoName": "Ankr Staked ETH",
+    "cryptoRoute": "ankreth",
     "cryptoTicker": "ankrETH"
   },
   {
-    "cryptoUrl": "mft",
     "cryptoName": "Hifi Finance (Old)",
+    "cryptoRoute": "mft",
     "cryptoTicker": "MFT"
   },
   {
-    "cryptoUrl": "lina",
     "cryptoName": "Linear Finance",
+    "cryptoRoute": "lina",
     "cryptoTicker": "LINA"
   },
   {
-    "cryptoUrl": "ata",
     "cryptoName": "Automata Network",
+    "cryptoRoute": "ata",
     "cryptoTicker": "ATA"
   },
   {
-    "cryptoUrl": "nest",
     "cryptoName": "NEST Protocol",
+    "cryptoRoute": "nest",
     "cryptoTicker": "NEST"
   },
   {
-    "cryptoUrl": "wan",
     "cryptoName": "Wanchain",
+    "cryptoRoute": "wan",
     "cryptoTicker": "WAN"
   },
   {
-    "cryptoUrl": "dawn",
     "cryptoName": "Dawn Protocol",
+    "cryptoRoute": "dawn",
     "cryptoTicker": "DAWN"
   },
   {
-    "cryptoUrl": "arpa",
     "cryptoName": "ARPA",
+    "cryptoRoute": "arpa",
     "cryptoTicker": "ARPA"
   },
   {
-    "cryptoUrl": "tko",
     "cryptoName": "Toko Token",
+    "cryptoRoute": "tko",
     "cryptoTicker": "TKO"
   },
   {
-    "cryptoUrl": "aergo",
     "cryptoName": "Aergo",
+    "cryptoRoute": "aergo",
     "cryptoTicker": "AERGO"
   },
   {
-    "cryptoUrl": "ark",
     "cryptoName": "Ark",
+    "cryptoRoute": "ark",
     "cryptoTicker": "ARK"
   },
   {
-    "cryptoUrl": "ghst",
     "cryptoName": "Aavegotchi",
+    "cryptoRoute": "ghst",
     "cryptoTicker": "GHST"
   },
   {
-    "cryptoUrl": "ssx",
     "cryptoName": "SOMESING",
+    "cryptoRoute": "ssx",
     "cryptoTicker": "SSX"
   },
   {
-    "cryptoUrl": "sfund",
     "cryptoName": "Seedify.fund",
+    "cryptoRoute": "sfund",
     "cryptoTicker": "SFUND"
   },
   {
-    "cryptoUrl": "nvir",
     "cryptoName": "NvirWorld",
+    "cryptoRoute": "nvir",
     "cryptoTicker": "NVIR"
   },
   {
-    "cryptoUrl": "cbk",
     "cryptoName": "Cobak Token",
+    "cryptoRoute": "cbk",
     "cryptoTicker": "CBK"
   },
   {
-    "cryptoUrl": "vlx",
     "cryptoName": "Velas",
+    "cryptoRoute": "vlx",
     "cryptoTicker": "VLX"
   },
   {
-    "cryptoUrl": "meta",
     "cryptoName": "Metadium",
+    "cryptoRoute": "meta",
     "cryptoTicker": "META"
   },
   {
-    "cryptoUrl": "mxc",
     "cryptoName": "MXC",
+    "cryptoRoute": "mxc",
     "cryptoTicker": "MXC"
   },
   {
-    "cryptoUrl": "ampl",
     "cryptoName": "Ampleforth",
+    "cryptoRoute": "ampl",
     "cryptoTicker": "AMPL"
   },
   {
-    "cryptoUrl": "mbl",
     "cryptoName": "MovieBloc",
+    "cryptoRoute": "mbl",
     "cryptoTicker": "MBL"
   },
   {
-    "cryptoUrl": "xprt",
     "cryptoName": "Persistence",
+    "cryptoRoute": "xprt",
     "cryptoTicker": "XPRT"
   },
   {
-    "cryptoUrl": "gft",
     "cryptoName": "Gifto",
+    "cryptoRoute": "gft",
     "cryptoTicker": "GFT"
   },
   {
-    "cryptoUrl": "strk",
     "cryptoName": "Strike",
+    "cryptoRoute": "strk",
     "cryptoTicker": "STRK"
   },
   {
-    "cryptoUrl": "cbg",
     "cryptoName": "Chainbing",
+    "cryptoRoute": "cbg",
     "cryptoTicker": "CBG"
   },
   {
-    "cryptoUrl": "ctxc",
     "cryptoName": "Cortex",
+    "cryptoRoute": "ctxc",
     "cryptoTicker": "CTXC"
   },
   {
-    "cryptoUrl": "forth",
     "cryptoName": "Ampleforth Governance Token",
+    "cryptoRoute": "forth",
     "cryptoTicker": "FORTH"
   },
   {
-    "cryptoUrl": "tomo",
     "cryptoName": "TomoChain",
+    "cryptoRoute": "tomo",
     "cryptoTicker": "TOMO"
   },
   {
-    "cryptoUrl": "gods",
     "cryptoName": "Gods Unchained",
+    "cryptoRoute": "gods",
     "cryptoTicker": "GODS"
   },
   {
-    "cryptoUrl": "key",
     "cryptoName": "SelfKey",
+    "cryptoRoute": "key",
     "cryptoTicker": "KEY"
   },
   {
-    "cryptoUrl": "wvlx",
     "cryptoName": "Wrapped Velas",
+    "cryptoRoute": "wvlx",
     "cryptoTicker": "WVLX"
   },
   {
-    "cryptoUrl": "bitci",
     "cryptoName": "Bitcicoin",
+    "cryptoRoute": "bitci",
     "cryptoTicker": "BITCI"
   },
   {
-    "cryptoUrl": "klv",
     "cryptoName": "Klever",
+    "cryptoRoute": "klv",
     "cryptoTicker": "KLV"
   },
   {
-    "cryptoUrl": "xwc",
     "cryptoName": "WhiteCoin",
+    "cryptoRoute": "xwc",
     "cryptoTicker": "XWC"
   },
   {
-    "cryptoUrl": "utk",
     "cryptoName": "Utrust",
+    "cryptoRoute": "utk",
     "cryptoTicker": "UTK"
   },
   {
-    "cryptoUrl": "c98",
     "cryptoName": "Coin98",
+    "cryptoRoute": "c98",
     "cryptoTicker": "C98"
   },
   {
-    "cryptoUrl": "efi",
     "cryptoName": "Efinity Token",
+    "cryptoRoute": "efi",
     "cryptoTicker": "EFI"
   },
   {
-    "cryptoUrl": "mtrg",
     "cryptoName": "Meter Governance",
+    "cryptoRoute": "mtrg",
     "cryptoTicker": "MTRG"
   },
   {
-    "cryptoUrl": "col",
     "cryptoName": "Clash of Lilliput",
+    "cryptoRoute": "col",
     "cryptoTicker": "COL"
   },
   {
-    "cryptoUrl": "super",
     "cryptoName": "SuperVerse",
+    "cryptoRoute": "super",
     "cryptoTicker": "SUPER"
   },
   {
-    "cryptoUrl": "rkn",
     "cryptoName": "Rakon",
+    "cryptoRoute": "rkn",
     "cryptoTicker": "RKN"
   },
   {
-    "cryptoUrl": "alpaca",
     "cryptoName": "Alpaca Finance",
+    "cryptoRoute": "alpaca",
     "cryptoTicker": "ALPACA"
   },
   {
-    "cryptoUrl": "xvg",
     "cryptoName": "Verge",
+    "cryptoRoute": "xvg",
     "cryptoTicker": "XVG"
   },
   {
-    "cryptoUrl": "aog",
     "cryptoName": "smARTOFGIVING",
+    "cryptoRoute": "aog",
     "cryptoTicker": "AOG"
   },
   {
-    "cryptoUrl": "tt",
     "cryptoName": "ThunderCore",
+    "cryptoRoute": "tt",
     "cryptoTicker": "TT"
   },
   {
-    "cryptoUrl": "lyra",
     "cryptoName": "Lyra",
+    "cryptoRoute": "lyra",
     "cryptoTicker": "LYRA"
   },
   {
-    "cryptoUrl": "ray",
     "cryptoName": "Raydium",
+    "cryptoRoute": "ray",
     "cryptoTicker": "RAY"
   },
   {
-    "cryptoUrl": "tlos",
     "cryptoName": "Telos",
+    "cryptoRoute": "tlos",
     "cryptoTicker": "TLOS"
   },
   {
-    "cryptoUrl": "blok",
     "cryptoName": "Bloktopia",
+    "cryptoRoute": "blok",
     "cryptoTicker": "BLOK"
   },
   {
-    "cryptoUrl": "ksp",
     "cryptoName": "KLAYswap Protocol",
+    "cryptoRoute": "ksp",
     "cryptoTicker": "KSP"
   },
   {
-    "cryptoUrl": "lto",
     "cryptoName": "LTO Network",
+    "cryptoRoute": "lto",
     "cryptoTicker": "LTO"
   },
   {
-    "cryptoUrl": "quick",
     "cryptoName": "QuickSwap",
+    "cryptoRoute": "quick",
     "cryptoTicker": "QUICK"
   },
   {
-    "cryptoUrl": "bax",
     "cryptoName": "BABB",
+    "cryptoRoute": "bax",
     "cryptoTicker": "BAX"
   },
   {
-    "cryptoUrl": "dpi",
     "cryptoName": "DeFi Pulse Index",
+    "cryptoRoute": "dpi",
     "cryptoTicker": "DPI"
   },
   {
-    "cryptoUrl": "qom",
     "cryptoName": "Shiba Predator",
+    "cryptoRoute": "qom",
     "cryptoTicker": "QOM"
   },
   {
-    "cryptoUrl": "uqc",
     "cryptoName": "Uquid Coin",
+    "cryptoRoute": "uqc",
     "cryptoTicker": "UQC"
   },
   {
-    "cryptoUrl": "rev",
     "cryptoName": "Revain",
+    "cryptoRoute": "rev",
     "cryptoTicker": "REV"
   },
   {
-    "cryptoUrl": "mln",
     "cryptoName": "Enzyme",
+    "cryptoRoute": "mln",
     "cryptoTicker": "MLN"
   },
   {
-    "cryptoUrl": "fct",
     "cryptoName": "FirmaChain",
+    "cryptoRoute": "fct",
     "cryptoTicker": "FCT"
   },
   {
-    "cryptoUrl": "qlc",
     "cryptoName": "Kepple",
+    "cryptoRoute": "qlc",
     "cryptoTicker": "QLC"
   },
   {
-    "cryptoUrl": "susd",
     "cryptoName": "sUSD",
+    "cryptoRoute": "susd",
     "cryptoTicker": "SUSD"
   },
   {
-    "cryptoUrl": "yfii",
     "cryptoName": "DFI.Money",
+    "cryptoRoute": "yfii",
     "cryptoTicker": "YFII"
   },
   {
-    "cryptoUrl": "flm",
     "cryptoName": "Flamingo",
+    "cryptoRoute": "flm",
     "cryptoTicker": "FLM"
   },
   {
-    "cryptoUrl": "cre",
     "cryptoName": "Carry",
+    "cryptoRoute": "cre",
     "cryptoTicker": "CRE"
   },
   {
-    "cryptoUrl": "hunt",
     "cryptoName": "HUNT",
+    "cryptoRoute": "hunt",
     "cryptoTicker": "HUNT"
   },
   {
-    "cryptoUrl": "etn",
     "cryptoName": "Electroneum",
+    "cryptoRoute": "etn",
     "cryptoTicker": "ETN"
   },
   {
-    "cryptoUrl": "phb",
     "cryptoName": "Phoenix",
+    "cryptoRoute": "phb",
     "cryptoTicker": "PHB"
   },
   {
-    "cryptoUrl": "polis",
     "cryptoName": "Star Atlas DAO",
+    "cryptoRoute": "polis",
     "cryptoTicker": "POLIS"
   },
   {
-    "cryptoUrl": "lit",
     "cryptoName": "Litentry",
+    "cryptoRoute": "lit",
     "cryptoTicker": "LIT"
   },
   {
-    "cryptoUrl": "pols",
     "cryptoName": "Polkastarter",
+    "cryptoRoute": "pols",
     "cryptoTicker": "POLS"
   },
   {
-    "cryptoUrl": "vrsc",
     "cryptoName": "VerusCoin",
+    "cryptoRoute": "vrsc",
     "cryptoTicker": "VRSC"
   },
   {
-    "cryptoUrl": "onus",
     "cryptoName": "ONUS",
+    "cryptoRoute": "onus",
     "cryptoTicker": "ONUS"
   },
   {
-    "cryptoUrl": "rare",
     "cryptoName": "SuperRare",
+    "cryptoRoute": "rare",
     "cryptoTicker": "RARE"
   },
   {
-    "cryptoUrl": "cusd",
     "cryptoName": "Celo Dollar",
+    "cryptoRoute": "cusd",
     "cryptoTicker": "CUSD"
   },
   {
-    "cryptoUrl": "tvk",
     "cryptoName": "Virtua",
+    "cryptoRoute": "tvk",
     "cryptoTicker": "TVK"
   },
   {
-    "cryptoUrl": "velo",
     "cryptoName": "Velo",
+    "cryptoRoute": "velo",
     "cryptoTicker": "VELO"
   },
   {
-    "cryptoUrl": "boba",
     "cryptoName": "Boba Network",
+    "cryptoRoute": "boba",
     "cryptoTicker": "BOBA"
   },
   {
-    "cryptoUrl": "hifi",
     "cryptoName": "Hifi Finance",
+    "cryptoRoute": "hifi",
     "cryptoTicker": "HIFI"
   },
   {
-    "cryptoUrl": "ufo",
     "cryptoName": "UFO Gaming",
+    "cryptoRoute": "ufo",
     "cryptoTicker": "UFO"
   },
   {
-    "cryptoUrl": "mdt",
     "cryptoName": "Measurable Data Token",
+    "cryptoRoute": "mdt",
     "cryptoTicker": "MDT"
   },
   {
-    "cryptoUrl": "opul",
     "cryptoName": "Opulous",
+    "cryptoRoute": "opul",
     "cryptoTicker": "OPUL"
   },
   {
-    "cryptoUrl": "moc",
     "cryptoName": "Moss Coin",
+    "cryptoRoute": "moc",
     "cryptoTicker": "MOC"
   },
   {
-    "cryptoUrl": "dxd",
     "cryptoName": "DXdao",
+    "cryptoRoute": "dxd",
     "cryptoTicker": "DXD"
   },
   {
-    "cryptoUrl": "sdao",
     "cryptoName": "SingularityDAO",
+    "cryptoRoute": "sdao",
     "cryptoTicker": "SDAO"
   },
   {
-    "cryptoUrl": "wait",
     "cryptoName": "Hourglass",
+    "cryptoRoute": "wait",
     "cryptoTicker": "WAIT"
   },
   {
-    "cryptoUrl": "zeon",
     "cryptoName": "ZEON",
+    "cryptoRoute": "zeon",
     "cryptoTicker": "ZEON"
   },
   {
-    "cryptoUrl": "dg",
     "cryptoName": "DeGate",
+    "cryptoRoute": "dg",
     "cryptoTicker": "DG"
   },
   {
-    "cryptoUrl": "dfg",
     "cryptoName": "Defigram",
+    "cryptoRoute": "dfg",
     "cryptoTicker": "DFG"
   },
   {
-    "cryptoUrl": "bifi",
     "cryptoName": "Beefy Finance",
+    "cryptoRoute": "bifi",
     "cryptoTicker": "BIFI"
   },
   {
-    "cryptoUrl": "gel",
     "cryptoName": "Gelato",
+    "cryptoRoute": "gel",
     "cryptoTicker": "GEL"
   },
   {
-    "cryptoUrl": "pro",
     "cryptoName": "Propy",
+    "cryptoRoute": "pro",
     "cryptoTicker": "PRO"
   },
   {
-    "cryptoUrl": "loka",
     "cryptoName": "League of Kingdoms Arena",
+    "cryptoRoute": "loka",
     "cryptoTicker": "LOKA"
   },
   {
-    "cryptoUrl": "btm",
     "cryptoName": "Bytom",
+    "cryptoRoute": "btm",
     "cryptoTicker": "BTM"
   },
   {
-    "cryptoUrl": "bar",
     "cryptoName": "FC Barcelona Fan Token",
+    "cryptoRoute": "bar",
     "cryptoTicker": "BAR"
   },
   {
-    "cryptoUrl": "alcx",
     "cryptoName": "Alchemix",
+    "cryptoRoute": "alcx",
     "cryptoTicker": "ALCX"
   },
   {
-    "cryptoUrl": "sweat",
     "cryptoName": "Sweat Economy",
+    "cryptoRoute": "sweat",
     "cryptoTicker": "SWEAT"
   },
   {
-    "cryptoUrl": "wxt",
     "cryptoName": "Wirex Token",
+    "cryptoRoute": "wxt",
     "cryptoTicker": "WXT"
   },
   {
-    "cryptoUrl": "npt",
     "cryptoName": "Neopin",
+    "cryptoRoute": "npt",
     "cryptoTicker": "NPT"
   },
   {
-    "cryptoUrl": "akt",
     "cryptoName": "Akash Network",
+    "cryptoRoute": "akt",
     "cryptoTicker": "AKT"
   },
   {
-    "cryptoUrl": "wncg",
     "cryptoName": "Nine Chronicles",
+    "cryptoRoute": "wncg",
     "cryptoTicker": "WNCG"
   },
   {
-    "cryptoUrl": "idex",
     "cryptoName": "IDEX",
+    "cryptoRoute": "idex",
     "cryptoTicker": "IDEX"
   },
   {
-    "cryptoUrl": "bake",
     "cryptoName": "BakeryToken",
+    "cryptoRoute": "bake",
     "cryptoTicker": "BAKE"
   },
   {
-    "cryptoUrl": "swap",
     "cryptoName": "TrustSwap",
+    "cryptoRoute": "swap",
     "cryptoTicker": "SWAP"
   },
   {
-    "cryptoUrl": "zbc",
     "cryptoName": "Zebec Protocol",
+    "cryptoRoute": "zbc",
     "cryptoTicker": "ZBC"
   },
   {
-    "cryptoUrl": "auction",
     "cryptoName": "Bounce Governance Token",
+    "cryptoRoute": "auction",
     "cryptoTicker": "AUCTION"
   },
   {
-    "cryptoUrl": "wild",
     "cryptoName": "Wilder World",
+    "cryptoRoute": "wild",
     "cryptoTicker": "WILD"
   },
   {
-    "cryptoUrl": "cph",
     "cryptoName": "Cypherium",
+    "cryptoRoute": "cph",
     "cryptoTicker": "CPH"
   },
   {
-    "cryptoUrl": "gas",
     "cryptoName": "Gas",
+    "cryptoRoute": "gas",
     "cryptoTicker": "GAS"
   },
   {
-    "cryptoUrl": "kp3r",
     "cryptoName": "Keep3rV1",
+    "cryptoRoute": "kp3r",
     "cryptoTicker": "KP3R"
   },
   {
-    "cryptoUrl": "bts",
     "cryptoName": "BitShares",
+    "cryptoRoute": "bts",
     "cryptoTicker": "BTS"
   },
   {
-    "cryptoUrl": "sbd",
     "cryptoName": "Steem Dollars",
+    "cryptoRoute": "sbd",
     "cryptoTicker": "SBD"
   },
   {
-    "cryptoUrl": "bcd",
     "cryptoName": "Bitcoin Diamond",
+    "cryptoRoute": "bcd",
     "cryptoTicker": "BCD"
   },
   {
-    "cryptoUrl": "ntx",
     "cryptoName": "NuNet",
+    "cryptoRoute": "ntx",
     "cryptoTicker": "NTX"
   },
   {
-    "cryptoUrl": "fort",
     "cryptoName": "Forta",
+    "cryptoRoute": "fort",
     "cryptoTicker": "FORT"
   },
   {
-    "cryptoUrl": "yld",
     "cryptoName": "Yield App",
+    "cryptoRoute": "yld",
     "cryptoTicker": "YLD"
   },
   {
-    "cryptoUrl": "grs",
     "cryptoName": "Groestlcoin",
+    "cryptoRoute": "grs",
     "cryptoTicker": "GRS"
   },
   {
-    "cryptoUrl": "snm",
     "cryptoName": "SONM (BEP-20)",
+    "cryptoRoute": "snm",
     "cryptoTicker": "SNM"
   },
   {
-    "cryptoUrl": "dia",
     "cryptoName": "DIA",
+    "cryptoRoute": "dia",
     "cryptoTicker": "DIA"
   },
   {
-    "cryptoUrl": "ramp",
     "cryptoName": "RAMP",
+    "cryptoRoute": "ramp",
     "cryptoTicker": "RAMP"
   },
   {
-    "cryptoUrl": "mona",
     "cryptoName": "MonaCoin",
+    "cryptoRoute": "mona",
     "cryptoTicker": "MONA"
   },
   {
-    "cryptoUrl": "hi",
     "cryptoName": "HI",
+    "cryptoRoute": "hi",
     "cryptoTicker": "HI"
   },
   {
-    "cryptoUrl": "atlas",
     "cryptoName": "Star Atlas",
+    "cryptoRoute": "atlas",
     "cryptoTicker": "ATLAS"
   },
   {
-    "cryptoUrl": "aqt",
     "cryptoName": "Alpha Quark Token",
+    "cryptoRoute": "aqt",
     "cryptoTicker": "AQT"
   },
   {
-    "cryptoUrl": "noia",
     "cryptoName": "Syntropy",
+    "cryptoRoute": "noia",
     "cryptoTicker": "NOIA"
   },
   {
-    "cryptoUrl": "ads",
     "cryptoName": "Adshares",
+    "cryptoRoute": "ads",
     "cryptoTicker": "ADS"
   },
   {
-    "cryptoUrl": "vusdt",
     "cryptoName": "Venus USDT",
+    "cryptoRoute": "vusdt",
     "cryptoTicker": "vUSDT"
   },
   {
-    "cryptoUrl": "upp",
     "cryptoName": "Sentinel Protocol",
+    "cryptoRoute": "upp",
     "cryptoTicker": "UPP"
   },
   {
-    "cryptoUrl": "chng",
     "cryptoName": "Chainge",
+    "cryptoRoute": "chng",
     "cryptoTicker": "CHNG"
   },
   {
-    "cryptoUrl": "yooshi",
     "cryptoName": "YooShi",
+    "cryptoRoute": "yooshi",
     "cryptoTicker": "YOOSHI"
   },
   {
-    "cryptoUrl": "bond",
     "cryptoName": "BarnBridge",
+    "cryptoRoute": "bond",
     "cryptoTicker": "BOND"
   },
   {
-    "cryptoUrl": "rfr",
     "cryptoName": "Refereum",
+    "cryptoRoute": "rfr",
     "cryptoTicker": "RFR"
   },
   {
-    "cryptoUrl": "aurora",
     "cryptoName": "Aurora",
+    "cryptoRoute": "aurora",
     "cryptoTicker": "AURORA"
   },
   {
-    "cryptoUrl": "df",
     "cryptoName": "dForce",
+    "cryptoRoute": "df",
     "cryptoTicker": "DF"
   },
   {
-    "cryptoUrl": "gafi",
     "cryptoName": "GameFi.org",
+    "cryptoRoute": "gafi",
     "cryptoTicker": "GAFI"
   },
   {
-    "cryptoUrl": "gzone",
     "cryptoName": "GameZone",
+    "cryptoRoute": "gzone",
     "cryptoTicker": "GZONE"
   },
   {
-    "cryptoUrl": "euroc",
     "cryptoName": "Euro Coin",
+    "cryptoRoute": "euroc",
     "cryptoTicker": "EUROC"
   },
   {
-    "cryptoUrl": "ousd",
     "cryptoName": "Origin Dollar",
+    "cryptoRoute": "ousd",
     "cryptoTicker": "OUSD"
   },
   {
-    "cryptoUrl": "ava",
     "cryptoName": "Travala.com",
+    "cryptoRoute": "ava",
     "cryptoTicker": "AVA"
   },
   {
-    "cryptoUrl": "qi",
     "cryptoName": "BENQI",
+    "cryptoRoute": "qi",
     "cryptoTicker": "QI"
   },
   {
-    "cryptoUrl": "kmd",
     "cryptoName": "Komodo",
+    "cryptoRoute": "kmd",
     "cryptoTicker": "KMD"
   },
   {
-    "cryptoUrl": "troy",
     "cryptoName": "TROY",
+    "cryptoRoute": "troy",
     "cryptoTicker": "TROY"
   },
   {
-    "cryptoUrl": "aht",
     "cryptoName": "AhaToken",
+    "cryptoRoute": "aht",
     "cryptoTicker": "AHT"
   },
   {
-    "cryptoUrl": "ern",
     "cryptoName": "Ethernity",
+    "cryptoRoute": "ern",
     "cryptoTicker": "ERN"
   },
   {
-    "cryptoUrl": "fis",
     "cryptoName": "StaFi",
+    "cryptoRoute": "fis",
     "cryptoTicker": "FIS"
   },
   {
-    "cryptoUrl": "nuls",
     "cryptoName": "NULS",
+    "cryptoRoute": "nuls",
     "cryptoTicker": "NULS"
   },
   {
-    "cryptoUrl": "asd",
     "cryptoName": "ASD",
+    "cryptoRoute": "asd",
     "cryptoTicker": "ASD"
   },
   {
-    "cryptoUrl": "bel",
     "cryptoName": "Bella Protocol",
+    "cryptoRoute": "bel",
     "cryptoTicker": "BEL"
   },
   {
-    "cryptoUrl": "orn",
     "cryptoName": "Orion Protocol",
+    "cryptoRoute": "orn",
     "cryptoTicker": "ORN"
   },
   {
-    "cryptoUrl": "fwt",
     "cryptoName": "Freeway Token",
+    "cryptoRoute": "fwt",
     "cryptoTicker": "FWT"
   },
   {
-    "cryptoUrl": "cult",
     "cryptoName": "Cult DAO",
+    "cryptoRoute": "cult",
     "cryptoTicker": "CULT"
   },
   {
-    "cryptoUrl": "rei",
     "cryptoName": "REI Network",
+    "cryptoRoute": "rei",
     "cryptoTicker": "REI"
   },
   {
-    "cryptoUrl": "time",
     "cryptoName": "Chrono.tech",
+    "cryptoRoute": "time",
     "cryptoTicker": "TIME"
   },
   {
-    "cryptoUrl": "chess",
     "cryptoName": "Tranchess",
+    "cryptoRoute": "chess",
     "cryptoTicker": "CHESS"
   },
   {
-    "cryptoUrl": "tpt",
     "cryptoName": "TokenPocket",
+    "cryptoRoute": "tpt",
     "cryptoTicker": "TPT"
   },
   {
-    "cryptoUrl": "lever",
     "cryptoName": "LeverFi",
+    "cryptoRoute": "lever",
     "cryptoTicker": "LEVER"
   },
   {
-    "cryptoUrl": "route",
     "cryptoName": "Router Protocol",
+    "cryptoRoute": "route",
     "cryptoTicker": "ROUTE"
   },
   {
-    "cryptoUrl": "usdk",
     "cryptoName": "USDK",
+    "cryptoRoute": "usdk",
     "cryptoTicker": "USDK"
   },
   {
-    "cryptoUrl": "qrdo",
     "cryptoName": "Qredo",
+    "cryptoRoute": "qrdo",
     "cryptoTicker": "QRDO"
   },
   {
-    "cryptoUrl": "coval",
     "cryptoName": "Circuits of Value",
+    "cryptoRoute": "coval",
     "cryptoTicker": "COVAL"
   },
   {
-    "cryptoUrl": "exrd",
     "cryptoName": "e-Radix",
+    "cryptoRoute": "exrd",
     "cryptoTicker": "EXRD"
   },
   {
-    "cryptoUrl": "agld",
     "cryptoName": "Adventure Gold",
+    "cryptoRoute": "agld",
     "cryptoTicker": "AGLD"
   },
   {
-    "cryptoUrl": "data",
     "cryptoName": "Streamr",
+    "cryptoRoute": "data",
     "cryptoTicker": "DATA"
   },
   {
-    "cryptoUrl": "gmt",
     "cryptoName": "GMT Token",
+    "cryptoRoute": "gmt",
     "cryptoTicker": "GMT"
   },
   {
-    "cryptoUrl": "onit",
     "cryptoName": "ONBUFF",
+    "cryptoRoute": "onit",
     "cryptoTicker": "ONIT"
   },
   {
-    "cryptoUrl": "pre",
     "cryptoName": "Presearch",
+    "cryptoRoute": "pre",
     "cryptoTicker": "PRE"
   },
   {
-    "cryptoUrl": "con",
     "cryptoName": "CONUN",
+    "cryptoRoute": "con",
     "cryptoTicker": "CON"
   },
   {
-    "cryptoUrl": "rsv",
     "cryptoName": "Reserve",
+    "cryptoRoute": "rsv",
     "cryptoTicker": "RSV"
   },
   {
-    "cryptoUrl": "pivx",
     "cryptoName": "PIVX",
+    "cryptoRoute": "pivx",
     "cryptoTicker": "PIVX"
   },
   {
-    "cryptoUrl": "ae",
     "cryptoName": "�ternity",
+    "cryptoRoute": "ae",
     "cryptoTicker": "AE"
   },
   {
-    "cryptoUrl": "dego",
     "cryptoName": "Dego Finance",
+    "cryptoRoute": "dego",
     "cryptoTicker": "DEGO"
   },
   {
-    "cryptoUrl": "wozx",
     "cryptoName": "Efforce",
+    "cryptoRoute": "wozx",
     "cryptoTicker": "WOZX"
   },
   {
-    "cryptoUrl": "caps",
     "cryptoName": "Ternoa",
+    "cryptoRoute": "caps",
     "cryptoTicker": "CAPS"
   },
   {
-    "cryptoUrl": "clv",
     "cryptoName": "CLV",
+    "cryptoRoute": "clv",
     "cryptoTicker": "CLV"
   },
   {
-    "cryptoUrl": "cos",
     "cryptoName": "Contentos",
+    "cryptoRoute": "cos",
     "cryptoTicker": "COS"
   },
   {
-    "cryptoUrl": "blz",
     "cryptoName": "Bluzelle",
+    "cryptoRoute": "blz",
     "cryptoTicker": "BLZ"
   },
   {
-    "cryptoUrl": "kai",
     "cryptoName": "KardiaChain",
+    "cryptoRoute": "kai",
     "cryptoTicker": "KAI"
   },
   {
-    "cryptoUrl": "min",
     "cryptoName": "Minswap",
+    "cryptoRoute": "min",
     "cryptoTicker": "MIN"
   },
   {
-    "cryptoUrl": "sps",
     "cryptoName": "Splintershards",
+    "cryptoRoute": "sps",
     "cryptoTicker": "SPS"
   },
   {
-    "cryptoUrl": "fer",
     "cryptoName": "Ferro",
+    "cryptoRoute": "fer",
     "cryptoTicker": "FER"
   },
   {
-    "cryptoUrl": "gog",
     "cryptoName": "Guild of Guardians",
+    "cryptoRoute": "gog",
     "cryptoTicker": "GOG"
   },
   {
-    "cryptoUrl": "lon",
     "cryptoName": "Tokenlon Network Token",
+    "cryptoRoute": "lon",
     "cryptoTicker": "LON"
   },
   {
-    "cryptoUrl": "nom",
     "cryptoName": "Onomy Protocol",
+    "cryptoRoute": "nom",
     "cryptoTicker": "NOM"
   },
   {
-    "cryptoUrl": "h2o",
     "cryptoName": "H2O DAO",
+    "cryptoRoute": "h2o",
     "cryptoTicker": "H2O"
   },
   {
-    "cryptoUrl": "vidt",
     "cryptoName": "VIDT DAO",
+    "cryptoRoute": "vidt",
     "cryptoTicker": "VIDT"
   },
   {
-    "cryptoUrl": "eps",
     "cryptoName": "Ellipsis",
+    "cryptoRoute": "eps",
     "cryptoTicker": "EPS"
   },
   {
-    "cryptoUrl": "bnana",
     "cryptoName": "Chimpion",
+    "cryptoRoute": "bnana",
     "cryptoTicker": "BNANA"
   },
   {
-    "cryptoUrl": "dome",
     "cryptoName": "Everdome",
+    "cryptoRoute": "dome",
     "cryptoTicker": "DOME"
   },
   {
-    "cryptoUrl": "dext",
     "cryptoName": "DEXTools",
+    "cryptoRoute": "dext",
     "cryptoTicker": "DEXT"
   },
   {
-    "cryptoUrl": "aioz",
     "cryptoName": "AIOZ Network",
+    "cryptoRoute": "aioz",
     "cryptoTicker": "AIOZ"
   },
   {
-    "cryptoUrl": "map",
     "cryptoName": "MAP Protocol",
+    "cryptoRoute": "map",
     "cryptoTicker": "MAP"
   },
   {
-    "cryptoUrl": "voxel",
     "cryptoName": "Voxies",
+    "cryptoRoute": "voxel",
     "cryptoTicker": "VOXEL"
   },
   {
-    "cryptoUrl": "dep",
     "cryptoName": "DEAPcoin",
+    "cryptoRoute": "dep",
     "cryptoTicker": "DEP"
   },
   {
-    "cryptoUrl": "boson",
     "cryptoName": "Boson Protocol",
+    "cryptoRoute": "boson",
     "cryptoTicker": "BOSON"
   },
   {
-    "cryptoUrl": "nexa",
     "cryptoName": "Nexa",
+    "cryptoRoute": "nexa",
     "cryptoTicker": "NEXA"
   },
   {
-    "cryptoUrl": "city",
     "cryptoName": "Manchester City Fan Token",
+    "cryptoRoute": "city",
     "cryptoTicker": "CITY"
   },
   {
-    "cryptoUrl": "psg",
     "cryptoName": "Paris Saint-Germain Fan Token",
+    "cryptoRoute": "psg",
     "cryptoTicker": "PSG"
   },
   {
-    "cryptoUrl": "firo",
     "cryptoName": "Firo",
+    "cryptoRoute": "firo",
     "cryptoTicker": "FIRO"
   },
   {
-    "cryptoUrl": "adx",
     "cryptoName": "Ambire AdEx",
+    "cryptoRoute": "adx",
     "cryptoTicker": "ADX"
   },
   {
-    "cryptoUrl": "alpine",
     "cryptoName": "Alpine F1 Team Fan Token",
+    "cryptoRoute": "alpine",
     "cryptoTicker": "ALPINE"
   },
   {
-    "cryptoUrl": "unfi",
     "cryptoName": "Unifi Protocol DAO",
+    "cryptoRoute": "unfi",
     "cryptoTicker": "UNFI"
   },
   {
-    "cryptoUrl": "gmm",
     "cryptoName": "Gamium",
+    "cryptoRoute": "gmm",
     "cryptoTicker": "GMM"
   },
   {
-    "cryptoUrl": "fio",
     "cryptoName": "FIO Protocol",
+    "cryptoRoute": "fio",
     "cryptoTicker": "FIO"
   },
   {
-    "cryptoUrl": "rari",
     "cryptoName": "Rarible",
+    "cryptoRoute": "rari",
     "cryptoTicker": "RARI"
   },
   {
-    "cryptoUrl": "sofi",
     "cryptoName": "RAI Finance",
+    "cryptoRoute": "sofi",
     "cryptoTicker": "SOFI"
   },
   {
-    "cryptoUrl": "ichi",
     "cryptoName": "ICHI",
+    "cryptoRoute": "ichi",
     "cryptoTicker": "ICHI"
   },
   {
-    "cryptoUrl": "bzz",
     "cryptoName": "Swarm",
+    "cryptoRoute": "bzz",
     "cryptoTicker": "BZZ"
   },
   {
-    "cryptoUrl": "sov",
     "cryptoName": "Sovryn",
+    "cryptoRoute": "sov",
     "cryptoTicker": "SOV"
   },
   {
-    "cryptoUrl": "dg",
     "cryptoName": "Decentral Games",
+    "cryptoRoute": "dg",
     "cryptoTicker": "DG"
   },
   {
-    "cryptoUrl": "farm",
     "cryptoName": "Harvest Finance",
+    "cryptoRoute": "farm",
     "cryptoTicker": "FARM"
   },
   {
-    "cryptoUrl": "trb",
     "cryptoName": "Tellor",
+    "cryptoRoute": "trb",
     "cryptoTicker": "TRB"
   },
   {
-    "cryptoUrl": "alt",
     "cryptoName": "Alitas",
+    "cryptoRoute": "alt",
     "cryptoTicker": "ALT"
   },
   {
-    "cryptoUrl": "starl",
     "cryptoName": "Starlink",
+    "cryptoRoute": "starl",
     "cryptoTicker": "STARL"
   },
   {
-    "cryptoUrl": "ela",
     "cryptoName": "Elastos",
+    "cryptoRoute": "ela",
     "cryptoTicker": "ELA"
   },
   {
-    "cryptoUrl": "apx",
     "cryptoName": "ApolloX",
+    "cryptoRoute": "apx",
     "cryptoTicker": "APX"
   },
   {
-    "cryptoUrl": "hero",
     "cryptoName": "Metahero",
+    "cryptoRoute": "hero",
     "cryptoTicker": "HERO"
   },
   {
-    "cryptoUrl": "hard",
     "cryptoName": "Kava Lend",
+    "cryptoRoute": "hard",
     "cryptoTicker": "HARD"
   },
   {
-    "cryptoUrl": "epic",
     "cryptoName": "Epic Cash",
+    "cryptoRoute": "epic",
     "cryptoTicker": "EPIC"
   },
   {
-    "cryptoUrl": "hez",
     "cryptoName": "Hermez Network",
+    "cryptoRoute": "hez",
     "cryptoTicker": "HEZ"
   },
   {
-    "cryptoUrl": "soul",
     "cryptoName": "Phantasma",
+    "cryptoRoute": "soul",
     "cryptoTicker": "SOUL"
   },
   {
-    "cryptoUrl": "krt",
     "cryptoName": "TerraKRW",
+    "cryptoRoute": "krt",
     "cryptoTicker": "KRT"
   },
   {
-    "cryptoUrl": "sdn",
     "cryptoName": "Shiden Network",
+    "cryptoRoute": "sdn",
     "cryptoTicker": "SDN"
   },
   {
-    "cryptoUrl": "lazio",
     "cryptoName": "S.S. Lazio Fan Token",
+    "cryptoRoute": "lazio",
     "cryptoTicker": "LAZIO"
   },
   {
-    "cryptoUrl": "sos",
     "cryptoName": "OpenDAO",
+    "cryptoRoute": "sos",
     "cryptoTicker": "SOS"
   },
   {
-    "cryptoUrl": "fsn",
     "cryptoName": "Fusion",
+    "cryptoRoute": "fsn",
     "cryptoTicker": "FSN"
   },
   {
-    "cryptoUrl": "maro",
     "cryptoName": "Maro",
+    "cryptoRoute": "maro",
     "cryptoTicker": "MARO"
   },
   {
-    "cryptoUrl": "rmrk",
     "cryptoName": "RMRK",
+    "cryptoRoute": "rmrk",
     "cryptoTicker": "RMRK"
   },
   {
-    "cryptoUrl": "hello",
     "cryptoName": "HELLO",
+    "cryptoRoute": "hello",
     "cryptoTicker": "HELLO"
   },
   {
-    "cryptoUrl": "vxv",
     "cryptoName": "Vectorspace AI",
+    "cryptoRoute": "vxv",
     "cryptoTicker": "VXV"
   },
   {
-    "cryptoUrl": "vxvs",
     "cryptoName": "Venus XVS",
+    "cryptoRoute": "vxvs",
     "cryptoTicker": "vXVS"
   },
   {
-    "cryptoUrl": "drep",
     "cryptoName": "Drep [new]",
+    "cryptoRoute": "drep",
     "cryptoTicker": "DREP"
   },
   {
-    "cryptoUrl": "cream",
     "cryptoName": "Cream Finance",
+    "cryptoRoute": "cream",
     "cryptoTicker": "CREAM"
   },
   {
-    "cryptoUrl": "mct",
     "cryptoName": "Metacraft",
+    "cryptoRoute": "mct",
     "cryptoTicker": "MCT"
   },
   {
-    "cryptoUrl": "gf",
     "cryptoName": "GuildFi",
+    "cryptoRoute": "gf",
     "cryptoTicker": "GF"
   },
   {
-    "cryptoUrl": "pit",
     "cryptoName": "Pitbull",
+    "cryptoRoute": "pit",
     "cryptoTicker": "PIT"
   },
   {
-    "cryptoUrl": "xpr",
     "cryptoName": "Proton",
+    "cryptoRoute": "xpr",
     "cryptoTicker": "XPR"
   },
   {
-    "cryptoUrl": "ubt",
     "cryptoName": "Unibright",
+    "cryptoRoute": "ubt",
     "cryptoTicker": "UBT"
   },
   {
-    "cryptoUrl": "vite",
     "cryptoName": "VITE",
+    "cryptoRoute": "vite",
     "cryptoTicker": "VITE"
   },
   {
-    "cryptoUrl": "derc",
     "cryptoName": "DeRace",
+    "cryptoRoute": "derc",
     "cryptoTicker": "DERC"
   },
   {
-    "cryptoUrl": "burger",
     "cryptoName": "BurgerCities",
+    "cryptoRoute": "burger",
     "cryptoTicker": "BURGER"
   },
   {
-    "cryptoUrl": "htr",
     "cryptoName": "Hathor",
+    "cryptoRoute": "htr",
     "cryptoTicker": "HTR"
   },
   {
-    "cryptoUrl": "hsf",
     "cryptoName": "Hillstone Finance",
+    "cryptoRoute": "hsf",
     "cryptoTicker": "HSF"
   },
   {
-    "cryptoUrl": "vai",
     "cryptoName": "VAIOT",
+    "cryptoRoute": "vai",
     "cryptoTicker": "VAI"
   },
   {
-    "cryptoUrl": "hai",
     "cryptoName": "Hacken Token",
+    "cryptoRoute": "hai",
     "cryptoTicker": "HAI"
   },
   {
-    "cryptoUrl": "nebl",
     "cryptoName": "Neblio",
+    "cryptoRoute": "nebl",
     "cryptoTicker": "NEBL"
   },
   {
-    "cryptoUrl": "front",
     "cryptoName": "Frontier",
+    "cryptoRoute": "front",
     "cryptoTicker": "FRONT"
   },
   {
-    "cryptoUrl": "om",
     "cryptoName": "MANTRA",
+    "cryptoRoute": "om",
     "cryptoTicker": "OM"
   },
   {
-    "cryptoUrl": "wlkn",
     "cryptoName": "Walken",
+    "cryptoRoute": "wlkn",
     "cryptoTicker": "WLKN"
   },
   {
-    "cryptoUrl": "alu",
     "cryptoName": "Altura",
+    "cryptoRoute": "alu",
     "cryptoTicker": "ALU"
   },
   {
-    "cryptoUrl": "oax",
     "cryptoName": "OAX",
+    "cryptoRoute": "oax",
     "cryptoTicker": "OAX"
   },
   {
-    "cryptoUrl": "perl",
     "cryptoName": "PERL.eco",
+    "cryptoRoute": "perl",
     "cryptoTicker": "PERL"
   },
   {
-    "cryptoUrl": "gyen",
     "cryptoName": "GYEN",
+    "cryptoRoute": "gyen",
     "cryptoTicker": "GYEN"
   },
   {
-    "cryptoUrl": "met",
     "cryptoName": "Metronome",
+    "cryptoRoute": "met",
     "cryptoTicker": "MET"
   },
   {
-    "cryptoUrl": "hvh",
     "cryptoName": "HAVAH",
+    "cryptoRoute": "hvh",
     "cryptoTicker": "HVH"
   },
   {
-    "cryptoUrl": "pnk",
     "cryptoName": "Kleros",
+    "cryptoRoute": "pnk",
     "cryptoTicker": "PNK"
   },
   {
-    "cryptoUrl": "cet",
     "cryptoName": "CoinEx Token",
+    "cryptoRoute": "cet",
     "cryptoTicker": "CET"
   },
   {
-    "cryptoUrl": "mpl",
     "cryptoName": "Maple",
+    "cryptoRoute": "mpl",
     "cryptoTicker": "MPL"
   },
   {
-    "cryptoUrl": "wing",
     "cryptoName": "Wing Finance",
+    "cryptoRoute": "wing",
     "cryptoTicker": "WING"
   },
   {
-    "cryptoUrl": "santos",
     "cryptoName": "Santos FC Fan Token",
+    "cryptoRoute": "santos",
     "cryptoTicker": "SANTOS"
   },
   {
-    "cryptoUrl": "nmc",
     "cryptoName": "Namecoin",
+    "cryptoRoute": "nmc",
     "cryptoTicker": "NMC"
   },
   {
-    "cryptoUrl": "epx",
     "cryptoName": "Ellipsis",
+    "cryptoRoute": "epx",
     "cryptoTicker": "EPX"
   },
   {
-    "cryptoUrl": "amb",
     "cryptoName": "AirDAO",
+    "cryptoRoute": "amb",
     "cryptoTicker": "AMB"
   },
   {
-    "cryptoUrl": "hns",
     "cryptoName": "Handshake",
+    "cryptoRoute": "hns",
     "cryptoTicker": "HNS"
   },
   {
-    "cryptoUrl": "mngo",
     "cryptoName": "Mango",
+    "cryptoRoute": "mngo",
     "cryptoTicker": "MNGO"
   },
   {
-    "cryptoUrl": "ceur",
     "cryptoName": "Celo Euro",
+    "cryptoRoute": "ceur",
     "cryptoTicker": "CEUR"
   },
   {
-    "cryptoUrl": "mdao",
     "cryptoName": "MarsDAO",
+    "cryptoRoute": "mdao",
     "cryptoTicker": "MDAO"
   },
   {
-    "cryptoUrl": "prq",
     "cryptoName": "PARSIQ",
+    "cryptoRoute": "prq",
     "cryptoTicker": "PRQ"
   },
   {
-    "cryptoUrl": "cennz",
     "cryptoName": "CENNZnet",
+    "cryptoRoute": "cennz",
     "cryptoTicker": "CENNZ"
   },
   {
-    "cryptoUrl": "dc",
     "cryptoName": "Dogechain",
+    "cryptoRoute": "dc",
     "cryptoTicker": "DC"
   },
   {
-    "cryptoUrl": "fitfi",
     "cryptoName": "Step App",
+    "cryptoRoute": "fitfi",
     "cryptoTicker": "FITFI"
   },
   {
-    "cryptoUrl": "kilt",
     "cryptoName": "KILT Protocol",
+    "cryptoRoute": "kilt",
     "cryptoTicker": "KILT"
   },
   {
-    "cryptoUrl": "naka",
     "cryptoName": "Nakamoto Games",
+    "cryptoRoute": "naka",
     "cryptoTicker": "NAKA"
   },
   {
-    "cryptoUrl": "akro",
     "cryptoName": "Akropolis",
+    "cryptoRoute": "akro",
     "cryptoTicker": "AKRO"
   },
   {
-    "cryptoUrl": "rfox",
     "cryptoName": "RFOX",
+    "cryptoRoute": "rfox",
     "cryptoTicker": "RFOX"
   },
   {
-    "cryptoUrl": "raini",
     "cryptoName": "Rainicorn",
+    "cryptoRoute": "raini",
     "cryptoTicker": "RAINI"
   },
   {
-    "cryptoUrl": "dnt",
     "cryptoName": "district0x",
+    "cryptoRoute": "dnt",
     "cryptoTicker": "DNT"
   },
   {
-    "cryptoUrl": "eum",
     "cryptoName": "Elitium",
+    "cryptoRoute": "eum",
     "cryptoTicker": "EUM"
   },
   {
-    "cryptoUrl": "es",
     "cryptoName": "Era Swap",
+    "cryptoRoute": "es",
     "cryptoTicker": "ES"
   },
   {
-    "cryptoUrl": "for",
     "cryptoName": "ForTube",
+    "cryptoRoute": "for",
     "cryptoTicker": "FOR"
   },
   {
-    "cryptoUrl": "la",
     "cryptoName": "LATOKEN",
+    "cryptoRoute": "la",
     "cryptoTicker": "LA"
   },
   {
-    "cryptoUrl": "gfi",
     "cryptoName": "Goldfinch",
+    "cryptoRoute": "gfi",
     "cryptoTicker": "GFI"
   },
   {
-    "cryptoUrl": "vib",
     "cryptoName": "Viberate",
+    "cryptoRoute": "vib",
     "cryptoTicker": "VIB"
   },
   {
-    "cryptoUrl": "strm",
     "cryptoName": "StreamCoin",
+    "cryptoRoute": "strm",
     "cryptoTicker": "STRM"
   },
   {
-    "cryptoUrl": "fida",
     "cryptoName": "Bonfida",
+    "cryptoRoute": "fida",
     "cryptoTicker": "FIDA"
   },
   {
-    "cryptoUrl": "porto",
     "cryptoName": "FC Porto Fan Token",
+    "cryptoRoute": "porto",
     "cryptoTicker": "PORTO"
   },
   {
-    "cryptoUrl": "dbc",
     "cryptoName": "DeepBrain Chain",
+    "cryptoRoute": "dbc",
     "cryptoTicker": "DBC"
   },
   {
-    "cryptoUrl": "ast",
     "cryptoName": "AirSwap",
+    "cryptoRoute": "ast",
     "cryptoTicker": "AST"
   },
   {
-    "cryptoUrl": "auto",
     "cryptoName": "Auto",
+    "cryptoRoute": "auto",
     "cryptoTicker": "AUTO"
   },
   {
-    "cryptoUrl": "dock",
     "cryptoName": "Dock",
+    "cryptoRoute": "dock",
     "cryptoTicker": "DOCK"
   },
   {
-    "cryptoUrl": "dx",
     "cryptoName": "DxChain Token",
+    "cryptoRoute": "dx",
     "cryptoTicker": "DX"
   },
   {
-    "cryptoUrl": "egg",
     "cryptoName": "Nestree",
+    "cryptoRoute": "egg",
     "cryptoTicker": "EGG"
   },
   {
-    "cryptoUrl": "mev",
     "cryptoName": "MEVerse",
+    "cryptoRoute": "mev",
     "cryptoTicker": "MEV"
   },
   {
-    "cryptoUrl": "bmx",
     "cryptoName": "BitMart Token",
+    "cryptoRoute": "bmx",
     "cryptoTicker": "BMX"
   },
   {
-    "cryptoUrl": "ult",
     "cryptoName": "Ultiledger",
+    "cryptoRoute": "ult",
     "cryptoTicker": "ULT"
   },
   {
-    "cryptoUrl": "ooki",
     "cryptoName": "Ooki Protocol",
+    "cryptoRoute": "ooki",
     "cryptoTicker": "OOKI"
   },
   {
-    "cryptoUrl": "fra",
     "cryptoName": "Findora",
+    "cryptoRoute": "fra",
     "cryptoTicker": "FRA"
   },
   {
-    "cryptoUrl": "boo",
     "cryptoName": "SpookySwap",
+    "cryptoRoute": "boo",
     "cryptoTicker": "BOO"
   },
   {
-    "cryptoUrl": "cho",
     "cryptoName": "Choise.com",
+    "cryptoRoute": "cho",
     "cryptoTicker": "CHO"
   },
   {
-    "cryptoUrl": "mcb",
     "cryptoName": "MUX Protocol",
+    "cryptoRoute": "mcb",
     "cryptoTicker": "MCB"
   },
   {
-    "cryptoUrl": "plu",
     "cryptoName": "Pluton",
+    "cryptoRoute": "plu",
     "cryptoTicker": "PLU"
   },
   {
-    "cryptoUrl": "mlt",
     "cryptoName": "MILC Platform",
+    "cryptoRoute": "mlt",
     "cryptoTicker": "MLT"
   },
   {
-    "cryptoUrl": "divi",
     "cryptoName": "Divi",
+    "cryptoRoute": "divi",
     "cryptoTicker": "DIVI"
   },
   {
-    "cryptoUrl": "gal",
     "cryptoName": "Galatasaray Fan Token",
+    "cryptoRoute": "gal",
     "cryptoTicker": "GAL"
   },
   {
-    "cryptoUrl": "pts",
     "cryptoName": "Petals",
+    "cryptoRoute": "pts",
     "cryptoTicker": "PTS"
   },
   {
-    "cryptoUrl": "dacxi",
     "cryptoName": "Dacxi",
+    "cryptoRoute": "dacxi",
     "cryptoTicker": "DACXI"
   },
   {
-    "cryptoUrl": "gxa",
     "cryptoName": "GALAXIA",
+    "cryptoRoute": "gxa",
     "cryptoTicker": "GXA"
   },
   {
-    "cryptoUrl": "husd",
     "cryptoName": "HUSD",
+    "cryptoRoute": "husd",
     "cryptoTicker": "HUSD"
   },
   {
-    "cryptoUrl": "wtc",
     "cryptoName": "Waltonchain",
+    "cryptoRoute": "wtc",
     "cryptoTicker": "WTC"
   },
   {
-    "cryptoUrl": "pnt",
     "cryptoName": "pNetwork",
+    "cryptoRoute": "pnt",
     "cryptoTicker": "PNT"
   },
   {
-    "cryptoUrl": "kunci",
     "cryptoName": "Kunci Coin",
+    "cryptoRoute": "kunci",
     "cryptoTicker": "KUNCI"
   },
   {
-    "cryptoUrl": "fuse",
     "cryptoName": "Fuse Network",
+    "cryptoRoute": "fuse",
     "cryptoTicker": "FUSE"
   },
   {
-    "cryptoUrl": "toke",
     "cryptoName": "Tokemak",
+    "cryptoRoute": "toke",
     "cryptoTicker": "TOKE"
   },
   {
-    "cryptoUrl": "nct",
     "cryptoName": "PolySwarm",
+    "cryptoRoute": "nct",
     "cryptoTicker": "NCT"
   },
   {
-    "cryptoUrl": "solve",
     "cryptoName": "SOLVE",
+    "cryptoRoute": "solve",
     "cryptoTicker": "SOLVE"
   },
   {
-    "cryptoUrl": "dora",
     "cryptoName": "Dora Factory",
+    "cryptoRoute": "dora",
     "cryptoTicker": "DORA"
   },
   {
-    "cryptoUrl": "get",
     "cryptoName": "GET Protocol",
+    "cryptoRoute": "get",
     "cryptoTicker": "GET"
   },
   {
-    "cryptoUrl": "asm",
     "cryptoName": "Assemble Protocol",
+    "cryptoRoute": "asm",
     "cryptoTicker": "ASM"
   },
   {
-    "cryptoUrl": "taboo",
     "cryptoName": "TABOO TOKEN",
+    "cryptoRoute": "taboo",
     "cryptoTicker": "TABOO"
   },
   {
-    "cryptoUrl": "aleph",
     "cryptoName": "Aleph.im",
+    "cryptoRoute": "aleph",
     "cryptoTicker": "ALEPH"
   },
   {
-    "cryptoUrl": "jewel",
     "cryptoName": "DeFi Kingdoms",
+    "cryptoRoute": "jewel",
     "cryptoTicker": "JEWEL"
   },
   {
-    "cryptoUrl": "xhv",
     "cryptoName": "Haven Protocol",
+    "cryptoRoute": "xhv",
     "cryptoTicker": "XHV"
   },
   {
-    "cryptoUrl": "stc",
     "cryptoName": "Student Coin",
+    "cryptoRoute": "stc",
     "cryptoTicker": "STC"
   },
   {
-    "cryptoUrl": "uncx",
     "cryptoName": "UniCrypt",
+    "cryptoRoute": "uncx",
     "cryptoTicker": "UNCX"
   },
   {
-    "cryptoUrl": "ethax",
     "cryptoName": "ETHAX",
+    "cryptoRoute": "ethax",
     "cryptoTicker": "ETHAX"
   },
   {
-    "cryptoUrl": "dvf",
     "cryptoName": "rhino.fi",
+    "cryptoRoute": "dvf",
     "cryptoTicker": "DVF"
   },
   {
-    "cryptoUrl": "amo",
     "cryptoName": "AMO Coin",
+    "cryptoRoute": "amo",
     "cryptoTicker": "AMO"
   },
   {
-    "cryptoUrl": "cube",
     "cryptoName": "Somnium Space Cubes",
+    "cryptoRoute": "cube",
     "cryptoTicker": "CUBE"
   },
   {
-    "cryptoUrl": "saito",
     "cryptoName": "Saito",
+    "cryptoRoute": "saito",
     "cryptoTicker": "SAITO"
   },
   {
-    "cryptoUrl": "bscpad",
     "cryptoName": "BSCPAD",
+    "cryptoRoute": "bscpad",
     "cryptoTicker": "BSCPAD"
   },
   {
-    "cryptoUrl": "ppc",
     "cryptoName": "Peercoin",
+    "cryptoRoute": "ppc",
     "cryptoTicker": "PPC"
   },
   {
-    "cryptoUrl": "atolo",
     "cryptoName": "RIZON",
+    "cryptoRoute": "atolo",
     "cryptoTicker": "ATOLO"
   },
   {
-    "cryptoUrl": "bidr",
     "cryptoName": "BIDR",
+    "cryptoRoute": "bidr",
     "cryptoTicker": "BIDR"
   },
   {
-    "cryptoUrl": "hdao",
     "cryptoName": "HyperDAO",
+    "cryptoRoute": "hdao",
     "cryptoTicker": "HDAO"
   },
   {
-    "cryptoUrl": "hydra",
     "cryptoName": "Hydra",
+    "cryptoRoute": "hydra",
     "cryptoTicker": "HYDRA"
   },
   {
-    "cryptoUrl": "pdex",
     "cryptoName": "Polkadex",
+    "cryptoRoute": "pdex",
     "cryptoTicker": "PDEX"
   },
   {
-    "cryptoUrl": "pros",
     "cryptoName": "Prosper",
+    "cryptoRoute": "pros",
     "cryptoTicker": "PROS"
   },
   {
-    "cryptoUrl": "gst",
     "cryptoName": "Green Satoshi Token (SOL)",
+    "cryptoRoute": "gst",
     "cryptoTicker": "GST"
   },
   {
-    "cryptoUrl": "nrg",
     "cryptoName": "Energi",
+    "cryptoRoute": "nrg",
     "cryptoTicker": "NRG"
   },
   {
-    "cryptoUrl": "dpr",
     "cryptoName": "Deeper Network",
+    "cryptoRoute": "dpr",
     "cryptoTicker": "DPR"
   },
   {
-    "cryptoUrl": "veed",
     "cryptoName": "VIMworld",
+    "cryptoRoute": "veed",
     "cryptoTicker": "VEED"
   },
   {
-    "cryptoUrl": "math",
     "cryptoName": "MATH",
+    "cryptoRoute": "math",
     "cryptoTicker": "MATH"
   },
   {
-    "cryptoUrl": "thn",
     "cryptoName": "Throne",
+    "cryptoRoute": "thn",
     "cryptoTicker": "THN"
   },
   {
-    "cryptoUrl": "dad",
     "cryptoName": "DAD",
+    "cryptoRoute": "dad",
     "cryptoTicker": "DAD"
   },
   {
-    "cryptoUrl": "bepro",
     "cryptoName": "BEPRO Network",
+    "cryptoRoute": "bepro",
     "cryptoTicker": "BEPRO"
   },
   {
-    "cryptoUrl": "znn",
     "cryptoName": "Zenon",
+    "cryptoRoute": "znn",
     "cryptoTicker": "ZNN"
   },
   {
-    "cryptoUrl": "afc",
     "cryptoName": "Arsenal Fan Token",
+    "cryptoRoute": "afc",
     "cryptoTicker": "AFC"
   },
   {
-    "cryptoUrl": "goc",
     "cryptoName": "GoCrypto Token",
+    "cryptoRoute": "goc",
     "cryptoTicker": "GOC"
   },
   {
-    "cryptoUrl": "mix",
     "cryptoName": "MixMarvel",
+    "cryptoRoute": "mix",
     "cryptoTicker": "MIX"
   },
   {
-    "cryptoUrl": "suku",
     "cryptoName": "Suku",
+    "cryptoRoute": "suku",
     "cryptoTicker": "SUKU"
   },
   {
-    "cryptoUrl": "crts",
     "cryptoName": "Cratos",
+    "cryptoRoute": "crts",
     "cryptoTicker": "CRTS"
   },
   {
-    "cryptoUrl": "swth",
     "cryptoName": "Carbon Protocol",
+    "cryptoRoute": "swth",
     "cryptoTicker": "SWTH"
   },
   {
-    "cryptoUrl": "adp",
     "cryptoName": "Adappter Token",
+    "cryptoRoute": "adp",
     "cryptoTicker": "ADP"
   },
   {
-    "cryptoUrl": "hopr",
     "cryptoName": "HOPR",
+    "cryptoRoute": "hopr",
     "cryptoTicker": "HOPR"
   },
   {
-    "cryptoUrl": "num",
     "cryptoName": "Numbers Protocol",
+    "cryptoRoute": "num",
     "cryptoTicker": "NUM"
   },
   {
-    "cryptoUrl": "nim",
     "cryptoName": "Nimiq",
+    "cryptoRoute": "nim",
     "cryptoTicker": "NIM"
   },
   {
-    "cryptoUrl": "apm",
     "cryptoName": "apM Coin",
+    "cryptoRoute": "apm",
     "cryptoTicker": "APM"
   },
   {
-    "cryptoUrl": "kar",
     "cryptoName": "Karura",
+    "cryptoRoute": "kar",
     "cryptoTicker": "KAR"
   },
   {
-    "cryptoUrl": "kata",
     "cryptoName": "Katana Inu",
+    "cryptoRoute": "kata",
     "cryptoTicker": "KATA"
   },
   {
-    "cryptoUrl": "news",
     "cryptoName": "PUBLISH",
+    "cryptoRoute": "news",
     "cryptoTicker": "NEWS"
   },
   {
-    "cryptoUrl": "cvp",
     "cryptoName": "PowerPool",
+    "cryptoRoute": "cvp",
     "cryptoTicker": "CVP"
   },
   {
-    "cryptoUrl": "hegic",
     "cryptoName": "Hegic",
+    "cryptoRoute": "hegic",
     "cryptoTicker": "HEGIC"
   },
   {
-    "cryptoUrl": "zks",
     "cryptoName": "ZKSpace",
+    "cryptoRoute": "zks",
     "cryptoTicker": "ZKS"
   },
   {
-    "cryptoUrl": "samo",
     "cryptoName": "Samoyedcoin",
+    "cryptoRoute": "samo",
     "cryptoTicker": "SAMO"
   },
   {
-    "cryptoUrl": "socks",
     "cryptoName": "Unisocks",
+    "cryptoRoute": "socks",
     "cryptoTicker": "SOCKS"
   },
   {
-    "cryptoUrl": "uft",
     "cryptoName": "UniLend",
+    "cryptoRoute": "uft",
     "cryptoTicker": "UFT"
   },
   {
-    "cryptoUrl": "ttt",
     "cryptoName": "The Transfer Token",
+    "cryptoRoute": "ttt",
     "cryptoTicker": "TTT"
   },
   {
-    "cryptoUrl": "cpool",
     "cryptoName": "Clearpool",
+    "cryptoRoute": "cpool",
     "cryptoTicker": "CPOOL"
   },
   {
-    "cryptoUrl": "sero",
     "cryptoName": "Super Zero Protocol",
+    "cryptoRoute": "sero",
     "cryptoTicker": "SERO"
   },
   {
-    "cryptoUrl": "dvi",
     "cryptoName": "Dvision Network",
+    "cryptoRoute": "dvi",
     "cryptoTicker": "DVI"
   },
   {
-    "cryptoUrl": "banana",
     "cryptoName": "ApeSwap",
+    "cryptoRoute": "banana",
     "cryptoTicker": "BANANA"
   },
   {
-    "cryptoUrl": "abt",
     "cryptoName": "Arcblock",
+    "cryptoRoute": "abt",
     "cryptoTicker": "ABT"
   },
   {
-    "cryptoUrl": "acm",
     "cryptoName": "AC Milan Fan Token",
+    "cryptoRoute": "acm",
     "cryptoTicker": "ACM"
   },
   {
-    "cryptoUrl": "fox",
     "cryptoName": "Shapeshift FOX Token",
+    "cryptoRoute": "fox",
     "cryptoTicker": "FOX"
   },
   {
-    "cryptoUrl": "gny",
     "cryptoName": "GNY",
+    "cryptoRoute": "gny",
     "cryptoTicker": "GNY"
   },
   {
-    "cryptoUrl": "dlc",
     "cryptoName": "Diamond Launch",
+    "cryptoRoute": "dlc",
     "cryptoTicker": "DLC"
   },
   {
-    "cryptoUrl": "ooe",
     "cryptoName": "OpenOcean",
+    "cryptoRoute": "ooe",
     "cryptoTicker": "OOE"
   },
   {
-    "cryptoUrl": "gbyte",
     "cryptoName": "Obyte",
+    "cryptoRoute": "gbyte",
     "cryptoTicker": "GBYTE"
   },
   {
-    "cryptoUrl": "dmd",
     "cryptoName": "Diamond",
+    "cryptoRoute": "dmd",
     "cryptoTicker": "DMD"
   },
   {
-    "cryptoUrl": "dafi",
     "cryptoName": "DAFI Protocol",
+    "cryptoRoute": "dafi",
     "cryptoTicker": "DAFI"
   },
   {
-    "cryptoUrl": "dfa",
     "cryptoName": "DeFine",
+    "cryptoRoute": "dfa",
     "cryptoTicker": "DFA"
   },
   {
-    "cryptoUrl": "qsp",
     "cryptoName": "Quantstamp",
+    "cryptoRoute": "qsp",
     "cryptoTicker": "QSP"
   },
   {
-    "cryptoUrl": "orb",
     "cryptoName": "Orbcity",
+    "cryptoRoute": "orb",
     "cryptoTicker": "ORB"
   },
   {
-    "cryptoUrl": "civ",
     "cryptoName": "Civilization",
+    "cryptoRoute": "civ",
     "cryptoTicker": "CIV"
   },
   {
-    "cryptoUrl": "tama",
     "cryptoName": "Tamadoge",
+    "cryptoRoute": "tama",
     "cryptoTicker": "TAMA"
   },
   {
-    "cryptoUrl": "cru",
     "cryptoName": "Crust Network",
+    "cryptoRoute": "cru",
     "cryptoTicker": "CRU"
   },
   {
-    "cryptoUrl": "slnd",
     "cryptoName": "Solend",
+    "cryptoRoute": "slnd",
     "cryptoTicker": "SLND"
   },
   {
-    "cryptoUrl": "pkf",
     "cryptoName": "Red Kite",
+    "cryptoRoute": "pkf",
     "cryptoTicker": "PKF"
   },
   {
-    "cryptoUrl": "msol",
     "cryptoName": "Marinade Staked SOL",
+    "cryptoRoute": "msol",
     "cryptoTicker": "MSOL"
   },
   {
-    "cryptoUrl": "push",
     "cryptoName": "Push Protocol",
+    "cryptoRoute": "push",
     "cryptoTicker": "PUSH"
   },
   {
-    "cryptoUrl": "nxs",
     "cryptoName": "Nexus",
+    "cryptoRoute": "nxs",
     "cryptoTicker": "NXS"
   },
   {
-    "cryptoUrl": "erc20",
     "cryptoName": "ERC20",
+    "cryptoRoute": "erc20",
     "cryptoTicker": "ERC20"
   },
   {
-    "cryptoUrl": "qrl",
     "cryptoName": "Quantum Resistant Ledger",
+    "cryptoRoute": "qrl",
     "cryptoTicker": "QRL"
   },
   {
-    "cryptoUrl": "sidus",
     "cryptoName": "SIDUS",
+    "cryptoRoute": "sidus",
     "cryptoTicker": "SIDUS"
   },
   {
-    "cryptoUrl": "sd",
     "cryptoName": "Stader",
+    "cryptoRoute": "sd",
     "cryptoTicker": "SD"
   },
   {
-    "cryptoUrl": "krl",
     "cryptoName": "Kryll",
+    "cryptoRoute": "krl",
     "cryptoTicker": "KRL"
   },
   {
-    "cryptoUrl": "sclp",
     "cryptoName": "Scallop",
+    "cryptoRoute": "sclp",
     "cryptoTicker": "SCLP"
   },
   {
-    "cryptoUrl": "six",
     "cryptoName": "SIX",
+    "cryptoRoute": "six",
     "cryptoTicker": "SIX"
   },
   {
-    "cryptoUrl": "rise",
     "cryptoName": "EverRise",
+    "cryptoRoute": "rise",
     "cryptoTicker": "RISE"
   },
   {
-    "cryptoUrl": "kan",
     "cryptoName": "BitKan",
+    "cryptoRoute": "kan",
     "cryptoTicker": "KAN"
   },
   {
-    "cryptoUrl": "juv",
     "cryptoName": "Juventus Fan Token",
+    "cryptoRoute": "juv",
     "cryptoTicker": "JUV"
   },
   {
-    "cryptoUrl": "nftx",
     "cryptoName": "NFTX",
+    "cryptoRoute": "nftx",
     "cryptoTicker": "NFTX"
   },
   {
-    "cryptoUrl": "bdp",
     "cryptoName": "Big Data Protocol",
+    "cryptoRoute": "bdp",
     "cryptoTicker": "BDP"
   },
   {
-    "cryptoUrl": "gari",
     "cryptoName": "Gari Network",
+    "cryptoRoute": "gari",
     "cryptoTicker": "GARI"
   },
   {
-    "cryptoUrl": "stos",
     "cryptoName": "Stratos",
+    "cryptoRoute": "stos",
     "cryptoTicker": "STOS"
   },
   {
-    "cryptoUrl": "lss",
     "cryptoName": "Lossless",
+    "cryptoRoute": "lss",
     "cryptoTicker": "LSS"
   },
   {
-    "cryptoUrl": "spa",
     "cryptoName": "Sperax",
+    "cryptoRoute": "spa",
     "cryptoTicker": "SPA"
   },
   {
-    "cryptoUrl": "bwo",
     "cryptoName": "Battle World",
+    "cryptoRoute": "bwo",
     "cryptoTicker": "BWO"
   },
   {
-    "cryptoUrl": "fund",
     "cryptoName": "Unification",
+    "cryptoRoute": "fund",
     "cryptoTicker": "FUND"
   },
   {
-    "cryptoUrl": "zano",
     "cryptoName": "Zano",
+    "cryptoRoute": "zano",
     "cryptoTicker": "ZANO"
   },
   {
-    "cryptoUrl": "xor",
     "cryptoName": "SORA",
+    "cryptoRoute": "xor",
     "cryptoTicker": "XOR"
   },
   {
-    "cryptoUrl": "impt",
     "cryptoName": "IMPT",
+    "cryptoRoute": "impt",
     "cryptoTicker": "IMPT"
   },
   {
-    "cryptoUrl": "kat",
     "cryptoName": "Kambria",
+    "cryptoRoute": "kat",
     "cryptoTicker": "KAT"
   },
   {
-    "cryptoUrl": "nap",
     "cryptoName": "Napoli Fan Token",
+    "cryptoRoute": "nap",
     "cryptoTicker": "NAP"
   },
   {
-    "cryptoUrl": "kdag",
     "cryptoName": "King DAG",
+    "cryptoRoute": "kdag",
     "cryptoTicker": "KDAG"
   },
   {
-    "cryptoUrl": "basic",
     "cryptoName": "BASIC",
+    "cryptoRoute": "basic",
     "cryptoTicker": "BASIC"
   },
   {
-    "cryptoUrl": "vr",
     "cryptoName": "Victoria VR",
+    "cryptoRoute": "vr",
     "cryptoTicker": "VR"
   },
   {
-    "cryptoUrl": "hoge",
     "cryptoName": "Hoge Finance",
+    "cryptoRoute": "hoge",
     "cryptoTicker": "HOGE"
   },
   {
-    "cryptoUrl": "vbit",
     "cryptoName": "Valobit",
+    "cryptoRoute": "vbit",
     "cryptoTicker": "VBIT"
   },
   {
-    "cryptoUrl": "btse",
     "cryptoName": "BTSE",
+    "cryptoRoute": "btse",
     "cryptoTicker": "BTSE"
   },
   {
-    "cryptoUrl": "vinu",
     "cryptoName": "Vita Inu",
+    "cryptoRoute": "vinu",
     "cryptoTicker": "VINU"
   },
   {
-    "cryptoUrl": "xdefi",
     "cryptoName": "XDEFI Wallet",
+    "cryptoRoute": "xdefi",
     "cryptoTicker": "XDEFI"
   },
   {
-    "cryptoUrl": "blt",
     "cryptoName": "Blocto Token",
+    "cryptoRoute": "blt",
     "cryptoTicker": "BLT"
   },
   {
-    "cryptoUrl": "aury",
     "cryptoName": "Aurory",
+    "cryptoRoute": "aury",
     "cryptoTicker": "AURY"
   },
   {
-    "cryptoUrl": "mwc",
     "cryptoName": "MimbleWimbleCoin",
+    "cryptoRoute": "mwc",
     "cryptoTicker": "MWC"
   },
   {
-    "cryptoUrl": "inter",
     "cryptoName": "Inter Milan Fan Token",
+    "cryptoRoute": "inter",
     "cryptoTicker": "INTER"
   },
   {
-    "cryptoUrl": "ihf",
     "cryptoName": "Invictus Hyperion Fund",
+    "cryptoRoute": "ihf",
     "cryptoTicker": "IHF"
   },
   {
-    "cryptoUrl": "govi",
     "cryptoName": "Govi",
+    "cryptoRoute": "govi",
     "cryptoTicker": "GOVI"
   },
   {
-    "cryptoUrl": "apl",
     "cryptoName": "Apollo Currency",
+    "cryptoRoute": "apl",
     "cryptoTicker": "APL"
   },
   {
-    "cryptoUrl": "baby",
     "cryptoName": "BabySwap",
+    "cryptoRoute": "baby",
     "cryptoTicker": "BABY"
   },
   {
-    "cryptoUrl": "vrt",
     "cryptoName": "Venus Reward Token",
+    "cryptoRoute": "vrt",
     "cryptoTicker": "VRT"
   },
   {
-    "cryptoUrl": "ddx",
     "cryptoName": "DerivaDAO",
+    "cryptoRoute": "ddx",
     "cryptoTicker": "DDX"
   },
   {
-    "cryptoUrl": "urus",
     "cryptoName": "Aurox",
+    "cryptoRoute": "urus",
     "cryptoTicker": "URUS"
   },
   {
-    "cryptoUrl": "zcn",
     "cryptoName": "Zus",
+    "cryptoRoute": "zcn",
     "cryptoTicker": "ZCN"
   },
   {
-    "cryptoUrl": "orai",
     "cryptoName": "Oraichain",
+    "cryptoRoute": "orai",
     "cryptoTicker": "ORAI"
   },
   {
-    "cryptoUrl": "sfd",
     "cryptoName": "SAFE DEAL",
+    "cryptoRoute": "sfd",
     "cryptoTicker": "SFD"
   },
   {
-    "cryptoUrl": "hapi",
     "cryptoName": "HAPI Protocol",
+    "cryptoRoute": "hapi",
     "cryptoTicker": "HAPI"
   },
   {
-    "cryptoUrl": "cudos",
     "cryptoName": "CUDOS",
+    "cryptoRoute": "cudos",
     "cryptoTicker": "CUDOS"
   },
   {
-    "cryptoUrl": "og",
     "cryptoName": "OG Fan Token",
+    "cryptoRoute": "og",
     "cryptoTicker": "OG"
   },
   {
-    "cryptoUrl": "cere",
     "cryptoName": "Cere Network",
+    "cryptoRoute": "cere",
     "cryptoTicker": "CERE"
   },
   {
-    "cryptoUrl": "acx",
     "cryptoName": "Across Protocol",
+    "cryptoRoute": "acx",
     "cryptoTicker": "ACX"
   },
   {
-    "cryptoUrl": "kin",
     "cryptoName": "Kin",
+    "cryptoRoute": "kin",
     "cryptoTicker": "KIN"
   },
   {
-    "cryptoUrl": "treeb",
     "cryptoName": "Retreeb",
+    "cryptoRoute": "treeb",
     "cryptoTicker": "TREEB"
   },
   {
-    "cryptoUrl": "go",
     "cryptoName": "GoChain",
+    "cryptoRoute": "go",
     "cryptoTicker": "GO"
   },
   {
-    "cryptoUrl": "wrld",
     "cryptoName": "NFT Worlds",
+    "cryptoRoute": "wrld",
     "cryptoTicker": "WRLD"
   },
   {
-    "cryptoUrl": "qtcon",
     "cryptoName": "Quiztok",
+    "cryptoRoute": "qtcon",
     "cryptoTicker": "QTCON"
   },
   {
-    "cryptoUrl": "mvc",
     "cryptoName": "MileVerse",
+    "cryptoRoute": "mvc",
     "cryptoTicker": "MVC"
   },
   {
-    "cryptoUrl": "ptu",
     "cryptoName": "Pintu Token",
+    "cryptoRoute": "ptu",
     "cryptoTicker": "PTU"
   },
   {
-    "cryptoUrl": "crpt",
     "cryptoName": "Crypterium",
+    "cryptoRoute": "crpt",
     "cryptoTicker": "CRPT"
   },
   {
-    "cryptoUrl": "man",
     "cryptoName": "Matrix AI Network",
+    "cryptoRoute": "man",
     "cryptoTicker": "MAN"
   },
   {
-    "cryptoUrl": "swash",
     "cryptoName": "Swash",
+    "cryptoRoute": "swash",
     "cryptoTicker": "SWASH"
   },
   {
-    "cryptoUrl": "boa",
     "cryptoName": "BOSagora",
+    "cryptoRoute": "boa",
     "cryptoTicker": "BOA"
   },
   {
-    "cryptoUrl": "senso",
     "cryptoName": "SENSO",
+    "cryptoRoute": "senso",
     "cryptoTicker": "SENSO"
   },
   {
-    "cryptoUrl": "goal",
     "cryptoName": "TopGoal",
+    "cryptoRoute": "goal",
     "cryptoTicker": "GOAL"
   },
   {
-    "cryptoUrl": "pzm",
     "cryptoName": "PRIZM",
+    "cryptoRoute": "pzm",
     "cryptoTicker": "PZM"
   },
   {
-    "cryptoUrl": "el",
     "cryptoName": "ELYSIA",
+    "cryptoRoute": "el",
     "cryptoTicker": "EL"
   },
   {
-    "cryptoUrl": "thg",
     "cryptoName": "Thetan Arena",
+    "cryptoRoute": "thg",
     "cryptoTicker": "THG"
   },
   {
-    "cryptoUrl": "atm",
     "cryptoName": "Atletico De Madrid Fan Token",
+    "cryptoRoute": "atm",
     "cryptoTicker": "ATM"
   },
   {
-    "cryptoUrl": "vtc",
     "cryptoName": "Vertcoin",
+    "cryptoRoute": "vtc",
     "cryptoTicker": "VTC"
   },
   {
-    "cryptoUrl": "dsla",
     "cryptoName": "DSLA Protocol",
+    "cryptoRoute": "dsla",
     "cryptoTicker": "DSLA"
   },
   {
-    "cryptoUrl": "town",
     "cryptoName": "Town Star",
+    "cryptoRoute": "town",
     "cryptoTicker": "TOWN"
   },
   {
-    "cryptoUrl": "shping",
     "cryptoName": "SHPING",
+    "cryptoRoute": "shping",
     "cryptoTicker": "SHPING"
   },
   {
-    "cryptoUrl": "ham",
     "cryptoName": "Hamster",
+    "cryptoRoute": "ham",
     "cryptoTicker": "HAM"
   },
   {
-    "cryptoUrl": "wicc",
     "cryptoName": "WaykiChain",
+    "cryptoRoute": "wicc",
     "cryptoTicker": "WICC"
   },
   {
-    "cryptoUrl": "mcrt",
     "cryptoName": "MagicCraft",
+    "cryptoRoute": "mcrt",
     "cryptoTicker": "MCRT"
   },
   {
-    "cryptoUrl": "rev",
     "cryptoName": "RChain",
+    "cryptoRoute": "rev",
     "cryptoTicker": "REV"
   },
   {
-    "cryptoUrl": "mitx",
     "cryptoName": "Morpheus Labs",
+    "cryptoRoute": "mitx",
     "cryptoTicker": "MITX"
   },
   {
-    "cryptoUrl": "manc",
     "cryptoName": "Mancium",
+    "cryptoRoute": "manc",
     "cryptoTicker": "MANC"
   },
   {
-    "cryptoUrl": "xnc",
     "cryptoName": "XeniosCoin",
+    "cryptoRoute": "xnc",
     "cryptoTicker": "XNC"
   },
   {
-    "cryptoUrl": "palla",
     "cryptoName": "Pallapay",
+    "cryptoRoute": "palla",
     "cryptoTicker": "PALLA"
   },
   {
-    "cryptoUrl": "xed",
     "cryptoName": "Exeedme",
+    "cryptoRoute": "xed",
     "cryptoTicker": "XED"
   },
   {
-    "cryptoUrl": "dime",
     "cryptoName": "Dimecoin",
+    "cryptoRoute": "dime",
     "cryptoTicker": "DIME"
   },
   {
-    "cryptoUrl": "nav",
     "cryptoName": "Navcoin",
+    "cryptoRoute": "nav",
     "cryptoTicker": "NAV"
   },
   {
-    "cryptoUrl": "nsbt",
     "cryptoName": "Neutrino Token",
+    "cryptoRoute": "nsbt",
     "cryptoTicker": "NSBT"
   },
   {
-    "cryptoUrl": "xtp",
     "cryptoName": "Tap",
+    "cryptoRoute": "xtp",
     "cryptoTicker": "XTP"
   },
   {
-    "cryptoUrl": "rook",
     "cryptoName": "Rook",
+    "cryptoRoute": "rook",
     "cryptoTicker": "ROOK"
   },
   {
-    "cryptoUrl": "nye",
     "cryptoName": "NewYork Exchange",
+    "cryptoRoute": "nye",
     "cryptoTicker": "NYE"
   },
   {
-    "cryptoUrl": "pip",
     "cryptoName": "Pip",
+    "cryptoRoute": "pip",
     "cryptoTicker": "PIP"
   },
   {
-    "cryptoUrl": "fyn",
     "cryptoName": "Affyn",
+    "cryptoRoute": "fyn",
     "cryptoTicker": "FYN"
   },
   {
-    "cryptoUrl": "grid",
     "cryptoName": "Grid+",
+    "cryptoRoute": "grid",
     "cryptoTicker": "GRID"
   },
   {
-    "cryptoUrl": "temco",
     "cryptoName": "TEMCO",
+    "cryptoRoute": "temco",
     "cryptoTicker": "TEMCO"
   },
   {
-    "cryptoUrl": "val",
     "cryptoName": "Validity",
+    "cryptoRoute": "val",
     "cryptoTicker": "VAL"
   },
   {
-    "cryptoUrl": "btcst",
     "cryptoName": "Bitcoin Standard Hashrate Token",
+    "cryptoRoute": "btcst",
     "cryptoTicker": "BTCST"
   },
   {
-    "cryptoUrl": "k21",
     "cryptoName": "K21",
+    "cryptoRoute": "k21",
     "cryptoTicker": "K21"
   },
   {
-    "cryptoUrl": "part",
     "cryptoName": "Particl",
+    "cryptoRoute": "part",
     "cryptoTicker": "PART"
   },
   {
-    "cryptoUrl": "brg",
     "cryptoName": "Bridge Oracle",
+    "cryptoRoute": "brg",
     "cryptoTicker": "BRG"
   },
   {
-    "cryptoUrl": "poa",
     "cryptoName": "POA Network",
+    "cryptoRoute": "poa",
     "cryptoTicker": "POA"
   },
   {
-    "cryptoUrl": "masq",
     "cryptoName": "MASQ",
+    "cryptoRoute": "masq",
     "cryptoTicker": "MASQ"
   },
   {
-    "cryptoUrl": "obsr",
     "cryptoName": "Observer",
+    "cryptoRoute": "obsr",
     "cryptoTicker": "OBSR"
   },
   {
-    "cryptoUrl": "nwc",
     "cryptoName": "Newscrypto",
+    "cryptoRoute": "nwc",
     "cryptoTicker": "NWC"
   },
   {
-    "cryptoUrl": "ban",
     "cryptoName": "Banano",
+    "cryptoRoute": "ban",
     "cryptoTicker": "BAN"
   },
   {
-    "cryptoUrl": "xmc",
     "cryptoName": "Monero Classic",
+    "cryptoRoute": "xmc",
     "cryptoTicker": "XMC"
   },
   {
-    "cryptoUrl": "cgo",
     "cryptoName": "Comtech Gold",
+    "cryptoRoute": "cgo",
     "cryptoTicker": "CGO"
   },
   {
-    "cryptoUrl": "idrt",
     "cryptoName": "Rupiah Token",
+    "cryptoRoute": "idrt",
     "cryptoTicker": "IDRT"
   },
   {
-    "cryptoUrl": "rae",
     "cryptoName": "Receive Access Ecosystem",
+    "cryptoRoute": "rae",
     "cryptoTicker": "RAE"
   },
   {
-    "cryptoUrl": "torn",
     "cryptoName": "Tornado Cash",
+    "cryptoRoute": "torn",
     "cryptoTicker": "TORN"
   },
   {
-    "cryptoUrl": "lbc",
     "cryptoName": "LBRY Credits",
+    "cryptoRoute": "lbc",
     "cryptoTicker": "LBC"
   },
   {
-    "cryptoUrl": "vee",
     "cryptoName": "BLOCKv",
+    "cryptoRoute": "vee",
     "cryptoTicker": "VEE"
   },
   {
-    "cryptoUrl": "grc",
     "cryptoName": "Gridcoin",
+    "cryptoRoute": "grc",
     "cryptoTicker": "GRC"
   },
   {
-    "cryptoUrl": "aria20",
     "cryptoName": "Arianee",
+    "cryptoRoute": "aria20",
     "cryptoTicker": "ARIA20"
   },
   {
-    "cryptoUrl": "dht",
     "cryptoName": "dHedge DAO",
+    "cryptoRoute": "dht",
     "cryptoTicker": "DHT"
   },
   {
-    "cryptoUrl": "dfyn",
     "cryptoName": "Dfyn Network",
+    "cryptoRoute": "dfyn",
     "cryptoTicker": "DFYN"
   },
   {
-    "cryptoUrl": "deri",
     "cryptoName": "Deri Protocol",
+    "cryptoRoute": "deri",
     "cryptoTicker": "DERI"
   },
   {
-    "cryptoUrl": "shiryo",
     "cryptoName": "Shiryo",
+    "cryptoRoute": "shiryo",
     "cryptoTicker": "SHIRYO"
   },
   {
-    "cryptoUrl": "kok",
     "cryptoName": "KOK",
+    "cryptoRoute": "kok",
     "cryptoTicker": "KOK"
   },
   {
-    "cryptoUrl": "trvl",
     "cryptoName": "TRVL",
+    "cryptoRoute": "trvl",
     "cryptoTicker": "TRVL"
   },
   {
-    "cryptoUrl": "grg",
     "cryptoName": "RigoBlock",
+    "cryptoRoute": "grg",
     "cryptoTicker": "GRG"
   },
   {
-    "cryptoUrl": "rai",
     "cryptoName": "Rai Reflex Index",
+    "cryptoRoute": "rai",
     "cryptoTicker": "RAI"
   },
   {
-    "cryptoUrl": "vltc",
     "cryptoName": "Venus LTC",
+    "cryptoRoute": "vltc",
     "cryptoTicker": "vLTC"
   },
   {
-    "cryptoUrl": "biot",
     "cryptoName": "BioPassport Token",
+    "cryptoRoute": "biot",
     "cryptoTicker": "BIOT"
   },
   {
-    "cryptoUrl": "ring",
     "cryptoName": "Darwinia Network",
+    "cryptoRoute": "ring",
     "cryptoTicker": "RING"
   },
   {
-    "cryptoUrl": "xcp",
     "cryptoName": "Counterparty",
+    "cryptoRoute": "xcp",
     "cryptoTicker": "XCP"
   },
   {
-    "cryptoUrl": "qash",
     "cryptoName": "QASH",
+    "cryptoRoute": "qash",
     "cryptoTicker": "QASH"
   },
   {
-    "cryptoUrl": "dov",
     "cryptoName": "Dovu",
+    "cryptoRoute": "dov",
     "cryptoTicker": "DOV"
   },
   {
-    "cryptoUrl": "mir",
     "cryptoName": "Mirror Protocol",
+    "cryptoRoute": "mir",
     "cryptoTicker": "MIR"
   },
   {
-    "cryptoUrl": "tone",
     "cryptoName": "TE-FOOD",
+    "cryptoRoute": "tone",
     "cryptoTicker": "TONE"
   },
   {
-    "cryptoUrl": "btrs",
     "cryptoName": "Bitball Treasure",
+    "cryptoRoute": "btrs",
     "cryptoTicker": "BTRS"
   },
   {
-    "cryptoUrl": "png",
     "cryptoName": "Pangolin",
+    "cryptoRoute": "png",
     "cryptoTicker": "PNG"
   },
   {
-    "cryptoUrl": "anc",
     "cryptoName": "Anchor Protocol",
+    "cryptoRoute": "anc",
     "cryptoTicker": "ANC"
   },
   {
-    "cryptoUrl": "kma",
     "cryptoName": "Calamari Network",
+    "cryptoRoute": "kma",
     "cryptoTicker": "KMA"
   },
   {
-    "cryptoUrl": "upunk",
     "cryptoName": "Unicly CryptoPunks Collection",
+    "cryptoRoute": "upunk",
     "cryptoTicker": "UPUNK"
   },
   {
-    "cryptoUrl": "xep",
     "cryptoName": "Electra Protocol",
+    "cryptoRoute": "xep",
     "cryptoTicker": "XEP"
   },
   {
-    "cryptoUrl": "oxen",
     "cryptoName": "Oxen",
+    "cryptoRoute": "oxen",
     "cryptoTicker": "OXEN"
   },
   {
-    "cryptoUrl": "grin",
     "cryptoName": "Grin",
+    "cryptoRoute": "grin",
     "cryptoTicker": "GRIN"
   },
   {
-    "cryptoUrl": "clo",
     "cryptoName": "Callisto Network",
+    "cryptoRoute": "clo",
     "cryptoTicker": "CLO"
   },
   {
-    "cryptoUrl": "wom",
     "cryptoName": "Wombat Exchange",
+    "cryptoRoute": "wom",
     "cryptoTicker": "WOM"
   },
   {
-    "cryptoUrl": "meme",
     "cryptoName": "Memetic / PepeCoin",
+    "cryptoRoute": "meme",
     "cryptoTicker": "MEME"
   },
   {
-    "cryptoUrl": "zyn",
     "cryptoName": "Zynecoin",
+    "cryptoRoute": "zyn",
     "cryptoTicker": "ZYN"
   },
   {
-    "cryptoUrl": "fct",
     "cryptoName": "Factom",
+    "cryptoRoute": "fct",
     "cryptoTicker": "FCT"
   },
   {
-    "cryptoUrl": "asta",
     "cryptoName": "ASTA",
+    "cryptoRoute": "asta",
     "cryptoTicker": "ASTA"
   },
   {
-    "cryptoUrl": "avt",
     "cryptoName": "Aventus",
+    "cryptoRoute": "avt",
     "cryptoTicker": "AVT"
   },
   {
-    "cryptoUrl": "reap",
     "cryptoName": "ReapChain",
+    "cryptoRoute": "reap",
     "cryptoTicker": "REAP"
   },
   {
-    "cryptoUrl": "btc2",
     "cryptoName": "Bitcoin 2",
+    "cryptoRoute": "btc2",
     "cryptoTicker": "BTC2"
   },
   {
-    "cryptoUrl": "cas",
     "cryptoName": "Cashaa",
+    "cryptoRoute": "cas",
     "cryptoTicker": "CAS"
   },
   {
-    "cryptoUrl": "ltx",
     "cryptoName": "Lattice Token",
+    "cryptoRoute": "ltx",
     "cryptoTicker": "LTX"
   },
   {
-    "cryptoUrl": "cirus",
     "cryptoName": "Cirus Foundation",
+    "cryptoRoute": "cirus",
     "cryptoTicker": "CIRUS"
   },
   {
-    "cryptoUrl": "pbr",
     "cryptoName": "PolkaBridge",
+    "cryptoRoute": "pbr",
     "cryptoTicker": "PBR"
   },
   {
-    "cryptoUrl": "the",
     "cryptoName": "Thena",
+    "cryptoRoute": "the",
     "cryptoTicker": "THE"
   },
   {
-    "cryptoUrl": "ctx",
     "cryptoName": "Cryptex Finance",
+    "cryptoRoute": "ctx",
     "cryptoTicker": "CTX"
   },
   {
-    "cryptoUrl": "one",
     "cryptoName": "BigONE Token",
+    "cryptoRoute": "one",
     "cryptoTicker": "ONE"
   },
   {
-    "cryptoUrl": "buy",
     "cryptoName": "Buying.com",
+    "cryptoRoute": "buy",
     "cryptoTicker": "BUY"
   },
   {
-    "cryptoUrl": "zyb",
     "cryptoName": "Zyberswap",
+    "cryptoRoute": "zyb",
     "cryptoTicker": "ZYB"
   },
   {
-    "cryptoUrl": "cbx",
     "cryptoName": "CropBytes",
+    "cryptoRoute": "cbx",
     "cryptoTicker": "CBX"
   },
   {
-    "cryptoUrl": "whale",
     "cryptoName": "WHALE",
+    "cryptoRoute": "whale",
     "cryptoTicker": "WHALE"
   },
   {
-    "cryptoUrl": "cell",
     "cryptoName": "Cellframe",
+    "cryptoRoute": "cell",
     "cryptoTicker": "CELL"
   },
   {
-    "cryptoUrl": "epik",
     "cryptoName": "EPIK Prime",
+    "cryptoRoute": "epik",
     "cryptoTicker": "EPIK"
   },
   {
-    "cryptoUrl": "red",
     "cryptoName": "RED TOKEN",
+    "cryptoRoute": "red",
     "cryptoTicker": "RED"
   },
   {
-    "cryptoUrl": "emrx",
     "cryptoName": "Emirex Token",
+    "cryptoRoute": "emrx",
     "cryptoTicker": "EMRX"
   },
   {
-    "cryptoUrl": "ovr",
     "cryptoName": "OVR",
+    "cryptoRoute": "ovr",
     "cryptoTicker": "OVR"
   },
   {
-    "cryptoUrl": "gfi",
     "cryptoName": "Gravity Finance",
+    "cryptoRoute": "gfi",
     "cryptoTicker": "GFI"
   },
   {
-    "cryptoUrl": "pkt",
     "cryptoName": "PKT",
+    "cryptoRoute": "pkt",
     "cryptoTicker": "PKT"
   },
   {
-    "cryptoUrl": "grnd",
     "cryptoName": "SuperWalk",
+    "cryptoRoute": "grnd",
     "cryptoTicker": "GRND"
   },
   {
-    "cryptoUrl": "oxb",
     "cryptoName": "Oxbull.tech",
+    "cryptoRoute": "oxb",
     "cryptoTicker": "OXB"
   },
   {
-    "cryptoUrl": "id",
     "cryptoName": "Everest",
+    "cryptoRoute": "id",
     "cryptoTicker": "ID"
   },
   {
-    "cryptoUrl": "vsys",
     "cryptoName": "v.systems",
+    "cryptoRoute": "vsys",
     "cryptoTicker": "VSYS"
   },
   {
-    "cryptoUrl": "vdai",
     "cryptoName": "Venus DAI",
+    "cryptoRoute": "vdai",
     "cryptoTicker": "vDAI"
   },
   {
-    "cryptoUrl": "equad",
     "cryptoName": "QuadrantProtocol",
+    "cryptoRoute": "equad",
     "cryptoTicker": "EQUAD"
   },
   {
-    "cryptoUrl": "rdd",
     "cryptoName": "ReddCoin",
+    "cryptoRoute": "rdd",
     "cryptoTicker": "RDD"
   },
   {
-    "cryptoUrl": "mof",
     "cryptoName": "Molecular Future",
+    "cryptoRoute": "mof",
     "cryptoTicker": "MOF"
   },
   {
-    "cryptoUrl": "asr",
     "cryptoName": "AS Roma Fan Token",
+    "cryptoRoute": "asr",
     "cryptoTicker": "ASR"
   },
   {
-    "cryptoUrl": "cgg",
     "cryptoName": "ChainGuardians",
+    "cryptoRoute": "cgg",
     "cryptoTicker": "CGG"
   },
   {
-    "cryptoUrl": "spc",
     "cryptoName": "SpaceChain",
+    "cryptoRoute": "spc",
     "cryptoTicker": "SPC"
   },
   {
-    "cryptoUrl": "arv",
     "cryptoName": "Ariva",
+    "cryptoRoute": "arv",
     "cryptoTicker": "ARV"
   },
   {
-    "cryptoUrl": "shft",
     "cryptoName": "Shyft Network",
+    "cryptoRoute": "shft",
     "cryptoTicker": "SHFT"
   },
   {
-    "cryptoUrl": "wiken",
     "cryptoName": "Project WITH",
+    "cryptoRoute": "wiken",
     "cryptoTicker": "WIKEN"
   },
   {
-    "cryptoUrl": "shill",
     "cryptoName": "SHILL Token",
+    "cryptoRoute": "shill",
     "cryptoTicker": "SHILL"
   },
   {
-    "cryptoUrl": "signa",
     "cryptoName": "Signum",
+    "cryptoRoute": "signa",
     "cryptoTicker": "SIGNA"
   },
   {
-    "cryptoUrl": "gulf",
     "cryptoName": "Gulf Coin",
+    "cryptoRoute": "gulf",
     "cryptoTicker": "GULF"
   },
   {
-    "cryptoUrl": "ihc",
     "cryptoName": "Inflation Hedging Coin",
+    "cryptoRoute": "ihc",
     "cryptoTicker": "IHC"
   },
   {
-    "cryptoUrl": "peel",
     "cryptoName": "Meta Apes",
+    "cryptoRoute": "peel",
     "cryptoTicker": "PEEL"
   },
   {
-    "cryptoUrl": "dvpn",
     "cryptoName": "Sentinel",
+    "cryptoRoute": "dvpn",
     "cryptoTicker": "DVPN"
   },
   {
-    "cryptoUrl": "bf",
     "cryptoName": "BitForex Token",
+    "cryptoRoute": "bf",
     "cryptoTicker": "BF"
   },
   {
-    "cryptoUrl": "bcn",
     "cryptoName": "Bytecoin",
+    "cryptoRoute": "bcn",
     "cryptoTicker": "BCN"
   },
   {
-    "cryptoUrl": "krom",
     "cryptoName": "Kromatika",
+    "cryptoRoute": "krom",
     "cryptoTicker": "KROM"
   },
   {
-    "cryptoUrl": "botto",
     "cryptoName": "Botto",
+    "cryptoRoute": "botto",
     "cryptoTicker": "BOTTO"
   },
   {
-    "cryptoUrl": "glch",
     "cryptoName": "Glitch",
+    "cryptoRoute": "glch",
     "cryptoTicker": "GLCH"
   },
   {
-    "cryptoUrl": "titan",
     "cryptoName": "TitanSwap",
+    "cryptoRoute": "titan",
     "cryptoTicker": "TITAN"
   },
   {
-    "cryptoUrl": "xpx",
     "cryptoName": "ProximaX",
+    "cryptoRoute": "xpx",
     "cryptoTicker": "XPX"
   },
   {
-    "cryptoUrl": "xrt",
     "cryptoName": "Robonomics.network",
+    "cryptoRoute": "xrt",
     "cryptoTicker": "XRT"
   },
   {
-    "cryptoUrl": "paint",
     "cryptoName": "MurAll",
+    "cryptoRoute": "paint",
     "cryptoTicker": "PAINT"
   },
   {
-    "cryptoUrl": "ignis",
     "cryptoName": "Ignis",
+    "cryptoRoute": "ignis",
     "cryptoTicker": "IGNIS"
   },
   {
-    "cryptoUrl": "pola",
     "cryptoName": "Polaris Share",
+    "cryptoRoute": "pola",
     "cryptoTicker": "POLA"
   },
   {
-    "cryptoUrl": "myst",
     "cryptoName": "Mysterium",
+    "cryptoRoute": "myst",
     "cryptoTicker": "MYST"
   },
   {
-    "cryptoUrl": "trr",
     "cryptoName": "Terran Coin",
+    "cryptoRoute": "trr",
     "cryptoTicker": "TRR"
   },
   {
-    "cryptoUrl": "ogv",
     "cryptoName": "Origin Dollar Governance",
+    "cryptoRoute": "ogv",
     "cryptoTicker": "OGV"
   },
   {
-    "cryptoUrl": "moov",
     "cryptoName": "Dotmoovs",
+    "cryptoRoute": "moov",
     "cryptoTicker": "MOOV"
   },
   {
-    "cryptoUrl": "stake",
     "cryptoName": "STAKE",
+    "cryptoRoute": "stake",
     "cryptoTicker": "STAKE"
   },
   {
-    "cryptoUrl": "awc",
     "cryptoName": "Atomic Wallet Coin",
+    "cryptoRoute": "awc",
     "cryptoTicker": "AWC"
   },
   {
-    "cryptoUrl": "shr",
     "cryptoName": "ShareToken",
+    "cryptoRoute": "shr",
     "cryptoTicker": "SHR"
   },
   {
-    "cryptoUrl": "frts",
     "cryptoName": "Fruits",
+    "cryptoRoute": "frts",
     "cryptoTicker": "FRTS"
   },
   {
-    "cryptoUrl": "lnc",
     "cryptoName": "Linker Coin",
+    "cryptoRoute": "lnc",
     "cryptoTicker": "LNC"
   },
   {
-    "cryptoUrl": "blp",
     "cryptoName": "BullPerks",
+    "cryptoRoute": "blp",
     "cryptoTicker": "BLP"
   },
   {
-    "cryptoUrl": "fst",
     "cryptoName": "1irstcoin",
+    "cryptoRoute": "fst",
     "cryptoTicker": "FST"
   },
   {
-    "cryptoUrl": "mtc",
     "cryptoName": "DOC.COM",
+    "cryptoRoute": "mtc",
     "cryptoTicker": "MTC"
   },
   {
-    "cryptoUrl": "tarot",
     "cryptoName": "Tarot",
+    "cryptoRoute": "tarot",
     "cryptoTicker": "TAROT"
   },
   {
-    "cryptoUrl": "pcx",
     "cryptoName": "ChainX",
+    "cryptoRoute": "pcx",
     "cryptoTicker": "PCX"
   },
   {
-    "cryptoUrl": "bend",
     "cryptoName": "BendDAO",
+    "cryptoRoute": "bend",
     "cryptoTicker": "BEND"
   },
   {
-    "cryptoUrl": "gmee",
     "cryptoName": "GAMEE",
+    "cryptoRoute": "gmee",
     "cryptoTicker": "GMEE"
   },
   {
-    "cryptoUrl": "bondly",
     "cryptoName": "Forj(Bondly)",
+    "cryptoRoute": "bondly",
     "cryptoTicker": "BONDLY"
   },
   {
-    "cryptoUrl": "cct",
     "cryptoName": "Carbon Credit",
+    "cryptoRoute": "cct",
     "cryptoTicker": "CCT"
   },
   {
-    "cryptoUrl": "pi",
     "cryptoName": "Plian",
+    "cryptoRoute": "pi",
     "cryptoTicker": "PI"
   },
   {
-    "cryptoUrl": "stfx",
     "cryptoName": "STFX",
+    "cryptoRoute": "stfx",
     "cryptoTicker": "STFX"
   },
   {
-    "cryptoUrl": "dgd",
     "cryptoName": "DigixDAO",
+    "cryptoRoute": "dgd",
     "cryptoTicker": "DGD"
   },
   {
-    "cryptoUrl": "ghx",
     "cryptoName": "GamerCoin",
+    "cryptoRoute": "ghx",
     "cryptoTicker": "GHX"
   },
   {
-    "cryptoUrl": "lovely",
     "cryptoName": "Lovely Inu Finance",
+    "cryptoRoute": "lovely",
     "cryptoTicker": "LOVELY"
   },
   {
-    "cryptoUrl": "ton",
     "cryptoName": "Tokamak Network",
+    "cryptoRoute": "ton",
     "cryptoTicker": "TON"
   },
   {
-    "cryptoUrl": "slim",
     "cryptoName": "Solanium",
+    "cryptoRoute": "slim",
     "cryptoTicker": "SLIM"
   },
   {
-    "cryptoUrl": "uno",
     "cryptoName": "Uno Re",
+    "cryptoRoute": "uno",
     "cryptoTicker": "UNO"
   },
   {
-    "cryptoUrl": "mod",
     "cryptoName": "Modefi",
+    "cryptoRoute": "mod",
     "cryptoTicker": "MOD"
   },
   {
-    "cryptoUrl": "atri",
     "cryptoName": "Atari Token",
+    "cryptoRoute": "atri",
     "cryptoTicker": "ATRI"
   },
   {
-    "cryptoUrl": "bux",
     "cryptoName": "BUX Token",
+    "cryptoRoute": "bux",
     "cryptoTicker": "BUX"
   },
   {
-    "cryptoUrl": "crp",
     "cryptoName": "Crypton",
+    "cryptoRoute": "crp",
     "cryptoTicker": "CRP"
   },
   {
-    "cryptoUrl": "bolt",
     "cryptoName": "BOLT",
+    "cryptoRoute": "bolt",
     "cryptoTicker": "BOLT"
   },
   {
-    "cryptoUrl": "now",
     "cryptoName": "ChangeNOW Token",
+    "cryptoRoute": "now",
     "cryptoTicker": "NOW"
   },
   {
-    "cryptoUrl": "raven",
     "cryptoName": "Raven Protocol",
+    "cryptoRoute": "raven",
     "cryptoTicker": "RAVEN"
   },
   {
-    "cryptoUrl": "btr",
     "cryptoName": "Bitrue Coin",
+    "cryptoRoute": "btr",
     "cryptoTicker": "BTR"
   },
   {
-    "cryptoUrl": "chi",
     "cryptoName": "Xaya",
+    "cryptoRoute": "chi",
     "cryptoTicker": "CHI"
   },
   {
-    "cryptoUrl": "dobo",
     "cryptoName": "DogeBonk",
+    "cryptoRoute": "dobo",
     "cryptoTicker": "DOBO"
   },
   {
-    "cryptoUrl": "lbl",
     "cryptoName": "LABEL Foundation",
+    "cryptoRoute": "lbl",
     "cryptoTicker": "LBL"
   },
   {
-    "cryptoUrl": "mim",
     "cryptoName": "Mint Marble",
+    "cryptoRoute": "mim",
     "cryptoTicker": "MIM"
   },
   {
-    "cryptoUrl": "bnc",
     "cryptoName": "Bifrost",
+    "cryptoRoute": "bnc",
     "cryptoTicker": "BNC"
   },
   {
-    "cryptoUrl": "evz",
     "cryptoName": "Electric Vehicle Zone",
+    "cryptoRoute": "evz",
     "cryptoTicker": "EVZ"
   },
   {
-    "cryptoUrl": "hibs",
     "cryptoName": "Hiblocks",
+    "cryptoRoute": "hibs",
     "cryptoTicker": "HIBS"
   },
   {
-    "cryptoUrl": "rvf",
     "cryptoName": "RocketX exchange",
+    "cryptoRoute": "rvf",
     "cryptoTicker": "RVF"
   }
 ]
