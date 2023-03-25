@@ -106,9 +106,31 @@ export default async function handler(req, res) {
 				}
 			})
 			
+
+			company.companyKpi.companyNow.data = [
+				{
+          companyCapitalization: 0,
+          companyVolume: 0,
+          companyBids: [],
+          companyAsks: [],
+          companyPrice: company.companyIso.companyIsoPrice,
+          companyPercentChange: 0,
+          companyPointChange: 0,
+          companyVariant: "primary",
+          companyActiveCustomers: 0,
+          companyIsRecordedAt: Date.now()
+				}
+			]
+
 			company.companySlug = req.body.companyTicker.toLowerCase()
 			company.companyListing.companyKey = generateToken(12)
 			company.companyListing.companyProductId = product.id
+
+			if(product.id) {
+				company.companyStatus.companyIsListed = true
+				company.companyStatus.companyIsListedAt = Date.now()
+			}
+
 			company.companyLogo = req.body.companyLogo
 			company.companyAccountId = id
 
@@ -146,32 +168,31 @@ export default async function handler(req, res) {
 				
 				const company = await Company.findOne({ companySlug: companySlug })
 
+				
 				const { companySubscriberAccountId } = req.body
 				if(companySubscriberAccountId) {
 					company.companyIso.companyIsoSubscribers = [...company.companyIso.companyIsoSubscribers, {
 						companySubscriberAccountId,
 						companySubscriberAddedAt: Date.now()
 					}]
-
-					company.companyUser.map(({ companyUserType, companyUserTotal }) => {
-						if (companyUserType === "Total Subscribers") {
-
+					
+					company.companyUser = company.companyUser.map((x) => {
+						if (x.companyUserType === "Total Subscribers") {
 							if (company.companyIso.companyIsoSubscribers.length > 1000) {
 								company.companyStatus.companyIsLaunched = true,
 								company.companyStatus.companyIsLaunchedAt = Date.now()
 							}
-
+							
 							return {
-								companyUserType,
+								...x,
 								companyUserTotal: company.companyIso.companyIsoSubscribers.length
 							}
 						}
-						return {
-							companyUserType,
-							companyUserTotal
-						}
+						
+						return x
 					})
 
+					
 					await company.save()
 					return res.status(200).json({ success: true, company, message: "Suscriber added successfully" })
 				}
