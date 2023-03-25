@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 
 const StockSchema = new mongoose.Schema({
-  stockUrl: { type: String },
-  stockName: { type: String },
+  stockRoute: { type: String },
   stockTicker: { type: String }
 });
 

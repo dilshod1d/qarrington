@@ -6,7 +6,7 @@ import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
 import dbConnect from "@lib/dbConnect";
-import Crypto from '@models/crypto/Crypto'
+import Share from '@models/share/Share'
 
 const Page = ({ name, ticker }) => {
 
@@ -26,11 +26,11 @@ const Page = ({ name, ticker }) => {
 
       <Head>
         <title>
-          How Subscriptions Can Outrun {ticker} Crypto • Qarrington
+          How Subscriptions Can Outrun {ticker} Stock • Qarrington
         </title>
         <meta
           name="description"
-          content={`Buy and sell the subscriptions of innovative startup companies. It's like buying ${ticker} crypto, but instead of shares, it's product-backed subscriptions.`}
+          content={`Buy and sell the subscriptions of innovative startup companies. It's like buying ${ticker} stock, but instead of shares, it's product-backed subscriptions.`}
         />
       </Head>
 
@@ -73,14 +73,14 @@ const Page = ({ name, ticker }) => {
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  How subscriptions can outrun {ticker} crypto
+                  How subscriptions can outrun {ticker} stock
                   <Tooltip title="Subscriptions only give you access to a company's products and services, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
 
                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  We're building a subscription exchange, where you can buy & sell the subscriptions of startup companies. It's like buying {ticker} crypto, but instead of shares, it's product-backed subscriptions.
+                  We're building a subscription exchange, where you can buy & sell the subscriptions of startup companies. It's like buying {ticker} stock, but instead of shares, it's product-backed subscriptions.
                 </Typography>
 
               </Box>
@@ -172,44 +172,44 @@ const Page = ({ name, ticker }) => {
 
                   <Box textAlign="center" mb={2}>
 
-                  <Box textAlign="center" mb={2}>
-                    {stories && Array.isArray(stories) && stories?.map(({ _id, storyByHodler }) => (
-                      <>
-                        <Carousel>
-                          {storyByHodler && Array.isArray(storyByHodler) && storyByHodler?.map(({ _id, storyByHodlerName, storyByHodlerTitle, storyByHodlerAvatar, storyByHodlerContent, storyByHodlerIsActive }) => (
-                            <Box key={_id}>
-                              <Box
-                                style={{
-                                  display: 'flex',
-                                  justifyContent: 'center'
-                                }}
-                              >
-                                <StyledBadge
-                                  overlap="circular"
-                                  anchorOrigin={{
-                                    vertical: 'bottom',
-                                    horizontal: 'right'
+                    <Box textAlign="center" mb={2}>
+                      {stories && Array.isArray(stories) && stories?.map(({ _id, storyByTrader }) => (
+                        <>
+                          <Carousel>
+                            {storyByTrader && Array.isArray(storyByTrader) && storyByTrader?.map(({ _id, storyByTraderName, storyByTraderTitle, storyByTraderAvatar, storyByTraderContent, storyByTraderIsActive }) => (
+                              <Box key={_id}>
+                                <Box
+                                  style={{
+                                    display: 'flex',
+                                    justifyContent: 'center'
                                   }}
-                                  variant={storyByHodlerIsActive}
                                 >
-                                  <Avatar
-                                    style={{ width: 80, height: 80 }}
-                                    alt={storyByHodlerName}
-                                    src={storyByHodlerAvatar}
-                                  />
-                                </StyledBadge>
+                                  <StyledBadge
+                                    overlap="circular"
+                                    anchorOrigin={{
+                                      vertical: 'bottom',
+                                      horizontal: 'right'
+                                    }}
+                                    variant={storyByTraderIsActive}
+                                  >
+                                    <Avatar
+                                      style={{ width: 80, height: 80 }}
+                                      alt={storyByTraderName}
+                                      src={storyByTraderAvatar}
+                                    />
+                                  </StyledBadge>
+                                </Box>
+                                <Box marginTop="16px">
+                                  <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByTraderName}</Typography>
+                                  <Typography variant="body" component="div" gutterBottom>{storyByTraderTitle}</Typography>
+                                  <Typography variant="h5" component="div" fontWeight="600">{storyByTraderContent}</Typography>
+                                </Box>
                               </Box>
-                              <Box marginTop="16px">
-                                <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByHodlerName}</Typography>
-                                <Typography variant="body" component="div" gutterBottom>{storyByHodlerTitle}</Typography>
-                                <Typography variant="h5" component="div" fontWeight="600">{storyByHodlerContent}</Typography>
-                              </Box>
-                            </Box>
-                          ))}
-                        </Carousel>
-                      </>
-                    ))}
-                  </Box>
+                            ))}
+                          </Carousel>
+                        </>
+                      ))}
+                    </Box>
 
                   </Box>
 
@@ -344,11 +344,10 @@ const Body = {
 
 export async function getStaticProps({ params }) {
   await dbConnect()
-  const cryptoItem = await Crypto.findOne({ cryptoUrl: params.cryptoId });
+  const shareItem = await Share.findOne({ shareRoute: params.shareId });
   return {
     props: {
-      name: cryptoItem.cryptoName,
-      ticker: cryptoItem.cryptoTicker
+      ticker: shareItem.shareTicker
     },
     revalidate: 60,
   }
@@ -356,13 +355,13 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   await dbConnect()
-  const cryptoItems = await Crypto.find();
+  const shareItems = await Share.find();
   return {
-    paths: cryptoItems.map(item => {
-      const cryptoId = item.cryptoUrl;
+    paths: shareItems.map(item => {
+      const shareId = item.shareRoute;
       return {
         params: {
-          cryptoId
+          shareId
         }
       }
     }),
@@ -372,38 +371,38 @@ export async function getStaticPaths() {
 
 const stories = [
   {
-    storyByHodlerName: "Bill",
-    storyByHodlerTitle: "Mechanical Engineer",
-    storyByHodlerAvatar: "/assets/media/hodlers/bill.webp",
-    storyByHodlerContent: "I'm a huge believer in the cryptocurrency space, however, the number of fraudulent transactions is just out of control. I think Qarrington is doing amazing with subscriptions.",
-    storyByHodlerIsActive: ""
+    storyByInvestorName: "Debbie",
+    storyByInvestorTitle: "Marketing Specialist",
+    storyByInvestorAvatar: "/assets/media/traders/debbie.webp",
+    storyByInvestorContent: "I've been buying shares for years, but things have been rough in the market this year. So, I do see subscriptions as a path. I thank Qarrington for such an opportunity.",
+    storyByInvestorIsActive: ""
   },
   {
-    storyByHodlerName: "Kelly",
-    storyByHodlerTitle: "Sales Executive",
-    storyByHodlerAvatar: "/assets/media/hodlers/kelly.webp",
-    storyByHodlerContent: "In 2014, I bought my first bitcoin not knowing that a few years later, the market would be filled with tons of bad actors. I'm happy to see what Qarrington is doing.",
-    storyByHodlerIsActive: "dot"
+    storyByInvestorName: "Lee",
+    storyByInvestorTitle: "Insurance Broker",
+    storyByInvestorAvatar: "/assets/media/traders/lee.webp",
+    storyByInvestorContent: "In the past, I've rushed into tech IPOs just to learn in the end that they were just hype by investment banks and VCs, who are not involved with any startup ISOs on Qarrington.",
+    storyByInvestorIsActive: "dot"
   },
   {
-    storyByHodlerName: "James",
-    storyByHodlerTitle: "Database Administrator",
-    storyByHodlerAvatar: "/assets/media/hodlers/james.webp",
-    storyByHodlerContent: "If you're from the U.S., you'd know how hard it is to get into crypto because of the strict regulations. That's what Qarrington doesn't have when buying subscriptions.",
-    storyByHodlerIsActive: "dot"
+    storyByInvestorName: "Karen",
+    storyByInvestorTitle: "Content Manager",
+    storyByInvestorAvatar: "/assets/media/traders/karen.webp",
+    storyByInvestorContent: "What I like the most about Qarrington is that my subscriptions are actually backed by innovative products. That's something you can't get when you bet on stocks.",
+    storyByInvestorIsActive: ""
   },
   {
-    storyByHodlerName: "Hannah",
-    storyByHodlerTitle: "Movie Director",
-    storyByHodlerAvatar: "/assets/media/hodlers/hannah.webp",
-    storyByHodlerContent: "While cryptocurrency sounds interesting, no crypto wallet is secured. But Qarrington doesn't hold funds because I can sell subscriptions directly to my bank account.",
-    storyByHodlerIsActive: ""
+    storyByInvestorName: "Paul",
+    storyByInvestorTitle: "Information Architect",
+    storyByInvestorAvatar: "/assets/media/traders/paul.webp",
+    storyByInvestorContent: "I'm not American, which means I don't have access to buy shares of companies listed on a U.S. stock exchange. But thanks to Qarrington for changing this with subscriptions.",
+    storyByInvestorIsActive: "dot"
   },
   {
-    storyByHodlerName: "Zack",
-    storyByHodlerTitle: "Corporate Attorney",
-    storyByHodlerAvatar: "/assets/media/hodlers/zack.webp",
-    storyByHodlerContent: "I like Qarrington because both the risks and rewards of buying subscriptions are moderate. However, the risk of buying cryptos seems to be bigger than the rewards.",
-    storyByHodlerIsActive: "dot"
+    storyByInvestorName: "Donrinda",
+    storyByInvestorTitle: "Interior Designer",
+    storyByInvestorAvatar: "/assets/media/traders/donrinda.webp",
+    storyByInvestorContent: "I bought Zillow & Tesla shares without using Zillow or driving Tesla. With Qarrington, I can monetize my subscriptions with startups that I believe in their products.",
+    storyByInvestorIsActive: "dot"
   }
 ]

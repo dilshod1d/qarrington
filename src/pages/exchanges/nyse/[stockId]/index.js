@@ -8,7 +8,7 @@ import useSWR from 'swr';
 import dbConnect from "@lib/dbConnect";
 import Stock from '@models/stock/Stock'
 
-const Page = ({ name, ticker }) => {
+const Page = ({ ticker }) => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
@@ -172,44 +172,44 @@ const Page = ({ name, ticker }) => {
 
                   <Box textAlign="center" mb={2}>
 
-                  <Box textAlign="center" mb={2}>
-                    {stories && Array.isArray(stories) && stories?.map(({ _id, storyByTrader }) => (
-                      <>
-                        <Carousel>
-                          {storyByTrader && Array.isArray(storyByTrader) && storyByTrader?.map(({ _id, storyByTraderName, storyByTraderTitle, storyByTraderAvatar, storyByTraderContent, storyByTraderIsActive }) => (
-                            <Box key={_id}>
-                              <Box
-                                style={{
-                                  display: 'flex',
-                                  justifyContent: 'center'
-                                }}
-                              >
-                                <StyledBadge
-                                  overlap="circular"
-                                  anchorOrigin={{
-                                    vertical: 'bottom',
-                                    horizontal: 'right'
+                    <Box textAlign="center" mb={2}>
+                      {stories && Array.isArray(stories) && stories?.map(({ _id, storyByTrader }) => (
+                        <>
+                          <Carousel>
+                            {storyByTrader && Array.isArray(storyByTrader) && storyByTrader?.map(({ _id, storyByTraderName, storyByTraderTitle, storyByTraderAvatar, storyByTraderContent, storyByTraderIsActive }) => (
+                              <Box key={_id}>
+                                <Box
+                                  style={{
+                                    display: 'flex',
+                                    justifyContent: 'center'
                                   }}
-                                  variant={storyByTraderIsActive}
                                 >
-                                  <Avatar
-                                    style={{ width: 80, height: 80 }}
-                                    alt={storyByTraderName}
-                                    src={storyByTraderAvatar}
-                                  />
-                                </StyledBadge>
+                                  <StyledBadge
+                                    overlap="circular"
+                                    anchorOrigin={{
+                                      vertical: 'bottom',
+                                      horizontal: 'right'
+                                    }}
+                                    variant={storyByTraderIsActive}
+                                  >
+                                    <Avatar
+                                      style={{ width: 80, height: 80 }}
+                                      alt={storyByTraderName}
+                                      src={storyByTraderAvatar}
+                                    />
+                                  </StyledBadge>
+                                </Box>
+                                <Box marginTop="16px">
+                                  <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByTraderName}</Typography>
+                                  <Typography variant="body" component="div" gutterBottom>{storyByTraderTitle}</Typography>
+                                  <Typography variant="h5" component="div" fontWeight="600">{storyByTraderContent}</Typography>
+                                </Box>
                               </Box>
-                              <Box marginTop="16px">
-                                <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByTraderName}</Typography>
-                                <Typography variant="body" component="div" gutterBottom>{storyByTraderTitle}</Typography>
-                                <Typography variant="h5" component="div" fontWeight="600">{storyByTraderContent}</Typography>
-                              </Box>
-                            </Box>
-                          ))}
-                        </Carousel>
-                      </>
-                    ))}
-                  </Box>
+                            ))}
+                          </Carousel>
+                        </>
+                      ))}
+                    </Box>
 
                   </Box>
 
@@ -344,10 +344,9 @@ const Body = {
 
 export async function getStaticProps({ params }) {
   await dbConnect()
-  const stockItem = await Stock.findOne({ stockUrl: params.stockId });
+  const stockItem = await Stock.findOne({ stockRoute: params.stockId });
   return {
     props: {
-      name: stockItem.stockName,
       ticker: stockItem.stockTicker
     },
     revalidate: 60,
@@ -359,7 +358,7 @@ export async function getStaticPaths() {
   const stockItems = await Stock.find();
   return {
     paths: stockItems.map(item => {
-      const stockId = item.stockUrl;
+      const stockId = item.stockRoute;
       return {
         params: {
           stockId
