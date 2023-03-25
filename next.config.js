@@ -1,5 +1,17 @@
 const withImages = require('next-images');
 
+const redirects = {
+  async redirects() {
+    return [
+      {
+        source: '/account',
+        destination: '/account',
+        permanent: true
+      }
+    ];
+  }
+};
+
 module.exports = withImages(redirects);
 
 module.exports = {
