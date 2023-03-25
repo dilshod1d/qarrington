@@ -171,6 +171,10 @@ export default async function handler(req, res) {
 				
 				const { companySubscriberAccountId } = req.body
 				if(companySubscriberAccountId) {
+					if(company.companyIso.companyIsoSubscribers.find(({ companySubscriberAccountId }) => companySubscriberAccountId === id)) {
+						return res.status(200).json({ success: true, message: "Subscriber already added" })
+					}
+
 					company.companyIso.companyIsoSubscribers = [...company.companyIso.companyIsoSubscribers, {
 						companySubscriberAccountId,
 						companySubscriberAddedAt: Date.now()
@@ -194,7 +198,7 @@ export default async function handler(req, res) {
 
 					
 					await company.save()
-					return res.status(200).json({ success: true, company, message: "Suscriber added successfully" })
+					return res.status(200).json({ success: true, company, message: "Subscriber added successfully" })
 				}
 
 				await company.save()
