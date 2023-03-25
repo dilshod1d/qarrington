@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import { green, grey } from '@mui/material/colors';
-import { Box, Breadcrumbs, Card, Divider, Grid, Tooltip, Typography } from '@mui/material'
+import { Box, Breadcrumbs, Card, Divider, Grid, Tooltip, Typography } from '@mui/material';
 import FooterMenu from '../menus/FooterMenu';
 import useSWR from 'swr';
 import { useState } from 'react';
@@ -9,51 +9,57 @@ import { useEffect } from 'react';
 import { Button } from '@mui/material';
 
 const dictionary = {
-  N: "companyNow",
-  H: "companyHour",
-  D: "companyDay",
-  W: "companyWeek",
-  M: "companyMonth",
-  Y: "companyYear"
-}
+  N: 'companyNow',
+  H: 'companyHour',
+  D: 'companyDay',
+  W: 'companyWeek',
+  M: 'companyMonth',
+  Y: 'companyYear'
+};
 
 const Component = ({ kpi }) => {
-  const [currentKpi, setCurrentKpi] = useState([])
+  const [currentKpi, setCurrentKpi] = useState([]);
+  const letter = useRef('N');
 
   const handleChange = (e, lettter) => {
-    e.preventDefault()
-    const key = dictionary[lettter]
-    const currentKpi = kpi[key]
-    const data = currentKpi.data.slice(0, 60)
+    e.preventDefault();
+    letter.current = lettter;
+    const key = dictionary[lettter];
+    const currentKpi = kpi[key];
+    const data = currentKpi.data.slice(0, 60);
     setCurrentKpi(
-      new Array(60).fill(null).map((n, i) => {
-        if (data[i]) return data[i]
-        return null
-      }).reverse()
-    )
-    console.log(kpi[key])
-  }
+      new Array(60)
+        .fill(null)
+        .map((n, i) => {
+          if (data[i]) return data[i];
+          return null;
+        })
+        .reverse()
+    );
+    console.log(kpi[key]);
+  };
 
   useEffect(() => {
-    if(kpi) {
-      const key = dictionary["N"]
-      const currentKpi = kpi[key]
-      const data = currentKpi.data.slice(0, 60)
+    if (kpi) {
+      const key = dictionary[letter.current];
+      const currentKpi = kpi[key];
+      const data = currentKpi.data.slice(0, 60);
       setCurrentKpi(
-        new Array(60).fill(null).map((n, i) => {
-          if (data[i]) return data[i]
-          return null
-        }).reverse()
-      )
+        new Array(60)
+          .fill(null)
+          .map((n, i) => {
+            if (data[i]) return data[i];
+            return null;
+          })
+          .reverse()
+      );
     }
-  }, [kpi])
+  }, [kpi]);
 
   return !kpi ? null : (
     <div style={{ position: 'sticky', top: '100px' }}>
-
       <Grid container spacing={1}>
         <Grid item xs={12}>
-
           {/* chart starts */}
           <Card style={{ padding: '40px', marginBottom: '10px' }}>
             <Box textAlign="center" marginBottom="10px">
@@ -65,19 +71,19 @@ const Component = ({ kpi }) => {
 
               <Box>
                 <Typography fontSize="16px" fontWeight={600} component="span" color={kpi.companyPriceVariant}>
-                  {`+${kpi.companyNow.data.length > 0 ? kpi.companyNow.data[0].companyPointChange : 'n/a'}`}
+                  {`${currentKpi.length > 0 ? currentKpi.at(-1).companyPointChange?.toFixed(2) : 'n/a'}`}
                 </Typography>
                 <Typography variant="body2" component="span" color="secondary" marginX={0.5}>
                   \
                 </Typography>
                 <Typography fontSize="14px" fontWeight={600} component="span" color={kpi.companyPriceVariant}>
-                  {`${kpi.companyNow.data.length > 0 ? (kpi.companyNow.data[0].companyPercentChange + "%") : 'n/a'}`}
+                  {`${currentKpi.length > 0 ? currentKpi.at(-1).companyPercentChange + '%' : 'n/a'}`}
                 </Typography>
               </Box>
 
               <Box>
                 <Typography style={Data2Item} component="span" color="black">
-                  {kpi.companyNow.data.length > 0 ? kpi.companyNow.data[0].companyVolume : 'n/a'}
+                  {currentKpi.length > 0 ? currentKpi.at(-1).companyVolume : 'n/a'}
                 </Typography>
                 <Typography style={Data2Helper} component="span" color="secondary">
                   Vol
@@ -92,24 +98,39 @@ const Component = ({ kpi }) => {
             </Box>
             <Grid item xs={12} mt={1.5}>
               <Grid container spacing={1}>
-                {currentKpi.map((data, id) => (
-                  data ? 
-                    (<Tooltip key={data._id} title={data.companyIsRecordedAt} placement="top">
+                {currentKpi.map((data, id) =>
+                  data ? (
+                    <Tooltip key={data._id} title={data.companyIsRecordedAt} placement="top">
                       <Grid item xs={12} sm={6} md={6} lg={1} mb={-0.5}>
-                        <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[data.companyVariant] }}>
+                        <Box
+                          style={{
+                            padding: '7px',
+                            border: '1px',
+                            borderRadius: '3px',
+                            backgroundColor: green[data.companyVariant]
+                          }}
+                        >
                           <></>
                         </Box>
                       </Grid>
                     </Tooltip>
-                    ) : (
-                    <Tooltip key={id} title={"no data"} placement="top">
+                  ) : (
+                    <Tooltip key={id} title={'no data'} placement="top">
                       <Grid item xs={12} sm={6} md={6} lg={1} mb={-0.5}>
-                        <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: grey["500"] }}>
+                        <Box
+                          style={{
+                            padding: '7px',
+                            border: '1px',
+                            borderRadius: '3px',
+                            backgroundColor: grey['500']
+                          }}
+                        >
                           <></>
                         </Box>
                       </Grid>
                     </Tooltip>
-                )))}
+                  )
+                )}
               </Grid>
             </Grid>
 
@@ -120,7 +141,14 @@ const Component = ({ kpi }) => {
                 </Grid> */}
                 <Tooltip title="low" placement="top">
                   <Grid item xs={12} sm={6} md={6} lg={1}>
-                    <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[100] }}>
+                    <Box
+                      style={{
+                        padding: '7px',
+                        border: '1px',
+                        borderRadius: '3px',
+                        backgroundColor: green[100]
+                      }}
+                    >
                       <></>
                     </Box>
                   </Grid>
@@ -134,21 +162,42 @@ const Component = ({ kpi }) => {
                 </Tooltip> */}
                 <Tooltip title="mid" placement="top">
                   <Grid item xs={12} sm={6} md={6} lg={1}>
-                    <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[500] }}>
+                    <Box
+                      style={{
+                        padding: '7px',
+                        border: '1px',
+                        borderRadius: '3px',
+                        backgroundColor: green[500]
+                      }}
+                    >
                       <></>
                     </Box>
                   </Grid>
                 </Tooltip>
                 <Tooltip title="high" placement="top">
                   <Grid item xs={12} sm={6} md={6} lg={1}>
-                    <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[700] }}>
+                    <Box
+                      style={{
+                        padding: '7px',
+                        border: '1px',
+                        borderRadius: '3px',
+                        backgroundColor: green[700]
+                      }}
+                    >
                       <></>
                     </Box>
                   </Grid>
                 </Tooltip>
                 <Tooltip title="hot" placement="top">
                   <Grid item xs={12} sm={6} md={6} lg={1}>
-                    <Box style={{ padding: '7px', border: '1px', borderRadius: '3px', backgroundColor: green[900] }}>
+                    <Box
+                      style={{
+                        padding: '7px',
+                        border: '1px',
+                        borderRadius: '3px',
+                        backgroundColor: green[900]
+                      }}
+                    >
                       <></>
                     </Box>
                   </Grid>
@@ -174,16 +223,13 @@ const Component = ({ kpi }) => {
               >
                 {Object.keys(dictionary).map((letter) => {
                   return (
-                  <Button key={letter} onClick={(e) => handleChange(e, letter)} sx={ButtonItem}>
-                    <Typography
-                      variant="body2"
-                      color="black"
-                      sx={PeriodItem}
-                    >
-                      {letter}
-                    </Typography>
-                  </Button>
-                )})}
+                    <Button key={letter} onClick={(e) => handleChange(e, letter)} sx={ButtonItem}>
+                      <Typography variant="body2" color="black" sx={PeriodItem}>
+                        {letter}
+                      </Typography>
+                    </Button>
+                  );
+                })}
               </Breadcrumbs>
             </Box>
 
@@ -215,14 +261,11 @@ const Component = ({ kpi }) => {
                 ))} */}
               </Breadcrumbs>
             </Box>
-
           </Card>
 
           <FooterMenu />
-
         </Grid>
       </Grid>
-
     </div>
   );
 };
@@ -238,11 +281,11 @@ const PeriodItem = {
   fontWeight: 500,
   minWidth: 'auto',
   height: 'min-content',
-  backgroundColor: "transparent",
+  backgroundColor: 'transparent',
   '&:hover': {
     color: '#c5c5c5'
   }
-}
+};
 
 const ButtonItem = {
   textTransform: 'uppercase',
@@ -253,12 +296,12 @@ const ButtonItem = {
   fontWeight: 500,
   minWidth: 'auto',
   height: 'min-content',
-  backgroundColor: "transparent",
+  backgroundColor: 'transparent',
   '&:hover': {
     color: '#c5c5c5',
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent'
   }
-}
+};
 
 const DomainItem = {
   textTransform: 'uppercase',
@@ -284,243 +327,243 @@ const Data2Helper = {
 
 const cubes = [
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 300
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 600
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 200
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 100
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 800
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 500
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 300
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 600
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 200
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 100
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 800
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 500
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 300
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 600
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 200
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 100
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 800
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 500
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 100
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 800
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 500
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 300
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 600
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 200
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 100
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 800
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 100
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 800
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 500
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 300
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 600
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 200
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 100
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 800
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 100
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 800
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 500
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 300
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 600
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 200
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 100
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 800
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 100
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 800
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 500
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 300
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 600
   },
   {
-    date: "Fri, May 22, 2023, 7:45 PM",
-    price: "20",
+    date: 'Fri, May 22, 2023, 7:45 PM',
+    price: '20',
     variant: 200
   }
-]
+];
