@@ -28,6 +28,7 @@
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
     "lodash.throttle": "^4.1.1",
+    "material-ui-markdown-editor": "^1.0.10",
     "mongodb": "^4.14.0",
     "mongoose": "^6.7.3",
     "mongoose-paginate-v2": "^1.7.1",
@@ -49,6 +50,7 @@
     "react-material-ui-carousel": "^3.4.2",
     "react-mui-counter": "^1.0.9",
     "react-number-format": "^5.1.2",
+    "react-rte": "^0.16.5",
     "stripe": "^11.14.0",
     "swr": "^2.0.1"
   },

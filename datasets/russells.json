@@ -1,0 +1,7626 @@
+[
+  {
+    "assetRoute": "amkr",
+    "assetTicker": "AMKR"
+  },
+  {
+    "assetRoute": "amlx",
+    "assetTicker": "AMLX"
+  },
+  {
+    "assetRoute": "amn",
+    "assetTicker": "AMN"
+  },
+  {
+    "assetRoute": "amnb",
+    "assetTicker": "AMNB"
+  },
+  {
+    "assetRoute": "amot",
+    "assetTicker": "AMOT"
+  },
+  {
+    "assetRoute": "ampe",
+    "assetTicker": "AMPE"
+  },
+  {
+    "assetRoute": "amph",
+    "assetTicker": "AMPH"
+  },
+  {
+    "assetRoute": "amrc",
+    "assetTicker": "AMRC"
+  },
+  {
+    "assetRoute": "amrk",
+    "assetTicker": "AMRK"
+  },
+  {
+    "assetRoute": "amrs",
+    "assetTicker": "AMRS"
+  },
+  {
+    "assetRoute": "amrx",
+    "assetTicker": "AMRX"
+  },
+  {
+    "assetRoute": "amsc",
+    "assetTicker": "AMSC"
+  },
+  {
+    "assetRoute": "amsf",
+    "assetTicker": "AMSF"
+  },
+  {
+    "assetRoute": "amswa",
+    "assetTicker": "AMSWA"
+  },
+  {
+    "assetRoute": "amtb",
+    "assetTicker": "AMTB"
+  },
+  {
+    "assetRoute": "amti",
+    "assetTicker": "AMTI"
+  },
+  {
+    "assetRoute": "amtx",
+    "assetTicker": "AMTX"
+  },
+  {
+    "assetRoute": "amwd",
+    "assetTicker": "AMWD"
+  },
+  {
+    "assetRoute": "amwl",
+    "assetTicker": "AMWL"
+  },
+  {
+    "assetRoute": "anab",
+    "assetTicker": "ANAB"
+  },
+  {
+    "assetRoute": "anat",
+    "assetTicker": "ANAT"
+  },
+  {
+    "assetRoute": "ande",
+    "assetTicker": "ANDE"
+  },
+  {
+    "assetRoute": "anf",
+    "assetTicker": "ANF"
+  },
+  {
+    "assetRoute": "angn",
+    "assetTicker": "ANGN"
+  },
+  {
+    "assetRoute": "ango",
+    "assetTicker": "ANGO"
+  },
+  {
+    "assetRoute": "anik",
+    "assetTicker": "ANIK"
+  },
+  {
+    "assetRoute": "anip",
+    "assetTicker": "ANIP"
+  },
+  {
+    "assetRoute": "annx",
+    "assetTicker": "ANNX"
+  },
+  {
+    "assetRoute": "aomr",
+    "assetTicker": "AOMR"
+  },
+  {
+    "assetRoute": "aort",
+    "assetTicker": "AORT"
+  },
+  {
+    "assetRoute": "aosl",
+    "assetTicker": "AOSL"
+  },
+  {
+    "assetRoute": "aout",
+    "assetTicker": "AOUT"
+  },
+  {
+    "assetRoute": "apam",
+    "assetTicker": "APAM"
+  },
+  {
+    "assetRoute": "apei",
+    "assetTicker": "APEI"
+  },
+  {
+    "assetRoute": "apg",
+    "assetTicker": "APG"
+  },
+  {
+    "assetRoute": "aple",
+    "assetTicker": "APLE"
+  },
+  {
+    "assetRoute": "apls",
+    "assetTicker": "APLS"
+  },
+  {
+    "assetRoute": "aplt",
+    "assetTicker": "APLT"
+  },
+  {
+    "assetRoute": "apog",
+    "assetTicker": "APOG"
+  },
+  {
+    "assetRoute": "appf",
+    "assetTicker": "APPF"
+  },
+  {
+    "assetRoute": "apph",
+    "assetTicker": "APPH"
+  },
+  {
+    "assetRoute": "appn",
+    "assetTicker": "APPN"
+  },
+  {
+    "assetRoute": "apps",
+    "assetTicker": "APPS"
+  },
+  {
+    "assetRoute": "apts",
+    "assetTicker": "APTS"
+  },
+  {
+    "assetRoute": "apyx",
+    "assetTicker": "APYX"
+  },
+  {
+    "assetRoute": "aqb",
+    "assetTicker": "AQB"
+  },
+  {
+    "assetRoute": "aqua",
+    "assetTicker": "AQUA"
+  },
+  {
+    "assetRoute": "ar",
+    "assetTicker": "AR"
+  },
+  {
+    "assetRoute": "aray",
+    "assetTicker": "ARAY"
+  },
+  {
+    "assetRoute": "arcb",
+    "assetTicker": "ARCB"
+  },
+  {
+    "assetRoute": "arch",
+    "assetTicker": "ARCH"
+  },
+  {
+    "assetRoute": "arct",
+    "assetTicker": "ARCT"
+  },
+  {
+    "assetRoute": "ardx",
+    "assetTicker": "ARDX"
+  },
+  {
+    "assetRoute": "argo",
+    "assetTicker": "ARGO"
+  },
+  {
+    "assetRoute": "ari",
+    "assetTicker": "ARI"
+  },
+  {
+    "assetRoute": "aris",
+    "assetTicker": "ARIS"
+  },
+  {
+    "assetRoute": "arko",
+    "assetTicker": "ARKO"
+  },
+  {
+    "assetRoute": "arlo",
+    "assetTicker": "ARLO"
+  },
+  {
+    "assetRoute": "arnc",
+    "assetTicker": "ARNC"
+  },
+  {
+    "assetRoute": "aroc",
+    "assetTicker": "AROC"
+  },
+  {
+    "assetRoute": "arow",
+    "assetTicker": "AROW"
+  },
+  {
+    "assetRoute": "arqt",
+    "assetTicker": "ARQT"
+  },
+  {
+    "assetRoute": "arr",
+    "assetTicker": "ARR"
+  },
+  {
+    "assetRoute": "arry",
+    "assetTicker": "ARRY"
+  },
+  {
+    "assetRoute": "artna",
+    "assetTicker": "ARTNA"
+  },
+  {
+    "assetRoute": "arvn",
+    "assetTicker": "ARVN"
+  },
+  {
+    "assetRoute": "arwr",
+    "assetTicker": "ARWR"
+  },
+  {
+    "assetRoute": "asan",
+    "assetTicker": "ASAN"
+  },
+  {
+    "assetRoute": "asb",
+    "assetTicker": "ASB"
+  },
+  {
+    "assetRoute": "asgn",
+    "assetTicker": "ASGN"
+  },
+  {
+    "assetRoute": "asix",
+    "assetTicker": "ASIX"
+  },
+  {
+    "assetRoute": "asle",
+    "assetTicker": "ASLE"
+  },
+  {
+    "assetRoute": "aso",
+    "assetTicker": "ASO"
+  },
+  {
+    "assetRoute": "aspn",
+    "assetTicker": "ASPN"
+  },
+  {
+    "assetRoute": "aste",
+    "assetTicker": "ASTE"
+  },
+  {
+    "assetRoute": "asxc",
+    "assetTicker": "ASXC"
+  },
+  {
+    "assetRoute": "atcx",
+    "assetTicker": "ATCX"
+  },
+  {
+    "assetRoute": "atec",
+    "assetTicker": "ATEC"
+  },
+  {
+    "assetRoute": "aten",
+    "assetTicker": "ATEN"
+  },
+  {
+    "assetRoute": "ater",
+    "assetTicker": "ATER"
+  },
+  {
+    "assetRoute": "atex",
+    "assetTicker": "ATEX"
+  },
+  {
+    "assetRoute": "atge",
+    "assetTicker": "ATGE"
+  },
+  {
+    "assetRoute": "atha",
+    "assetTicker": "ATHA"
+  },
+  {
+    "assetRoute": "athx",
+    "assetTicker": "ATHX"
+  },
+  {
+    "assetRoute": "ati",
+    "assetTicker": "ATI"
+  },
+  {
+    "assetRoute": "atkr",
+    "assetTicker": "ATKR"
+  },
+  {
+    "assetRoute": "atlc",
+    "assetTicker": "ATLC"
+  },
+  {
+    "assetRoute": "atni",
+    "assetTicker": "ATNI"
+  },
+  {
+    "assetRoute": "atnx",
+    "assetTicker": "ATNX"
+  },
+  {
+    "assetRoute": "atom",
+    "assetTicker": "ATOM"
+  },
+  {
+    "assetRoute": "atos",
+    "assetTicker": "ATOS"
+  },
+  {
+    "assetRoute": "atra",
+    "assetTicker": "ATRA"
+  },
+  {
+    "assetRoute": "atrc",
+    "assetTicker": "ATRC"
+  },
+  {
+    "assetRoute": "atri",
+    "assetTicker": "ATRI"
+  },
+  {
+    "assetRoute": "atro",
+    "assetTicker": "ATRO"
+  },
+  {
+    "assetRoute": "atrs",
+    "assetTicker": "ATRS"
+  },
+  {
+    "assetRoute": "atsg",
+    "assetTicker": "ATSG"
+  },
+  {
+    "assetRoute": "aub",
+    "assetTicker": "AUB"
+  },
+  {
+    "assetRoute": "aud",
+    "assetTicker": "AUD"
+  },
+  {
+    "assetRoute": "aura",
+    "assetTicker": "AURA"
+  },
+  {
+    "assetRoute": "ava",
+    "assetTicker": "AVA"
+  },
+  {
+    "assetRoute": "avah",
+    "assetTicker": "AVAH"
+  },
+  {
+    "assetRoute": "avav",
+    "assetTicker": "AVAV"
+  },
+  {
+    "assetRoute": "avd",
+    "assetTicker": "AVD"
+  },
+  {
+    "assetRoute": "avdx",
+    "assetTicker": "AVDX"
+  },
+  {
+    "assetRoute": "avid",
+    "assetTicker": "AVID"
+  },
+  {
+    "assetRoute": "avir",
+    "assetTicker": "AVIR"
+  },
+  {
+    "assetRoute": "avns",
+    "assetTicker": "AVNS"
+  },
+  {
+    "assetRoute": "avnt",
+    "assetTicker": "AVNT"
+  },
+  {
+    "assetRoute": "avnw",
+    "assetTicker": "AVNW"
+  },
+  {
+    "assetRoute": "avo",
+    "assetTicker": "AVO"
+  },
+  {
+    "assetRoute": "avro",
+    "assetTicker": "AVRO"
+  },
+  {
+    "assetRoute": "avte",
+    "assetTicker": "AVTE"
+  },
+  {
+    "assetRoute": "avtx",
+    "assetTicker": "AVTX"
+  },
+  {
+    "assetRoute": "avxl",
+    "assetTicker": "AVXL"
+  },
+  {
+    "assetRoute": "avya",
+    "assetTicker": "AVYA"
+  },
+  {
+    "assetRoute": "awh",
+    "assetTicker": "AWH"
+  },
+  {
+    "assetRoute": "awr",
+    "assetTicker": "AWR"
+  },
+  {
+    "assetRoute": "ax",
+    "assetTicker": "AX"
+  },
+  {
+    "assetRoute": "axdx",
+    "assetTicker": "AXDX"
+  },
+  {
+    "assetRoute": "axgn",
+    "assetTicker": "AXGN"
+  },
+  {
+    "assetRoute": "axl",
+    "assetTicker": "AXL"
+  },
+  {
+    "assetRoute": "axnx",
+    "assetTicker": "AXNX"
+  },
+  {
+    "assetRoute": "axsm",
+    "assetTicker": "AXSM"
+  },
+  {
+    "assetRoute": "axti",
+    "assetTicker": "AXTI"
+  },
+  {
+    "assetRoute": "azz",
+    "assetTicker": "AZZ"
+  },
+  {
+    "assetRoute": "b",
+    "assetTicker": "B"
+  },
+  {
+    "assetRoute": "baly",
+    "assetTicker": "BALY"
+  },
+  {
+    "assetRoute": "banc",
+    "assetTicker": "BANC"
+  },
+  {
+    "assetRoute": "band",
+    "assetTicker": "BAND"
+  },
+  {
+    "assetRoute": "banf",
+    "assetTicker": "BANF"
+  },
+  {
+    "assetRoute": "banr",
+    "assetTicker": "BANR"
+  },
+  {
+    "assetRoute": "base",
+    "assetTicker": "BASE"
+  },
+  {
+    "assetRoute": "batra",
+    "assetTicker": "BATRA"
+  },
+  {
+    "assetRoute": "batrk",
+    "assetTicker": "BATRK"
+  },
+  {
+    "assetRoute": "bbby",
+    "assetTicker": "BBBY"
+  },
+  {
+    "assetRoute": "bbcp",
+    "assetTicker": "BBCP"
+  },
+  {
+    "assetRoute": "bbio",
+    "assetTicker": "BBIO"
+  },
+  {
+    "assetRoute": "bbsi",
+    "assetTicker": "BBSI"
+  },
+  {
+    "assetRoute": "bcab",
+    "assetTicker": "BCAB"
+  },
+  {
+    "assetRoute": "bcc",
+    "assetTicker": "BCC"
+  },
+  {
+    "assetRoute": "bcel",
+    "assetTicker": "BCEL"
+  },
+  {
+    "assetRoute": "bco",
+    "assetTicker": "BCO"
+  },
+  {
+    "assetRoute": "bcor",
+    "assetTicker": "BCOR"
+  },
+  {
+    "assetRoute": "bcov",
+    "assetTicker": "BCOV"
+  },
+  {
+    "assetRoute": "bcpc",
+    "assetTicker": "BCPC"
+  },
+  {
+    "assetRoute": "bcrx",
+    "assetTicker": "BCRX"
+  },
+  {
+    "assetRoute": "bdc",
+    "assetTicker": "BDC"
+  },
+  {
+    "assetRoute": "bdn",
+    "assetTicker": "BDN"
+  },
+  {
+    "assetRoute": "bdsx",
+    "assetTicker": "BDSX"
+  },
+  {
+    "assetRoute": "bdtx",
+    "assetTicker": "BDTX"
+  },
+  {
+    "assetRoute": "be",
+    "assetTicker": "BE"
+  },
+  {
+    "assetRoute": "beam",
+    "assetTicker": "BEAM"
+  },
+  {
+    "assetRoute": "becn",
+    "assetTicker": "BECN"
+  },
+  {
+    "assetRoute": "beem",
+    "assetTicker": "BEEM"
+  },
+  {
+    "assetRoute": "bfc",
+    "assetTicker": "BFC"
+  },
+  {
+    "assetRoute": "bfly",
+    "assetTicker": "BFLY"
+  },
+  {
+    "assetRoute": "bfs",
+    "assetTicker": "BFS"
+  },
+  {
+    "assetRoute": "bfst",
+    "assetTicker": "BFST"
+  },
+  {
+    "assetRoute": "bgcp",
+    "assetTicker": "BGCP"
+  },
+  {
+    "assetRoute": "bgfv",
+    "assetTicker": "BGFV"
+  },
+  {
+    "assetRoute": "bgs",
+    "assetTicker": "BGS"
+  },
+  {
+    "assetRoute": "bh",
+    "assetTicker": "BH"
+  },
+  {
+    "assetRoute": "bhb",
+    "assetTicker": "BHB"
+  },
+  {
+    "assetRoute": "bhe",
+    "assetTicker": "BHE"
+  },
+  {
+    "assetRoute": "bhg",
+    "assetTicker": "BHG"
+  },
+  {
+    "assetRoute": "bhlb",
+    "assetTicker": "BHLB"
+  },
+  {
+    "assetRoute": "bhr",
+    "assetTicker": "BHR"
+  },
+  {
+    "assetRoute": "bhvn",
+    "assetTicker": "BHVN"
+  },
+  {
+    "assetRoute": "big",
+    "assetTicker": "BIG"
+  },
+  {
+    "assetRoute": "bigc",
+    "assetTicker": "BIGC"
+  },
+  {
+    "assetRoute": "bipc",
+    "assetTicker": "BIPC"
+  },
+  {
+    "assetRoute": "bj",
+    "assetTicker": "BJ"
+  },
+  {
+    "assetRoute": "bjri",
+    "assetTicker": "BJRI"
+  },
+  {
+    "assetRoute": "bkd",
+    "assetTicker": "BKD"
+  },
+  {
+    "assetRoute": "bke",
+    "assetTicker": "BKE"
+  },
+  {
+    "assetRoute": "bkh",
+    "assetTicker": "BKH"
+  },
+  {
+    "assetRoute": "bku",
+    "assetTicker": "BKU"
+  },
+  {
+    "assetRoute": "bl",
+    "assetTicker": "BL"
+  },
+  {
+    "assetRoute": "blbd",
+    "assetTicker": "BLBD"
+  },
+  {
+    "assetRoute": "blfs",
+    "assetTicker": "BLFS"
+  },
+  {
+    "assetRoute": "blfy",
+    "assetTicker": "BLFY"
+  },
+  {
+    "assetRoute": "bli",
+    "assetTicker": "BLI"
+  },
+  {
+    "assetRoute": "blkb",
+    "assetTicker": "BLKB"
+  },
+  {
+    "assetRoute": "blmn",
+    "assetTicker": "BLMN"
+  },
+  {
+    "assetRoute": "blnk",
+    "assetTicker": "BLNK"
+  },
+  {
+    "assetRoute": "blue",
+    "assetTicker": "BLUE"
+  },
+  {
+    "assetRoute": "blx",
+    "assetTicker": "BLX"
+  },
+  {
+    "assetRoute": "bmea",
+    "assetTicker": "BMEA"
+  },
+  {
+    "assetRoute": "bmi",
+    "assetTicker": "BMI"
+  },
+  {
+    "assetRoute": "bmrc",
+    "assetTicker": "BMRC"
+  },
+  {
+    "assetRoute": "bned",
+    "assetTicker": "BNED"
+  },
+  {
+    "assetRoute": "bnft",
+    "assetTicker": "BNFT"
+  },
+  {
+    "assetRoute": "bngo",
+    "assetTicker": "BNGO"
+  },
+  {
+    "assetRoute": "bnl",
+    "assetTicker": "BNL"
+  },
+  {
+    "assetRoute": "boc",
+    "assetTicker": "BOC"
+  },
+  {
+    "assetRoute": "bolt",
+    "assetTicker": "BOLT"
+  },
+  {
+    "assetRoute": "boom",
+    "assetTicker": "BOOM"
+  },
+  {
+    "assetRoute": "boot",
+    "assetTicker": "BOOT"
+  },
+  {
+    "assetRoute": "box",
+    "assetTicker": "BOX"
+  },
+  {
+    "assetRoute": "bpmc",
+    "assetTicker": "BPMC"
+  },
+  {
+    "assetRoute": "brbr",
+    "assetTicker": "BRBR"
+  },
+  {
+    "assetRoute": "brbs",
+    "assetTicker": "BRBS"
+  },
+  {
+    "assetRoute": "brc",
+    "assetTicker": "BRC"
+  },
+  {
+    "assetRoute": "brkl",
+    "assetTicker": "BRKL"
+  },
+  {
+    "assetRoute": "brmk",
+    "assetTicker": "BRMK"
+  },
+  {
+    "assetRoute": "brp",
+    "assetTicker": "BRP"
+  },
+  {
+    "assetRoute": "brsp",
+    "assetTicker": "BRSP"
+  },
+  {
+    "assetRoute": "brt",
+    "assetTicker": "BRT"
+  },
+  {
+    "assetRoute": "bry",
+    "assetTicker": "BRY"
+  },
+  {
+    "assetRoute": "bset",
+    "assetTicker": "BSET"
+  },
+  {
+    "assetRoute": "bsig",
+    "assetTicker": "BSIG"
+  },
+  {
+    "assetRoute": "bsrr",
+    "assetTicker": "BSRR"
+  },
+  {
+    "assetRoute": "btai",
+    "assetTicker": "BTAI"
+  },
+  {
+    "assetRoute": "btrs",
+    "assetTicker": "BTRS"
+  },
+  {
+    "assetRoute": "btu",
+    "assetTicker": "BTU"
+  },
+  {
+    "assetRoute": "btx",
+    "assetTicker": "BTX"
+  },
+  {
+    "assetRoute": "buse",
+    "assetTicker": "BUSE"
+  },
+  {
+    "assetRoute": "bv",
+    "assetTicker": "BV"
+  },
+  {
+    "assetRoute": "bvh",
+    "assetTicker": "BVH"
+  },
+  {
+    "assetRoute": "bvs",
+    "assetTicker": "BVS"
+  },
+  {
+    "assetRoute": "bw",
+    "assetTicker": "BW"
+  },
+  {
+    "assetRoute": "bwb",
+    "assetTicker": "BWB"
+  },
+  {
+    "assetRoute": "bxc",
+    "assetTicker": "BXC"
+  },
+  {
+    "assetRoute": "bxmt",
+    "assetTicker": "BXMT"
+  },
+  {
+    "assetRoute": "by",
+    "assetTicker": "BY"
+  },
+  {
+    "assetRoute": "byrn",
+    "assetTicker": "BYRN"
+  },
+  {
+    "assetRoute": "bysi",
+    "assetTicker": "BYSI"
+  },
+  {
+    "assetRoute": "bzh",
+    "assetTicker": "BZH"
+  },
+  {
+    "assetRoute": "cac",
+    "assetTicker": "CAC"
+  },
+  {
+    "assetRoute": "cade",
+    "assetTicker": "CADE"
+  },
+  {
+    "assetRoute": "cake",
+    "assetTicker": "CAKE"
+  },
+  {
+    "assetRoute": "cal",
+    "assetTicker": "CAL"
+  },
+  {
+    "assetRoute": "calm",
+    "assetTicker": "CALM"
+  },
+  {
+    "assetRoute": "calx",
+    "assetTicker": "CALX"
+  },
+  {
+    "assetRoute": "camp",
+    "assetTicker": "CAMP"
+  },
+  {
+    "assetRoute": "car",
+    "assetTicker": "CAR"
+  },
+  {
+    "assetRoute": "cara",
+    "assetTicker": "CARA"
+  },
+  {
+    "assetRoute": "care",
+    "assetTicker": "CARE"
+  },
+  {
+    "assetRoute": "carg",
+    "assetTicker": "CARG"
+  },
+  {
+    "assetRoute": "cars",
+    "assetTicker": "CARS"
+  },
+  {
+    "assetRoute": "casa",
+    "assetTicker": "CASA"
+  },
+  {
+    "assetRoute": "cash",
+    "assetTicker": "CASH"
+  },
+  {
+    "assetRoute": "cass",
+    "assetTicker": "CASS"
+  },
+  {
+    "assetRoute": "catc",
+    "assetTicker": "CATC"
+  },
+  {
+    "assetRoute": "cato",
+    "assetTicker": "CATO"
+  },
+  {
+    "assetRoute": "caty",
+    "assetTicker": "CATY"
+  },
+  {
+    "assetRoute": "cbay",
+    "assetTicker": "CBAY"
+  },
+  {
+    "assetRoute": "cbnk",
+    "assetTicker": "CBNK"
+  },
+  {
+    "assetRoute": "cbrl",
+    "assetTicker": "CBRL"
+  },
+  {
+    "assetRoute": "cbt",
+    "assetTicker": "CBT"
+  },
+  {
+    "assetRoute": "cbtx",
+    "assetTicker": "CBTX"
+  },
+  {
+    "assetRoute": "cbu",
+    "assetTicker": "CBU"
+  },
+  {
+    "assetRoute": "cbz",
+    "assetTicker": "CBZ"
+  },
+  {
+    "assetRoute": "ccb",
+    "assetTicker": "CCB"
+  },
+  {
+    "assetRoute": "ccbg",
+    "assetTicker": "CCBG"
+  },
+  {
+    "assetRoute": "cccc",
+    "assetTicker": "CCCC"
+  },
+  {
+    "assetRoute": "ccf",
+    "assetTicker": "CCF"
+  },
+  {
+    "assetRoute": "ccmp",
+    "assetTicker": "CCMP"
+  },
+  {
+    "assetRoute": "ccne",
+    "assetTicker": "CCNE"
+  },
+  {
+    "assetRoute": "cco",
+    "assetTicker": "CCO"
+  },
+  {
+    "assetRoute": "ccoi",
+    "assetTicker": "CCOI"
+  },
+  {
+    "assetRoute": "ccrd",
+    "assetTicker": "CCRD"
+  },
+  {
+    "assetRoute": "ccrn",
+    "assetTicker": "CCRN"
+  },
+  {
+    "assetRoute": "ccs",
+    "assetTicker": "CCS"
+  },
+  {
+    "assetRoute": "ccsi",
+    "assetTicker": "CCSI"
+  },
+  {
+    "assetRoute": "ccxi",
+    "assetTicker": "CCXI"
+  },
+  {
+    "assetRoute": "cdak",
+    "assetTicker": "CDAK"
+  },
+  {
+    "assetRoute": "cde",
+    "assetTicker": "CDE"
+  },
+  {
+    "assetRoute": "cdev",
+    "assetTicker": "CDEV"
+  },
+  {
+    "assetRoute": "cdlx",
+    "assetTicker": "CDLX"
+  },
+  {
+    "assetRoute": "cdmo",
+    "assetTicker": "CDMO"
+  },
+  {
+    "assetRoute": "cdna",
+    "assetTicker": "CDNA"
+  },
+  {
+    "assetRoute": "cdre",
+    "assetTicker": "CDRE"
+  },
+  {
+    "assetRoute": "cdxc",
+    "assetTicker": "CDXC"
+  },
+  {
+    "assetRoute": "cdxs",
+    "assetTicker": "CDXS"
+  },
+  {
+    "assetRoute": "cdzi",
+    "assetTicker": "CDZI"
+  },
+  {
+    "assetRoute": "cece",
+    "assetTicker": "CECE"
+  },
+  {
+    "assetRoute": "ceix",
+    "assetTicker": "CEIX"
+  },
+  {
+    "assetRoute": "celc",
+    "assetTicker": "CELC"
+  },
+  {
+    "assetRoute": "celh",
+    "assetTicker": "CELH"
+  },
+  {
+    "assetRoute": "cent",
+    "assetTicker": "CENT"
+  },
+  {
+    "assetRoute": "centa",
+    "assetTicker": "CENTA"
+  },
+  {
+    "assetRoute": "cenx",
+    "assetTicker": "CENX"
+  },
+  {
+    "assetRoute": "cere",
+    "assetTicker": "CERE"
+  },
+  {
+    "assetRoute": "cers",
+    "assetTicker": "CERS"
+  },
+  {
+    "assetRoute": "ceva",
+    "assetTicker": "CEVA"
+  },
+  {
+    "assetRoute": "cfb",
+    "assetTicker": "CFB"
+  },
+  {
+    "assetRoute": "cffn",
+    "assetTicker": "CFFN"
+  },
+  {
+    "assetRoute": "cgem",
+    "assetTicker": "CGEM"
+  },
+  {
+    "assetRoute": "chco",
+    "assetTicker": "CHCO"
+  },
+  {
+    "assetRoute": "chct",
+    "assetTicker": "CHCT"
+  },
+  {
+    "assetRoute": "chef",
+    "assetTicker": "CHEF"
+  },
+  {
+    "assetRoute": "chk",
+    "assetTicker": "CHK"
+  },
+  {
+    "assetRoute": "chrs",
+    "assetTicker": "CHRS"
+  },
+  {
+    "assetRoute": "chs",
+    "assetTicker": "CHS"
+  },
+  {
+    "assetRoute": "chuy",
+    "assetTicker": "CHUY"
+  },
+  {
+    "assetRoute": "chx",
+    "assetTicker": "CHX"
+  },
+  {
+    "assetRoute": "cia",
+    "assetTicker": "CIA"
+  },
+  {
+    "assetRoute": "cim",
+    "assetTicker": "CIM"
+  },
+  {
+    "assetRoute": "cinc",
+    "assetTicker": "CINC"
+  },
+  {
+    "assetRoute": "cio",
+    "assetTicker": "CIO"
+  },
+  {
+    "assetRoute": "cir",
+    "assetTicker": "CIR"
+  },
+  {
+    "assetRoute": "civb",
+    "assetTicker": "CIVB"
+  },
+  {
+    "assetRoute": "civi",
+    "assetTicker": "CIVI"
+  },
+  {
+    "assetRoute": "cix",
+    "assetTicker": "CIX"
+  },
+  {
+    "assetRoute": "clar",
+    "assetTicker": "CLAR"
+  },
+  {
+    "assetRoute": "clbk",
+    "assetTicker": "CLBK"
+  },
+  {
+    "assetRoute": "cldt",
+    "assetTicker": "CLDT"
+  },
+  {
+    "assetRoute": "cldx",
+    "assetTicker": "CLDX"
+  },
+  {
+    "assetRoute": "clfd",
+    "assetTicker": "CLFD"
+  },
+  {
+    "assetRoute": "clne",
+    "assetTicker": "CLNE"
+  },
+  {
+    "assetRoute": "clnn",
+    "assetTicker": "CLNN"
+  },
+  {
+    "assetRoute": "clpr",
+    "assetTicker": "CLPR"
+  },
+  {
+    "assetRoute": "clpt",
+    "assetTicker": "CLPT"
+  },
+  {
+    "assetRoute": "clsk",
+    "assetTicker": "CLSK"
+  },
+  {
+    "assetRoute": "clvs",
+    "assetTicker": "CLVS"
+  },
+  {
+    "assetRoute": "clw",
+    "assetTicker": "CLW"
+  },
+  {
+    "assetRoute": "cmbm",
+    "assetTicker": "CMBM"
+  },
+  {
+    "assetRoute": "cmc",
+    "assetTicker": "CMC"
+  },
+  {
+    "assetRoute": "cmco",
+    "assetTicker": "CMCO"
+  },
+  {
+    "assetRoute": "cmp",
+    "assetTicker": "CMP"
+  },
+  {
+    "assetRoute": "cmpr",
+    "assetTicker": "CMPR"
+  },
+  {
+    "assetRoute": "cmre",
+    "assetTicker": "CMRE"
+  },
+  {
+    "assetRoute": "cmrx",
+    "assetTicker": "CMRX"
+  },
+  {
+    "assetRoute": "cmtl",
+    "assetTicker": "CMTL"
+  },
+  {
+    "assetRoute": "cndt",
+    "assetTicker": "CNDT"
+  },
+  {
+    "assetRoute": "cnk",
+    "assetTicker": "CNK"
+  },
+  {
+    "assetRoute": "cnmd",
+    "assetTicker": "CNMD"
+  },
+  {
+    "assetRoute": "cnne",
+    "assetTicker": "CNNE"
+  },
+  {
+    "assetRoute": "cno",
+    "assetTicker": "CNO"
+  },
+  {
+    "assetRoute": "cnob",
+    "assetTicker": "CNOB"
+  },
+  {
+    "assetRoute": "cnr",
+    "assetTicker": "CNR"
+  },
+  {
+    "assetRoute": "cns",
+    "assetTicker": "CNS"
+  },
+  {
+    "assetRoute": "cnsl",
+    "assetTicker": "CNSL"
+  },
+  {
+    "assetRoute": "cnty",
+    "assetTicker": "CNTY"
+  },
+  {
+    "assetRoute": "cnvy",
+    "assetTicker": "CNVY"
+  },
+  {
+    "assetRoute": "cnx",
+    "assetTicker": "CNX"
+  },
+  {
+    "assetRoute": "cnxn",
+    "assetTicker": "CNXN"
+  },
+  {
+    "assetRoute": "coco",
+    "assetTicker": "COCO"
+  },
+  {
+    "assetRoute": "cogt",
+    "assetTicker": "COGT"
+  },
+  {
+    "assetRoute": "cohu",
+    "assetTicker": "COHU"
+  },
+  {
+    "assetRoute": "coke",
+    "assetTicker": "COKE"
+  },
+  {
+    "assetRoute": "colb",
+    "assetTicker": "COLB"
+  },
+  {
+    "assetRoute": "coll",
+    "assetTicker": "COLL"
+  },
+  {
+    "assetRoute": "conn",
+    "assetTicker": "CONN"
+  },
+  {
+    "assetRoute": "cook",
+    "assetTicker": "COOK"
+  },
+  {
+    "assetRoute": "coop",
+    "assetTicker": "COOP"
+  },
+  {
+    "assetRoute": "cort",
+    "assetTicker": "CORT"
+  },
+  {
+    "assetRoute": "cour",
+    "assetTicker": "COUR"
+  },
+  {
+    "assetRoute": "cown",
+    "assetTicker": "COWN"
+  },
+  {
+    "assetRoute": "cpe",
+    "assetTicker": "CPE"
+  },
+  {
+    "assetRoute": "cpf",
+    "assetTicker": "CPF"
+  },
+  {
+    "assetRoute": "cpk",
+    "assetTicker": "CPK"
+  },
+  {
+    "assetRoute": "cprx",
+    "assetTicker": "CPRX"
+  },
+  {
+    "assetRoute": "cps",
+    "assetTicker": "CPS"
+  },
+  {
+    "assetRoute": "cpsi",
+    "assetTicker": "CPSI"
+  },
+  {
+    "assetRoute": "crai",
+    "assetTicker": "CRAI"
+  },
+  {
+    "assetRoute": "crbu",
+    "assetTicker": "CRBU"
+  },
+  {
+    "assetRoute": "crc",
+    "assetTicker": "CRC"
+  },
+  {
+    "assetRoute": "crda",
+    "assetTicker": "CRDA"
+  },
+  {
+    "assetRoute": "crdf",
+    "assetTicker": "CRDF"
+  },
+  {
+    "assetRoute": "crdo",
+    "assetTicker": "CRDO"
+  },
+  {
+    "assetRoute": "crgy",
+    "assetTicker": "CRGY"
+  },
+  {
+    "assetRoute": "cris",
+    "assetTicker": "CRIS"
+  },
+  {
+    "assetRoute": "crk",
+    "assetTicker": "CRK"
+  },
+  {
+    "assetRoute": "crmd",
+    "assetTicker": "CRMD"
+  },
+  {
+    "assetRoute": "crmt",
+    "assetTicker": "CRMT"
+  },
+  {
+    "assetRoute": "crnc",
+    "assetTicker": "CRNC"
+  },
+  {
+    "assetRoute": "crnx",
+    "assetTicker": "CRNX"
+  },
+  {
+    "assetRoute": "crox",
+    "assetTicker": "CROX"
+  },
+  {
+    "assetRoute": "crs",
+    "assetTicker": "CRS"
+  },
+  {
+    "assetRoute": "crsr",
+    "assetTicker": "CRSR"
+  },
+  {
+    "assetRoute": "crtx",
+    "assetTicker": "CRTX"
+  },
+  {
+    "assetRoute": "crvl",
+    "assetTicker": "CRVL"
+  },
+  {
+    "assetRoute": "csgs",
+    "assetTicker": "CSGS"
+  },
+  {
+    "assetRoute": "csii",
+    "assetTicker": "CSII"
+  },
+  {
+    "assetRoute": "csr",
+    "assetTicker": "CSR"
+  },
+  {
+    "assetRoute": "csse",
+    "assetTicker": "CSSE"
+  },
+  {
+    "assetRoute": "cste",
+    "assetTicker": "CSTE"
+  },
+  {
+    "assetRoute": "cstl",
+    "assetTicker": "CSTL"
+  },
+  {
+    "assetRoute": "cstm",
+    "assetTicker": "CSTM"
+  },
+  {
+    "assetRoute": "cstr",
+    "assetTicker": "CSTR"
+  },
+  {
+    "assetRoute": "csv",
+    "assetTicker": "CSV"
+  },
+  {
+    "assetRoute": "cswi",
+    "assetTicker": "CSWI"
+  },
+  {
+    "assetRoute": "ctbi",
+    "assetTicker": "CTBI"
+  },
+  {
+    "assetRoute": "ctkb",
+    "assetTicker": "CTKB"
+  },
+  {
+    "assetRoute": "ctlp",
+    "assetTicker": "CTLP"
+  },
+  {
+    "assetRoute": "ctmx",
+    "assetTicker": "CTMX"
+  },
+  {
+    "assetRoute": "cto",
+    "assetTicker": "CTO"
+  },
+  {
+    "assetRoute": "ctos",
+    "assetTicker": "CTOS"
+  },
+  {
+    "assetRoute": "ctre",
+    "assetTicker": "CTRE"
+  },
+  {
+    "assetRoute": "ctrn",
+    "assetTicker": "CTRN"
+  },
+  {
+    "assetRoute": "cts",
+    "assetTicker": "CTS"
+  },
+  {
+    "assetRoute": "ctso",
+    "assetTicker": "CTSO"
+  },
+  {
+    "assetRoute": "ctt",
+    "assetTicker": "CTT"
+  },
+  {
+    "assetRoute": "ctxr",
+    "assetTicker": "CTXR"
+  },
+  {
+    "assetRoute": "cubi",
+    "assetTicker": "CUBI"
+  },
+  {
+    "assetRoute": "cue",
+    "assetTicker": "CUE"
+  },
+  {
+    "assetRoute": "curi",
+    "assetTicker": "CURI"
+  },
+  {
+    "assetRoute": "curo",
+    "assetTicker": "CURO"
+  },
+  {
+    "assetRoute": "curv",
+    "assetTicker": "CURV"
+  },
+  {
+    "assetRoute": "cutr",
+    "assetTicker": "CUTR"
+  },
+  {
+    "assetRoute": "cvbf",
+    "assetTicker": "CVBF"
+  },
+  {
+    "assetRoute": "cvco",
+    "assetTicker": "CVCO"
+  },
+  {
+    "assetRoute": "cvet",
+    "assetTicker": "CVET"
+  },
+  {
+    "assetRoute": "cvgi",
+    "assetTicker": "CVGI"
+  },
+  {
+    "assetRoute": "cvgw",
+    "assetTicker": "CVGW"
+  },
+  {
+    "assetRoute": "cvi",
+    "assetTicker": "CVI"
+  },
+  {
+    "assetRoute": "cvlg",
+    "assetTicker": "CVLG"
+  },
+  {
+    "assetRoute": "cvlt",
+    "assetTicker": "CVLT"
+  },
+  {
+    "assetRoute": "cvm",
+    "assetTicker": "CVM"
+  },
+  {
+    "assetRoute": "cvrx",
+    "assetTicker": "CVRX"
+  },
+  {
+    "assetRoute": "cwen",
+    "assetTicker": "CWEN"
+  },
+  {
+    "assetRoute": "cwena",
+    "assetTicker": "CWENA"
+  },
+  {
+    "assetRoute": "cwh",
+    "assetTicker": "CWH"
+  },
+  {
+    "assetRoute": "cwk",
+    "assetTicker": "CWK"
+  },
+  {
+    "assetRoute": "cwst",
+    "assetTicker": "CWST"
+  },
+  {
+    "assetRoute": "cwt",
+    "assetTicker": "CWT"
+  },
+  {
+    "assetRoute": "cxw",
+    "assetTicker": "CXW"
+  },
+  {
+    "assetRoute": "cyh",
+    "assetTicker": "CYH"
+  },
+  {
+    "assetRoute": "cyrx",
+    "assetTicker": "CYRX"
+  },
+  {
+    "assetRoute": "cyt",
+    "assetTicker": "CYT"
+  },
+  {
+    "assetRoute": "cytk",
+    "assetTicker": "CYTK"
+  },
+  {
+    "assetRoute": "cznc",
+    "assetTicker": "CZNC"
+  },
+  {
+    "assetRoute": "dakt",
+    "assetTicker": "DAKT"
+  },
+  {
+    "assetRoute": "dan",
+    "assetTicker": "DAN"
+  },
+  {
+    "assetRoute": "dawn",
+    "assetTicker": "DAWN"
+  },
+  {
+    "assetRoute": "dbd",
+    "assetTicker": "DBD"
+  },
+  {
+    "assetRoute": "dbi",
+    "assetTicker": "DBI"
+  },
+  {
+    "assetRoute": "dbrg",
+    "assetTicker": "DBRG"
+  },
+  {
+    "assetRoute": "dco",
+    "assetTicker": "DCO"
+  },
+  {
+    "assetRoute": "dcom",
+    "assetTicker": "DCOM"
+  },
+  {
+    "assetRoute": "dcph",
+    "assetTicker": "DCPH"
+  },
+  {
+    "assetRoute": "ddd",
+    "assetTicker": "DDD"
+  },
+  {
+    "assetRoute": "dds",
+    "assetTicker": "DDS"
+  },
+  {
+    "assetRoute": "dea",
+    "assetTicker": "DEA"
+  },
+  {
+    "assetRoute": "den",
+    "assetTicker": "DEN"
+  },
+  {
+    "assetRoute": "denn",
+    "assetTicker": "DENN"
+  },
+  {
+    "assetRoute": "dfin",
+    "assetTicker": "DFIN"
+  },
+  {
+    "assetRoute": "dgica",
+    "assetTicker": "DGICA"
+  },
+  {
+    "assetRoute": "dgii",
+    "assetTicker": "DGII"
+  },
+  {
+    "assetRoute": "dhc",
+    "assetTicker": "DHC"
+  },
+  {
+    "assetRoute": "dhil",
+    "assetTicker": "DHIL"
+  },
+  {
+    "assetRoute": "dht",
+    "assetTicker": "DHT"
+  },
+  {
+    "assetRoute": "dibs",
+    "assetTicker": "DIBS"
+  },
+  {
+    "assetRoute": "dice",
+    "assetTicker": "DICE"
+  },
+  {
+    "assetRoute": "din",
+    "assetTicker": "DIN"
+  },
+  {
+    "assetRoute": "diod",
+    "assetTicker": "DIOD"
+  },
+  {
+    "assetRoute": "djco",
+    "assetTicker": "DJCO"
+  },
+  {
+    "assetRoute": "dk",
+    "assetTicker": "DK"
+  },
+  {
+    "assetRoute": "dlth",
+    "assetTicker": "DLTH"
+  },
+  {
+    "assetRoute": "dlx",
+    "assetTicker": "DLX"
+  },
+  {
+    "assetRoute": "dm",
+    "assetTicker": "DM"
+  },
+  {
+    "assetRoute": "dmrc",
+    "assetTicker": "DMRC"
+  },
+  {
+    "assetRoute": "dms",
+    "assetTicker": "DMS"
+  },
+  {
+    "assetRoute": "dmtk",
+    "assetTicker": "DMTK"
+  },
+  {
+    "assetRoute": "dnay",
+    "assetTicker": "DNAY"
+  },
+  {
+    "assetRoute": "dnli",
+    "assetTicker": "DNLI"
+  },
+  {
+    "assetRoute": "dnmr",
+    "assetTicker": "DNMR"
+  },
+  {
+    "assetRoute": "dnow",
+    "assetTicker": "DNOW"
+  },
+  {
+    "assetRoute": "dnut",
+    "assetTicker": "DNUT"
+  },
+  {
+    "assetRoute": "doc",
+    "assetTicker": "DOC"
+  },
+  {
+    "assetRoute": "docn",
+    "assetTicker": "DOCN"
+  },
+  {
+    "assetRoute": "domo",
+    "assetTicker": "DOMO"
+  },
+  {
+    "assetRoute": "door",
+    "assetTicker": "DOOR"
+  },
+  {
+    "assetRoute": "dorm",
+    "assetTicker": "DORM"
+  },
+  {
+    "assetRoute": "doug",
+    "assetTicker": "DOUG"
+  },
+  {
+    "assetRoute": "drh",
+    "assetTicker": "DRH"
+  },
+  {
+    "assetRoute": "drio",
+    "assetTicker": "DRIO"
+  },
+  {
+    "assetRoute": "drq",
+    "assetTicker": "DRQ"
+  },
+  {
+    "assetRoute": "drrx",
+    "assetTicker": "DRRX"
+  },
+  {
+    "assetRoute": "ds",
+    "assetTicker": "DS"
+  },
+  {
+    "assetRoute": "dsgn",
+    "assetTicker": "DSGN"
+  },
+  {
+    "assetRoute": "dske",
+    "assetTicker": "DSKE"
+  },
+  {
+    "assetRoute": "dsp",
+    "assetTicker": "DSP"
+  },
+  {
+    "assetRoute": "dtc",
+    "assetTicker": "DTC"
+  },
+  {
+    "assetRoute": "dtil",
+    "assetTicker": "DTIL"
+  },
+  {
+    "assetRoute": "dvax",
+    "assetTicker": "DVAX"
+  },
+  {
+    "assetRoute": "dx",
+    "assetTicker": "DX"
+  },
+  {
+    "assetRoute": "dxpe",
+    "assetTicker": "DXPE"
+  },
+  {
+    "assetRoute": "dy",
+    "assetTicker": "DY"
+  },
+  {
+    "assetRoute": "dyn",
+    "assetTicker": "DYN"
+  },
+  {
+    "assetRoute": "dzsi",
+    "assetTicker": "DZSI"
+  },
+  {
+    "assetRoute": "eaf",
+    "assetTicker": "EAF"
+  },
+  {
+    "assetRoute": "ear",
+    "assetTicker": "EAR"
+  },
+  {
+    "assetRoute": "eat",
+    "assetTicker": "EAT"
+  },
+  {
+    "assetRoute": "eb",
+    "assetTicker": "EB"
+  },
+  {
+    "assetRoute": "ebc",
+    "assetTicker": "EBC"
+  },
+  {
+    "assetRoute": "ebet",
+    "assetTicker": "EBET"
+  },
+  {
+    "assetRoute": "ebf",
+    "assetTicker": "EBF"
+  },
+  {
+    "assetRoute": "ebix",
+    "assetTicker": "EBIX"
+  },
+  {
+    "assetRoute": "ebs",
+    "assetTicker": "EBS"
+  },
+  {
+    "assetRoute": "ebtc",
+    "assetTicker": "EBTC"
+  },
+  {
+    "assetRoute": "ecol",
+    "assetTicker": "ECOL"
+  },
+  {
+    "assetRoute": "ecom",
+    "assetTicker": "ECOM"
+  },
+  {
+    "assetRoute": "ecpg",
+    "assetTicker": "ECPG"
+  },
+  {
+    "assetRoute": "ecvt",
+    "assetTicker": "ECVT"
+  },
+  {
+    "assetRoute": "edit",
+    "assetTicker": "EDIT"
+  },
+  {
+    "assetRoute": "eex",
+    "assetTicker": "EEX"
+  },
+  {
+    "assetRoute": "efc",
+    "assetTicker": "EFC"
+  },
+  {
+    "assetRoute": "efsc",
+    "assetTicker": "EFSC"
+  },
+  {
+    "assetRoute": "egan",
+    "assetTicker": "EGAN"
+  },
+  {
+    "assetRoute": "egbn",
+    "assetTicker": "EGBN"
+  },
+  {
+    "assetRoute": "eght",
+    "assetTicker": "EGHT"
+  },
+  {
+    "assetRoute": "egle",
+    "assetTicker": "EGLE"
+  },
+  {
+    "assetRoute": "egp",
+    "assetTicker": "EGP"
+  },
+  {
+    "assetRoute": "egrx",
+    "assetTicker": "EGRX"
+  },
+  {
+    "assetRoute": "ehth",
+    "assetTicker": "EHTH"
+  },
+  {
+    "assetRoute": "eig",
+    "assetTicker": "EIG"
+  },
+  {
+    "assetRoute": "eigr",
+    "assetTicker": "EIGR"
+  },
+  {
+    "assetRoute": "elf",
+    "assetTicker": "ELF"
+  },
+  {
+    "assetRoute": "ely",
+    "assetTicker": "ELY"
+  },
+  {
+    "assetRoute": "elym",
+    "assetTicker": "ELYM"
+  },
+  {
+    "assetRoute": "eme",
+    "assetTicker": "EME"
+  },
+  {
+    "assetRoute": "emkr",
+    "assetTicker": "EMKR"
+  },
+  {
+    "assetRoute": "endp",
+    "assetTicker": "ENDP"
+  },
+  {
+    "assetRoute": "enfn",
+    "assetTicker": "ENFN"
+  },
+  {
+    "assetRoute": "enr",
+    "assetTicker": "ENR"
+  },
+  {
+    "assetRoute": "ens",
+    "assetTicker": "ENS"
+  },
+  {
+    "assetRoute": "ensg",
+    "assetTicker": "ENSG"
+  },
+  {
+    "assetRoute": "enta",
+    "assetTicker": "ENTA"
+  },
+  {
+    "assetRoute": "env",
+    "assetTicker": "ENV"
+  },
+  {
+    "assetRoute": "enva",
+    "assetTicker": "ENVA"
+  },
+  {
+    "assetRoute": "eols",
+    "assetTicker": "EOLS"
+  },
+  {
+    "assetRoute": "eose",
+    "assetTicker": "EOSE"
+  },
+  {
+    "assetRoute": "epac",
+    "assetTicker": "EPAC"
+  },
+  {
+    "assetRoute": "epay",
+    "assetTicker": "EPAY"
+  },
+  {
+    "assetRoute": "epc",
+    "assetTicker": "EPC"
+  },
+  {
+    "assetRoute": "eprt",
+    "assetTicker": "EPRT"
+  },
+  {
+    "assetRoute": "epzm",
+    "assetTicker": "EPZM"
+  },
+  {
+    "assetRoute": "eqbk",
+    "assetTicker": "EQBK"
+  },
+  {
+    "assetRoute": "eqc",
+    "assetTicker": "EQC"
+  },
+  {
+    "assetRoute": "eras",
+    "assetTicker": "ERAS"
+  },
+  {
+    "assetRoute": "erii",
+    "assetTicker": "ERII"
+  },
+  {
+    "assetRoute": "esca",
+    "assetTicker": "ESCA"
+  },
+  {
+    "assetRoute": "ese",
+    "assetTicker": "ESE"
+  },
+  {
+    "assetRoute": "esgr",
+    "assetTicker": "ESGR"
+  },
+  {
+    "assetRoute": "esmt",
+    "assetTicker": "ESMT"
+  },
+  {
+    "assetRoute": "esnt",
+    "assetTicker": "ESNT"
+  },
+  {
+    "assetRoute": "espr",
+    "assetTicker": "ESPR"
+  },
+  {
+    "assetRoute": "esrt",
+    "assetTicker": "ESRT"
+  },
+  {
+    "assetRoute": "este",
+    "assetTicker": "ESTE"
+  },
+  {
+    "assetRoute": "etd",
+    "assetTicker": "ETD"
+  },
+  {
+    "assetRoute": "etnb",
+    "assetTicker": "ETNB"
+  },
+  {
+    "assetRoute": "etrn",
+    "assetTicker": "ETRN"
+  },
+  {
+    "assetRoute": "etwo",
+    "assetTicker": "ETWO"
+  },
+  {
+    "assetRoute": "evc",
+    "assetTicker": "EVC"
+  },
+  {
+    "assetRoute": "evcm",
+    "assetTicker": "EVCM"
+  },
+  {
+    "assetRoute": "ever",
+    "assetTicker": "EVER"
+  },
+  {
+    "assetRoute": "evh",
+    "assetTicker": "EVH"
+  },
+  {
+    "assetRoute": "evi",
+    "assetTicker": "EVI"
+  },
+  {
+    "assetRoute": "evlo",
+    "assetTicker": "EVLO"
+  },
+  {
+    "assetRoute": "evop",
+    "assetTicker": "EVOP"
+  },
+  {
+    "assetRoute": "evri",
+    "assetTicker": "EVRI"
+  },
+  {
+    "assetRoute": "evtc",
+    "assetTicker": "EVTC"
+  },
+  {
+    "assetRoute": "ewcz",
+    "assetTicker": "EWCZ"
+  },
+  {
+    "assetRoute": "ewtx",
+    "assetTicker": "EWTX"
+  },
+  {
+    "assetRoute": "exls",
+    "assetTicker": "EXLS"
+  },
+  {
+    "assetRoute": "expi",
+    "assetTicker": "EXPI"
+  },
+  {
+    "assetRoute": "expo",
+    "assetTicker": "EXPO"
+  },
+  {
+    "assetRoute": "extr",
+    "assetTicker": "EXTR"
+  },
+  {
+    "assetRoute": "eye",
+    "assetTicker": "EYE"
+  },
+  {
+    "assetRoute": "eypt",
+    "assetTicker": "EYPT"
+  },
+  {
+    "assetRoute": "ezpw",
+    "assetTicker": "EZPW"
+  },
+  {
+    "assetRoute": "fa",
+    "assetTicker": "FA"
+  },
+  {
+    "assetRoute": "faro",
+    "assetTicker": "FARO"
+  },
+  {
+    "assetRoute": "fate",
+    "assetTicker": "FATE"
+  },
+  {
+    "assetRoute": "fbc",
+    "assetTicker": "FBC"
+  },
+  {
+    "assetRoute": "fbio",
+    "assetTicker": "FBIO"
+  },
+  {
+    "assetRoute": "fbk",
+    "assetTicker": "FBK"
+  },
+  {
+    "assetRoute": "fbms",
+    "assetTicker": "FBMS"
+  },
+  {
+    "assetRoute": "fbnc",
+    "assetTicker": "FBNC"
+  },
+  {
+    "assetRoute": "fbp",
+    "assetTicker": "FBP"
+  },
+  {
+    "assetRoute": "fbrt",
+    "assetTicker": "FBRT"
+  },
+  {
+    "assetRoute": "fbrx",
+    "assetTicker": "FBRX"
+  },
+  {
+    "assetRoute": "fc",
+    "assetTicker": "FC"
+  },
+  {
+    "assetRoute": "fcbc",
+    "assetTicker": "FCBC"
+  },
+  {
+    "assetRoute": "fcel",
+    "assetTicker": "FCEL"
+  },
+  {
+    "assetRoute": "fcf",
+    "assetTicker": "FCF"
+  },
+  {
+    "assetRoute": "fcfs",
+    "assetTicker": "FCFS"
+  },
+  {
+    "assetRoute": "fcpt",
+    "assetTicker": "FCPT"
+  },
+  {
+    "assetRoute": "fdbc",
+    "assetTicker": "FDBC"
+  },
+  {
+    "assetRoute": "fdmt",
+    "assetTicker": "FDMT"
+  },
+  {
+    "assetRoute": "fdp",
+    "assetTicker": "FDP"
+  },
+  {
+    "assetRoute": "fele",
+    "assetTicker": "FELE"
+  },
+  {
+    "assetRoute": "ff",
+    "assetTicker": "FF"
+  },
+  {
+    "assetRoute": "ffbc",
+    "assetTicker": "FFBC"
+  },
+  {
+    "assetRoute": "ffic",
+    "assetTicker": "FFIC"
+  },
+  {
+    "assetRoute": "ffin",
+    "assetTicker": "FFIN"
+  },
+  {
+    "assetRoute": "ffwm",
+    "assetTicker": "FFWM"
+  },
+  {
+    "assetRoute": "fgen",
+    "assetTicker": "FGEN"
+  },
+  {
+    "assetRoute": "fhi",
+    "assetTicker": "FHI"
+  },
+  {
+    "assetRoute": "fhtx",
+    "assetTicker": "FHTX"
+  },
+  {
+    "assetRoute": "fibk",
+    "assetTicker": "FIBK"
+  },
+  {
+    "assetRoute": "fisi",
+    "assetTicker": "FISI"
+  },
+  {
+    "assetRoute": "fix",
+    "assetTicker": "FIX"
+  },
+  {
+    "assetRoute": "fixx",
+    "assetTicker": "FIXX"
+  },
+  {
+    "assetRoute": "fizz",
+    "assetTicker": "FIZZ"
+  },
+  {
+    "assetRoute": "flgt",
+    "assetTicker": "FLGT"
+  },
+  {
+    "assetRoute": "flic",
+    "assetTicker": "FLIC"
+  },
+  {
+    "assetRoute": "fll",
+    "assetTicker": "FLL"
+  },
+  {
+    "assetRoute": "flnt",
+    "assetTicker": "FLNT"
+  },
+  {
+    "assetRoute": "flr",
+    "assetTicker": "FLR"
+  },
+  {
+    "assetRoute": "flws",
+    "assetTicker": "FLWS"
+  },
+  {
+    "assetRoute": "flxs",
+    "assetTicker": "FLXS"
+  },
+  {
+    "assetRoute": "flyw",
+    "assetTicker": "FLYW"
+  },
+  {
+    "assetRoute": "fmbh",
+    "assetTicker": "FMBH"
+  },
+  {
+    "assetRoute": "fmnb",
+    "assetTicker": "FMNB"
+  },
+  {
+    "assetRoute": "fmtx",
+    "assetTicker": "FMTX"
+  },
+  {
+    "assetRoute": "fn",
+    "assetTicker": "FN"
+  },
+  {
+    "assetRoute": "fna",
+    "assetTicker": "FNA"
+  },
+  {
+    "assetRoute": "fnch",
+    "assetTicker": "FNCH"
+  },
+  {
+    "assetRoute": "fnko",
+    "assetTicker": "FNKO"
+  },
+  {
+    "assetRoute": "fnlc",
+    "assetTicker": "FNLC"
+  },
+  {
+    "assetRoute": "foa",
+    "assetTicker": "FOA"
+  },
+  {
+    "assetRoute": "focs",
+    "assetTicker": "FOCS"
+  },
+  {
+    "assetRoute": "foe",
+    "assetTicker": "FOE"
+  },
+  {
+    "assetRoute": "fold",
+    "assetTicker": "FOLD"
+  },
+  {
+    "assetRoute": "for",
+    "assetTicker": "FOR"
+  },
+  {
+    "assetRoute": "fora",
+    "assetTicker": "FORA"
+  },
+  {
+    "assetRoute": "form",
+    "assetTicker": "FORM"
+  },
+  {
+    "assetRoute": "forr",
+    "assetTicker": "FORR"
+  },
+  {
+    "assetRoute": "fosl",
+    "assetTicker": "FOSL"
+  },
+  {
+    "assetRoute": "foxf",
+    "assetTicker": "FOXF"
+  },
+  {
+    "assetRoute": "fpi",
+    "assetTicker": "FPI"
+  },
+  {
+    "assetRoute": "frba",
+    "assetTicker": "FRBA"
+  },
+  {
+    "assetRoute": "frbk",
+    "assetTicker": "FRBK"
+  },
+  {
+    "assetRoute": "free",
+    "assetTicker": "FREE"
+  },
+  {
+    "assetRoute": "freq",
+    "assetTicker": "FREQ"
+  },
+  {
+    "assetRoute": "frg",
+    "assetTicker": "FRG"
+  },
+  {
+    "assetRoute": "frgi",
+    "assetTicker": "FRGI"
+  },
+  {
+    "assetRoute": "frme",
+    "assetTicker": "FRME"
+  },
+  {
+    "assetRoute": "fro",
+    "assetTicker": "FRO"
+  },
+  {
+    "assetRoute": "frog",
+    "assetTicker": "FROG"
+  },
+  {
+    "assetRoute": "frph",
+    "assetTicker": "FRPH"
+  },
+  {
+    "assetRoute": "frst",
+    "assetTicker": "FRST"
+  },
+  {
+    "assetRoute": "fsbc",
+    "assetTicker": "FSBC"
+  },
+  {
+    "assetRoute": "fsbw",
+    "assetTicker": "FSBW"
+  },
+  {
+    "assetRoute": "fsp",
+    "assetTicker": "FSP"
+  },
+  {
+    "assetRoute": "fsr",
+    "assetTicker": "FSR"
+  },
+  {
+    "assetRoute": "fss",
+    "assetTicker": "FSS"
+  },
+  {
+    "assetRoute": "ftci",
+    "assetTicker": "FTCI"
+  },
+  {
+    "assetRoute": "fthm",
+    "assetTicker": "FTHM"
+  },
+  {
+    "assetRoute": "fubo",
+    "assetTicker": "FUBO"
+  },
+  {
+    "assetRoute": "ful",
+    "assetTicker": "FUL"
+  },
+  {
+    "assetRoute": "fulc",
+    "assetTicker": "FULC"
+  },
+  {
+    "assetRoute": "fult",
+    "assetTicker": "FULT"
+  },
+  {
+    "assetRoute": "fuv",
+    "assetTicker": "FUV"
+  },
+  {
+    "assetRoute": "fwrd",
+    "assetTicker": "FWRD"
+  },
+  {
+    "assetRoute": "fwrg",
+    "assetTicker": "FWRG"
+  },
+  {
+    "assetRoute": "fxlv",
+    "assetTicker": "FXLV"
+  },
+  {
+    "assetRoute": "gabc",
+    "assetTicker": "GABC"
+  },
+  {
+    "assetRoute": "gan",
+    "assetTicker": "GAN"
+  },
+  {
+    "assetRoute": "gato",
+    "assetTicker": "GATO"
+  },
+  {
+    "assetRoute": "gatx",
+    "assetTicker": "GATX"
+  },
+  {
+    "assetRoute": "gbci",
+    "assetTicker": "GBCI"
+  },
+  {
+    "assetRoute": "gbio",
+    "assetTicker": "GBIO"
+  },
+  {
+    "assetRoute": "gbl",
+    "assetTicker": "GBL"
+  },
+  {
+    "assetRoute": "gbox",
+    "assetTicker": "GBOX"
+  },
+  {
+    "assetRoute": "gbt",
+    "assetTicker": "GBT"
+  },
+  {
+    "assetRoute": "gbx",
+    "assetTicker": "GBX"
+  },
+  {
+    "assetRoute": "gci",
+    "assetTicker": "GCI"
+  },
+  {
+    "assetRoute": "gcmg",
+    "assetTicker": "GCMG"
+  },
+  {
+    "assetRoute": "gco",
+    "assetTicker": "GCO"
+  },
+  {
+    "assetRoute": "gcp",
+    "assetTicker": "GCP"
+  },
+  {
+    "assetRoute": "gden",
+    "assetTicker": "GDEN"
+  },
+  {
+    "assetRoute": "gdot",
+    "assetTicker": "GDOT"
+  },
+  {
+    "assetRoute": "gdyn",
+    "assetTicker": "GDYN"
+  },
+  {
+    "assetRoute": "gef",
+    "assetTicker": "GEF"
+  },
+  {
+    "assetRoute": "gefb",
+    "assetTicker": "GEFB"
+  },
+  {
+    "assetRoute": "geo",
+    "assetTicker": "GEO"
+  },
+  {
+    "assetRoute": "gern",
+    "assetTicker": "GERN"
+  },
+  {
+    "assetRoute": "ges",
+    "assetTicker": "GES"
+  },
+  {
+    "assetRoute": "gevo",
+    "assetTicker": "GEVO"
+  },
+  {
+    "assetRoute": "gff",
+    "assetTicker": "GFF"
+  },
+  {
+    "assetRoute": "ghc",
+    "assetTicker": "GHC"
+  },
+  {
+    "assetRoute": "ghl",
+    "assetTicker": "GHL"
+  },
+  {
+    "assetRoute": "gic",
+    "assetTicker": "GIC"
+  },
+  {
+    "assetRoute": "giii",
+    "assetTicker": "GIII"
+  },
+  {
+    "assetRoute": "gkos",
+    "assetTicker": "GKOS"
+  },
+  {
+    "assetRoute": "gldd",
+    "assetTicker": "GLDD"
+  },
+  {
+    "assetRoute": "glng",
+    "assetTicker": "GLNG"
+  },
+  {
+    "assetRoute": "glre",
+    "assetTicker": "GLRE"
+  },
+  {
+    "assetRoute": "glsi",
+    "assetTicker": "GLSI"
+  },
+  {
+    "assetRoute": "glt",
+    "assetTicker": "GLT"
+  },
+  {
+    "assetRoute": "glue",
+    "assetTicker": "GLUE"
+  },
+  {
+    "assetRoute": "gmre",
+    "assetTicker": "GMRE"
+  },
+  {
+    "assetRoute": "gms",
+    "assetTicker": "GMS"
+  },
+  {
+    "assetRoute": "gmtx",
+    "assetTicker": "GMTX"
+  },
+  {
+    "assetRoute": "gnk",
+    "assetTicker": "GNK"
+  },
+  {
+    "assetRoute": "gnl",
+    "assetTicker": "GNL"
+  },
+  {
+    "assetRoute": "gnln",
+    "assetTicker": "GNLN"
+  },
+  {
+    "assetRoute": "gnog",
+    "assetTicker": "GNOG"
+  },
+  {
+    "assetRoute": "gnty",
+    "assetTicker": "GNTY"
+  },
+  {
+    "assetRoute": "gnus",
+    "assetTicker": "GNUS"
+  },
+  {
+    "assetRoute": "gnw",
+    "assetTicker": "GNW"
+  },
+  {
+    "assetRoute": "goev",
+    "assetTicker": "GOEV"
+  },
+  {
+    "assetRoute": "gogo",
+    "assetTicker": "GOGO"
+  },
+  {
+    "assetRoute": "golf",
+    "assetTicker": "GOLF"
+  },
+  {
+    "assetRoute": "good",
+    "assetTicker": "GOOD"
+  },
+  {
+    "assetRoute": "goss",
+    "assetTicker": "GOSS"
+  },
+  {
+    "assetRoute": "gpi",
+    "assetTicker": "GPI"
+  },
+  {
+    "assetRoute": "gpmt",
+    "assetTicker": "GPMT"
+  },
+  {
+    "assetRoute": "gpre",
+    "assetTicker": "GPRE"
+  },
+  {
+    "assetRoute": "gpro",
+    "assetTicker": "GPRO"
+  },
+  {
+    "assetRoute": "grbk",
+    "assetTicker": "GRBK"
+  },
+  {
+    "assetRoute": "grc",
+    "assetTicker": "GRC"
+  },
+  {
+    "assetRoute": "grph",
+    "assetTicker": "GRPH"
+  },
+  {
+    "assetRoute": "grpn",
+    "assetTicker": "GRPN"
+  },
+  {
+    "assetRoute": "grts",
+    "assetTicker": "GRTS"
+  },
+  {
+    "assetRoute": "grwg",
+    "assetTicker": "GRWG"
+  },
+  {
+    "assetRoute": "gsat",
+    "assetTicker": "GSAT"
+  },
+  {
+    "assetRoute": "gsbc",
+    "assetTicker": "GSBC"
+  },
+  {
+    "assetRoute": "gshd",
+    "assetTicker": "GSHD"
+  },
+  {
+    "assetRoute": "gt",
+    "assetTicker": "GT"
+  },
+  {
+    "assetRoute": "gtbp",
+    "assetTicker": "GTBP"
+  },
+  {
+    "assetRoute": "gthx",
+    "assetTicker": "GTHX"
+  },
+  {
+    "assetRoute": "gtls",
+    "assetTicker": "GTLS"
+  },
+  {
+    "assetRoute": "gtn",
+    "assetTicker": "GTN"
+  },
+  {
+    "assetRoute": "gty",
+    "assetTicker": "GTY"
+  },
+  {
+    "assetRoute": "gtyh",
+    "assetTicker": "GTYH"
+  },
+  {
+    "assetRoute": "gva",
+    "assetTicker": "GVA"
+  },
+  {
+    "assetRoute": "gwrs",
+    "assetTicker": "GWRS"
+  },
+  {
+    "assetRoute": "ha",
+    "assetTicker": "HA"
+  },
+  {
+    "assetRoute": "hae",
+    "assetTicker": "HAE"
+  },
+  {
+    "assetRoute": "hafc",
+    "assetTicker": "HAFC"
+  },
+  {
+    "assetRoute": "halo",
+    "assetTicker": "HALO"
+  },
+  {
+    "assetRoute": "harp",
+    "assetTicker": "HARP"
+  },
+  {
+    "assetRoute": "hasi",
+    "assetTicker": "HASI"
+  },
+  {
+    "assetRoute": "hayn",
+    "assetTicker": "HAYN"
+  },
+  {
+    "assetRoute": "hbb",
+    "assetTicker": "HBB"
+  },
+  {
+    "assetRoute": "hbcp",
+    "assetTicker": "HBCP"
+  },
+  {
+    "assetRoute": "hbio",
+    "assetTicker": "HBIO"
+  },
+  {
+    "assetRoute": "hbnc",
+    "assetTicker": "HBNC"
+  },
+  {
+    "assetRoute": "hbt",
+    "assetTicker": "HBT"
+  },
+  {
+    "assetRoute": "hcat",
+    "assetTicker": "HCAT"
+  },
+  {
+    "assetRoute": "hcc",
+    "assetTicker": "HCC"
+  },
+  {
+    "assetRoute": "hcci",
+    "assetTicker": "HCCI"
+  },
+  {
+    "assetRoute": "hci",
+    "assetTicker": "HCI"
+  },
+  {
+    "assetRoute": "hckt",
+    "assetTicker": "HCKT"
+  },
+  {
+    "assetRoute": "hcsg",
+    "assetTicker": "HCSG"
+  },
+  {
+    "assetRoute": "hear",
+    "assetTicker": "HEAR"
+  },
+  {
+    "assetRoute": "hees",
+    "assetTicker": "HEES"
+  },
+  {
+    "assetRoute": "hele",
+    "assetTicker": "HELE"
+  },
+  {
+    "assetRoute": "hffg",
+    "assetTicker": "HFFG"
+  },
+  {
+    "assetRoute": "hfwa",
+    "assetTicker": "HFWA"
+  },
+  {
+    "assetRoute": "hgen",
+    "assetTicker": "HGEN"
+  },
+  {
+    "assetRoute": "hgv",
+    "assetTicker": "HGV"
+  },
+  {
+    "assetRoute": "hi",
+    "assetTicker": "HI"
+  },
+  {
+    "assetRoute": "hibb",
+    "assetTicker": "HIBB"
+  },
+  {
+    "assetRoute": "hifs",
+    "assetTicker": "HIFS"
+  },
+  {
+    "assetRoute": "hl",
+    "assetTicker": "HL"
+  },
+  {
+    "assetRoute": "hli",
+    "assetTicker": "HLI"
+  },
+  {
+    "assetRoute": "hlio",
+    "assetTicker": "HLIO"
+  },
+  {
+    "assetRoute": "hlit",
+    "assetTicker": "HLIT"
+  },
+  {
+    "assetRoute": "hlne",
+    "assetTicker": "HLNE"
+  },
+  {
+    "assetRoute": "hlth",
+    "assetTicker": "HLTH"
+  },
+  {
+    "assetRoute": "hlx",
+    "assetTicker": "HLX"
+  },
+  {
+    "assetRoute": "hmn",
+    "assetTicker": "HMN"
+  },
+  {
+    "assetRoute": "hmpt",
+    "assetTicker": "HMPT"
+  },
+  {
+    "assetRoute": "hmst",
+    "assetTicker": "HMST"
+  },
+  {
+    "assetRoute": "hmtv",
+    "assetTicker": "HMTV"
+  },
+  {
+    "assetRoute": "hngr",
+    "assetTicker": "HNGR"
+  },
+  {
+    "assetRoute": "hni",
+    "assetTicker": "HNI"
+  },
+  {
+    "assetRoute": "hnst",
+    "assetTicker": "HNST"
+  },
+  {
+    "assetRoute": "hoft",
+    "assetTicker": "HOFT"
+  },
+  {
+    "assetRoute": "hofv",
+    "assetTicker": "HOFV"
+  },
+  {
+    "assetRoute": "homb",
+    "assetTicker": "HOMB"
+  },
+  {
+    "assetRoute": "hone",
+    "assetTicker": "HONE"
+  },
+  {
+    "assetRoute": "hook",
+    "assetTicker": "HOOK"
+  },
+  {
+    "assetRoute": "hope",
+    "assetTicker": "HOPE"
+  },
+  {
+    "assetRoute": "hov",
+    "assetTicker": "HOV"
+  },
+  {
+    "assetRoute": "howl",
+    "assetTicker": "HOWL"
+  },
+  {
+    "assetRoute": "hp",
+    "assetTicker": "HP"
+  },
+  {
+    "assetRoute": "hpk",
+    "assetTicker": "HPK"
+  },
+  {
+    "assetRoute": "hqi",
+    "assetTicker": "HQI"
+  },
+  {
+    "assetRoute": "hqy",
+    "assetTicker": "HQY"
+  },
+  {
+    "assetRoute": "hr",
+    "assetTicker": "HR"
+  },
+  {
+    "assetRoute": "hri",
+    "assetTicker": "HRI"
+  },
+  {
+    "assetRoute": "hrmy",
+    "assetTicker": "HRMY"
+  },
+  {
+    "assetRoute": "hrt",
+    "assetTicker": "HRT"
+  },
+  {
+    "assetRoute": "hrtg",
+    "assetTicker": "HRTG"
+  },
+  {
+    "assetRoute": "hrtx",
+    "assetTicker": "HRTX"
+  },
+  {
+    "assetRoute": "hsc",
+    "assetTicker": "HSC"
+  },
+  {
+    "assetRoute": "hsii",
+    "assetTicker": "HSII"
+  },
+  {
+    "assetRoute": "hska",
+    "assetTicker": "HSKA"
+  },
+  {
+    "assetRoute": "hstm",
+    "assetTicker": "HSTM"
+  },
+  {
+    "assetRoute": "ht",
+    "assetTicker": "HT"
+  },
+  {
+    "assetRoute": "htbi",
+    "assetTicker": "HTBI"
+  },
+  {
+    "assetRoute": "htbk",
+    "assetTicker": "HTBK"
+  },
+  {
+    "assetRoute": "hth",
+    "assetTicker": "HTH"
+  },
+  {
+    "assetRoute": "htld",
+    "assetTicker": "HTLD"
+  },
+  {
+    "assetRoute": "htlf",
+    "assetTicker": "HTLF"
+  },
+  {
+    "assetRoute": "hubg",
+    "assetTicker": "HUBG"
+  },
+  {
+    "assetRoute": "hurn",
+    "assetTicker": "HURN"
+  },
+  {
+    "assetRoute": "hvt",
+    "assetTicker": "HVT"
+  },
+  {
+    "assetRoute": "hwc",
+    "assetTicker": "HWC"
+  },
+  {
+    "assetRoute": "hwkn",
+    "assetTicker": "HWKN"
+  },
+  {
+    "assetRoute": "hy",
+    "assetTicker": "HY"
+  },
+  {
+    "assetRoute": "hyfm",
+    "assetTicker": "HYFM"
+  },
+  {
+    "assetRoute": "hyln",
+    "assetTicker": "HYLN"
+  },
+  {
+    "assetRoute": "hyre",
+    "assetTicker": "HYRE"
+  },
+  {
+    "assetRoute": "hzo",
+    "assetTicker": "HZO"
+  },
+  {
+    "assetRoute": "ias",
+    "assetTicker": "IAS"
+  },
+  {
+    "assetRoute": "ibcp",
+    "assetTicker": "IBCP"
+  },
+  {
+    "assetRoute": "ibex",
+    "assetTicker": "IBEX"
+  },
+  {
+    "assetRoute": "ibio",
+    "assetTicker": "IBIO"
+  },
+  {
+    "assetRoute": "iboc",
+    "assetTicker": "IBOC"
+  },
+  {
+    "assetRoute": "ibp",
+    "assetTicker": "IBP"
+  },
+  {
+    "assetRoute": "ibrx",
+    "assetTicker": "IBRX"
+  },
+  {
+    "assetRoute": "ibtx",
+    "assetTicker": "IBTX"
+  },
+  {
+    "assetRoute": "icad",
+    "assetTicker": "ICAD"
+  },
+  {
+    "assetRoute": "icfi",
+    "assetTicker": "ICFI"
+  },
+  {
+    "assetRoute": "ichr",
+    "assetTicker": "ICHR"
+  },
+  {
+    "assetRoute": "icpt",
+    "assetTicker": "ICPT"
+  },
+  {
+    "assetRoute": "icvx",
+    "assetTicker": "ICVX"
+  },
+  {
+    "assetRoute": "idcc",
+    "assetTicker": "IDCC"
+  },
+  {
+    "assetRoute": "idex",
+    "assetTicker": "IDEX"
+  },
+  {
+    "assetRoute": "idt",
+    "assetTicker": "IDT"
+  },
+  {
+    "assetRoute": "idya",
+    "assetTicker": "IDYA"
+  },
+  {
+    "assetRoute": "iea",
+    "assetTicker": "IEA"
+  },
+  {
+    "assetRoute": "iesc",
+    "assetTicker": "IESC"
+  },
+  {
+    "assetRoute": "igms",
+    "assetTicker": "IGMS"
+  },
+  {
+    "assetRoute": "igt",
+    "assetTicker": "IGT"
+  },
+  {
+    "assetRoute": "ihrt",
+    "assetTicker": "IHRT"
+  },
+  {
+    "assetRoute": "iiin",
+    "assetTicker": "IIIN"
+  },
+  {
+    "assetRoute": "iiiv",
+    "assetTicker": "IIIV"
+  },
+  {
+    "assetRoute": "iipr",
+    "assetTicker": "IIPR"
+  },
+  {
+    "assetRoute": "iivi",
+    "assetTicker": "IIVI"
+  },
+  {
+    "assetRoute": "ikna",
+    "assetTicker": "IKNA"
+  },
+  {
+    "assetRoute": "ilpt",
+    "assetTicker": "ILPT"
+  },
+  {
+    "assetRoute": "imax",
+    "assetTicker": "IMAX"
+  },
+  {
+    "assetRoute": "imgn",
+    "assetTicker": "IMGN"
+  },
+  {
+    "assetRoute": "imgo",
+    "assetTicker": "IMGO"
+  },
+  {
+    "assetRoute": "imkta",
+    "assetTicker": "IMKTA"
+  },
+  {
+    "assetRoute": "impl",
+    "assetTicker": "IMPL"
+  },
+  {
+    "assetRoute": "imrx",
+    "assetTicker": "IMRX"
+  },
+  {
+    "assetRoute": "imux",
+    "assetTicker": "IMUX"
+  },
+  {
+    "assetRoute": "imvt",
+    "assetTicker": "IMVT"
+  },
+  {
+    "assetRoute": "imxi",
+    "assetTicker": "IMXI"
+  },
+  {
+    "assetRoute": "inbk",
+    "assetTicker": "INBK"
+  },
+  {
+    "assetRoute": "inbx",
+    "assetTicker": "INBX"
+  },
+  {
+    "assetRoute": "indb",
+    "assetTicker": "INDB"
+  },
+  {
+    "assetRoute": "indt",
+    "assetTicker": "INDT"
+  },
+  {
+    "assetRoute": "infi",
+    "assetTicker": "INFI"
+  },
+  {
+    "assetRoute": "infn",
+    "assetTicker": "INFN"
+  },
+  {
+    "assetRoute": "infu",
+    "assetTicker": "INFU"
+  },
+  {
+    "assetRoute": "ingn",
+    "assetTicker": "INGN"
+  },
+  {
+    "assetRoute": "inn",
+    "assetTicker": "INN"
+  },
+  {
+    "assetRoute": "innv",
+    "assetTicker": "INNV"
+  },
+  {
+    "assetRoute": "ino",
+    "assetTicker": "INO"
+  },
+  {
+    "assetRoute": "insg",
+    "assetTicker": "INSG"
+  },
+  {
+    "assetRoute": "insm",
+    "assetTicker": "INSM"
+  },
+  {
+    "assetRoute": "insp",
+    "assetTicker": "INSP"
+  },
+  {
+    "assetRoute": "inst",
+    "assetTicker": "INST"
+  },
+  {
+    "assetRoute": "insw",
+    "assetTicker": "INSW"
+  },
+  {
+    "assetRoute": "int",
+    "assetTicker": "INT"
+  },
+  {
+    "assetRoute": "inta",
+    "assetTicker": "INTA"
+  },
+  {
+    "assetRoute": "inva",
+    "assetTicker": "INVA"
+  },
+  {
+    "assetRoute": "inve",
+    "assetTicker": "INVE"
+  },
+  {
+    "assetRoute": "inzy",
+    "assetTicker": "INZY"
+  },
+  {
+    "assetRoute": "iosp",
+    "assetTicker": "IOSP"
+  },
+  {
+    "assetRoute": "ipar",
+    "assetTicker": "IPAR"
+  },
+  {
+    "assetRoute": "ipi",
+    "assetTicker": "IPI"
+  },
+  {
+    "assetRoute": "ipsc",
+    "assetTicker": "IPSC"
+  },
+  {
+    "assetRoute": "irbt",
+    "assetTicker": "IRBT"
+  },
+  {
+    "assetRoute": "irdm",
+    "assetTicker": "IRDM"
+  },
+  {
+    "assetRoute": "irmd",
+    "assetTicker": "IRMD"
+  },
+  {
+    "assetRoute": "irt",
+    "assetTicker": "IRT"
+  },
+  {
+    "assetRoute": "irtc",
+    "assetTicker": "IRTC"
+  },
+  {
+    "assetRoute": "irwd",
+    "assetTicker": "IRWD"
+  },
+  {
+    "assetRoute": "isee",
+    "assetTicker": "ISEE"
+  },
+  {
+    "assetRoute": "iso",
+    "assetTicker": "ISO"
+  },
+  {
+    "assetRoute": "itci",
+    "assetTicker": "ITCI"
+  },
+  {
+    "assetRoute": "itgr",
+    "assetTicker": "ITGR"
+  },
+  {
+    "assetRoute": "iti",
+    "assetTicker": "ITI"
+  },
+  {
+    "assetRoute": "itic",
+    "assetTicker": "ITIC"
+  },
+  {
+    "assetRoute": "itos",
+    "assetTicker": "ITOS"
+  },
+  {
+    "assetRoute": "itri",
+    "assetTicker": "ITRI"
+  },
+  {
+    "assetRoute": "ivc",
+    "assetTicker": "IVC"
+  },
+  {
+    "assetRoute": "ivr",
+    "assetTicker": "IVR"
+  },
+  {
+    "assetRoute": "jack",
+    "assetTicker": "JACK"
+  },
+  {
+    "assetRoute": "janx",
+    "assetTicker": "JANX"
+  },
+  {
+    "assetRoute": "jbss",
+    "assetTicker": "JBSS"
+  },
+  {
+    "assetRoute": "jbt",
+    "assetTicker": "JBT"
+  },
+  {
+    "assetRoute": "jeld",
+    "assetTicker": "JELD"
+  },
+  {
+    "assetRoute": "jjsf",
+    "assetTicker": "JJSF"
+  },
+  {
+    "assetRoute": "jnce",
+    "assetTicker": "JNCE"
+  },
+  {
+    "assetRoute": "joan",
+    "assetTicker": "JOAN"
+  },
+  {
+    "assetRoute": "joe",
+    "assetTicker": "JOE"
+  },
+  {
+    "assetRoute": "jout",
+    "assetTicker": "JOUT"
+  },
+  {
+    "assetRoute": "jrvr",
+    "assetTicker": "JRVR"
+  },
+  {
+    "assetRoute": "jynt",
+    "assetTicker": "JYNT"
+  },
+  {
+    "assetRoute": "kai",
+    "assetTicker": "KAI"
+  },
+  {
+    "assetRoute": "kala",
+    "assetTicker": "KALA"
+  },
+  {
+    "assetRoute": "kalu",
+    "assetTicker": "KALU"
+  },
+  {
+    "assetRoute": "kalv",
+    "assetTicker": "KALV"
+  },
+  {
+    "assetRoute": "kamn",
+    "assetTicker": "KAMN"
+  },
+  {
+    "assetRoute": "kar",
+    "assetTicker": "KAR"
+  },
+  {
+    "assetRoute": "kbal",
+    "assetTicker": "KBAL"
+  },
+  {
+    "assetRoute": "kbh",
+    "assetTicker": "KBH"
+  },
+  {
+    "assetRoute": "kbr",
+    "assetTicker": "KBR"
+  },
+  {
+    "assetRoute": "kdny",
+    "assetTicker": "KDNY"
+  },
+  {
+    "assetRoute": "ke",
+    "assetTicker": "KE"
+  },
+  {
+    "assetRoute": "kelya",
+    "assetTicker": "KELYA"
+  },
+  {
+    "assetRoute": "kfrc",
+    "assetTicker": "KFRC"
+  },
+  {
+    "assetRoute": "kfy",
+    "assetTicker": "KFY"
+  },
+  {
+    "assetRoute": "kids",
+    "assetTicker": "KIDS"
+  },
+  {
+    "assetRoute": "kirk",
+    "assetTicker": "KIRK"
+  },
+  {
+    "assetRoute": "kldo",
+    "assetTicker": "KLDO"
+  },
+  {
+    "assetRoute": "klic",
+    "assetTicker": "KLIC"
+  },
+  {
+    "assetRoute": "kltr",
+    "assetTicker": "KLTR"
+  },
+  {
+    "assetRoute": "kmph",
+    "assetTicker": "KMPH"
+  },
+  {
+    "assetRoute": "kmt",
+    "assetTicker": "KMT"
+  },
+  {
+    "assetRoute": "kn",
+    "assetTicker": "KN"
+  },
+  {
+    "assetRoute": "knsa",
+    "assetTicker": "KNSA"
+  },
+  {
+    "assetRoute": "knsl",
+    "assetTicker": "KNSL"
+  },
+  {
+    "assetRoute": "knte",
+    "assetTicker": "KNTE"
+  },
+  {
+    "assetRoute": "kntk",
+    "assetTicker": "KNTK"
+  },
+  {
+    "assetRoute": "kod",
+    "assetTicker": "KOD"
+  },
+  {
+    "assetRoute": "kodk",
+    "assetTicker": "KODK"
+  },
+  {
+    "assetRoute": "kop",
+    "assetTicker": "KOP"
+  },
+  {
+    "assetRoute": "kopn",
+    "assetTicker": "KOPN"
+  },
+  {
+    "assetRoute": "kos",
+    "assetTicker": "KOS"
+  },
+  {
+    "assetRoute": "kpti",
+    "assetTicker": "KPTI"
+  },
+  {
+    "assetRoute": "kref",
+    "assetTicker": "KREF"
+  },
+  {
+    "assetRoute": "krg",
+    "assetTicker": "KRG"
+  },
+  {
+    "assetRoute": "krny",
+    "assetTicker": "KRNY"
+  },
+  {
+    "assetRoute": "kro",
+    "assetTicker": "KRO"
+  },
+  {
+    "assetRoute": "kron",
+    "assetTicker": "KRON"
+  },
+  {
+    "assetRoute": "kros",
+    "assetTicker": "KROS"
+  },
+  {
+    "assetRoute": "krt",
+    "assetTicker": "KRT"
+  },
+  {
+    "assetRoute": "krtx",
+    "assetTicker": "KRTX"
+  },
+  {
+    "assetRoute": "krus",
+    "assetTicker": "KRUS"
+  },
+  {
+    "assetRoute": "krys",
+    "assetTicker": "KRYS"
+  },
+  {
+    "assetRoute": "ktb",
+    "assetTicker": "KTB"
+  },
+  {
+    "assetRoute": "ktos",
+    "assetTicker": "KTOS"
+  },
+  {
+    "assetRoute": "kura",
+    "assetTicker": "KURA"
+  },
+  {
+    "assetRoute": "kvhi",
+    "assetTicker": "KVHI"
+  },
+  {
+    "assetRoute": "kw",
+    "assetTicker": "KW"
+  },
+  {
+    "assetRoute": "kwr",
+    "assetTicker": "KWR"
+  },
+  {
+    "assetRoute": "kymr",
+    "assetTicker": "KYMR"
+  },
+  {
+    "assetRoute": "kzr",
+    "assetTicker": "KZR"
+  },
+  {
+    "assetRoute": "lab",
+    "assetTicker": "LAB"
+  },
+  {
+    "assetRoute": "labp",
+    "assetTicker": "LABP"
+  },
+  {
+    "assetRoute": "ladr",
+    "assetTicker": "LADR"
+  },
+  {
+    "assetRoute": "lanc",
+    "assetTicker": "LANC"
+  },
+  {
+    "assetRoute": "land",
+    "assetTicker": "LAND"
+  },
+  {
+    "assetRoute": "lasr",
+    "assetTicker": "LASR"
+  },
+  {
+    "assetRoute": "laur",
+    "assetTicker": "LAUR"
+  },
+  {
+    "assetRoute": "law",
+    "assetTicker": "LAW"
+  },
+  {
+    "assetRoute": "lazy",
+    "assetTicker": "LAZY"
+  },
+  {
+    "assetRoute": "lbai",
+    "assetTicker": "LBAI"
+  },
+  {
+    "assetRoute": "lbc",
+    "assetTicker": "LBC"
+  },
+  {
+    "assetRoute": "lbrt",
+    "assetTicker": "LBRT"
+  },
+  {
+    "assetRoute": "lc",
+    "assetTicker": "LC"
+  },
+  {
+    "assetRoute": "lcii",
+    "assetTicker": "LCII"
+  },
+  {
+    "assetRoute": "lctx",
+    "assetTicker": "LCTX"
+  },
+  {
+    "assetRoute": "lcut",
+    "assetTicker": "LCUT"
+  },
+  {
+    "assetRoute": "le",
+    "assetTicker": "LE"
+  },
+  {
+    "assetRoute": "legh",
+    "assetTicker": "LEGH"
+  },
+  {
+    "assetRoute": "leu",
+    "assetTicker": "LEU"
+  },
+  {
+    "assetRoute": "lfst",
+    "assetTicker": "LFST"
+  },
+  {
+    "assetRoute": "lgfa",
+    "assetTicker": "LGFA"
+  },
+  {
+    "assetRoute": "lgfb",
+    "assetTicker": "LGFB"
+  },
+  {
+    "assetRoute": "lgih",
+    "assetTicker": "LGIH"
+  },
+  {
+    "assetRoute": "lgnd",
+    "assetTicker": "LGND"
+  },
+  {
+    "assetRoute": "lhcg",
+    "assetTicker": "LHCG"
+  },
+  {
+    "assetRoute": "lila",
+    "assetTicker": "LILA"
+  },
+  {
+    "assetRoute": "lilak",
+    "assetTicker": "LILAK"
+  },
+  {
+    "assetRoute": "lind",
+    "assetTicker": "LIND"
+  },
+  {
+    "assetRoute": "livn",
+    "assetTicker": "LIVN"
+  },
+  {
+    "assetRoute": "lkfn",
+    "assetTicker": "LKFN"
+  },
+  {
+    "assetRoute": "ll",
+    "assetTicker": "LL"
+  },
+  {
+    "assetRoute": "llnw",
+    "assetTicker": "LLNW"
+  },
+  {
+    "assetRoute": "lmat",
+    "assetTicker": "LMAT"
+  },
+  {
+    "assetRoute": "lmnr",
+    "assetTicker": "LMNR"
+  },
+  {
+    "assetRoute": "lndc",
+    "assetTicker": "LNDC"
+  },
+  {
+    "assetRoute": "lnn",
+    "assetTicker": "LNN"
+  },
+  {
+    "assetRoute": "lnth",
+    "assetTicker": "LNTH"
+  },
+  {
+    "assetRoute": "lob",
+    "assetTicker": "LOB"
+  },
+  {
+    "assetRoute": "loco",
+    "assetTicker": "LOCO"
+  },
+  {
+    "assetRoute": "lotz",
+    "assetTicker": "LOTZ"
+  },
+  {
+    "assetRoute": "love",
+    "assetTicker": "LOVE"
+  },
+  {
+    "assetRoute": "lpg",
+    "assetTicker": "LPG"
+  },
+  {
+    "assetRoute": "lpi",
+    "assetTicker": "LPI"
+  },
+  {
+    "assetRoute": "lpro",
+    "assetTicker": "LPRO"
+  },
+  {
+    "assetRoute": "lpsn",
+    "assetTicker": "LPSN"
+  },
+  {
+    "assetRoute": "lqdt",
+    "assetTicker": "LQDT"
+  },
+  {
+    "assetRoute": "lrn",
+    "assetTicker": "LRN"
+  },
+  {
+    "assetRoute": "lscc",
+    "assetTicker": "LSCC"
+  },
+  {
+    "assetRoute": "lsea",
+    "assetTicker": "LSEA"
+  },
+  {
+    "assetRoute": "lsf",
+    "assetTicker": "LSF"
+  },
+  {
+    "assetRoute": "ltc",
+    "assetTicker": "LTC"
+  },
+  {
+    "assetRoute": "lth",
+    "assetTicker": "LTH"
+  },
+  {
+    "assetRoute": "lthm",
+    "assetTicker": "LTHM"
+  },
+  {
+    "assetRoute": "ltrpa",
+    "assetTicker": "LTRPA"
+  },
+  {
+    "assetRoute": "luna",
+    "assetTicker": "LUNA"
+  },
+  {
+    "assetRoute": "lung",
+    "assetTicker": "LUNG"
+  },
+  {
+    "assetRoute": "lvlu",
+    "assetTicker": "LVLU"
+  },
+  {
+    "assetRoute": "lvo",
+    "assetTicker": "LVO"
+  },
+  {
+    "assetRoute": "lxfr",
+    "assetTicker": "LXFR"
+  },
+  {
+    "assetRoute": "lxp",
+    "assetTicker": "LXP"
+  },
+  {
+    "assetRoute": "lxrx",
+    "assetTicker": "LXRX"
+  },
+  {
+    "assetRoute": "lyel",
+    "assetTicker": "LYEL"
+  },
+  {
+    "assetRoute": "lzb",
+    "assetTicker": "LZB"
+  },
+  {
+    "assetRoute": "m",
+    "assetTicker": "M"
+  },
+  {
+    "assetRoute": "mac",
+    "assetTicker": "MAC"
+  },
+  {
+    "assetRoute": "mant",
+    "assetTicker": "MANT"
+  },
+  {
+    "assetRoute": "mara",
+    "assetTicker": "MARA"
+  },
+  {
+    "assetRoute": "mass",
+    "assetTicker": "MASS"
+  },
+  {
+    "assetRoute": "matw",
+    "assetTicker": "MATW"
+  },
+  {
+    "assetRoute": "matx",
+    "assetTicker": "MATX"
+  },
+  {
+    "assetRoute": "max",
+    "assetTicker": "MAX"
+  },
+  {
+    "assetRoute": "maxr",
+    "assetTicker": "MAXR"
+  },
+  {
+    "assetRoute": "mbi",
+    "assetTicker": "MBI"
+  },
+  {
+    "assetRoute": "mbii",
+    "assetTicker": "MBII"
+  },
+  {
+    "assetRoute": "mbin",
+    "assetTicker": "MBIN"
+  },
+  {
+    "assetRoute": "mbio",
+    "assetTicker": "MBIO"
+  },
+  {
+    "assetRoute": "mbuu",
+    "assetTicker": "MBUU"
+  },
+  {
+    "assetRoute": "mbwm",
+    "assetTicker": "MBWM"
+  },
+  {
+    "assetRoute": "mc",
+    "assetTicker": "MC"
+  },
+  {
+    "assetRoute": "mcb",
+    "assetTicker": "MCB"
+  },
+  {
+    "assetRoute": "mcbc",
+    "assetTicker": "MCBC"
+  },
+  {
+    "assetRoute": "mcbs",
+    "assetTicker": "MCBS"
+  },
+  {
+    "assetRoute": "mcft",
+    "assetTicker": "MCFT"
+  },
+  {
+    "assetRoute": "mcrb",
+    "assetTicker": "MCRB"
+  },
+  {
+    "assetRoute": "mcri",
+    "assetTicker": "MCRI"
+  },
+  {
+    "assetRoute": "mcs",
+    "assetTicker": "MCS"
+  },
+  {
+    "assetRoute": "md",
+    "assetTicker": "MD"
+  },
+  {
+    "assetRoute": "mdc",
+    "assetTicker": "MDC"
+  },
+  {
+    "assetRoute": "mdgl",
+    "assetTicker": "MDGL"
+  },
+  {
+    "assetRoute": "mdrx",
+    "assetTicker": "MDRX"
+  },
+  {
+    "assetRoute": "mdvl",
+    "assetTicker": "MDVL"
+  },
+  {
+    "assetRoute": "mdxg",
+    "assetTicker": "MDXG"
+  },
+  {
+    "assetRoute": "mec",
+    "assetTicker": "MEC"
+  },
+  {
+    "assetRoute": "med",
+    "assetTicker": "MED"
+  },
+  {
+    "assetRoute": "medp",
+    "assetTicker": "MEDP"
+  },
+  {
+    "assetRoute": "meg",
+    "assetTicker": "MEG"
+  },
+  {
+    "assetRoute": "mei",
+    "assetTicker": "MEI"
+  },
+  {
+    "assetRoute": "meip",
+    "assetTicker": "MEIP"
+  },
+  {
+    "assetRoute": "mesa",
+    "assetTicker": "MESA"
+  },
+  {
+    "assetRoute": "mfa",
+    "assetTicker": "MFA"
+  },
+  {
+    "assetRoute": "mg",
+    "assetTicker": "MG"
+  },
+  {
+    "assetRoute": "mgee",
+    "assetTicker": "MGEE"
+  },
+  {
+    "assetRoute": "mgi",
+    "assetTicker": "MGI"
+  },
+  {
+    "assetRoute": "mgni",
+    "assetTicker": "MGNI"
+  },
+  {
+    "assetRoute": "mgnx",
+    "assetTicker": "MGNX"
+  },
+  {
+    "assetRoute": "mgpi",
+    "assetTicker": "MGPI"
+  },
+  {
+    "assetRoute": "mgrc",
+    "assetTicker": "MGRC"
+  },
+  {
+    "assetRoute": "mgta",
+    "assetTicker": "MGTA"
+  },
+  {
+    "assetRoute": "mgtx",
+    "assetTicker": "MGTX"
+  },
+  {
+    "assetRoute": "mgy",
+    "assetTicker": "MGY"
+  },
+  {
+    "assetRoute": "mhld",
+    "assetTicker": "MHLD"
+  },
+  {
+    "assetRoute": "mho",
+    "assetTicker": "MHO"
+  },
+  {
+    "assetRoute": "mile",
+    "assetTicker": "MILE"
+  },
+  {
+    "assetRoute": "mime",
+    "assetTicker": "MIME"
+  },
+  {
+    "assetRoute": "mirm",
+    "assetTicker": "MIRM"
+  },
+  {
+    "assetRoute": "mitk",
+    "assetTicker": "MITK"
+  },
+  {
+    "assetRoute": "mlab",
+    "assetTicker": "MLAB"
+  },
+  {
+    "assetRoute": "mli",
+    "assetTicker": "MLI"
+  },
+  {
+    "assetRoute": "mlkn",
+    "assetTicker": "MLKN"
+  },
+  {
+    "assetRoute": "mlnk",
+    "assetTicker": "MLNK"
+  },
+  {
+    "assetRoute": "mlr",
+    "assetTicker": "MLR"
+  },
+  {
+    "assetRoute": "mmat",
+    "assetTicker": "MMAT"
+  },
+  {
+    "assetRoute": "mmi",
+    "assetTicker": "MMI"
+  },
+  {
+    "assetRoute": "mms",
+    "assetTicker": "MMS"
+  },
+  {
+    "assetRoute": "mmsi",
+    "assetTicker": "MMSI"
+  },
+  {
+    "assetRoute": "mnkd",
+    "assetTicker": "MNKD"
+  },
+  {
+    "assetRoute": "mnmd",
+    "assetTicker": "MNMD"
+  },
+  {
+    "assetRoute": "mnrl",
+    "assetTicker": "MNRL"
+  },
+  {
+    "assetRoute": "mnro",
+    "assetTicker": "MNRO"
+  },
+  {
+    "assetRoute": "mntv",
+    "assetTicker": "MNTV"
+  },
+  {
+    "assetRoute": "mod",
+    "assetTicker": "MOD"
+  },
+  {
+    "assetRoute": "modn",
+    "assetTicker": "MODN"
+  },
+  {
+    "assetRoute": "modv",
+    "assetTicker": "MODV"
+  },
+  {
+    "assetRoute": "mofg",
+    "assetTicker": "MOFG"
+  },
+  {
+    "assetRoute": "moga",
+    "assetTicker": "MOGA"
+  },
+  {
+    "assetRoute": "morf",
+    "assetTicker": "MORF"
+  },
+  {
+    "assetRoute": "mov",
+    "assetTicker": "MOV"
+  },
+  {
+    "assetRoute": "mp",
+    "assetTicker": "MP"
+  },
+  {
+    "assetRoute": "mpaa",
+    "assetTicker": "MPAA"
+  },
+  {
+    "assetRoute": "mpb",
+    "assetTicker": "MPB"
+  },
+  {
+    "assetRoute": "mpln",
+    "assetTicker": "MPLN"
+  },
+  {
+    "assetRoute": "mpx",
+    "assetTicker": "MPX"
+  },
+  {
+    "assetRoute": "mrc",
+    "assetTicker": "MRC"
+  },
+  {
+    "assetRoute": "mrns",
+    "assetTicker": "MRNS"
+  },
+  {
+    "assetRoute": "mrsn",
+    "assetTicker": "MRSN"
+  },
+  {
+    "assetRoute": "mrtn",
+    "assetTicker": "MRTN"
+  },
+  {
+    "assetRoute": "msbi",
+    "assetTicker": "MSBI"
+  },
+  {
+    "assetRoute": "msex",
+    "assetTicker": "MSEX"
+  },
+  {
+    "assetRoute": "msge",
+    "assetTicker": "MSGE"
+  },
+  {
+    "assetRoute": "mstr",
+    "assetTicker": "MSTR"
+  },
+  {
+    "assetRoute": "mtdr",
+    "assetTicker": "MTDR"
+  },
+  {
+    "assetRoute": "mtem",
+    "assetTicker": "MTEM"
+  },
+  {
+    "assetRoute": "mth",
+    "assetTicker": "MTH"
+  },
+  {
+    "assetRoute": "mtor",
+    "assetTicker": "MTOR"
+  },
+  {
+    "assetRoute": "mtrn",
+    "assetTicker": "MTRN"
+  },
+  {
+    "assetRoute": "mtrx",
+    "assetTicker": "MTRX"
+  },
+  {
+    "assetRoute": "mtsi",
+    "assetTicker": "MTSI"
+  },
+  {
+    "assetRoute": "mtw",
+    "assetTicker": "MTW"
+  },
+  {
+    "assetRoute": "mtx",
+    "assetTicker": "MTX"
+  },
+  {
+    "assetRoute": "mur",
+    "assetTicker": "MUR"
+  },
+  {
+    "assetRoute": "musa",
+    "assetTicker": "MUSA"
+  },
+  {
+    "assetRoute": "mvbf",
+    "assetTicker": "MVBF"
+  },
+  {
+    "assetRoute": "mvis",
+    "assetTicker": "MVIS"
+  },
+  {
+    "assetRoute": "mwa",
+    "assetTicker": "MWA"
+  },
+  {
+    "assetRoute": "mxct",
+    "assetTicker": "MXCT"
+  },
+  {
+    "assetRoute": "mxl",
+    "assetTicker": "MXL"
+  },
+  {
+    "assetRoute": "mye",
+    "assetTicker": "MYE"
+  },
+  {
+    "assetRoute": "mygn",
+    "assetTicker": "MYGN"
+  },
+  {
+    "assetRoute": "myrg",
+    "assetTicker": "MYRG"
+  },
+  {
+    "assetRoute": "napa",
+    "assetTicker": "NAPA"
+  },
+  {
+    "assetRoute": "nari",
+    "assetTicker": "NARI"
+  },
+  {
+    "assetRoute": "nat",
+    "assetTicker": "NAT"
+  },
+  {
+    "assetRoute": "nath",
+    "assetTicker": "NATH"
+  },
+  {
+    "assetRoute": "natr",
+    "assetTicker": "NATR"
+  },
+  {
+    "assetRoute": "navi",
+    "assetTicker": "NAVI"
+  },
+  {
+    "assetRoute": "nbev",
+    "assetTicker": "NBEV"
+  },
+  {
+    "assetRoute": "nbhc",
+    "assetTicker": "NBHC"
+  },
+  {
+    "assetRoute": "nbr",
+    "assetTicker": "NBR"
+  },
+  {
+    "assetRoute": "nbtb",
+    "assetTicker": "NBTB"
+  },
+  {
+    "assetRoute": "ncbs",
+    "assetTicker": "NCBS"
+  },
+  {
+    "assetRoute": "ncmi",
+    "assetTicker": "NCMI"
+  },
+  {
+    "assetRoute": "ndls",
+    "assetTicker": "NDLS"
+  },
+  {
+    "assetRoute": "neo",
+    "assetTicker": "NEO"
+  },
+  {
+    "assetRoute": "neog",
+    "assetTicker": "NEOG"
+  },
+  {
+    "assetRoute": "nesr",
+    "assetTicker": "NESR"
+  },
+  {
+    "assetRoute": "nex",
+    "assetTicker": "NEX"
+  },
+  {
+    "assetRoute": "nexi",
+    "assetTicker": "NEXI"
+  },
+  {
+    "assetRoute": "nfbk",
+    "assetTicker": "NFBK"
+  },
+  {
+    "assetRoute": "ng",
+    "assetTicker": "NG"
+  },
+  {
+    "assetRoute": "ngm",
+    "assetTicker": "NGM"
+  },
+  {
+    "assetRoute": "ngms",
+    "assetTicker": "NGMS"
+  },
+  {
+    "assetRoute": "ngvc",
+    "assetTicker": "NGVC"
+  },
+  {
+    "assetRoute": "ngvt",
+    "assetTicker": "NGVT"
+  },
+  {
+    "assetRoute": "nh",
+    "assetTicker": "NH"
+  },
+  {
+    "assetRoute": "nhc",
+    "assetTicker": "NHC"
+  },
+  {
+    "assetRoute": "nhi",
+    "assetTicker": "NHI"
+  },
+  {
+    "assetRoute": "njr",
+    "assetTicker": "NJR"
+  },
+  {
+    "assetRoute": "nkla",
+    "assetTicker": "NKLA"
+  },
+  {
+    "assetRoute": "nktx",
+    "assetTicker": "NKTX"
+  },
+  {
+    "assetRoute": "nl",
+    "assetTicker": "NL"
+  },
+  {
+    "assetRoute": "nls",
+    "assetTicker": "NLS"
+  },
+  {
+    "assetRoute": "nltx",
+    "assetTicker": "NLTX"
+  },
+  {
+    "assetRoute": "nmih",
+    "assetTicker": "NMIH"
+  },
+  {
+    "assetRoute": "nmrk",
+    "assetTicker": "NMRK"
+  },
+  {
+    "assetRoute": "nmtr",
+    "assetTicker": "NMTR"
+  },
+  {
+    "assetRoute": "nnbr",
+    "assetTicker": "NNBR"
+  },
+  {
+    "assetRoute": "nni",
+    "assetTicker": "NNI"
+  },
+  {
+    "assetRoute": "nodk",
+    "assetTicker": "NODK"
+  },
+  {
+    "assetRoute": "nog",
+    "assetTicker": "NOG"
+  },
+  {
+    "assetRoute": "notv",
+    "assetTicker": "NOTV"
+  },
+  {
+    "assetRoute": "nova",
+    "assetTicker": "NOVA"
+  },
+  {
+    "assetRoute": "novt",
+    "assetTicker": "NOVT"
+  },
+  {
+    "assetRoute": "np",
+    "assetTicker": "NP"
+  },
+  {
+    "assetRoute": "npce",
+    "assetTicker": "NPCE"
+  },
+  {
+    "assetRoute": "npk",
+    "assetTicker": "NPK"
+  },
+  {
+    "assetRoute": "npo",
+    "assetTicker": "NPO"
+  },
+  {
+    "assetRoute": "nptn",
+    "assetTicker": "NPTN"
+  },
+  {
+    "assetRoute": "nr",
+    "assetTicker": "NR"
+  },
+  {
+    "assetRoute": "nrc",
+    "assetTicker": "NRC"
+  },
+  {
+    "assetRoute": "nrim",
+    "assetTicker": "NRIM"
+  },
+  {
+    "assetRoute": "nrix",
+    "assetTicker": "NRIX"
+  },
+  {
+    "assetRoute": "nsa",
+    "assetTicker": "NSA"
+  },
+  {
+    "assetRoute": "nsit",
+    "assetTicker": "NSIT"
+  },
+  {
+    "assetRoute": "nsp",
+    "assetTicker": "NSP"
+  },
+  {
+    "assetRoute": "nssc",
+    "assetTicker": "NSSC"
+  },
+  {
+    "assetRoute": "nstg",
+    "assetTicker": "NSTG"
+  },
+  {
+    "assetRoute": "ntb",
+    "assetTicker": "NTB"
+  },
+  {
+    "assetRoute": "ntct",
+    "assetTicker": "NTCT"
+  },
+  {
+    "assetRoute": "ntgr",
+    "assetTicker": "NTGR"
+  },
+  {
+    "assetRoute": "ntla",
+    "assetTicker": "NTLA"
+  },
+  {
+    "assetRoute": "ntst",
+    "assetTicker": "NTST"
+  },
+  {
+    "assetRoute": "ntus",
+    "assetTicker": "NTUS"
+  },
+  {
+    "assetRoute": "nus",
+    "assetTicker": "NUS"
+  },
+  {
+    "assetRoute": "nuva",
+    "assetTicker": "NUVA"
+  },
+  {
+    "assetRoute": "nuvb",
+    "assetTicker": "NUVB"
+  },
+  {
+    "assetRoute": "nuvl",
+    "assetTicker": "NUVL"
+  },
+  {
+    "assetRoute": "nvec",
+    "assetTicker": "NVEC"
+  },
+  {
+    "assetRoute": "nvee",
+    "assetTicker": "NVEE"
+  },
+  {
+    "assetRoute": "nvro",
+    "assetTicker": "NVRO"
+  },
+  {
+    "assetRoute": "nvta",
+    "assetTicker": "NVTA"
+  },
+  {
+    "assetRoute": "nwbi",
+    "assetTicker": "NWBI"
+  },
+  {
+    "assetRoute": "nwe",
+    "assetTicker": "NWE"
+  },
+  {
+    "assetRoute": "nwli",
+    "assetTicker": "NWLI"
+  },
+  {
+    "assetRoute": "nwn",
+    "assetTicker": "NWN"
+  },
+  {
+    "assetRoute": "nwpx",
+    "assetTicker": "NWPX"
+  },
+  {
+    "assetRoute": "nx",
+    "assetTicker": "NX"
+  },
+  {
+    "assetRoute": "nxgn",
+    "assetTicker": "NXGN"
+  },
+  {
+    "assetRoute": "nxrt",
+    "assetTicker": "NXRT"
+  },
+  {
+    "assetRoute": "nymt",
+    "assetTicker": "NYMT"
+  },
+  {
+    "assetRoute": "oas",
+    "assetTicker": "OAS"
+  },
+  {
+    "assetRoute": "ob",
+    "assetTicker": "OB"
+  },
+  {
+    "assetRoute": "obnk",
+    "assetTicker": "OBNK"
+  },
+  {
+    "assetRoute": "ocdx",
+    "assetTicker": "OCDX"
+  },
+  {
+    "assetRoute": "ocfc",
+    "assetTicker": "OCFC"
+  },
+  {
+    "assetRoute": "ocgn",
+    "assetTicker": "OCGN"
+  },
+  {
+    "assetRoute": "ocn",
+    "assetTicker": "OCN"
+  },
+  {
+    "assetRoute": "ocul",
+    "assetTicker": "OCUL"
+  },
+  {
+    "assetRoute": "ocx",
+    "assetTicker": "OCX"
+  },
+  {
+    "assetRoute": "odc",
+    "assetTicker": "ODC"
+  },
+  {
+    "assetRoute": "odp",
+    "assetTicker": "ODP"
+  },
+  {
+    "assetRoute": "oec",
+    "assetTicker": "OEC"
+  },
+  {
+    "assetRoute": "ofc",
+    "assetTicker": "OFC"
+  },
+  {
+    "assetRoute": "ofg",
+    "assetTicker": "OFG"
+  },
+  {
+    "assetRoute": "ofix",
+    "assetTicker": "OFIX"
+  },
+  {
+    "assetRoute": "oflx",
+    "assetTicker": "OFLX"
+  },
+  {
+    "assetRoute": "ogs",
+    "assetTicker": "OGS"
+  },
+  {
+    "assetRoute": "oi",
+    "assetTicker": "OI"
+  },
+  {
+    "assetRoute": "oii",
+    "assetTicker": "OII"
+  },
+  {
+    "assetRoute": "ois",
+    "assetTicker": "OIS"
+  },
+  {
+    "assetRoute": "olma",
+    "assetTicker": "OLMA"
+  },
+  {
+    "assetRoute": "olp",
+    "assetTicker": "OLP"
+  },
+  {
+    "assetRoute": "om",
+    "assetTicker": "OM"
+  },
+  {
+    "assetRoute": "omcl",
+    "assetTicker": "OMCL"
+  },
+  {
+    "assetRoute": "omer",
+    "assetTicker": "OMER"
+  },
+  {
+    "assetRoute": "omga",
+    "assetTicker": "OMGA"
+  },
+  {
+    "assetRoute": "omi",
+    "assetTicker": "OMI"
+  },
+  {
+    "assetRoute": "omic",
+    "assetTicker": "OMIC"
+  },
+  {
+    "assetRoute": "onb",
+    "assetTicker": "ONB"
+  },
+  {
+    "assetRoute": "oncr",
+    "assetTicker": "ONCR"
+  },
+  {
+    "assetRoute": "onct",
+    "assetTicker": "ONCT"
+  },
+  {
+    "assetRoute": "onem",
+    "assetTicker": "ONEM"
+  },
+  {
+    "assetRoute": "onew",
+    "assetTicker": "ONEW"
+  },
+  {
+    "assetRoute": "ontf",
+    "assetTicker": "ONTF"
+  },
+  {
+    "assetRoute": "onto",
+    "assetTicker": "ONTO"
+  },
+  {
+    "assetRoute": "ooma",
+    "assetTicker": "OOMA"
+  },
+  {
+    "assetRoute": "opch",
+    "assetTicker": "OPCH"
+  },
+  {
+    "assetRoute": "opi",
+    "assetTicker": "OPI"
+  },
+  {
+    "assetRoute": "opk",
+    "assetTicker": "OPK"
+  },
+  {
+    "assetRoute": "oprt",
+    "assetTicker": "OPRT"
+  },
+  {
+    "assetRoute": "oprx",
+    "assetTicker": "OPRX"
+  },
+  {
+    "assetRoute": "opy",
+    "assetTicker": "OPY"
+  },
+  {
+    "assetRoute": "ora",
+    "assetTicker": "ORA"
+  },
+  {
+    "assetRoute": "orc",
+    "assetTicker": "ORC"
+  },
+  {
+    "assetRoute": "orgo",
+    "assetTicker": "ORGO"
+  },
+  {
+    "assetRoute": "oric",
+    "assetTicker": "ORIC"
+  },
+  {
+    "assetRoute": "ormp",
+    "assetTicker": "ORMP"
+  },
+  {
+    "assetRoute": "orrf",
+    "assetTicker": "ORRF"
+  },
+  {
+    "assetRoute": "osbc",
+    "assetTicker": "OSBC"
+  },
+  {
+    "assetRoute": "osis",
+    "assetTicker": "OSIS"
+  },
+  {
+    "assetRoute": "ospn",
+    "assetTicker": "OSPN"
+  },
+  {
+    "assetRoute": "ostk",
+    "assetTicker": "OSTK"
+  },
+  {
+    "assetRoute": "osur",
+    "assetTicker": "OSUR"
+  },
+  {
+    "assetRoute": "osw",
+    "assetTicker": "OSW"
+  },
+  {
+    "assetRoute": "otlk",
+    "assetTicker": "OTLK"
+  },
+  {
+    "assetRoute": "otrk",
+    "assetTicker": "OTRK"
+  },
+  {
+    "assetRoute": "ottr",
+    "assetTicker": "OTTR"
+  },
+  {
+    "assetRoute": "oust",
+    "assetTicker": "OUST"
+  },
+  {
+    "assetRoute": "out",
+    "assetTicker": "OUT"
+  },
+  {
+    "assetRoute": "ovv",
+    "assetTicker": "OVV"
+  },
+  {
+    "assetRoute": "oxm",
+    "assetTicker": "OXM"
+  },
+  {
+    "assetRoute": "oyst",
+    "assetTicker": "OYST"
+  },
+  {
+    "assetRoute": "pacb",
+    "assetTicker": "PACB"
+  },
+  {
+    "assetRoute": "pack",
+    "assetTicker": "PACK"
+  },
+  {
+    "assetRoute": "pahc",
+    "assetTicker": "PAHC"
+  },
+  {
+    "assetRoute": "par",
+    "assetTicker": "PAR"
+  },
+  {
+    "assetRoute": "parr",
+    "assetTicker": "PARR"
+  },
+  {
+    "assetRoute": "pasg",
+    "assetTicker": "PASG"
+  },
+  {
+    "assetRoute": "patk",
+    "assetTicker": "PATK"
+  },
+  {
+    "assetRoute": "pavm",
+    "assetTicker": "PAVM"
+  },
+  {
+    "assetRoute": "paya",
+    "assetTicker": "PAYA"
+  },
+  {
+    "assetRoute": "pbf",
+    "assetTicker": "PBF"
+  },
+  {
+    "assetRoute": "pbfs",
+    "assetTicker": "PBFS"
+  },
+  {
+    "assetRoute": "pbh",
+    "assetTicker": "PBH"
+  },
+  {
+    "assetRoute": "pbi",
+    "assetTicker": "PBI"
+  },
+  {
+    "assetRoute": "pbyi",
+    "assetTicker": "PBYI"
+  },
+  {
+    "assetRoute": "pch",
+    "assetTicker": "PCH"
+  },
+  {
+    "assetRoute": "pcrx",
+    "assetTicker": "PCRX"
+  },
+  {
+    "assetRoute": "pcsb",
+    "assetTicker": "PCSB"
+  },
+  {
+    "assetRoute": "pct",
+    "assetTicker": "PCT"
+  },
+  {
+    "assetRoute": "pcvx",
+    "assetTicker": "PCVX"
+  },
+  {
+    "assetRoute": "pcyo",
+    "assetTicker": "PCYO"
+  },
+  {
+    "assetRoute": "pd",
+    "assetTicker": "PD"
+  },
+  {
+    "assetRoute": "pdce",
+    "assetTicker": "PDCE"
+  },
+  {
+    "assetRoute": "pdco",
+    "assetTicker": "PDCO"
+  },
+  {
+    "assetRoute": "pdfs",
+    "assetTicker": "PDFS"
+  },
+  {
+    "assetRoute": "pdli",
+    "assetTicker": "PDLI"
+  },
+  {
+    "assetRoute": "pdm",
+    "assetTicker": "PDM"
+  },
+  {
+    "assetRoute": "peb",
+    "assetTicker": "PEB"
+  },
+  {
+    "assetRoute": "pebo",
+    "assetTicker": "PEBO"
+  },
+  {
+    "assetRoute": "peco",
+    "assetTicker": "PECO"
+  },
+  {
+    "assetRoute": "petq",
+    "assetTicker": "PETQ"
+  },
+  {
+    "assetRoute": "pets",
+    "assetTicker": "PETS"
+  },
+  {
+    "assetRoute": "pfbc",
+    "assetTicker": "PFBC"
+  },
+  {
+    "assetRoute": "pfc",
+    "assetTicker": "PFC"
+  },
+  {
+    "assetRoute": "pfgc",
+    "assetTicker": "PFGC"
+  },
+  {
+    "assetRoute": "pfis",
+    "assetTicker": "PFIS"
+  },
+  {
+    "assetRoute": "pfs",
+    "assetTicker": "PFS"
+  },
+  {
+    "assetRoute": "pfsi",
+    "assetTicker": "PFSI"
+  },
+  {
+    "assetRoute": "pgc",
+    "assetTicker": "PGC"
+  },
+  {
+    "assetRoute": "pgen",
+    "assetTicker": "PGEN"
+  },
+  {
+    "assetRoute": "pgny",
+    "assetTicker": "PGNY"
+  },
+  {
+    "assetRoute": "pgre",
+    "assetTicker": "PGRE"
+  },
+  {
+    "assetRoute": "pgti",
+    "assetTicker": "PGTI"
+  },
+  {
+    "assetRoute": "phat",
+    "assetTicker": "PHAT"
+  },
+  {
+    "assetRoute": "phr",
+    "assetTicker": "PHR"
+  },
+  {
+    "assetRoute": "pi",
+    "assetTicker": "PI"
+  },
+  {
+    "assetRoute": "ping",
+    "assetTicker": "PING"
+  },
+  {
+    "assetRoute": "pipr",
+    "assetTicker": "PIPR"
+  },
+  {
+    "assetRoute": "pjt",
+    "assetTicker": "PJT"
+  },
+  {
+    "assetRoute": "pke",
+    "assetTicker": "PKE"
+  },
+  {
+    "assetRoute": "pkoh",
+    "assetTicker": "PKOH"
+  },
+  {
+    "assetRoute": "plab",
+    "assetTicker": "PLAB"
+  },
+  {
+    "assetRoute": "play",
+    "assetTicker": "PLAY"
+  },
+  {
+    "assetRoute": "plby",
+    "assetTicker": "PLBY"
+  },
+  {
+    "assetRoute": "plce",
+    "assetTicker": "PLCE"
+  },
+  {
+    "assetRoute": "plm",
+    "assetTicker": "PLM"
+  },
+  {
+    "assetRoute": "plmr",
+    "assetTicker": "PLMR"
+  },
+  {
+    "assetRoute": "plow",
+    "assetTicker": "PLOW"
+  },
+  {
+    "assetRoute": "plpc",
+    "assetTicker": "PLPC"
+  },
+  {
+    "assetRoute": "plrx",
+    "assetTicker": "PLRX"
+  },
+  {
+    "assetRoute": "plse",
+    "assetTicker": "PLSE"
+  },
+  {
+    "assetRoute": "plus",
+    "assetTicker": "PLUS"
+  },
+  {
+    "assetRoute": "plxs",
+    "assetTicker": "PLXS"
+  },
+  {
+    "assetRoute": "plym",
+    "assetTicker": "PLYM"
+  },
+  {
+    "assetRoute": "pmt",
+    "assetTicker": "PMT"
+  },
+  {
+    "assetRoute": "pmvp",
+    "assetTicker": "PMVP"
+  },
+  {
+    "assetRoute": "pnm",
+    "assetTicker": "PNM"
+  },
+  {
+    "assetRoute": "pntg",
+    "assetTicker": "PNTG"
+  },
+  {
+    "assetRoute": "poly",
+    "assetTicker": "POLY"
+  },
+  {
+    "assetRoute": "por",
+    "assetTicker": "POR"
+  },
+  {
+    "assetRoute": "powi",
+    "assetTicker": "POWI"
+  },
+  {
+    "assetRoute": "powl",
+    "assetTicker": "POWL"
+  },
+  {
+    "assetRoute": "poww",
+    "assetTicker": "POWW"
+  },
+  {
+    "assetRoute": "ppbi",
+    "assetTicker": "PPBI"
+  },
+  {
+    "assetRoute": "ppta",
+    "assetTicker": "PPTA"
+  },
+  {
+    "assetRoute": "pra",
+    "assetTicker": "PRA"
+  },
+  {
+    "assetRoute": "praa",
+    "assetTicker": "PRAA"
+  },
+  {
+    "assetRoute": "prax",
+    "assetTicker": "PRAX"
+  },
+  {
+    "assetRoute": "prch",
+    "assetTicker": "PRCH"
+  },
+  {
+    "assetRoute": "prct",
+    "assetTicker": "PRCT"
+  },
+  {
+    "assetRoute": "prdo",
+    "assetTicker": "PRDO"
+  },
+  {
+    "assetRoute": "prft",
+    "assetTicker": "PRFT"
+  },
+  {
+    "assetRoute": "prg",
+    "assetTicker": "PRG"
+  },
+  {
+    "assetRoute": "prgs",
+    "assetTicker": "PRGS"
+  },
+  {
+    "assetRoute": "prim",
+    "assetTicker": "PRIM"
+  },
+  {
+    "assetRoute": "prk",
+    "assetTicker": "PRK"
+  },
+  {
+    "assetRoute": "prlb",
+    "assetTicker": "PRLB"
+  },
+  {
+    "assetRoute": "prld",
+    "assetTicker": "PRLD"
+  },
+  {
+    "assetRoute": "prmw",
+    "assetTicker": "PRMW"
+  },
+  {
+    "assetRoute": "pro",
+    "assetTicker": "PRO"
+  },
+  {
+    "assetRoute": "prpl",
+    "assetTicker": "PRPL"
+  },
+  {
+    "assetRoute": "prta",
+    "assetTicker": "PRTA"
+  },
+  {
+    "assetRoute": "prtg",
+    "assetTicker": "PRTG"
+  },
+  {
+    "assetRoute": "prth",
+    "assetTicker": "PRTH"
+  },
+  {
+    "assetRoute": "prtk",
+    "assetTicker": "PRTK"
+  },
+  {
+    "assetRoute": "prts",
+    "assetTicker": "PRTS"
+  },
+  {
+    "assetRoute": "prty",
+    "assetTicker": "PRTY"
+  },
+  {
+    "assetRoute": "prva",
+    "assetTicker": "PRVA"
+  },
+  {
+    "assetRoute": "prvb",
+    "assetTicker": "PRVB"
+  },
+  {
+    "assetRoute": "psb",
+    "assetTicker": "PSB"
+  },
+  {
+    "assetRoute": "psmt",
+    "assetTicker": "PSMT"
+  },
+  {
+    "assetRoute": "psn",
+    "assetTicker": "PSN"
+  },
+  {
+    "assetRoute": "psnl",
+    "assetTicker": "PSNL"
+  },
+  {
+    "assetRoute": "pstl",
+    "assetTicker": "PSTL"
+  },
+  {
+    "assetRoute": "pstx",
+    "assetTicker": "PSTX"
+  },
+  {
+    "assetRoute": "ptct",
+    "assetTicker": "PTCT"
+  },
+  {
+    "assetRoute": "pten",
+    "assetTicker": "PTEN"
+  },
+  {
+    "assetRoute": "ptgx",
+    "assetTicker": "PTGX"
+  },
+  {
+    "assetRoute": "ptlo",
+    "assetTicker": "PTLO"
+  },
+  {
+    "assetRoute": "ptsi",
+    "assetTicker": "PTSI"
+  },
+  {
+    "assetRoute": "ptve",
+    "assetTicker": "PTVE"
+  },
+  {
+    "assetRoute": "pump",
+    "assetTicker": "PUMP"
+  },
+  {
+    "assetRoute": "pvbc",
+    "assetTicker": "PVBC"
+  },
+  {
+    "assetRoute": "pwsc",
+    "assetTicker": "PWSC"
+  },
+  {
+    "assetRoute": "pyxs",
+    "assetTicker": "PYXS"
+  },
+  {
+    "assetRoute": "pzn",
+    "assetTicker": "PZN"
+  },
+  {
+    "assetRoute": "pzza",
+    "assetTicker": "PZZA"
+  },
+  {
+    "assetRoute": "qcrh",
+    "assetTicker": "QCRH"
+  },
+  {
+    "assetRoute": "qlys",
+    "assetTicker": "QLYS"
+  },
+  {
+    "assetRoute": "qmco",
+    "assetTicker": "QMCO"
+  },
+  {
+    "assetRoute": "qnst",
+    "assetTicker": "QNST"
+  },
+  {
+    "assetRoute": "qtnt",
+    "assetTicker": "QTNT"
+  },
+  {
+    "assetRoute": "qtrx",
+    "assetTicker": "QTRX"
+  },
+  {
+    "assetRoute": "qtwo",
+    "assetTicker": "QTWO"
+  },
+  {
+    "assetRoute": "quot",
+    "assetTicker": "QUOT"
+  },
+  {
+    "assetRoute": "rad",
+    "assetTicker": "RAD"
+  },
+  {
+    "assetRoute": "radi",
+    "assetTicker": "RADI"
+  },
+  {
+    "assetRoute": "rain",
+    "assetTicker": "RAIN"
+  },
+  {
+    "assetRoute": "ramp",
+    "assetTicker": "RAMP"
+  },
+  {
+    "assetRoute": "rapt",
+    "assetTicker": "RAPT"
+  },
+  {
+    "assetRoute": "rbb",
+    "assetTicker": "RBB"
+  },
+  {
+    "assetRoute": "rbbn",
+    "assetTicker": "RBBN"
+  },
+  {
+    "assetRoute": "rbcaa",
+    "assetTicker": "RBCAA"
+  },
+  {
+    "assetRoute": "rc",
+    "assetTicker": "RC"
+  },
+  {
+    "assetRoute": "rcel",
+    "assetTicker": "RCEL"
+  },
+  {
+    "assetRoute": "rcii",
+    "assetTicker": "RCII"
+  },
+  {
+    "assetRoute": "rckt",
+    "assetTicker": "RCKT"
+  },
+  {
+    "assetRoute": "rcky",
+    "assetTicker": "RCKY"
+  },
+  {
+    "assetRoute": "rcm",
+    "assetTicker": "RCM"
+  },
+  {
+    "assetRoute": "rcus",
+    "assetTicker": "RCUS"
+  },
+  {
+    "assetRoute": "rdfn",
+    "assetTicker": "RDFN"
+  },
+  {
+    "assetRoute": "rdn",
+    "assetTicker": "RDN"
+  },
+  {
+    "assetRoute": "rdnt",
+    "assetTicker": "RDNT"
+  },
+  {
+    "assetRoute": "rdus",
+    "assetTicker": "RDUS"
+  },
+  {
+    "assetRoute": "real",
+    "assetTicker": "REAL"
+  },
+  {
+    "assetRoute": "refi",
+    "assetTicker": "REFI"
+  },
+  {
+    "assetRoute": "regi",
+    "assetTicker": "REGI"
+  },
+  {
+    "assetRoute": "rekr",
+    "assetTicker": "REKR"
+  },
+  {
+    "assetRoute": "rely",
+    "assetTicker": "RELY"
+  },
+  {
+    "assetRoute": "rent",
+    "assetTicker": "RENT"
+  },
+  {
+    "assetRoute": "repl",
+    "assetTicker": "REPL"
+  },
+  {
+    "assetRoute": "repx",
+    "assetTicker": "REPX"
+  },
+  {
+    "assetRoute": "res",
+    "assetTicker": "RES"
+  },
+  {
+    "assetRoute": "reta",
+    "assetTicker": "RETA"
+  },
+  {
+    "assetRoute": "rev",
+    "assetTicker": "REV"
+  },
+  {
+    "assetRoute": "revg",
+    "assetTicker": "REVG"
+  },
+  {
+    "assetRoute": "rex",
+    "assetTicker": "REX"
+  },
+  {
+    "assetRoute": "rezi",
+    "assetTicker": "REZI"
+  },
+  {
+    "assetRoute": "rfl",
+    "assetTicker": "RFL"
+  },
+  {
+    "assetRoute": "rgnx",
+    "assetTicker": "RGNX"
+  },
+  {
+    "assetRoute": "rgp",
+    "assetTicker": "RGP"
+  },
+  {
+    "assetRoute": "rgr",
+    "assetTicker": "RGR"
+  },
+  {
+    "assetRoute": "rgs",
+    "assetTicker": "RGS"
+  },
+  {
+    "assetRoute": "rhp",
+    "assetTicker": "RHP"
+  },
+  {
+    "assetRoute": "rick",
+    "assetTicker": "RICK"
+  },
+  {
+    "assetRoute": "ride",
+    "assetTicker": "RIDE"
+  },
+  {
+    "assetRoute": "rigl",
+    "assetTicker": "RIGL"
+  },
+  {
+    "assetRoute": "rily",
+    "assetTicker": "RILY"
+  },
+  {
+    "assetRoute": "riot",
+    "assetTicker": "RIOT"
+  },
+  {
+    "assetRoute": "rlay",
+    "assetTicker": "RLAY"
+  },
+  {
+    "assetRoute": "rlgt",
+    "assetTicker": "RLGT"
+  },
+  {
+    "assetRoute": "rli",
+    "assetTicker": "RLI"
+  },
+  {
+    "assetRoute": "rlj",
+    "assetTicker": "RLJ"
+  },
+  {
+    "assetRoute": "rlmd",
+    "assetTicker": "RLMD"
+  },
+  {
+    "assetRoute": "rlyb",
+    "assetTicker": "RLYB"
+  },
+  {
+    "assetRoute": "rm",
+    "assetTicker": "RM"
+  },
+  {
+    "assetRoute": "rmax",
+    "assetTicker": "RMAX"
+  },
+  {
+    "assetRoute": "rmbs",
+    "assetTicker": "RMBS"
+  },
+  {
+    "assetRoute": "rmni",
+    "assetTicker": "RMNI"
+  },
+  {
+    "assetRoute": "rmo",
+    "assetTicker": "RMO"
+  },
+  {
+    "assetRoute": "rmr",
+    "assetTicker": "RMR"
+  },
+  {
+    "assetRoute": "rna",
+    "assetTicker": "RNA"
+  },
+  {
+    "assetRoute": "rnst",
+    "assetTicker": "RNST"
+  },
+  {
+    "assetRoute": "road",
+    "assetTicker": "ROAD"
+  },
+  {
+    "assetRoute": "rocc",
+    "assetTicker": "ROCC"
+  },
+  {
+    "assetRoute": "rock",
+    "assetTicker": "ROCK"
+  },
+  {
+    "assetRoute": "rog",
+    "assetTicker": "ROG"
+  },
+  {
+    "assetRoute": "roic",
+    "assetTicker": "ROIC"
+  },
+  {
+    "assetRoute": "roll",
+    "assetTicker": "ROLL"
+  },
+  {
+    "assetRoute": "rpay",
+    "assetTicker": "RPAY"
+  },
+  {
+    "assetRoute": "rpd",
+    "assetTicker": "RPD"
+  },
+  {
+    "assetRoute": "rphm",
+    "assetTicker": "RPHM"
+  },
+  {
+    "assetRoute": "rpid",
+    "assetTicker": "RPID"
+  },
+  {
+    "assetRoute": "rpt",
+    "assetTicker": "RPT"
+  },
+  {
+    "assetRoute": "rrbi",
+    "assetTicker": "RRBI"
+  },
+  {
+    "assetRoute": "rrc",
+    "assetTicker": "RRC"
+  },
+  {
+    "assetRoute": "rrgb",
+    "assetTicker": "RRGB"
+  },
+  {
+    "assetRoute": "rrr",
+    "assetTicker": "RRR"
+  },
+  {
+    "assetRoute": "rsi",
+    "assetTicker": "RSI"
+  },
+  {
+    "assetRoute": "ruby",
+    "assetTicker": "RUBY"
+  },
+  {
+    "assetRoute": "rusha",
+    "assetTicker": "RUSHA"
+  },
+  {
+    "assetRoute": "rushb",
+    "assetTicker": "RUSHB"
+  },
+  {
+    "assetRoute": "ruth",
+    "assetTicker": "RUTH"
+  },
+  {
+    "assetRoute": "rvlv",
+    "assetTicker": "RVLV"
+  },
+  {
+    "assetRoute": "rvmd",
+    "assetTicker": "RVMD"
+  },
+  {
+    "assetRoute": "rvnc",
+    "assetTicker": "RVNC"
+  },
+  {
+    "assetRoute": "rvp",
+    "assetTicker": "RVP"
+  },
+  {
+    "assetRoute": "rwt",
+    "assetTicker": "RWT"
+  },
+  {
+    "assetRoute": "rxdx",
+    "assetTicker": "RXDX"
+  },
+  {
+    "assetRoute": "rxrx",
+    "assetTicker": "RXRX"
+  },
+  {
+    "assetRoute": "rxst",
+    "assetTicker": "RXST"
+  },
+  {
+    "assetRoute": "rxt",
+    "assetTicker": "RXT"
+  },
+  {
+    "assetRoute": "ryam",
+    "assetTicker": "RYAM"
+  },
+  {
+    "assetRoute": "ryi",
+    "assetTicker": "RYI"
+  },
+  {
+    "assetRoute": "rytm",
+    "assetTicker": "RYTM"
+  },
+  {
+    "assetRoute": "safe",
+    "assetTicker": "SAFE"
+  },
+  {
+    "assetRoute": "safm",
+    "assetTicker": "SAFM"
+  },
+  {
+    "assetRoute": "saft",
+    "assetTicker": "SAFT"
+  },
+  {
+    "assetRoute": "sah",
+    "assetTicker": "SAH"
+  },
+  {
+    "assetRoute": "saia",
+    "assetTicker": "SAIA"
+  },
+  {
+    "assetRoute": "sail",
+    "assetTicker": "SAIL"
+  },
+  {
+    "assetRoute": "sana",
+    "assetTicker": "SANA"
+  },
+  {
+    "assetRoute": "sanm",
+    "assetTicker": "SANM"
+  },
+  {
+    "assetRoute": "sasr",
+    "assetTicker": "SASR"
+  },
+  {
+    "assetRoute": "sats",
+    "assetTicker": "SATS"
+  },
+  {
+    "assetRoute": "sava",
+    "assetTicker": "SAVA"
+  },
+  {
+    "assetRoute": "save",
+    "assetTicker": "SAVE"
+  },
+  {
+    "assetRoute": "sb",
+    "assetTicker": "SB"
+  },
+  {
+    "assetRoute": "sbcf",
+    "assetTicker": "SBCF"
+  },
+  {
+    "assetRoute": "sbgi",
+    "assetTicker": "SBGI"
+  },
+  {
+    "assetRoute": "sbh",
+    "assetTicker": "SBH"
+  },
+  {
+    "assetRoute": "sbra",
+    "assetTicker": "SBRA"
+  },
+  {
+    "assetRoute": "sbsi",
+    "assetTicker": "SBSI"
+  },
+  {
+    "assetRoute": "sbtx",
+    "assetTicker": "SBTX"
+  },
+  {
+    "assetRoute": "schl",
+    "assetTicker": "SCHL"
+  },
+  {
+    "assetRoute": "schn",
+    "assetTicker": "SCHN"
+  },
+  {
+    "assetRoute": "scl",
+    "assetTicker": "SCL"
+  },
+  {
+    "assetRoute": "scor",
+    "assetTicker": "SCOR"
+  },
+  {
+    "assetRoute": "scs",
+    "assetTicker": "SCS"
+  },
+  {
+    "assetRoute": "scsc",
+    "assetTicker": "SCSC"
+  },
+  {
+    "assetRoute": "scu",
+    "assetTicker": "SCU"
+  },
+  {
+    "assetRoute": "scvl",
+    "assetTicker": "SCVL"
+  },
+  {
+    "assetRoute": "scwx",
+    "assetTicker": "SCWX"
+  },
+  {
+    "assetRoute": "sdgr",
+    "assetTicker": "SDGR"
+  },
+  {
+    "assetRoute": "sdig",
+    "assetTicker": "SDIG"
+  },
+  {
+    "assetRoute": "seas",
+    "assetTicker": "SEAS"
+  },
+  {
+    "assetRoute": "seel",
+    "assetTicker": "SEEL"
+  },
+  {
+    "assetRoute": "seer",
+    "assetTicker": "SEER"
+  },
+  {
+    "assetRoute": "selb",
+    "assetTicker": "SELB"
+  },
+  {
+    "assetRoute": "sem",
+    "assetTicker": "SEM"
+  },
+  {
+    "assetRoute": "senea",
+    "assetTicker": "SENEA"
+  },
+  {
+    "assetRoute": "sens",
+    "assetTicker": "SENS"
+  },
+  {
+    "assetRoute": "sera",
+    "assetTicker": "SERA"
+  },
+  {
+    "assetRoute": "sesn",
+    "assetTicker": "SESN"
+  },
+  {
+    "assetRoute": "sfbs",
+    "assetTicker": "SFBS"
+  },
+  {
+    "assetRoute": "sfix",
+    "assetTicker": "SFIX"
+  },
+  {
+    "assetRoute": "sfl",
+    "assetTicker": "SFL"
+  },
+  {
+    "assetRoute": "sfm",
+    "assetTicker": "SFM"
+  },
+  {
+    "assetRoute": "sfnc",
+    "assetTicker": "SFNC"
+  },
+  {
+    "assetRoute": "sfst",
+    "assetTicker": "SFST"
+  },
+  {
+    "assetRoute": "sft",
+    "assetTicker": "SFT"
+  },
+  {
+    "assetRoute": "sg",
+    "assetTicker": "SG"
+  },
+  {
+    "assetRoute": "sgc",
+    "assetTicker": "SGC"
+  },
+  {
+    "assetRoute": "sgh",
+    "assetTicker": "SGH"
+  },
+  {
+    "assetRoute": "sght",
+    "assetTicker": "SGHT"
+  },
+  {
+    "assetRoute": "sgmo",
+    "assetTicker": "SGMO"
+  },
+  {
+    "assetRoute": "sgry",
+    "assetTicker": "SGRY"
+  },
+  {
+    "assetRoute": "sgtx",
+    "assetTicker": "SGTX"
+  },
+  {
+    "assetRoute": "shak",
+    "assetTicker": "SHAK"
+  },
+  {
+    "assetRoute": "shen",
+    "assetTicker": "SHEN"
+  },
+  {
+    "assetRoute": "sho",
+    "assetTicker": "SHO"
+  },
+  {
+    "assetRoute": "shoo",
+    "assetTicker": "SHOO"
+  },
+  {
+    "assetRoute": "shyf",
+    "assetTicker": "SHYF"
+  },
+  {
+    "assetRoute": "si",
+    "assetTicker": "SI"
+  },
+  {
+    "assetRoute": "sibn",
+    "assetTicker": "SIBN"
+  },
+  {
+    "assetRoute": "sien",
+    "assetTicker": "SIEN"
+  },
+  {
+    "assetRoute": "sig",
+    "assetTicker": "SIG"
+  },
+  {
+    "assetRoute": "siga",
+    "assetTicker": "SIGA"
+  },
+  {
+    "assetRoute": "sigi",
+    "assetTicker": "SIGI"
+  },
+  {
+    "assetRoute": "silk",
+    "assetTicker": "SILK"
+  },
+  {
+    "assetRoute": "sitc",
+    "assetTicker": "SITC"
+  },
+  {
+    "assetRoute": "sitm",
+    "assetTicker": "SITM"
+  },
+  {
+    "assetRoute": "sji",
+    "assetTicker": "SJI"
+  },
+  {
+    "assetRoute": "sjw",
+    "assetTicker": "SJW"
+  },
+  {
+    "assetRoute": "skin",
+    "assetTicker": "SKIN"
+  },
+  {
+    "assetRoute": "skt",
+    "assetTicker": "SKT"
+  },
+  {
+    "assetRoute": "sky",
+    "assetTicker": "SKY"
+  },
+  {
+    "assetRoute": "skyt",
+    "assetTicker": "SKYT"
+  },
+  {
+    "assetRoute": "skyw",
+    "assetTicker": "SKYW"
+  },
+  {
+    "assetRoute": "slab",
+    "assetTicker": "SLAB"
+  },
+  {
+    "assetRoute": "slca",
+    "assetTicker": "SLCA"
+  },
+  {
+    "assetRoute": "sldb",
+    "assetTicker": "SLDB"
+  },
+  {
+    "assetRoute": "slp",
+    "assetTicker": "SLP"
+  },
+  {
+    "assetRoute": "slqt",
+    "assetTicker": "SLQT"
+  },
+  {
+    "assetRoute": "sm",
+    "assetTicker": "SM"
+  },
+  {
+    "assetRoute": "smbc",
+    "assetTicker": "SMBC"
+  },
+  {
+    "assetRoute": "smbk",
+    "assetTicker": "SMBK"
+  },
+  {
+    "assetRoute": "smci",
+    "assetTicker": "SMCI"
+  },
+  {
+    "assetRoute": "smed",
+    "assetTicker": "SMED"
+  },
+  {
+    "assetRoute": "smmf",
+    "assetTicker": "SMMF"
+  },
+  {
+    "assetRoute": "smmt",
+    "assetTicker": "SMMT"
+  },
+  {
+    "assetRoute": "smp",
+    "assetTicker": "SMP"
+  },
+  {
+    "assetRoute": "smpl",
+    "assetTicker": "SMPL"
+  },
+  {
+    "assetRoute": "smsi",
+    "assetTicker": "SMSI"
+  },
+  {
+    "assetRoute": "smtc",
+    "assetTicker": "SMTC"
+  },
+  {
+    "assetRoute": "snbr",
+    "assetTicker": "SNBR"
+  },
+  {
+    "assetRoute": "sncy",
+    "assetTicker": "SNCY"
+  },
+  {
+    "assetRoute": "sndx",
+    "assetTicker": "SNDX"
+  },
+  {
+    "assetRoute": "snex",
+    "assetTicker": "SNEX"
+  },
+  {
+    "assetRoute": "snpo",
+    "assetTicker": "SNPO"
+  },
+  {
+    "assetRoute": "snse",
+    "assetTicker": "SNSE"
+  },
+  {
+    "assetRoute": "soi",
+    "assetTicker": "SOI"
+  },
+  {
+    "assetRoute": "sono",
+    "assetTicker": "SONO"
+  },
+  {
+    "assetRoute": "sovo",
+    "assetTicker": "SOVO"
+  },
+  {
+    "assetRoute": "sp",
+    "assetTicker": "SP"
+  },
+  {
+    "assetRoute": "spfi",
+    "assetTicker": "SPFI"
+  },
+  {
+    "assetRoute": "spne",
+    "assetTicker": "SPNE"
+  },
+  {
+    "assetRoute": "spns",
+    "assetTicker": "SPNS"
+  },
+  {
+    "assetRoute": "spnt",
+    "assetTicker": "SPNT"
+  },
+  {
+    "assetRoute": "sppi",
+    "assetTicker": "SPPI"
+  },
+  {
+    "assetRoute": "sprb",
+    "assetTicker": "SPRB"
+  },
+  {
+    "assetRoute": "spro",
+    "assetTicker": "SPRO"
+  },
+  {
+    "assetRoute": "spsc",
+    "assetTicker": "SPSC"
+  },
+  {
+    "assetRoute": "spt",
+    "assetTicker": "SPT"
+  },
+  {
+    "assetRoute": "sptn",
+    "assetTicker": "SPTN"
+  },
+  {
+    "assetRoute": "spwh",
+    "assetTicker": "SPWH"
+  },
+  {
+    "assetRoute": "spwr",
+    "assetTicker": "SPWR"
+  },
+  {
+    "assetRoute": "spxc",
+    "assetTicker": "SPXC"
+  },
+  {
+    "assetRoute": "sqz",
+    "assetTicker": "SQZ"
+  },
+  {
+    "assetRoute": "sr",
+    "assetTicker": "SR"
+  },
+  {
+    "assetRoute": "srce",
+    "assetTicker": "SRCE"
+  },
+  {
+    "assetRoute": "srdx",
+    "assetTicker": "SRDX"
+  },
+  {
+    "assetRoute": "srg",
+    "assetTicker": "SRG"
+  },
+  {
+    "assetRoute": "sri",
+    "assetTicker": "SRI"
+  },
+  {
+    "assetRoute": "srne",
+    "assetTicker": "SRNE"
+  },
+  {
+    "assetRoute": "srrk",
+    "assetTicker": "SRRK"
+  },
+  {
+    "assetRoute": "srt",
+    "assetTicker": "SRT"
+  },
+  {
+    "assetRoute": "ssb",
+    "assetTicker": "SSB"
+  },
+  {
+    "assetRoute": "ssd",
+    "assetTicker": "SSD"
+  },
+  {
+    "assetRoute": "ssp",
+    "assetTicker": "SSP"
+  },
+  {
+    "assetRoute": "ssti",
+    "assetTicker": "SSTI"
+  },
+  {
+    "assetRoute": "sstk",
+    "assetTicker": "SSTK"
+  },
+  {
+    "assetRoute": "staa",
+    "assetTicker": "STAA"
+  },
+  {
+    "assetRoute": "stag",
+    "assetTicker": "STAG"
+  },
+  {
+    "assetRoute": "star",
+    "assetTicker": "STAR"
+  },
+  {
+    "assetRoute": "stba",
+    "assetTicker": "STBA"
+  },
+  {
+    "assetRoute": "stc",
+    "assetTicker": "STC"
+  },
+  {
+    "assetRoute": "stem",
+    "assetTicker": "STEM"
+  },
+  {
+    "assetRoute": "step",
+    "assetTicker": "STEP"
+  },
+  {
+    "assetRoute": "ster",
+    "assetTicker": "STER"
+  },
+  {
+    "assetRoute": "stgw",
+    "assetTicker": "STGW"
+  },
+  {
+    "assetRoute": "stim",
+    "assetTicker": "STIM"
+  },
+  {
+    "assetRoute": "stks",
+    "assetTicker": "STKS"
+  },
+  {
+    "assetRoute": "stng",
+    "assetTicker": "STNG"
+  },
+  {
+    "assetRoute": "stok",
+    "assetTicker": "STOK"
+  },
+  {
+    "assetRoute": "ston",
+    "assetTicker": "STON"
+  },
+  {
+    "assetRoute": "stra",
+    "assetTicker": "STRA"
+  },
+  {
+    "assetRoute": "strl",
+    "assetTicker": "STRL"
+  },
+  {
+    "assetRoute": "stro",
+    "assetTicker": "STRO"
+  },
+  {
+    "assetRoute": "sttk",
+    "assetTicker": "STTK"
+  },
+  {
+    "assetRoute": "stxs",
+    "assetTicker": "STXS"
+  },
+  {
+    "assetRoute": "sum",
+    "assetTicker": "SUM"
+  },
+  {
+    "assetRoute": "sumo",
+    "assetTicker": "SUMO"
+  },
+  {
+    "assetRoute": "supn",
+    "assetTicker": "SUPN"
+  },
+  {
+    "assetRoute": "surf",
+    "assetTicker": "SURF"
+  },
+  {
+    "assetRoute": "svc",
+    "assetTicker": "SVC"
+  },
+  {
+    "assetRoute": "swav",
+    "assetTicker": "SWAV"
+  },
+  {
+    "assetRoute": "swbi",
+    "assetTicker": "SWBI"
+  },
+  {
+    "assetRoute": "swim",
+    "assetTicker": "SWIM"
+  },
+  {
+    "assetRoute": "swm",
+    "assetTicker": "SWM"
+  },
+  {
+    "assetRoute": "swn",
+    "assetTicker": "SWN"
+  },
+  {
+    "assetRoute": "swtx",
+    "assetTicker": "SWTX"
+  },
+  {
+    "assetRoute": "swx",
+    "assetTicker": "SWX"
+  },
+  {
+    "assetRoute": "sxc",
+    "assetTicker": "SXC"
+  },
+  {
+    "assetRoute": "sxi",
+    "assetTicker": "SXI"
+  },
+  {
+    "assetRoute": "sxt",
+    "assetTicker": "SXT"
+  },
+  {
+    "assetRoute": "sybt",
+    "assetTicker": "SYBT"
+  },
+  {
+    "assetRoute": "syna",
+    "assetTicker": "SYNA"
+  },
+  {
+    "assetRoute": "syrs",
+    "assetTicker": "SYRS"
+  },
+  {
+    "assetRoute": "ta",
+    "assetTicker": "TA"
+  },
+  {
+    "assetRoute": "talo",
+    "assetTicker": "TALO"
+  },
+  {
+    "assetRoute": "tals",
+    "assetTicker": "TALS"
+  },
+  {
+    "assetRoute": "tars",
+    "assetTicker": "TARS"
+  },
+  {
+    "assetRoute": "tast",
+    "assetTicker": "TAST"
+  },
+  {
+    "assetRoute": "tbbk",
+    "assetTicker": "TBBK"
+  },
+  {
+    "assetRoute": "tbi",
+    "assetTicker": "TBI"
+  },
+  {
+    "assetRoute": "tbk",
+    "assetTicker": "TBK"
+  },
+  {
+    "assetRoute": "tbph",
+    "assetTicker": "TBPH"
+  },
+  {
+    "assetRoute": "tcbi",
+    "assetTicker": "TCBI"
+  },
+  {
+    "assetRoute": "tcbk",
+    "assetTicker": "TCBK"
+  },
+  {
+    "assetRoute": "tcbx",
+    "assetTicker": "TCBX"
+  },
+  {
+    "assetRoute": "tcmd",
+    "assetTicker": "TCMD"
+  },
+  {
+    "assetRoute": "tcrr",
+    "assetTicker": "TCRR"
+  },
+  {
+    "assetRoute": "tcrt",
+    "assetTicker": "TCRT"
+  },
+  {
+    "assetRoute": "tcs",
+    "assetTicker": "TCS"
+  },
+  {
+    "assetRoute": "tcx",
+    "assetTicker": "TCX"
+  },
+  {
+    "assetRoute": "tds",
+    "assetTicker": "TDS"
+  },
+  {
+    "assetRoute": "tdw",
+    "assetTicker": "TDW"
+  },
+  {
+    "assetRoute": "tell",
+    "assetTicker": "TELL"
+  },
+  {
+    "assetRoute": "ten",
+    "assetTicker": "TEN"
+  },
+  {
+    "assetRoute": "tenb",
+    "assetTicker": "TENB"
+  },
+  {
+    "assetRoute": "tern",
+    "assetTicker": "TERN"
+  },
+  {
+    "assetRoute": "tex",
+    "assetTicker": "TEX"
+  },
+  {
+    "assetRoute": "tg",
+    "assetTicker": "TG"
+  },
+  {
+    "assetRoute": "tgh",
+    "assetTicker": "TGH"
+  },
+  {
+    "assetRoute": "tgi",
+    "assetTicker": "TGI"
+  },
+  {
+    "assetRoute": "tgna",
+    "assetTicker": "TGNA"
+  },
+  {
+    "assetRoute": "tgtx",
+    "assetTicker": "TGTX"
+  },
+  {
+    "assetRoute": "th",
+    "assetTicker": "TH"
+  },
+  {
+    "assetRoute": "thc",
+    "assetTicker": "THC"
+  },
+  {
+    "assetRoute": "thff",
+    "assetTicker": "THFF"
+  },
+  {
+    "assetRoute": "thr",
+    "assetTicker": "THR"
+  },
+  {
+    "assetRoute": "thrm",
+    "assetTicker": "THRM"
+  },
+  {
+    "assetRoute": "thrx",
+    "assetTicker": "THRX"
+  },
+  {
+    "assetRoute": "thry",
+    "assetTicker": "THRY"
+  },
+  {
+    "assetRoute": "ths",
+    "assetTicker": "THS"
+  },
+  {
+    "assetRoute": "tig",
+    "assetTicker": "TIG"
+  },
+  {
+    "assetRoute": "til",
+    "assetTicker": "TIL"
+  },
+  {
+    "assetRoute": "tile",
+    "assetTicker": "TILE"
+  },
+  {
+    "assetRoute": "tipt",
+    "assetTicker": "TIPT"
+  },
+  {
+    "assetRoute": "tisi",
+    "assetTicker": "TISI"
+  },
+  {
+    "assetRoute": "titn",
+    "assetTicker": "TITN"
+  },
+  {
+    "assetRoute": "tk",
+    "assetTicker": "TK"
+  },
+  {
+    "assetRoute": "tkno",
+    "assetTicker": "TKNO"
+  },
+  {
+    "assetRoute": "tlis",
+    "assetTicker": "TLIS"
+  },
+  {
+    "assetRoute": "tls",
+    "assetTicker": "TLS"
+  },
+  {
+    "assetRoute": "tlys",
+    "assetTicker": "TLYS"
+  },
+  {
+    "assetRoute": "tmci",
+    "assetTicker": "TMCI"
+  },
+  {
+    "assetRoute": "tmdx",
+    "assetTicker": "TMDX"
+  },
+  {
+    "assetRoute": "tmhc",
+    "assetTicker": "TMHC"
+  },
+  {
+    "assetRoute": "tmp",
+    "assetTicker": "TMP"
+  },
+  {
+    "assetRoute": "tmst",
+    "assetTicker": "TMST"
+  },
+  {
+    "assetRoute": "tnc",
+    "assetTicker": "TNC"
+  },
+  {
+    "assetRoute": "tnet",
+    "assetTicker": "TNET"
+  },
+  {
+    "assetRoute": "tnk",
+    "assetTicker": "TNK"
+  },
+  {
+    "assetRoute": "tnxp",
+    "assetTicker": "TNXP"
+  },
+  {
+    "assetRoute": "tnya",
+    "assetTicker": "TNYA"
+  },
+  {
+    "assetRoute": "town",
+    "assetTicker": "TOWN"
+  },
+  {
+    "assetRoute": "tpb",
+    "assetTicker": "TPB"
+  },
+  {
+    "assetRoute": "tpc",
+    "assetTicker": "TPC"
+  },
+  {
+    "assetRoute": "tph",
+    "assetTicker": "TPH"
+  },
+  {
+    "assetRoute": "tpic",
+    "assetTicker": "TPIC"
+  },
+  {
+    "assetRoute": "tptx",
+    "assetTicker": "TPTX"
+  },
+  {
+    "assetRoute": "tr",
+    "assetTicker": "TR"
+  },
+  {
+    "assetRoute": "trc",
+    "assetTicker": "TRC"
+  },
+  {
+    "assetRoute": "trda",
+    "assetTicker": "TRDA"
+  },
+  {
+    "assetRoute": "tree",
+    "assetTicker": "TREE"
+  },
+  {
+    "assetRoute": "trhc",
+    "assetTicker": "TRHC"
+  },
+  {
+    "assetRoute": "trmk",
+    "assetTicker": "TRMK"
+  },
+  {
+    "assetRoute": "trn",
+    "assetTicker": "TRN"
+  },
+  {
+    "assetRoute": "trno",
+    "assetTicker": "TRNO"
+  },
+  {
+    "assetRoute": "trns",
+    "assetTicker": "TRNS"
+  },
+  {
+    "assetRoute": "trox",
+    "assetTicker": "TROX"
+  },
+  {
+    "assetRoute": "trs",
+    "assetTicker": "TRS"
+  },
+  {
+    "assetRoute": "trst",
+    "assetTicker": "TRST"
+  },
+  {
+    "assetRoute": "trtn",
+    "assetTicker": "TRTN"
+  },
+  {
+    "assetRoute": "trtx",
+    "assetTicker": "TRTX"
+  },
+  {
+    "assetRoute": "trup",
+    "assetTicker": "TRUP"
+  },
+  {
+    "assetRoute": "trvn",
+    "assetTicker": "TRVN"
+  },
+  {
+    "assetRoute": "tsat",
+    "assetTicker": "TSAT"
+  },
+  {
+    "assetRoute": "tsc",
+    "assetTicker": "TSC"
+  },
+  {
+    "assetRoute": "tse",
+    "assetTicker": "TSE"
+  },
+  {
+    "assetRoute": "tsha",
+    "assetTicker": "TSHA"
+  },
+  {
+    "assetRoute": "tsvt",
+    "assetTicker": "TSVT"
+  },
+  {
+    "assetRoute": "ttcf",
+    "assetTicker": "TTCF"
+  },
+  {
+    "assetRoute": "ttec",
+    "assetTicker": "TTEC"
+  },
+  {
+    "assetRoute": "ttek",
+    "assetTicker": "TTEK"
+  },
+  {
+    "assetRoute": "ttgt",
+    "assetTicker": "TTGT"
+  },
+  {
+    "assetRoute": "tti",
+    "assetTicker": "TTI"
+  },
+  {
+    "assetRoute": "ttmi",
+    "assetTicker": "TTMI"
+  },
+  {
+    "assetRoute": "tup",
+    "assetTicker": "TUP"
+  },
+  {
+    "assetRoute": "tvtx",
+    "assetTicker": "TVTX"
+  },
+  {
+    "assetRoute": "tvty",
+    "assetTicker": "TVTY"
+  },
+  {
+    "assetRoute": "twi",
+    "assetTicker": "TWI"
+  },
+  {
+    "assetRoute": "twnk",
+    "assetTicker": "TWNK"
+  },
+  {
+    "assetRoute": "two",
+    "assetTicker": "TWO"
+  },
+  {
+    "assetRoute": "twou",
+    "assetTicker": "TWOU"
+  },
+  {
+    "assetRoute": "twst",
+    "assetTicker": "TWST"
+  },
+  {
+    "assetRoute": "txmd",
+    "assetTicker": "TXMD"
+  },
+  {
+    "assetRoute": "txrh",
+    "assetTicker": "TXRH"
+  },
+  {
+    "assetRoute": "tyra",
+    "assetTicker": "TYRA"
+  },
+  {
+    "assetRoute": "uavs",
+    "assetTicker": "UAVS"
+  },
+  {
+    "assetRoute": "uba",
+    "assetTicker": "UBA"
+  },
+  {
+    "assetRoute": "ubsi",
+    "assetTicker": "UBSI"
+  },
+  {
+    "assetRoute": "ucbi",
+    "assetTicker": "UCBI"
+  },
+  {
+    "assetRoute": "uctt",
+    "assetTicker": "UCTT"
+  },
+  {
+    "assetRoute": "udmy",
+    "assetTicker": "UDMY"
+  },
+  {
+    "assetRoute": "ue",
+    "assetTicker": "UE"
+  },
+  {
+    "assetRoute": "uec",
+    "assetTicker": "UEC"
+  },
+  {
+    "assetRoute": "ueic",
+    "assetTicker": "UEIC"
+  },
+  {
+    "assetRoute": "ufcs",
+    "assetTicker": "UFCS"
+  },
+  {
+    "assetRoute": "ufi",
+    "assetTicker": "UFI"
+  },
+  {
+    "assetRoute": "ufpi",
+    "assetTicker": "UFPI"
+  },
+  {
+    "assetRoute": "ufpt",
+    "assetTicker": "UFPT"
+  },
+  {
+    "assetRoute": "uht",
+    "assetTicker": "UHT"
+  },
+  {
+    "assetRoute": "uihc",
+    "assetTicker": "UIHC"
+  },
+  {
+    "assetRoute": "uis",
+    "assetTicker": "UIS"
+  },
+  {
+    "assetRoute": "ulcc",
+    "assetTicker": "ULCC"
+  },
+  {
+    "assetRoute": "ulh",
+    "assetTicker": "ULH"
+  },
+  {
+    "assetRoute": "umbf",
+    "assetTicker": "UMBF"
+  },
+  {
+    "assetRoute": "umh",
+    "assetTicker": "UMH"
+  },
+  {
+    "assetRoute": "unf",
+    "assetTicker": "UNF"
+  },
+  {
+    "assetRoute": "unfi",
+    "assetTicker": "UNFI"
+  },
+  {
+    "assetRoute": "unit",
+    "assetTicker": "UNIT"
+  },
+  {
+    "assetRoute": "upld",
+    "assetTicker": "UPLD"
+  },
+  {
+    "assetRoute": "upwk",
+    "assetTicker": "UPWK"
+  },
+  {
+    "assetRoute": "urbn",
+    "assetTicker": "URBN"
+  },
+  {
+    "assetRoute": "urg",
+    "assetTicker": "URG"
+  },
+  {
+    "assetRoute": "urgn",
+    "assetTicker": "URGN"
+  },
+  {
+    "assetRoute": "usd",
+    "assetTicker": "USD"
+  },
+  {
+    "assetRoute": "user",
+    "assetTicker": "USER"
+  },
+  {
+    "assetRoute": "uslm",
+    "assetTicker": "USLM"
+  },
+  {
+    "assetRoute": "usm",
+    "assetTicker": "USM"
+  },
+  {
+    "assetRoute": "usna",
+    "assetTicker": "USNA"
+  },
+  {
+    "assetRoute": "usph",
+    "assetTicker": "USPH"
+  },
+  {
+    "assetRoute": "usx",
+    "assetTicker": "USX"
+  },
+  {
+    "assetRoute": "utl",
+    "assetTicker": "UTL"
+  },
+  {
+    "assetRoute": "utmd",
+    "assetTicker": "UTMD"
+  },
+  {
+    "assetRoute": "utz",
+    "assetTicker": "UTZ"
+  },
+  {
+    "assetRoute": "uuuu",
+    "assetTicker": "UUUU"
+  },
+  {
+    "assetRoute": "uve",
+    "assetTicker": "UVE"
+  },
+  {
+    "assetRoute": "uvsp",
+    "assetTicker": "UVSP"
+  },
+  {
+    "assetRoute": "uvv",
+    "assetTicker": "UVV"
+  },
+  {
+    "assetRoute": "valu",
+    "assetTicker": "VALU"
+  },
+  {
+    "assetRoute": "vapo",
+    "assetTicker": "VAPO"
+  },
+  {
+    "assetRoute": "vate",
+    "assetTicker": "VATE"
+  },
+  {
+    "assetRoute": "vbiv",
+    "assetTicker": "VBIV"
+  },
+  {
+    "assetRoute": "vbtx",
+    "assetTicker": "VBTX"
+  },
+  {
+    "assetRoute": "vc",
+    "assetTicker": "VC"
+  },
+  {
+    "assetRoute": "vcel",
+    "assetTicker": "VCEL"
+  },
+  {
+    "assetRoute": "vcyt",
+    "assetTicker": "VCYT"
+  },
+  {
+    "assetRoute": "vec",
+    "assetTicker": "VEC"
+  },
+  {
+    "assetRoute": "veco",
+    "assetTicker": "VECO"
+  },
+  {
+    "assetRoute": "vel",
+    "assetTicker": "VEL"
+  },
+  {
+    "assetRoute": "vera",
+    "assetTicker": "VERA"
+  },
+  {
+    "assetRoute": "veri",
+    "assetTicker": "VERI"
+  },
+  {
+    "assetRoute": "veru",
+    "assetTicker": "VERU"
+  },
+  {
+    "assetRoute": "verv",
+    "assetTicker": "VERV"
+  },
+  {
+    "assetRoute": "vg",
+    "assetTicker": "VG"
+  },
+  {
+    "assetRoute": "vgr",
+    "assetTicker": "VGR"
+  },
+  {
+    "assetRoute": "vhc",
+    "assetTicker": "VHC"
+  },
+  {
+    "assetRoute": "vhi",
+    "assetTicker": "VHI"
+  },
+  {
+    "assetRoute": "via",
+    "assetTicker": "VIA"
+  },
+  {
+    "assetRoute": "viav",
+    "assetTicker": "VIAV"
+  },
+  {
+    "assetRoute": "vicr",
+    "assetTicker": "VICR"
+  },
+  {
+    "assetRoute": "view",
+    "assetTicker": "VIEW"
+  },
+  {
+    "assetRoute": "vigl",
+    "assetTicker": "VIGL"
+  },
+  {
+    "assetRoute": "vinc",
+    "assetTicker": "VINC"
+  },
+  {
+    "assetRoute": "vir",
+    "assetTicker": "VIR"
+  },
+  {
+    "assetRoute": "virx",
+    "assetTicker": "VIRX"
+  },
+  {
+    "assetRoute": "vitl",
+    "assetTicker": "VITL"
+  },
+  {
+    "assetRoute": "vivo",
+    "assetTicker": "VIVO"
+  },
+  {
+    "assetRoute": "vktx",
+    "assetTicker": "VKTX"
+  },
+  {
+    "assetRoute": "vldr",
+    "assetTicker": "VLDR"
+  },
+  {
+    "assetRoute": "vlgea",
+    "assetTicker": "VLGEA"
+  },
+  {
+    "assetRoute": "vly",
+    "assetTicker": "VLY"
+  },
+  {
+    "assetRoute": "vmd",
+    "assetTicker": "VMD"
+  },
+  {
+    "assetRoute": "vnda",
+    "assetTicker": "VNDA"
+  },
+  {
+    "assetRoute": "vor",
+    "assetTicker": "VOR"
+  },
+  {
+    "assetRoute": "voxx",
+    "assetTicker": "VOXX"
+  },
+  {
+    "assetRoute": "vpg",
+    "assetTicker": "VPG"
+  },
+  {
+    "assetRoute": "vra",
+    "assetTicker": "VRA"
+  },
+  {
+    "assetRoute": "vray",
+    "assetTicker": "VRAY"
+  },
+  {
+    "assetRoute": "vrca",
+    "assetTicker": "VRCA"
+  },
+  {
+    "assetRoute": "vre",
+    "assetTicker": "VRE"
+  },
+  {
+    "assetRoute": "vrex",
+    "assetTicker": "VREX"
+  },
+  {
+    "assetRoute": "vrns",
+    "assetTicker": "VRNS"
+  },
+  {
+    "assetRoute": "vrnt",
+    "assetTicker": "VRNT"
+  },
+  {
+    "assetRoute": "vrrm",
+    "assetTicker": "VRRM"
+  },
+  {
+    "assetRoute": "vrts",
+    "assetTicker": "VRTS"
+  },
+  {
+    "assetRoute": "vrtv",
+    "assetTicker": "VRTV"
+  },
+  {
+    "assetRoute": "vsec",
+    "assetTicker": "VSEC"
+  },
+  {
+    "assetRoute": "vsh",
+    "assetTicker": "VSH"
+  },
+  {
+    "assetRoute": "vstm",
+    "assetTicker": "VSTM"
+  },
+  {
+    "assetRoute": "vsto",
+    "assetTicker": "VSTO"
+  },
+  {
+    "assetRoute": "vtgn",
+    "assetTicker": "VTGN"
+  },
+  {
+    "assetRoute": "vtol",
+    "assetTicker": "VTOL"
+  },
+  {
+    "assetRoute": "vtyx",
+    "assetTicker": "VTYX"
+  },
+  {
+    "assetRoute": "vuzi",
+    "assetTicker": "VUZI"
+  },
+  {
+    "assetRoute": "vvi",
+    "assetTicker": "VVI"
+  },
+  {
+    "assetRoute": "vvnt",
+    "assetTicker": "VVNT"
+  },
+  {
+    "assetRoute": "vxrt",
+    "assetTicker": "VXRT"
+  },
+  {
+    "assetRoute": "wabc",
+    "assetTicker": "WABC"
+  },
+  {
+    "assetRoute": "wafd",
+    "assetTicker": "WAFD"
+  },
+  {
+    "assetRoute": "wash",
+    "assetTicker": "WASH"
+  },
+  {
+    "assetRoute": "wbt",
+    "assetTicker": "WBT"
+  },
+  {
+    "assetRoute": "wcc",
+    "assetTicker": "WCC"
+  },
+  {
+    "assetRoute": "wd",
+    "assetTicker": "WD"
+  },
+  {
+    "assetRoute": "wdfc",
+    "assetTicker": "WDFC"
+  },
+  {
+    "assetRoute": "webr",
+    "assetTicker": "WEBR"
+  },
+  {
+    "assetRoute": "wern",
+    "assetTicker": "WERN"
+  },
+  {
+    "assetRoute": "wetf",
+    "assetTicker": "WETF"
+  },
+  {
+    "assetRoute": "wgo",
+    "assetTicker": "WGO"
+  },
+  {
+    "assetRoute": "whd",
+    "assetTicker": "WHD"
+  },
+  {
+    "assetRoute": "wina",
+    "assetTicker": "WINA"
+  },
+  {
+    "assetRoute": "wing",
+    "assetTicker": "WING"
+  },
+  {
+    "assetRoute": "wire",
+    "assetTicker": "WIRE"
+  },
+  {
+    "assetRoute": "wk",
+    "assetTicker": "WK"
+  },
+  {
+    "assetRoute": "wkhs",
+    "assetTicker": "WKHS"
+  },
+  {
+    "assetRoute": "wldn",
+    "assetTicker": "WLDN"
+  },
+  {
+    "assetRoute": "wlfc",
+    "assetTicker": "WLFC"
+  },
+  {
+    "assetRoute": "wll",
+    "assetTicker": "WLL"
+  },
+  {
+    "assetRoute": "wllaw",
+    "assetTicker": "WLLAW"
+  },
+  {
+    "assetRoute": "wllbw",
+    "assetTicker": "WLLBW"
+  },
+  {
+    "assetRoute": "wly",
+    "assetTicker": "WLY"
+  },
+  {
+    "assetRoute": "wmk",
+    "assetTicker": "WMK"
+  },
+  {
+    "assetRoute": "wnc",
+    "assetTicker": "WNC"
+  },
+  {
+    "assetRoute": "wor",
+    "assetTicker": "WOR"
+  },
+  {
+    "assetRoute": "wow",
+    "assetTicker": "WOW"
+  },
+  {
+    "assetRoute": "wre",
+    "assetTicker": "WRE"
+  },
+  {
+    "assetRoute": "wrld",
+    "assetTicker": "WRLD"
+  },
+  {
+    "assetRoute": "wsbc",
+    "assetTicker": "WSBC"
+  },
+  {
+    "assetRoute": "wsbf",
+    "assetTicker": "WSBF"
+  },
+  {
+    "assetRoute": "wsc",
+    "assetTicker": "WSC"
+  },
+  {
+    "assetRoute": "wsfs",
+    "assetTicker": "WSFS"
+  },
+  {
+    "assetRoute": "wsr",
+    "assetTicker": "WSR"
+  },
+  {
+    "assetRoute": "wtba",
+    "assetTicker": "WTBA"
+  },
+  {
+    "assetRoute": "wti",
+    "assetTicker": "WTI"
+  },
+  {
+    "assetRoute": "wts",
+    "assetTicker": "WTS"
+  },
+  {
+    "assetRoute": "wttr",
+    "assetTicker": "WTTR"
+  },
+  {
+    "assetRoute": "wve",
+    "assetTicker": "WVE"
+  },
+  {
+    "assetRoute": "ww",
+    "assetTicker": "WW"
+  },
+  {
+    "assetRoute": "www",
+    "assetTicker": "WWW"
+  },
+  {
+    "assetRoute": "xbit",
+    "assetTicker": "XBIT"
+  },
+  {
+    "assetRoute": "xent",
+    "assetTicker": "XENT"
+  },
+  {
+    "assetRoute": "xgn",
+    "assetTicker": "XGN"
+  },
+  {
+    "assetRoute": "xhr",
+    "assetTicker": "XHR"
+  },
+  {
+    "assetRoute": "xl",
+    "assetTicker": "XL"
+  },
+  {
+    "assetRoute": "xlo",
+    "assetTicker": "XLO"
+  },
+  {
+    "assetRoute": "xmtr",
+    "assetTicker": "XMTR"
+  },
+  {
+    "assetRoute": "xncr",
+    "assetTicker": "XNCR"
+  },
+  {
+    "assetRoute": "xoma",
+    "assetTicker": "XOMA"
+  },
+  {
+    "assetRoute": "xpel",
+    "assetTicker": "XPEL"
+  },
+  {
+    "assetRoute": "xper",
+    "assetTicker": "XPER"
+  },
+  {
+    "assetRoute": "xpof",
+    "assetTicker": "XPOF"
+  },
+  {
+    "assetRoute": "xpro",
+    "assetTicker": "XPRO"
+  },
+  {
+    "assetRoute": "xxii",
+    "assetTicker": "XXII"
+  },
+  {
+    "assetRoute": "yell",
+    "assetTicker": "YELL"
+  },
+  {
+    "assetRoute": "yelp",
+    "assetTicker": "YELP"
+  },
+  {
+    "assetRoute": "yext",
+    "assetTicker": "YEXT"
+  },
+  {
+    "assetRoute": "ymab",
+    "assetTicker": "YMAB"
+  },
+  {
+    "assetRoute": "yorw",
+    "assetTicker": "YORW"
+  },
+  {
+    "assetRoute": "zd",
+    "assetTicker": "ZD"
+  },
+  {
+    "assetRoute": "zeus",
+    "assetTicker": "ZEUS"
+  },
+  {
+    "assetRoute": "zgnx",
+    "assetTicker": "ZGNX"
+  },
+  {
+    "assetRoute": "zntl",
+    "assetTicker": "ZNTL"
+  },
+  {
+    "assetRoute": "zumz",
+    "assetTicker": "ZUMZ"
+  },
+  {
+    "assetRoute": "zuo",
+    "assetTicker": "ZUO"
+  },
+  {
+    "assetRoute": "zvia",
+    "assetTicker": "ZVIA"
+  },
+  {
+    "assetRoute": "zws",
+    "assetTicker": "ZWS"
+  },
+  {
+    "assetRoute": "zy",
+    "assetTicker": "ZY"
+  },
+  {
+    "assetRoute": "zyxi",
+    "assetTicker": "ZYXI"
+  }
+]
