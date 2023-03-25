@@ -6,6 +6,7 @@ import Footer from '../../components/main/Footer';
 import Link from 'next/link';
 import Company from '@models/company/Company';
 import dbConnect from '@lib/dbConnect';
+import { checkIfComanyHasFuturIsoDate } from '@helpers/companies-helpers';
 
 const Page = ({ companies }) => {
   return (
@@ -29,9 +30,9 @@ const Page = ({ companies }) => {
                   <Grid container spacing={2}>
                     {companies &&
                       Array.isArray(companies) &&
-                      companies?.map(({ id, companySlug, companyListing, isLaunched }) => (
+                      companies?.map(({ id, companySlug, companyListing, hasFutureIso }) => (
                         <Grid key={id} item xs={12} sm={6} md={6} lg={6}>
-                          <Link href={!isLaunched ? `/${companySlug}` : `/portfolio/${companySlug}`}>
+                          <Link href={hasFutureIso ? `/${companySlug}` : `/portfolio/${companySlug}`}>
                             <Card style={{ padding: '60px', cursor: 'pointer' }}>
                               <Box style={{ textAlign: 'center' }}>
                                 <Box
@@ -84,12 +85,13 @@ export async function getServerSideProps({ params }) {
     const companies = await Company.find();
     return {
       props: {
-        companies: JSON.parse(JSON.stringify(companies)).map(({ _id, companySlug, companyListing, companyStatus }) => {
+        companies: JSON.parse(JSON.stringify(companies)).map((company) => {
+          const { _id, companySlug, companyListing } = company
           return {
             id: _id.toString(),
             companySlug,
             companyListing,
-            isLaunched: companyStatus.companyIsLaunched
+            hasFutureIso: checkIfComanyHasFuturIsoDate(company)
           };
         })
       }
