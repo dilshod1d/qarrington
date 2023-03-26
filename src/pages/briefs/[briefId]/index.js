@@ -6,7 +6,7 @@ import Navbar from '../../../components/topics/Navbar';
 import Footer from '../../../components/topics/Footer';
 import { Box, Container, Divider, Grid, Typography } from '@mui/material';
 import dbConnect from "@lib/dbConnect";
-import Brief from '@models/brief/Brief'
+import Brief from '@models/brief/Brief';
 
 const Page = ({ url, title, detail, summary, postedAt }) => {
 
@@ -46,7 +46,7 @@ const Page = ({ url, title, detail, summary, postedAt }) => {
                                             <Box sx={{ borderBottom: 1, borderColor: '#e7e7e7' }}>
                                                 <Box sx={{ padding: '20px 40px 40px 40px' }}>
                                                     <Box mt={2}>
-                                                        <Link href={`/briefs/${briefUrl}/${topicUrl}`}>
+                                                        <Link href={`/briefs/${url}/${topicUrl}`}>
                                                             <Typography sx={ItemTitle} gutterBottom variant="h2" fontWeight={800} color="black">
                                                                 {topicTitle}?
                                                             </Typography>
@@ -103,7 +103,7 @@ export async function getStaticProps({ params }) {
             postedAt: briefItem.briefPostedAt
         },
         revalidate: 60,
-    }
+    };
 }
 
 export async function getStaticPaths() {

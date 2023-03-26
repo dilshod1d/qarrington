@@ -5,6 +5,8 @@ import Carousel from 'react-material-ui-carousel';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
+import dbConnect from "@lib/dbConnect";
+import Crypto from '@models/crypto/Crypto'
 
 const Page = ({ route, ticker }) => {
 
@@ -24,11 +26,11 @@ const Page = ({ route, ticker }) => {
 
       <Head>
         <title>
-          How Subscriptions Can Outrun {ticker} Stock • Qarrington
+          How Subscriptions Can Outrun {ticker} Coin • Qarrington
         </title>
         <meta
           name="description"
-          content={`Buy and sell the subscriptions of innovative startup companies. It's like buying ${ticker} stock, but instead of shares, it's product-backed subscriptions.`}
+          content={`Buy and sell the subscriptions of innovative startup companies. It's like buying ${ticker}, but instead of coins, it's product-backed subscriptions.`}
         />
       </Head>
 
@@ -71,14 +73,14 @@ const Page = ({ route, ticker }) => {
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  How subscriptions can outrun {ticker} stock
+                  How subscriptions can outrun {ticker} coin
                   <Tooltip title="Subscriptions only give you access to a company's products and services, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
 
                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  We're building a subscription exchange, where you can buy & sell the subscriptions of startup companies. It's like buying {ticker} stock, but instead of shares, it's product-backed subscriptions.
+                  We're building a subscription exchange, where you can buy & sell the subscriptions of startup companies. It's like buying {ticker}, but instead of coins, it's product-backed subscriptions.
                 </Typography>
 
               </Box>
@@ -340,19 +342,30 @@ const Body = {
   backgroundColor: "#ffffff"
 };
 
-export async function getServerSideProps({ params }) {
-  try {
-    const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/stocks?stockRoute=${params.stockId.replace(/\-/g, '+')}`)
-      .then((r) => r.json());
-    return {
-      props: {
-        route: results.stockRoute,
-        ticker: results.stockTicker
+export async function getStaticProps({ params }) {
+  await dbConnect()
+  const cryptoItem = await Crypto.findOne({ cryptoRoute: params.cryptoId });
+  return {
+    props: {
+      name: cryptoItem.cryptoName,
+      ticker: cryptoItem.cryptoTicker
+    },
+    revalidate: 60,
+  }
+}
+
+export async function getStaticPaths() {
+  await dbConnect()
+  const cryptoItems = await Crypto.find();
+  return {
+    paths: cryptoItems.map(item => {
+      const cryptoId = item.cryptoRoute;
+      return {
+        params: {
+          cryptoId
+        }
       }
-    };
-  } catch (error) {
-    return {
-      notFound: true
-    };
+    }),
+    fallback: false
   }
 }

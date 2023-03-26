@@ -76,7 +76,6 @@ export async function getStaticProps({ params }) {
     return {
         props: {
             url: topicItem.topicUrl,
-            tags: topicItem.topicTags,
             title: topicItem.topicTitle,
             detail: topicItem.topicDetail,
             summary: topicItem.topicSummary,
