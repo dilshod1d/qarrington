@@ -1,27 +1,28 @@
+import { checkIfCompanyHasPastIsoDate } from '@helpers/companies-helpers';
 import dbConnect from '@lib/dbConnect';
 import Company from '@models/company/Company';
 import Match from '@models/match/Match';
 
 const prevDictionaryrange = {
-  N: 11,
-  T: 59,
-  H: 23,
-  D: 6,
-  W: 3,
-  M: 2,
-  Q: 3,
+  N: 12,
+  T: 60,
+  H: 24,
+  D: 7,
+  W: 4,
+  M: 3,
+  Q: 4,
   Y: Number.POSITIVE_INFINITY
 };
 
 const dictionaryRange = {
   N: 0,
-  T: 11,
-  H: 59,
-  D: 23,
-  W: 6,
-  M: 3,
-  Q: 2,
-  Y: 3
+  T: 12,
+  H: 60,
+  D: 24,
+  W: 7,
+  M: 4,
+  Q: 3,
+  Y: 4
 };
 
 const dictionary = [
@@ -128,7 +129,7 @@ const updateKpi = async (range, kpi, prevRangeKpi, companySubscribersUnits, acti
 
   // Every 5 seconds
   if (range === 'N') {
-    kpi.updateCount = kpi.updateCount === prevDictionaryrange[range] ? 0 : kpi.updateCount + 1;
+    kpi.updateCount = kpi.updateCount + 1;
     const currentKpiData = kpi.data[0];
     const matches = await Match.find();
     const matchesFiveSeconds =
@@ -146,7 +147,7 @@ const updateKpi = async (range, kpi, prevRangeKpi, companySubscribersUnits, acti
           ? matchesFiveSeconds.sort((a, b) => a.matchIsAddedAt - b.matchIsAddedAt)[0].matchPrice
           : kpi.data[0].companyPrice;
       // Company point change
-      newData.companyPointChange = currentKpiData.companyPrice - newData.companyPrice;
+      newData.companyPointChange = newData.companyPrice - currentKpiData.companyPrice;
 
       // Company percentage change
       newData.companyPercentChange = Number(((newData.companyPrice / currentKpiData.companyPrice) * 100 - 100).toFixed(2));
@@ -175,13 +176,13 @@ const updateKpi = async (range, kpi, prevRangeKpi, companySubscribersUnits, acti
 
   const prevSlice = prevRangeKpi.data.slice(0, dictionaryRange[range]);
 
-  newData.companyPrice = prevSlice.reduce((acc, curr) => acc + curr.companyPrice, 0);
+  newData.companyPrice = prevSlice[0].companyPrice;
+  newData.companyCapitalization = prevSlice[0].companyCapitalization
+
   newData.companyVolume = prevSlice.reduce((acc, curr) => acc + curr.companyVolume, 0);
 
-  newData.companyCapitalization = prevSlice.reduce((acc, curr) => acc + curr.companyCapitalization, 0);
   newData.companyBids = prevSlice.companyBids;
   newData.companyAsks = prevSlice.companyAsks;
-
   if (kpi.data[1]) {
     newData.companyPercentChange = Number(((newData.companyPrice / kpi.data[1]?.companyPrice) * 100 - 100).toFixed(2));
     newData.companyPointChange = kpi.data[0].companyPrice - kpi.data[1].companyPrice;
@@ -192,27 +193,23 @@ const updateKpi = async (range, kpi, prevRangeKpi, companySubscribersUnits, acti
 
   newData.companyVariant = newData.companyPointChange >= 0 ? 'primary' : 'error';
 
-  if (prevRangeKpi.updateCount === dictionaryRange[range]) {
-    kpi.updateCount = kpi.updateCount === prevDictionaryrange[range] ? 0 : kpi.updateCount + 1;
-    kpi.data = [newData, ...kpi.data.slice(0, 60)];
+  if ((dictionaryRange[range] + 1) === prevRangeKpi.updateCount) {
+    kpi.updateCount = kpi.updateCount + 1;
+    prevRangeKpi.updateCount = 0
+
+    kpi.data = [newData, ...kpi.data.slice(0, 59)];
   } else {
     kpi.data[0] = newData;
   }
 };
 
 const updateCompanyKpi = async (company, isOnIsoDate) => {
-  const suscriberUnits = company.companyIso.companyIsoSubscribers.reduce((acc, curr) => {
-    if (curr.companySubscriberUnits) {
-      acc = acc + curr.companySubscriberUnits;
-    }
-    return acc;
-  }, 0);
+  const suscriberUnits = company.companyIso.companyIsoUnits
 
-  if (company.companyStatus.companyIsLaunched) {
+  if (company.companyStatus.companyIsLaunched || checkIfCompanyHasPastIsoDate(company)) {
     const { companyKpi, companySlug } = company;
     const companyIsoPrice = company.companyIso.companyIsoPrice;
     const activeCustomers = company.companyUser.find(({ companyUserType }) => companyUserType === 'Active Customers')?.companyUserTotal;
-
     for (const range of dictionary) {
       const prevKpi = companyKpi[range.prev] || null;
       await updateKpi(range.key, companyKpi[range.curr], prevKpi, suscriberUnits, activeCustomers, isOnIsoDate, companyIsoPrice, companySlug);
