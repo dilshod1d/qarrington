@@ -3,16 +3,16 @@ import Question from '../../../../models/crypto/Crypto';
 
 async function handler(req, res) {
   const { method } = req;
-  const { cryptoUrl } = req.query;
+  const { cryptoRoute } = req.query;
 
   await dbConnect();
 
   // read items
 
   if (method === "GET") {
-    if (cryptoUrl) {
+    if (cryptoRoute) {
       try {
-        const readItems = await Question.findOne({ cryptoUrl: cryptoUrl });
+        const readItems = await Question.findOne({ cryptoRoute: cryptoRoute });
         res.status(200).json(readItems);
       } catch (err) {
         res.status(500).json(err);

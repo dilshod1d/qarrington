@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import HeaderMenu from '../../../components/menus/HeaderMenu';
 import LeftGrid from '../../../components/grids/LeftGrid';
-import Price from '../../../components/charts/Price';
+// import Price from '../../../components/charts/Price';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
@@ -19,6 +19,7 @@ import { useEffect } from 'react';
 import { authOptions } from 'src/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
 import Pick from '@models/pick/Pick';
+import PriceGrid from '@components/cards/PriceGrid';
 
 const Page = ({ company, pulls, pushes, picks }) => {
 
@@ -240,9 +241,6 @@ const Page = ({ company, pulls, pushes, picks }) => {
                         </Grid>
                       ))}
                   </Box>
-
-                  {/* tab starts */}
-
                   <TabContext value={value}>
                     <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                       <TabsWrapper
@@ -445,9 +443,8 @@ const Page = ({ company, pulls, pushes, picks }) => {
               </Grid>
             </Grid>
           </Grid>
-
           <Grid item xs={12} md={6} lg={3}>
-            <Price />
+            <PriceGrid id={company.id} kpi={company.companyKpi.companyNow.data} />
           </Grid>
         </Grid>
         <Footer />
@@ -503,7 +500,7 @@ export async function getServerSideProps(ctx) {
     const company = await Company.findOne({ companySlug: portfolioId.toLowerCase() });
     const parsedCompany = JSON.parse(JSON.stringify(company));
 
-    const { companyIso, companyListing, companySlug, companyKpi } = parsedCompany;
+    const { _id, companyIso, companyListing, companySlug, companyKpi } = parsedCompany;
     const {
       companyTicker,
       companyName,
@@ -539,6 +536,7 @@ export async function getServerSideProps(ctx) {
     return {
       props: {
         company: {
+          id: _id.toString(),
           companyIso,
           companyListing,
           companySlug,
@@ -558,7 +556,8 @@ export async function getServerSideProps(ctx) {
           companyIsoTime,
           companyBids,
           companyAsks,
-          companyisOnIsoDate
+          companyisOnIsoDate,
+          companyKpi
         },
         pulls,
         pushes,

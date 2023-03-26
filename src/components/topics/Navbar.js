@@ -138,10 +138,10 @@ const Component = () => {
                   </Box>
                 </Link>
 
-                <Link href="/resources">
+                <Link href="/exchanges">
                   <Box sx={{ marginRight: -1.2 }}>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      resources
+                      exchanges
                     </Button>
                   </Box>
                 </Link>

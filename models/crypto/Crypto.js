@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
 const CryptoSchema = new mongoose.Schema({
-  cryptoUrl: { type: String },
   cryptoName: { type: String },
+  cryptoRoute: { type: String },
   cryptoTicker: { type: String }
 });
 
