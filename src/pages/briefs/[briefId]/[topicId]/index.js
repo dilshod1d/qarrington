@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Navbar from '../../../../components/topics/Navbar';
 import Footer from '../../../../components/topics/Footer';
 import { Box, Container, Divider, Grid, Typography } from '@mui/material';
+import dbConnect from "@lib/dbConnect";
+import Topic from '@models/topic/Topic'
 
 const Page = ({ url, tags, title, detail, summary, postedAt, briefId }) => {
 

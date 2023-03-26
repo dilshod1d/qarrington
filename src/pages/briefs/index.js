@@ -1,10 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
+import useSWR from 'swr';
 import Navbar from '../../components/topics/Navbar';
 import Footer from '../../components/topics/Footer';
 import { Box, Container, Divider, Grid, Typography } from '@mui/material';
 
 const Page = () => {
+
+    const fetcher = (...args) => fetch(...args).then(res => res.json());
+    const { data: briefs } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/briefs`, fetcher);
 
     return (
 
@@ -71,21 +75,21 @@ const Page = () => {
 
 export default Page
 
-export async function getStaticProps({ params }) {
-    await dbConnect()
-    const briefItem = await Brief.findOne({ briefUrl: params.briefId });
-    return {
-        props: {
-            url: briefItem.briefUrl,
-            tags: briefItem.briefTags,
-            title: briefItem.briefTitle,
-            detail: briefItem.briefDetail,
-            summary: briefItem.briefSummary,
-            postedAt: briefItem.briefPostedAt
-        },
-        revalidate: 60,
-    }
-}
+// export async function getStaticProps({ params }) {
+//     await dbConnect()
+//     const briefItem = await Brief.findOne({ briefUrl: params.briefId });
+//     return {
+//         props: {
+//             url: briefItem.briefUrl,
+//             tags: briefItem.briefTags,
+//             title: briefItem.briefTitle,
+//             detail: briefItem.briefDetail,
+//             summary: briefItem.briefSummary,
+//             postedAt: briefItem.briefPostedAt
+//         },
+//         revalidate: 60,
+//     }
+// }
 
 // export async function getStaticPaths() {
 //     await dbConnect()

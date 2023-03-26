@@ -1,10 +1,17 @@
 import React from 'react';
+import Link from 'next/link';
 import Head from 'next/head';
+import useSWR from 'swr';
 import Navbar from '../../../components/topics/Navbar';
 import Footer from '../../../components/topics/Footer';
 import { Box, Container, Divider, Grid, Typography } from '@mui/material';
+import dbConnect from "@lib/dbConnect";
+import Brief from '@models/brief/Brief'
 
-const Page = ({ url, tags, title, detail, summary, postedAt }) => {
+const Page = ({ url, title, detail, summary, postedAt }) => {
+
+    const fetcher = (...args) => fetch(...args).then(res => res.json());
+    const { data: topics } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/topics`, fetcher);
 
     return (
 
@@ -25,7 +32,7 @@ const Page = ({ url, tags, title, detail, summary, postedAt }) => {
                 <Container style={{ backgroundColor: '#fff' }}>
                     <Grid container spacing={2}>
 
-                    <Grid item xs>
+                        <Grid item xs>
                             {/* <LeftSide /> */}
                         </Grid>
 
@@ -34,14 +41,14 @@ const Page = ({ url, tags, title, detail, summary, postedAt }) => {
                             <Grid item xs={12} mb={2}>
                                 <Grid container spacing={0.1}>
 
-                                    {topicItem.slice(0, 5).map(topics => (
-                                        <Grid key={topics.sys.id} item xs={12}>
+                                    {topics && Array.isArray(topics) && topics?.slice(0, 3).map(({ _id, topicUrl, topicTags, topicTitle, topicDetail, topicSummary, topicPostedAt }) => (
+                                        <Grid key={_id} item xs={12}>
                                             <Box sx={{ borderBottom: 1, borderColor: '#e7e7e7' }}>
                                                 <Box sx={{ padding: '20px 40px 40px 40px' }}>
                                                     <Box mt={2}>
-                                                        <Link href={`/topics/${topics.fields.topicUrl}`}>
-                                                            <Typography sx={TopicTitle} gutterBottom variant="h2" fontWeight={800} color="black">
-                                                                {topics.fields.topicTitle}?
+                                                        <Link href={`/briefs/${briefUrl}/${topicUrl}`}>
+                                                            <Typography sx={ItemTitle} gutterBottom variant="h2" fontWeight={800} color="black">
+                                                                {topicTitle}?
                                                             </Typography>
                                                         </Link>
                                                     </Box>
@@ -76,13 +83,20 @@ const Page = ({ url, tags, title, detail, summary, postedAt }) => {
 
 export default Page
 
+const ItemTitle = {
+    cursor: 'pointer',
+    color: '#000000',
+    '&:hover': {
+        color: '#2ed573'
+    }
+};
+
 export async function getStaticProps({ params }) {
     await dbConnect()
     const briefItem = await Brief.findOne({ briefUrl: params.briefId });
     return {
         props: {
             url: briefItem.briefUrl,
-            tags: briefItem.briefTags,
             title: briefItem.briefTitle,
             detail: briefItem.briefDetail,
             summary: briefItem.briefSummary,
