@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Carousel from 'react-material-ui-carousel';
 import Link from 'next/link';
-import HeaderMenu from '../../components/menus/HeaderMenu';
+import Navbar from '../../components/dashboard/Navbar';
 import Leftbar from '../../components/dashboard/Leftbar';
 import Completion from '../../components/cards/Completion';
 import {
@@ -66,7 +66,7 @@ const Page = () => {
                 />
             </Head>
 
-            <HeaderMenu />
+            <Navbar />
 
             <Container>
 
@@ -80,7 +80,7 @@ const Page = () => {
 
                     {/* Leftbar Ends Here */}
 
-                    <Grid item xs={12} md={6} lg={6} mb={4}>
+                    <Grid item xs={12} md={6} lg={6} mt={12} mb={4}>
                         <Grid container spacing={1}>
 
                             <Grid item xs={12}>

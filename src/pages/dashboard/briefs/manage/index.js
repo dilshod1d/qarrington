@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import HeaderMenu from '../../../../components/menus/HeaderMenu';
+import Navbar from '../../../../components/dashboard/Navbar';
 import Leftbar from '../../../../components/dashboard/Leftbar';
 import Completion from '../../../../components/cards/Completion';
 import Footer from '../../../../components/main/Footer';
@@ -24,7 +24,7 @@ const Page = () => {
                 />
             </Head>
 
-            <HeaderMenu />
+            <Navbar />
 
             <Container>
                 <Grid container spacing={2}>
@@ -33,7 +33,7 @@ const Page = () => {
                         <Leftbar />
                     </Grid>
 
-                    <Grid item xs={12} md={6} lg={6} mb={4}>
+                    <Grid item xs={12} md={6} lg={6} mt={12} mb={4}>
                         <Grid container spacing={1}>
                             <Grid item xs={12}>
 
@@ -41,30 +41,30 @@ const Page = () => {
                                     <Stack spacing={1} sx={{ width: '100%' }} direction="row">
                                         <Button
                                             size="large"
-                                            sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
-                                            variant="contained"
+                                            sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                                            variant="outlined"
+                                            color="secondary"
                                             fullWidth={true}
-                                            type="submit"
                                         >
-                                            save
+                                            copy
                                         </Button>
                                         <Button
                                             size="large"
-                                            sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
-                                            variant="contained"
+                                            sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                                            variant="outlined"
+                                            color="error"
                                             fullWidth={true}
-                                            type="submit"
                                         >
-                                            save
+                                            remove
                                         </Button>
                                         <Button
                                             size="large"
-                                            sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
-                                            variant="contained"
+                                            sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                                            variant="outlined"
+                                            color="primary"
                                             fullWidth={true}
-                                            type="submit"
                                         >
-                                            save
+                                            view
                                         </Button>
                                     </Stack>
                                 </Card>
@@ -78,34 +78,13 @@ const Page = () => {
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="avatar url"
-                                                defaultValue="ankara"
+                                                placeholder="briefTitle"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="avatar url"
-                                                defaultValue="ankara"
-                                                inputProps={{ style: { textAlign: 'center' } }}
-                                            />
-                                        </Stack>
-                                    </Card>
-
-                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                        <Stack spacing={2} sx={{ width: '100%' }}>
-                                            <TextField
-                                                required
-                                                id="outlined-required"
-                                                placeholder="avatar url"
-                                                defaultValue="ankara"
-                                                inputProps={{ style: { textAlign: 'center' } }}
-                                            />
-                                            <TextField
-                                                required
-                                                id="outlined-required"
-                                                placeholder="avatar url"
-                                                defaultValue="ankara"
+                                                placeholder="briefUrl"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                         </Stack>
@@ -116,8 +95,24 @@ const Page = () => {
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="avatar url"
-                                                defaultValue="ankara"
+                                                placeholder="briefTags"
+                                                inputProps={{ style: { textAlign: 'center' } }}
+                                            />
+                                            <TextField
+                                                required
+                                                id="outlined-required"
+                                                placeholder="briefSummary"
+                                                inputProps={{ style: { textAlign: 'center' } }}
+                                            />
+                                        </Stack>
+                                    </Card>
+
+                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                        <Stack spacing={2} sx={{ width: '100%' }}>
+                                            <TextField
+                                                required
+                                                id="outlined-required"
+                                                placeholder="briefDetail"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                         </Stack>

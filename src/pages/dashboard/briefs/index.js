@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import HeaderMenu from '../../../components/menus/HeaderMenu';
+import Navbar from '../../../components/dashboard/Navbar';
 import Leftbar from '../../../components/dashboard/Leftbar';
 import Completion from '../../../components/cards/Completion';
 import Footer from '../../../components/main/Footer';
@@ -24,7 +24,7 @@ const Page = () => {
                 />
             </Head>
 
-            <HeaderMenu />
+            <Navbar />
 
             <Container>
                 <Grid container spacing={2}>
@@ -33,7 +33,7 @@ const Page = () => {
                         <Leftbar />
                     </Grid>
 
-                    <Grid item xs={12} md={6} lg={6} mb={4}>
+                    <Grid item xs={12} md={6} lg={6} mt={12} mb={4}>
                         <Grid container spacing={1}>
                             <Grid item xs={12}>
 
