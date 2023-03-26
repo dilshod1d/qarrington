@@ -421,7 +421,7 @@ const Page = ({ basicCompany }) => {
                                                                 required
                                                                 id="outlined-required"
                                                                 placeholder="company currency"
-                                                                defaultValue={company.companyKpi.companyCurrency}
+                                                                defaultValue='USD'
                                                                 inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
