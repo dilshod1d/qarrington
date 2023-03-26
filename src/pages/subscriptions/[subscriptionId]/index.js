@@ -753,17 +753,21 @@ export async function getServerSideProps({ params }) {
         const parsedAccout = JSON.parse(JSON.stringify(account));
         
         const { companyListing, companyIso, companyKpi, _id: id }= parsedCompany
-        const { accountPersonal, accountProfile, accountContact, accountStatus } = parsedAccout
-        
         const { companyTicker, companyName, companyProduct, companyDescription, companyIndustry, companyMarket, companyWebsite, companyEmail } = companyListing
         const { companyIsoUnits, companyIsoPrice, companyIsoDate, companyIsoTime } = companyIso
         const { companyActiveCustomers, companyPrice, companyCapitalization } = companyKpi.companyNow.data[0]
         const { companyPercentChange, companyPointChange, companyVolume } = companyKpi.companyDay.data[1] ? companyKpi.companyDay.data[1] : companyKpi.companyDay.data[0]
 
-        const { accountFirstName, accountLastName } = accountPersonal
-        const { accountAvatarUrl } = accountProfile
-        const { accountCityName, accountStateName } = accountContact
-        const { accountIsActive } = accountStatus
+
+
+        const accountFirstName = parsedAccout.accountPersonal?.accountFirstName ? parsedAccout.accountPersonal.accountFirstName : "Unknown"
+        const accountLastName = parsedAccout.accountPersonal?.accountLastName ? parsedAccout.accountPersonal.accountLastName : "Unknown"
+        const accountAvatarUrl = parsedAccout.accountProfile?.accountAvatarUrl ? parsedAccout.accountProfile.accountAvatarUrl : "/assets/media/avatars/famale/000.webp"
+        
+        const accountCityName = parsedAccout.accountContact?.accountCityName ? parsedAccout.accountContact.accountCityName : "Unknown"
+        const accountStateName = parsedAccout.accountContact?.accountStateName ? parsedAccout.accountContact.accountStateName : "Unknown"
+        
+        const accountIsActive = parsedAccout.accountStatus?.accountIsActive ? parsedAccout.accountStatus?.accountIsActive : false
 
         return {
             props: {
