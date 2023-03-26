@@ -17,7 +17,7 @@ const Page = () => {
         <div>
 
             <Head>
-                <title>Briefs • Qarrington</title>
+                <title>Topics • Qarrington</title>
                 <meta
                     name="description"
                     content="Qarrington is a subscription exchange that allows you to buy, sell, and exchange the subscriptions of your favorite technology companies with lower fees."
@@ -42,7 +42,7 @@ const Page = () => {
                                         <Tooltip title="Post" placement="top">
                                             <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
                                                 <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
-                                                    <Link href="/dashboard/briefs/manage">
+                                                    <Link href="/dashboard/topics/manage">
                                                         <AddCircleRoundedIcon />
                                                     </Link>
                                                 </ListItemIcon>
@@ -53,7 +53,7 @@ const Page = () => {
                                                 <TextField
                                                     required
                                                     id="outlined-required"
-                                                    placeholder="Search from more than 24 briefs ..."
+                                                    placeholder="Search from more than 885 topics ..."
                                                     inputProps={{ style: { textAlign: 'center', color: 'white' } }}
                                                 />
                                             </Stack>
@@ -61,7 +61,7 @@ const Page = () => {
                                         <Tooltip title="Read" placement="top">
                                             <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
                                                 <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
-                                                    <Link href="/briefs">
+                                                    <Link href="/topics">
                                                         <AccessTimeFilledRoundedIcon />
                                                     </Link>
                                                 </ListItemIcon>
@@ -70,12 +70,12 @@ const Page = () => {
                                     </ListItem>
                                 </Card>
 
-                                {briefs && Array.isArray(briefs) && briefs?.slice(0, 3).map(({ _id, briefUrl, briefTags, briefTitle, briefDetail, briefSummary, briefPostedAt }) => (
+                                {topics && Array.isArray(topics) && topics?.slice(0, 3).map(({ _id, topicUrl, topicTags, topicTitle, topicDetail, topicSummary, topicPostedAt }) => (
                                     <Grid item xs={12}>
                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                            <Link href={`/dashboard/briefs/manage`}>
+                                            <Link href={`/dashboard/topics/manage`}>
                                                 <Typography textAlign="center" sx={ItemTitle} variant="h4" color="black" fontWeight={800}>
-                                                    {briefTitle}?
+                                                    {topicTitle}?
                                                 </Typography>
                                             </Link>
                                         </Card>
@@ -116,62 +116,62 @@ const ItemTitle = {
     }
 };
 
-const briefs = [
+const topics = [
     {
         _id: 1,
-        briefUrl: "what-is-qarrington",
-        briefTags: [
+        topicUrl: "what-is-qarrington",
+        topicTags: [
             {
-                briefTagName: "platform"
+                topicTagName: "platform"
             },
             {
-                briefTagName: "marketplace"
+                topicTagName: "marketplace"
             },
             {
-                briefTagName: "company"
+                topicTagName: "company"
             }
         ],
-        briefTitle: "What is Qarrington",
-        briefDetail: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions. Imagine a stock exchange such as Nasdaq, where company shares are bought and sold, however, instead of shares, it's subscriptions, which are fully backed by products and services offered by the listed companies on Qarrington.",
-        briefSummary: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions.",
-        briefPostedAt: "Fri, Apr 25, 2023, 11:45 PM"
+        topicTitle: "What is Qarrington",
+        topicDetail: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions. Imagine a stock exchange such as Nasdaq, where company shares are bought and sold, however, instead of shares, it's subscriptions, which are fully backed by products and services offered by the listed companies on Qarrington.",
+        topicSummary: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions.",
+        topicPostedAt: "Fri, Apr 25, 2023, 11:45 PM"
     },
     {
         _id: 2,
-        briefUrl: "what-does-qarrington-do",
-        briefTags: [
+        topicUrl: "what-does-qarrington-do",
+        topicTags: [
             {
-                briefTagName: "platform"
+                topicTagName: "platform"
             },
             {
-                briefTagName: "marketplace"
+                topicTagName: "marketplace"
             },
             {
-                briefTagName: "company"
+                topicTagName: "company"
             }
         ],
-        briefTitle: "What does Qarrington do",
-        briefDetail: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions. Imagine a stock exchange such as Nasdaq, where company shares are bought and sold, however, instead of shares, it's subscriptions, which are fully backed by products and services offered by the listed companies on Qarrington.",
-        briefSummary: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions.",
-        briefPostedAt: "Fri, Apr 25, 2023, 11:45 PM"
+        topicTitle: "What does Qarrington do",
+        topicDetail: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions. Imagine a stock exchange such as Nasdaq, where company shares are bought and sold, however, instead of shares, it's subscriptions, which are fully backed by products and services offered by the listed companies on Qarrington.",
+        topicSummary: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions.",
+        topicPostedAt: "Fri, Apr 25, 2023, 11:45 PM"
     },
     {
         _id: 3,
-        briefUrl: "why-was-qarrington-created",
-        briefTags: [
+        topicUrl: "why-was-qarrington-created",
+        topicTags: [
             {
-                briefTagName: "platform"
+                topicTagName: "platform"
             },
             {
-                briefTagName: "marketplace"
+                topicTagName: "marketplace"
             },
             {
-                briefTagName: "company"
+                topicTagName: "company"
             }
         ],
-        briefTitle: "Why was Qarrington created",
-        briefDetail: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions. Imagine a stock exchange such as Nasdaq, where company shares are bought and sold, however, instead of shares, it's subscriptions, which are fully backed by products and services offered by the listed companies on Qarrington.",
-        briefSummary: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions.",
-        briefPostedAt: "Fri, Apr 25, 2023, 11:45 PM"
+        topicTitle: "Why was Qarrington created",
+        topicDetail: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions. Imagine a stock exchange such as Nasdaq, where company shares are bought and sold, however, instead of shares, it's subscriptions, which are fully backed by products and services offered by the listed companies on Qarrington.",
+        topicSummary: "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions.",
+        topicPostedAt: "Fri, Apr 25, 2023, 11:45 PM"
     }
 ]

@@ -96,19 +96,25 @@ const Component = () => {
 
                 <Stack mx={1} direction="row">
                   <Link href={`/dashboard/accounts`}>
-                    <Box sx={MenuIcon}>
-                      <MeetingRoomRoundedIcon sx={{ fontSize: '28px' }} />
-                    </Box>
+                    <Tooltip title="Accounts" placement="top">
+                      <Box sx={MenuIcon}>
+                        <MeetingRoomRoundedIcon sx={{ fontSize: '28px' }} />
+                      </Box>
+                    </Tooltip>
                   </Link>
                   <Link href={`/dashboard`}>
-                    <Box sx={MenuIcon}>
-                      <GridViewRoundedIcon sx={{ fontSize: '28px' }} />
-                    </Box>
+                    <Tooltip title="Dashboard" placement="top">
+                      <Box sx={MenuIcon}>
+                        <GridViewRoundedIcon sx={{ fontSize: '28px' }} />
+                      </Box>
+                    </Tooltip>
                   </Link>
                   <Link href={`/dashboard/settings`}>
-                    <Box sx={MenuIcon}>
-                      <RoomPreferencesRoundedIcon sx={{ fontSize: '28px' }} />
-                    </Box>
+                    <Tooltip title="Settings" placement="top">
+                      <Box sx={MenuIcon}>
+                        <RoomPreferencesRoundedIcon sx={{ fontSize: '28px' }} />
+                      </Box>
+                    </Tooltip>
                   </Link>
                 </Stack>
 
@@ -188,8 +194,8 @@ export default Component;
 
 const MenuItem = {
   fontWeight: '700',
-  fontSize: '12px',
-  marginX: '4px',
+  fontSize: '11px',
+  marginX: '8px',
   textTransform: 'uppercase',
   backgroundColor: '#7bed9f10',
   '&:hover': {
@@ -215,9 +221,9 @@ const MenuIcon = {
   display: 'flex',
   marginX: '6px',
   alignItems: 'center',
-  color: '#2f354290',
+  color: '#2f3542',
   '&:hover': {
-    color: '#2f3542'
+    color: '#2ed573'
   }
 };
 
