@@ -3,9 +3,9 @@ import mongoose from 'mongoose';
 const PickSchema = new mongoose.Schema(
     {
         pickTicker: { type: String },
-        pickUnits: { type: String },
-        pickPrice: { type: String },
-        pickAmount: { type: String },
+        pickUnits: { type: Number },
+        pickPrice: { type: Number },
+        pickAmount: { type: Number },
         pickCompany: {
             pickCompanyId: { type: String },
             pickCompanyName: { type: String },
@@ -13,7 +13,7 @@ const PickSchema = new mongoose.Schema(
         },
         pickAccountId: { type: String },
         pickStatus: {
-            pickIsTransferred: { type: String },
+            pickIsTransferred: { type: Boolean },
             pickIsTransferredAt: { type: String }
         }
     },
