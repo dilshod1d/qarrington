@@ -184,7 +184,7 @@ const Page = () => {
                                                                     vertical: 'bottom',
                                                                     horizontal: 'right'
                                                                 }}
-                                                                variant={account?.accountStatus?.accountIsActive}
+                                                                variant={account?.accountStatus?.accountIsActive && "dot"}
                                                             >
                                                                 <Avatar
                                                                     style={{ width: 65, height: 65 }}
