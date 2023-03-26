@@ -107,20 +107,27 @@ export default async function handler(req, res) {
 			})
 			
 
-			company.companyKpi.companyNow.data = [
-				{
-          companyCapitalization: company.companyIso.companyIsoPrice * company.companyIso.companyIsoUnits,
-          companyVolume: 0,
-          companyBids: [],
-          companyAsks: [],
-          companyPrice: company.companyIso.companyIsoPrice,
-          companyPercentChange: 0,
-          companyPointChange: 0,
-          companyVariant: "primary",
-          companyActiveCustomers: 0,
-          companyIsRecordedAt: Date.now()
-				}
-			]
+			const basicData = {
+				companyCapitalization: company.companyIso.companyIsoPrice * company.companyIso.companyIsoUnits,
+				companyVolume: 0,
+				companyBids: [],
+				companyAsks: [],
+				companyPrice: company.companyIso.companyIsoPrice,
+				companyPercentChange: 0,
+				companyPointChange: 0,
+				companyVariant: "primary",
+				companyActiveCustomers: 0,
+				companyIsRecordedAt: Date.now()
+			}
+
+			company.companyKpi.companyNow.data = [basicData]
+			company.companyKpi.companyToday.data = [basicData]
+			company.companyKpi.companyHour.data = [basicData]
+			company.companyKpi.companyDay.data = [basicData]
+			company.companyKpi.companyWeek.data = [basicData]
+			company.companyKpi.companyMonth.data = [basicData]
+			company.companyKpi.companyQuarter.data = [basicData]
+			company.companyKpi.companyYear.data = [basicData]
 
 			company.companySlug = req.body.companyTicker.toLowerCase()
 			company.companyListing.companyKey = generateToken(12)
