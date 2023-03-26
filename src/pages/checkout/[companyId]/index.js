@@ -1,157 +1,79 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from 'next/link';
 import Head from 'next/head';
-import Image from 'next/image';
-import { green } from '@mui/material/colors';
 import Carousel from 'react-material-ui-carousel';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
-import HistoryEduRoundedIcon from '@mui/icons-material/HistoryEduRounded';
-import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
-import { Avatar, Badge, Box, Button, Card, Container, Grid, Hidden, Stack, styled, TextField, Tooltip, Typography } from '@mui/material';
+import { Avatar, Badge, Box, Button, Card, Container, Grid, Hidden, Stack, styled, TextField, Tooltip, Typography, Snackbar } from '@mui/material';
 import useSWR from 'swr';
+import Company from "@models/company/Company";
+import dbConnect from "@lib/dbConnect";
+import { useEffect } from "react";
+import { parseToObj } from "@helpers/checkout-helpers";
+import { useCardList } from "@hooks/useCardList";
+import { checkoutCardPayment } from "@services/checkout-services";
+import { useRouter } from "next/router";
 
-const Page = ({ name, ticker, description, logo }) => {
+const Page = ({ companySlug, companyName, companyDescription, companyLogo }) => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
   const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
-  const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
+  const router = useRouter()
 
-  const getSteps = () => {
-    return [
-      "card number",
-      "card name",
-      "card cvc",
-      "card country",
-      "expiry month",
-      "expiry year",
-      "email address",
-    ];
+
+  const { contentData, currentContentData, goNext, goBack, error, errorMsg, cleanError, cleanErrorMsg, finish, lastInput } = useCardList()
+  const [inputValue, setInputValue] = useState('')
+
+  const handleInputChange = (e) => {
+    const newInput = e.target.value
+    cleanError()
+    setInputValue(currentContentData.inputConstraints(inputValue, newInput))
   }
 
-  const getStepContent = (step) => {
-    switch (step) {
-
-      case 0:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="card number" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                required
-                placeholder="card number"
-                type="number"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 1:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="card name" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                required
-                placeholder="card name"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 2:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="card cvc" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                required
-                placeholder="card cvc"
-                type="number"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 3:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="card country" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                required
-                placeholder="card country"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 4:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="expiry month" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                required
-                placeholder="expiry month"
-                type="number"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 5:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="expiry year" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                required
-                placeholder="expiry year"
-                type="number"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      case 6:
-        return (
-          <Stack spacing={1.2} sx={{ width: '100%' }}>
-            <Tooltip title="email address" placement="top">
-              <TextField
-                sx={{ input: { textAlign: "center", textTransform: "lowercase" } }}
-                required
-                placeholder="email address"
-              />
-            </Tooltip>
-          </Stack>
-        );
-
-      default:
-        return "unknown step";
-    }
-  }
-
-  const [activeStep, setActiveStep] = useState(0);
-  const [skippedSteps, setSkippedSteps] = useState([]);
-  const steps = getSteps();
-
-  const handleNext = () => {
-    setActiveStep(activeStep + 1);
-    setSkippedSteps(skippedSteps.filter((skipItem) => skipItem !== activeStep));
+  const handleNext = (e) => {
+    e.preventDefault()
+    goNext({ inputValue, setInputValue }) 
   };
 
   const handleBack = () => {
-    setActiveStep(activeStep - 1);
+    goBack({ inputValue, setInputValue })
   };
+
+  
+  useEffect(() => {
+    if(currentContentData) {
+      setInputValue(currentContentData.savedValue)
+    }
+  }, [currentContentData])
+
+  useEffect(() => {
+    const listCompany = async () => {
+      try {
+        const toSend = parseToObj(contentData)
+        const response = await checkoutCardPayment({
+          ...toSend,
+          type: router.query.type,
+          pickUnits: router.query.units,
+          pickTicker: companySlug
+        })
+        if(response) {
+          console.log(response)
+          return
+        }
+        console.log("Something went wrong!")
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    if (finish) listCompany()
+  }, [finish])
 
   return (
 
     <>
 
       <Head>
-        <title>Hi {ticker} • Qarrington</title>
+        <title>Hi {companySlug} • Qarrington</title>
         <meta
           name="description"
           content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
@@ -192,32 +114,32 @@ const Page = ({ name, ticker, description, logo }) => {
                   <Link href="/">
                     <Avatar
                       style={{ width: 40, height: 40 }}
-                      alt={name}
-                      src={logo}
+                      alt={companyName}
+                      src={companyLogo}
                     />
                   </Link>
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  Buy {ticker} either with your credit or debit card
+                  Buy {companySlug} either with your credit or debit card
                   <Tooltip title="As a customer, subscriptions give you access to a company's products, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
 
                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  When you buy {ticker} subscriptions, you will be able to access {name}'s products and services with your subscription units. Kindly note that each unit represents a month of access.
+                  When you buy {companySlug} subscriptions, you will be able to access {companySlug}'s products and services with your subscription units. Kindly note that each unit represents a month of access.
                 </Typography>
 
               </Box>
 
-              <form noValidate autoComplete="on">
+              <form noValidate autoComplete="on" onSubmit={handleNext}>
 
                 <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px' }}>
 
                   <Stack spacing={1.2} sx={{ width: '100%' }}>
 
-                    {activeStep === steps.length ? (
+                    {finish || !currentContentData ? (
                       <Stack spacing={1.2} sx={{ width: '100%', mb: 0 }}>
 
                         <Link href="/help">
@@ -230,19 +152,17 @@ const Page = ({ name, ticker, description, logo }) => {
                             get some help
                           </Button>
                         </Link>
-
-                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyTicker }) => (
-                          <Link key={_id} href={`/subscriptions/${companyTicker}`}>
-                            <Button
-                              size="large"
-                              sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
-                              variant="contained"
-                              fullWidth={true}
-                            >
-                              track portfolio
-                            </Button>
-                          </Link>
-                        ))}
+    
+                        <Link href={`/subscriptions/${companySlug}`}>
+                          <Button
+                            size="large"
+                            sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                            variant="contained"
+                            fullWidth={true}
+                          >
+                            track portfolio
+                          </Button>
+                        </Link>
 
                         <Button
                           style={FormButton}
@@ -256,7 +176,25 @@ const Page = ({ name, ticker, description, logo }) => {
                       </Stack>
                     ) : (
                       <>
-                        <form>{getStepContent(activeStep)}</form>
+                        <Stack spacing={1.2} sx={{ width: '100%' }}>
+                          <Tooltip title={currentContentData.title} placement="top">
+                            <TextField
+                              sx={{ input: { textAlign: "center", textTransform: "uppercase" }, 'input::placeholder': { textTransform: "capitalize"} }}
+                              placeholder={currentContentData.placeholder}
+                              onChange={handleInputChange}
+                              value={inputValue}
+                              error={error}
+                            />
+                          </Tooltip>
+                        </Stack>
+                        <Snackbar
+                          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                          open={errorMsg !== ''}
+                          message={errorMsg}
+                          autoHideDuration={3000}
+                          onClose={cleanErrorMsg}
+                          sx={{ '&>div':{ textAlign:"center", width:"inherit", display: "flex", justifyContent: "center" } }}
+                        />
                         <Button
                           size="large"
                           sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
@@ -265,11 +203,10 @@ const Page = ({ name, ticker, description, logo }) => {
                           fullWidth={true}
                           onClick={handleNext}
                         >
-                          {activeStep === steps.length - 1 ? "Pay" : "Next"}
+                          {lastInput ? "Pay" : "Next"}
                         </Button>
                         <Button
                           style={FormButton}
-                          disabled={activeStep === 0}
                           onClick={handleBack}
                           color="secondary"
                           sx={{ fontSize: '12px', textTransform: 'uppercase' }}
@@ -516,16 +453,22 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export async function getServerSideProps({ params }) {
   try {
-    const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies?companyTicker=${params.companyId.replace(/\-/g, '+')}`)
-      .then((r) => r.json());
+    await dbConnect();
+    const { companyId } = params;
+    const company = await Company.findOne({ companySlug: companyId.toLowerCase() });
+    const parsedCompany = JSON.parse(JSON.stringify(company));
+    
+    const { companyListing, companySlug } = parsedCompany;
+    const { companyName, companyDescription, companyLogo } = companyListing;
+
     return {
       props: {
-        name: results.companyDetails.companyName,
-        ticker: results.companyTicker,
-        description: results.companyDetails.companyDescription,
-        logo: results.companyDetails.companyLogo
+        companySlug,
+        companyName,
+        companyDescription,
+        companyLogo
       }
-    };
+    }
   } catch (error) {
     return {
       notFound: true

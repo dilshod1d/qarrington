@@ -1,19 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from 'next/link';
 import Head from 'next/head';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import { green } from '@mui/material/colors';
-import Image from 'next/image';
 import Carousel from 'react-material-ui-carousel';
-import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
-import HistoryEduRoundedIcon from '@mui/icons-material/HistoryEduRounded';
-import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
 import { Avatar, Badge, Box, Button, Card, Container, Grid, Hidden, Stack, styled, TextField, Tooltip, Typography, Snackbar } from '@mui/material';
 import useSWR from 'swr';
 import { useCompaniesList } from "@hooks/useCompaniesList";
 import { useEffect } from "react";
 import { parseToObj } from "@helpers/companies-list-helpers";
 import { createCompany } from "@services/companies-services";
+import { getServerSession } from "next-auth";
+import { authOptions } from "src/pages/api/auth/[...nextauth]";
 
 
 const Page = () => {
@@ -364,6 +361,20 @@ const Page = () => {
 }
 
 export default Page;
+
+
+export async function getServerSideProps(ctx) {
+  const session = await getServerSession(ctx.req, ctx.res, authOptions)
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/account/access',
+        permanent: false,
+      },
+    }
+  }
+  return { props: {}}
+}
 
 const FormButton = {
   "&:hover": {

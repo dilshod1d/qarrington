@@ -83,5 +83,26 @@ export const createCustomAccount = async (data) => {
     }
 }
 
+export const buyPicks = async (data) => {
+    try {
+        // const stripe = await startStripe()
+        // const paymentIntent = await stripe.paymentIntents.create({
+        //     amount: 1000,
+        //     currency: 'usd',
+        //     automatic_payment_methods: {enabled: true},
+        //     application_fee_amount: 123,
+        //     transfer_data: {
+        //         destination: '{{CONNECTED_STRIPE_ACCOUNT_ID}}',
+        //     },
+        // });
+
+        // console.log("here")
+        return data
+    } catch (err) {
+        console.log(err.message)
+        return err
+    }
+}
+
 export default startStripe
 // export { createCustomer, createProduct, createPerson, listPersons }

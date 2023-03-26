@@ -6,110 +6,99 @@ import Footer from '../../components/main/Footer';
 import Link from 'next/link';
 import Company from '@models/company/Company';
 import dbConnect from '@lib/dbConnect';
+import { checkIfComanyHasFuturIsoDate } from '@helpers/companies-helpers';
 
 const Page = ({ companies }) => {
-    return (
+  return (
+    <div>
+      <Head>
+        <title>Companies • Qarrington</title>
+        <meta
+          name="description"
+          content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
+        />
+      </Head>
 
-        <div>
+      <HeaderMenu />
 
-            <Head>
-                <title>Companies • Qarrington</title>
-                <meta
-                    name="description"
-                    content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
-                />
-            </Head>
-
-            <HeaderMenu />
-
-            <Container>
-                <Grid container spacing={2}>
-
-                    <Grid item xs={12} md={6} lg={9} mb={4}>
-                        <Grid container spacing={1}>
-
-                            <Grid item xs={12}>
-
-                                <Grid item xs={12} mb={2}>
-                                    <Grid container spacing={2}>
-
-                                        {companies && Array.isArray(companies) && companies?.map(({ id, companySlug, companyListing, isoDate }) => (
-                                            <Grid key={id} item xs={12} sm={6} md={6} lg={6}>
-                                                <Link href={new Date(isoDate) > new Date(Date.now()) ? `/${companySlug}` : `/portfolio/${companySlug}`}>
-                                                    <Card style={{ padding: '60px', cursor: 'pointer' }}>
-                                                        <Box style={{ textAlign: 'center' }}>
-                                                            <Box
-                                                                style={{
-                                                                    display: 'flex',
-                                                                    justifyContent: 'center'
-                                                                }}
-                                                            >
-                                                                <Avatar
-                                                                    style={{ width: 50, height: 50 }}
-                                                                    alt={companyListing.companyName}
-                                                                    src={companyListing.companyLogo}
-                                                                />
-                                                            </Box>
-                                                            <Typography variant="h5" fontWeight={700} my={1.5} color="black">
-                                                                {companyListing.companyDescription}
-                                                            </Typography>
-                                                            <Typography textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
-                                                                {companyListing.companyName}
-                                                            </Typography>
-                                                        </Box>
-                                                    </Card>
-                                                </Link>
-                                            </Grid>
-                                        ))}
-
-                                        <Grid item xs={12}>
-                                            <Box spacing={2} sx={{ display: 'flex', justifyContent: 'center' }}>
-                                                <Pagination count={10} variant="outlined" shape="rounded" />
-                                            </Box>
-                                        </Grid>
-
-                                    </Grid>
-                                </Grid>
-
-                                <Footer />
-                            </Grid>
+      <Container>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6} lg={9} mb={4}>
+            <Grid container spacing={1}>
+              <Grid item xs={12}>
+                <Grid item xs={12} mb={2}>
+                  <Grid container spacing={2}>
+                    {companies &&
+                      Array.isArray(companies) &&
+                      companies?.map(({ id, companySlug, companyListing, hasFutureIso }) => (
+                        <Grid key={id} item xs={12} sm={6} md={6} lg={6}>
+                          <Link href={hasFutureIso ? `/${companySlug}` : `/portfolio/${companySlug}`}>
+                            <Card style={{ padding: '60px', cursor: 'pointer' }}>
+                              <Box style={{ textAlign: 'center' }}>
+                                <Box
+                                  style={{
+                                    display: 'flex',
+                                    justifyContent: 'center'
+                                  }}
+                                >
+                                  <Avatar style={{ width: 50, height: 50 }} alt={companyListing.companyName} src={companyListing.companyLogo} />
+                                </Box>
+                                <Typography variant="h5" fontWeight={700} my={1.5} color="black">
+                                  {companyListing.companyDescription}
+                                </Typography>
+                                <Typography textTransform="uppercase" variant="body2" fontWeight={600} color="secondary">
+                                  {companyListing.companyName}
+                                </Typography>
+                              </Box>
+                            </Card>
+                          </Link>
                         </Grid>
-                    </Grid>
+                      ))}
 
-                    <Grid item xs={12} md={6} lg={3}>
-                        <RightGrid />
+                    <Grid item xs={12}>
+                      <Box spacing={2} sx={{ display: 'flex', justifyContent: 'center' }}>
+                        <Pagination count={10} variant="outlined" shape="rounded" />
+                      </Box>
                     </Grid>
-
+                  </Grid>
                 </Grid>
-            </Container>
 
-        </div>
+                <Footer />
+              </Grid>
+            </Grid>
+          </Grid>
 
-    )
-}
+          <Grid item xs={12} md={6} lg={3}>
+            <RightGrid />
+          </Grid>
+        </Grid>
+      </Container>
+    </div>
+  );
+};
 
-export default Page
-
+export default Page;
 
 export async function getServerSideProps({ params }) {
-    try {
-        await dbConnect()
-        const companies = await Company.find()
-        return {
-            props: {
-                companies: JSON.parse(JSON.stringify(companies)).map(({ _id, companySlug, companyListing, companyIso }) => {
-                    return {
-                        id: _id.toString(),
-                        companySlug,
-                        companyListing,
-                        isoDate: companyIso.companyIsoDate
-                    }
-                })
-            }
-        };
-    } catch (error) {
-        return {
-            notFound: true
-        };
-    }
+  try {
+    await dbConnect();
+    const companies = await Company.find();
+    return {
+      props: {
+        companies: JSON.parse(JSON.stringify(companies)).map((company) => {
+          const { _id, companySlug, companyListing } = company
+          return {
+            id: _id.toString(),
+            companySlug,
+            companyListing,
+            hasFutureIso: checkIfComanyHasFuturIsoDate(company)
+          };
+        })
+      }
+    };
+  } catch (error) {
+    return {
+      notFound: true
+    };
+  }
 }

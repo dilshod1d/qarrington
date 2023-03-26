@@ -106,9 +106,38 @@ export default async function handler(req, res) {
 				}
 			})
 			
+
+			const basicData = {
+				companyCapitalization: company.companyIso.companyIsoPrice * company.companyIso.companyIsoUnits,
+				companyVolume: 0,
+				companyBids: [],
+				companyAsks: [],
+				companyPrice: company.companyIso.companyIsoPrice,
+				companyPercentChange: 0,
+				companyPointChange: 0,
+				companyVariant: "primary",
+				companyActiveCustomers: 0,
+				companyIsRecordedAt: Date.now()
+			}
+
+			company.companyKpi.companyNow.data = [basicData]
+			company.companyKpi.companyToday.data = [basicData]
+			company.companyKpi.companyHour.data = [basicData]
+			company.companyKpi.companyDay.data = [basicData]
+			company.companyKpi.companyWeek.data = [basicData]
+			company.companyKpi.companyMonth.data = [basicData]
+			company.companyKpi.companyQuarter.data = [basicData]
+			company.companyKpi.companyYear.data = [basicData]
+
 			company.companySlug = req.body.companyTicker.toLowerCase()
 			company.companyListing.companyKey = generateToken(12)
 			company.companyListing.companyProductId = product.id
+
+			if(product.id) {
+				company.companyStatus.companyIsListed = true
+				company.companyStatus.companyIsListedAt = Date.now()
+			}
+
 			company.companyLogo = req.body.companyLogo
 			company.companyAccountId = id
 
@@ -146,34 +175,37 @@ export default async function handler(req, res) {
 				
 				const company = await Company.findOne({ companySlug: companySlug })
 
+				
 				const { companySubscriberAccountId } = req.body
 				if(companySubscriberAccountId) {
+					if(company.companyIso.companyIsoSubscribers.find(({ companySubscriberAccountId }) => companySubscriberAccountId === id)) {
+						return res.status(200).json({ success: true, message: "Subscriber already added" })
+					}
+
 					company.companyIso.companyIsoSubscribers = [...company.companyIso.companyIsoSubscribers, {
 						companySubscriberAccountId,
 						companySubscriberAddedAt: Date.now()
 					}]
-
-					company.companyUser.map(({ companyUserType, companyUserTotal }) => {
-						if (companyUserType === "Total Subscribers") {
-
+					
+					company.companyUser = company.companyUser.map((x) => {
+						if (x.companyUserType === "Total Subscribers") {
 							if (company.companyIso.companyIsoSubscribers.length > 1000) {
 								company.companyStatus.companyIsLaunched = true,
 								company.companyStatus.companyIsLaunchedAt = Date.now()
 							}
-
+							
 							return {
-								companyUserType,
+								...x,
 								companyUserTotal: company.companyIso.companyIsoSubscribers.length
 							}
 						}
-						return {
-							companyUserType,
-							companyUserTotal
-						}
+						
+						return x
 					})
 
+					
 					await company.save()
-					return res.status(200).json({ success: true, company, message: "Suscriber added successfully" })
+					return res.status(200).json({ success: true, company, message: "Subscriber added successfully" })
 				}
 
 				await company.save()

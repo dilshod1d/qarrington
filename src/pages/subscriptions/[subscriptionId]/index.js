@@ -12,12 +12,43 @@ import { Avatar, Badge, Box, Button, Breadcrumbs, Card, Container, Grid, Stack, 
 import Footer from '../../../components/main/Footer';
 import useSWR from 'swr';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
+import Company from '@models/company/Company';
+import dbConnect from '@lib/dbConnect';
+import Account from '@models/account/Account';
+import { getParseDateNow, parseDateAndTime } from '@helpers/helpers';
+import PriceGrid from '@components/cards/PriceGrid';
+import { useEffect } from 'react';
+import { getCompanyBy } from '@services/companies-services';
 
-const Page = ({ slug, ticker, name, logo, headline, product, description, industry, market, website, email, units, price, date, time }) => {
-
-    const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data: companies } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies`, fetcher);
-    const { data: accounts } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/accounts`, fetcher);
+const Page = ({ 
+        id,
+        companySlug, 
+        companyTicker, 
+        companyName, 
+        companyProduct, 
+        companyDescription, 
+        companyIndustry, 
+        companyMarket, 
+        companyWebsite, 
+        companyEmail, 
+        companyIsoUnits, 
+        companyIsoPrice, 
+        accountFirstName,
+        accountAvatarUrl,
+        accountLastName,
+        accountCityName,
+        accountStateName,
+        accountIsActive,
+        companyIsoDate,
+        companyIsoTime,
+        companyActiveCustomers,
+        companyPrice,
+        companyPercentChange,
+        companyPointChange,
+        companyCapitalization,
+        companyVolume,
+        companyKpi
+    }) => {
 
     const [value, setValue] = useState('3');
 
@@ -26,20 +57,20 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
     };
 
     const [unit, setUnit] = useState(0);
-    const handleIncrease = () => {
-        setUnit(unit + 12)
-    }
-    const handleDecrease = () => {
-        if (unit > 0)
-            setUnit(unit - 12);
-    }
+    // const handleIncrease = () => {
+    //     setUnit(unit + 12)
+    // }
+    // const handleDecrease = () => {
+    //     if (unit > 0)
+    //         setUnit(unit - 12);
+    // }
 
     return (
 
         <div>
 
             <Head>
-                <title>{name} ({ticker}) Subscriptions • Qarrington</title>
+                <title>{companyName} ({companyTicker}) Subscriptions • Qarrington</title>
                 <meta
                     name="description"
                     content="Qarrington is a subscription exchange that allows you to buy, sell, and exchange the subscriptions of your favorite technology companies without fees."
@@ -69,8 +100,8 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
 
                                     <Box textAlign="center" sx={{ marginBottom: '16px' }}>
                                         <Grid item xs={12} sm={6} md={6} lg={12}>
-                                            <Card style={{ padding: '60px', marginBottom: '10px' }}>
-
+                                            <PriceGrid id={id} kpi={companyKpi} />
+                                            {/* <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                 {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
                                                     <>
                                                         {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
@@ -200,7 +231,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                     </Breadcrumbs>
                                                 </Box>
 
-                                            </Card>
+                                            </Card> */}
                                         </Grid>
                                     </Box>
 
@@ -240,18 +271,18 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                 <Grid item xs={12}>
                                                     <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                                         <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                            What is {name}?
+                                                            What is {companyName}?
                                                         </Typography>
                                                         <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                            {description}
+                                                            {companyDescription}
                                                         </Typography>
                                                     </Card>
                                                     <Card style={{ padding: '60px', marginBottom: '10px', background: '#f5f5f5' }}>
                                                         <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                            What does {name} do?
+                                                            What does {companyName} do?
                                                         </Typography>
                                                         <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                            {product}
+                                                            {companyProduct}
                                                         </Typography>
                                                     </Card>
                                                 </Grid>
@@ -263,7 +294,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                     Name
                                                                 </Typography>
                                                                 <Typography textTransform="uppercase" component="div" variant="body" color="secondary" fontWeight={700}>
-                                                                    {name}
+                                                                    {companyName}
                                                                 </Typography>
                                                             </Card>
                                                         </Grid>
@@ -273,7 +304,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                     Ticker
                                                                 </Typography>
                                                                 <Typography textTransform="uppercase" component="div" variant="body" color="secondary" fontWeight={700}>
-                                                                    {ticker}
+                                                                    {companyTicker}
                                                                 </Typography>
                                                             </Card>
                                                         </Grid>
@@ -283,7 +314,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                     Market
                                                                 </Typography>
                                                                 <Typography textTransform="uppercase" component="div" variant="body" color="secondary" fontWeight={700}>
-                                                                    {market}
+                                                                    {companyMarket}
                                                                 </Typography>
                                                             </Card>
                                                         </Grid>
@@ -293,7 +324,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                     Industry
                                                                 </Typography>
                                                                 <Typography textTransform="uppercase" component="div" variant="body" color="secondary" fontWeight={700}>
-                                                                    {industry}
+                                                                    {companyIndustry}
                                                                 </Typography>
                                                             </Card>
                                                         </Grid>
@@ -303,7 +334,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                     Website
                                                                 </Typography>
                                                                 <Typography component="div" variant="body" color="secondary" fontWeight={700}>
-                                                                    {website}
+                                                                    {companyWebsite}
                                                                 </Typography>
                                                             </Card>
                                                         </Grid>
@@ -313,7 +344,7 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                                     Email
                                                                 </Typography>
                                                                 <Typography component="div" variant="body" color="secondary" fontWeight={700}>
-                                                                    {email}
+                                                                    {companyEmail}
                                                                 </Typography>
                                                             </Card>
                                                         </Grid>
@@ -330,24 +361,24 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                     <Grid item xs={12} sm={6} md={6} lg={12}>
                                                         <Card style={{ padding: '80px' }}>
                                                             <Box textAlign="center">
-                                                                <Tooltip title={`The total number of ${ticker} subscriptions in supply. Each subscription costs $${price} and you can buy with a credit/debit card.`} placement="top">
+                                                                <Tooltip title={`The total number of ${companyTicker} subscriptions in supply. Each subscription costs $${companyIsoPrice} and you can buy with a credit/debit card.`} placement="top">
                                                                     <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={1}>
-                                                                        {units}
+                                                                        {companyIsoUnits}
                                                                     </Typography>
                                                                 </Tooltip>
                                                             </Box>
                                                             <Box textAlign="center">
                                                                 <Typography mb={2} variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
-                                                                    Fri, May 25, 2023, 04:45 PM
+                                                                    {companyIsoDate}, {companyIsoTime}
                                                                 </Typography>
-                                                                <Link href={`/portfolio/${slug}`}>
+                                                                <Link href={`/portfolio/${companySlug}`}>
                                                                     <Button
                                                                         size="medium"
                                                                         sx={{ color: 'white', textTransform: 'uppercase', fontSize: '12px' }}
                                                                         variant="contained"
                                                                         fullWidth={false}
                                                                     >
-                                                                        buy {ticker}
+                                                                        buy {companyTicker}
                                                                     </Button>
                                                                 </Link>
                                                             </Box>
@@ -363,144 +394,84 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                             <TabPanel sx={{ padding: 0 }} value="3">
                                                 <Grid item xs={12}>
                                                     <Grid container spacing={1}>
-                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
-                                                            <>
-                                                                {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
-                                                                    <>
-                                                                        {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
-                                                                                <Card style={{ padding: '60px', textAlign: 'center' }}>
-                                                                                    <Tooltip title="The total number of customers of this subscription is the number of all customers with the subscription." placement="top">
-                                                                                        <InfoRoundedIcon sx={{ color: '#2ed573' }} />
-                                                                                    </Tooltip>
-                                                                                    <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
-                                                                                        {companyActiveCustomers}
-                                                                                    </Typography>
-                                                                                    <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
-                                                                                        Total Customers
-                                                                                    </Typography>
-                                                                                </Card>
-                                                                            </Grid>
-                                                                        ))}
-                                                                    </>
-                                                                ))}
-                                                            </>
-                                                        ))}
-                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
-                                                            <>
-                                                                {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
-                                                                    <>
-                                                                        {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
-                                                                                <Card style={{ padding: '60px', textAlign: 'center' }}>
-                                                                                    <Tooltip title="The current price of this subscription is the last price at which the buy/pull and sell/push request are executed." placement="top">
-                                                                                        <InfoRoundedIcon sx={{ color: '#2ed573' }} />
-                                                                                    </Tooltip>
-                                                                                    <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
-                                                                                        {companyPrice}
-                                                                                    </Typography>
-                                                                                    <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
-                                                                                        Current Price
-                                                                                    </Typography>
-                                                                                </Card>
-                                                                            </Grid>
-                                                                        ))}
-                                                                    </>
-                                                                ))}
-                                                            </>
-                                                        ))}
-                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
-                                                            <>
-                                                                {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
-                                                                    <>
-                                                                        {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
-                                                                                <Card style={{ padding: '60px', textAlign: 'center', background: '#f5f5f5' }}>
-                                                                                    <Tooltip title="The percent change of this subscription is calculated as the difference between the price 24 hours and 48 hours ago." placement="top">
-                                                                                        <InfoRoundedIcon sx={{ color: '#2ed573' }} />
-                                                                                    </Tooltip>
-                                                                                    <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
-                                                                                        {companyPercentChange}
-                                                                                    </Typography>
-                                                                                    <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
-                                                                                        Percent Change
-                                                                                    </Typography>
-                                                                                </Card>
-                                                                            </Grid>
-                                                                        ))}
-                                                                    </>
-                                                                ))}
-                                                            </>
-                                                        ))}
-                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
-                                                            <>
-                                                                {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
-                                                                    <>
-                                                                        {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
-                                                                                <Card style={{ padding: '60px', textAlign: 'center', background: '#f5f5f5' }}>
-                                                                                    <Tooltip title="The point change of this subscription is calculated as the difference between the price 24 hours and 48 hours ago." placement="top">
-                                                                                        <InfoRoundedIcon sx={{ color: '#2ed573' }} />
-                                                                                    </Tooltip>
-                                                                                    <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
-                                                                                        {companyPointChange}
-                                                                                    </Typography>
-                                                                                    <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
-                                                                                        Point Change
-                                                                                    </Typography>
-                                                                                </Card>
-                                                                            </Grid>
-                                                                        ))}
-                                                                    </>
-                                                                ))}
-                                                            </>
-                                                        ))}
-                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
-                                                            <>
-                                                                {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
-                                                                    <>
-                                                                        {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
-                                                                                <Card style={{ padding: '60px', textAlign: 'center' }}>
-                                                                                    <Tooltip title="The market cap of this subscription is calculated as the total subscriptions in supply multiplied by the current price." placement="top">
-                                                                                        <InfoRoundedIcon sx={{ color: '#2ed573' }} />
-                                                                                    </Tooltip>
-                                                                                    <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
-                                                                                        {companyCapitalization}
-                                                                                    </Typography>
-                                                                                    <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
-                                                                                        Market Capitalization
-                                                                                    </Typography>
-                                                                                </Card>
-                                                                            </Grid>
-                                                                        ))}
-                                                                    </>
-                                                                ))}
-                                                            </>
-                                                        ))}
-                                                        {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
-                                                            <>
-                                                                {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
-                                                                    <>
-                                                                        {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                            <Grid key={_id} item xs={12} sm={6} md={6} lg={6}>
-                                                                                <Card style={{ padding: '60px', textAlign: 'center' }}>
-                                                                                    <Tooltip title="The trading volume of this subscription is calculated as the total number of subscriptions traded in the past 24hrs." placement="top">
-                                                                                        <InfoRoundedIcon sx={{ color: '#2ed573' }} />
-                                                                                    </Tooltip>
-                                                                                    <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
-                                                                                        {companyVolume}
-                                                                                    </Typography>
-                                                                                    <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
-                                                                                        Trading Volume
-                                                                                    </Typography>
-                                                                                </Card>
-                                                                            </Grid>
-                                                                        ))}
-                                                                    </>
-                                                                ))}
-                                                            </>
-                                                        ))}
+                                                        <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                            <Card style={{ padding: '60px', textAlign: 'center' }}>
+                                                                <Tooltip title="The total number of customers of this subscription is the number of all customers with the subscription." placement="top">
+                                                                    <InfoRoundedIcon sx={{ color: '#2ed573' }} />
+                                                                </Tooltip>
+                                                                <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
+                                                                    {companyActiveCustomers}
+                                                                </Typography>
+                                                                <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
+                                                                    Total Customers
+                                                                </Typography>
+                                                            </Card>
+                                                        </Grid>
+                                                        <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                            <Card style={{ padding: '60px', textAlign: 'center' }}>
+                                                                <Tooltip title="The current price of this subscription is the last price at which the buy/pull and sell/push request are executed." placement="top">
+                                                                    <InfoRoundedIcon sx={{ color: '#2ed573' }} />
+                                                                </Tooltip>
+                                                                <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
+                                                                    {companyPrice}
+                                                                </Typography>
+                                                                <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
+                                                                    Current Price
+                                                                </Typography>
+                                                            </Card>
+                                                        </Grid>
+                                                        <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                            <Card style={{ padding: '60px', textAlign: 'center', background: '#f5f5f5' }}>
+                                                                <Tooltip title="The percent change of this subscription is calculated as the difference between the price 24 hours and 48 hours ago." placement="top">
+                                                                    <InfoRoundedIcon sx={{ color: '#2ed573' }} />
+                                                                </Tooltip>
+                                                                <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
+                                                                    {companyPercentChange}
+                                                                </Typography>
+                                                                <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
+                                                                    Percent Change
+                                                                </Typography>
+                                                            </Card>
+                                                        </Grid>
+                                                        <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                            <Card style={{ padding: '60px', textAlign: 'center', background: '#f5f5f5' }}>
+                                                                <Tooltip title="The point change of this subscription is calculated as the difference between the price 24 hours and 48 hours ago." placement="top">
+                                                                    <InfoRoundedIcon sx={{ color: '#2ed573' }} />
+                                                                </Tooltip>
+                                                                <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
+                                                                    {companyPointChange}
+                                                                </Typography>
+                                                                <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
+                                                                    Point Change
+                                                                </Typography>
+                                                            </Card>
+                                                        </Grid>
+                                                        <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                            <Card style={{ padding: '60px', textAlign: 'center' }}>
+                                                                <Tooltip title="The market cap of this subscription is calculated as the total subscriptions in supply multiplied by the current price." placement="top">
+                                                                    <InfoRoundedIcon sx={{ color: '#2ed573' }} />
+                                                                </Tooltip>
+                                                                <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
+                                                                    {companyCapitalization}
+                                                                </Typography>
+                                                                <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
+                                                                    Market Capitalization
+                                                                </Typography>
+                                                            </Card>
+                                                        </Grid>
+                                                        <Grid item xs={12} sm={6} md={6} lg={6}>
+                                                            <Card style={{ padding: '60px', textAlign: 'center' }}>
+                                                                <Tooltip title="The trading volume of this subscription is calculated as the total number of subscriptions traded in the past 24hrs." placement="top">
+                                                                    <InfoRoundedIcon sx={{ color: '#2ed573' }} />
+                                                                </Tooltip>
+                                                                <Typography my={0.5} component="div" variant="h3" color="black" fontWeight={700}>
+                                                                    {companyVolume}
+                                                                </Typography>
+                                                                <Typography textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
+                                                                    Trading Volume
+                                                                </Typography>
+                                                            </Card>
+                                                        </Grid>
                                                     </Grid>
                                                 </Grid>
                                             </TabPanel>
@@ -510,98 +481,88 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                             {/* faq starts */}
 
                                             <TabPanel sx={{ padding: 0 }} value="4">
-                                                {companies && Array.isArray(companies) && companies?.slice(0, 1).map(({ _id, companyKpi }) => (
-                                                    <>
-                                                        {companyKpi && companyKpi.slice(0, 1).map(({ _id, companyNow }) => (
-                                                            <>
-                                                                {companyNow && companyNow.slice(0, 1).map(({ _id, companyCapitalization, companyVolume, companyPrice, companyPercentChange, companyPointChange, companyActiveCustomers, companyIsRecordedAt }) => (
-                                                                    <Grid key={_id} item xs={12}>
-                                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                                            <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                                                What is {ticker}?
-                                                                            </Typography>
-                                                                            <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                                                {ticker} is a unique ticker symbol that is used to quickly identify and represent the subscriptions of {name} on Qarrington.
-                                                                            </Typography>
-                                                                        </Card>
-                                                                        <Card style={{ padding: '60px', marginBottom: '10px', background: '#f5f5f5' }}>
-                                                                            <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                                                How to buy/sell {ticker}?
-                                                                            </Typography>
-                                                                            <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                                                First, you can buy {ticker} with your credit/debit card. Similarly, you can sell {ticker} and receive the payouts to your connected bank account.
-                                                                            </Typography>
-                                                                        </Card>
-                                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                                            <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                                                When to buy/sell {ticker}?
-                                                                            </Typography>
-                                                                            <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                                                Fundamentally, there's no specific date, time, or period to buy or sell {ticker}. You can buy {ticker} with your credit/debit card at any given time.
-                                                                            </Typography>
-                                                                        </Card>
-                                                                        <Card style={{ padding: '60px', marginBottom: '10px', background: '#f5f5f5' }}>
-                                                                            <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                                                Why should I buy {ticker}?
-                                                                            </Typography>
-                                                                            <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                                                When you buy {ticker}, you can use a portion of it to access the products and services provided by {ticker}. In addition to that, you can sell a portion of your {ticker} subscriptions to potential {ticker} customers.
-                                                                            </Typography>
-                                                                        </Card>
-                                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                                            <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                                                Where to buy/sell {ticker}?
-                                                                            </Typography>
-                                                                            <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                                                Qarrington is the first and largest subscription exchange that allows you to buy/sell {ticker} and the subscriptions of several technology companies. Buy with a credit/debit and sell to your bank account.
-                                                                            </Typography>
-                                                                        </Card>
-                                                                        <Card style={{ padding: '60px', marginBottom: '10px', background: '#f5f5f5' }}>
-                                                                            <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                                                How to earn {ticker}?
-                                                                            </Typography>
-                                                                            <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                                                When you refer a verified friend or a family member with at least $100 worth of subscriptions in their account portfolio, Qarrington will reward you with 1 {ticker} and compensate your friend with 1 {ticker}.
-                                                                            </Typography>
-                                                                        </Card>
-                                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                                            <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                                                How to use {ticker}?
-                                                                            </Typography>
-                                                                            <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                                                If you have {ticker} in your subscription portfolio, you can use a portion to access the products and services provided by the company.
-                                                                            </Typography>
-                                                                        </Card>
-                                                                        <Card style={{ padding: '60px', marginBottom: '10px', background: '#f5f5f5' }}>
-                                                                            <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                                                How is {ticker} price determined?
-                                                                            </Typography>
-                                                                            <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                                                Technically, the current price of {ticker} is calculated as the price at which the most recent buy/pull and sell/push request is executed.
-                                                                            </Typography>
-                                                                        </Card>
-                                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                                            <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                                                What is {ticker} price?
-                                                                            </Typography>
-                                                                            <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                                                The current price of {ticker} is ${companyPrice}. While this figure was updated on Fri, May 22, 2023, at 7:45 PM, the next update is in 5 seconds.
-                                                                            </Typography>
-                                                                        </Card>
-                                                                        <Card style={{ padding: '60px', marginBottom: '10px', background: '#f5f5f5' }}>
-                                                                            <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
-                                                                                What is {ticker} capitalization?
-                                                                            </Typography>
-                                                                            <Typography component="div" variant="body" color="secondary" fontWeight={500}>
-                                                                                The current capitalization of {ticker} is ${companyCapitalization}. It was updated on Fri, May 22, 2023, at 7:45 PM and will be updated in 5 seconds.
-                                                                            </Typography>
-                                                                        </Card>
-                                                                    </Grid>
-                                                                ))}
-                                                            </>
-                                                        ))}
-                                                    </>
-                                                ))}
+                                                <Grid item xs={12}>
+                                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                        <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
+                                                            What is {companyTicker}?
+                                                        </Typography>
+                                                        <Typography component="div" variant="body" color="secondary" fontWeight={500}>
+                                                            {companyTicker} is a unique ticker symbol that is used to quickly identify and represent the subscriptions of {companyName} on Qarrington.
+                                                        </Typography>
+                                                    </Card>
+                                                    <Card style={{ padding: '60px', marginBottom: '10px', background: '#f5f5f5' }}>
+                                                        <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
+                                                            How to buy/sell {companyTicker}?
+                                                        </Typography>
+                                                        <Typography component="div" variant="body" color="secondary" fontWeight={500}>
+                                                            First, you can buy {companyTicker} with your credit/debit card. Similarly, you can sell {companyTicker} and receive the payouts to your connected bank account.
+                                                        </Typography>
+                                                    </Card>
+                                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                        <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
+                                                            When to buy/sell {companyTicker}?
+                                                        </Typography>
+                                                        <Typography component="div" variant="body" color="secondary" fontWeight={500}>
+                                                            Fundamentally, there's no specific date, time, or period to buy or sell {companyTicker}. You can buy {companyTicker} with your credit/debit card at any given time.
+                                                        </Typography>
+                                                    </Card>
+                                                    <Card style={{ padding: '60px', marginBottom: '10px', background: '#f5f5f5' }}>
+                                                        <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
+                                                            Why should I buy {companyTicker}?
+                                                        </Typography>
+                                                        <Typography component="div" variant="body" color="secondary" fontWeight={500}>
+                                                            When you buy {companyTicker}, you can use a portion of it to access the products and services provided by {companyTicker}. In addition to that, you can sell a portion of your {companyTicker} subscriptions to potential {companyTicker} customers.
+                                                        </Typography>
+                                                    </Card>
+                                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                        <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
+                                                            Where to buy/sell {companyTicker}?
+                                                        </Typography>
+                                                        <Typography component="div" variant="body" color="secondary" fontWeight={500}>
+                                                            Qarrington is the first and largest subscription exchange that allows you to buy/sell {companyTicker} and the subscriptions of several technology companies. Buy with a credit/debit and sell to your bank account.
+                                                        </Typography>
+                                                    </Card>
+                                                    <Card style={{ padding: '60px', marginBottom: '10px', background: '#f5f5f5' }}>
+                                                        <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
+                                                            How to earn {companyTicker}?
+                                                        </Typography>
+                                                        <Typography component="div" variant="body" color="secondary" fontWeight={500}>
+                                                            When you refer a verified friend or a family member with at least $100 worth of subscriptions in their account portfolio, Qarrington will reward you with 1 {companyTicker} and compensate your friend with 1 {companyTicker}.
+                                                        </Typography>
+                                                    </Card>
+                                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                        <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
+                                                            How to use {companyTicker}?
+                                                        </Typography>
+                                                        <Typography component="div" variant="body" color="secondary" fontWeight={500}>
+                                                            If you have {companyTicker} in your subscription portfolio, you can use a portion to access the products and services provided by the company.
+                                                        </Typography>
+                                                    </Card>
+                                                    <Card style={{ padding: '60px', marginBottom: '10px', background: '#f5f5f5' }}>
+                                                        <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
+                                                            How is {companyTicker} price determined?
+                                                        </Typography>
+                                                        <Typography component="div" variant="body" color="secondary" fontWeight={500}>
+                                                            Technically, the current price of {companyTicker} is calculated as the price at which the most recent buy/pull and sell/push request is executed.
+                                                        </Typography>
+                                                    </Card>
+                                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                        <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
+                                                            What is {companyTicker} price?
+                                                        </Typography>
+                                                        <Typography component="div" variant="body" color="secondary" fontWeight={500}>
+                                                            The current price of {companyTicker} is ${companyPrice}. While this figure was updated on {getParseDateNow()}, the next update is in 5 seconds.
+                                                        </Typography>
+                                                    </Card>
+                                                    <Card style={{ padding: '60px', marginBottom: '10px', background: '#f5f5f5' }}>
+                                                        <Typography mb={0.8} component="div" variant="h4" color="black" fontWeight={700}>
+                                                            What is {companyTicker} capitalization?
+                                                        </Typography>
+                                                        <Typography component="div" variant="body" color="secondary" fontWeight={500}>
+                                                            The current capitalization of {companyTicker} is ${companyCapitalization}. It was updated on {getParseDateNow()} and will be updated in 5 seconds.
+                                                        </Typography>
+                                                    </Card>
+                                                </Grid>
                                             </TabPanel>
 
                                             {/* faq stops */}
@@ -613,52 +574,44 @@ const Page = ({ slug, ticker, name, logo, headline, product, description, indust
                                                     <Card style={{ padding: '80px' }}>
                                                         <Box style={{ textAlign: 'center' }}>
                                                             <Box component="label" display="flex" justifyContent="center">
-                                                                {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal, accountStatus }) => (
-                                                                    <StyledBadge
-                                                                        key={_id}
-                                                                        overlap="circular"
-                                                                        anchorOrigin={{
-                                                                            vertical: 'bottom',
-                                                                            horizontal: 'right'
-                                                                        }}
-                                                                        variant={accountStatus.accountIsActive}
-                                                                    >
-                                                                        {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountProfile }) => (
-                                                                            <Avatar
-                                                                                key={_id}
-                                                                                style={{ width: 65, height: 65 }}
-                                                                                alt={accountPersonal.accountFirstName}
-                                                                                src={accountProfile.accountAvatarUrl}
-                                                                            />
-                                                                        ))}
-                                                                    </StyledBadge>
-                                                                ))}
+                                                                <StyledBadge
+                                                                    overlap="circular"
+                                                                    anchorOrigin={{
+                                                                        vertical: 'bottom',
+                                                                        horizontal: 'right'
+                                                                    }}
+                                                                    variant={accountIsActive && "dot"}
+                                                                >
+                                                                        <Avatar
+                                                                            style={{ width: 65, height: 65 }}
+                                                                            alt={accountFirstName}
+                                                                            src={accountAvatarUrl}
+                                                                        />
+                                                                </StyledBadge>
                                                             </Box>
-                                                            {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal, accountContact }) => (
                                                                 <>
-                                                                    <Box mt={1.5} key={_id}>
-                                                                        <Typography mr={1} component="span" variant="h4" fontWeight="500" color="black">{accountPersonal.accountFirstName}</Typography>
-                                                                        <Typography component="span" variant="h4" fontWeight="700" color="black">{accountPersonal.accountLastName}</Typography>
+                                                                    <Box mt={1.5}>
+                                                                        <Typography mr={1} component="span" variant="h4" fontWeight="500" color="black">{accountFirstName}</Typography>
+                                                                        <Typography component="span" variant="h4" fontWeight="700" color="black">{accountLastName}</Typography>
                                                                     </Box>
                                                                     <Box mt={-0.5} mb={1.2}>
                                                                         <Typography component="span" textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
-                                                                            {accountContact.accountCityName}
+                                                                            {accountCityName}
                                                                         </Typography>
                                                                         <Typography component="span" mr={0.5} variant="h4" fontWeight="500" color="secondary">,</Typography>
                                                                         <Typography component="span" textTransform="uppercase" variant="body2" color="secondary" fontWeight={700}>
-                                                                            {accountContact.accountStateName}
+                                                                            {accountStateName}
                                                                         </Typography>
                                                                     </Box>
                                                                 </>
-                                                            ))}
-                                                            <Link href={`/portfolio/${slug}`}>
+                                                            <Link href={`/portfolio/${companySlug}`}>
                                                                 <Button
                                                                     size="medium"
                                                                     sx={{ color: 'white', textTransform: 'uppercase', fontSize: '12px' }}
                                                                     variant="contained"
                                                                     fullWidth={false}
                                                                 >
-                                                                    buy {ticker}
+                                                                    buy {companyTicker}
                                                                 </Button>
                                                             </Link>
                                                         </Box>
@@ -787,318 +740,69 @@ const CurrencyBadge = styled(Badge)(({ theme }) => ({
     },
 }));
 
+
+
 export async function getServerSideProps({ params }) {
     try {
-        const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/companies?companySlug=${params.subscriptionId.replace(/\-/g, '+')}`)
-            .then((r) => r.json());
+        const { subscriptionId: companySlug } = params
+        await dbConnect();
+        const company = await Company.findOne({ companySlug });
+        const parsedCompany = JSON.parse(JSON.stringify(company));
+        
+        const account = await Account.findById(company.companyAccountId);
+        const parsedAccout = JSON.parse(JSON.stringify(account));
+        
+        const { companyListing, companyIso, companyKpi, _id: id }= parsedCompany
+        const { companyTicker, companyName, companyProduct, companyDescription, companyIndustry, companyMarket, companyWebsite, companyEmail } = companyListing
+        const { companyIsoUnits, companyIsoPrice, companyIsoDate, companyIsoTime } = companyIso
+        const { companyActiveCustomers, companyPrice, companyCapitalization } = companyKpi.companyNow.data[0]
+        const { companyPercentChange, companyPointChange, companyVolume } = companyKpi.companyDay.data[1] ? companyKpi.companyDay.data[1] : companyKpi.companyDay.data[0]
+
+
+
+        const accountFirstName = parsedAccout.accountPersonal?.accountFirstName ? parsedAccout.accountPersonal.accountFirstName : "Unknown"
+        const accountLastName = parsedAccout.accountPersonal?.accountLastName ? parsedAccout.accountPersonal.accountLastName : "Unknown"
+        const accountAvatarUrl = parsedAccout.accountProfile?.accountAvatarUrl ? parsedAccout.accountProfile.accountAvatarUrl : "/assets/media/avatars/famale/000.webp"
+        
+        const accountCityName = parsedAccout.accountContact?.accountCityName ? parsedAccout.accountContact.accountCityName : "Unknown"
+        const accountStateName = parsedAccout.accountContact?.accountStateName ? parsedAccout.accountContact.accountStateName : "Unknown"
+        
+        const accountIsActive = parsedAccout.accountStatus?.accountIsActive ? parsedAccout.accountStatus?.accountIsActive : false
+
         return {
             props: {
-                slug: results.companySlug,
-                ticker: results.companyListing.companyTicker,
-                name: results.companyListing.companyName,
-                logo: results.companyListing.companyLogo,
-                headline: results.companyListing.companyHeadline,
-                product: results.companyListing.companyProduct,
-                description: results.companyListing.companyDescription,
-                industry: results.companyListing.companyIndustry,
-                market: results.companyListing.companyMarket,
-                website: results.companyListing.companyWebsite,
-                email: results.companyListing.companyEmail,
-                units: results.companyIso.companyIsoUnits,
-                price: results.companyIso.companyIsoPrice,
-                date: results.companyIso.companyIsoDate,
-                time: results.companyIso.companyIsoTime
+                id,
+                companySlug,
+                companyTicker,
+                companyName,
+                companyProduct,
+                companyDescription,
+                companyIndustry,
+                companyMarket,
+                companyWebsite,
+                companyEmail,
+                companyIsoUnits,
+                companyIsoPrice,
+                accountFirstName,
+                accountLastName,
+                accountAvatarUrl,
+                accountCityName,
+                accountStateName,
+                accountIsActive,
+                companyIsoDate: companyIsoDate.split('T')[0],
+                companyIsoTime,
+                companyActiveCustomers,
+                companyPrice,
+                companyPercentChange,
+                companyPointChange,
+                companyCapitalization,
+                companyVolume,
+                companyKpi: companyKpi.companyNow.data
             }
         };
     } catch (error) {
         return {
-            notFound: true
+        notFound: true
         };
     }
 }
-
-const cubes = [
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 300
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 600
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 200
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 100
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 800
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 500
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 300
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 600
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 200
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 100
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 800
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 500
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 300
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 600
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 200
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 100
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 800
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 500
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 100
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 800
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 500
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 300
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 600
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 200
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 100
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 800
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 100
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 800
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 500
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 300
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 600
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 200
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 100
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 800
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 100
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 800
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 500
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 300
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 600
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 200
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 100
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 800
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 100
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 800
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 500
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 300
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 600
-    },
-    {
-        date: "Fri, May 22, 2023, 7:45 PM",
-        price: "20",
-        variant: 200
-    }
-]
-
-const faqs = [
-    {
-        title: "hddh",
-        detail: "ssksks"
-    },
-    {
-        title: "hddh",
-        detail: "ssksks"
-    },
-    {
-        title: "hddh",
-        detail: "ssksks"
-    },
-    {
-        title: "hddh",
-        detail: "ssksks"
-    },
-    {
-        title: "hddh",
-        detail: "ssksks"
-    },
-    {
-        title: "hddh",
-        detail: "ssksks"
-    },
-    {
-        title: "hddh",
-        detail: "ssksks"
-    },
-    {
-        title: "hddh",
-        detail: "ssksks"
-    },
-    {
-        title: "hddh",
-        detail: "ssksks"
-    },
-    {
-        title: "hddh",
-        detail: "ssksks"
-    }
-]
