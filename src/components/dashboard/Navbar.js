@@ -9,6 +9,10 @@ import { Avatar, Box, Card, Container, Divider, Grid, Stack, styled, Typography 
 import useSWR from 'swr';
 import InboxIcon from '@mui/icons-material/Inbox';
 
+import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
+import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
+import RoomPreferencesRoundedIcon from '@mui/icons-material/RoomPreferencesRounded';
+
 const Component = () => {
 
   const fetcher = (...args) => fetch(...args).then(res => res.json());
@@ -32,7 +36,7 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="flex-start">
                 <LogoWrapper>
-                  <Link href="/">
+                  <Link href={`/dashboard`}>
                     <Avatar
                       variant="rounded"
                       alt="Setment Logo"
@@ -50,100 +54,100 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="center">
 
-                <Link href="#">
+                <Link href={`/dashboard/accounts`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      menu
+                      accounts
                     </Button>
                   </Box>
                 </Link>
 
-                <Link href="#">
+                <Link href={`/dashboard/companies`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      menu
+                      companies
                     </Button>
                   </Box>
                 </Link>
 
-                <Link href="#">
+                <Link href={`/dashboard/picks`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      menu
+                      picks
                     </Button>
                   </Box>
                 </Link>
 
-                <Link href="#">
+                <Link href={`/dashboard/pulls`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      menu
+                      pulls
                     </Button>
                   </Box>
                 </Link>
 
-                <Link href="#">
+                <Link href={`/dashboard/pushes`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      menu
+                      pushes
                     </Button>
                   </Box>
                 </Link>
 
-                <Stack mx={5} direction="row">
-                  <Link href="#">
+                <Stack mx={1} direction="row">
+                  <Link href={`/dashboard/accounts`}>
                     <Box sx={MenuIcon}>
-                      <InboxIcon sx={{ fontSize: '28px' }} />
+                      <MeetingRoomRoundedIcon sx={{ fontSize: '28px' }} />
                     </Box>
                   </Link>
-
-                  <Link href="#">
+                  <Link href={`/dashboard`}>
                     <Box sx={MenuIcon}>
-                      <InboxIcon sx={{ fontSize: '28px' }} />
+                      <GridViewRoundedIcon sx={{ fontSize: '28px' }} />
                     </Box>
                   </Link>
-
-                  <Link href="#">
+                  <Link href={`/dashboard/settings`}>
                     <Box sx={MenuIcon}>
-                      <InboxIcon sx={{ fontSize: '28px' }} />
+                      <RoomPreferencesRoundedIcon sx={{ fontSize: '28px' }} />
                     </Box>
                   </Link>
                 </Stack>
 
-                <Link href="#">
+                <Link href={`/dashboard/matches`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      menu
+                      matches
                     </Button>
                   </Box>
                 </Link>
 
-                <Link href="#">
+                <Link href={`/dashboard/tracks`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      menu
+                      tracks
                     </Button>
                   </Box>
                 </Link>
 
-                <Link href="#">
+                <Link href={`/dashboard/briefs`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      menu
-                    </Button>
-                  </Box>
-                </Link><Link href="#">
-                  <Box>
-                    <Button sx={MenuItem} variant='text' color='secondary'>
-                      menu
+                      briefs
                     </Button>
                   </Box>
                 </Link>
 
-                <Link href="#">
+                <Link href={`/dashboard/topics`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
-                      menu
+                      topics
+                    </Button>
+                  </Box>
+                </Link>
+
+                <Link href={`/dashboard/settings`}>
+                  <Box>
+                    <Button sx={MenuItem} variant='text' color='secondary'>
+                      settings
                     </Button>
                   </Box>
                 </Link>
@@ -158,7 +162,7 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="flex-end">
                 <AvatarWrapper>
-                  <Link href="/account">
+                  <Link href={`/dashboard/team`}>
                     <Fab size="small" color="primary" aria-label="add">
                       <HistoryEduRoundedIcon sx={{ color: '#ffffff' }} />
                     </Fab>
@@ -185,7 +189,7 @@ export default Component;
 const MenuItem = {
   fontWeight: '700',
   fontSize: '12px',
-  marginX: '8px',
+  marginX: '4px',
   textTransform: 'uppercase',
   backgroundColor: '#7bed9f10',
   '&:hover': {
@@ -208,12 +212,12 @@ const HeaderCard = styled(Card)(
 
 const MenuIcon = {
   cursor: 'pointer',
-  padding: '4px',
   display: 'flex',
+  marginX: '6px',
   alignItems: 'center',
-  color: '#7bed9f',
+  color: '#2f354290',
   '&:hover': {
-    color: '#7bed9f80'
+    color: '#2f3542'
   }
 };
 

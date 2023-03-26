@@ -2,9 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../../../components/dashboard/Navbar';
-import Leftbar from '../../../components/dashboard/Leftbar';
-import Completion from '../../../components/cards/Completion';
-import Footer from '../../../components/main/Footer';
+import Admin from '../../../components/dashboard/Admin';
+import Company from '../../../components/dashboard/Company';
+import Footer from '../../../components/dashboard/Footer';
 import { Box, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
 import { Pagination } from '@mui/lab';
 import InboxIcon from '@mui/icons-material/Inbox';
@@ -30,7 +30,7 @@ const Page = () => {
                 <Grid container spacing={2}>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Leftbar />
+                        <Admin />
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={6} mt={12} mb={4}>
@@ -89,24 +89,18 @@ const Page = () => {
                                     </Box>
                                 </Grid>
 
-                                <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                    <Typography variant="body2">
-                                        When you open a Qarrington account, a secretKey will automatically be generated for the account. Although you can always change your accessKey, once your secretKey is generated, you will not be able to change it later. For this reason, you're required to copy your secretKey somewhere safe. It's called a secretKey because it's the sole of your account and it must not be shared with anyone.
-                                    </Typography>
-                                </Box>
+                                <Footer />
 
                             </Grid>
                         </Grid>
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Completion />
+                        <Company />
                     </Grid>
 
                 </Grid>
             </Container>
-
-            <Footer />
 
         </div>
 

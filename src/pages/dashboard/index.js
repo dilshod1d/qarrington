@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Carousel from 'react-material-ui-carousel';
 import Link from 'next/link';
 import Navbar from '../../components/dashboard/Navbar';
-import Leftbar from '../../components/dashboard/Leftbar';
-import Completion from '../../components/cards/Completion';
+import Admin from '../../components/dashboard/Admin';
+import Company from '../../components/dashboard/Company';
 import {
     Avatar,
     Badge,
@@ -26,7 +26,7 @@ import {
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
-import Footer from '../../components/main/Footer';
+import Footer from '../../components/dashboard/Footer';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import useSWR from 'swr';
 import { Pagination } from '@mui/lab';
@@ -72,13 +72,13 @@ const Page = () => {
 
                 <Grid container spacing={2}>
 
-                    {/* Leftbar Starts Here */}
+                    {/* Admin Starts Here */}
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Leftbar />
+                        <Admin />
                     </Grid>
 
-                    {/* Leftbar Ends Here */}
+                    {/* Admin Ends Here */}
 
                     <Grid item xs={12} md={6} lg={6} mt={12} mb={4}>
                         <Grid container spacing={1}>
@@ -192,7 +192,7 @@ const Page = () => {
                                                                     />
                                                                 </Tooltip>
                                                                 <Tooltip title="Kindly provide your current job title so we know who you are as a Qarrington." placement="top">
-                                                                <TextField
+                                                                    <TextField
                                                                         required
                                                                         id="outlined-required"
                                                                         placeholder="avatar url"
@@ -226,34 +226,34 @@ const Page = () => {
                                             {/* settings tab starts */}
 
                                             <TabPanel sx={{ padding: 0 }} value="2">
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Typography variant="body" color="secondary" fontWeight={600}>
-                                                                In order not to lose access to your account, kindly copy your secretKey to a safe place. You'll need it to recover your account.
-                                                            </Typography>
-                                                        </Card>
+                                                <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                    <Typography variant="body" color="secondary" fontWeight={600}>
+                                                        In order not to lose access to your account, kindly copy your secretKey to a safe place. You'll need it to recover your account.
+                                                    </Typography>
+                                                </Card>
 
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="Kindly note that you can update the accessKey of your Qarrington account." placement="top">
-                                                                <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="avatar url"
-                                                                        defaultValue="ankara"
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="Kindly note that once your secret key is generated, you cannot change it later." placement="top">
-                                                                <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="avatar url"
-                                                                        defaultValue="ankara"
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
+                                                <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                    <Stack spacing={2} sx={{ width: '100%' }}>
+                                                        <Tooltip title="Kindly note that you can update the accessKey of your Qarrington account." placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="avatar url"
+                                                                defaultValue="ankara"
+                                                                inputProps={{ style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                        <Tooltip title="Kindly note that once your secret key is generated, you cannot change it later." placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="avatar url"
+                                                                defaultValue="ankara"
+                                                                inputProps={{ style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                    </Stack>
+                                                </Card>
 
                                                 <Card style={{ padding: '60px', marginBottom: '0px' }}>
                                                     <Button
@@ -274,35 +274,35 @@ const Page = () => {
                                             {/* alerts tab starts */}
 
                                             <TabPanel sx={{ padding: 0 }} value="3">
-                                                
-                                            <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Typography variant="body" color="secondary" fontWeight={600}>
-                                                                In order not to lose access to your account, kindly copy your secretKey to a safe place. You'll need it to recover your account.
-                                                            </Typography>
-                                                        </Card>
 
-                                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                                            <Stack spacing={2} sx={{ width: '100%' }}>
-                                                                <Tooltip title="Kindly note that you can update the accessKey of your Qarrington account." placement="top">
-                                                                <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="avatar url"
-                                                                        defaultValue="ankara"
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                                <Tooltip title="Kindly note that once your secret key is generated, you cannot change it later." placement="top">
-                                                                <TextField
-                                                                        required
-                                                                        id="outlined-required"
-                                                                        placeholder="avatar url"
-                                                                        defaultValue="ankara"
-                                                                        inputProps={{ style: { textAlign: 'center' } }}
-                                                                    />
-                                                                </Tooltip>
-                                                            </Stack>
-                                                        </Card>
+                                                <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                    <Typography variant="body" color="secondary" fontWeight={600}>
+                                                        In order not to lose access to your account, kindly copy your secretKey to a safe place. You'll need it to recover your account.
+                                                    </Typography>
+                                                </Card>
+
+                                                <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                                    <Stack spacing={2} sx={{ width: '100%' }}>
+                                                        <Tooltip title="Kindly note that you can update the accessKey of your Qarrington account." placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="avatar url"
+                                                                defaultValue="ankara"
+                                                                inputProps={{ style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                        <Tooltip title="Kindly note that once your secret key is generated, you cannot change it later." placement="top">
+                                                            <TextField
+                                                                required
+                                                                id="outlined-required"
+                                                                placeholder="avatar url"
+                                                                defaultValue="ankara"
+                                                                inputProps={{ style: { textAlign: 'center' } }}
+                                                            />
+                                                        </Tooltip>
+                                                    </Stack>
+                                                </Card>
 
                                                 <Card style={{ padding: '60px', marginBottom: '0px' }}>
                                                     <Button
@@ -334,11 +334,7 @@ const Page = () => {
 
                                     {/* tab stops */}
 
-                                    <Box style={{ textAlign: 'center', marginTop: '20px' }}>
-                                        <Typography variant="body2">
-                                            When you open a Qarrington account, a secretKey will automatically be generated for the account. Although you can always change your accessKey, once your secretKey is generated, you will not be able to change it later. For this reason, you're required to copy your secretKey somewhere safe. It's called a secretKey because it's the sole of your account and it must not be shared with anyone.
-                                        </Typography>
-                                    </Box>
+                                    <Footer />
 
                                 </form>
 
@@ -347,11 +343,10 @@ const Page = () => {
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Completion />
+                        <Company />
                     </Grid>
 
                 </Grid>
-                <Footer />
             </Container>
 
         </div>
@@ -443,8 +438,8 @@ const accounts = [
         accountStatus: {
             accountIsActive: "dot"
         },
-        accountProfile:{
-            accountAvatarUrl:"/assets/media/team/jane.webp/"
+        accountProfile: {
+            accountAvatarUrl: "/assets/media/team/jane.webp/"
         }
     }
 ]
