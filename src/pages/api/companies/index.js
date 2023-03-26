@@ -109,7 +109,7 @@ export default async function handler(req, res) {
 
 			company.companyKpi.companyNow.data = [
 				{
-          companyCapitalization: 0,
+          companyCapitalization: company.companyIso.companyIsoPrice * company.companyIso.companyIsoUnits,
           companyVolume: 0,
           companyBids: [],
           companyAsks: [],
