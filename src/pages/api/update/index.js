@@ -2,6 +2,8 @@ import { checkIfCompanyHasPastIsoDate } from '@helpers/companies-helpers';
 import dbConnect from '@lib/dbConnect';
 import Company from '@models/company/Company';
 import Match from '@models/match/Match';
+import Pick from '@models/pick/Pick';
+import Pull from '@models/pull/Pull';
 
 const prevDictionaryrange = {
   N: 12,
@@ -69,7 +71,39 @@ const dictionary = [
   }
 ];
 
-const checkIfCompanyIsInIsoDate = (company, companySubscribersUnits) => {
+const setPicksToPulls = async (company) => {
+  const picks = await Pick.find({ pickTicker: company.companySlug })
+  for (const pick of picks) {
+    console.log(pick)
+    const newPull = new Pull({
+        pullTicker: pick.pickTicker,
+        pullUnits: pick.pickUnits,
+        pullPrice: pick.pickPrice,
+        pullAmount: pick.pickAmount,
+        pullCompany: {
+          pullCompanyId: pick.pickCompany.pickCompanyId,
+          pullCompanyName: pick.pickCompany.pickCompanyName,
+          pullCompanyLogo: pick.pickCompany.pickCompanyLogo,
+          pullCompanyPrice: company.companyKpi.companyNow.data[0].companyPrice,
+          pullCompanyCost: company.companyIso.companyIsoPrice,
+          pullCompanyPortfolio: company.companyKpi.companyNow.data[0].companyPrice * pick.pickUnits,
+          pullCompanyUnits: pick.pickUnits
+        },
+        pullAccount: {
+          pullAccountId: pick.pickAccountId,
+        },
+        pullStatus: {
+          pullIsMatched: false,
+          pullIsTransferred: true,
+          pullIsCanceled: false
+        }
+    })
+    await newPull.save()
+    await Pick.findByIdAndDelete(pick._id)
+  }
+}
+
+const checkIfCompanyIsInIsoDate = async (company, companySubscribersUnits) => {
   // The company doesn't have a product listed on stripe
   if (!company.companyStatus.companyIsListed) return false;
 
@@ -103,6 +137,9 @@ const checkIfCompanyIsInIsoDate = (company, companySubscribersUnits) => {
     // Iso time has ended
     if (now > endIsoTime) {
       company.companyStatus.companyIsLaunched = false;
+      // End of iso Date
+      await setPicksToPulls(company)
+
       return false;
     }
 
@@ -112,6 +149,15 @@ const checkIfCompanyIsInIsoDate = (company, companySubscribersUnits) => {
 
   return false;
 };
+
+const updatePulls = async (companySlug, companyPrice) => {
+  const pulls = await Pull.find({ pullTicker: companySlug.toLowerCase() })
+  for (const pull of pulls) {
+    pull.pullCompany.pullCompanyPortfolio = Math.floor(pull.pullUnits * companyPrice)
+    pull.pullCompany.pullCompanyPrice = companyPrice
+    await pull.save()
+  }
+}
 
 const updateKpi = async (range, kpi, prevRangeKpi, companySubscribersUnits, activeCustomers, isOnIsoDate, companyIsoPrice, companySlug) => {
   const newData = {
@@ -171,6 +217,9 @@ const updateKpi = async (range, kpi, prevRangeKpi, companySubscribersUnits, acti
     newData.companyAsks = kpi.data[0].companyAsks;
 
     kpi.data = [newData, ...kpi.data.slice(0, 60)];
+
+    await updatePulls(companySlug, newData.companyPrice)
+
     return;
   }
 
@@ -225,7 +274,7 @@ export default async function handler(req, res) {
     const companies = await Company.find();
     const comaniesPromises = companies.map(async (company) => {
       const companySubscribersUnits = company.companyUser.find(({ companyUserType }) => companyUserType === 'Total Subscribers')?.companyUserTotal;
-      const isOnIsoDate = checkIfCompanyIsInIsoDate(company, companySubscribersUnits);
+      const isOnIsoDate = await checkIfCompanyIsInIsoDate(company, companySubscribersUnits);
       await updateCompanyKpi(company, isOnIsoDate);
       try {
         await company.save();
