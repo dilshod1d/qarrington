@@ -18,7 +18,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]';
 import dbConnect from '@lib/dbConnect';
 
-const Page = ({ pushes, picks, pulls }) => {
+const Page = ({ pushes, picks, pulls, pullAccountPortfolio }) => {
 
   const [value, setValue] = useState(pulls.length > 0 ? '2' : '1');
   const handleChange = (event, newValue) => {
@@ -50,27 +50,23 @@ const Page = ({ pushes, picks, pulls }) => {
           <Grid item xs={12} md={6} lg={6} mb={4}>
             <Grid container spacing={1}>
               <Grid item xs={12}>
-                {pulls &&
-                  Array.isArray(pulls) &&
-                  pulls?.slice(0, 1).map(({ _id, pullAccount }) => (
-                    <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
-                      <Card style={{ padding: '80px', marginBottom: '16px' }}>
-                        <Tooltip title="Portfolio" placement="top">
-                          <Box textAlign="center">
-                            <CurrencyBadge badgeContent="USD" color="success" fontWeight={700}></CurrencyBadge>
-                            <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={0.5}>
-                              {pullAccount.pullAccountPortfolio}
-                            </Typography>
-                          </Box>
-                        </Tooltip>
+                  <Grid item xs={12} sm={6} md={6} lg={12}>
+                    <Card style={{ padding: '80px', marginBottom: '16px' }}>
+                      <Tooltip title="Portfolio" placement="top">
                         <Box textAlign="center">
-                          <Typography variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
-                            account portfolio
+                          <CurrencyBadge badgeContent="USD" color="success" fontWeight={700}></CurrencyBadge>
+                          <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={0.5}>
+                            ${pullAccountPortfolio}
                           </Typography>
                         </Box>
-                      </Card>
-                    </Grid>
-                  ))}
+                      </Tooltip>
+                      <Box textAlign="center">
+                        <Typography variant="body2" fontWeight="600" color="secondary" textTransform="uppercase">
+                          account portfolio
+                        </Typography>
+                      </Box>
+                    </Card>
+                  </Grid>
 
                 {/* tab starts */}
 
@@ -174,9 +170,7 @@ const Page = ({ pushes, picks, pulls }) => {
                     <TabPanel sx={{ padding: 0 }} value="2">
                       <Grid item xs={12} mb={2}>
                         <Grid container spacing={1}>
-                          {pulls &&
-                            Array.isArray(pulls) &&
-                            pulls?.map(({ _id, pullTicker, pullCompany, pullStatus }) => (
+                          {pulls.length > 0 && pulls.map(({ _id, pullTicker, pullCompany, pullStatus }) => (
                               <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                 <Link href={`/portfolio/${pullTicker}`}>
                                   <Card style={{ padding: '40px', cursor: 'pointer' }}>
@@ -190,7 +184,7 @@ const Page = ({ pushes, picks, pulls }) => {
                                         <StyledBadge
                                           overlap="circular"
                                           anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                          variant={pullStatus.pullIsMatched}
+                                          variant={pullStatus.pullIsMatched ? "dot" : "standard"}
                                         >
                                           <Avatar
                                             alt={pullCompany.pullCompanyName}
@@ -253,9 +247,7 @@ const Page = ({ pushes, picks, pulls }) => {
                     <TabPanel sx={{ padding: 0 }} value="3">
                       <Grid item xs={12} mb={2}>
                         <Grid container spacing={1}>
-                          {pushes &&
-                            Array.isArray(pushes) &&
-                            pushes?.map(({ _id, pushTicker, pushCompany, pushStatus }) => (
+                          {pushes.length > 0 && pushes.map(({ _id, pushTicker, pushCompany, pushStatus }) => (
                               <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                 <Link href={`/portfolio/${pushTicker}`}>
                                   <Card style={{ padding: '40px', cursor: 'pointer' }}>
@@ -361,12 +353,15 @@ export async function getServerSideProps(ctx) {
   try {
     await dbConnect();
     const pullsFetched = await Pull.find({ pullAccount: { pullAccountId: accountId } });
-    const pulls = pullsFetched.map(({ _id, pullCompany, pullPrice, pullAmount, pullUnits }) => {
-      return { id: _id.toString(), pullCompany, pullPrice, pullAmount, pullUnits };
+
+    const pulls = pullsFetched.map(({ _id, pullCompany, pullPrice, pullAmount, pullUnits, pullStatus, pullTicker }) => {
+      return { id: _id.toString(), pullCompany: JSON.parse(JSON.stringify(pullCompany)), pullPrice, pullAmount, pullUnits, pullTicker, pullStatus: JSON.parse(JSON.stringify(pullStatus))};
     });
 
+    const pullAccountPortfolio = pulls?.reduce((acc, curr) => acc + curr.pullCompany.pullCompanyPortfolio ,0) || 0
+
     const pushesFetched = await Push.find({ pushAccount: { pushAccountId: accountId } });
-    const pushes = pushesFetched.map(({ _id, pushAmount }) => {
+    const pushes = pushesFetched.map(({ _id, pushAmount, pushTicker, pushCompany, pushStatus }) => {
       return { id: _id.toString(), pushAmount };
     });
 
@@ -374,12 +369,13 @@ export async function getServerSideProps(ctx) {
     const picks = picksFetched.map(({ _id, pickCompany, pickTicker }) => {
       return { id: _id.toString(), pickTicker, pickCompany: JSON.parse(JSON.stringify(pickCompany)) };
     });
-
+  
     return {
       props: {
         pulls,
         pushes,
-        picks
+        picks,
+        pullAccountPortfolio
       }
     };
   } catch (error) {
