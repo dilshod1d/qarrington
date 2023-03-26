@@ -17,6 +17,7 @@ import Link from 'next/link';
 import useSWR from 'swr';
 import Marquee from "react-fast-marquee";
 import { getCompaniesWithBestCap } from '@services/companies-services';
+import { checkIfComanyHasFuturIsoDate, checkIfCompanyIsInIsoDate } from '@helpers/companies-helpers';
 
 const Component = () => {
   const [companies, setCompanies] = useState([])
@@ -34,11 +35,11 @@ const Component = () => {
             <Grid item xs={12} mb={2}>
               <Grid container spacing={0}>
 
-                {companies.map(({ _id, companyListing, companyKpi }) => (
-                  <Grid key={_id} mt={0} mb={-2} mx={0.5}>
+                {companies.map((company) => (
+                  <Grid key={company._id} mt={0} mb={-2} mx={0.5}>
 
-                    <Link href={`/subscriptions/${companyListing.companyTicker.toLowerCase()}`}>
-                      <Tooltip title={companyListing.companyName} placement="top">
+                    <Link href={checkIfComanyHasFuturIsoDate(company) ? `/${company.companyListing.companyTicker.toLowerCase()}` : checkIfCompanyIsInIsoDate(company) ? `/portfolio/${company.companyListing.companyTicker.toLowerCase()}` : `/subscriptions/${company.companyListing.companyTicker.toLowerCase()}`}>
+                      <Tooltip title={company.companyListing.companyName} placement="top">
                         <Card style={{ padding: '16px', cursor: 'pointer' }}>
                           <Box
                             style={{
@@ -48,14 +49,14 @@ const Component = () => {
                           >
                             <Avatar
                               style={{ width: 24, height: 24 }}
-                              alt={companyListing.companyName}
-                              src={companyListing.companyLogo}
+                              alt={company.companyListing.companyName}
+                              src={company.companyListing.companyLogo}
                             />
                           </Box>
                           <Box style={{ textAlign: 'center' }}>
                             <Box mt={0.5}>
-                              <Typography component="span" variant="primary" color={companyKpi.companyDay.data[0].companyVariant} fontWeight={500}>
-                                {companyKpi.companyDay.data[0] ? companyKpi.companyDay.data[0].companyPercentChange.toFixed(2) : '0.00'}
+                              <Typography component="span" variant="primary" color={company.companyKpi.companyDay.data[0]?.companyVariant ? company.companyKpi.companyDay.data[0]?.companyVariant : "primary"} fontWeight={500}>
+                                {company.companyKpi.companyDay.data[0] ? company.companyKpi.companyDay.data[0].companyPercentChange.toFixed(2) : '0.00'}
                               </Typography>
                               <Typography component="span" variant="body2" fontWeight={400} color="secondary">
                                 %
