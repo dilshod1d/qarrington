@@ -15,6 +15,7 @@ import { getCompanyBy } from '@services/companies-services';
 import dbConnect from '@lib/dbConnect';
 import Company from '@models/company/Company';
 import { useSession } from 'next-auth/react';
+import { parseDate, parseTime } from '@helpers/helpers';
 
 
 const Page = ({ basicCompany }) => {
@@ -315,7 +316,7 @@ const Page = ({ basicCompany }) => {
                                                                 required
                                                                 id="outlined-required"
                                                                 placeholder="iso price"
-                                                                defaultValue={company.companyIso?.companyIsoPrice}
+                                                                defaultValue={'$' + company.companyIso?.companyIsoPrice}
                                                                 inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
@@ -329,7 +330,7 @@ const Page = ({ basicCompany }) => {
                                                                 required
                                                                 id="outlined-required"
                                                                 placeholder="iso date"
-                                                                defaultValue={company.companyIso?.companyIsoDate}
+                                                                defaultValue={parseDate(company.companyIso?.companyIsoDate)}
                                                                 inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
@@ -338,7 +339,7 @@ const Page = ({ basicCompany }) => {
                                                                 required
                                                                 id="outlined-required"
                                                                 placeholder="iso time"
-                                                                defaultValue={company.companyIso?.companyIsoTime}
+                                                                defaultValue={parseTime(company.companyIso?.companyIsoTime)}
                                                                 inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
@@ -411,7 +412,7 @@ const Page = ({ basicCompany }) => {
                                                                 required
                                                                 id="outlined-required"
                                                                 placeholder="company price"
-                                                                defaultValue={company.companyKpi.companyNow.data.length > 0 ? company.companyKpi.companyNow.data[0].companyPrice : 'n/a'}
+                                                                defaultValue={company.companyKpi.companyNow.data.length > 0 ? ('$' + company.companyKpi.companyNow.data[0].companyPrice) : 'n/a'}
                                                                 inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
@@ -420,7 +421,7 @@ const Page = ({ basicCompany }) => {
                                                                 required
                                                                 id="outlined-required"
                                                                 placeholder="company currency"
-                                                                defaultValue={company.companyKpi.companyNow.data.length > 0 ? company.companyKpi.companyNow.data[0].companyCurrency ? company.companyKpi.companyNow.data[0].companyCurrency : 'n/a' : 'n/a' }
+                                                                defaultValue={company.companyKpi.companyCurrency}
                                                                 inputProps={{ readOnly: true, style: { textAlign: 'center' } }}
                                                             />
                                                         </Tooltip>
@@ -495,7 +496,7 @@ const Page = ({ basicCompany }) => {
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Price kpi={company.companyKpi} />
+                        <Price kpi={company.companyKpi.companyNow.data} id={company._id} />
                     </Grid>
 
                 </Grid>
