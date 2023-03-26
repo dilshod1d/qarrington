@@ -64,10 +64,8 @@ const Page = ({ company, pulls, pushes, picks }) => {
             <Grid container spacing={1}>
               <Grid item xs={12}>
                   <Box textAlign="center" sx={{ marginBottom: '16px' }}>
-                    {pulls &&
-                      Array.isArray(pulls) &&
-                      pulls?.slice(0, 1).map(({ _id, pullCompany }) => (
-                        <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>
+                    {pulls.length > 0 && pulls.map(({ _id, pullCompany }) => (
+                        <Grid key={_id} item xs={12} sm={6} md={6} lg={12}>{console.log(pullCompany)}
                           <Card style={{ padding: '80px' }}>
                             <Tooltip title={`Portfolio`} placement="top">
                               <Box textAlign="center">
@@ -109,7 +107,7 @@ const Page = ({ company, pulls, pushes, picks }) => {
                             <Box mt={2} display="flex" justifyContent="center">
                               <Stack direction="row" spacing={1}>
                                 {company.companyBids &&
-                                  companyBids.slice(0, 1).map(({ _id, companyBidPrice, companyBidUnits }) => (
+                                  company.companyBids.slice(0, 1).map(({ _id, companyBidPrice, companyBidUnits }) => (
                                     <Tooltip
                                       key={_id}
                                       title="The Bid Price is the highest price you could buy this subscription. Kindly note that prices are updated in real-time."
@@ -129,7 +127,7 @@ const Page = ({ company, pulls, pushes, picks }) => {
                                     </Tooltip>
                                   ))}
                                 {company.companyAsks &&
-                                  companyAsks.slice(0, 1).map(({ _id, companyAskPrice, companyAskUnits }) => (
+                                  company.companyAsks.slice(0, 1).map(({ _id, companyAskPrice, companyAskUnits }) => (
                                     <Tooltip
                                       key={_id}
                                       title="The Ask Price is the lowest price you could sell this subscription. Kindly note that prices are updated in real-time."
@@ -196,7 +194,7 @@ const Page = ({ company, pulls, pushes, picks }) => {
                             <Box mt={2} display="flex" justifyContent="center">
                               <Stack direction="row" spacing={1}>
                                 {company.companyBids.lengths > 0 &&
-                                  companyBids.slice(0, 1).map(({ _id, companyBidPrice, companyBidUnits }) => (
+                                  company.companyBids.slice(0, 1).map(({ _id, companyBidPrice, companyBidUnits }) => (
                                     <Tooltip
                                       key={_id}
                                       title="The Bid Price is the highest price you could buy this subscription. Kindly note that prices are updated in real-time."
@@ -216,7 +214,7 @@ const Page = ({ company, pulls, pushes, picks }) => {
                                     </Tooltip>
                                   ))}
                                 {company.companyAsks.length > 0 &&
-                                  companyAsks.slice(0, 1).map(({ _id, companyAskPrice, companyAskUnits }) => (
+                                  company.companyAsks.slice(0, 1).map(({ _id, companyAskPrice, companyAskUnits }) => (
                                     <Tooltip
                                       key={_id}
                                       title="The Ask Price is the lowest price you could sell this subscription. Kindly note that prices are updated in real-time."
@@ -359,7 +357,7 @@ const Page = ({ company, pulls, pushes, picks }) => {
                                         fullWidth={true}
                                         type="submit"
                                       >
-                                        {`Transfer ${pullAmount} USD`}
+                                        {`Transfer ${0} USD`}
                                       </Button>
                                     </Tooltip>
                                   </Stack>
@@ -416,7 +414,7 @@ const Page = ({ company, pulls, pushes, picks }) => {
                                         fullWidth={true}
                                         type="submit"
                                       >
-                                        {`Receive ${pushAmount} USD`}
+                                        {`Receive ${0} USD`}
                                       </Button>
                                     </Tooltip>
                                   </Stack>
@@ -520,9 +518,9 @@ export async function getServerSideProps(ctx) {
     
     const pullsFetched = await Pull.find({ pullTicker: portfolioId.toLowerCase(), pullAccount: { pullAccountId: accountId } });
     const pulls = pullsFetched.map(({ _id, pullCompany, pullPrice, pullAmount, pullUnits }) => {
-      return { id: _id.toString(), pullCompany, pullPrice, pullAmount, pullUnits };
+      return { id: _id.toString(), pullCompany: JSON.parse(JSON.stringify(pullCompany)), pullPrice, pullAmount, pullUnits };
     });
-    
+
     const pushesFetched = await Push.find({ pushTicker: portfolioId.toLowerCase(), pushAccount: { pushAccountId: accountId } });
     const pushes = pushesFetched.map(({ _id, pushAmount }) => {
       return { id: _id.toString(), pushAmount };
