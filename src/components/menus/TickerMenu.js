@@ -37,7 +37,7 @@ const Component = () => {
                 {companies.map(({ _id, companyListing, companyKpi }) => (
                   <Grid key={_id} mt={0} mb={-2} mx={0.5}>
 
-                    <Link href={`/subscription/${companyListing.companyTicker.toLowerCase()}`}>
+                    <Link href={`/subscriptions/${companyListing.companyTicker.toLowerCase()}`}>
                       <Tooltip title={companyListing.companyName} placement="top">
                         <Card style={{ padding: '16px', cursor: 'pointer' }}>
                           <Box
