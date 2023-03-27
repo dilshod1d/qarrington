@@ -11,12 +11,12 @@ import { Pagination } from '@mui/lab';
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRounded';
 import dbConnect from "@lib/dbConnect";
-import Brief from '@models/topic/Topic';
+import Topic from '@models/topic/Topic';
 
 const Page = ({ slug, title, detail }) => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data: topics } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/topics`, fetcher);
+    const { data: briefs } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/briefs`, fetcher);
 
     return (
 
@@ -48,7 +48,7 @@ const Page = ({ slug, title, detail }) => {
                                         <Tooltip title="Post" placement="top">
                                             <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
                                                 <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
-                                                    <Link href="/dashboard/briefs/manage">
+                                                    <Link href="/dashboard/topics/manage">
                                                         <AddCircleRoundedIcon />
                                                     </Link>
                                                 </ListItemIcon>
@@ -59,7 +59,7 @@ const Page = ({ slug, title, detail }) => {
                                                 <TextField
                                                     required
                                                     id="outlined-required"
-                                                    placeholder="Search from more than 24 topics ..."
+                                                    placeholder="Search from more than 24 briefs ..."
                                                     inputProps={{ style: { textAlign: 'center', color: 'white' } }}
                                                 />
                                             </Stack>
@@ -76,12 +76,12 @@ const Page = ({ slug, title, detail }) => {
                                     </ListItem>
                                 </Card>
 
-                                {topics && Array.isArray(topics) && topics?.slice(0, 3).map(({ _id, topicUrl, topicTags, topicTitle, topicDetail, topicSummary, topicPostedAt }) => (
+                                {briefs && Array.isArray(briefs) && briefs?.slice(0, 3).map(({ briefSlug, briefTitle, briefDetail, briefSummary, briefTopicId, briefPostedAt }) => (
                                     <Grid item xs={12}>
                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                            <Link href={`/dashboard/briefs/manage`}>
+                                            <Link href={`/topics/topicSlug/${briefSlug}`}>
                                                 <Typography textAlign="center" sx={ItemTitle} variant="h4" color="black" fontWeight={800}>
-                                                    {topicTitle}?
+                                                    {briefTitle}?
                                                 </Typography>
                                             </Link>
                                         </Card>
@@ -124,12 +124,12 @@ const ItemTitle = {
 
 export async function getStaticProps({ params }) {
     await dbConnect()
-    const briefItem = await Brief.findOne({ briefSlug: params.briefId });
+    const topicItem = await Topic.findOne({ topicSlug: params.topicId });
     return {
         props: {
-            slug: briefItem.briefSlug,
-            title: briefItem.briefTitle,
-            detail: briefItem.briefDetail
+            slug: topicItem.topicSlug,
+            title: topicItem.topicTitle,
+            detail: topicItem.topicDetail
         },
         revalidate: 60,
     };
@@ -137,13 +137,13 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
     await dbConnect()
-    const briefItems = await Brief.find();
+    const topicItems = await Topic.find();
     return {
-        paths: briefItems.map(item => {
-            const briefId = item.briefSlug;
+        paths: topicItems.map(item => {
+            const topicId = item.topicSlug;
             return {
                 params: {
-                    briefId
+                    topicId
                 }
             }
         }),

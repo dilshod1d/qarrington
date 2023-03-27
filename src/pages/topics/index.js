@@ -14,17 +14,17 @@ import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRou
 const Page = () => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data: topics } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/topics`, fetcher);
+    const { data: briefs } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/briefs`, fetcher);
 
     return (
 
         <div>
 
             <Head>
-                <title>Briefs • Qarrington</title>
+                <title>Topics • Qarrington</title>
                 <meta
                     name="description"
-                    content="hello"
+                    content="It's easy to find topical answers to all types of questions about using Qarrington. Alternatively, you can contact our account managers for 24/7 support."
                 />
             </Head>
 
@@ -74,12 +74,12 @@ const Page = () => {
                                     </ListItem>
                                 </Card>
 
-                                {topics && Array.isArray(topics) && topics?.slice(0, 3).map(({ _id, topicUrl, topicTags, topicTitle, topicDetail, topicSummary, topicPostedAt }) => (
+                                {briefs && Array.isArray(briefs) && briefs?.slice(0, 3).map(({ briefSlug, briefTitle, briefDetail, briefSummary, briefTopicId, briefPostedAt }) => (
                                     <Grid item xs={12}>
                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                            <Link href={`/dashboard/briefs/manage`}>
+                                            <Link href={`/topics/topicSlug/${briefSlug}`}>
                                                 <Typography textAlign="center" sx={ItemTitle} variant="h4" color="black" fontWeight={800}>
-                                                    {topicTitle}?
+                                                    {briefTitle}?
                                                 </Typography>
                                             </Link>
                                         </Card>
@@ -119,34 +119,3 @@ const ItemTitle = {
         color: '#2ed573'
     }
 };
-
-// export async function getStaticProps({ params }) {
-//     await dbConnect()
-//     const briefItem = await Brief.findOne({ briefUrl: params.briefId });
-//     return {
-//         props: {
-//             url: briefItem.briefUrl,
-//             title: briefItem.briefTitle,
-//             detail: briefItem.briefDetail,
-//             summary: briefItem.briefSummary,
-//             postedAt: briefItem.briefPostedAt
-//         },
-//         revalidate: 60,
-//     };
-// }
-
-// export async function getStaticPaths() {
-//     await dbConnect()
-//     const briefItems = await Brief.find();
-//     return {
-//         paths: briefItems.map(item => {
-//             const briefId = item.briefUrl;
-//             return {
-//                 params: {
-//                     briefId
-//                 }
-//             }
-//         }),
-//         fallback: false
-//     }
-// }

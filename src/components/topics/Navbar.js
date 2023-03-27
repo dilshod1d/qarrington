@@ -36,7 +36,7 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="flex-start">
                 <LogoWrapper>
-                  <Link href={`/dashboard`}>
+                  <Link href={`/`}>
                     <Avatar
                       variant="rounded"
                       alt="Setment Logo"
@@ -54,7 +54,7 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="center">
 
-                <Link href={`/briefs/users`}>
+                <Link href={`/topics/users`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
                       users
@@ -62,7 +62,7 @@ const Component = () => {
                   </Box>
                 </Link>
 
-                <Link href={`/briefs/underwriters`}>
+                <Link href={`/topics/underwriters`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
                       underwriters
@@ -70,7 +70,7 @@ const Component = () => {
                   </Box>
                 </Link>
 
-                <Link href={`/briefs/founders`}>
+                <Link href={`/topics/founders`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
                       founders
@@ -78,7 +78,7 @@ const Component = () => {
                   </Box>
                 </Link>
 
-                <Link href={`/briefs/publishers`}>
+                <Link href={`/topics/publishers`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
                       publishers
@@ -87,22 +87,22 @@ const Component = () => {
                 </Link>
 
                 <Stack mx={1} direction="row">
-                  <Link href={`/briefs/accounts`}>
-                    <Tooltip title="Accounts" placement="top">
+                  <Link href={`/topics/request`}>
+                    <Tooltip title="Request" placement="top">
                       <Box sx={MenuIcon}>
                         <MeetingRoomRoundedIcon sx={{ fontSize: '28px' }} />
                       </Box>
                     </Tooltip>
                   </Link>
-                  <Link href={`/dashboard`}>
-                    <Tooltip title="Dashboard" placement="top">
+                  <Link href={`/topics`}>
+                    <Tooltip title="Topics" placement="top">
                       <Box sx={MenuIcon}>
                         <GridViewRoundedIcon sx={{ fontSize: '28px' }} />
                       </Box>
                     </Tooltip>
                   </Link>
-                  <Link href={`/briefs/settings`}>
-                    <Tooltip title="Settings" placement="top">
+                  <Link href={`/topics/contact`}>
+                    <Tooltip title="Contact" placement="top">
                       <Box sx={MenuIcon}>
                         <RoomPreferencesRoundedIcon sx={{ fontSize: '28px' }} />
                       </Box>
@@ -110,7 +110,7 @@ const Component = () => {
                   </Link>
                 </Stack>
 
-                <Link href={`/briefs/chronicles`}>
+                <Link href={`/topics/chronicles`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
                       chronicles
@@ -118,7 +118,7 @@ const Component = () => {
                   </Box>
                 </Link>
 
-                <Link href={`/briefs/bedrocks`}>
+                <Link href={`/topics/bedrocks`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
                       bedrocks
@@ -126,7 +126,7 @@ const Component = () => {
                   </Box>
                 </Link>
 
-                <Link href={`/briefs/updates`}>
+                <Link href={`/topics/updates`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
                       updates
@@ -134,7 +134,7 @@ const Component = () => {
                   </Box>
                 </Link>
 
-                <Link href={`/briefs/guidelines`}>
+                <Link href={`/topics/guidelines`}>
                   <Box>
                     <Button sx={MenuItem} variant='text' color='secondary'>
                       guidelines
@@ -152,7 +152,7 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="flex-end">
                 <AvatarWrapper>
-                  <Link href={`/briefs/team`}>
+                  <Link href={`/topics/team`}>
                     <Fab size="small" color="primary" aria-label="add">
                       <HistoryEduRoundedIcon sx={{ color: '#ffffff' }} />
                     </Fab>

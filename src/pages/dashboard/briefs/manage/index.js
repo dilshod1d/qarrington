@@ -20,7 +20,7 @@ const Page = () => {
                 <title>Manage Brief • Qarrington</title>
                 <meta
                     name="description"
-                    content="Qarrington is a subscription exchange that allows you to buy, sell, and exchange the subscriptions of your favorite technology companies with lower fees."
+                    content="Help users find topical answers to all types of questions about using Qarrington. Alternatively, users can contact our account managers for 24/7 support."
                 />
             </Head>
 
@@ -78,30 +78,13 @@ const Page = () => {
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="briefTitle"
+                                                placeholder="topicTitle"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="briefUrl"
-                                                inputProps={{ style: { textAlign: 'center' } }}
-                                            />
-                                        </Stack>
-                                    </Card>
-
-                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                        <Stack spacing={2} sx={{ width: '100%' }}>
-                                            <TextField
-                                                required
-                                                id="outlined-required"
-                                                placeholder="briefTags"
-                                                inputProps={{ style: { textAlign: 'center' } }}
-                                            />
-                                            <TextField
-                                                required
-                                                id="outlined-required"
-                                                placeholder="briefSummary"
+                                                placeholder="topicUrl"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                         </Stack>
@@ -112,7 +95,30 @@ const Page = () => {
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="briefDetail"
+                                                placeholder="topicTags"
+                                                inputProps={{ style: { textAlign: 'center' } }}
+                                            />
+                                            <TextField
+                                                required
+                                                id="outlined-required"
+                                                placeholder="topicSummary"
+                                                inputProps={{ style: { textAlign: 'center' } }}
+                                            />
+                                        </Stack>
+                                    </Card>
+
+                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                        <Stack spacing={2} sx={{ width: '100%' }}>
+                                            <TextField
+                                                required
+                                                id="outlined-required"
+                                                placeholder="topicBrief"
+                                                inputProps={{ style: { textAlign: 'center' } }}
+                                            />
+                                            <TextField
+                                                required
+                                                id="outlined-required"
+                                                placeholder="topicDetail"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                         </Stack>
