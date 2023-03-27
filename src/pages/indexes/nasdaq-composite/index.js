@@ -1,8 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+import { purple } from '@mui/material/colors';
 import Navbar from '../../../components/topics/Navbar';
 import Footer from '../../../components/topics/Footer';
-import { Box, Container, Divider, Grid, Typography } from '@mui/material';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
+import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
+import { Box, Card, Container, Divider, Grid, Typography } from '@mui/material';
 
 const Page = () => {
 
@@ -11,10 +16,10 @@ const Page = () => {
         <>
 
             <Head>
-                <title>Stocks • Qarrington</title>
+                <title>How Subscriptions Can Outperform the Nasdaq Composite • Qarrington</title>
                 <meta
                     name="description"
-                    content={`Buy, sell, & transfer the subscriptions of innovative startup companies. It's like buying stocks, but instead of shares, it's product-backed subscriptions.`}
+                    content={`Buy, sell, and trade the subscriptions of innovative startups just like the Nasdaq Composite. But instead of shares, it's product-backed subscriptions.`}
                 />
             </Head>
 
@@ -33,20 +38,52 @@ const Page = () => {
 
                             <Box style={{ padding: '0px 0px 0px 0px' }}>
                                 <Typography variant="h1" fontWeight={700} color="black">
-                                    How subscriptions can outperform the stock market in the future.
+                                    How subscriptions can outrun the Nasdaq Composite stocks.
                                 </Typography>
                                 <Divider sx={{ my: 3 }} />
                                 <Typography mt={1} variant="h5" fontWeight={500} color="secondary">
-                                    Buy, sell, and transfer the subscriptions of innovative startup companies. It's like buying stocks, but instead of shares, it's product-backed subscriptions.
-                                </Typography>
-                                <Divider sx={{ my: 3 }} />
-                                <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
-                                    In the late 1400s, the stock market was designed in Antwerp, Belgium based on the mechanism known as the Naked Asset Model (NAM), a system where financial assets such as currencies, shares, and cryptocurrencies are literally backed by nothing. Even though the subscription market is still in its early stage, each subscription unit sold or bought on a subscription exchange like Qarrington ... is fully backed by the underlying products and services of the listed companies.
-                                </Typography>
-                                <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
-                                    For example, if today, you bet the sum of $25,000 on a company's stock, and by tomorrow morning, the price of the stock goes to $0, that's it. On the contrary to that, if you buy the subscriptions of an early-stage innovative technology company for the same amount and the price tanks to $0 the following day, you'd still have access to the products and services offered by the startup.
+                                    Buy, sell, and trade the subscriptions of innovative startups just like the Nasdaq Composite. But instead of shares, it's product-backed subscriptions.
                                 </Typography>
                             </Box>
+
+                            {/* card starts */}
+
+                            <Grid item xs={12} my={4}>
+                                <Grid container spacing={1}>
+
+                                    {arrayItems && arrayItems.map(({ _id, icon, title, detail, tooltip }) => (
+                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                                            <Link href={`/account`}>
+                                                <Card style={{ padding: '50px', cursor: 'pointer' }}>
+                                                    <Box
+                                                        style={{
+                                                            display: 'flex',
+                                                            justifyContent: 'center'
+                                                        }}
+                                                    >
+                                                        {icon}
+                                                    </Box>
+                                                    <Box mt={1} style={{ textAlign: 'center' }}>
+                                                        <Box mb={1}>
+                                                            <Typography gutterBottom variant="h4" fontWeight={700} color="black">
+                                                                {title}
+                                                            </Typography>
+                                                        </Box>
+                                                        <Box>
+                                                            <Typography variant="body2" fontWeight={600} color="secondary">
+                                                                {detail}
+                                                            </Typography>
+                                                        </Box>
+                                                    </Box>
+                                                </Card>
+                                            </Link>
+                                        </Grid>
+                                    ))}
+
+                                </Grid>
+                            </Grid>
+
+                            {/* card ends */}
 
                             {/* footer starts */}
 
@@ -70,3 +107,27 @@ const Page = () => {
 }
 
 export default Page
+
+const arrayItems = [
+    {
+        _id: 1,
+        icon: <AccountCircleIcon color="primary" sx={{ fontSize: '40px', color: purple[200] }} />,
+        title: "Open",
+        detail: "Create a Qarrington account, it's free.",
+        tooltip: ""
+    },
+    {
+        _id: 2,
+        icon: <AccountBalanceRoundedIcon color="primary" sx={{ fontSize: '40px', color: purple[800] }} />,
+        title: "Connect",
+        detail: "Link your preferred bank account.",
+        tooltip: ""
+    },
+    {
+        _id: 3,
+        icon: <ArrowCircleLeftRoundedIcon color="primary" sx={{ fontSize: '40px', color: purple[400] }} />,
+        title: "Pull",
+        detail: "Buy subscriptions during & after an ISO.",
+        tooltip: ""
+    }
+]

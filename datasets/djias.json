@@ -1,0 +1,122 @@
+[
+  {
+    "stockRoute": "axp",
+    "stockTicker": "AXP"
+  },
+  {
+    "stockRoute": "amgn",
+    "stockTicker": "AMGN"
+  },
+  {
+    "stockRoute": "aapl",
+    "stockTicker": "AAPL"
+  },
+  {
+    "stockRoute": "ba",
+    "stockTicker": "BA"
+  },
+  {
+    "stockRoute": "cat",
+    "stockTicker": "CAT"
+  },
+  {
+    "stockRoute": "csco",
+    "stockTicker": "CSCO"
+  },
+  {
+    "stockRoute": "cvx",
+    "stockTicker": "CVX"
+  },
+  {
+    "stockRoute": "gs",
+    "stockTicker": "GS"
+  },
+  {
+    "stockRoute": "hd",
+    "stockTicker": "HD"
+  },
+  {
+    "stockRoute": "hon",
+    "stockTicker": "HON"
+  },
+  {
+    "stockRoute": "ibm",
+    "stockTicker": "IBM"
+  },
+  {
+    "stockRoute": "intc",
+    "stockTicker": "INTC"
+  },
+  {
+    "stockRoute": "jnj",
+    "stockTicker": "JNJ"
+  },
+  {
+    "stockRoute": "ko",
+    "stockTicker": "KO"
+  },
+  {
+    "stockRoute": "jpm",
+    "stockTicker": "JPM"
+  },
+  {
+    "stockRoute": "mcd",
+    "stockTicker": "MCD"
+  },
+  {
+    "stockRoute": "mmm",
+    "stockTicker": "MMM"
+  },
+  {
+    "stockRoute": "mrk",
+    "stockTicker": "MRK"
+  },
+  {
+    "stockRoute": "msft",
+    "stockTicker": "MSFT"
+  },
+  {
+    "stockRoute": "nke",
+    "stockTicker": "NKE"
+  },
+  {
+    "stockRoute": "pg",
+    "stockTicker": "PG"
+  },
+  {
+    "stockRoute": "trv",
+    "stockTicker": "TRV"
+  },
+  {
+    "stockRoute": "unh",
+    "stockTicker": "UNH"
+  },
+  {
+    "stockRoute": "crm",
+    "stockTicker": "CRM"
+  },
+  {
+    "stockRoute": "vz",
+    "stockTicker": "VZ"
+  },
+  {
+    "stockRoute": "v",
+    "stockTicker": "V"
+  },
+  {
+    "stockRoute": "wba",
+    "stockTicker": "WBA"
+  },
+  {
+    "stockRoute": "wmt",
+    "stockTicker": "WMT"
+  },
+  {
+    "stockRoute": "dis",
+    "stockTicker": "DIS"
+  },
+  {
+    "stockRoute": "dow",
+    "stockTicker": "DOW"
+  }
+]

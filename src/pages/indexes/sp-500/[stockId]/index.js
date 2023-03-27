@@ -6,7 +6,7 @@ import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
 import dbConnect from "@lib/dbConnect";
-import Stock from '@models/djia/Stock'
+import Stock from '@models/sp/Stock'
 
 const Page = ({ ticker }) => {
 
