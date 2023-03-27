@@ -14,7 +14,7 @@ const PickSchema = new mongoose.Schema(
         pickAccountId: { type: String },
         pickStatus: {
             pickIsTransferred: { type: Boolean },
-            pickIsTransferredAt: { type: String }
+            pickIsTransferredAt: { type: Date }
         }
     },
 );

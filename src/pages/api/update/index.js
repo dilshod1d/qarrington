@@ -1,5 +1,6 @@
 import { checkIfCompanyHasPastIsoDate } from '@helpers/companies-helpers';
 import dbConnect from '@lib/dbConnect';
+import Account from '@models/account/Account';
 import Company from '@models/company/Company';
 import Match from '@models/match/Match';
 import Pick from '@models/pick/Pick';
@@ -71,6 +72,20 @@ const dictionary = [
   }
 ];
 
+const updateAccountPortfolio = async () => {
+  const accounts = await Account.find()
+  for (const account of accounts) {
+    const picks = await Pick.find({ pickAccountId: account._id.toString() })
+    const pulls = await Pull.find({ pullAccountId: account._id.toString() })
+
+    let accountPortfolio = picks.reduce((acc, curr) => acc + (curr.pickPrice * curr.pickUnits), 0)
+    accountPortfolio = accountPortfolio + pulls.reduce((acc, curr) => acc + (curr.pullPrice * curr.pullUnits), 0)
+
+    account.accountPortfolio = accountPortfolio
+    await account.save()
+  }
+}
+
 const setPicksToPulls = async (company) => {
   const picks = await Pick.find({ pickTicker: company.companySlug })
   for (const pick of picks) {
@@ -89,9 +104,7 @@ const setPicksToPulls = async (company) => {
           pullCompanyPortfolio: company.companyKpi.companyNow.data[0].companyPrice * pick.pickUnits,
           pullCompanyUnits: pick.pickUnits
         },
-        pullAccount: {
-          pullAccountId: pick.pickAccountId,
-        },
+        pullAccountId: pick.pickAccountId,
         pullStatus: {
           pullIsMatched: false,
           pullIsTransferred: true,
@@ -114,6 +127,7 @@ const checkIfCompanyIsInIsoDate = async (company, companySubscribersUnits) => {
   );
   const now = new Date(Date.now());
   const endIsoTime = new Date(isoTime.getTime() + 1000 * 60 * 60 * 24 * 7);
+
 
   // Company is not launched, check if has to be launched
   if (!company.companyStatus.companyIsLaunched) {
@@ -150,22 +164,11 @@ const checkIfCompanyIsInIsoDate = async (company, companySubscribersUnits) => {
   return false;
 };
 
-const updatePulls = async (companySlug, companyPrice) => {
-  const pulls = await Pull.find({ pullTicker: companySlug.toLowerCase() })
-  for (const pull of pulls) {
-    pull.pullCompany.pullCompanyPortfolio = Math.floor(pull.pullUnits * companyPrice)
-    pull.pullCompany.pullCompanyPrice = companyPrice
-    await pull.save()
-  }
-}
-
 const updateKpi = async (range, kpi, prevRangeKpi, companySubscribersUnits, activeCustomers, isOnIsoDate, companyIsoPrice, companySlug) => {
   const newData = {
     companyCapitalization: 0,
     companyVolume: 0,
     companyPrice: 0,
-    companyBids: [],
-    companyAsks: [],
     companyPointChange: 0,
     companyVariant: 'primary',
     companyIsRecordedAt: Date.now(),
@@ -194,14 +197,14 @@ const updateKpi = async (range, kpi, prevRangeKpi, companySubscribersUnits, acti
           : kpi.data[0].companyPrice;
       // Company point change
       newData.companyPointChange = newData.companyPrice - currentKpiData.companyPrice;
-
+      
       // Company percentage change
       newData.companyPercentChange = Number(((newData.companyPrice / currentKpiData.companyPrice) * 100 - 100).toFixed(2));
-
+      
       // Company variant
       newData.companyVariant = newData.companyPointChange >= 0 ? 'primary' : 'error';
     }
-
+    
     // Company Capitalization
     if (companySubscribersUnits) {
       newData.companyCapitalization = isOnIsoDate ? companySubscribersUnits * companyIsoPrice : companySubscribersUnits * newData.companyPrice;
@@ -209,16 +212,8 @@ const updateKpi = async (range, kpi, prevRangeKpi, companySubscribersUnits, acti
     // Company volume is calculated in base of the amount of units matched in a range of 5 seconds
     const units = matchesFiveSeconds.reduce((acc, { matchUnits }) => acc + matchUnits, 0);
     newData.companyVolume = units;
-
-    // Company bids is added when a user submits a pull request, if this happends this will change between updates
-    newData.companyBids = kpi.data[0].companyBids;
-
-    // Company asks is added when a user submits a push request, if this happends this will change between updates
-    newData.companyAsks = kpi.data[0].companyAsks;
-
+    
     kpi.data = [newData, ...kpi.data.slice(0, 60)];
-
-    await updatePulls(companySlug, newData.companyPrice)
 
     return;
   }
@@ -230,8 +225,6 @@ const updateKpi = async (range, kpi, prevRangeKpi, companySubscribersUnits, acti
 
   newData.companyVolume = prevSlice.reduce((acc, curr) => acc + curr.companyVolume, 0);
 
-  newData.companyBids = prevSlice.companyBids;
-  newData.companyAsks = prevSlice.companyAsks;
   if (kpi.data[1]) {
     newData.companyPercentChange = Number(((newData.companyPrice / kpi.data[1]?.companyPrice) * 100 - 100).toFixed(2));
     newData.companyPointChange = kpi.data[0].companyPrice - kpi.data[1].companyPrice;
@@ -254,7 +247,6 @@ const updateKpi = async (range, kpi, prevRangeKpi, companySubscribersUnits, acti
 
 const updateCompanyKpi = async (company, isOnIsoDate) => {
   const suscriberUnits = company.companyIso.companyIsoUnits
-
   if (company.companyStatus.companyIsLaunched || checkIfCompanyHasPastIsoDate(company)) {
     const { companyKpi, companySlug } = company;
     const companyIsoPrice = company.companyIso.companyIsoPrice;
@@ -276,6 +268,7 @@ export default async function handler(req, res) {
       const companySubscribersUnits = company.companyUser.find(({ companyUserType }) => companyUserType === 'Total Subscribers')?.companyUserTotal;
       const isOnIsoDate = await checkIfCompanyIsInIsoDate(company, companySubscribersUnits);
       await updateCompanyKpi(company, isOnIsoDate);
+      await updateAccountPortfolio(company)
       try {
         await company.save();
       } catch (error) {

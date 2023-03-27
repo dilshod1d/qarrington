@@ -33,7 +33,6 @@ export const getContentData = () => {
         return Object.keys(regexs).some((key) => regexs[key].test(inputWithoutSpaces))
       },
       inputConstraints: (prev, input) => {
-        console.log("here")
         if(!/^[0-9\s]*$/.test(input) || input.length > 19) return prev
 
         if(input.length === 5 && input.length > prev.length) return input.slice(0, -1) + " " + input.at(-1)

@@ -8,6 +8,7 @@ export const parseDateAndTime = ({ date, time }) => {
 }
 
 export const parseDate = (date) => {
+  if(!date) return
   const fixedDate = date.includes('T') ? date.split('T')[0] : date
   return fixedDate
 }

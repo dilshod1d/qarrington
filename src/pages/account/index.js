@@ -32,7 +32,7 @@ import { useEffect } from 'react';
 import { checkIfUrlIsValidImage } from '@helpers/accounts-helpers';
 import { updateAccount } from '@services/accounts-services';
 import { useRouter } from 'next/router';
-import { removeSpaces } from '@helpers/helpers';
+import { parseDate, removeSpaces } from '@helpers/helpers';
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
@@ -373,7 +373,7 @@ const Page = () => {
                                             {/* alerts tab starts */}
 
                                             <TabPanel sx={{ padding: 0 }} value="3">
-                                                {account?.accountAlerts.map(({ _id, accountAlertIsDated, accountAlertLogo, accountAlertPrice, accountAlertStatus, accountAlertTicker, accountAlertType, accountAlertUnits }) => (
+                                                {account?.accountAlerts?.reverse().map(({ _id, accountAlertIsDated, accountAlertLogo, accountAlertPrice, accountAlertStatus, accountAlertTicker, accountAlertType, accountAlertUnits }) => (
                                                     <Card style={{ padding: '40px', marginBottom: '10px' }} key={_id}>
 
                                                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -413,7 +413,7 @@ const Page = () => {
                                                                 on
                                                             </Typography>
                                                             <Typography mr={0} fontWeight={600} component="span" variant="body2" color="secondary">
-                                                                {accountAlertIsDated}
+                                                                {parseDate(accountAlertIsDated)}
                                                             </Typography>
                                                         </Box>
                                                     </Box>

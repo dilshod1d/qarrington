@@ -45,7 +45,7 @@ export default async function handler(req, res) {
 				return res.status(500).json(err)
 			}
 		} else {
-			return res.status(400).json({ success: false, error: "Access Key is required" })
+			return res.status(400).json({ success: true, error: "Access Key is required" })
 		}
 	}
 }
