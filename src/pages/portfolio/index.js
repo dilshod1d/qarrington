@@ -17,8 +17,9 @@ import Pick from '@models/pick/Pick';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]';
 import dbConnect from '@lib/dbConnect';
+import Account from '@models/account/Account';
 
-const Page = ({ pushes, picks, pulls, pullAccountPortfolio }) => {
+const Page = ({ pushes, picks, pulls, accountPortfolio }) => {
 
   const [value, setValue] = useState(pulls.length > 0 ? '2' : '1');
   const handleChange = (event, newValue) => {
@@ -56,7 +57,7 @@ const Page = ({ pushes, picks, pulls, pullAccountPortfolio }) => {
                         <Box textAlign="center">
                           <CurrencyBadge badgeContent="USD" color="success" fontWeight={700}></CurrencyBadge>
                           <Typography variant="h2" fontWeight="700" color="black" marginTop={1} marginBottom={0.5}>
-                            ${pullAccountPortfolio}
+                            ${accountPortfolio}
                           </Typography>
                         </Box>
                       </Tooltip>
@@ -170,9 +171,9 @@ const Page = ({ pushes, picks, pulls, pullAccountPortfolio }) => {
                     <TabPanel sx={{ padding: 0 }} value="2">
                       <Grid item xs={12} mb={2}>
                         <Grid container spacing={1}>
-                          {pulls.length > 0 && pulls.map(({ _id, pullTicker, pullCompany, pullStatus }) => (
-                              <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                <Link href={`/portfolio/${pullTicker}`}>
+                          {pulls.length > 0 && pulls.map(({ id, pullTicker, pullCompany, pullStatus }) => (
+                              <Grid key={id} item xs={12} sm={6} md={6} lg={4}>
+                                <Link href={`/portfolio/${pullTicker}/pull/${id}`}>
                                   <Card style={{ padding: '40px', cursor: 'pointer' }}>
                                     <Box
                                       style={{
@@ -247,9 +248,9 @@ const Page = ({ pushes, picks, pulls, pullAccountPortfolio }) => {
                     <TabPanel sx={{ padding: 0 }} value="3">
                       <Grid item xs={12} mb={2}>
                         <Grid container spacing={1}>
-                          {pushes.length > 0 && pushes.map(({ _id, pushTicker, pushCompany, pushStatus }) => (
-                              <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                <Link href={`/portfolio/${pushTicker}`}>
+                          {pushes.length > 0 && pushes.map(({ id, pushTicker, pushCompany, pushStatus }) => (
+                              <Grid key={id} item xs={12} sm={6} md={6} lg={4}>
+                                <Link href={`/portfolio/${pushTicker}/push/${id}`}>
                                   <Card style={{ padding: '40px', cursor: 'pointer' }}>
                                     <Box
                                       style={{
@@ -352,17 +353,18 @@ export async function getServerSideProps(ctx) {
   
   try {
     await dbConnect();
-    const pullsFetched = await Pull.find({ pullAccount: { pullAccountId: accountId } });
+    const pullsFetched = await Pull.find({ pullAccountId: accountId });
 
     const pulls = pullsFetched.map(({ _id, pullCompany, pullPrice, pullAmount, pullUnits, pullStatus, pullTicker }) => {
       return { id: _id.toString(), pullCompany: JSON.parse(JSON.stringify(pullCompany)), pullPrice, pullAmount, pullUnits, pullTicker, pullStatus: JSON.parse(JSON.stringify(pullStatus))};
     });
 
-    const pullAccountPortfolio = pulls?.reduce((acc, curr) => acc + curr.pullCompany.pullCompanyPortfolio ,0) || 0
+    const account = await Account.findById(accountId)
+    const { accountPortfolio } = account
 
-    const pushesFetched = await Push.find({ pushAccount: { pushAccountId: accountId } });
+    const pushesFetched = await Push.find({ pushAccountId: accountId });
     const pushes = pushesFetched.map(({ _id, pushAmount, pushTicker, pushCompany, pushStatus }) => {
-      return { id: _id.toString(), pushAmount };
+      return { id: _id.toString(), pushAmount, pushTicker, pushCompany: JSON.parse(JSON.stringify(pushCompany)), pushStatus: JSON.parse(JSON.stringify(pushStatus)) };
     });
 
     const picksFetched = await Pick.find({ pickAccountId: accountId });
@@ -375,7 +377,7 @@ export async function getServerSideProps(ctx) {
         pulls,
         pushes,
         picks,
-        pullAccountPortfolio
+        accountPortfolio
       }
     };
   } catch (error) {

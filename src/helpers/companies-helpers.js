@@ -26,5 +26,6 @@ export const checkIfCompanyHasPastIsoDate = (company) => {
   const now = new Date(Date.now());
   const endIsoTime = new Date(isoTime.getTime() + 1000 * 60 * 60 * 24 * 7);
 
+
   return now > endIsoTime;
 };

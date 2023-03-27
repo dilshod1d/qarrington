@@ -60,7 +60,7 @@ const createStripeAccount = async (req, account, front) => {
     }
 
     const individualAddres = {
-        line1: account.accountContact.accountHomeAddress,
+        line1: account.accountContact.accountHomeAddress || account.accountBusiness.accountBusinessAddress,
         postal_code: account.accountContact.accountZipCode,
         city: account.accountContact.accountCityName,
         state: account.accountContact.accountStateName
@@ -70,7 +70,6 @@ const createStripeAccount = async (req, account, front) => {
         line1: account.accountBusiness.accountBusinessAddress || account.accountContact.accountHomeAddress,
         country: account.accountBusiness.accountBusinessCountry || account.accountPersonal.accountHomeCountry,
     }
-    
     const data = {
         type: 'custom',
         country,
@@ -120,6 +119,21 @@ const createStripeAccount = async (req, account, front) => {
 
 }
 
+const canCreateStripeAccount = (account, id) => {
+    if(account.accountStatus.accountCompletionRate < 80 || account.accountStripeId || !id) return false
+    if(
+        (account.accountBusiness.accountBusinessAddress || account.accountContact.accountHomeAddress) && // Has address
+        (account.accountBusiness.accountBusinessEmail || account.accountContact.accountEmailAddress) && // Has email
+        (account.accountBusiness.accountBusinessCountry || account.accountPersonal.accountHomeCountry) && // Has couentry
+        (account.accountPersonal.accountBirthDate) && // Has birthdate
+        (account.accountContact.accountZipCode && account.accountContact.accountCityName && account.accountContact.accountStateName) && // Has personal address data
+        (account.accountPersonal.accountFirstName && account.accountPersonal.accountLastName) && // Has first and last name
+        (account.accountPersonal.accountIdNumber) && // Has id
+        (account.accountContact.accountPhoneNumber) && // Has phone number
+        (account.accountBank.accountBankCountry && account.accountBank.accountBankCurrency && account.accountBank.accountRoutingNumber && account.accountBank.accountNumber) // Has bank data
+    ) return true
+}
+
 export default async function handler(req, res) {
     await dbConnect()
 
@@ -135,9 +149,8 @@ export default async function handler(req, res) {
             const completionRate = getAccountCompletionRate(account)
             account.accountStatus.accountCompletionRate = completionRate
             account.accountIsUpdatedAt = Date.now()
-            
-            await account.save()
-            if (completionRate >= 80 && !account.accountStripeId && req.body.accountGovernmentId) {
+
+            if (canCreateStripeAccount(account, req.body.accountGovernmentId)) {
                 const front = await createStripeImage(req.body.accountGovernmentId)
                 if (front?.error) return res.status(400).json({ success: false, message: "Failed to load account government ID image", error: front.error });
                 
@@ -150,8 +163,9 @@ export default async function handler(req, res) {
                 return res.status(201).json({ success: true, data: account, message: "Stripe account created successfully" });
             }
 
-            await account.save()
-            return res.status(200).json({ success: true, data: account, message: "Account updated successfully" });
+            const updatedAccount = await account.save()
+            console.log(updatedAccount)
+            return res.status(200).json({ success: true, data: updatedAccount, message: "Account updated successfully" });
         } catch (err) {
             return res.status(500).json(err);
         }
