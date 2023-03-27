@@ -9,7 +9,7 @@ import { purple } from '@mui/material/colors';
 import InsertCommentRoundedIcon from '@mui/icons-material/InsertCommentRounded';
 import PhoneInTalkRoundedIcon from '@mui/icons-material/PhoneInTalkRounded';
 import SmsRoundedIcon from '@mui/icons-material/SmsRounded';
-import { Box, Card, Container, Grid, Typography } from '@mui/material';
+import { Box, Card, Container, Grid, Tooltip, Typography } from '@mui/material';
 
 const Page = () => {
 
@@ -50,28 +50,30 @@ const Page = () => {
                                         {arrayItems && arrayItems.map(({ _id, icon, title, detail, tooltip }) => (
                                             <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
                                                 <Link href={`/account`}>
-                                                    <Card style={{ padding: '40px', cursor: 'pointer' }}>
-                                                        <Box
-                                                            style={{
-                                                                display: 'flex',
-                                                                justifyContent: 'center'
-                                                            }}
-                                                        >
-                                                            {icon}
-                                                        </Box>
-                                                        <Box mt={1} style={{ textAlign: 'center' }}>
-                                                            <Box mb={1}>
-                                                                <Typography gutterBottom variant="h4" fontWeight={700} color="black">
-                                                                    {title}
-                                                                </Typography>
+                                                    <Tooltip title={tooltip} placement="top">
+                                                        <Card style={{ padding: '40px' }}>
+                                                            <Box
+                                                                style={{
+                                                                    display: 'flex',
+                                                                    justifyContent: 'center'
+                                                                }}
+                                                            >
+                                                                {icon}
                                                             </Box>
-                                                            <Box>
-                                                                <Typography variant="body2" fontWeight={600} color="secondary">
-                                                                    {detail}
-                                                                </Typography>
+                                                            <Box mt={1} style={{ textAlign: 'center' }}>
+                                                                <Box mb={1}>
+                                                                    <Typography gutterBottom variant="h4" fontWeight={700} color="black">
+                                                                        {title}
+                                                                    </Typography>
+                                                                </Box>
+                                                                <Box>
+                                                                    <Typography variant="body2" fontWeight={600} color="secondary">
+                                                                        {detail}
+                                                                    </Typography>
+                                                                </Box>
                                                             </Box>
-                                                        </Box>
-                                                    </Card>
+                                                        </Card>
+                                                    </Tooltip>
                                                 </Link>
                                             </Grid>
                                         ))}
@@ -105,20 +107,20 @@ const arrayItems = [
         icon: <InsertCommentRoundedIcon color="primary" sx={{ fontSize: '40px', color: purple[200] }} />,
         title: "Email",
         detail: "Send us an email, we're  24/7 online.",
-        tooltip: ""
+        tooltip: "support@site.com"
     },
     {
         _id: 2,
         icon: <PhoneInTalkRoundedIcon color="primary" sx={{ fontSize: '40px', color: purple[800] }} />,
         title: "Call",
         detail: "Give us a call from any country.",
-        tooltip: ""
+        tooltip: "+18743294580"
     },
     {
         _id: 3,
         icon: <SmsRoundedIcon color="primary" sx={{ fontSize: '40px', color: purple[400] }} />,
         title: "Text",
         detail: "Send us an SMS, we reply globally.",
-        tooltip: ""
+        tooltip: "+18437840278"
     }
 ]
