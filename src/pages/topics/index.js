@@ -74,8 +74,8 @@ const Page = () => {
                                     </ListItem>
                                 </Card>
 
-                                {briefs && Array.isArray(briefs) && briefs?.slice(0, 3).map(({ briefSlug, briefTitle, briefDetail, briefSummary, briefTopicId, briefPostedAt }) => (
-                                    <Grid item xs={12}>
+                                {briefs && Array.isArray(briefs) && briefs?.slice(0, 3).map(({ _id, briefSlug, briefTitle, briefDetail, briefSummary, briefTopicId, briefPostedAt }) => (
+                                    <Grid key={_id} item xs={12}>
                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                             <Link href={`/topics/topicSlug/${briefSlug}`}>
                                                 <Typography textAlign="center" sx={ItemTitle} variant="h4" color="black" fontWeight={800}>

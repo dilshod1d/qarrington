@@ -9,11 +9,10 @@ const Component = () => {
       <Grid container spacing={1}>
 
         {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal, accountProfile, accountStatus }) => (
-          <Grid item xs={12}>
+          <Grid key={_id} item xs={12}>
             <Card style={{ padding: '40px' }}>
               <Box style={{ display: 'flex', justifyContent: 'center' }}>
                 <StyledBadge
-                  key={_id}
                   overlap="circular"
                   anchorOrigin={{
                     vertical: 'bottom',

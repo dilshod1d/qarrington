@@ -8,7 +8,7 @@ const Component = () => {
         <>
 
             {accounts && Array.isArray(accounts) && accounts?.slice(0, 1).map(({ _id, accountPersonal }) => (
-                <Box style={{ textAlign: 'center', marginTop: '20px' }}>
+                <Box key={_id} style={{ textAlign: 'center', marginTop: '20px' }}>
                     <Typography variant="body2" color="secondary">
                         Dear, <b>{accountPersonal.accountFirstName}</b>! Welcome to your admin dashboard, where as part of the Qarrington team, you can seamlessly manage companies submitted by users. Based on your account permission, you can also manage the payouts going to and coming from user accounts.  In addition to that, you will be able to manage several subscription data such as picks, pulls, pushes, and matches.
                     </Typography>
