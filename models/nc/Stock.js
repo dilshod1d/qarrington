@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
-const StockSchema = new mongoose.Schema({
+const NcSchema = new mongoose.Schema({
   stockRoute: { type: String },
   stockTicker: { type: String }
 });
 
-export default mongoose.models.Stock || mongoose.model('Stock', StockSchema);
+export default mongoose.models.Nc || mongoose.model('Nc', NcSchema);

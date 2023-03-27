@@ -342,30 +342,47 @@ const Body = {
   backgroundColor: "#ffffff"
 };
 
-export async function getStaticProps({ params }) {
-  await dbConnect()
-  const cryptoItem = await Crypto.findOne({ cryptoRoute: params.cryptoId });
-  return {
-    props: {
-      name: cryptoItem.cryptoName,
-      ticker: cryptoItem.cryptoTicker
-    },
-    revalidate: 60,
+export async function getServerSideProps({ params }) {
+  try {
+    const results = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/cryptos?cryptoRoute=${params.cryptoId.replace(/\-/g, '+')}`)
+      .then((r) => r.json());
+    return {
+      props: {
+        route: results.cryptoRoute,
+        ticker: results.cryptoTicker
+      }
+    };
+  } catch (error) {
+    return {
+      notFound: true
+    };
   }
 }
 
-export async function getStaticPaths() {
-  await dbConnect()
-  const cryptoItems = await Crypto.find();
-  return {
-    paths: cryptoItems.map(item => {
-      const cryptoId = item.cryptoRoute;
-      return {
-        params: {
-          cryptoId
-        }
-      }
-    }),
-    fallback: false
-  }
-}
+// export async function getStaticProps({ params }) {
+//   await dbConnect()
+//   const cryptoItem = await Crypto.findOne({ cryptoRoute: params.cryptoId });
+//   return {
+//     props: {
+//       name: cryptoItem.cryptoName,
+//       ticker: cryptoItem.cryptoTicker
+//     },
+//     revalidate: 60,
+//   }
+// }
+
+// export async function getStaticPaths() {
+//   await dbConnect()
+//   const cryptoItems = await Crypto.find();
+//   return {
+//     paths: cryptoItems.map(item => {
+//       const cryptoId = item.cryptoRoute;
+//       return {
+//         params: {
+//           cryptoId
+//         }
+//       }
+//     }),
+//     fallback: false
+//   }
+// }
