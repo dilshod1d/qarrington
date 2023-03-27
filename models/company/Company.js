@@ -3,25 +3,13 @@ import mongoose from 'mongoose';
 const companyKpiData = {
   companyCapitalization: { type: Number },
   companyVolume: { type: Number },
-  companyBids: [
-    {
-      companyBidPrice: { type: Number },
-      companyBidUnits: { type: Number }
-    }
-  ],
-  companyAsks: [
-    {
-      companyAskPrice: { type: Number },
-      companyAskUnits: { type: Number }
-    }
-  ],
   companyPrice: { type: Number },
   companyPercentChange: { type: Number },
   companyPointChange: { type: Number },
   companyVariant: { type: String },
   companyActiveCustomers: { type: Number },
   companyIsRecordedAt: { type: Date }
-}
+};
 
 const CompanySchema = new mongoose.Schema({
   companySlug: { type: String },
@@ -43,7 +31,7 @@ const CompanySchema = new mongoose.Schema({
   companyUser: [
     {
       companyUserType: { type: String }, // companyTotalSubscribers, companyTotalCustomers, companyActiveCustomers, and companyInActiveCustomers
-      companyUserTotal: { type: Number } // total subscribers during iso, subscribers during & after iso, customers created thru companyKey, and customers not created yet 
+      companyUserTotal: { type: Number } // total subscribers during iso, subscribers during & after iso, customers created thru companyKey, and customers not created yet
     }
   ],
   companyIso: {
@@ -51,7 +39,8 @@ const CompanySchema = new mongoose.Schema({
     companyIsoPrice: { type: Number }, // the initial price per subscription
     companyIsoDate: { type: Date }, // iso will end 7 days after this date
     companyIsoTime: { type: String }, // the time the iso will start on the date
-    companyIsoSubscribers: [ // the list of the whitelisted subscribers for the iso
+    companyIsoSubscribers: [
+      // the list of the whitelisted subscribers for the iso
       {
         companySubscriberUnits: { type: Number }, // the subscription units during the iso
         companySubscriberPaidAt: { type: Date }, // the subscriber's cheeckout date
@@ -62,13 +51,15 @@ const CompanySchema = new mongoose.Schema({
     ],
     companyIsoAmount: { type: Number }, // companyIsoUnits * companyIsoPrice
     companyIsoRaised: { type: Number }, // total companySubscriberUnits * companyIsoPrice
-    companyIsoProceed: { // how companyIsoAmountRaised will be transfered
+    companyIsoProceed: {
+      // how companyIsoAmountRaised will be transfered
       companyIsoProceedIsMade: { type: Boolean, default: false }, // default is FALSE
       companyIsoProceedIsMadeTo: { type: String }, // we will send to the accountId's accountStripeId
       companyIsoProceedIsMadeAt: { type: Date } //  we will send 90% of companyIsoAmountRaised 7 days after the iso
     }
   },
-  companyCustomers: [ // all iso subscribers will become customers after iso
+  companyCustomers: [
+    // all iso subscribers will become customers after iso
     {
       companyCustomerAccountId: { type: String }, // the account id of the customer
       companyCustomerIsCreated: { type: Boolean }, // the company must use its companyKey to create customer thru REST API after iso
@@ -76,6 +67,15 @@ const CompanySchema = new mongoose.Schema({
     }
   ],
   companyKpi: {
+    companyCurrency: { type: String, defualt: 'USD' },
+    companyBids: {
+      companyBidPrice: { type: Number },
+      companyBidUnits: { type: Number },
+    },
+    companyAsks: {
+      companyAskPrice: { type: Number },
+      companyAskUnits: { type: Number },
+    },
     companyNow: {
       updateCount: { type: Number, default: 0 },
       data: [companyKpiData]
@@ -108,8 +108,7 @@ const CompanySchema = new mongoose.Schema({
       updateCount: { type: Number, default: 0 },
       data: [companyKpiData]
     }
-  }
-  ,
+  },
   companyAccountId: { type: String }, //  the account id that listed the company
   companyStatus: {
     companyIsSubmitted: { type: Boolean, default: true }, // is the company submitted?

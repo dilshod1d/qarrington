@@ -1,0 +1,42 @@
+[
+    {
+        "topicSlug": "users",
+        "topicTitle": "Users",
+        "topicDetail": "Find topical answers to all types of questions about how to use Qarrington as a user. Alternatively, you can contact our account managers for 24/7 support."
+    },
+    {
+        "topicSlug": "underwriters",
+        "topicTitle": "Underwriters",
+        "topicDetail": "Find answers to all types of questions about how to use Qarrington as an underwriter. Alternatively, you can contact our account managers for 24/7 support."
+    },
+    {
+        "topicSlug": "founders",
+        "topicTitle": "Founders",
+        "topicDetail": "Find topical answers to all types of questions about how to use Qarrington as a founder. Alternatively, you can contact our account managers for 24/7 help."
+    },
+    {
+        "topicSlug": "publishers",
+        "topicTitle": "Publishers",
+        "topicDetail": "Find topical answers to all types of questions about how to use Qarrington as a publisher. Alternatively, kindly contact our account managers for 24/7 help."
+    },
+    {
+        "topicSlug": "chronicles",
+        "topicTitle": "Chronicles",
+        "topicDetail": "Find topical answers to all types of questions about what Qarrington is and does. In addition to that, you can contact our account managers for 24/7 help."
+    },
+    {
+        "topicSlug": "bedrocks",
+        "topicTitle": "Bedrocks",
+        "topicDetail": "Find topical answers to all types of fundamental questions about how Qarrington works. Alternatively, you can contact our account managers for 24/7 support."
+    },
+    {
+        "topicSlug": "updates",
+        "topicTitle": "Updates",
+        "topicDetail": "Find topical answers to all types of status questions about the latest updates from the Qarrington team. Kindly contact our account managers for 24/7 help."
+    },
+    {
+        "topicSlug": "guidelines",
+        "topicTitle": "Guidelines",
+        "topicDetail": "Find topical answers to all types of legal questions about using Qarrington. Alternatively, you can always contact our account managers for 24/7 support."
+    }
+]

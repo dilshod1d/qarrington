@@ -1,0 +1,8002 @@
+[
+  {
+    "stockRoute": "aapl",
+    "stockTicker": "AAPL"
+  },
+  {
+    "stockRoute": "msft",
+    "stockTicker": "MSFT"
+  },
+  {
+    "stockRoute": "goog",
+    "stockTicker": "GOOG"
+  },
+  {
+    "stockRoute": "googl",
+    "stockTicker": "GOOGL"
+  },
+  {
+    "stockRoute": "amzn",
+    "stockTicker": "AMZN"
+  },
+  {
+    "stockRoute": "pcar",
+    "stockTicker": "PCAR"
+  },
+  {
+    "stockRoute": "brk-a",
+    "stockTicker": "BRK/A"
+  },
+  {
+    "stockRoute": "brk-b",
+    "stockTicker": "BRK/B"
+  },
+  {
+    "stockRoute": "nvda",
+    "stockTicker": "NVDA"
+  },
+  {
+    "stockRoute": "tsla",
+    "stockTicker": "TSLA"
+  },
+  {
+    "stockRoute": "meta",
+    "stockTicker": "META"
+  },
+  {
+    "stockRoute": "tsm",
+    "stockTicker": "TSM"
+  },
+  {
+    "stockRoute": "v",
+    "stockTicker": "V"
+  },
+  {
+    "stockRoute": "unh",
+    "stockTicker": "UNH"
+  },
+  {
+    "stockRoute": "xom",
+    "stockTicker": "XOM"
+  },
+  {
+    "stockRoute": "jnj",
+    "stockTicker": "JNJ"
+  },
+  {
+    "stockRoute": "wmt",
+    "stockTicker": "WMT"
+  },
+  {
+    "stockRoute": "jpm",
+    "stockTicker": "JPM"
+  },
+  {
+    "stockRoute": "pg",
+    "stockTicker": "PG"
+  },
+  {
+    "stockRoute": "nvo",
+    "stockTicker": "NVO"
+  },
+  {
+    "stockRoute": "ma",
+    "stockTicker": "MA"
+  },
+  {
+    "stockRoute": "lly",
+    "stockTicker": "LLY"
+  },
+  {
+    "stockRoute": "cvx",
+    "stockTicker": "CVX"
+  },
+  {
+    "stockRoute": "hd",
+    "stockTicker": "HD"
+  },
+  {
+    "stockRoute": "abbv",
+    "stockTicker": "ABBV"
+  },
+  {
+    "stockRoute": "mrk",
+    "stockTicker": "MRK"
+  },
+  {
+    "stockRoute": "avgo",
+    "stockTicker": "AVGO"
+  },
+  {
+    "stockRoute": "ko",
+    "stockTicker": "KO"
+  },
+  {
+    "stockRoute": "asml",
+    "stockTicker": "ASML"
+  },
+  {
+    "stockRoute": "pep",
+    "stockTicker": "PEP"
+  },
+  {
+    "stockRoute": "orcl",
+    "stockTicker": "ORCL"
+  },
+  {
+    "stockRoute": "baba",
+    "stockTicker": "BABA"
+  },
+  {
+    "stockRoute": "pfe",
+    "stockTicker": "PFE"
+  },
+  {
+    "stockRoute": "cost",
+    "stockTicker": "COST"
+  },
+  {
+    "stockRoute": "tmo",
+    "stockTicker": "TMO"
+  },
+  {
+    "stockRoute": "bac",
+    "stockTicker": "BAC"
+  },
+  {
+    "stockRoute": "azn",
+    "stockTicker": "AZN"
+  },
+  {
+    "stockRoute": "csco",
+    "stockTicker": "CSCO"
+  },
+  {
+    "stockRoute": "mcd",
+    "stockTicker": "MCD"
+  },
+  {
+    "stockRoute": "crm",
+    "stockTicker": "CRM"
+  },
+  {
+    "stockRoute": "shel",
+    "stockTicker": "SHEL"
+  },
+  {
+    "stockRoute": "nke",
+    "stockTicker": "NKE"
+  },
+  {
+    "stockRoute": "tm",
+    "stockTicker": "TM"
+  },
+  {
+    "stockRoute": "dhr",
+    "stockTicker": "DHR"
+  },
+  {
+    "stockRoute": "nvs",
+    "stockTicker": "NVS"
+  },
+  {
+    "stockRoute": "tmus",
+    "stockTicker": "TMUS"
+  },
+  {
+    "stockRoute": "dis",
+    "stockTicker": "DIS"
+  },
+  {
+    "stockRoute": "adbe",
+    "stockTicker": "ADBE"
+  },
+  {
+    "stockRoute": "acn",
+    "stockTicker": "ACN"
+  },
+  {
+    "stockRoute": "abt",
+    "stockTicker": "ABT"
+  },
+  {
+    "stockRoute": "lin",
+    "stockTicker": "LIN"
+  },
+  {
+    "stockRoute": "txn",
+    "stockTicker": "TXN"
+  },
+  {
+    "stockRoute": "ups",
+    "stockTicker": "UPS"
+  },
+  {
+    "stockRoute": "amd",
+    "stockTicker": "AMD"
+  },
+  {
+    "stockRoute": "vz",
+    "stockTicker": "VZ"
+  },
+  {
+    "stockRoute": "cmcsa",
+    "stockTicker": "CMCSA"
+  },
+  {
+    "stockRoute": "nee",
+    "stockTicker": "NEE"
+  },
+  {
+    "stockRoute": "bhp",
+    "stockTicker": "BHP"
+  },
+  {
+    "stockRoute": "nflx",
+    "stockTicker": "NFLX"
+  },
+  {
+    "stockRoute": "sap",
+    "stockTicker": "SAP"
+  },
+  {
+    "stockRoute": "bmy",
+    "stockTicker": "BMY"
+  },
+  {
+    "stockRoute": "rtx",
+    "stockTicker": "RTX"
+  },
+  {
+    "stockRoute": "pm",
+    "stockTicker": "PM"
+  },
+  {
+    "stockRoute": "ms",
+    "stockTicker": "MS"
+  },
+  {
+    "stockRoute": "qcom",
+    "stockTicker": "QCOM"
+  },
+  {
+    "stockRoute": "wfc",
+    "stockTicker": "WFC"
+  },
+  {
+    "stockRoute": "tte",
+    "stockTicker": "TTE"
+  },
+  {
+    "stockRoute": "t",
+    "stockTicker": "T"
+  },
+  {
+    "stockRoute": "hsbc",
+    "stockTicker": "HSBC"
+  },
+  {
+    "stockRoute": "sny",
+    "stockTicker": "SNY"
+  },
+  {
+    "stockRoute": "ul",
+    "stockTicker": "UL"
+  },
+  {
+    "stockRoute": "ry",
+    "stockTicker": "RY"
+  },
+  {
+    "stockRoute": "amgn",
+    "stockTicker": "AMGN"
+  },
+  {
+    "stockRoute": "hon",
+    "stockTicker": "HON"
+  },
+  {
+    "stockRoute": "bud",
+    "stockTicker": "BUD"
+  },
+  {
+    "stockRoute": "intc",
+    "stockTicker": "INTC"
+  },
+  {
+    "stockRoute": "lmt",
+    "stockTicker": "LMT"
+  },
+  {
+    "stockRoute": "intu",
+    "stockTicker": "INTU"
+  },
+  {
+    "stockRoute": "axp",
+    "stockTicker": "AXP"
+  },
+  {
+    "stockRoute": "ba",
+    "stockTicker": "BA"
+  },
+  {
+    "stockRoute": "hdb",
+    "stockTicker": "HDB"
+  },
+  {
+    "stockRoute": "cop",
+    "stockTicker": "COP"
+  },
+  {
+    "stockRoute": "unp",
+    "stockTicker": "UNP"
+  },
+  {
+    "stockRoute": "de",
+    "stockTicker": "DE"
+  },
+  {
+    "stockRoute": "low",
+    "stockTicker": "LOW"
+  },
+  {
+    "stockRoute": "ibm",
+    "stockTicker": "IBM"
+  },
+  {
+    "stockRoute": "sbux",
+    "stockTicker": "SBUX"
+  },
+  {
+    "stockRoute": "cat",
+    "stockTicker": "CAT"
+  },
+  {
+    "stockRoute": "spgi",
+    "stockTicker": "SPGI"
+  },
+  {
+    "stockRoute": "elv",
+    "stockTicker": "ELV"
+  },
+  {
+    "stockRoute": "sony",
+    "stockTicker": "SONY"
+  },
+  {
+    "stockRoute": "pld",
+    "stockTicker": "PLD"
+  },
+  {
+    "stockRoute": "bp",
+    "stockTicker": "BP"
+  },
+  {
+    "stockRoute": "mdt",
+    "stockTicker": "MDT"
+  },
+  {
+    "stockRoute": "gs",
+    "stockTicker": "GS"
+  },
+  {
+    "stockRoute": "rio",
+    "stockTicker": "RIO"
+  },
+  {
+    "stockRoute": "syk",
+    "stockTicker": "SYK"
+  },
+  {
+    "stockRoute": "td",
+    "stockTicker": "TD"
+  },
+  {
+    "stockRoute": "deo",
+    "stockTicker": "DEO"
+  },
+  {
+    "stockRoute": "amat",
+    "stockTicker": "AMAT"
+  },
+  {
+    "stockRoute": "gild",
+    "stockTicker": "GILD"
+  },
+  {
+    "stockRoute": "ge",
+    "stockTicker": "GE"
+  },
+  {
+    "stockRoute": "schw",
+    "stockTicker": "SCHW"
+  },
+  {
+    "stockRoute": "bkng",
+    "stockTicker": "BKNG"
+  },
+  {
+    "stockRoute": "blk",
+    "stockTicker": "BLK"
+  },
+  {
+    "stockRoute": "adi",
+    "stockTicker": "ADI"
+  },
+  {
+    "stockRoute": "mdlz",
+    "stockTicker": "MDLZ"
+  },
+  {
+    "stockRoute": "cvs",
+    "stockTicker": "CVS"
+  },
+  {
+    "stockRoute": "pdd",
+    "stockTicker": "PDD"
+  },
+  {
+    "stockRoute": "amt",
+    "stockTicker": "AMT"
+  },
+  {
+    "stockRoute": "isrg",
+    "stockTicker": "ISRG"
+  },
+  {
+    "stockRoute": "regn",
+    "stockTicker": "REGN"
+  },
+  {
+    "stockRoute": "adp",
+    "stockTicker": "ADP"
+  },
+  {
+    "stockRoute": "now",
+    "stockTicker": "NOW"
+  },
+  {
+    "stockRoute": "tjx",
+    "stockTicker": "TJX"
+  },
+  {
+    "stockRoute": "el",
+    "stockTicker": "EL"
+  },
+  {
+    "stockRoute": "eqnr",
+    "stockTicker": "EQNR"
+  },
+  {
+    "stockRoute": "pypl",
+    "stockTicker": "PYPL"
+  },
+  {
+    "stockRoute": "c",
+    "stockTicker": "C"
+  },
+  {
+    "stockRoute": "pgr",
+    "stockTicker": "PGR"
+  },
+  {
+    "stockRoute": "vrtx",
+    "stockTicker": "VRTX"
+  },
+  {
+    "stockRoute": "mmc",
+    "stockTicker": "MMC"
+  },
+  {
+    "stockRoute": "bti",
+    "stockTicker": "BTI"
+  },
+  {
+    "stockRoute": "mo",
+    "stockTicker": "MO"
+  },
+  {
+    "stockRoute": "cb",
+    "stockTicker": "CB"
+  },
+  {
+    "stockRoute": "ci",
+    "stockTicker": "CI"
+  },
+  {
+    "stockRoute": "cni",
+    "stockTicker": "CNI"
+  },
+  {
+    "stockRoute": "zts",
+    "stockTicker": "ZTS"
+  },
+  {
+    "stockRoute": "mufg",
+    "stockTicker": "MUFG"
+  },
+  {
+    "stockRoute": "so",
+    "stockTicker": "SO"
+  },
+  {
+    "stockRoute": "enb",
+    "stockTicker": "ENB"
+  },
+  {
+    "stockRoute": "duk",
+    "stockTicker": "DUK"
+  },
+  {
+    "stockRoute": "ibn",
+    "stockTicker": "IBN"
+  },
+  {
+    "stockRoute": "tgt",
+    "stockTicker": "TGT"
+  },
+  {
+    "stockRoute": "fisv",
+    "stockTicker": "FISV"
+  },
+  {
+    "stockRoute": "itw",
+    "stockTicker": "ITW"
+  },
+  {
+    "stockRoute": "chtr",
+    "stockTicker": "CHTR"
+  },
+  {
+    "stockRoute": "hca",
+    "stockTicker": "HCA"
+  },
+  {
+    "stockRoute": "gsk",
+    "stockTicker": "GSK"
+  },
+  {
+    "stockRoute": "infy",
+    "stockTicker": "INFY"
+  },
+  {
+    "stockRoute": "cp",
+    "stockTicker": "CP"
+  },
+  {
+    "stockRoute": "abnb",
+    "stockTicker": "ABNB"
+  },
+  {
+    "stockRoute": "noc",
+    "stockTicker": "NOC"
+  },
+  {
+    "stockRoute": "bsx",
+    "stockTicker": "BSX"
+  },
+  {
+    "stockRoute": "vale",
+    "stockTicker": "VALE"
+  },
+  {
+    "stockRoute": "bdx",
+    "stockTicker": "BDX"
+  },
+  {
+    "stockRoute": "lrcx",
+    "stockTicker": "LRCX"
+  },
+  {
+    "stockRoute": "mu",
+    "stockTicker": "MU"
+  },
+  {
+    "stockRoute": "atvi",
+    "stockTicker": "ATVI"
+  },
+  {
+    "stockRoute": "cme",
+    "stockTicker": "CME"
+  },
+  {
+    "stockRoute": "amx",
+    "stockTicker": "AMX"
+  },
+  {
+    "stockRoute": "etn",
+    "stockTicker": "ETN"
+  },
+  {
+    "stockRoute": "aon",
+    "stockTicker": "AON"
+  },
+  {
+    "stockRoute": "slb",
+    "stockTicker": "SLB"
+  },
+  {
+    "stockRoute": "pbr",
+    "stockTicker": "PBR"
+  },
+  {
+    "stockRoute": "eqix",
+    "stockTicker": "EQIX"
+  },
+  {
+    "stockRoute": "jd",
+    "stockTicker": "JD"
+  },
+  {
+    "stockRoute": "wm",
+    "stockTicker": "WM"
+  },
+  {
+    "stockRoute": "hum",
+    "stockTicker": "HUM"
+  },
+  {
+    "stockRoute": "bx",
+    "stockTicker": "BX"
+  },
+  {
+    "stockRoute": "eog",
+    "stockTicker": "EOG"
+  },
+  {
+    "stockRoute": "gd",
+    "stockTicker": "GD"
+  },
+  {
+    "stockRoute": "uber",
+    "stockTicker": "UBER"
+  },
+  {
+    "stockRoute": "abb",
+    "stockTicker": "ABB"
+  },
+  {
+    "stockRoute": "cl",
+    "stockTicker": "CL"
+  },
+  {
+    "stockRoute": "bn",
+    "stockTicker": "BN"
+  },
+  {
+    "stockRoute": "relx",
+    "stockTicker": "RELX"
+  },
+  {
+    "stockRoute": "tri",
+    "stockTicker": "TRI"
+  },
+  {
+    "stockRoute": "meli",
+    "stockTicker": "MELI"
+  },
+  {
+    "stockRoute": "bmo",
+    "stockTicker": "BMO"
+  },
+  {
+    "stockRoute": "apd",
+    "stockTicker": "APD"
+  },
+  {
+    "stockRoute": "ubs",
+    "stockTicker": "UBS"
+  },
+  {
+    "stockRoute": "ntes",
+    "stockTicker": "NTES"
+  },
+  {
+    "stockRoute": "csx",
+    "stockTicker": "CSX"
+  },
+  {
+    "stockRoute": "mrna",
+    "stockTicker": "MRNA"
+  },
+  {
+    "stockRoute": "panw",
+    "stockTicker": "PANW"
+  },
+  {
+    "stockRoute": "san",
+    "stockTicker": "SAN"
+  },
+  {
+    "stockRoute": "shop",
+    "stockTicker": "SHOP"
+  },
+  {
+    "stockRoute": "snps",
+    "stockTicker": "SNPS"
+  },
+  {
+    "stockRoute": "bns",
+    "stockTicker": "BNS"
+  },
+  {
+    "stockRoute": "cnq",
+    "stockTicker": "CNQ"
+  },
+  {
+    "stockRoute": "mpc",
+    "stockTicker": "MPC"
+  },
+  {
+    "stockRoute": "cci",
+    "stockTicker": "CCI"
+  },
+  {
+    "stockRoute": "cdns",
+    "stockTicker": "CDNS"
+  },
+  {
+    "stockRoute": "mmm",
+    "stockTicker": "MMM"
+  },
+  {
+    "stockRoute": "stla",
+    "stockTicker": "STLA"
+  },
+  {
+    "stockRoute": "scco",
+    "stockTicker": "SCCO"
+  },
+  {
+    "stockRoute": "epd",
+    "stockTicker": "EPD"
+  },
+  {
+    "stockRoute": "fdx",
+    "stockTicker": "FDX"
+  },
+  {
+    "stockRoute": "shw",
+    "stockTicker": "SHW"
+  },
+  {
+    "stockRoute": "ice",
+    "stockTicker": "ICE"
+  },
+  {
+    "stockRoute": "fcx",
+    "stockTicker": "FCX"
+  },
+  {
+    "stockRoute": "mnst",
+    "stockTicker": "MNST"
+  },
+  {
+    "stockRoute": "bidu",
+    "stockTicker": "BIDU"
+  },
+  {
+    "stockRoute": "mco",
+    "stockTicker": "MCO"
+  },
+  {
+    "stockRoute": "smfg",
+    "stockTicker": "SMFG"
+  },
+  {
+    "stockRoute": "usb",
+    "stockTicker": "USB"
+  },
+  {
+    "stockRoute": "oxy",
+    "stockTicker": "OXY"
+  },
+  {
+    "stockRoute": "vmw",
+    "stockTicker": "VMW"
+  },
+  {
+    "stockRoute": "klac",
+    "stockTicker": "KLAC"
+  },
+  {
+    "stockRoute": "anet",
+    "stockTicker": "ANET"
+  },
+  {
+    "stockRoute": "tak",
+    "stockTicker": "TAK"
+  },
+  {
+    "stockRoute": "hsy",
+    "stockTicker": "HSY"
+  },
+  {
+    "stockRoute": "orly",
+    "stockTicker": "ORLY"
+  },
+  {
+    "stockRoute": "psa",
+    "stockTicker": "PSA"
+  },
+  {
+    "stockRoute": "gis",
+    "stockTicker": "GIS"
+  },
+  {
+    "stockRoute": "vlo",
+    "stockTicker": "VLO"
+  },
+  {
+    "stockRoute": "pnc",
+    "stockTicker": "PNC"
+  },
+  {
+    "stockRoute": "ftnt",
+    "stockTicker": "FTNT"
+  },
+  {
+    "stockRoute": "kdp",
+    "stockTicker": "KDP"
+  },
+  {
+    "stockRoute": "ew",
+    "stockTicker": "EW"
+  },
+  {
+    "stockRoute": "wday",
+    "stockTicker": "WDAY"
+  },
+  {
+    "stockRoute": "race",
+    "stockTicker": "RACE"
+  },
+  {
+    "stockRoute": "mar",
+    "stockTicker": "MAR"
+  },
+  {
+    "stockRoute": "ngg",
+    "stockTicker": "NGG"
+  },
+  {
+    "stockRoute": "mck",
+    "stockTicker": "MCK"
+  },
+  {
+    "stockRoute": "emr",
+    "stockTicker": "EMR"
+  },
+  {
+    "stockRoute": "gm",
+    "stockTicker": "GM"
+  },
+  {
+    "stockRoute": "khc",
+    "stockTicker": "KHC"
+  },
+  {
+    "stockRoute": "aph",
+    "stockTicker": "APH"
+  },
+  {
+    "stockRoute": "se",
+    "stockTicker": "SE"
+  },
+  {
+    "stockRoute": "dg",
+    "stockTicker": "DG"
+  },
+  {
+    "stockRoute": "f",
+    "stockTicker": "F"
+  },
+  {
+    "stockRoute": "aep",
+    "stockTicker": "AEP"
+  },
+  {
+    "stockRoute": "nxpi",
+    "stockTicker": "NXPI"
+  },
+  {
+    "stockRoute": "ecl",
+    "stockTicker": "ECL"
+  },
+  {
+    "stockRoute": "pxd",
+    "stockTicker": "PXD"
+  },
+  {
+    "stockRoute": "nsc",
+    "stockTicker": "NSC"
+  },
+  {
+    "stockRoute": "rop",
+    "stockTicker": "ROP"
+  },
+  {
+    "stockRoute": "msi",
+    "stockTicker": "MSI"
+  },
+  {
+    "stockRoute": "d",
+    "stockTicker": "D"
+  },
+  {
+    "stockRoute": "sre",
+    "stockTicker": "SRE"
+  },
+  {
+    "stockRoute": "cmg",
+    "stockTicker": "CMG"
+  },
+  {
+    "stockRoute": "stm",
+    "stockTicker": "STM"
+  },
+  {
+    "stockRoute": "ctas",
+    "stockTicker": "CTAS"
+  },
+  {
+    "stockRoute": "dxcm",
+    "stockTicker": "DXCM"
+  },
+  {
+    "stockRoute": "kmb",
+    "stockTicker": "KMB"
+  },
+  {
+    "stockRoute": "e",
+    "stockTicker": "E"
+  },
+  {
+    "stockRoute": "snow",
+    "stockTicker": "SNOW"
+  },
+  {
+    "stockRoute": "azo",
+    "stockTicker": "AZO"
+  },
+  {
+    "stockRoute": "psx",
+    "stockTicker": "PSX"
+  },
+  {
+    "stockRoute": "tfc",
+    "stockTicker": "TFC"
+  },
+  {
+    "stockRoute": "mchp",
+    "stockTicker": "MCHP"
+  },
+  {
+    "stockRoute": "msci",
+    "stockTicker": "MSCI"
+  },
+  {
+    "stockRoute": "hmc",
+    "stockTicker": "HMC"
+  },
+  {
+    "stockRoute": "adsk",
+    "stockTicker": "ADSK"
+  },
+  {
+    "stockRoute": "kkr",
+    "stockTicker": "KKR"
+  },
+  {
+    "stockRoute": "itub",
+    "stockTicker": "ITUB"
+  },
+  {
+    "stockRoute": "met",
+    "stockTicker": "MET"
+  },
+  {
+    "stockRoute": "adm",
+    "stockTicker": "ADM"
+  },
+  {
+    "stockRoute": "tt",
+    "stockTicker": "TT"
+  },
+  {
+    "stockRoute": "lvs",
+    "stockTicker": "LVS"
+  },
+  {
+    "stockRoute": "abev",
+    "stockTicker": "ABEV"
+  },
+  {
+    "stockRoute": "rsg",
+    "stockTicker": "RSG"
+  },
+  {
+    "stockRoute": "ph",
+    "stockTicker": "PH"
+  },
+  {
+    "stockRoute": "ing",
+    "stockTicker": "ING"
+  },
+  {
+    "stockRoute": "aig",
+    "stockTicker": "AIG"
+  },
+  {
+    "stockRoute": "wds",
+    "stockTicker": "WDS"
+  },
+  {
+    "stockRoute": "ctva",
+    "stockTicker": "CTVA"
+  },
+  {
+    "stockRoute": "bce",
+    "stockTicker": "BCE"
+  },
+  {
+    "stockRoute": "o",
+    "stockTicker": "O"
+  },
+  {
+    "stockRoute": "idxx",
+    "stockTicker": "IDXX"
+  },
+  {
+    "stockRoute": "stz",
+    "stockTicker": "STZ"
+  },
+  {
+    "stockRoute": "bbva",
+    "stockTicker": "BBVA"
+  },
+  {
+    "stockRoute": "jci",
+    "stockTicker": "JCI"
+  },
+  {
+    "stockRoute": "exc",
+    "stockTicker": "EXC"
+  },
+  {
+    "stockRoute": "lulu",
+    "stockTicker": "LULU"
+  },
+  {
+    "stockRoute": "tel",
+    "stockTicker": "TEL"
+  },
+  {
+    "stockRoute": "ajg",
+    "stockTicker": "AJG"
+  },
+  {
+    "stockRoute": "payx",
+    "stockTicker": "PAYX"
+  },
+  {
+    "stockRoute": "team",
+    "stockTicker": "TEAM"
+  },
+  {
+    "stockRoute": "a",
+    "stockTicker": "A"
+  },
+  {
+    "stockRoute": "biib",
+    "stockTicker": "BIIB"
+  },
+  {
+    "stockRoute": "afl",
+    "stockTicker": "AFL"
+  },
+  {
+    "stockRoute": "nem",
+    "stockTicker": "NEM"
+  },
+  {
+    "stockRoute": "su",
+    "stockTicker": "SU"
+  },
+  {
+    "stockRoute": "tdg",
+    "stockTicker": "TDG"
+  },
+  {
+    "stockRoute": "trv",
+    "stockTicker": "TRV"
+  },
+  {
+    "stockRoute": "syy",
+    "stockTicker": "SYY"
+  },
+  {
+    "stockRoute": "trp",
+    "stockTicker": "TRP"
+  },
+  {
+    "stockRoute": "hes",
+    "stockTicker": "HES"
+  },
+  {
+    "stockRoute": "kmi",
+    "stockTicker": "KMI"
+  },
+  {
+    "stockRoute": "hln",
+    "stockTicker": "HLN"
+  },
+  {
+    "stockRoute": "gfs",
+    "stockTicker": "GFS"
+  },
+  {
+    "stockRoute": "nue",
+    "stockTicker": "NUE"
+  },
+  {
+    "stockRoute": "cm",
+    "stockTicker": "CM"
+  },
+  {
+    "stockRoute": "lyg",
+    "stockTicker": "LYG"
+  },
+  {
+    "stockRoute": "sgen",
+    "stockTicker": "SGEN"
+  },
+  {
+    "stockRoute": "bsbr",
+    "stockTicker": "BSBR"
+  },
+  {
+    "stockRoute": "lhx",
+    "stockTicker": "LHX"
+  },
+  {
+    "stockRoute": "carr",
+    "stockTicker": "CARR"
+  },
+  {
+    "stockRoute": "lng",
+    "stockTicker": "LNG"
+  },
+  {
+    "stockRoute": "dow",
+    "stockTicker": "DOW"
+  },
+  {
+    "stockRoute": "ntr",
+    "stockTicker": "NTR"
+  },
+  {
+    "stockRoute": "odfl",
+    "stockTicker": "ODFL"
+  },
+  {
+    "stockRoute": "sq",
+    "stockTicker": "SQ"
+  },
+  {
+    "stockRoute": "et",
+    "stockTicker": "ET"
+  },
+  {
+    "stockRoute": "xel",
+    "stockTicker": "XEL"
+  },
+  {
+    "stockRoute": "yum",
+    "stockTicker": "YUM"
+  },
+  {
+    "stockRoute": "crh",
+    "stockTicker": "CRH"
+  },
+  {
+    "stockRoute": "mfg",
+    "stockTicker": "MFG"
+  },
+  {
+    "stockRoute": "cnc",
+    "stockTicker": "CNC"
+  },
+  {
+    "stockRoute": "hlt",
+    "stockTicker": "HLT"
+  },
+  {
+    "stockRoute": "kr",
+    "stockTicker": "KR"
+  },
+  {
+    "stockRoute": "mrvl",
+    "stockTicker": "MRVL"
+  },
+  {
+    "stockRoute": "wmb",
+    "stockTicker": "WMB"
+  },
+  {
+    "stockRoute": "iqv",
+    "stockTicker": "IQV"
+  },
+  {
+    "stockRoute": "rost",
+    "stockTicker": "ROST"
+  },
+  {
+    "stockRoute": "gehc",
+    "stockTicker": "GEHC"
+  },
+  {
+    "stockRoute": "ilmn",
+    "stockTicker": "ILMN"
+  },
+  {
+    "stockRoute": "puk",
+    "stockTicker": "PUK"
+  },
+  {
+    "stockRoute": "bk",
+    "stockTicker": "BK"
+  },
+  {
+    "stockRoute": "cof",
+    "stockTicker": "COF"
+  },
+  {
+    "stockRoute": "wcn",
+    "stockTicker": "WCN"
+  },
+  {
+    "stockRoute": "mplx",
+    "stockTicker": "MPLX"
+  },
+  {
+    "stockRoute": "cprt",
+    "stockTicker": "CPRT"
+  },
+  {
+    "stockRoute": "wbd",
+    "stockTicker": "WBD"
+  },
+  {
+    "stockRoute": "spg",
+    "stockTicker": "SPG"
+  },
+  {
+    "stockRoute": "ed",
+    "stockTicker": "ED"
+  },
+  {
+    "stockRoute": "on",
+    "stockTicker": "ON"
+  },
+  {
+    "stockRoute": "gww",
+    "stockTicker": "GWW"
+  },
+  {
+    "stockRoute": "otis",
+    "stockTicker": "OTIS"
+  },
+  {
+    "stockRoute": "dhi",
+    "stockTicker": "DHI"
+  },
+  {
+    "stockRoute": "pcg",
+    "stockTicker": "PCG"
+  },
+  {
+    "stockRoute": "alc",
+    "stockTicker": "ALC"
+  },
+  {
+    "stockRoute": "well",
+    "stockTicker": "WELL"
+  },
+  {
+    "stockRoute": "mfc",
+    "stockTicker": "MFC"
+  },
+  {
+    "stockRoute": "apo",
+    "stockTicker": "APO"
+  },
+  {
+    "stockRoute": "mbly",
+    "stockTicker": "MBLY"
+  },
+  {
+    "stockRoute": "ea",
+    "stockTicker": "EA"
+  },
+  {
+    "stockRoute": "gold",
+    "stockTicker": "GOLD"
+  },
+  {
+    "stockRoute": "mtd",
+    "stockTicker": "MTD"
+  },
+  {
+    "stockRoute": "vici",
+    "stockTicker": "VICI"
+  },
+  {
+    "stockRoute": "fmx",
+    "stockTicker": "FMX"
+  },
+  {
+    "stockRoute": "ame",
+    "stockTicker": "AME"
+  },
+  {
+    "stockRoute": "rok",
+    "stockTicker": "ROK"
+  },
+  {
+    "stockRoute": "cmi",
+    "stockTicker": "CMI"
+  },
+  {
+    "stockRoute": "abc",
+    "stockTicker": "ABC"
+  },
+  {
+    "stockRoute": "dd",
+    "stockTicker": "DD"
+  },
+  {
+    "stockRoute": "rmd",
+    "stockTicker": "RMD"
+  },
+  {
+    "stockRoute": "bntx",
+    "stockTicker": "BNTX"
+  },
+  {
+    "stockRoute": "nwg",
+    "stockTicker": "NWG"
+  },
+  {
+    "stockRoute": "crwd",
+    "stockTicker": "CRWD"
+  },
+  {
+    "stockRoute": "oran",
+    "stockTicker": "ORAN"
+  },
+  {
+    "stockRoute": "amp",
+    "stockTicker": "AMP"
+  },
+  {
+    "stockRoute": "cht",
+    "stockTicker": "CHT"
+  },
+  {
+    "stockRoute": "veon",
+    "stockTicker": "VEON"
+  },
+  {
+    "stockRoute": "dvn",
+    "stockTicker": "DVN"
+  },
+  {
+    "stockRoute": "dltr",
+    "stockTicker": "DLTR"
+  },
+  {
+    "stockRoute": "len",
+    "stockTicker": "LEN"
+  },
+  {
+    "stockRoute": "ctsh",
+    "stockTicker": "CTSH"
+  },
+  {
+    "stockRoute": "fast",
+    "stockTicker": "FAST"
+  },
+  {
+    "stockRoute": "ttd",
+    "stockTicker": "TTD"
+  },
+  {
+    "stockRoute": "cve",
+    "stockTicker": "CVE"
+  },
+  {
+    "stockRoute": "ppg",
+    "stockTicker": "PPG"
+  },
+  {
+    "stockRoute": "fis",
+    "stockTicker": "FIS"
+  },
+  {
+    "stockRoute": "vod",
+    "stockTicker": "VOD"
+  },
+  {
+    "stockRoute": "wec",
+    "stockTicker": "WEC"
+  },
+  {
+    "stockRoute": "peg",
+    "stockTicker": "PEG"
+  },
+  {
+    "stockRoute": "vrsk",
+    "stockTicker": "VRSK"
+  },
+  {
+    "stockRoute": "aptv",
+    "stockTicker": "APTV"
+  },
+  {
+    "stockRoute": "tu",
+    "stockTicker": "TU"
+  },
+  {
+    "stockRoute": "pru",
+    "stockTicker": "PRU"
+  },
+  {
+    "stockRoute": "wba",
+    "stockTicker": "WBA"
+  },
+  {
+    "stockRoute": "lyb",
+    "stockTicker": "LYB"
+  },
+  {
+    "stockRoute": "keys",
+    "stockTicker": "KEYS"
+  },
+  {
+    "stockRoute": "glw",
+    "stockTicker": "GLW"
+  },
+  {
+    "stockRoute": "all",
+    "stockTicker": "ALL"
+  },
+  {
+    "stockRoute": "sbac",
+    "stockTicker": "SBAC"
+  },
+  {
+    "stockRoute": "fnv",
+    "stockTicker": "FNV"
+  },
+  {
+    "stockRoute": "anss",
+    "stockTicker": "ANSS"
+  },
+  {
+    "stockRoute": "dlr",
+    "stockTicker": "DLR"
+  },
+  {
+    "stockRoute": "veev",
+    "stockTicker": "VEEV"
+  },
+  {
+    "stockRoute": "bkr",
+    "stockTicker": "BKR"
+  },
+  {
+    "stockRoute": "csgp",
+    "stockTicker": "CSGP"
+  },
+  {
+    "stockRoute": "hpq",
+    "stockTicker": "HPQ"
+  },
+  {
+    "stockRoute": "cpng",
+    "stockTicker": "CPNG"
+  },
+  {
+    "stockRoute": "imo",
+    "stockTicker": "IMO"
+  },
+  {
+    "stockRoute": "tlk",
+    "stockTicker": "TLK"
+  },
+  {
+    "stockRoute": "dell",
+    "stockTicker": "DELL"
+  },
+  {
+    "stockRoute": "hal",
+    "stockTicker": "HAL"
+  },
+  {
+    "stockRoute": "enph",
+    "stockTicker": "ENPH"
+  },
+  {
+    "stockRoute": "ferg",
+    "stockTicker": "FERG"
+  },
+  {
+    "stockRoute": "oke",
+    "stockTicker": "OKE"
+  },
+  {
+    "stockRoute": "zbh",
+    "stockTicker": "ZBH"
+  },
+  {
+    "stockRoute": "es",
+    "stockTicker": "ES"
+  },
+  {
+    "stockRoute": "rblx",
+    "stockTicker": "RBLX"
+  },
+  {
+    "stockRoute": "ndaq",
+    "stockTicker": "NDAQ"
+  },
+  {
+    "stockRoute": "slf",
+    "stockTicker": "SLF"
+  },
+  {
+    "stockRoute": "bcs",
+    "stockTicker": "BCS"
+  },
+  {
+    "stockRoute": "ulta",
+    "stockTicker": "ULTA"
+  },
+  {
+    "stockRoute": "eix",
+    "stockTicker": "EIX"
+  },
+  {
+    "stockRoute": "cdw",
+    "stockTicker": "CDW"
+  },
+  {
+    "stockRoute": "ccep",
+    "stockTicker": "CCEP"
+  },
+  {
+    "stockRoute": "gpn",
+    "stockTicker": "GPN"
+  },
+  {
+    "stockRoute": "nok",
+    "stockTicker": "NOK"
+  },
+  {
+    "stockRoute": "yumc",
+    "stockTicker": "YUMC"
+  },
+  {
+    "stockRoute": "awk",
+    "stockTicker": "AWK"
+  },
+  {
+    "stockRoute": "uri",
+    "stockTicker": "URI"
+  },
+  {
+    "stockRoute": "bbd",
+    "stockTicker": "BBD"
+  },
+  {
+    "stockRoute": "alb",
+    "stockTicker": "ALB"
+  },
+  {
+    "stockRoute": "tsco",
+    "stockTicker": "TSCO"
+  },
+  {
+    "stockRoute": "spot",
+    "stockTicker": "SPOT"
+  },
+  {
+    "stockRoute": "dfs",
+    "stockTicker": "DFS"
+  },
+  {
+    "stockRoute": "hznp",
+    "stockTicker": "HZNP"
+  },
+  {
+    "stockRoute": "wst",
+    "stockTicker": "WST"
+  },
+  {
+    "stockRoute": "stt",
+    "stockTicker": "STT"
+  },
+  {
+    "stockRoute": "it",
+    "stockTicker": "IT"
+  },
+  {
+    "stockRoute": "gmab",
+    "stockTicker": "GMAB"
+  },
+  {
+    "stockRoute": "trow",
+    "stockTicker": "TROW"
+  },
+  {
+    "stockRoute": "acgl",
+    "stockTicker": "ACGL"
+  },
+  {
+    "stockRoute": "efx",
+    "stockTicker": "EFX"
+  },
+  {
+    "stockRoute": "wit",
+    "stockTicker": "WIT"
+  },
+  {
+    "stockRoute": "wtw",
+    "stockTicker": "WTW"
+  },
+  {
+    "stockRoute": "ceg",
+    "stockTicker": "CEG"
+  },
+  {
+    "stockRoute": "algn",
+    "stockTicker": "ALGN"
+  },
+  {
+    "stockRoute": "aem",
+    "stockTicker": "AEM"
+  },
+  {
+    "stockRoute": "dash",
+    "stockTicker": "DASH"
+  },
+  {
+    "stockRoute": "tef",
+    "stockTicker": "TEF"
+  },
+  {
+    "stockRoute": "alny",
+    "stockTicker": "ALNY"
+  },
+  {
+    "stockRoute": "bbdo",
+    "stockTicker": "BBDO"
+  },
+  {
+    "stockRoute": "tcom",
+    "stockTicker": "TCOM"
+  },
+  {
+    "stockRoute": "ebay",
+    "stockTicker": "EBAY"
+  },
+  {
+    "stockRoute": "sqm",
+    "stockTicker": "SQM"
+  },
+  {
+    "stockRoute": "zto",
+    "stockTicker": "ZTO"
+  },
+  {
+    "stockRoute": "rci",
+    "stockTicker": "RCI"
+  },
+  {
+    "stockRoute": "ftv",
+    "stockTicker": "FTV"
+  },
+  {
+    "stockRoute": "pwr",
+    "stockTicker": "PWR"
+  },
+  {
+    "stockRoute": "beke",
+    "stockTicker": "BEKE"
+  },
+  {
+    "stockRoute": "bgne",
+    "stockTicker": "BGNE"
+  },
+  {
+    "stockRoute": "mpwr",
+    "stockTicker": "MPWR"
+  },
+  {
+    "stockRoute": "fang",
+    "stockTicker": "FANG"
+  },
+  {
+    "stockRoute": "li",
+    "stockTicker": "LI"
+  },
+  {
+    "stockRoute": "hei",
+    "stockTicker": "HEI"
+  },
+  {
+    "stockRoute": "mt",
+    "stockTicker": "MT"
+  },
+  {
+    "stockRoute": "fslr",
+    "stockTicker": "FSLR"
+  },
+  {
+    "stockRoute": "fe",
+    "stockTicker": "FE"
+  },
+  {
+    "stockRoute": "k",
+    "stockTicker": "K"
+  },
+  {
+    "stockRoute": "ir",
+    "stockTicker": "IR"
+  },
+  {
+    "stockRoute": "gpc",
+    "stockTicker": "GPC"
+  },
+  {
+    "stockRoute": "gib",
+    "stockTicker": "GIB"
+  },
+  {
+    "stockRoute": "vmc",
+    "stockTicker": "VMC"
+  },
+  {
+    "stockRoute": "avb",
+    "stockTicker": "AVB"
+  },
+  {
+    "stockRoute": "aee",
+    "stockTicker": "AEE"
+  },
+  {
+    "stockRoute": "etr",
+    "stockTicker": "ETR"
+  },
+  {
+    "stockRoute": "cbre",
+    "stockTicker": "CBRE"
+  },
+  {
+    "stockRoute": "podd",
+    "stockTicker": "PODD"
+  },
+  {
+    "stockRoute": "iff",
+    "stockTicker": "IFF"
+  },
+  {
+    "stockRoute": "umc",
+    "stockTicker": "UMC"
+  },
+  {
+    "stockRoute": "wpm",
+    "stockTicker": "WPM"
+  },
+  {
+    "stockRoute": "cqp",
+    "stockTicker": "CQP"
+  },
+  {
+    "stockRoute": "eqr",
+    "stockTicker": "EQR"
+  },
+  {
+    "stockRoute": "vrsn",
+    "stockTicker": "VRSN"
+  },
+  {
+    "stockRoute": "hrl",
+    "stockTicker": "HRL"
+  },
+  {
+    "stockRoute": "chd",
+    "stockTicker": "CHD"
+  },
+  {
+    "stockRoute": "mlm",
+    "stockTicker": "MLM"
+  },
+  {
+    "stockRoute": "wy",
+    "stockTicker": "WY"
+  },
+  {
+    "stockRoute": "hig",
+    "stockTicker": "HIG"
+  },
+  {
+    "stockRoute": "are",
+    "stockTicker": "ARE"
+  },
+  {
+    "stockRoute": "ddog",
+    "stockTicker": "DDOG"
+  },
+  {
+    "stockRoute": "dte",
+    "stockTicker": "DTE"
+  },
+  {
+    "stockRoute": "exr",
+    "stockTicker": "EXR"
+  },
+  {
+    "stockRoute": "ryaay",
+    "stockTicker": "RYAAY"
+  },
+  {
+    "stockRoute": "tsn",
+    "stockTicker": "TSN"
+  },
+  {
+    "stockRoute": "dal",
+    "stockTicker": "DAL"
+  },
+  {
+    "stockRoute": "zm",
+    "stockTicker": "ZM"
+  },
+  {
+    "stockRoute": "argx",
+    "stockTicker": "ARGX"
+  },
+  {
+    "stockRoute": "ttwo",
+    "stockTicker": "TTWO"
+  },
+  {
+    "stockRoute": "tdy",
+    "stockTicker": "TDY"
+  },
+  {
+    "stockRoute": "bax",
+    "stockTicker": "BAX"
+  },
+  {
+    "stockRoute": "dov",
+    "stockTicker": "DOV"
+  },
+  {
+    "stockRoute": "ec",
+    "stockTicker": "EC"
+  },
+  {
+    "stockRoute": "fts",
+    "stockTicker": "FTS"
+  },
+  {
+    "stockRoute": "ppl",
+    "stockTicker": "PPL"
+  },
+  {
+    "stockRoute": "cnhi",
+    "stockTicker": "CNHI"
+  },
+  {
+    "stockRoute": "hubs",
+    "stockTicker": "HUBS"
+  },
+  {
+    "stockRoute": "nu",
+    "stockTicker": "NU"
+  },
+  {
+    "stockRoute": "mkc",
+    "stockTicker": "MKC"
+  },
+  {
+    "stockRoute": "holx",
+    "stockTicker": "HOLX"
+  },
+  {
+    "stockRoute": "mtb",
+    "stockTicker": "MTB"
+  },
+  {
+    "stockRoute": "clx",
+    "stockTicker": "CLX"
+  },
+  {
+    "stockRoute": "lh",
+    "stockTicker": "LH"
+  },
+  {
+    "stockRoute": "rjf",
+    "stockTicker": "RJF"
+  },
+  {
+    "stockRoute": "qsr",
+    "stockTicker": "QSR"
+  },
+  {
+    "stockRoute": "db",
+    "stockTicker": "DB"
+  },
+  {
+    "stockRoute": "stld",
+    "stockTicker": "STLD"
+  },
+  {
+    "stockRoute": "ix",
+    "stockTicker": "IX"
+  },
+  {
+    "stockRoute": "pins",
+    "stockTicker": "PINS"
+  },
+  {
+    "stockRoute": "pkx",
+    "stockTicker": "PKX"
+  },
+  {
+    "stockRoute": "net",
+    "stockTicker": "NET"
+  },
+  {
+    "stockRoute": "ctra",
+    "stockTicker": "CTRA"
+  },
+  {
+    "stockRoute": "dri",
+    "stockTicker": "DRI"
+  },
+  {
+    "stockRoute": "hpe",
+    "stockTicker": "HPE"
+  },
+  {
+    "stockRoute": "ste",
+    "stockTicker": "STE"
+  },
+  {
+    "stockRoute": "grmn",
+    "stockTicker": "GRMN"
+  },
+  {
+    "stockRoute": "snap",
+    "stockTicker": "SNAP"
+  },
+  {
+    "stockRoute": "swks",
+    "stockTicker": "SWKS"
+  },
+  {
+    "stockRoute": "eric",
+    "stockTicker": "ERIC"
+  },
+  {
+    "stockRoute": "cah",
+    "stockTicker": "CAH"
+  },
+  {
+    "stockRoute": "rol",
+    "stockTicker": "ROL"
+  },
+  {
+    "stockRoute": "invh",
+    "stockTicker": "INVH"
+  },
+  {
+    "stockRoute": "teck",
+    "stockTicker": "TECK"
+  },
+  {
+    "stockRoute": "cnp",
+    "stockTicker": "CNP"
+  },
+  {
+    "stockRoute": "wat",
+    "stockTicker": "WAT"
+  },
+  {
+    "stockRoute": "xyl",
+    "stockTicker": "XYL"
+  },
+  {
+    "stockRoute": "coin",
+    "stockTicker": "COIN"
+  },
+  {
+    "stockRoute": "omc",
+    "stockTicker": "OMC"
+  },
+  {
+    "stockRoute": "cag",
+    "stockTicker": "CAG"
+  },
+  {
+    "stockRoute": "foxa",
+    "stockTicker": "FOXA"
+  },
+  {
+    "stockRoute": "luv",
+    "stockTicker": "LUV"
+  },
+  {
+    "stockRoute": "cms",
+    "stockTicker": "CMS"
+  },
+  {
+    "stockRoute": "nvr",
+    "stockTicker": "NVR"
+  },
+  {
+    "stockRoute": "coo",
+    "stockTicker": "COO"
+  },
+  {
+    "stockRoute": "fitb",
+    "stockTicker": "FITB"
+  },
+  {
+    "stockRoute": "pfg",
+    "stockTicker": "PFG"
+  },
+  {
+    "stockRoute": "ntrs",
+    "stockTicker": "NTRS"
+  },
+  {
+    "stockRoute": "rto",
+    "stockTicker": "RTO"
+  },
+  {
+    "stockRoute": "fico",
+    "stockTicker": "FICO"
+  },
+  {
+    "stockRoute": "jbht",
+    "stockTicker": "JBHT"
+  },
+  {
+    "stockRoute": "wab",
+    "stockTicker": "WAB"
+  },
+  {
+    "stockRoute": "fwonk",
+    "stockTicker": "FWONK"
+  },
+  {
+    "stockRoute": "pltr",
+    "stockTicker": "PLTR"
+  },
+  {
+    "stockRoute": "iep",
+    "stockTicker": "IEP"
+  },
+  {
+    "stockRoute": "elp",
+    "stockTicker": "ELP"
+  },
+  {
+    "stockRoute": "vtr",
+    "stockTicker": "VTR"
+  },
+  {
+    "stockRoute": "iclr",
+    "stockTicker": "ICLR"
+  },
+  {
+    "stockRoute": "bmrn",
+    "stockTicker": "BMRN"
+  },
+  {
+    "stockRoute": "pba",
+    "stockTicker": "PBA"
+  },
+  {
+    "stockRoute": "cinf",
+    "stockTicker": "CINF"
+  },
+  {
+    "stockRoute": "maa",
+    "stockTicker": "MAA"
+  },
+  {
+    "stockRoute": "rf",
+    "stockTicker": "RF"
+  },
+  {
+    "stockRoute": "ball",
+    "stockTicker": "BALL"
+  },
+  {
+    "stockRoute": "expd",
+    "stockTicker": "EXPD"
+  },
+  {
+    "stockRoute": "hwm",
+    "stockTicker": "HWM"
+  },
+  {
+    "stockRoute": "ter",
+    "stockTicker": "TER"
+  },
+  {
+    "stockRoute": "iex",
+    "stockTicker": "IEX"
+  },
+  {
+    "stockRoute": "br",
+    "stockTicker": "BR"
+  },
+  {
+    "stockRoute": "kof",
+    "stockTicker": "KOF"
+  },
+  {
+    "stockRoute": "sui",
+    "stockTicker": "SUI"
+  },
+  {
+    "stockRoute": "sjm",
+    "stockTicker": "SJM"
+  },
+  {
+    "stockRoute": "bby",
+    "stockTicker": "BBY"
+  },
+  {
+    "stockRoute": "asx",
+    "stockTicker": "ASX"
+  },
+  {
+    "stockRoute": "payc",
+    "stockTicker": "PAYC"
+  },
+  {
+    "stockRoute": "cpb",
+    "stockTicker": "CPB"
+  },
+  {
+    "stockRoute": "ts",
+    "stockTicker": "TS"
+  },
+  {
+    "stockRoute": "mkl",
+    "stockTicker": "MKL"
+  },
+  {
+    "stockRoute": "wpc",
+    "stockTicker": "WPC"
+  },
+  {
+    "stockRoute": "wmg",
+    "stockTicker": "WMG"
+  },
+  {
+    "stockRoute": "fox",
+    "stockTicker": "FOX"
+  },
+  {
+    "stockRoute": "amcr",
+    "stockTicker": "AMCR"
+  },
+  {
+    "stockRoute": "zs",
+    "stockTicker": "ZS"
+  },
+  {
+    "stockRoute": "pki",
+    "stockTicker": "PKI"
+  },
+  {
+    "stockRoute": "chkp",
+    "stockTicker": "CHKP"
+  },
+  {
+    "stockRoute": "epam",
+    "stockTicker": "EPAM"
+  },
+  {
+    "stockRoute": "sedg",
+    "stockTicker": "SEDG"
+  },
+  {
+    "stockRoute": "ui",
+    "stockTicker": "UI"
+  },
+  {
+    "stockRoute": "wrb",
+    "stockTicker": "WRB"
+  },
+  {
+    "stockRoute": "rprx",
+    "stockTicker": "RPRX"
+  },
+  {
+    "stockRoute": "bro",
+    "stockTicker": "BRO"
+  },
+  {
+    "stockRoute": "ato",
+    "stockTicker": "ATO"
+  },
+  {
+    "stockRoute": "incy",
+    "stockTicker": "INCY"
+  },
+  {
+    "stockRoute": "mgm",
+    "stockTicker": "MGM"
+  },
+  {
+    "stockRoute": "hban",
+    "stockTicker": "HBAN"
+  },
+  {
+    "stockRoute": "fwona",
+    "stockTicker": "FWONA"
+  },
+  {
+    "stockRoute": "dgx",
+    "stockTicker": "DGX"
+  },
+  {
+    "stockRoute": "rcl",
+    "stockTicker": "RCL"
+  },
+  {
+    "stockRoute": "moh",
+    "stockTicker": "MOH"
+  },
+  {
+    "stockRoute": "tw",
+    "stockTicker": "TW"
+  },
+  {
+    "stockRoute": "axon",
+    "stockTicker": "AXON"
+  },
+  {
+    "stockRoute": "paraa",
+    "stockTicker": "PARAA"
+  },
+  {
+    "stockRoute": "trgp",
+    "stockTicker": "TRGP"
+  },
+  {
+    "stockRoute": "fds",
+    "stockTicker": "FDS"
+  },
+  {
+    "stockRoute": "lyv",
+    "stockTicker": "LYV"
+  },
+  {
+    "stockRoute": "lpla",
+    "stockTicker": "LPLA"
+  },
+  {
+    "stockRoute": "nio",
+    "stockTicker": "NIO"
+  },
+  {
+    "stockRoute": "htht",
+    "stockTicker": "HTHT"
+  },
+  {
+    "stockRoute": "cfg",
+    "stockTicker": "CFG"
+  },
+  {
+    "stockRoute": "mdb",
+    "stockTicker": "MDB"
+  },
+  {
+    "stockRoute": "agr",
+    "stockTicker": "AGR"
+  },
+  {
+    "stockRoute": "lcid",
+    "stockTicker": "LCID"
+  },
+  {
+    "stockRoute": "zbra",
+    "stockTicker": "ZBRA"
+  },
+  {
+    "stockRoute": "aes",
+    "stockTicker": "AES"
+  },
+  {
+    "stockRoute": "splk",
+    "stockTicker": "SPLK"
+  },
+  {
+    "stockRoute": "fmc",
+    "stockTicker": "FMC"
+  },
+  {
+    "stockRoute": "rs",
+    "stockTicker": "RS"
+  },
+  {
+    "stockRoute": "flt",
+    "stockTicker": "FLT"
+  },
+  {
+    "stockRoute": "siri",
+    "stockTicker": "SIRI"
+  },
+  {
+    "stockRoute": "irm",
+    "stockTicker": "IRM"
+  },
+  {
+    "stockRoute": "bip",
+    "stockTicker": "BIP"
+  },
+  {
+    "stockRoute": "mktx",
+    "stockTicker": "MKTX"
+  },
+  {
+    "stockRoute": "cboe",
+    "stockTicker": "CBOE"
+  },
+  {
+    "stockRoute": "mos",
+    "stockTicker": "MOS"
+  },
+  {
+    "stockRoute": "lw",
+    "stockTicker": "LW"
+  },
+  {
+    "stockRoute": "ptc",
+    "stockTicker": "PTC"
+  },
+  {
+    "stockRoute": "lkq",
+    "stockTicker": "LKQ"
+  },
+  {
+    "stockRoute": "mga",
+    "stockTicker": "MGA"
+  },
+  {
+    "stockRoute": "phg",
+    "stockTicker": "PHG"
+  },
+  {
+    "stockRoute": "j",
+    "stockTicker": "J"
+  },
+  {
+    "stockRoute": "ares",
+    "stockTicker": "ARES"
+  },
+  {
+    "stockRoute": "chwy",
+    "stockTicker": "CHWY"
+  },
+  {
+    "stockRoute": "sjr",
+    "stockTicker": "SJR"
+  },
+  {
+    "stockRoute": "kb",
+    "stockTicker": "KB"
+  },
+  {
+    "stockRoute": "avtr",
+    "stockTicker": "AVTR"
+  },
+  {
+    "stockRoute": "bg",
+    "stockTicker": "BG"
+  },
+  {
+    "stockRoute": "mro",
+    "stockTicker": "MRO"
+  },
+  {
+    "stockRoute": "txt",
+    "stockTicker": "TXT"
+  },
+  {
+    "stockRoute": "expe",
+    "stockTicker": "EXPE"
+  },
+  {
+    "stockRoute": "wlk",
+    "stockTicker": "WLK"
+  },
+  {
+    "stockRoute": "avy",
+    "stockTicker": "AVY"
+  },
+  {
+    "stockRoute": "tyl",
+    "stockTicker": "TYL"
+  },
+  {
+    "stockRoute": "evrg",
+    "stockTicker": "EVRG"
+  },
+  {
+    "stockRoute": "bio",
+    "stockTicker": "BIO"
+  },
+  {
+    "stockRoute": "ipg",
+    "stockTicker": "IPG"
+  },
+  {
+    "stockRoute": "ebr",
+    "stockTicker": "EBR"
+  },
+  {
+    "stockRoute": "ssnc",
+    "stockTicker": "SSNC"
+  },
+  {
+    "stockRoute": "cf",
+    "stockTicker": "CF"
+  },
+  {
+    "stockRoute": "ual",
+    "stockTicker": "UAL"
+  },
+  {
+    "stockRoute": "re",
+    "stockTicker": "RE"
+  },
+  {
+    "stockRoute": "shg",
+    "stockTicker": "SHG"
+  },
+  {
+    "stockRoute": "etsy",
+    "stockTicker": "ETSY"
+  },
+  {
+    "stockRoute": "nice",
+    "stockTicker": "NICE"
+  },
+  {
+    "stockRoute": "okta",
+    "stockTicker": "OKTA"
+  },
+  {
+    "stockRoute": "ntap",
+    "stockTicker": "NTAP"
+  },
+  {
+    "stockRoute": "para",
+    "stockTicker": "PARA"
+  },
+  {
+    "stockRoute": "ben",
+    "stockTicker": "BEN"
+  },
+  {
+    "stockRoute": "burl",
+    "stockTicker": "BURL"
+  },
+  {
+    "stockRoute": "lnt",
+    "stockTicker": "LNT"
+  },
+  {
+    "stockRoute": "tme",
+    "stockTicker": "TME"
+  },
+  {
+    "stockRoute": "ess",
+    "stockTicker": "ESS"
+  },
+  {
+    "stockRoute": "azpn",
+    "stockTicker": "AZPN"
+  },
+  {
+    "stockRoute": "l",
+    "stockTicker": "L"
+  },
+  {
+    "stockRoute": "bam",
+    "stockTicker": "BAM"
+  },
+  {
+    "stockRoute": "phm",
+    "stockTicker": "PHM"
+  },
+  {
+    "stockRoute": "glpi",
+    "stockTicker": "GLPI"
+  },
+  {
+    "stockRoute": "udr",
+    "stockTicker": "UDR"
+  },
+  {
+    "stockRoute": "stx",
+    "stockTicker": "STX"
+  },
+  {
+    "stockRoute": "tpl",
+    "stockTicker": "TPL"
+  },
+  {
+    "stockRoute": "pool",
+    "stockTicker": "POOL"
+  },
+  {
+    "stockRoute": "rivn",
+    "stockTicker": "RIVN"
+  },
+  {
+    "stockRoute": "ldos",
+    "stockTicker": "LDOS"
+  },
+  {
+    "stockRoute": "lscc",
+    "stockTicker": "LSCC"
+  },
+  {
+    "stockRoute": "sna",
+    "stockTicker": "SNA"
+  },
+  {
+    "stockRoute": "bldr",
+    "stockTicker": "BLDR"
+  },
+  {
+    "stockRoute": "aer",
+    "stockTicker": "AER"
+  },
+  {
+    "stockRoute": "hubb",
+    "stockTicker": "HUBB"
+  },
+  {
+    "stockRoute": "pkg",
+    "stockTicker": "PKG"
+  },
+  {
+    "stockRoute": "viv",
+    "stockTicker": "VIV"
+  },
+  {
+    "stockRoute": "syf",
+    "stockTicker": "SYF"
+  },
+  {
+    "stockRoute": "trmb",
+    "stockTicker": "TRMB"
+  },
+  {
+    "stockRoute": "snn",
+    "stockTicker": "SNN"
+  },
+  {
+    "stockRoute": "wynn",
+    "stockTicker": "WYNN"
+  },
+  {
+    "stockRoute": "wpp",
+    "stockTicker": "WPP"
+  },
+  {
+    "stockRoute": "ip",
+    "stockTicker": "IP"
+  },
+  {
+    "stockRoute": "bah",
+    "stockTicker": "BAH"
+  },
+  {
+    "stockRoute": "ndsn",
+    "stockTicker": "NDSN"
+  },
+  {
+    "stockRoute": "ccl",
+    "stockTicker": "CCL"
+  },
+  {
+    "stockRoute": "bsy",
+    "stockTicker": "BSY"
+  },
+  {
+    "stockRoute": "els",
+    "stockTicker": "ELS"
+  },
+  {
+    "stockRoute": "akam",
+    "stockTicker": "AKAM"
+  },
+  {
+    "stockRoute": "agl",
+    "stockTicker": "AGL"
+  },
+  {
+    "stockRoute": "exas",
+    "stockTicker": "EXAS"
+  },
+  {
+    "stockRoute": "fms",
+    "stockTicker": "FMS"
+  },
+  {
+    "stockRoute": "erie",
+    "stockTicker": "ERIE"
+  },
+  {
+    "stockRoute": "tfx",
+    "stockTicker": "TFX"
+  },
+  {
+    "stockRoute": "deck",
+    "stockTicker": "DECK"
+  },
+  {
+    "stockRoute": "ggg",
+    "stockTicker": "GGG"
+  },
+  {
+    "stockRoute": "entg",
+    "stockTicker": "ENTG"
+  },
+  {
+    "stockRoute": "wso",
+    "stockTicker": "WSO"
+  },
+  {
+    "stockRoute": "u",
+    "stockTicker": "U"
+  },
+  {
+    "stockRoute": "ctlt",
+    "stockTicker": "CTLT"
+  },
+  {
+    "stockRoute": "dks",
+    "stockTicker": "DKS"
+  },
+  {
+    "stockRoute": "lbrdk",
+    "stockTicker": "LBRDK"
+  },
+  {
+    "stockRoute": "lbrda",
+    "stockTicker": "LBRDA"
+  },
+  {
+    "stockRoute": "peak",
+    "stockTicker": "PEAK"
+  },
+  {
+    "stockRoute": "srpt",
+    "stockTicker": "SRPT"
+  },
+  {
+    "stockRoute": "gddy",
+    "stockTicker": "GDDY"
+  },
+  {
+    "stockRoute": "tech",
+    "stockTicker": "TECH"
+  },
+  {
+    "stockRoute": "gfi",
+    "stockTicker": "GFI"
+  },
+  {
+    "stockRoute": "docu",
+    "stockTicker": "DOCU"
+  },
+  {
+    "stockRoute": "dox",
+    "stockTicker": "DOX"
+  },
+  {
+    "stockRoute": "twlo",
+    "stockTicker": "TWLO"
+  },
+  {
+    "stockRoute": "tru",
+    "stockTicker": "TRU"
+  },
+  {
+    "stockRoute": "vtrs",
+    "stockTicker": "VTRS"
+  },
+  {
+    "stockRoute": "dt",
+    "stockTicker": "DT"
+  },
+  {
+    "stockRoute": "acm",
+    "stockTicker": "ACM"
+  },
+  {
+    "stockRoute": "ttc",
+    "stockTicker": "TTC"
+  },
+  {
+    "stockRoute": "wdc",
+    "stockTicker": "WDC"
+  },
+  {
+    "stockRoute": "nmr",
+    "stockTicker": "NMR"
+  },
+  {
+    "stockRoute": "mtch",
+    "stockTicker": "MTCH"
+  },
+  {
+    "stockRoute": "ihg",
+    "stockTicker": "IHG"
+  },
+  {
+    "stockRoute": "gfl",
+    "stockTicker": "GFL"
+  },
+  {
+    "stockRoute": "brkr",
+    "stockTicker": "BRKR"
+  },
+  {
+    "stockRoute": "kim",
+    "stockTicker": "KIM"
+  },
+  {
+    "stockRoute": "chrw",
+    "stockTicker": "CHRW"
+  },
+  {
+    "stockRoute": "jbl",
+    "stockTicker": "JBL"
+  },
+  {
+    "stockRoute": "five",
+    "stockTicker": "FIVE"
+  },
+  {
+    "stockRoute": "h",
+    "stockTicker": "H"
+  },
+  {
+    "stockRoute": "apa",
+    "stockTicker": "APA"
+  },
+  {
+    "stockRoute": "bwa",
+    "stockTicker": "BWA"
+  },
+  {
+    "stockRoute": "cg",
+    "stockTicker": "CG"
+  },
+  {
+    "stockRoute": "key",
+    "stockTicker": "KEY"
+  },
+  {
+    "stockRoute": "wtrg",
+    "stockTicker": "WTRG"
+  },
+  {
+    "stockRoute": "dpz",
+    "stockTicker": "DPZ"
+  },
+  {
+    "stockRoute": "rexr",
+    "stockTicker": "REXR"
+  },
+  {
+    "stockRoute": "ce",
+    "stockTicker": "CE"
+  },
+  {
+    "stockRoute": "eqt",
+    "stockTicker": "EQT"
+  },
+  {
+    "stockRoute": "swk",
+    "stockTicker": "SWK"
+  },
+  {
+    "stockRoute": "tap",
+    "stockTicker": "TAP"
+  },
+  {
+    "stockRoute": "ni",
+    "stockTicker": "NI"
+  },
+  {
+    "stockRoute": "csl",
+    "stockTicker": "CSL"
+  },
+  {
+    "stockRoute": "cpt",
+    "stockTicker": "CPT"
+  },
+  {
+    "stockRoute": "mas",
+    "stockTicker": "MAS"
+  },
+  {
+    "stockRoute": "aci",
+    "stockTicker": "ACI"
+  },
+  {
+    "stockRoute": "rpm",
+    "stockTicker": "RPM"
+  },
+  {
+    "stockRoute": "jkhy",
+    "stockTicker": "JKHY"
+  },
+  {
+    "stockRoute": "hst",
+    "stockTicker": "HST"
+  },
+  {
+    "stockRoute": "cuk",
+    "stockTicker": "CUK"
+  },
+  {
+    "stockRoute": "lsi",
+    "stockTicker": "LSI"
+  },
+  {
+    "stockRoute": "uhal",
+    "stockTicker": "UHAL"
+  },
+  {
+    "stockRoute": "jnpr",
+    "stockTicker": "JNPR"
+  },
+  {
+    "stockRoute": "suz",
+    "stockTicker": "SUZ"
+  },
+  {
+    "stockRoute": "mmp",
+    "stockTicker": "MMP"
+  },
+  {
+    "stockRoute": "amh",
+    "stockTicker": "AMH"
+  },
+  {
+    "stockRoute": "cday",
+    "stockTicker": "CDAY"
+  },
+  {
+    "stockRoute": "qgen",
+    "stockTicker": "QGEN"
+  },
+  {
+    "stockRoute": "xm",
+    "stockTicker": "XM"
+  },
+  {
+    "stockRoute": "gen",
+    "stockTicker": "GEN"
+  },
+  {
+    "stockRoute": "pen",
+    "stockTicker": "PEN"
+  },
+  {
+    "stockRoute": "ccj",
+    "stockTicker": "CCJ"
+  },
+  {
+    "stockRoute": "hsic",
+    "stockTicker": "HSIC"
+  },
+  {
+    "stockRoute": "gl",
+    "stockTicker": "GL"
+  },
+  {
+    "stockRoute": "grab",
+    "stockTicker": "GRAB"
+  },
+  {
+    "stockRoute": "z",
+    "stockTicker": "Z"
+  },
+  {
+    "stockRoute": "pcty",
+    "stockTicker": "PCTY"
+  },
+  {
+    "stockRoute": "sci",
+    "stockTicker": "SCI"
+  },
+  {
+    "stockRoute": "cube",
+    "stockTicker": "CUBE"
+  },
+  {
+    "stockRoute": "bj",
+    "stockTicker": "BJ"
+  },
+  {
+    "stockRoute": "cna",
+    "stockTicker": "CNA"
+  },
+  {
+    "stockRoute": "qrvo",
+    "stockTicker": "QRVO"
+  },
+  {
+    "stockRoute": "aos",
+    "stockTicker": "AOS"
+  },
+  {
+    "stockRoute": "afg",
+    "stockTicker": "AFG"
+  },
+  {
+    "stockRoute": "uthr",
+    "stockTicker": "UTHR"
+  },
+  {
+    "stockRoute": "onon",
+    "stockTicker": "ONON"
+  },
+  {
+    "stockRoute": "otex",
+    "stockTicker": "OTEX"
+  },
+  {
+    "stockRoute": "reg",
+    "stockTicker": "REG"
+  },
+  {
+    "stockRoute": "zg",
+    "stockTicker": "ZG"
+  },
+  {
+    "stockRoute": "chk",
+    "stockTicker": "CHK"
+  },
+  {
+    "stockRoute": "coty",
+    "stockTicker": "COTY"
+  },
+  {
+    "stockRoute": "bap",
+    "stockTicker": "BAP"
+  },
+  {
+    "stockRoute": "fnd",
+    "stockTicker": "FND"
+  },
+  {
+    "stockRoute": "crl",
+    "stockTicker": "CRL"
+  },
+  {
+    "stockRoute": "tfii",
+    "stockTicker": "TFII"
+  },
+  {
+    "stockRoute": "bili",
+    "stockTicker": "BILI"
+  },
+  {
+    "stockRoute": "lamr",
+    "stockTicker": "LAMR"
+  },
+  {
+    "stockRoute": "bch",
+    "stockTicker": "BCH"
+  },
+  {
+    "stockRoute": "dino",
+    "stockTicker": "DINO"
+  },
+  {
+    "stockRoute": "wes",
+    "stockTicker": "WES"
+  },
+  {
+    "stockRoute": "tpr",
+    "stockTicker": "TPR"
+  },
+  {
+    "stockRoute": "pag",
+    "stockTicker": "PAG"
+  },
+  {
+    "stockRoute": "flex",
+    "stockTicker": "FLEX"
+  },
+  {
+    "stockRoute": "emn",
+    "stockTicker": "EMN"
+  },
+  {
+    "stockRoute": "iot",
+    "stockTicker": "IOT"
+  },
+  {
+    "stockRoute": "nws",
+    "stockTicker": "NWS"
+  },
+  {
+    "stockRoute": "crbg",
+    "stockTicker": "CRBG"
+  },
+  {
+    "stockRoute": "teva",
+    "stockTicker": "TEVA"
+  },
+  {
+    "stockRoute": "nbix",
+    "stockTicker": "NBIX"
+  },
+  {
+    "stockRoute": "zi",
+    "stockTicker": "ZI"
+  },
+  {
+    "stockRoute": "nly",
+    "stockTicker": "NLY"
+  },
+  {
+    "stockRoute": "jhx",
+    "stockTicker": "JHX"
+  },
+  {
+    "stockRoute": "nwsa",
+    "stockTicker": "NWSA"
+  },
+  {
+    "stockRoute": "arcc",
+    "stockTicker": "ARCC"
+  },
+  {
+    "stockRoute": "vst",
+    "stockTicker": "VST"
+  },
+  {
+    "stockRoute": "au",
+    "stockTicker": "AU"
+  },
+  {
+    "stockRoute": "agco",
+    "stockTicker": "AGCO"
+  },
+  {
+    "stockRoute": "leco",
+    "stockTicker": "LECO"
+  },
+  {
+    "stockRoute": "cck",
+    "stockTicker": "CCK"
+  },
+  {
+    "stockRoute": "wsc",
+    "stockTicker": "WSC"
+  },
+  {
+    "stockRoute": "manh",
+    "stockTicker": "MANH"
+  },
+  {
+    "stockRoute": "pac",
+    "stockTicker": "PAC"
+  },
+  {
+    "stockRoute": "vips",
+    "stockTicker": "VIPS"
+  },
+  {
+    "stockRoute": "kmx",
+    "stockTicker": "KMX"
+  },
+  {
+    "stockRoute": "rdy",
+    "stockTicker": "RDY"
+  },
+  {
+    "stockRoute": "czr",
+    "stockTicker": "CZR"
+  },
+  {
+    "stockRoute": "masi",
+    "stockTicker": "MASI"
+  },
+  {
+    "stockRoute": "lbtyb",
+    "stockTicker": "LBTYB"
+  },
+  {
+    "stockRoute": "fnf",
+    "stockTicker": "FNF"
+  },
+  {
+    "stockRoute": "chdn",
+    "stockTicker": "CHDN"
+  },
+  {
+    "stockRoute": "fhn",
+    "stockTicker": "FHN"
+  },
+  {
+    "stockRoute": "clf",
+    "stockTicker": "CLF"
+  },
+  {
+    "stockRoute": "aal",
+    "stockTicker": "AAL"
+  },
+  {
+    "stockRoute": "armk",
+    "stockTicker": "ARMK"
+  },
+  {
+    "stockRoute": "lbtyk",
+    "stockTicker": "LBTYK"
+  },
+  {
+    "stockRoute": "knx",
+    "stockTicker": "KNX"
+  },
+  {
+    "stockRoute": "rgen",
+    "stockTicker": "RGEN"
+  },
+  {
+    "stockRoute": "pfgc",
+    "stockTicker": "PFGC"
+  },
+  {
+    "stockRoute": "jazz",
+    "stockTicker": "JAZZ"
+  },
+  {
+    "stockRoute": "kep",
+    "stockTicker": "KEP"
+  },
+  {
+    "stockRoute": "algm",
+    "stockTicker": "ALGM"
+  },
+  {
+    "stockRoute": "mtn",
+    "stockTicker": "MTN"
+  },
+  {
+    "stockRoute": "alle",
+    "stockTicker": "ALLE"
+  },
+  {
+    "stockRoute": "asr",
+    "stockTicker": "ASR"
+  },
+  {
+    "stockRoute": "bsmx",
+    "stockTicker": "BSMX"
+  },
+  {
+    "stockRoute": "rrx",
+    "stockTicker": "RRX"
+  },
+  {
+    "stockRoute": "path",
+    "stockTicker": "PATH"
+  },
+  {
+    "stockRoute": "uhs",
+    "stockTicker": "UHS"
+  },
+  {
+    "stockRoute": "pnw",
+    "stockTicker": "PNW"
+  },
+  {
+    "stockRoute": "dar",
+    "stockTicker": "DAR"
+  },
+  {
+    "stockRoute": "dcp",
+    "stockTicker": "DCP"
+  },
+  {
+    "stockRoute": "snx",
+    "stockTicker": "SNX"
+  },
+  {
+    "stockRoute": "lii",
+    "stockTicker": "LII"
+  },
+  {
+    "stockRoute": "icl",
+    "stockTicker": "ICL"
+  },
+  {
+    "stockRoute": "eqh",
+    "stockTicker": "EQH"
+  },
+  {
+    "stockRoute": "osh",
+    "stockTicker": "OSH"
+  },
+  {
+    "stockRoute": "lsxmb",
+    "stockTicker": "LSXMB"
+  },
+  {
+    "stockRoute": "logi",
+    "stockTicker": "LOGI"
+  },
+  {
+    "stockRoute": "pnr",
+    "stockTicker": "PNR"
+  },
+  {
+    "stockRoute": "bki",
+    "stockTicker": "BKI"
+  },
+  {
+    "stockRoute": "lbtya",
+    "stockTicker": "LBTYA"
+  },
+  {
+    "stockRoute": "rga",
+    "stockTicker": "RGA"
+  },
+  {
+    "stockRoute": "tost",
+    "stockTicker": "TOST"
+  },
+  {
+    "stockRoute": "ffiv",
+    "stockTicker": "FFIV"
+  },
+  {
+    "stockRoute": "bz",
+    "stockTicker": "BZ"
+  },
+  {
+    "stockRoute": "lsxma",
+    "stockTicker": "LSXMA"
+  },
+  {
+    "stockRoute": "fcnca",
+    "stockTicker": "FCNCA"
+  },
+  {
+    "stockRoute": "ovv",
+    "stockTicker": "OVV"
+  },
+  {
+    "stockRoute": "roku",
+    "stockTicker": "ROKU"
+  },
+  {
+    "stockRoute": "lsxmk",
+    "stockTicker": "LSXMK"
+  },
+  {
+    "stockRoute": "rnr",
+    "stockTicker": "RNR"
+  },
+  {
+    "stockRoute": "oc",
+    "stockTicker": "OC"
+  },
+  {
+    "stockRoute": "rgld",
+    "stockTicker": "RGLD"
+  },
+  {
+    "stockRoute": "skm",
+    "stockTicker": "SKM"
+  },
+  {
+    "stockRoute": "cgnx",
+    "stockTicker": "CGNX"
+  },
+  {
+    "stockRoute": "aeg",
+    "stockTicker": "AEG"
+  },
+  {
+    "stockRoute": "g",
+    "stockTicker": "G"
+  },
+  {
+    "stockRoute": "xpev",
+    "stockTicker": "XPEV"
+  },
+  {
+    "stockRoute": "pcor",
+    "stockTicker": "PCOR"
+  },
+  {
+    "stockRoute": "lea",
+    "stockTicker": "LEA"
+  },
+  {
+    "stockRoute": "ssl",
+    "stockTicker": "SSL"
+  },
+  {
+    "stockRoute": "bbwi",
+    "stockTicker": "BBWI"
+  },
+  {
+    "stockRoute": "paa",
+    "stockTicker": "PAA"
+  },
+  {
+    "stockRoute": "rhi",
+    "stockTicker": "RHI"
+  },
+  {
+    "stockRoute": "bep",
+    "stockTicker": "BEP"
+  },
+  {
+    "stockRoute": "dkng",
+    "stockTicker": "DKNG"
+  },
+  {
+    "stockRoute": "xray",
+    "stockTicker": "XRAY"
+  },
+  {
+    "stockRoute": "ggb",
+    "stockTicker": "GGB"
+  },
+  {
+    "stockRoute": "hii",
+    "stockTicker": "HII"
+  },
+  {
+    "stockRoute": "morn",
+    "stockTicker": "MORN"
+  },
+  {
+    "stockRoute": "dlb",
+    "stockTicker": "DLB"
+  },
+  {
+    "stockRoute": "ibkr",
+    "stockTicker": "IBKR"
+  },
+  {
+    "stockRoute": "bsac",
+    "stockTicker": "BSAC"
+  },
+  {
+    "stockRoute": "vfc",
+    "stockTicker": "VFC"
+  },
+  {
+    "stockRoute": "usfd",
+    "stockTicker": "USFD"
+  },
+  {
+    "stockRoute": "ymm",
+    "stockTicker": "YMM"
+  },
+  {
+    "stockRoute": "wsm",
+    "stockTicker": "WSM"
+  },
+  {
+    "stockRoute": "eslt",
+    "stockTicker": "ESLT"
+  },
+  {
+    "stockRoute": "casy",
+    "stockTicker": "CASY"
+  },
+  {
+    "stockRoute": "che",
+    "stockTicker": "CHE"
+  },
+  {
+    "stockRoute": "hood",
+    "stockTicker": "HOOD"
+  },
+  {
+    "stockRoute": "bxp",
+    "stockTicker": "BXP"
+  },
+  {
+    "stockRoute": "swav",
+    "stockTicker": "SWAV"
+  },
+  {
+    "stockRoute": "ewbc",
+    "stockTicker": "EWBC"
+  },
+  {
+    "stockRoute": "legn",
+    "stockTicker": "LEGN"
+  },
+  {
+    "stockRoute": "alv",
+    "stockTicker": "ALV"
+  },
+  {
+    "stockRoute": "dci",
+    "stockTicker": "DCI"
+  },
+  {
+    "stockRoute": "dbx",
+    "stockTicker": "DBX"
+  },
+  {
+    "stockRoute": "ttek",
+    "stockTicker": "TTEK"
+  },
+  {
+    "stockRoute": "tx",
+    "stockTicker": "TX"
+  },
+  {
+    "stockRoute": "wolf",
+    "stockTicker": "WOLF"
+  },
+  {
+    "stockRoute": "nnn",
+    "stockTicker": "NNN"
+  },
+  {
+    "stockRoute": "irdm",
+    "stockTicker": "IRDM"
+  },
+  {
+    "stockRoute": "frt",
+    "stockTicker": "FRT"
+  },
+  {
+    "stockRoute": "unm",
+    "stockTicker": "UNM"
+  },
+  {
+    "stockRoute": "gpk",
+    "stockTicker": "GPK"
+  },
+  {
+    "stockRoute": "eme",
+    "stockTicker": "EME"
+  },
+  {
+    "stockRoute": "cold",
+    "stockTicker": "COLD"
+  },
+  {
+    "stockRoute": "atr",
+    "stockTicker": "ATR"
+  },
+  {
+    "stockRoute": "bill",
+    "stockTicker": "BILL"
+  },
+  {
+    "stockRoute": "seic",
+    "stockTicker": "SEIC"
+  },
+  {
+    "stockRoute": "wex",
+    "stockTicker": "WEX"
+  },
+  {
+    "stockRoute": "cien",
+    "stockTicker": "CIEN"
+  },
+  {
+    "stockRoute": "midd",
+    "stockTicker": "MIDD"
+  },
+  {
+    "stockRoute": "rl",
+    "stockTicker": "RL"
+  },
+  {
+    "stockRoute": "crox",
+    "stockTicker": "CROX"
+  },
+  {
+    "stockRoute": "ori",
+    "stockTicker": "ORI"
+  },
+  {
+    "stockRoute": "gme",
+    "stockTicker": "GME"
+  },
+  {
+    "stockRoute": "fbin",
+    "stockTicker": "FBIN"
+  },
+  {
+    "stockRoute": "wrk",
+    "stockTicker": "WRK"
+  },
+  {
+    "stockRoute": "cx",
+    "stockTicker": "CX"
+  },
+  {
+    "stockRoute": "ally",
+    "stockTicker": "ALLY"
+  },
+  {
+    "stockRoute": "nrg",
+    "stockTicker": "NRG"
+  },
+  {
+    "stockRoute": "cbsh",
+    "stockTicker": "CBSH"
+  },
+  {
+    "stockRoute": "hr",
+    "stockTicker": "HR"
+  },
+  {
+    "stockRoute": "insp",
+    "stockTicker": "INSP"
+  },
+  {
+    "stockRoute": "pstg",
+    "stockTicker": "PSTG"
+  },
+  {
+    "stockRoute": "mtz",
+    "stockTicker": "MTZ"
+  },
+  {
+    "stockRoute": "saia",
+    "stockTicker": "SAIA"
+  },
+  {
+    "stockRoute": "kbr",
+    "stockTicker": "KBR"
+  },
+  {
+    "stockRoute": "oge",
+    "stockTicker": "OGE"
+  },
+  {
+    "stockRoute": "st",
+    "stockTicker": "ST"
+  },
+  {
+    "stockRoute": "pso",
+    "stockTicker": "PSO"
+  },
+  {
+    "stockRoute": "aa",
+    "stockTicker": "AA"
+  },
+  {
+    "stockRoute": "car",
+    "stockTicker": "CAR"
+  },
+  {
+    "stockRoute": "clh",
+    "stockTicker": "CLH"
+  },
+  {
+    "stockRoute": "wcc",
+    "stockTicker": "WCC"
+  },
+  {
+    "stockRoute": "apls",
+    "stockTicker": "APLS"
+  },
+  {
+    "stockRoute": "txrh",
+    "stockTicker": "TXRH"
+  },
+  {
+    "stockRoute": "skx",
+    "stockTicker": "SKX"
+  },
+  {
+    "stockRoute": "psny",
+    "stockTicker": "PSNY"
+  },
+  {
+    "stockRoute": "ugi",
+    "stockTicker": "UGI"
+  },
+  {
+    "stockRoute": "whr",
+    "stockTicker": "WHR"
+  },
+  {
+    "stockRoute": "futu",
+    "stockTicker": "FUTU"
+  },
+  {
+    "stockRoute": "oled",
+    "stockTicker": "OLED"
+  },
+  {
+    "stockRoute": "celh",
+    "stockTicker": "CELH"
+  },
+  {
+    "stockRoute": "egp",
+    "stockTicker": "EGP"
+  },
+  {
+    "stockRoute": "arw",
+    "stockTicker": "ARW"
+  },
+  {
+    "stockRoute": "oln",
+    "stockTicker": "OLN"
+  },
+  {
+    "stockRoute": "dva",
+    "stockTicker": "DVA"
+  },
+  {
+    "stockRoute": "ivz",
+    "stockTicker": "IVZ"
+  },
+  {
+    "stockRoute": "gnrc",
+    "stockTicker": "GNRC"
+  },
+  {
+    "stockRoute": "bery",
+    "stockTicker": "BERY"
+  },
+  {
+    "stockRoute": "nvt",
+    "stockTicker": "NVT"
+  },
+  {
+    "stockRoute": "nati",
+    "stockTicker": "NATI"
+  },
+  {
+    "stockRoute": "sgfy",
+    "stockTicker": "SGFY"
+  },
+  {
+    "stockRoute": "nov",
+    "stockTicker": "NOV"
+  },
+  {
+    "stockRoute": "has",
+    "stockTicker": "HAS"
+  },
+  {
+    "stockRoute": "caci",
+    "stockTicker": "CACI"
+  },
+  {
+    "stockRoute": "edr",
+    "stockTicker": "EDR"
+  },
+  {
+    "stockRoute": "wbs",
+    "stockTicker": "WBS"
+  },
+  {
+    "stockRoute": "cae",
+    "stockTicker": "CAE"
+  },
+  {
+    "stockRoute": "jef",
+    "stockTicker": "JEF"
+  },
+  {
+    "stockRoute": "fr",
+    "stockTicker": "FR"
+  },
+  {
+    "stockRoute": "itt",
+    "stockTicker": "ITT"
+  },
+  {
+    "stockRoute": "fcn",
+    "stockTicker": "FCN"
+  },
+  {
+    "stockRoute": "knsl",
+    "stockTicker": "KNSL"
+  },
+  {
+    "stockRoute": "ingr",
+    "stockTicker": "INGR"
+  },
+  {
+    "stockRoute": "dsgx",
+    "stockTicker": "DSGX"
+  },
+  {
+    "stockRoute": "voya",
+    "stockTicker": "VOYA"
+  },
+  {
+    "stockRoute": "aap",
+    "stockTicker": "AAP"
+  },
+  {
+    "stockRoute": "vmi",
+    "stockTicker": "VMI"
+  },
+  {
+    "stockRoute": "plug",
+    "stockTicker": "PLUG"
+  },
+  {
+    "stockRoute": "jll",
+    "stockTicker": "JLL"
+  },
+  {
+    "stockRoute": "cw",
+    "stockTicker": "CW"
+  },
+  {
+    "stockRoute": "lfus",
+    "stockTicker": "LFUS"
+  },
+  {
+    "stockRoute": "levi",
+    "stockTicker": "LEVI"
+  },
+  {
+    "stockRoute": "adt",
+    "stockTicker": "ADT"
+  },
+  {
+    "stockRoute": "tpx",
+    "stockTicker": "TPX"
+  },
+  {
+    "stockRoute": "glob",
+    "stockTicker": "GLOB"
+  },
+  {
+    "stockRoute": "wms",
+    "stockTicker": "WMS"
+  },
+  {
+    "stockRoute": "iq",
+    "stockTicker": "IQ"
+  },
+  {
+    "stockRoute": "tol",
+    "stockTicker": "TOL"
+  },
+  {
+    "stockRoute": "cfr",
+    "stockTicker": "CFR"
+  },
+  {
+    "stockRoute": "ar",
+    "stockTicker": "AR"
+  },
+  {
+    "stockRoute": "achc",
+    "stockTicker": "ACHC"
+  },
+  {
+    "stockRoute": "rbc",
+    "stockTicker": "RBC"
+  },
+  {
+    "stockRoute": "edu",
+    "stockTicker": "EDU"
+  },
+  {
+    "stockRoute": "wwe",
+    "stockTicker": "WWE"
+  },
+  {
+    "stockRoute": "gwre",
+    "stockTicker": "GWRE"
+  },
+  {
+    "stockRoute": "byd",
+    "stockTicker": "BYD"
+  },
+  {
+    "stockRoute": "docs",
+    "stockTicker": "DOCS"
+  },
+  {
+    "stockRoute": "gntx",
+    "stockTicker": "GNTX"
+  },
+  {
+    "stockRoute": "amkr",
+    "stockTicker": "AMKR"
+  },
+  {
+    "stockRoute": "krtx",
+    "stockTicker": "KRTX"
+  },
+  {
+    "stockRoute": "clvt",
+    "stockTicker": "CLVT"
+  },
+  {
+    "stockRoute": "nvst",
+    "stockTicker": "NVST"
+  },
+  {
+    "stockRoute": "lstr",
+    "stockTicker": "LSTR"
+  },
+  {
+    "stockRoute": "plnt",
+    "stockTicker": "PLNT"
+  },
+  {
+    "stockRoute": "axta",
+    "stockTicker": "AXTA"
+  },
+  {
+    "stockRoute": "see",
+    "stockTicker": "SEE"
+  },
+  {
+    "stockRoute": "smar",
+    "stockTicker": "SMAR"
+  },
+  {
+    "stockRoute": "ntra",
+    "stockTicker": "NTRA"
+  },
+  {
+    "stockRoute": "ohi",
+    "stockTicker": "OHI"
+  },
+  {
+    "stockRoute": "bld",
+    "stockTicker": "BLD"
+  },
+  {
+    "stockRoute": "stvn",
+    "stockTicker": "STVN"
+  },
+  {
+    "stockRoute": "sbs",
+    "stockTicker": "SBS"
+  },
+  {
+    "stockRoute": "hli",
+    "stockTicker": "HLI"
+  },
+  {
+    "stockRoute": "wf",
+    "stockTicker": "WF"
+  },
+  {
+    "stockRoute": "stn",
+    "stockTicker": "STN"
+  },
+  {
+    "stockRoute": "cnxc",
+    "stockTicker": "CNXC"
+  },
+  {
+    "stockRoute": "mndy",
+    "stockTicker": "MNDY"
+  },
+  {
+    "stockRoute": "xp",
+    "stockTicker": "XP"
+  },
+  {
+    "stockRoute": "nyt",
+    "stockTicker": "NYT"
+  },
+  {
+    "stockRoute": "pii",
+    "stockTicker": "PII"
+  },
+  {
+    "stockRoute": "nycb",
+    "stockTicker": "NYCB"
+  },
+  {
+    "stockRoute": "brx",
+    "stockTicker": "BRX"
+  },
+  {
+    "stockRoute": "mhk",
+    "stockTicker": "MHK"
+  },
+  {
+    "stockRoute": "sf",
+    "stockTicker": "SF"
+  },
+  {
+    "stockRoute": "adc",
+    "stockTicker": "ADC"
+  },
+  {
+    "stockRoute": "rba",
+    "stockTicker": "RBA"
+  },
+  {
+    "stockRoute": "nxst",
+    "stockTicker": "NXST"
+  },
+  {
+    "stockRoute": "kt",
+    "stockTicker": "KT"
+  },
+  {
+    "stockRoute": "nvcr",
+    "stockTicker": "NVCR"
+  },
+  {
+    "stockRoute": "chh",
+    "stockTicker": "CHH"
+  },
+  {
+    "stockRoute": "asnd",
+    "stockTicker": "ASND"
+  },
+  {
+    "stockRoute": "pri",
+    "stockTicker": "PRI"
+  },
+  {
+    "stockRoute": "exel",
+    "stockTicker": "EXEL"
+  },
+  {
+    "stockRoute": "aiz",
+    "stockTicker": "AIZ"
+  },
+  {
+    "stockRoute": "rcm",
+    "stockTicker": "RCM"
+  },
+  {
+    "stockRoute": "cflt",
+    "stockTicker": "CFLT"
+  },
+  {
+    "stockRoute": "dooo",
+    "stockTicker": "DOOO"
+  },
+  {
+    "stockRoute": "smci",
+    "stockTicker": "SMCI"
+  },
+  {
+    "stockRoute": "cr",
+    "stockTicker": "CR"
+  },
+  {
+    "stockRoute": "fsv",
+    "stockTicker": "FSV"
+  },
+  {
+    "stockRoute": "rli",
+    "stockTicker": "RLI"
+  },
+  {
+    "stockRoute": "rrc",
+    "stockTicker": "RRC"
+  },
+  {
+    "stockRoute": "mdu",
+    "stockTicker": "MDU"
+  },
+  {
+    "stockRoute": "nvei",
+    "stockTicker": "NVEI"
+  },
+  {
+    "stockRoute": "stag",
+    "stockTicker": "STAG"
+  },
+  {
+    "stockRoute": "site",
+    "stockTicker": "SITE"
+  },
+  {
+    "stockRoute": "cybr",
+    "stockTicker": "CYBR"
+  },
+  {
+    "stockRoute": "an",
+    "stockTicker": "AN"
+  },
+  {
+    "stockRoute": "timb",
+    "stockTicker": "TIMB"
+  },
+  {
+    "stockRoute": "crus",
+    "stockTicker": "CRUS"
+  },
+  {
+    "stockRoute": "lad",
+    "stockTicker": "LAD"
+  },
+  {
+    "stockRoute": "sbsw",
+    "stockTicker": "SBSW"
+  },
+  {
+    "stockRoute": "txg",
+    "stockTicker": "TXG"
+  },
+  {
+    "stockRoute": "wfg",
+    "stockTicker": "WFG"
+  },
+  {
+    "stockRoute": "fybr",
+    "stockTicker": "FYBR"
+  },
+  {
+    "stockRoute": "vvv",
+    "stockTicker": "VVV"
+  },
+  {
+    "stockRoute": "mat",
+    "stockTicker": "MAT"
+  },
+  {
+    "stockRoute": "flo",
+    "stockTicker": "FLO"
+  },
+  {
+    "stockRoute": "qdel",
+    "stockTicker": "QDEL"
+  },
+  {
+    "stockRoute": "pb",
+    "stockTicker": "PB"
+  },
+  {
+    "stockRoute": "opch",
+    "stockTicker": "OPCH"
+  },
+  {
+    "stockRoute": "lanc",
+    "stockTicker": "LANC"
+  },
+  {
+    "stockRoute": "aqua",
+    "stockTicker": "AQUA"
+  },
+  {
+    "stockRoute": "reyn",
+    "stockTicker": "REYN"
+  },
+  {
+    "stockRoute": "gil",
+    "stockTicker": "GIL"
+  },
+  {
+    "stockRoute": "son",
+    "stockTicker": "SON"
+  },
+  {
+    "stockRoute": "nfe",
+    "stockTicker": "NFE"
+  },
+  {
+    "stockRoute": "hxl",
+    "stockTicker": "HXL"
+  },
+  {
+    "stockRoute": "bokf",
+    "stockTicker": "BOKF"
+  },
+  {
+    "stockRoute": "x",
+    "stockTicker": "X"
+  },
+  {
+    "stockRoute": "unvr",
+    "stockTicker": "UNVR"
+  },
+  {
+    "stockRoute": "mksi",
+    "stockTicker": "MKSI"
+  },
+  {
+    "stockRoute": "medp",
+    "stockTicker": "MEDP"
+  },
+  {
+    "stockRoute": "saic",
+    "stockTicker": "SAIC"
+  },
+  {
+    "stockRoute": "slgn",
+    "stockTicker": "SLGN"
+  },
+  {
+    "stockRoute": "auy",
+    "stockTicker": "AUY"
+  },
+  {
+    "stockRoute": "agnc",
+    "stockTicker": "AGNC"
+  },
+  {
+    "stockRoute": "ipgp",
+    "stockTicker": "IPGP"
+  },
+  {
+    "stockRoute": "wh",
+    "stockTicker": "WH"
+  },
+  {
+    "stockRoute": "lnth",
+    "stockTicker": "LNTH"
+  },
+  {
+    "stockRoute": "sigi",
+    "stockTicker": "SIGI"
+  },
+  {
+    "stockRoute": "bwxt",
+    "stockTicker": "BWXT"
+  },
+  {
+    "stockRoute": "fti",
+    "stockTicker": "FTI"
+  },
+  {
+    "stockRoute": "rh",
+    "stockTicker": "RH"
+  },
+  {
+    "stockRoute": "ntnx",
+    "stockTicker": "NTNX"
+  },
+  {
+    "stockRoute": "thc",
+    "stockTicker": "THC"
+  },
+  {
+    "stockRoute": "blco",
+    "stockTicker": "BLCO"
+  },
+  {
+    "stockRoute": "wix",
+    "stockTicker": "WIX"
+  },
+  {
+    "stockRoute": "ogn",
+    "stockTicker": "OGN"
+  },
+  {
+    "stockRoute": "faf",
+    "stockTicker": "FAF"
+  },
+  {
+    "stockRoute": "ssb",
+    "stockTicker": "SSB"
+  },
+  {
+    "stockRoute": "altr",
+    "stockTicker": "ALTR"
+  },
+  {
+    "stockRoute": "cib",
+    "stockTicker": "CIB"
+  },
+  {
+    "stockRoute": "tkr",
+    "stockTicker": "TKR"
+  },
+  {
+    "stockRoute": "wing",
+    "stockTicker": "WING"
+  },
+  {
+    "stockRoute": "bepc",
+    "stockTicker": "BEPC"
+  },
+  {
+    "stockRoute": "pdce",
+    "stockTicker": "PDCE"
+  },
+  {
+    "stockRoute": "bc",
+    "stockTicker": "BC"
+  },
+  {
+    "stockRoute": "duol",
+    "stockTicker": "DUOL"
+  },
+  {
+    "stockRoute": "aqn",
+    "stockTicker": "AQN"
+  },
+  {
+    "stockRoute": "civi",
+    "stockTicker": "CIVI"
+  },
+  {
+    "stockRoute": "cpri",
+    "stockTicker": "CPRI"
+  },
+  {
+    "stockRoute": "gxo",
+    "stockTicker": "GXO"
+  },
+  {
+    "stockRoute": "cmc",
+    "stockTicker": "CMC"
+  },
+  {
+    "stockRoute": "wwd",
+    "stockTicker": "WWD"
+  },
+  {
+    "stockRoute": "eeft",
+    "stockTicker": "EEFT"
+  },
+  {
+    "stockRoute": "cccs",
+    "stockTicker": "CCCS"
+  },
+  {
+    "stockRoute": "ayi",
+    "stockTicker": "AYI"
+  },
+  {
+    "stockRoute": "colm",
+    "stockTicker": "COLM"
+  },
+  {
+    "stockRoute": "slab",
+    "stockTicker": "SLAB"
+  },
+  {
+    "stockRoute": "novt",
+    "stockTicker": "NOVT"
+  },
+  {
+    "stockRoute": "mur",
+    "stockTicker": "MUR"
+  },
+  {
+    "stockRoute": "sim",
+    "stockTicker": "SIM"
+  },
+  {
+    "stockRoute": "swn",
+    "stockTicker": "SWN"
+  },
+  {
+    "stockRoute": "mlco",
+    "stockTicker": "MLCO"
+  },
+  {
+    "stockRoute": "ida",
+    "stockTicker": "IDA"
+  },
+  {
+    "stockRoute": "kgc",
+    "stockTicker": "KGC"
+  },
+  {
+    "stockRoute": "ash",
+    "stockTicker": "ASH"
+  },
+  {
+    "stockRoute": "musa",
+    "stockTicker": "MUSA"
+  },
+  {
+    "stockRoute": "wts",
+    "stockTicker": "WTS"
+  },
+  {
+    "stockRoute": "src",
+    "stockTicker": "SRC"
+  },
+  {
+    "stockRoute": "gmed",
+    "stockTicker": "GMED"
+  },
+  {
+    "stockRoute": "lnw",
+    "stockTicker": "LNW"
+  },
+  {
+    "stockRoute": "tixt",
+    "stockTicker": "TIXT"
+  },
+  {
+    "stockRoute": "dxc",
+    "stockTicker": "DXC"
+  },
+  {
+    "stockRoute": "cma",
+    "stockTicker": "CMA"
+  },
+  {
+    "stockRoute": "app",
+    "stockTicker": "APP"
+  },
+  {
+    "stockRoute": "atkr",
+    "stockTicker": "ATKR"
+  },
+  {
+    "stockRoute": "pbf",
+    "stockTicker": "PBF"
+  },
+  {
+    "stockRoute": "hcp",
+    "stockTicker": "HCP"
+  },
+  {
+    "stockRoute": "nep",
+    "stockTicker": "NEP"
+  },
+  {
+    "stockRoute": "nclh",
+    "stockTicker": "NCLH"
+  },
+  {
+    "stockRoute": "mtdr",
+    "stockTicker": "MTDR"
+  },
+  {
+    "stockRoute": "estc",
+    "stockTicker": "ESTC"
+  },
+  {
+    "stockRoute": "spsc",
+    "stockTicker": "SPSC"
+  },
+  {
+    "stockRoute": "roiv",
+    "stockTicker": "ROIV"
+  },
+  {
+    "stockRoute": "post",
+    "stockTicker": "POST"
+  },
+  {
+    "stockRoute": "phi",
+    "stockTicker": "PHI"
+  },
+  {
+    "stockRoute": "hog",
+    "stockTicker": "HOG"
+  },
+  {
+    "stockRoute": "ehc",
+    "stockTicker": "EHC"
+  },
+  {
+    "stockRoute": "stwd",
+    "stockTicker": "STWD"
+  },
+  {
+    "stockRoute": "cacc",
+    "stockTicker": "CACC"
+  },
+  {
+    "stockRoute": "ppc",
+    "stockTicker": "PPC"
+  },
+  {
+    "stockRoute": "chrd",
+    "stockTicker": "CHRD"
+  },
+  {
+    "stockRoute": "pvh",
+    "stockTicker": "PVH"
+  },
+  {
+    "stockRoute": "hrb",
+    "stockTicker": "HRB"
+  },
+  {
+    "stockRoute": "mnso",
+    "stockTicker": "MNSO"
+  },
+  {
+    "stockRoute": "dds",
+    "stockTicker": "DDS"
+  },
+  {
+    "stockRoute": "wk",
+    "stockTicker": "WK"
+  },
+  {
+    "stockRoute": "hun",
+    "stockTicker": "HUN"
+  },
+  {
+    "stockRoute": "ait",
+    "stockTicker": "AIT"
+  },
+  {
+    "stockRoute": "fsk",
+    "stockTicker": "FSK"
+  },
+  {
+    "stockRoute": "nfg",
+    "stockTicker": "NFG"
+  },
+  {
+    "stockRoute": "trno",
+    "stockTicker": "TRNO"
+  },
+  {
+    "stockRoute": "msa",
+    "stockTicker": "MSA"
+  },
+  {
+    "stockRoute": "trex",
+    "stockTicker": "TREX"
+  },
+  {
+    "stockRoute": "aso",
+    "stockTicker": "ASO"
+  },
+  {
+    "stockRoute": "exls",
+    "stockTicker": "EXLS"
+  },
+  {
+    "stockRoute": "ensg",
+    "stockTicker": "ENSG"
+  },
+  {
+    "stockRoute": "tenb",
+    "stockTicker": "TENB"
+  },
+  {
+    "stockRoute": "gtlb",
+    "stockTicker": "GTLB"
+  },
+  {
+    "stockRoute": "osk",
+    "stockTicker": "OSK"
+  },
+  {
+    "stockRoute": "htz",
+    "stockTicker": "HTZ"
+  },
+  {
+    "stockRoute": "ne",
+    "stockTicker": "NE"
+  },
+  {
+    "stockRoute": "exp",
+    "stockTicker": "EXP"
+  },
+  {
+    "stockRoute": "rxdx",
+    "stockTicker": "RXDX"
+  },
+  {
+    "stockRoute": "airc",
+    "stockTicker": "AIRC"
+  },
+  {
+    "stockRoute": "foxf",
+    "stockTicker": "FOXF"
+  },
+  {
+    "stockRoute": "njr",
+    "stockTicker": "NJR"
+  },
+  {
+    "stockRoute": "igt",
+    "stockTicker": "IGT"
+  },
+  {
+    "stockRoute": "iosp",
+    "stockTicker": "IOSP"
+  },
+  {
+    "stockRoute": "dnb",
+    "stockTicker": "DNB"
+  },
+  {
+    "stockRoute": "mtsi",
+    "stockTicker": "MTSI"
+  },
+  {
+    "stockRoute": "vrt",
+    "stockTicker": "VRT"
+  },
+  {
+    "stockRoute": "ubsi",
+    "stockTicker": "UBSI"
+  },
+  {
+    "stockRoute": "chx",
+    "stockTicker": "CHX"
+  },
+  {
+    "stockRoute": "fix",
+    "stockTicker": "FIX"
+  },
+  {
+    "stockRoute": "apg",
+    "stockTicker": "APG"
+  },
+  {
+    "stockRoute": "csan",
+    "stockTicker": "CSAN"
+  },
+  {
+    "stockRoute": "coke",
+    "stockTicker": "COKE"
+  },
+  {
+    "stockRoute": "amg",
+    "stockTicker": "AMG"
+  },
+  {
+    "stockRoute": "owl",
+    "stockTicker": "OWL"
+  },
+  {
+    "stockRoute": "shc",
+    "stockTicker": "SHC"
+  },
+  {
+    "stockRoute": "ati",
+    "stockTicker": "ATI"
+  },
+  {
+    "stockRoute": "alk",
+    "stockTicker": "ALK"
+  },
+  {
+    "stockRoute": "orcc",
+    "stockTicker": "ORCC"
+  },
+  {
+    "stockRoute": "vac",
+    "stockTicker": "VAC"
+  },
+  {
+    "stockRoute": "aaon",
+    "stockTicker": "AAON"
+  },
+  {
+    "stockRoute": "fizz",
+    "stockTicker": "FIZZ"
+  },
+  {
+    "stockRoute": "bipc",
+    "stockTicker": "BIPC"
+  },
+  {
+    "stockRoute": "cohr",
+    "stockTicker": "COHR"
+  },
+  {
+    "stockRoute": "ions",
+    "stockTicker": "IONS"
+  },
+  {
+    "stockRoute": "dv",
+    "stockTicker": "DV"
+  },
+  {
+    "stockRoute": "nwl",
+    "stockTicker": "NWL"
+  },
+  {
+    "stockRoute": "am",
+    "stockTicker": "AM"
+  },
+  {
+    "stockRoute": "hgv",
+    "stockTicker": "HGV"
+  },
+  {
+    "stockRoute": "rmbs",
+    "stockTicker": "RMBS"
+  },
+  {
+    "stockRoute": "newr",
+    "stockTicker": "NEWR"
+  },
+  {
+    "stockRoute": "gtls",
+    "stockTicker": "GTLS"
+  },
+  {
+    "stockRoute": "powi",
+    "stockTicker": "POWI"
+  },
+  {
+    "stockRoute": "hqy",
+    "stockTicker": "HQY"
+  },
+  {
+    "stockRoute": "ryn",
+    "stockTicker": "RYN"
+  },
+  {
+    "stockRoute": "vly",
+    "stockTicker": "VLY"
+  },
+  {
+    "stockRoute": "enlc",
+    "stockTicker": "ENLC"
+  },
+  {
+    "stockRoute": "drvn",
+    "stockTicker": "DRVN"
+  },
+  {
+    "stockRoute": "nsit",
+    "stockTicker": "NSIT"
+  },
+  {
+    "stockRoute": "gbci",
+    "stockTicker": "GBCI"
+  },
+  {
+    "stockRoute": "expo",
+    "stockTicker": "EXPO"
+  },
+  {
+    "stockRoute": "qlys",
+    "stockTicker": "QLYS"
+  },
+  {
+    "stockRoute": "ufpi",
+    "stockTicker": "UFPI"
+  },
+  {
+    "stockRoute": "val",
+    "stockTicker": "VAL"
+  },
+  {
+    "stockRoute": "halo",
+    "stockTicker": "HALO"
+  },
+  {
+    "stockRoute": "sofi",
+    "stockTicker": "SOFI"
+  },
+  {
+    "stockRoute": "grfs",
+    "stockTicker": "GRFS"
+  },
+  {
+    "stockRoute": "dish",
+    "stockTicker": "DISH"
+  },
+  {
+    "stockRoute": "agi",
+    "stockTicker": "AGI"
+  },
+  {
+    "stockRoute": "infa",
+    "stockTicker": "INFA"
+  },
+  {
+    "stockRoute": "mp",
+    "stockTicker": "MP"
+  },
+  {
+    "stockRoute": "m",
+    "stockTicker": "M"
+  },
+  {
+    "stockRoute": "dtm",
+    "stockTicker": "DTM"
+  },
+  {
+    "stockRoute": "iart",
+    "stockTicker": "IART"
+  },
+  {
+    "stockRoute": "tnet",
+    "stockTicker": "TNET"
+  },
+  {
+    "stockRoute": "ffin",
+    "stockTicker": "FFIN"
+  },
+  {
+    "stockRoute": "glbe",
+    "stockTicker": "GLBE"
+  },
+  {
+    "stockRoute": "mms",
+    "stockTicker": "MMS"
+  },
+  {
+    "stockRoute": "prgo",
+    "stockTicker": "PRGO"
+  },
+  {
+    "stockRoute": "dlo",
+    "stockTicker": "DLO"
+  },
+  {
+    "stockRoute": "ora",
+    "stockTicker": "ORA"
+  },
+  {
+    "stockRoute": "sndr",
+    "stockTicker": "SNDR"
+  },
+  {
+    "stockRoute": "tsem",
+    "stockTicker": "TSEM"
+  },
+  {
+    "stockRoute": "msm",
+    "stockTicker": "MSM"
+  },
+  {
+    "stockRoute": "mpw",
+    "stockTicker": "MPW"
+  },
+  {
+    "stockRoute": "msgs",
+    "stockTicker": "MSGS"
+  },
+  {
+    "stockRoute": "psn",
+    "stockTicker": "PSN"
+  },
+  {
+    "stockRoute": "ajrd",
+    "stockTicker": "AJRD"
+  },
+  {
+    "stockRoute": "wen",
+    "stockTicker": "WEN"
+  },
+  {
+    "stockRoute": "lu",
+    "stockTicker": "LU"
+  },
+  {
+    "stockRoute": "homb",
+    "stockTicker": "HOMB"
+  },
+  {
+    "stockRoute": "esi",
+    "stockTicker": "ESI"
+  },
+  {
+    "stockRoute": "ipar",
+    "stockTicker": "IPAR"
+  },
+  {
+    "stockRoute": "ssd",
+    "stockTicker": "SSD"
+  },
+  {
+    "stockRoute": "axs",
+    "stockTicker": "AXS"
+  },
+  {
+    "stockRoute": "fivn",
+    "stockTicker": "FIVN"
+  },
+  {
+    "stockRoute": "wb",
+    "stockTicker": "WB"
+  },
+  {
+    "stockRoute": "itci",
+    "stockTicker": "ITCI"
+  },
+  {
+    "stockRoute": "rhp",
+    "stockTicker": "RHP"
+  },
+  {
+    "stockRoute": "iac",
+    "stockTicker": "IAC"
+  },
+  {
+    "stockRoute": "penn",
+    "stockTicker": "PENN"
+  },
+  {
+    "stockRoute": "sbny",
+    "stockTicker": "SBNY"
+  },
+  {
+    "stockRoute": "bfam",
+    "stockTicker": "BFAM"
+  },
+  {
+    "stockRoute": "brbr",
+    "stockTicker": "BRBR"
+  },
+  {
+    "stockRoute": "thg",
+    "stockTicker": "THG"
+  },
+  {
+    "stockRoute": "abg",
+    "stockTicker": "ABG"
+  },
+  {
+    "stockRoute": "seb",
+    "stockTicker": "SEB"
+  },
+  {
+    "stockRoute": "nsp",
+    "stockTicker": "NSP"
+  },
+  {
+    "stockRoute": "cigi",
+    "stockTicker": "CIGI"
+  },
+  {
+    "stockRoute": "cig",
+    "stockTicker": "CIG"
+  },
+  {
+    "stockRoute": "alks",
+    "stockTicker": "ALKS"
+  },
+  {
+    "stockRoute": "atco",
+    "stockTicker": "ATCO"
+  },
+  {
+    "stockRoute": "asan",
+    "stockTicker": "ASAN"
+  },
+  {
+    "stockRoute": "vc",
+    "stockTicker": "VC"
+  },
+  {
+    "stockRoute": "wtfc",
+    "stockTicker": "WTFC"
+  },
+  {
+    "stockRoute": "ryan",
+    "stockTicker": "RYAN"
+  },
+  {
+    "stockRoute": "fcfs",
+    "stockTicker": "FCFS"
+  },
+  {
+    "stockRoute": "snv",
+    "stockTicker": "SNV"
+  },
+  {
+    "stockRoute": "evr",
+    "stockTicker": "EVR"
+  },
+  {
+    "stockRoute": "syna",
+    "stockTicker": "SYNA"
+  },
+  {
+    "stockRoute": "wns",
+    "stockTicker": "WNS"
+  },
+  {
+    "stockRoute": "cc",
+    "stockTicker": "CC"
+  },
+  {
+    "stockRoute": "krg",
+    "stockTicker": "KRG"
+  },
+  {
+    "stockRoute": "onb",
+    "stockTicker": "ONB"
+  },
+  {
+    "stockRoute": "pycr",
+    "stockTicker": "PYCR"
+  },
+  {
+    "stockRoute": "onto",
+    "stockTicker": "ONTO"
+  },
+  {
+    "stockRoute": "lpl",
+    "stockTicker": "LPL"
+  },
+  {
+    "stockRoute": "jhg",
+    "stockTicker": "JHG"
+  },
+  {
+    "stockRoute": "acls",
+    "stockTicker": "ACLS"
+  },
+  {
+    "stockRoute": "esnt",
+    "stockTicker": "ESNT"
+  },
+  {
+    "stockRoute": "por",
+    "stockTicker": "POR"
+  },
+  {
+    "stockRoute": "zion",
+    "stockTicker": "ZION"
+  },
+  {
+    "stockRoute": "appf",
+    "stockTicker": "APPF"
+  },
+  {
+    "stockRoute": "mth",
+    "stockTicker": "MTH"
+  },
+  {
+    "stockRoute": "mdgl",
+    "stockTicker": "MDGL"
+  },
+  {
+    "stockRoute": "elf",
+    "stockTicker": "ELF"
+  },
+  {
+    "stockRoute": "elan",
+    "stockTicker": "ELAN"
+  },
+  {
+    "stockRoute": "pnm",
+    "stockTicker": "PNM"
+  },
+  {
+    "stockRoute": "ogs",
+    "stockTicker": "OGS"
+  },
+  {
+    "stockRoute": "fnb",
+    "stockTicker": "FNB"
+  },
+  {
+    "stockRoute": "alit",
+    "stockTicker": "ALIT"
+  },
+  {
+    "stockRoute": "flr",
+    "stockTicker": "FLR"
+  },
+  {
+    "stockRoute": "omf",
+    "stockTicker": "OMF"
+  },
+  {
+    "stockRoute": "pnfp",
+    "stockTicker": "PNFP"
+  },
+  {
+    "stockRoute": "fele",
+    "stockTicker": "FELE"
+  },
+  {
+    "stockRoute": "s",
+    "stockTicker": "S"
+  },
+  {
+    "stockRoute": "cbt",
+    "stockTicker": "CBT"
+  },
+  {
+    "stockRoute": "fls",
+    "stockTicker": "FLS"
+  },
+  {
+    "stockRoute": "swx",
+    "stockTicker": "SWX"
+  },
+  {
+    "stockRoute": "sqsp",
+    "stockTicker": "SQSP"
+  },
+  {
+    "stockRoute": "rig",
+    "stockTicker": "RIG"
+  },
+  {
+    "stockRoute": "omab",
+    "stockTicker": "OMAB"
+  },
+  {
+    "stockRoute": "mmsi",
+    "stockTicker": "MMSI"
+  },
+  {
+    "stockRoute": "mli",
+    "stockTicker": "MLI"
+  },
+  {
+    "stockRoute": "diod",
+    "stockTicker": "DIOD"
+  },
+  {
+    "stockRoute": "cwst",
+    "stockTicker": "CWST"
+  },
+  {
+    "stockRoute": "leg",
+    "stockTicker": "LEG"
+  },
+  {
+    "stockRoute": "cvt",
+    "stockTicker": "CVT"
+  },
+  {
+    "stockRoute": "kntk",
+    "stockTicker": "KNTK"
+  },
+  {
+    "stockRoute": "btg",
+    "stockTicker": "BTG"
+  },
+  {
+    "stockRoute": "frhc",
+    "stockTicker": "FRHC"
+  },
+  {
+    "stockRoute": "tho",
+    "stockTicker": "THO"
+  },
+  {
+    "stockRoute": "pdi",
+    "stockTicker": "PDI"
+  },
+  {
+    "stockRoute": "al",
+    "stockTicker": "AL"
+  },
+  {
+    "stockRoute": "tdoc",
+    "stockTicker": "TDOC"
+  },
+  {
+    "stockRoute": "fn",
+    "stockTicker": "FN"
+  },
+  {
+    "stockRoute": "wu",
+    "stockTicker": "WU"
+  },
+  {
+    "stockRoute": "he",
+    "stockTicker": "HE"
+  },
+  {
+    "stockRoute": "aimc",
+    "stockTicker": "AIMC"
+  },
+  {
+    "stockRoute": "ozk",
+    "stockTicker": "OZK"
+  },
+  {
+    "stockRoute": "bkh",
+    "stockTicker": "BKH"
+  },
+  {
+    "stockRoute": "den",
+    "stockTicker": "DEN"
+  },
+  {
+    "stockRoute": "sam",
+    "stockTicker": "SAM"
+  },
+  {
+    "stockRoute": "kex",
+    "stockTicker": "KEX"
+  },
+  {
+    "stockRoute": "bxsl",
+    "stockTicker": "BXSL"
+  },
+  {
+    "stockRoute": "tmhc",
+    "stockTicker": "TMHC"
+  },
+  {
+    "stockRoute": "frsh",
+    "stockTicker": "FRSH"
+  },
+  {
+    "stockRoute": "mgy",
+    "stockTicker": "MGY"
+  },
+  {
+    "stockRoute": "vnt",
+    "stockTicker": "VNT"
+  },
+  {
+    "stockRoute": "avt",
+    "stockTicker": "AVT"
+  },
+  {
+    "stockRoute": "alsn",
+    "stockTicker": "ALSN"
+  },
+  {
+    "stockRoute": "man",
+    "stockTicker": "MAN"
+  },
+  {
+    "stockRoute": "asgn",
+    "stockTicker": "ASGN"
+  },
+  {
+    "stockRoute": "dnp",
+    "stockTicker": "DNP"
+  },
+  {
+    "stockRoute": "bcpc",
+    "stockTicker": "BCPC"
+  },
+  {
+    "stockRoute": "neog",
+    "stockTicker": "NEOG"
+  },
+  {
+    "stockRoute": "lpx",
+    "stockTicker": "LPX"
+  },
+  {
+    "stockRoute": "uaa",
+    "stockTicker": "UAA"
+  },
+  {
+    "stockRoute": "ayx",
+    "stockTicker": "AYX"
+  },
+  {
+    "stockRoute": "tdc",
+    "stockTicker": "TDC"
+  },
+  {
+    "stockRoute": "tal",
+    "stockTicker": "TAL"
+  },
+  {
+    "stockRoute": "hae",
+    "stockTicker": "HAE"
+  },
+  {
+    "stockRoute": "bpop",
+    "stockTicker": "BPOP"
+  },
+  {
+    "stockRoute": "manu",
+    "stockTicker": "MANU"
+  },
+  {
+    "stockRoute": "cabo",
+    "stockTicker": "CABO"
+  },
+  {
+    "stockRoute": "r",
+    "stockTicker": "R"
+  },
+  {
+    "stockRoute": "pltk",
+    "stockTicker": "PLTK"
+  },
+  {
+    "stockRoute": "athm",
+    "stockTicker": "ATHM"
+  },
+  {
+    "stockRoute": "sgry",
+    "stockTicker": "SGRY"
+  },
+  {
+    "stockRoute": "sky",
+    "stockTicker": "SKY"
+  },
+  {
+    "stockRoute": "smpl",
+    "stockTicker": "SMPL"
+  },
+  {
+    "stockRoute": "bbln",
+    "stockTicker": "BBLN"
+  },
+  {
+    "stockRoute": "asai",
+    "stockTicker": "ASAI"
+  },
+  {
+    "stockRoute": "gol",
+    "stockTicker": "GOL"
+  },
+  {
+    "stockRoute": "run",
+    "stockTicker": "RUN"
+  },
+  {
+    "stockRoute": "ab",
+    "stockTicker": "AB"
+  },
+  {
+    "stockRoute": "hhc",
+    "stockTicker": "HHC"
+  },
+  {
+    "stockRoute": "dq",
+    "stockTicker": "DQ"
+  },
+  {
+    "stockRoute": "modg",
+    "stockTicker": "MODG"
+  },
+  {
+    "stockRoute": "paas",
+    "stockTicker": "PAAS"
+  },
+  {
+    "stockRoute": "four",
+    "stockTicker": "FOUR"
+  },
+  {
+    "stockRoute": "wfrd",
+    "stockTicker": "WFRD"
+  },
+  {
+    "stockRoute": "ypf",
+    "stockTicker": "YPF"
+  },
+  {
+    "stockRoute": "pwsc",
+    "stockTicker": "PWSC"
+  },
+  {
+    "stockRoute": "pinc",
+    "stockTicker": "PINC"
+  },
+  {
+    "stockRoute": "srcl",
+    "stockTicker": "SRCL"
+  },
+  {
+    "stockRoute": "cade",
+    "stockTicker": "CADE"
+  },
+  {
+    "stockRoute": "maxr",
+    "stockTicker": "MAXR"
+  },
+  {
+    "stockRoute": "cert",
+    "stockTicker": "CERT"
+  },
+  {
+    "stockRoute": "smg",
+    "stockTicker": "SMG"
+  },
+  {
+    "stockRoute": "bl",
+    "stockTicker": "BL"
+  },
+  {
+    "stockRoute": "icui",
+    "stockTicker": "ICUI"
+  },
+  {
+    "stockRoute": "pch",
+    "stockTicker": "PCH"
+  },
+  {
+    "stockRoute": "tkc",
+    "stockTicker": "TKC"
+  },
+  {
+    "stockRoute": "dava",
+    "stockTicker": "DAVA"
+  },
+  {
+    "stockRoute": "mtg",
+    "stockTicker": "MTG"
+  },
+  {
+    "stockRoute": "gtes",
+    "stockTicker": "GTES"
+  },
+  {
+    "stockRoute": "lthm",
+    "stockTicker": "LTHM"
+  },
+  {
+    "stockRoute": "sid",
+    "stockTicker": "SID"
+  },
+  {
+    "stockRoute": "pega",
+    "stockTicker": "PEGA"
+  },
+  {
+    "stockRoute": "gatx",
+    "stockTicker": "GATX"
+  },
+  {
+    "stockRoute": "becn",
+    "stockTicker": "BECN"
+  },
+  {
+    "stockRoute": "w",
+    "stockTicker": "W"
+  },
+  {
+    "stockRoute": "peco",
+    "stockTicker": "PECO"
+  },
+  {
+    "stockRoute": "cere",
+    "stockTicker": "CERE"
+  },
+  {
+    "stockRoute": "lyft",
+    "stockTicker": "LYFT"
+  },
+  {
+    "stockRoute": "ritm",
+    "stockTicker": "RITM"
+  },
+  {
+    "stockRoute": "irtc",
+    "stockTicker": "IRTC"
+  },
+  {
+    "stockRoute": "box",
+    "stockTicker": "BOX"
+  },
+  {
+    "stockRoute": "nsa",
+    "stockTicker": "NSA"
+  },
+  {
+    "stockRoute": "sr",
+    "stockTicker": "SR"
+  },
+  {
+    "stockRoute": "act",
+    "stockTicker": "ACT"
+  },
+  {
+    "stockRoute": "aeis",
+    "stockTicker": "AEIS"
+  },
+  {
+    "stockRoute": "fro",
+    "stockTicker": "FRO"
+  },
+  {
+    "stockRoute": "cnm",
+    "stockTicker": "CNM"
+  },
+  {
+    "stockRoute": "ale",
+    "stockTicker": "ALE"
+  },
+  {
+    "stockRoute": "olli",
+    "stockTicker": "OLLI"
+  },
+  {
+    "stockRoute": "adnt",
+    "stockTicker": "ADNT"
+  },
+  {
+    "stockRoute": "inst",
+    "stockTicker": "INST"
+  },
+  {
+    "stockRoute": "rlx",
+    "stockTicker": "RLX"
+  },
+  {
+    "stockRoute": "esgr",
+    "stockTicker": "ESGR"
+  },
+  {
+    "stockRoute": "wal",
+    "stockTicker": "WAL"
+  },
+  {
+    "stockRoute": "amn",
+    "stockTicker": "AMN"
+  },
+  {
+    "stockRoute": "hl",
+    "stockTicker": "HL"
+  },
+  {
+    "stockRoute": "ful",
+    "stockTicker": "FUL"
+  },
+  {
+    "stockRoute": "bdc",
+    "stockTicker": "BDC"
+  },
+  {
+    "stockRoute": "gds",
+    "stockTicker": "GDS"
+  },
+  {
+    "stockRoute": "seas",
+    "stockTicker": "SEAS"
+  },
+  {
+    "stockRoute": "be",
+    "stockTicker": "BE"
+  },
+  {
+    "stockRoute": "synh",
+    "stockTicker": "SYNH"
+  },
+  {
+    "stockRoute": "ntco",
+    "stockTicker": "NTCO"
+  },
+  {
+    "stockRoute": "cpg",
+    "stockTicker": "CPG"
+  },
+  {
+    "stockRoute": "unf",
+    "stockTicker": "UNF"
+  },
+  {
+    "stockRoute": "zd",
+    "stockTicker": "ZD"
+  },
+  {
+    "stockRoute": "fl",
+    "stockTicker": "FL"
+  },
+  {
+    "stockRoute": "tfsl",
+    "stockTicker": "TFSL"
+  },
+  {
+    "stockRoute": "hp",
+    "stockTicker": "HP"
+  },
+  {
+    "stockRoute": "fhi",
+    "stockTicker": "FHI"
+  },
+  {
+    "stockRoute": "cwen",
+    "stockTicker": "CWEN"
+  },
+  {
+    "stockRoute": "sfm",
+    "stockTicker": "SFM"
+  },
+  {
+    "stockRoute": "lite",
+    "stockTicker": "LITE"
+  },
+  {
+    "stockRoute": "sun",
+    "stockTicker": "SUN"
+  },
+  {
+    "stockRoute": "avnt",
+    "stockTicker": "AVNT"
+  },
+  {
+    "stockRoute": "xpo",
+    "stockTicker": "XPO"
+  },
+  {
+    "stockRoute": "gef",
+    "stockTicker": "GEF"
+  },
+  {
+    "stockRoute": "btu",
+    "stockTicker": "BTU"
+  },
+  {
+    "stockRoute": "ua",
+    "stockTicker": "UA"
+  },
+  {
+    "stockRoute": "lnc",
+    "stockTicker": "LNC"
+  },
+  {
+    "stockRoute": "zws",
+    "stockTicker": "ZWS"
+  },
+  {
+    "stockRoute": "tgna",
+    "stockTicker": "TGNA"
+  },
+  {
+    "stockRoute": "wtm",
+    "stockTicker": "WTM"
+  },
+  {
+    "stockRoute": "golf",
+    "stockTicker": "GOLF"
+  },
+  {
+    "stockRoute": "sgml",
+    "stockTicker": "SGML"
+  },
+  {
+    "stockRoute": "trtn",
+    "stockTicker": "TRTN"
+  },
+  {
+    "stockRoute": "cpa",
+    "stockTicker": "CPA"
+  },
+  {
+    "stockRoute": "neu",
+    "stockTicker": "NEU"
+  },
+  {
+    "stockRoute": "krc",
+    "stockTicker": "KRC"
+  },
+  {
+    "stockRoute": "eprt",
+    "stockTicker": "EPRT"
+  },
+  {
+    "stockRoute": "bmi",
+    "stockTicker": "BMI"
+  },
+  {
+    "stockRoute": "eurn",
+    "stockTicker": "EURN"
+  },
+  {
+    "stockRoute": "irt",
+    "stockTicker": "IRT"
+  },
+  {
+    "stockRoute": "nymt",
+    "stockTicker": "NYMT"
+  },
+  {
+    "stockRoute": "focs",
+    "stockTicker": "FOCS"
+  },
+  {
+    "stockRoute": "crsp",
+    "stockTicker": "CRSP"
+  },
+  {
+    "stockRoute": "esab",
+    "stockTicker": "ESAB"
+  },
+  {
+    "stockRoute": "docn",
+    "stockTicker": "DOCN"
+  },
+  {
+    "stockRoute": "cs",
+    "stockTicker": "CS"
+  },
+  {
+    "stockRoute": "kbh",
+    "stockTicker": "KBH"
+  },
+  {
+    "stockRoute": "lope",
+    "stockTicker": "LOPE"
+  },
+  {
+    "stockRoute": "calx",
+    "stockTicker": "CALX"
+  },
+  {
+    "stockRoute": "spt",
+    "stockTicker": "SPT"
+  },
+  {
+    "stockRoute": "kmpr",
+    "stockTicker": "KMPR"
+  },
+  {
+    "stockRoute": "yeti",
+    "stockTicker": "YETI"
+  },
+  {
+    "stockRoute": "rdn",
+    "stockTicker": "RDN"
+  },
+  {
+    "stockRoute": "evo",
+    "stockTicker": "EVO"
+  },
+  {
+    "stockRoute": "pi",
+    "stockTicker": "PI"
+  },
+  {
+    "stockRoute": "chpt",
+    "stockTicker": "CHPT"
+  },
+  {
+    "stockRoute": "alvo",
+    "stockTicker": "ALVO"
+  },
+  {
+    "stockRoute": "drs",
+    "stockTicker": "DRS"
+  },
+  {
+    "stockRoute": "sanm",
+    "stockTicker": "SANM"
+  },
+  {
+    "stockRoute": "ens",
+    "stockTicker": "ENS"
+  },
+  {
+    "stockRoute": "nni",
+    "stockTicker": "NNI"
+  },
+  {
+    "stockRoute": "nari",
+    "stockTicker": "NARI"
+  },
+  {
+    "stockRoute": "kwr",
+    "stockTicker": "KWR"
+  },
+  {
+    "stockRoute": "qs",
+    "stockTicker": "QS"
+  },
+  {
+    "stockRoute": "ntla",
+    "stockTicker": "NTLA"
+  },
+  {
+    "stockRoute": "pton",
+    "stockTicker": "PTON"
+  },
+  {
+    "stockRoute": "nwe",
+    "stockTicker": "NWE"
+  },
+  {
+    "stockRoute": "jbt",
+    "stockTicker": "JBT"
+  },
+  {
+    "stockRoute": "sig",
+    "stockTicker": "SIG"
+  },
+  {
+    "stockRoute": "twnk",
+    "stockTicker": "TWNK"
+  },
+  {
+    "stockRoute": "azek",
+    "stockTicker": "AZEK"
+  },
+  {
+    "stockRoute": "gps",
+    "stockTicker": "GPS"
+  },
+  {
+    "stockRoute": "doc",
+    "stockTicker": "DOC"
+  },
+  {
+    "stockRoute": "oi",
+    "stockTicker": "OI"
+  },
+  {
+    "stockRoute": "enic",
+    "stockTicker": "ENIC"
+  },
+  {
+    "stockRoute": "nea",
+    "stockTicker": "NEA"
+  },
+  {
+    "stockRoute": "isee",
+    "stockTicker": "ISEE"
+  },
+  {
+    "stockRoute": "ucbi",
+    "stockTicker": "UCBI"
+  },
+  {
+    "stockRoute": "stng",
+    "stockTicker": "STNG"
+  },
+  {
+    "stockRoute": "spr",
+    "stockTicker": "SPR"
+  },
+  {
+    "stockRoute": "sm",
+    "stockTicker": "SM"
+  },
+  {
+    "stockRoute": "ptct",
+    "stockTicker": "PTCT"
+  },
+  {
+    "stockRoute": "sum",
+    "stockTicker": "SUM"
+  },
+  {
+    "stockRoute": "aple",
+    "stockTicker": "APLE"
+  },
+  {
+    "stockRoute": "crvl",
+    "stockTicker": "CRVL"
+  },
+  {
+    "stockRoute": "awr",
+    "stockTicker": "AWR"
+  },
+  {
+    "stockRoute": "wire",
+    "stockTicker": "WIRE"
+  },
+  {
+    "stockRoute": "zgn",
+    "stockTicker": "ZGN"
+  },
+  {
+    "stockRoute": "ay",
+    "stockTicker": "AY"
+  },
+  {
+    "stockRoute": "kd",
+    "stockTicker": "KD"
+  },
+  {
+    "stockRoute": "prva",
+    "stockTicker": "PRVA"
+  },
+  {
+    "stockRoute": "cytk",
+    "stockTicker": "CYTK"
+  },
+  {
+    "stockRoute": "virt",
+    "stockTicker": "VIRT"
+  },
+  {
+    "stockRoute": "erf",
+    "stockTicker": "ERF"
+  },
+  {
+    "stockRoute": "fibk",
+    "stockTicker": "FIBK"
+  },
+  {
+    "stockRoute": "reta",
+    "stockTicker": "RETA"
+  },
+  {
+    "stockRoute": "srad",
+    "stockTicker": "SRAD"
+  },
+  {
+    "stockRoute": "nomd",
+    "stockTicker": "NOMD"
+  },
+  {
+    "stockRoute": "sem",
+    "stockTicker": "SEM"
+  },
+  {
+    "stockRoute": "lac",
+    "stockTicker": "LAC"
+  },
+  {
+    "stockRoute": "bnl",
+    "stockTicker": "BNL"
+  },
+  {
+    "stockRoute": "rushb",
+    "stockTicker": "RUSHB"
+  },
+  {
+    "stockRoute": "fold",
+    "stockTicker": "FOLD"
+  },
+  {
+    "stockRoute": "wor",
+    "stockTicker": "WOR"
+  },
+  {
+    "stockRoute": "ibp",
+    "stockTicker": "IBP"
+  },
+  {
+    "stockRoute": "fss",
+    "stockTicker": "FSS"
+  },
+  {
+    "stockRoute": "dnli",
+    "stockTicker": "DNLI"
+  },
+  {
+    "stockRoute": "evh",
+    "stockTicker": "EVH"
+  },
+  {
+    "stockRoute": "cwt",
+    "stockTicker": "CWT"
+  },
+  {
+    "stockRoute": "tex",
+    "stockTicker": "TEX"
+  },
+  {
+    "stockRoute": "indb",
+    "stockTicker": "INDB"
+  },
+  {
+    "stockRoute": "bsm",
+    "stockTicker": "BSM"
+  },
+  {
+    "stockRoute": "hwc",
+    "stockTicker": "HWC"
+  },
+  {
+    "stockRoute": "sxt",
+    "stockTicker": "SXT"
+  },
+  {
+    "stockRoute": "pbh",
+    "stockTicker": "PBH"
+  },
+  {
+    "stockRoute": "tr",
+    "stockTicker": "TR"
+  },
+  {
+    "stockRoute": "awi",
+    "stockTicker": "AWI"
+  },
+  {
+    "stockRoute": "hri",
+    "stockTicker": "HRI"
+  },
+  {
+    "stockRoute": "esmt",
+    "stockTicker": "ESMT"
+  },
+  {
+    "stockRoute": "pgny",
+    "stockTicker": "PGNY"
+  },
+  {
+    "stockRoute": "vsh",
+    "stockTicker": "VSH"
+  },
+  {
+    "stockRoute": "blkb",
+    "stockTicker": "BLKB"
+  },
+  {
+    "stockRoute": "staa",
+    "stockTicker": "STAA"
+  },
+  {
+    "stockRoute": "hi",
+    "stockTicker": "HI"
+  },
+  {
+    "stockRoute": "meoh",
+    "stockTicker": "MEOH"
+  },
+  {
+    "stockRoute": "afrm",
+    "stockTicker": "AFRM"
+  },
+  {
+    "stockRoute": "atat",
+    "stockTicker": "ATAT"
+  },
+  {
+    "stockRoute": "main",
+    "stockTicker": "MAIN"
+  },
+  {
+    "stockRoute": "ava",
+    "stockTicker": "AVA"
+  },
+  {
+    "stockRoute": "flyw",
+    "stockTicker": "FLYW"
+  },
+  {
+    "stockRoute": "spxc",
+    "stockTicker": "SPXC"
+  },
+  {
+    "stockRoute": "ncr",
+    "stockTicker": "NCR"
+  },
+  {
+    "stockRoute": "bxmt",
+    "stockTicker": "BXMT"
+  },
+  {
+    "stockRoute": "ssrm",
+    "stockTicker": "SSRM"
+  },
+  {
+    "stockRoute": "ael",
+    "stockTicker": "AEL"
+  },
+  {
+    "stockRoute": "vir",
+    "stockTicker": "VIR"
+  },
+  {
+    "stockRoute": "pcvx",
+    "stockTicker": "PCVX"
+  },
+  {
+    "stockRoute": "frpt",
+    "stockTicker": "FRPT"
+  },
+  {
+    "stockRoute": "tigo",
+    "stockTicker": "TIGO"
+  },
+  {
+    "stockRoute": "env",
+    "stockTicker": "ENV"
+  },
+  {
+    "stockRoute": "bco",
+    "stockTicker": "BCO"
+  },
+  {
+    "stockRoute": "sfbs",
+    "stockTicker": "SFBS"
+  },
+  {
+    "stockRoute": "abcm",
+    "stockTicker": "ABCM"
+  },
+  {
+    "stockRoute": "amba",
+    "stockTicker": "AMBA"
+  },
+  {
+    "stockRoute": "lth",
+    "stockTicker": "LTH"
+  },
+  {
+    "stockRoute": "cvi",
+    "stockTicker": "CVI"
+  },
+  {
+    "stockRoute": "kos",
+    "stockTicker": "KOS"
+  },
+  {
+    "stockRoute": "mstr",
+    "stockTicker": "MSTR"
+  },
+  {
+    "stockRoute": "cns",
+    "stockTicker": "CNS"
+  },
+  {
+    "stockRoute": "brze",
+    "stockTicker": "BRZE"
+  },
+  {
+    "stockRoute": "cnmd",
+    "stockTicker": "CNMD"
+  },
+  {
+    "stockRoute": "gpi",
+    "stockTicker": "GPI"
+  },
+  {
+    "stockRoute": "iba",
+    "stockTicker": "IBA"
+  },
+  {
+    "stockRoute": "acad",
+    "stockTicker": "ACAD"
+  },
+  {
+    "stockRoute": "klic",
+    "stockTicker": "KLIC"
+  },
+  {
+    "stockRoute": "jxn",
+    "stockTicker": "JXN"
+  },
+  {
+    "stockRoute": "nwtn",
+    "stockTicker": "NWTN"
+  },
+  {
+    "stockRoute": "aca",
+    "stockTicker": "ACA"
+  },
+  {
+    "stockRoute": "prok",
+    "stockTicker": "PROK"
+  },
+  {
+    "stockRoute": "appn",
+    "stockTicker": "APPN"
+  },
+  {
+    "stockRoute": "ottr",
+    "stockTicker": "OTTR"
+  },
+  {
+    "stockRoute": "crk",
+    "stockTicker": "CRK"
+  },
+  {
+    "stockRoute": "sitm",
+    "stockTicker": "SITM"
+  },
+  {
+    "stockRoute": "nvmi",
+    "stockTicker": "NVMI"
+  },
+  {
+    "stockRoute": "cuz",
+    "stockTicker": "CUZ"
+  },
+  {
+    "stockRoute": "azta",
+    "stockTicker": "AZTA"
+  },
+  {
+    "stockRoute": "tnl",
+    "stockTicker": "TNL"
+  },
+  {
+    "stockRoute": "qfin",
+    "stockTicker": "QFIN"
+  },
+  {
+    "stockRoute": "rely",
+    "stockTicker": "RELY"
+  },
+  {
+    "stockRoute": "abm",
+    "stockTicker": "ABM"
+  },
+  {
+    "stockRoute": "pfsi",
+    "stockTicker": "PFSI"
+  },
+  {
+    "stockRoute": "cwan",
+    "stockTicker": "CWAN"
+  },
+  {
+    "stockRoute": "umbf",
+    "stockTicker": "UMBF"
+  },
+  {
+    "stockRoute": "ccoi",
+    "stockTicker": "CCOI"
+  },
+  {
+    "stockRoute": "cbu",
+    "stockTicker": "CBU"
+  },
+  {
+    "stockRoute": "gt",
+    "stockTicker": "GT"
+  },
+  {
+    "stockRoute": "rog",
+    "stockTicker": "ROG"
+  },
+  {
+    "stockRoute": "mrcy",
+    "stockTicker": "MRCY"
+  },
+  {
+    "stockRoute": "pd",
+    "stockTicker": "PD"
+  },
+  {
+    "stockRoute": "erj",
+    "stockTicker": "ERJ"
+  },
+  {
+    "stockRoute": "aciw",
+    "stockTicker": "ACIW"
+  },
+  {
+    "stockRoute": "lxp",
+    "stockTicker": "LXP"
+  },
+  {
+    "stockRoute": "rusha",
+    "stockTicker": "RUSHA"
+  },
+  {
+    "stockRoute": "verx",
+    "stockTicker": "VERX"
+  },
+  {
+    "stockRoute": "bhf",
+    "stockTicker": "BHF"
+  },
+  {
+    "stockRoute": "ago",
+    "stockTicker": "AGO"
+  },
+  {
+    "stockRoute": "laz",
+    "stockTicker": "LAZ"
+  },
+  {
+    "stockRoute": "dy",
+    "stockTicker": "DY"
+  },
+  {
+    "stockRoute": "jjsf",
+    "stockTicker": "JJSF"
+  },
+  {
+    "stockRoute": "stne",
+    "stockTicker": "STNE"
+  },
+  {
+    "stockRoute": "ai",
+    "stockTicker": "AI"
+  },
+  {
+    "stockRoute": "zim",
+    "stockTicker": "ZIM"
+  },
+  {
+    "stockRoute": "arry",
+    "stockTicker": "ARRY"
+  },
+  {
+    "stockRoute": "mdc",
+    "stockTicker": "MDC"
+  },
+  {
+    "stockRoute": "axnx",
+    "stockTicker": "AXNX"
+  },
+  {
+    "stockRoute": "vrns",
+    "stockTicker": "VRNS"
+  },
+  {
+    "stockRoute": "flnc",
+    "stockTicker": "FLNC"
+  },
+  {
+    "stockRoute": "pr",
+    "stockTicker": "PR"
+  },
+  {
+    "stockRoute": "cxm",
+    "stockTicker": "CXM"
+  },
+  {
+    "stockRoute": "or",
+    "stockTicker": "OR"
+  },
+  {
+    "stockRoute": "mxl",
+    "stockTicker": "MXL"
+  },
+  {
+    "stockRoute": "banf",
+    "stockTicker": "BANF"
+  },
+  {
+    "stockRoute": "ghc",
+    "stockTicker": "GHC"
+  },
+  {
+    "stockRoute": "ccu",
+    "stockTicker": "CCU"
+  },
+  {
+    "stockRoute": "ths",
+    "stockTicker": "THS"
+  },
+  {
+    "stockRoute": "mgee",
+    "stockTicker": "MGEE"
+  },
+  {
+    "stockRoute": "psec",
+    "stockTicker": "PSEC"
+  },
+  {
+    "stockRoute": "fwrd",
+    "stockTicker": "FWRD"
+  },
+  {
+    "stockRoute": "lfst",
+    "stockTicker": "LFST"
+  },
+  {
+    "stockRoute": "crc",
+    "stockTicker": "CRC"
+  },
+  {
+    "stockRoute": "shoo",
+    "stockTicker": "SHOO"
+  },
+  {
+    "stockRoute": "olk",
+    "stockTicker": "OLK"
+  },
+  {
+    "stockRoute": "bak",
+    "stockTicker": "BAK"
+  },
+  {
+    "stockRoute": "slm",
+    "stockTicker": "SLM"
+  },
+  {
+    "stockRoute": "tndm",
+    "stockTicker": "TNDM"
+  },
+  {
+    "stockRoute": "tfpm",
+    "stockTicker": "TFPM"
+  },
+  {
+    "stockRoute": "trmd",
+    "stockTicker": "TRMD"
+  },
+  {
+    "stockRoute": "hubg",
+    "stockTicker": "HUBG"
+  },
+  {
+    "stockRoute": "enov",
+    "stockTicker": "ENOV"
+  },
+  {
+    "stockRoute": "ugp",
+    "stockTicker": "UGP"
+  },
+  {
+    "stockRoute": "arnc",
+    "stockTicker": "ARNC"
+  },
+  {
+    "stockRoute": "asb",
+    "stockTicker": "ASB"
+  },
+  {
+    "stockRoute": "hlne",
+    "stockTicker": "HLNE"
+  },
+  {
+    "stockRoute": "pzza",
+    "stockTicker": "PZZA"
+  },
+  {
+    "stockRoute": "iboc",
+    "stockTicker": "IBOC"
+  },
+  {
+    "stockRoute": "axsm",
+    "stockTicker": "AXSM"
+  },
+  {
+    "stockRoute": "coop",
+    "stockTicker": "COOP"
+  },
+  {
+    "stockRoute": "wern",
+    "stockTicker": "WERN"
+  },
+  {
+    "stockRoute": "cnx",
+    "stockTicker": "CNX"
+  },
+  {
+    "stockRoute": "inta",
+    "stockTicker": "INTA"
+  },
+  {
+    "stockRoute": "cri",
+    "stockTicker": "CRI"
+  },
+  {
+    "stockRoute": "go",
+    "stockTicker": "GO"
+  },
+  {
+    "stockRoute": "calm",
+    "stockTicker": "CALM"
+  },
+  {
+    "stockRoute": "fhb",
+    "stockTicker": "FHB"
+  },
+  {
+    "stockRoute": "lcii",
+    "stockTicker": "LCII"
+  },
+  {
+    "stockRoute": "ain",
+    "stockTicker": "AIN"
+  },
+  {
+    "stockRoute": "lgih",
+    "stockTicker": "LGIH"
+  },
+  {
+    "stockRoute": "tv",
+    "stockTicker": "TV"
+  },
+  {
+    "stockRoute": "epr",
+    "stockTicker": "EPR"
+  },
+  {
+    "stockRoute": "kfy",
+    "stockTicker": "KFY"
+  },
+  {
+    "stockRoute": "rare",
+    "stockTicker": "RARE"
+  },
+  {
+    "stockRoute": "dnut",
+    "stockTicker": "DNUT"
+  },
+  {
+    "stockRoute": "ktb",
+    "stockTicker": "KTB"
+  },
+  {
+    "stockRoute": "nad",
+    "stockTicker": "NAD"
+  },
+  {
+    "stockRoute": "arwr",
+    "stockTicker": "ARWR"
+  },
+  {
+    "stockRoute": "plxs",
+    "stockTicker": "PLXS"
+  },
+  {
+    "stockRoute": "bhc",
+    "stockTicker": "BHC"
+  },
+  {
+    "stockRoute": "aub",
+    "stockTicker": "AUB"
+  },
+  {
+    "stockRoute": "bpmc",
+    "stockTicker": "BPMC"
+  },
+  {
+    "stockRoute": "rvnc",
+    "stockTicker": "RVNC"
+  },
+  {
+    "stockRoute": "dna",
+    "stockTicker": "DNA"
+  },
+  {
+    "stockRoute": "vno",
+    "stockTicker": "VNO"
+  },
+  {
+    "stockRoute": "dsey",
+    "stockTicker": "DSEY"
+  },
+  {
+    "stockRoute": "trip",
+    "stockTicker": "TRIP"
+  },
+  {
+    "stockRoute": "brc",
+    "stockTicker": "BRC"
+  },
+  {
+    "stockRoute": "lifw",
+    "stockTicker": "LIFW"
+  },
+  {
+    "stockRoute": "dorm",
+    "stockTicker": "DORM"
+  },
+  {
+    "stockRoute": "aval",
+    "stockTicker": "AVAL"
+  },
+  {
+    "stockRoute": "pags",
+    "stockTicker": "PAGS"
+  },
+  {
+    "stockRoute": "ngvt",
+    "stockTicker": "NGVT"
+  },
+  {
+    "stockRoute": "rng",
+    "stockTicker": "RNG"
+  },
+  {
+    "stockRoute": "pdco",
+    "stockTicker": "PDCO"
+  },
+  {
+    "stockRoute": "ifs",
+    "stockTicker": "IFS"
+  },
+  {
+    "stockRoute": "sstk",
+    "stockTicker": "SSTK"
+  },
+  {
+    "stockRoute": "vsco",
+    "stockTicker": "VSCO"
+  },
+  {
+    "stockRoute": "sage",
+    "stockTicker": "SAGE"
+  },
+  {
+    "stockRoute": "olpx",
+    "stockTicker": "OLPX"
+  },
+  {
+    "stockRoute": "abcb",
+    "stockTicker": "ABCB"
+  },
+  {
+    "stockRoute": "vrrm",
+    "stockTicker": "VRRM"
+  },
+  {
+    "stockRoute": "cvco",
+    "stockTicker": "CVCO"
+  },
+  {
+    "stockRoute": "mcw",
+    "stockTicker": "MCW"
+  },
+  {
+    "stockRoute": "itgr",
+    "stockTicker": "ITGR"
+  },
+  {
+    "stockRoute": "mmyt",
+    "stockTicker": "MMYT"
+  },
+  {
+    "stockRoute": "pk",
+    "stockTicker": "PK"
+  },
+  {
+    "stockRoute": "gdrx",
+    "stockTicker": "GDRX"
+  },
+  {
+    "stockRoute": "dct",
+    "stockTicker": "DCT"
+  },
+  {
+    "stockRoute": "hmy",
+    "stockTicker": "HMY"
+  },
+  {
+    "stockRoute": "prgs",
+    "stockTicker": "PRGS"
+  },
+  {
+    "stockRoute": "rezi",
+    "stockTicker": "REZI"
+  },
+  {
+    "stockRoute": "cbrl",
+    "stockTicker": "CBRL"
+  },
+  {
+    "stockRoute": "ofc",
+    "stockTicker": "OFC"
+  },
+  {
+    "stockRoute": "inmd",
+    "stockTicker": "INMD"
+  },
+  {
+    "stockRoute": "tph",
+    "stockTicker": "TPH"
+  },
+  {
+    "stockRoute": "lumn",
+    "stockTicker": "LUMN"
+  },
+  {
+    "stockRoute": "out",
+    "stockTicker": "OUT"
+  },
+  {
+    "stockRoute": "caty",
+    "stockTicker": "CATY"
+  },
+  {
+    "stockRoute": "csiq",
+    "stockTicker": "CSIQ"
+  },
+  {
+    "stockRoute": "gh",
+    "stockTicker": "GH"
+  },
+  {
+    "stockRoute": "hrmy",
+    "stockTicker": "HRMY"
+  },
+  {
+    "stockRoute": "glpg",
+    "stockTicker": "GLPG"
+  },
+  {
+    "stockRoute": "alrm",
+    "stockTicker": "ALRM"
+  },
+  {
+    "stockRoute": "jwn",
+    "stockTicker": "JWN"
+  },
+  {
+    "stockRoute": "shls",
+    "stockTicker": "SHLS"
+  },
+  {
+    "stockRoute": "bowl",
+    "stockTicker": "BOWL"
+  },
+  {
+    "stockRoute": "sono",
+    "stockTicker": "SONO"
+  },
+  {
+    "stockRoute": "omcl",
+    "stockTicker": "OMCL"
+  },
+  {
+    "stockRoute": "rrr",
+    "stockTicker": "RRR"
+  },
+  {
+    "stockRoute": "arlp",
+    "stockTicker": "ARLP"
+  },
+  {
+    "stockRoute": "cvlt",
+    "stockTicker": "CVLT"
+  },
+  {
+    "stockRoute": "bmbl",
+    "stockTicker": "BMBL"
+  },
+  {
+    "stockRoute": "urbn",
+    "stockTicker": "URBN"
+  },
+  {
+    "stockRoute": "ncno",
+    "stockTicker": "NCNO"
+  },
+  {
+    "stockRoute": "nvg",
+    "stockTicker": "NVG"
+  },
+  {
+    "stockRoute": "cd",
+    "stockTicker": "CD"
+  },
+  {
+    "stockRoute": "prta",
+    "stockTicker": "PRTA"
+  },
+  {
+    "stockRoute": "ftai",
+    "stockTicker": "FTAI"
+  },
+  {
+    "stockRoute": "ceqp",
+    "stockTicker": "CEQP"
+  },
+  {
+    "stockRoute": "aeo",
+    "stockTicker": "AEO"
+  },
+  {
+    "stockRoute": "sitc",
+    "stockTicker": "SITC"
+  },
+  {
+    "stockRoute": "nog",
+    "stockTicker": "NOG"
+  },
+  {
+    "stockRoute": "sbra",
+    "stockTicker": "SBRA"
+  },
+  {
+    "stockRoute": "vsat",
+    "stockTicker": "VSAT"
+  },
+  {
+    "stockRoute": "whd",
+    "stockTicker": "WHD"
+  },
+  {
+    "stockRoute": "cno",
+    "stockTicker": "CNO"
+  },
+  {
+    "stockRoute": "mc",
+    "stockTicker": "MC"
+  },
+  {
+    "stockRoute": "tcbi",
+    "stockTicker": "TCBI"
+  },
+  {
+    "stockRoute": "joby",
+    "stockTicker": "JOBY"
+  },
+  {
+    "stockRoute": "hpk",
+    "stockTicker": "HPK"
+  },
+  {
+    "stockRoute": "cbz",
+    "stockTicker": "CBZ"
+  },
+  {
+    "stockRoute": "jks",
+    "stockTicker": "JKS"
+  },
+  {
+    "stockRoute": "spb",
+    "stockTicker": "SPB"
+  },
+  {
+    "stockRoute": "bcc",
+    "stockTicker": "BCC"
+  },
+  {
+    "stockRoute": "wd",
+    "stockTicker": "WD"
+  },
+  {
+    "stockRoute": "zlab",
+    "stockTicker": "ZLAB"
+  },
+  {
+    "stockRoute": "cvbf",
+    "stockTicker": "CVBF"
+  },
+  {
+    "stockRoute": "rpd",
+    "stockTicker": "RPD"
+  },
+  {
+    "stockRoute": "tmdx",
+    "stockTicker": "TMDX"
+  },
+  {
+    "stockRoute": "vrnt",
+    "stockTicker": "VRNT"
+  },
+  {
+    "stockRoute": "hcm",
+    "stockTicker": "HCM"
+  },
+  {
+    "stockRoute": "fult",
+    "stockTicker": "FULT"
+  },
+  {
+    "stockRoute": "kss",
+    "stockTicker": "KSS"
+  },
+  {
+    "stockRoute": "pagp",
+    "stockTicker": "PAGP"
+  },
+  {
+    "stockRoute": "pacb",
+    "stockTicker": "PACB"
+  },
+  {
+    "stockRoute": "enr",
+    "stockTicker": "ENR"
+  },
+  {
+    "stockRoute": "hasi",
+    "stockTicker": "HASI"
+  },
+  {
+    "stockRoute": "ihs",
+    "stockTicker": "IHS"
+  },
+  {
+    "stockRoute": "wdfc",
+    "stockTicker": "WDFC"
+  },
+  {
+    "stockRoute": "gkos",
+    "stockTicker": "GKOS"
+  },
+  {
+    "stockRoute": "gnw",
+    "stockTicker": "GNW"
+  },
+  {
+    "stockRoute": "prft",
+    "stockTicker": "PRFT"
+  },
+  {
+    "stockRoute": "ppbi",
+    "stockTicker": "PPBI"
+  },
+  {
+    "stockRoute": "cort",
+    "stockTicker": "CORT"
+  },
+  {
+    "stockRoute": "wsfs",
+    "stockTicker": "WSFS"
+  },
+  {
+    "stockRoute": "viav",
+    "stockTicker": "VIAV"
+  },
+  {
+    "stockRoute": "ese",
+    "stockTicker": "ESE"
+  },
+  {
+    "stockRoute": "rum",
+    "stockTicker": "RUM"
+  },
+  {
+    "stockRoute": "itri",
+    "stockTicker": "ITRI"
+  },
+  {
+    "stockRoute": "lazr",
+    "stockTicker": "LAZR"
+  },
+  {
+    "stockRoute": "jamf",
+    "stockTicker": "JAMF"
+  },
+  {
+    "stockRoute": "pten",
+    "stockTicker": "PTEN"
+  },
+  {
+    "stockRoute": "amc",
+    "stockTicker": "AMC"
+  },
+  {
+    "stockRoute": "hayw",
+    "stockTicker": "HAYW"
+  },
+  {
+    "stockRoute": "amed",
+    "stockTicker": "AMED"
+  },
+  {
+    "stockRoute": "prmw",
+    "stockTicker": "PRMW"
+  },
+  {
+    "stockRoute": "sjw",
+    "stockTicker": "SJW"
+  },
+  {
+    "stockRoute": "joe",
+    "stockTicker": "JOE"
+  },
+  {
+    "stockRoute": "fun",
+    "stockTicker": "FUN"
+  },
+  {
+    "stockRoute": "extr",
+    "stockTicker": "EXTR"
+  },
+  {
+    "stockRoute": "amr",
+    "stockTicker": "AMR"
+  },
+  {
+    "stockRoute": "kai",
+    "stockTicker": "KAI"
+  },
+  {
+    "stockRoute": "exg",
+    "stockTicker": "EXG"
+  },
+  {
+    "stockRoute": "mtrn",
+    "stockTicker": "MTRN"
+  },
+  {
+    "stockRoute": "ambp",
+    "stockTicker": "AMBP"
+  },
+  {
+    "stockRoute": "xrx",
+    "stockTicker": "XRX"
+  },
+  {
+    "stockRoute": "form",
+    "stockTicker": "FORM"
+  },
+  {
+    "stockRoute": "sfnc",
+    "stockTicker": "SFNC"
+  },
+  {
+    "stockRoute": "arch",
+    "stockTicker": "ARCH"
+  },
+  {
+    "stockRoute": "tpg",
+    "stockTicker": "TPG"
+  },
+  {
+    "stockRoute": "avav",
+    "stockTicker": "AVAV"
+  },
+  {
+    "stockRoute": "etrn",
+    "stockTicker": "ETRN"
+  },
+  {
+    "stockRoute": "frc",
+    "stockTicker": "FRC"
+  },
+  {
+    "stockRoute": "amk",
+    "stockTicker": "AMK"
+  },
+  {
+    "stockRoute": "amrc",
+    "stockTicker": "AMRC"
+  },
+  {
+    "stockRoute": "gms",
+    "stockTicker": "GMS"
+  },
+  {
+    "stockRoute": "mrtx",
+    "stockTicker": "MRTX"
+  },
+  {
+    "stockRoute": "fcpt",
+    "stockTicker": "FCPT"
+  },
+  {
+    "stockRoute": "boot",
+    "stockTicker": "BOOT"
+  },
+  {
+    "stockRoute": "matx",
+    "stockTicker": "MATX"
+  },
+  {
+    "stockRoute": "imcr",
+    "stockTicker": "IMCR"
+  },
+  {
+    "stockRoute": "lspd",
+    "stockTicker": "LSPD"
+  },
+  {
+    "stockRoute": "twks",
+    "stockTicker": "TWKS"
+  },
+  {
+    "stockRoute": "itcb",
+    "stockTicker": "ITCB"
+  },
+  {
+    "stockRoute": "livn",
+    "stockTicker": "LIVN"
+  },
+  {
+    "stockRoute": "cpk",
+    "stockTicker": "CPK"
+  },
+  {
+    "stockRoute": "insm",
+    "stockTicker": "INSM"
+  },
+  {
+    "stockRoute": "bb",
+    "stockTicker": "BB"
+  },
+  {
+    "stockRoute": "bbio",
+    "stockTicker": "BBIO"
+  },
+  {
+    "stockRoute": "gbdc",
+    "stockTicker": "GBDC"
+  },
+  {
+    "stockRoute": "wmk",
+    "stockTicker": "WMK"
+  },
+  {
+    "stockRoute": "crct",
+    "stockTicker": "CRCT"
+  },
+  {
+    "stockRoute": "carg",
+    "stockTicker": "CARG"
+  },
+  {
+    "stockRoute": "mgrc",
+    "stockTicker": "MGRC"
+  },
+  {
+    "stockRoute": "cwk",
+    "stockTicker": "CWK"
+  },
+  {
+    "stockRoute": "eqc",
+    "stockTicker": "EQC"
+  },
+  {
+    "stockRoute": "scl",
+    "stockTicker": "SCL"
+  },
+  {
+    "stockRoute": "xene",
+    "stockTicker": "XENE"
+  },
+  {
+    "stockRoute": "glng",
+    "stockTicker": "GLNG"
+  },
+  {
+    "stockRoute": "blmn",
+    "stockTicker": "BLMN"
+  },
+  {
+    "stockRoute": "sblk",
+    "stockTicker": "SBLK"
+  },
+  {
+    "stockRoute": "hiw",
+    "stockTicker": "HIW"
+  },
+  {
+    "stockRoute": "ffbc",
+    "stockTicker": "FFBC"
+  },
+  {
+    "stockRoute": "arcb",
+    "stockTicker": "ARCB"
+  },
+  {
+    "stockRoute": "jblu",
+    "stockTicker": "JBLU"
+  },
+  {
+    "stockRoute": "kw",
+    "stockTicker": "KW"
+  },
+  {
+    "stockRoute": "rxo",
+    "stockTicker": "RXO"
+  },
+  {
+    "stockRoute": "hep",
+    "stockTicker": "HEP"
+  },
+  {
+    "stockRoute": "nabl",
+    "stockTicker": "NABL"
+  },
+  {
+    "stockRoute": "pax",
+    "stockTicker": "PAX"
+  },
+  {
+    "stockRoute": "ax",
+    "stockTicker": "AX"
+  },
+  {
+    "stockRoute": "spwr",
+    "stockTicker": "SPWR"
+  },
+  {
+    "stockRoute": "psmt",
+    "stockTicker": "PSMT"
+  },
+  {
+    "stockRoute": "ias",
+    "stockTicker": "IAS"
+  },
+  {
+    "stockRoute": "ftdr",
+    "stockTicker": "FTDR"
+  },
+  {
+    "stockRoute": "simo",
+    "stockTicker": "SIMO"
+  },
+  {
+    "stockRoute": "idcc",
+    "stockTicker": "IDCC"
+  },
+  {
+    "stockRoute": "epc",
+    "stockTicker": "EPC"
+  },
+  {
+    "stockRoute": "prvb",
+    "stockTicker": "PRVB"
+  },
+  {
+    "stockRoute": "dkl",
+    "stockTicker": "DKL"
+  },
+  {
+    "stockRoute": "csq",
+    "stockTicker": "CSQ"
+  },
+  {
+    "stockRoute": "nhi",
+    "stockTicker": "NHI"
+  },
+  {
+    "stockRoute": "beam",
+    "stockTicker": "BEAM"
+  },
+  {
+    "stockRoute": "cent",
+    "stockTicker": "CENT"
+  },
+  {
+    "stockRoute": "stra",
+    "stockTicker": "STRA"
+  },
+  {
+    "stockRoute": "tgtx",
+    "stockTicker": "TGTX"
+  },
+  {
+    "stockRoute": "hele",
+    "stockTicker": "HELE"
+  },
+  {
+    "stockRoute": "evtc",
+    "stockTicker": "EVTC"
+  },
+  {
+    "stockRoute": "utf",
+    "stockTicker": "UTF"
+  },
+  {
+    "stockRoute": "neo",
+    "stockTicker": "NEO"
+  },
+  {
+    "stockRoute": "ebc",
+    "stockTicker": "EBC"
+  },
+  {
+    "stockRoute": "yy",
+    "stockTicker": "YY"
+  },
+  {
+    "stockRoute": "agti",
+    "stockTicker": "AGTI"
+  },
+  {
+    "stockRoute": "fa",
+    "stockTicker": "FA"
+  },
+  {
+    "stockRoute": "iipr",
+    "stockTicker": "IIPR"
+  },
+  {
+    "stockRoute": "payo",
+    "stockTicker": "PAYO"
+  },
+  {
+    "stockRoute": "zeta",
+    "stockTicker": "ZETA"
+  },
+  {
+    "stockRoute": "alg",
+    "stockTicker": "ALG"
+  },
+  {
+    "stockRoute": "tac",
+    "stockTicker": "TAC"
+  },
+  {
+    "stockRoute": "wlyb",
+    "stockTicker": "WLYB"
+  },
+  {
+    "stockRoute": "cswi",
+    "stockTicker": "CSWI"
+  },
+  {
+    "stockRoute": "trox",
+    "stockTicker": "TROX"
+  },
+  {
+    "stockRoute": "abcl",
+    "stockTicker": "ABCL"
+  },
+  {
+    "stockRoute": "yelp",
+    "stockTicker": "YELP"
+  },
+  {
+    "stockRoute": "apam",
+    "stockTicker": "APAM"
+  },
+  {
+    "stockRoute": "dada",
+    "stockTicker": "DADA"
+  },
+  {
+    "stockRoute": "lbrt",
+    "stockTicker": "LBRT"
+  },
+  {
+    "stockRoute": "bvn",
+    "stockTicker": "BVN"
+  },
+  {
+    "stockRoute": "rnw",
+    "stockTicker": "RNW"
+  },
+  {
+    "stockRoute": "mgpi",
+    "stockTicker": "MGPI"
+  },
+  {
+    "stockRoute": "kmt",
+    "stockTicker": "KMT"
+  },
+  {
+    "stockRoute": "insw",
+    "stockTicker": "INSW"
+  },
+  {
+    "stockRoute": "odp",
+    "stockTicker": "ODP"
+  },
+  {
+    "stockRoute": "shak",
+    "stockTicker": "SHAK"
+  },
+  {
+    "stockRoute": "hlio",
+    "stockTicker": "HLIO"
+  },
+  {
+    "stockRoute": "woof",
+    "stockTicker": "WOOF"
+  },
+  {
+    "stockRoute": "fbp",
+    "stockTicker": "FBP"
+  },
+  {
+    "stockRoute": "town",
+    "stockTicker": "TOWN"
+  },
+  {
+    "stockRoute": "mwa",
+    "stockTicker": "MWA"
+  },
+  {
+    "stockRoute": "tdw",
+    "stockTicker": "TDW"
+  },
+  {
+    "stockRoute": "mac",
+    "stockTicker": "MAC"
+  },
+  {
+    "stockRoute": "hsai",
+    "stockTicker": "HSAI"
+  },
+  {
+    "stockRoute": "sbcf",
+    "stockTicker": "SBCF"
+  },
+  {
+    "stockRoute": "centa",
+    "stockTicker": "CENTA"
+  },
+  {
+    "stockRoute": "you",
+    "stockTicker": "YOU"
+  },
+  {
+    "stockRoute": "smtc",
+    "stockTicker": "SMTC"
+  },
+  {
+    "stockRoute": "tcn",
+    "stockTicker": "TCN"
+  },
+  {
+    "stockRoute": "npo",
+    "stockTicker": "NPO"
+  },
+  {
+    "stockRoute": "vet",
+    "stockTicker": "VET"
+  },
+  {
+    "stockRoute": "boh",
+    "stockTicker": "BOH"
+  },
+  {
+    "stockRoute": "clbk",
+    "stockTicker": "CLBK"
+  },
+  {
+    "stockRoute": "wly",
+    "stockTicker": "WLY"
+  },
+  {
+    "stockRoute": "frme",
+    "stockTicker": "FRME"
+  },
+  {
+    "stockRoute": "agys",
+    "stockTicker": "AGYS"
+  },
+  {
+    "stockRoute": "krys",
+    "stockTicker": "KRYS"
+  },
+  {
+    "stockRoute": "cstm",
+    "stockTicker": "CSTM"
+  },
+  {
+    "stockRoute": "dei",
+    "stockTicker": "DEI"
+  },
+  {
+    "stockRoute": "icfi",
+    "stockTicker": "ICFI"
+  },
+  {
+    "stockRoute": "ntct",
+    "stockTicker": "NTCT"
+  },
+  {
+    "stockRoute": "snex",
+    "stockTicker": "SNEX"
+  },
+  {
+    "stockRoute": "ng",
+    "stockTicker": "NG"
+  },
+  {
+    "stockRoute": "abr",
+    "stockTicker": "ABR"
+  },
+  {
+    "stockRoute": "prk",
+    "stockTicker": "PRK"
+  },
+  {
+    "stockRoute": "myrg",
+    "stockTicker": "MYRG"
+  },
+  {
+    "stockRoute": "crs",
+    "stockTicker": "CRS"
+  },
+  {
+    "stockRoute": "six",
+    "stockTicker": "SIX"
+  },
+  {
+    "stockRoute": "navi",
+    "stockTicker": "NAVI"
+  },
+  {
+    "stockRoute": "vnom",
+    "stockTicker": "VNOM"
+  },
+  {
+    "stockRoute": "chgg",
+    "stockTicker": "CHGG"
+  },
+  {
+    "stockRoute": "hims",
+    "stockTicker": "HIMS"
+  },
+  {
+    "stockRoute": "acva",
+    "stockTicker": "ACVA"
+  },
+  {
+    "stockRoute": "fsly",
+    "stockTicker": "FSLY"
+  },
+  {
+    "stockRoute": "dan",
+    "stockTicker": "DAN"
+  },
+  {
+    "stockRoute": "usac",
+    "stockTicker": "USAC"
+  },
+  {
+    "stockRoute": "vctr",
+    "stockTicker": "VCTR"
+  },
+  {
+    "stockRoute": "vtyx",
+    "stockTicker": "VTYX"
+  },
+  {
+    "stockRoute": "skt",
+    "stockTicker": "SKT"
+  },
+  {
+    "stockRoute": "enlt",
+    "stockTicker": "ENLT"
+  },
+  {
+    "stockRoute": "slvm",
+    "stockTicker": "SLVM"
+  },
+  {
+    "stockRoute": "utg",
+    "stockTicker": "UTG"
+  },
+  {
+    "stockRoute": "wafd",
+    "stockTicker": "WAFD"
+  },
+  {
+    "stockRoute": "ccs",
+    "stockTicker": "CCS"
+  },
+  {
+    "stockRoute": "mq",
+    "stockTicker": "MQ"
+  },
+  {
+    "stockRoute": "b",
+    "stockTicker": "B"
+  },
+  {
+    "stockRoute": "nuva",
+    "stockTicker": "NUVA"
+  },
+  {
+    "stockRoute": "supn",
+    "stockTicker": "SUPN"
+  },
+  {
+    "stockRoute": "lesl",
+    "stockTicker": "LESL"
+  },
+  {
+    "stockRoute": "teo",
+    "stockTicker": "TEO"
+  },
+  {
+    "stockRoute": "xpro",
+    "stockTicker": "XPRO"
+  },
+  {
+    "stockRoute": "nus",
+    "stockTicker": "NUS"
+  },
+  {
+    "stockRoute": "door",
+    "stockTicker": "DOOR"
+  },
+  {
+    "stockRoute": "mygn",
+    "stockTicker": "MYGN"
+  },
+  {
+    "stockRoute": "hth",
+    "stockTicker": "HTH"
+  },
+  {
+    "stockRoute": "vicr",
+    "stockTicker": "VICR"
+  },
+  {
+    "stockRoute": "thrm",
+    "stockTicker": "THRM"
+  },
+  {
+    "stockRoute": "frog",
+    "stockTicker": "FROG"
+  },
+  {
+    "stockRoute": "nzf",
+    "stockTicker": "NZF"
+  },
+  {
+    "stockRoute": "amlx",
+    "stockTicker": "AMLX"
+  },
+  {
+    "stockRoute": "gogl",
+    "stockTicker": "GOGL"
+  },
+  {
+    "stockRoute": "atrc",
+    "stockTicker": "ATRC"
+  },
+  {
+    "stockRoute": "trn",
+    "stockTicker": "TRN"
+  },
+  {
+    "stockRoute": "sdrl",
+    "stockTicker": "SDRL"
+  },
+  {
+    "stockRoute": "ulcc",
+    "stockTicker": "ULCC"
+  },
+  {
+    "stockRoute": "sghc",
+    "stockTicker": "SGHC"
+  },
+  {
+    "stockRoute": "cpe",
+    "stockTicker": "CPE"
+  },
+  {
+    "stockRoute": "evcm",
+    "stockTicker": "EVCM"
+  },
+  {
+    "stockRoute": "sho",
+    "stockTicker": "SHO"
+  },
+  {
+    "stockRoute": "air",
+    "stockTicker": "AIR"
+  },
+  {
+    "stockRoute": "ibtx",
+    "stockTicker": "IBTX"
+  },
+  {
+    "stockRoute": "lgnd",
+    "stockTicker": "LGND"
+  },
+  {
+    "stockRoute": "bgcp",
+    "stockTicker": "BGCP"
+  },
+  {
+    "stockRoute": "ahco",
+    "stockTicker": "AHCO"
+  },
+  {
+    "stockRoute": "msge",
+    "stockTicker": "MSGE"
+  },
+  {
+    "stockRoute": "banr",
+    "stockTicker": "BANR"
+  },
+  {
+    "stockRoute": "wsbc",
+    "stockTicker": "WSBC"
+  },
+  {
+    "stockRoute": "rklb",
+    "stockTicker": "RKLB"
+  },
+  {
+    "stockRoute": "rvmd",
+    "stockTicker": "RVMD"
+  },
+  {
+    "stockRoute": "sah",
+    "stockTicker": "SAH"
+  },
+  {
+    "stockRoute": "goos",
+    "stockTicker": "GOOS"
+  },
+  {
+    "stockRoute": "pipr",
+    "stockTicker": "PIPR"
+  },
+  {
+    "stockRoute": "rlay",
+    "stockTicker": "RLAY"
+  },
+  {
+    "stockRoute": "ctre",
+    "stockTicker": "CTRE"
+  },
+  {
+    "stockRoute": "bte",
+    "stockTicker": "BTE"
+  },
+  {
+    "stockRoute": "rvlv",
+    "stockTicker": "RVLV"
+  },
+  {
+    "stockRoute": "ceix",
+    "stockTicker": "CEIX"
+  },
+  {
+    "stockRoute": "mtx",
+    "stockTicker": "MTX"
+  },
+  {
+    "stockRoute": "eva",
+    "stockTicker": "EVA"
+  },
+  {
+    "stockRoute": "save",
+    "stockTicker": "SAVE"
+  },
+  {
+    "stockRoute": "sdgr",
+    "stockTicker": "SDGR"
+  },
+  {
+    "stockRoute": "gsat",
+    "stockTicker": "GSAT"
+  },
+  {
+    "stockRoute": "ego",
+    "stockTicker": "EGO"
+  },
+  {
+    "stockRoute": "amph",
+    "stockTicker": "AMPH"
+  },
+  {
+    "stockRoute": "adx",
+    "stockTicker": "ADX"
+  },
+  {
+    "stockRoute": "tgls",
+    "stockTicker": "TGLS"
+  },
+  {
+    "stockRoute": "nmih",
+    "stockTicker": "NMIH"
+  },
+  {
+    "stockRoute": "gpre",
+    "stockTicker": "GPRE"
+  },
+  {
+    "stockRoute": "safe",
+    "stockTicker": "SAFE"
+  },
+  {
+    "stockRoute": "laur",
+    "stockTicker": "LAUR"
+  },
+  {
+    "stockRoute": "vgr",
+    "stockTicker": "VGR"
+  },
+  {
+    "stockRoute": "gdv",
+    "stockTicker": "GDV"
+  },
+  {
+    "stockRoute": "expi",
+    "stockTicker": "EXPI"
+  },
+  {
+    "stockRoute": "nuv",
+    "stockTicker": "NUV"
+  },
+  {
+    "stockRoute": "vzio",
+    "stockTicker": "VZIO"
+  },
+  {
+    "stockRoute": "mrvi",
+    "stockTicker": "MRVI"
+  },
+  {
+    "stockRoute": "napa",
+    "stockTicker": "NAPA"
+  },
+  {
+    "stockRoute": "pcrx",
+    "stockTicker": "PCRX"
+  },
+  {
+    "stockRoute": "ety",
+    "stockTicker": "ETY"
+  },
+  {
+    "stockRoute": "hcc",
+    "stockTicker": "HCC"
+  },
+  {
+    "stockRoute": "fsr",
+    "stockTicker": "FSR"
+  },
+  {
+    "stockRoute": "ag",
+    "stockTicker": "AG"
+  },
+  {
+    "stockRoute": "gogo",
+    "stockTicker": "GOGO"
+  },
+  {
+    "stockRoute": "gof",
+    "stockTicker": "GOF"
+  },
+  {
+    "stockRoute": "batra",
+    "stockTicker": "BATRA"
+  },
+  {
+    "stockRoute": "envx",
+    "stockTicker": "ENVX"
+  },
+  {
+    "stockRoute": "talo",
+    "stockTicker": "TALO"
+  },
+  {
+    "stockRoute": "pjt",
+    "stockTicker": "PJT"
+  },
+  {
+    "stockRoute": "forg",
+    "stockTicker": "FORG"
+  },
+  {
+    "stockRoute": "akro",
+    "stockTicker": "AKRO"
+  },
+  {
+    "stockRoute": "cvii",
+    "stockTicker": "CVII"
+  },
+  {
+    "stockRoute": "gff",
+    "stockTicker": "GFF"
+  },
+  {
+    "stockRoute": "borr",
+    "stockTicker": "BORR"
+  },
+  {
+    "stockRoute": "gva",
+    "stockTicker": "GVA"
+  },
+  {
+    "stockRoute": "flng",
+    "stockTicker": "FLNG"
+  },
+  {
+    "stockRoute": "dht",
+    "stockTicker": "DHT"
+  },
+  {
+    "stockRoute": "cake",
+    "stockTicker": "CAKE"
+  },
+  {
+    "stockRoute": "bke",
+    "stockTicker": "BKE"
+  },
+  {
+    "stockRoute": "embc",
+    "stockTicker": "EMBC"
+  },
+  {
+    "stockRoute": "ameh",
+    "stockTicker": "AMEH"
+  },
+  {
+    "stockRoute": "xpel",
+    "stockTicker": "XPEL"
+  },
+  {
+    "stockRoute": "rnst",
+    "stockTicker": "RNST"
+  },
+  {
+    "stockRoute": "nxe",
+    "stockTicker": "NXE"
+  },
+  {
+    "stockRoute": "hbi",
+    "stockTicker": "HBI"
+  },
+  {
+    "stockRoute": "ltrpb",
+    "stockTicker": "LTRPB"
+  },
+  {
+    "stockRoute": "dbrg",
+    "stockTicker": "DBRG"
+  },
+  {
+    "stockRoute": "esta",
+    "stockTicker": "ESTA"
+  },
+  {
+    "stockRoute": "cohu",
+    "stockTicker": "COHU"
+  },
+  {
+    "stockRoute": "lz",
+    "stockTicker": "LZ"
+  },
+  {
+    "stockRoute": "bmez",
+    "stockTicker": "BMEZ"
+  },
+  {
+    "stockRoute": "cldx",
+    "stockTicker": "CLDX"
+  },
+  {
+    "stockRoute": "jack",
+    "stockTicker": "JACK"
+  },
+  {
+    "stockRoute": "batrk",
+    "stockTicker": "BATRK"
+  },
+  {
+    "stockRoute": "qrteb",
+    "stockTicker": "QRTEB"
+  },
+  {
+    "stockRoute": "peri",
+    "stockTicker": "PERI"
+  },
+  {
+    "stockRoute": "lila",
+    "stockTicker": "LILA"
+  },
+  {
+    "stockRoute": "crto",
+    "stockTicker": "CRTO"
+  },
+  {
+    "stockRoute": "bigz",
+    "stockTicker": "BIGZ"
+  },
+  {
+    "stockRoute": "lilak",
+    "stockTicker": "LILAK"
+  },
+  {
+    "stockRoute": "play",
+    "stockTicker": "PLAY"
+  },
+  {
+    "stockRoute": "nex",
+    "stockTicker": "NEX"
+  },
+  {
+    "stockRoute": "fgen",
+    "stockTicker": "FGEN"
+  },
+  {
+    "stockRoute": "efsc",
+    "stockTicker": "EFSC"
+  },
+  {
+    "stockRoute": "crsr",
+    "stockTicker": "CRSR"
+  },
+  {
+    "stockRoute": "htgc",
+    "stockTicker": "HTGC"
+  },
+  {
+    "stockRoute": "bku",
+    "stockTicker": "BKU"
+  },
+  {
+    "stockRoute": "vrtv",
+    "stockTicker": "VRTV"
+  },
+  {
+    "stockRoute": "peb",
+    "stockTicker": "PEB"
+  },
+  {
+    "stockRoute": "ftch",
+    "stockTicker": "FTCH"
+  },
+  {
+    "stockRoute": "etwo",
+    "stockTicker": "ETWO"
+  },
+  {
+    "stockRoute": "ttec",
+    "stockTicker": "TTEC"
+  },
+  {
+    "stockRoute": "mcy",
+    "stockTicker": "MCY"
+  },
+  {
+    "stockRoute": "parr",
+    "stockTicker": "PARR"
+  },
+  {
+    "stockRoute": "cprx",
+    "stockTicker": "CPRX"
+  },
+  {
+    "stockRoute": "zip",
+    "stockTicker": "ZIP"
+  },
+  {
+    "stockRoute": "mho",
+    "stockTicker": "MHO"
+  },
+  {
+    "stockRoute": "xncr",
+    "stockTicker": "XNCR"
+  },
+  {
+    "stockRoute": "evex",
+    "stockTicker": "EVEX"
+  },
+  {
+    "stockRoute": "wgo",
+    "stockTicker": "WGO"
+  },
+  {
+    "stockRoute": "ktos",
+    "stockTicker": "KTOS"
+  },
+  {
+    "stockRoute": "imkta",
+    "stockTicker": "IMKTA"
+  },
+  {
+    "stockRoute": "osis",
+    "stockTicker": "OSIS"
+  },
+  {
+    "stockRoute": "res",
+    "stockTicker": "RES"
+  },
+  {
+    "stockRoute": "lrn",
+    "stockTicker": "LRN"
+  },
+  {
+    "stockRoute": "ue",
+    "stockTicker": "UE"
+  },
+  {
+    "stockRoute": "usm",
+    "stockTicker": "USM"
+  },
+  {
+    "stockRoute": "sovo",
+    "stockTicker": "SOVO"
+  },
+  {
+    "stockRoute": "atec",
+    "stockTicker": "ATEC"
+  },
+  {
+    "stockRoute": "atge",
+    "stockTicker": "ATGE"
+  },
+  {
+    "stockRoute": "phr",
+    "stockTicker": "PHR"
+  },
+  {
+    "stockRoute": "bros",
+    "stockTicker": "BROS"
+  },
+  {
+    "stockRoute": "sand",
+    "stockTicker": "SAND"
+  },
+  {
+    "stockRoute": "adus",
+    "stockTicker": "ADUS"
+  },
+  {
+    "stockRoute": "gab",
+    "stockTicker": "GAB"
+  }
+]

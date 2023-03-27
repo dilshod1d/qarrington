@@ -10,6 +10,7 @@ import dbConnect from "@lib/dbConnect"
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/router"
 import { subscribeToCompany } from "@services/companies-services"
+import { checkIfComanyHasFuturIsoDate, checkIfCompanyIsInIsoDate } from "@helpers/companies-helpers"
 
 const Page = ({ name, ticker, description, logo, secondsLeft }) => {
 
@@ -503,6 +504,15 @@ export async function getServerSideProps({ params }) {
       const now = new Date(Date.now())
 
       const secondsLeft = Math.floor((isoTime - now)/1000)
+
+      if(!checkIfComanyHasFuturIsoDate(company)) {
+        return {
+          redirect: {
+            destination: '/companies',
+            permanent: false
+          }
+        };
+      }
 
       return {
           props: {

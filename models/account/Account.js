@@ -54,17 +54,19 @@ const AccountSchema = new mongoose.Schema(
         accountAlerts: [
             {
                 accountAlertLogo: { type: String },
-                accountAlertUnits: { type: String },
+                accountAlertUnits: { type: Number },
                 accountAlertTicker: { type: String },
-                accountAlertPrice: { type: String },
+                accountAlertPrice: { type: Number },
                 accountAlertType: { type: String },
                 accountAlertStatus: { type: String },
-                accountAlertIsDated: { type: String }
+                accountAlertIsDated: { type: Date, defualt: Date.now },
+                accountAlertAssociatedId: { type: String }
             }
         ],
         accountStripeId: { type: String },
         accountIsCreatedAt: { type: Date, immutable: true, default: Date.now },
-        accountIsUpdatedAt: { type: Date, default: Date.now }
+        accountIsUpdatedAt: { type: Date, default: Date.now },
+        accountPortfolio: { type: Number } //
     }
 )
 

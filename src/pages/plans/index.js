@@ -5,6 +5,8 @@ import HeaderMenu from '../../components/menus/HeaderMenu';
 import RightGrid from '../../components/grids/RightGrid';
 import { Avatar, Badge, Box, Card, Container, Divider, Grid, styled, Tooltip, Typography } from '@mui/material';
 import Footer from '../../components/main/Footer';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../api/auth/[...nextauth]';
 
 const Page = () => {
 
@@ -214,6 +216,20 @@ const Page = () => {
 }
 
 export default Page
+
+
+export async function getServerSideProps(ctx) {
+  const session = await getServerSession(ctx.req, ctx.res, authOptions);
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/account/access',
+        permanent: false
+      }
+    };
+  }
+  return { props: {}}
+}
 
 const PlanBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {

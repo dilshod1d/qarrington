@@ -1,5 +1,7 @@
 import dbConnect from '../../../lib/dbConnect';
 import Push from '../../../../models/push/Push';
+import { getCurrentUserId } from '@lib/auth';
+import Account from '@models/account/Account';
 
 async function handler(req, res) {
   const { method } = req;
@@ -36,6 +38,36 @@ async function handler(req, res) {
     } catch (err) {
       res.status(500).json(err);
     }
+  }
+
+  if(method === "DELETE") {
+    await dbConnect()
+    
+    console.log("here")
+    const id = await getCurrentUserId(req)
+    if(!id) return res.status(401).json({ success: false, message: 'Token missing or invalid' })
+
+    const { pushId } = req.query
+    if(!pushId) return res.status(400).json({ success: false, message: 'Id not provided' })
+
+    const foundPush = await Push.findById(pushId)
+    if(!foundPush) return res.status(400).json({ success: false, message: 'Missing push' })
+
+    const userIsPropietary = foundPush.pushAccountId === id
+    if(!userIsPropietary) return res.status(401).json({ success: false, message: 'Invalid access' })
+
+    
+    // remove alerts
+    const account = await Account.findById(id)
+    console.log(account)
+    account.accountAlerts = account.accountAlerts.filter((alert) => alert.accountAlertAssociatedId !== foundPush._id.toString())
+
+    console.log(account)
+    
+    await foundPush.remove()
+    await account.save()
+    
+    return res.status(204).json({ success: true, message: 'Push removed correctly' })
   }
 }
 

@@ -83,5 +83,32 @@ export const createCustomAccount = async (data) => {
     }
 }
 
+export const buyPicks = async () => {
+    try {
+        return true
+    } catch (err) {
+        console.log(err.message)
+        return err
+    }
+}
+
+export const buyPull = async () => {
+    try {
+        return true
+    } catch (err) {
+        console.log(err.message)
+        return err
+    }
+}
+
+export const buyPush = async () => {
+    try {
+        return true
+    } catch (err) {
+        console.log(err.message)
+        return err
+    }
+}
+
 export default startStripe
 // export { createCustomer, createProduct, createPerson, listPersons }

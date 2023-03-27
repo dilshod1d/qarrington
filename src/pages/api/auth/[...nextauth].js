@@ -4,7 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import clientPromise from "@lib/mongodb"
 import Account from "@models/account/Account"
 
-export default NextAuth({
+export const authOptions = {
   adapter: MongoDBAdapter(clientPromise),
   providers: [
     CredentialsProvider({
@@ -39,5 +39,8 @@ export default NextAuth({
       return token
     },
   }
-})
+}
+
+
+export default NextAuth(authOptions)
 
