@@ -1,79 +1,124 @@
 import React from 'react';
 import Head from 'next/head';
 import useSWR from 'swr';
-import Navbar from '../../components/topics/Navbar';
-import Footer from '../../components/topics/Footer';
-import { Box, Container, Divider, Grid, Typography } from '@mui/material';
+import Link from 'next/link';
+import Navbar from '../../components/briefs/Navbar';
+import Admin from '../../components/briefs/Admin';
+import Company from '../../components/briefs/Company';
+import Footer from '../../components/briefs/Footer';
+import { Box, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
+import { Pagination } from '@mui/lab';
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRounded';
 
 const Page = () => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data: briefs } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/briefs`, fetcher);
+    const { data: topics } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/topics`, fetcher);
 
     return (
 
-        <>
+        <div>
 
             <Head>
                 <title>Briefs • Qarrington</title>
                 <meta
                     name="description"
-                    content={`Buy, sell, & transfer the subscriptions of innovative startup companies. It's like buying stocks, but instead of shares, it's product-backed subscriptions.`}
+                    content="hello"
                 />
             </Head>
 
-            <Grid style={{ backgroundColor: '#fff' }}>
+            <Navbar />
 
-                <Navbar />
+            <Container>
+                <Grid container spacing={2}>
 
-                <Container style={{ backgroundColor: '#fff' }}>
-                    <Grid container spacing={2}>
-
-                        <Grid item xs>
-                            {/* <LeftSide /> */}
-                        </Grid>
-
-                        <Grid my={8} item xs={7}>
-
-                            <Box style={{ padding: '0px 0px 0px 0px' }}>
-                                <Typography variant="h1" fontWeight={700} color="black">
-                                    How subscriptions can outperform the stock market in the future.
-                                </Typography>
-                                <Divider sx={{ my: 3 }} />
-                                <Typography mt={1} variant="h5" fontWeight={500} color="secondary">
-                                    Buy, sell, and transfer the subscriptions of innovative startup companies. It's like buying stocks, but instead of shares, it's product-backed subscriptions.
-                                </Typography>
-                                <Divider sx={{ my: 3 }} />
-                                <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
-                                    In the late 1400s, the stock market was designed in Antwerp, Belgium based on the mechanism known as the Naked Asset Model (NAM), a system where financial assets such as currencies, shares, and cryptocurrencies are literally backed by nothing. Even though the subscription market is still in its early stage, each subscription unit sold or bought on a subscription exchange like Qarrington ... is fully backed by the underlying products and services of the listed companies.
-                                </Typography>
-                                <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
-                                    For example, if today, you bet the sum of $25,000 on a company's stock, and by tomorrow morning, the price of the stock goes to $0, that's it. On the contrary to that, if you buy the subscriptions of an early-stage innovative technology company for the same amount and the price tanks to $0 the following day, you'd still have access to the products and services offered by the startup.
-                                </Typography>
-                            </Box>
-
-                            {/* footer starts */}
-
-                            <Footer />
-
-                            {/* footer ends */}
-
-                        </Grid>
-
-                        <Grid item xs>
-                            {/* <RightSide /> */}
-                        </Grid>
-
+                    <Grid item xs={12} md={6} lg={3}>
+                        <Admin />
                     </Grid>
-                </Container>
-            </Grid >
 
-        </>
+                    <Grid item xs={12} md={6} lg={6} mt={12} mb={4}>
+                        <Grid container spacing={1}>
+                            <Grid item xs={12}>
+
+                                <Card style={{ padding: '60px', backgroundColor: 'black', color: 'white', marginBottom: '10px' }}>
+                                    <ListItem disablePadding>
+                                        <Tooltip title="Post" placement="top">
+                                            <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
+                                                <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
+                                                    <Link href="/dashboard/briefs/manage">
+                                                        <AddCircleRoundedIcon />
+                                                    </Link>
+                                                </ListItemIcon>
+                                            </Grid>
+                                        </Tooltip>
+                                        <Grid item xs={12} md={6} lg={8} display="flex" justifyContent="center">
+                                            <Stack spacing={2} sx={{ width: '100%' }}>
+                                                <TextField
+                                                    required
+                                                    id="outlined-required"
+                                                    placeholder="Search from more than 872 topics ..."
+                                                    inputProps={{ style: { textAlign: 'center', color: 'white' } }}
+                                                />
+                                            </Stack>
+                                        </Grid>
+                                        <Tooltip title="Read" placement="top">
+                                            <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
+                                                <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
+                                                    <Link href="/briefs">
+                                                        <AccessTimeFilledRoundedIcon />
+                                                    </Link>
+                                                </ListItemIcon>
+                                            </Grid>
+                                        </Tooltip>
+                                    </ListItem>
+                                </Card>
+
+                                {topics && Array.isArray(topics) && topics?.slice(0, 3).map(({ _id, topicUrl, topicTags, topicTitle, topicDetail, topicSummary, topicPostedAt }) => (
+                                    <Grid item xs={12}>
+                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                            <Link href={`/dashboard/briefs/manage`}>
+                                                <Typography textAlign="center" sx={ItemTitle} variant="h4" color="black" fontWeight={800}>
+                                                    {topicTitle}?
+                                                </Typography>
+                                            </Link>
+                                        </Card>
+                                    </Grid>
+                                ))}
+
+                                <Grid mt={2} item xs={12}>
+                                    <Box spacing={2} sx={{ display: 'flex', justifyContent: 'center' }}>
+                                        <Pagination count={10} variant="outlined" shape="rounded" />
+                                    </Box>
+                                </Grid>
+
+                                <Footer />
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid item xs={12} md={6} lg={3}>
+                        <Company />
+                    </Grid>
+
+                </Grid>
+            </Container>
+
+        </div>
 
     )
 }
 
 export default Page
+
+const ItemTitle = {
+    cursor: 'pointer',
+    color: '#000000',
+    '&:hover': {
+        color: '#2ed573'
+    }
+};
 
 // export async function getStaticProps({ params }) {
 //     await dbConnect()
@@ -81,14 +126,13 @@ export default Page
 //     return {
 //         props: {
 //             url: briefItem.briefUrl,
-//             tags: briefItem.briefTags,
 //             title: briefItem.briefTitle,
 //             detail: briefItem.briefDetail,
 //             summary: briefItem.briefSummary,
 //             postedAt: briefItem.briefPostedAt
 //         },
 //         revalidate: 60,
-//     }
+//     };
 // }
 
 // export async function getStaticPaths() {

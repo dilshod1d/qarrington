@@ -1,10 +1,15 @@
 import React from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
 import useSWR from 'swr';
-import Navbar from '../../../components/topics/Navbar';
-import Footer from '../../../components/topics/Footer';
-import { Box, Container, Divider, Grid, Typography } from '@mui/material';
+import Link from 'next/link';
+import Navbar from '../../../components/briefs/Navbar';
+import Admin from '../../../components/briefs/Admin';
+import Company from '../../../components/briefs/Company';
+import Footer from '../../../components/briefs/Footer';
+import { Box, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
+import { Pagination } from '@mui/lab';
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRounded';
 import dbConnect from "@lib/dbConnect";
 import Brief from '@models/brief/Brief';
 
@@ -15,68 +20,94 @@ const Page = ({ url, title, detail, summary, postedAt }) => {
 
     return (
 
-        <>
+        <div>
 
             <Head>
                 <title>{title} • Qarrington</title>
                 <meta
                     name="description"
-                    content={detail}
+                    content={summary}
                 />
             </Head>
 
-            <Grid style={{ backgroundColor: '#fff' }}>
+            <Navbar />
 
-                <Navbar />
+            <Container>
+                <Grid container spacing={2}>
 
-                <Container style={{ backgroundColor: '#fff' }}>
-                    <Grid container spacing={2}>
-
-                        <Grid item xs>
-                            {/* <LeftSide /> */}
-                        </Grid>
-
-                        <Grid my={8} item xs={7}>
-
-                            <Grid item xs={12} mb={2}>
-                                <Grid container spacing={0.1}>
-
-                                    {topics && Array.isArray(topics) && topics?.slice(0, 3).map(({ _id, topicUrl, topicTags, topicTitle, topicDetail, topicSummary, topicPostedAt }) => (
-                                        <Grid key={_id} item xs={12}>
-                                            <Box sx={{ borderBottom: 1, borderColor: '#e7e7e7' }}>
-                                                <Box sx={{ padding: '20px 40px 40px 40px' }}>
-                                                    <Box mt={2}>
-                                                        <Link href={`/briefs/${url}/${topicUrl}`}>
-                                                            <Typography sx={ItemTitle} gutterBottom variant="h2" fontWeight={800} color="black">
-                                                                {topicTitle}?
-                                                            </Typography>
-                                                        </Link>
-                                                    </Box>
-                                                </Box>
-                                            </Box>
-                                        </Grid>
-                                    ))}
-
-                                </Grid>
-                            </Grid>
-
-                            {/* footer starts */}
-
-                            <Footer />
-
-                            {/* footer ends */}
-
-                        </Grid>
-
-                        <Grid item xs>
-                            {/* <RightSide /> */}
-                        </Grid>
-
+                    <Grid item xs={12} md={6} lg={3}>
+                        <Admin />
                     </Grid>
-                </Container>
-            </Grid >
 
-        </>
+                    <Grid item xs={12} md={6} lg={6} mt={12} mb={4}>
+                        <Grid container spacing={1}>
+                            <Grid item xs={12}>
+
+                                <Card style={{ padding: '60px', backgroundColor: 'black', color: 'white', marginBottom: '10px' }}>
+                                    <ListItem disablePadding>
+                                        <Tooltip title="Post" placement="top">
+                                            <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
+                                                <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
+                                                    <Link href="/dashboard/briefs/manage">
+                                                        <AddCircleRoundedIcon />
+                                                    </Link>
+                                                </ListItemIcon>
+                                            </Grid>
+                                        </Tooltip>
+                                        <Grid item xs={12} md={6} lg={8} display="flex" justifyContent="center">
+                                            <Stack spacing={2} sx={{ width: '100%' }}>
+                                                <TextField
+                                                    required
+                                                    id="outlined-required"
+                                                    placeholder="Search from more than 24 topics ..."
+                                                    inputProps={{ style: { textAlign: 'center', color: 'white' } }}
+                                                />
+                                            </Stack>
+                                        </Grid>
+                                        <Tooltip title="Read" placement="top">
+                                            <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
+                                                <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
+                                                    <Link href="/briefs">
+                                                        <AccessTimeFilledRoundedIcon />
+                                                    </Link>
+                                                </ListItemIcon>
+                                            </Grid>
+                                        </Tooltip>
+                                    </ListItem>
+                                </Card>
+
+                                {topics && Array.isArray(topics) && topics?.slice(0, 3).map(({ _id, topicUrl, topicTags, topicTitle, topicDetail, topicSummary, topicPostedAt }) => (
+                                    <Grid item xs={12}>
+                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                            <Link href={`/dashboard/briefs/manage`}>
+                                                <Typography textAlign="center" sx={ItemTitle} variant="h4" color="black" fontWeight={800}>
+                                                    {topicTitle}?
+                                                </Typography>
+                                            </Link>
+                                        </Card>
+                                    </Grid>
+                                ))}
+
+                                <Grid mt={2} item xs={12}>
+                                    <Box spacing={2} sx={{ display: 'flex', justifyContent: 'center' }}>
+                                        <Pagination count={10} variant="outlined" shape="rounded" />
+                                    </Box>
+                                </Grid>
+
+                                <Footer />
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid item xs={12} md={6} lg={3}>
+                        <Company />
+                    </Grid>
+
+                </Grid>
+            </Container>
+
+        </div>
 
     )
 }
