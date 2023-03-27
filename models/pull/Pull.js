@@ -15,19 +15,16 @@ const PullSchema = new mongoose.Schema(
             pullCompanyPrice: { type: Number }, // the current companyPrice from companyAnalytics
             pullCompanyCost: { type: Number } // the price at which the buyer bought the subscription
         },
-        pullAccount: {
-            pullAccountId: { type: String }, // the _id of the buyer account
-            pullAccountPortfolio: { type: Number } // the pullUnits of all the buyer's subscriptions * their companyPrices 
-        },
+        pullAccountId: { type: String },
         pullStatus: {
             pullIsMatched: { type: Boolean }, // we match pullTicker and pullUnits with pushTicker and pushUnits
             pullIsMatchedWith: { type: String }, // the _id of the push request that matched the pull request
-            pullIsMatchedAt: { type: Date, default: Date.now }, // the date the pull request is matched with the push request
+            pullIsMatchedAt: { type: Date }, // the date the pull request is matched with the push request
             pullIsTransferred: { type: Boolean }, // we transfer the pullUnits/pushUnits from the seller to the buyer's portfolio
-            pullIsTransferredAt: { type: Date, default: Date.now }, // the date the transfer is made
+            pullIsTransferredAt: { type: Date }, // the date the transfer is made
             pullIsSubmittedAt: { type: Date, default: Date.now }, // the date the pull request is submitted
             pullIsCanceled: { type: Boolean }, // this will be TRUE if no match in 90 days, otherwise FALSE
-            pullIsCanceledAt: { type: Date, default: Date.now } // the date the pull request is canceled and refunded
+            pullIsCanceledAt: { type: Date } // the date the pull request is canceled and refunded
         }
     },
 );

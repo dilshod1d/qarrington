@@ -3,18 +3,6 @@ import mongoose from 'mongoose';
 const companyKpiData = {
   companyCapitalization: { type: Number },
   companyVolume: { type: Number },
-  companyBids: [
-    {
-      companyBidPrice: { type: Number },
-      companyBidUnits: { type: Number }
-    }
-  ],
-  companyAsks: [
-    {
-      companyAskPrice: { type: Number },
-      companyAskUnits: { type: Number }
-    }
-  ],
   companyPrice: { type: Number },
   companyPercentChange: { type: Number },
   companyPointChange: { type: Number },
@@ -80,6 +68,14 @@ const CompanySchema = new mongoose.Schema({
   ],
   companyKpi: {
     companyCurrency: { type: String, defualt: 'USD' },
+    companyBids: {
+      companyBidPrice: { type: Number },
+      companyBidUnits: { type: Number },
+    },
+    companyAsks: {
+      companyAskPrice: { type: Number },
+      companyAskUnits: { type: Number },
+    },
     companyNow: {
       updateCount: { type: Number, default: 0 },
       data: [companyKpiData]
