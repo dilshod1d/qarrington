@@ -76,7 +76,7 @@ const Page = () => {
                                 </Typography>
 
                                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                                    We're building a subscription exchange, where you can buy & sell the subscriptions of startup companies. It's like buying the stocks, but instead of shares, it's product-backed subscriptions.
+                                    We're building a subscription exchange, where you can buy & sell the subscriptions of startup companies. It's like buying stocks, but instead of shares, it's product-backed subscriptions.
                                 </Typography>
 
                             </Box>
