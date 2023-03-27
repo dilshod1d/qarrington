@@ -8,8 +8,8 @@ import Company from '../../../components/topics/Company';
 import Footer from '../../../components/topics/Footer';
 import { Box, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
 import { Pagination } from '@mui/lab';
-import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
-import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRounded';
+import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
+import RoomPreferencesRoundedIcon from '@mui/icons-material/RoomPreferencesRounded';
 import dbConnect from "@lib/dbConnect";
 import Topic from '@models/topic/Topic';
 
@@ -43,13 +43,13 @@ const Page = ({ slug, title, detail }) => {
                         <Grid container spacing={1}>
                             <Grid item xs={12}>
 
-                                <Card style={{ padding: '60px', backgroundColor: 'black', color: 'white', marginBottom: '10px' }}>
+                            <Card style={{ padding: '60px', backgroundColor: 'black', color: 'white', marginBottom: '10px' }}>
                                     <ListItem disablePadding>
-                                        <Tooltip title="Post" placement="top">
+                                        <Tooltip title="Contact" placement="top">
                                             <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
                                                 <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
-                                                    <Link href="/dashboard/topics/manage">
-                                                        <AddCircleRoundedIcon />
+                                                    <Link href="/topics/contact">
+                                                        <RoomPreferencesRoundedIcon />
                                                     </Link>
                                                 </ListItemIcon>
                                             </Grid>
@@ -59,16 +59,16 @@ const Page = ({ slug, title, detail }) => {
                                                 <TextField
                                                     required
                                                     id="outlined-required"
-                                                    placeholder="Search from more than 24 briefs ..."
+                                                    placeholder="Search from more than 48 briefs ..."
                                                     inputProps={{ style: { textAlign: 'center', color: 'white' } }}
                                                 />
                                             </Stack>
                                         </Grid>
-                                        <Tooltip title="Read" placement="top">
+                                        <Tooltip title="Compare" placement="top">
                                             <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
                                                 <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
-                                                    <Link href="/briefs">
-                                                        <AccessTimeFilledRoundedIcon />
+                                                    <Link href="/topics/compare">
+                                                        <MeetingRoomRoundedIcon />
                                                     </Link>
                                                 </ListItemIcon>
                                             </Grid>

@@ -87,8 +87,8 @@ const Component = () => {
                 </Link>
 
                 <Stack mx={1} direction="row">
-                  <Link href={`/topics/request`}>
-                    <Tooltip title="Request" placement="top">
+                  <Link href={`/topics/compare`}>
+                    <Tooltip title="Compare" placement="top">
                       <Box sx={MenuIcon}>
                         <MeetingRoomRoundedIcon sx={{ fontSize: '28px' }} />
                       </Box>

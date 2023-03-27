@@ -78,30 +78,13 @@ const Page = () => {
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="topicTitle"
+                                                placeholder="briefTitle"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="topicUrl"
-                                                inputProps={{ style: { textAlign: 'center' } }}
-                                            />
-                                        </Stack>
-                                    </Card>
-
-                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                        <Stack spacing={2} sx={{ width: '100%' }}>
-                                            <TextField
-                                                required
-                                                id="outlined-required"
-                                                placeholder="topicTags"
-                                                inputProps={{ style: { textAlign: 'center' } }}
-                                            />
-                                            <TextField
-                                                required
-                                                id="outlined-required"
-                                                placeholder="topicSummary"
+                                                placeholder="briefSlug"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                         </Stack>
@@ -112,13 +95,24 @@ const Page = () => {
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="topicBrief"
+                                                placeholder="briefTopic"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="topicDetail"
+                                                placeholder="briefSummary"
+                                                inputProps={{ style: { textAlign: 'center' } }}
+                                            />
+                                        </Stack>
+                                    </Card>
+
+                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                        <Stack spacing={2} sx={{ width: '100%' }}>
+                                            <TextField
+                                                required
+                                                id="outlined-required"
+                                                placeholder="briefDetail"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                         </Stack>

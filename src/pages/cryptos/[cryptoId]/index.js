@@ -5,8 +5,6 @@ import Carousel from 'react-material-ui-carousel';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tooltip, Typography } from '@mui/material';
 import useSWR from 'swr';
-import dbConnect from "@lib/dbConnect";
-import Crypto from '@models/crypto/Crypto'
 
 const Page = ({ route, ticker }) => {
 
@@ -358,31 +356,3 @@ export async function getServerSideProps({ params }) {
     };
   }
 }
-
-// export async function getStaticProps({ params }) {
-//   await dbConnect()
-//   const cryptoItem = await Crypto.findOne({ cryptoRoute: params.cryptoId });
-//   return {
-//     props: {
-//       name: cryptoItem.cryptoName,
-//       ticker: cryptoItem.cryptoTicker
-//     },
-//     revalidate: 60,
-//   }
-// }
-
-// export async function getStaticPaths() {
-//   await dbConnect()
-//   const cryptoItems = await Crypto.find();
-//   return {
-//     paths: cryptoItems.map(item => {
-//       const cryptoId = item.cryptoRoute;
-//       return {
-//         params: {
-//           cryptoId
-//         }
-//       }
-//     }),
-//     fallback: false
-//   }
-// }

@@ -14,7 +14,7 @@ import dbConnect from "@lib/dbConnect";
 import Brief from '@models/brief/Brief';
 import Divider from '@mui/material/Divider';
 
-const Page = ({ url, title, detail, summary, postedAt }) => {
+const Page = ({ url, title, detail, summary, topic, postedAt }) => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data: briefs } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/briefs`, fetcher);
@@ -99,6 +99,7 @@ export async function getStaticProps({ params }) {
             title: briefItem.briefTitle,
             detail: briefItem.briefDetail,
             summary: briefItem.briefSummary,
+            topic: briefItem.briefTopic,
             postedAt: briefItem.briefPostedAt
         },
         revalidate: 60,

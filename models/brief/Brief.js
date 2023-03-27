@@ -5,7 +5,7 @@ const BriefSchema = new mongoose.Schema({
   briefTitle: { type: String },
   briefDetail: { type: String },
   briefSummary: { type: String },
-  briefTopicId: { type: String },
+  briefTopic: { type: String },
   briefPostedAt: { type: String }
 });
 

@@ -60,8 +60,15 @@ const Page = ({ stories, guides }) => {
                   </Link>
                 </Box>
 
-                <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
+                {/* <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
                   Raise funds through ISO, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>SAFE</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>IPO</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>VC</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>SPAC</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>ICO</s></Typography>
+                  <Tooltip title="Subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
+                    <InfoRoundedIcon fontSize="small" color="primary" />
+                  </Tooltip>
+                </Typography> */}
+
+                <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
+                  Imagine raising $85M with 0% equity dilution
                   <Tooltip title="Subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
@@ -172,7 +179,7 @@ const Page = ({ stories, guides }) => {
               </Container>
             </GridWrapper>
           </Hidden>
-          
+
           {/* right container ends */}
 
         </Grid>
@@ -194,7 +201,7 @@ export async function getServerSideProps() {
     const stories = await Story.find()
     const guides = await Guide.find()
 
-  
+
     return {
       props: {
         stories: stories ? JSON.parse(JSON.stringify(stories)) : [],
