@@ -2,16 +2,19 @@ import React from 'react';
 import Head from 'next/head';
 import useSWR from 'swr';
 import Link from 'next/link';
-import Navbar from '../../components/briefs/Navbar';
-import Admin from '../../components/briefs/Admin';
-import Company from '../../components/briefs/Company';
-import Footer from '../../components/briefs/Footer';
+import Navbar from '../../../../components/topics/Navbar';
+import Admin from '../../../../components/topics/Admin';
+import Company from '../../../../components/topics/Company';
+import Footer from '../../../../components/topics/Footer';
 import { Box, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
 import { Pagination } from '@mui/lab';
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRounded';
+import dbConnect from "@lib/dbConnect";
+import Topic from '@models/topic/Topic';
+import Divider from '@mui/material/Divider';
 
-const Page = () => {
+const Page = ({ url, title, detail, summary, postedAt }) => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data: topics } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/topics`, fetcher);
@@ -21,10 +24,10 @@ const Page = () => {
         <div>
 
             <Head>
-                <title>Briefs • Qarrington</title>
+                <title>{title} • Qarrington</title>
                 <meta
                     name="description"
-                    content="hello"
+                    content={summary}
                 />
             </Head>
 
@@ -41,7 +44,7 @@ const Page = () => {
                         <Grid container spacing={1}>
                             <Grid item xs={12}>
 
-                                <Card style={{ padding: '60px', backgroundColor: 'black', color: 'white', marginBottom: '10px' }}>
+                                {/* <Card style={{ padding: '60px', backgroundColor: 'black', color: 'white', marginBottom: '10px' }}>
                                     <ListItem disablePadding>
                                         <Tooltip title="Post" placement="top">
                                             <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
@@ -57,7 +60,7 @@ const Page = () => {
                                                 <TextField
                                                     required
                                                     id="outlined-required"
-                                                    placeholder="Search from more than 872 topics ..."
+                                                    placeholder="Search from more than 24 topics ..."
                                                     inputProps={{ style: { textAlign: 'center', color: 'white' } }}
                                                 />
                                             </Stack>
@@ -72,25 +75,45 @@ const Page = () => {
                                             </Grid>
                                         </Tooltip>
                                     </ListItem>
-                                </Card>
+                                </Card> */}
 
-                                {topics && Array.isArray(topics) && topics?.slice(0, 3).map(({ _id, topicUrl, topicTags, topicTitle, topicDetail, topicSummary, topicPostedAt }) => (
-                                    <Grid item xs={12}>
-                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                            <Link href={`/dashboard/briefs/manage`}>
-                                                <Typography textAlign="center" sx={ItemTitle} variant="h4" color="black" fontWeight={800}>
-                                                    {topicTitle}?
-                                                </Typography>
-                                            </Link>
-                                        </Card>
-                                    </Grid>
-                                ))}
+                                <Grid item xs={12}>
+                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                        <Typography variant="h1" fontWeight={700} color="black">
+                                            {title}
+                                        </Typography>
+                                    </Card>
+                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                        <Typography variant="h5" fontWeight={500} color="secondary">
+                                            {summary}
+                                        </Typography>
+                                    </Card>
+                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                        <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
+                                            {detail}
+                                        </Typography>
+                                    </Card>
+                                </Grid>
 
-                                <Grid mt={2} item xs={12}>
+                                {/* <Box style={{ padding: '0px 0px 0px 0px' }}>
+                                    <Typography variant="h1" fontWeight={700} color="black">
+                                        {title}
+                                    </Typography>
+                                    <Divider sx={{ my: 3 }} />
+                                    <Typography mt={1} variant="h5" fontWeight={500} color="secondary">
+                                        {summary}
+                                    </Typography>
+                                    <Divider sx={{ my: 3 }} />
+                                    <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
+                                        {detail}
+                                    </Typography>
+                                </Box> */}
+
+                                {/* <Grid mt={2} item xs={12}>
                                     <Box spacing={2} sx={{ display: 'flex', justifyContent: 'center' }}>
                                         <Pagination count={10} variant="outlined" shape="rounded" />
                                     </Box>
-                                </Grid>
+                                </Grid> */}
 
                                 <Footer />
 
@@ -120,33 +143,33 @@ const ItemTitle = {
     }
 };
 
-// export async function getStaticProps({ params }) {
-//     await dbConnect()
-//     const briefItem = await Brief.findOne({ briefUrl: params.briefId });
-//     return {
-//         props: {
-//             url: briefItem.briefUrl,
-//             title: briefItem.briefTitle,
-//             detail: briefItem.briefDetail,
-//             summary: briefItem.briefSummary,
-//             postedAt: briefItem.briefPostedAt
-//         },
-//         revalidate: 60,
-//     };
-// }
+export async function getStaticProps({ params }) {
+    await dbConnect()
+    const topicItem = await Topic.findOne({ topicUrl: params.topicId });
+    return {
+        props: {
+            url: topicItem.topicUrl,
+            title: topicItem.topicTitle,
+            detail: topicItem.topicDetail,
+            summary: topicItem.topicSummary,
+            postedAt: topicItem.topicPostedAt
+        },
+        revalidate: 60,
+    };
+}
 
-// export async function getStaticPaths() {
-//     await dbConnect()
-//     const briefItems = await Brief.find();
-//     return {
-//         paths: briefItems.map(item => {
-//             const briefId = item.briefUrl;
-//             return {
-//                 params: {
-//                     briefId
-//                 }
-//             }
-//         }),
-//         fallback: false
-//     }
-// }
+export async function getStaticPaths() {
+    await dbConnect()
+    const topicItems = await Topic.find();
+    return {
+        paths: topicItems.map(item => {
+            const topicId = item.topicUrl;
+            return {
+                params: {
+                    topicId
+                }
+            }
+        }),
+        fallback: false
+    }
+}

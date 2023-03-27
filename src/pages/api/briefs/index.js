@@ -3,16 +3,16 @@ import Brief from '../../../../models/brief/Brief';
 
 async function handler(req, res) {
   const { method } = req;
-  const { briefUrl } = req.query;
+  const { briefSlug } = req.query;
 
   await dbConnect();
 
   // read items
 
   if (method === "GET") {
-    if (briefUrl) {
+    if (briefSlug) {
       try {
-        const readItems = await Brief.findOne({ briefUrl: briefUrl });
+        const readItems = await Brief.findOne({ briefSlug: briefSlug });
         res.status(200).json(readItems);
       } catch (err) {
         res.status(500).json(err);

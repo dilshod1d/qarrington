@@ -1,13 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import SearchIcon from '@mui/icons-material/Search';
-import TickerMenu from '../../components/menus/TickerMenu';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { Button, Fab, InputBase, Tooltip } from '@mui/material';
 import QrCodeRoundedIcon from '@mui/icons-material/QrCodeRounded';
 import HistoryEduRoundedIcon from '@mui/icons-material/HistoryEduRounded';
-import { Avatar, Box, Card, Container, Divider, Grid, styled, Typography } from '@mui/material';
+import { Avatar, Box, Card, Container, Divider, Grid, Stack, styled, Typography } from '@mui/material';
 import useSWR from 'swr';
+import InboxIcon from '@mui/icons-material/Inbox';
+
+import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
+import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
+import RoomPreferencesRoundedIcon from '@mui/icons-material/RoomPreferencesRounded';
 
 const Component = () => {
 
@@ -32,7 +36,7 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="flex-start">
                 <LogoWrapper>
-                  <Link href="/">
+                  <Link href={`/dashboard`}>
                     <Avatar
                       variant="rounded"
                       alt="Setment Logo"
@@ -40,31 +44,6 @@ const Component = () => {
                     />
                   </Link>
                 </LogoWrapper>
-
-                <Link href="/topics">
-                  <Box sx={{ marginLeft: -1.2 }}>
-                    <Button sx={MenuItem} variant='text' color='secondary'>
-                      topics
-                    </Button>
-                  </Box>
-                </Link>
-
-                <Link href="/stocks">
-                  <Box sx={{ marginLeft: -1.2 }}>
-                    <Button sx={MenuItem} variant='text' color='secondary'>
-                      stocks
-                    </Button>
-                  </Box>
-                </Link>
-
-                <Link href="/cryptos">
-                  <Box sx={{ marginLeft: -1.2 }}>
-                    <Button sx={MenuItem} variant='text' color='secondary'>
-                      cryptos
-                    </Button>
-                  </Box>
-                </Link>
-
               </Box>
             </Grid>
 
@@ -74,44 +53,95 @@ const Component = () => {
 
             <Grid>
               <Box display="flex" justifyContent="center">
-                <Card
-                  component="form"
-                  sx={{
-                    p: '2px 4px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    width: 600
-                  }}
-                >
-                  <Link href="/">
-                    <Tooltip title="All Listings">
-                      <QrCodeRoundedIcon
-                        sx={{ m: '10px', cursor: 'pointer' }}
-                      />
+
+                <Link href={`/briefs/users`}>
+                  <Box>
+                    <Button sx={MenuItem} variant='text' color='secondary'>
+                      users
+                    </Button>
+                  </Box>
+                </Link>
+
+                <Link href={`/briefs/underwriters`}>
+                  <Box>
+                    <Button sx={MenuItem} variant='text' color='secondary'>
+                      underwriters
+                    </Button>
+                  </Box>
+                </Link>
+
+                <Link href={`/briefs/founders`}>
+                  <Box>
+                    <Button sx={MenuItem} variant='text' color='secondary'>
+                      founders
+                    </Button>
+                  </Box>
+                </Link>
+
+                <Link href={`/briefs/publishers`}>
+                  <Box>
+                    <Button sx={MenuItem} variant='text' color='secondary'>
+                      publishers
+                    </Button>
+                  </Box>
+                </Link>
+
+                <Stack mx={1} direction="row">
+                  <Link href={`/briefs/accounts`}>
+                    <Tooltip title="Accounts" placement="top">
+                      <Box sx={MenuIcon}>
+                        <MeetingRoomRoundedIcon sx={{ fontSize: '28px' }} />
+                      </Box>
                     </Tooltip>
                   </Link>
-                  <InputBase
-                    sx={{ ml: 1, flex: 1 }}
-                    placeholder="Search to find answers to 75k questions ..."
-                    inputProps={{ 'aria-label': 'search Qarrington' }}
-                  />
-
-                  <SearchIcon
-                    sx={{ m: '10px' }}
-                  />
-
-                  <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-                  <Link href="/">
-                    <Tooltip
-                      title="New Listings"
-                      placement="bottom"
-                    >
-                      <InfoRoundedIcon
-                        sx={{ m: '10px', color: '#2ed573', cursor: 'pointer' }}
-                      />
+                  <Link href={`/dashboard`}>
+                    <Tooltip title="Dashboard" placement="top">
+                      <Box sx={MenuIcon}>
+                        <GridViewRoundedIcon sx={{ fontSize: '28px' }} />
+                      </Box>
                     </Tooltip>
                   </Link>
-                </Card>
+                  <Link href={`/briefs/settings`}>
+                    <Tooltip title="Settings" placement="top">
+                      <Box sx={MenuIcon}>
+                        <RoomPreferencesRoundedIcon sx={{ fontSize: '28px' }} />
+                      </Box>
+                    </Tooltip>
+                  </Link>
+                </Stack>
+
+                <Link href={`/briefs/chronicles`}>
+                  <Box>
+                    <Button sx={MenuItem} variant='text' color='secondary'>
+                      chronicles
+                    </Button>
+                  </Box>
+                </Link>
+
+                <Link href={`/briefs/bedrocks`}>
+                  <Box>
+                    <Button sx={MenuItem} variant='text' color='secondary'>
+                      bedrocks
+                    </Button>
+                  </Box>
+                </Link>
+
+                <Link href={`/briefs/updates`}>
+                  <Box>
+                    <Button sx={MenuItem} variant='text' color='secondary'>
+                      updates
+                    </Button>
+                  </Box>
+                </Link>
+
+                <Link href={`/briefs/guidelines`}>
+                  <Box>
+                    <Button sx={MenuItem} variant='text' color='secondary'>
+                      guidelines
+                    </Button>
+                  </Box>
+                </Link>
+
               </Box>
             </Grid>
 
@@ -121,39 +151,13 @@ const Component = () => {
 
             <Grid>
               <Box display="flex" justifyContent="flex-end">
-
-                <Link href="/about">
-                  <Box sx={{ marginRight: -1.2 }}>
-                    <Button sx={MenuItem} variant='text' color='secondary'>
-                      about
-                    </Button>
-                  </Box>
-                </Link>
-
-                <Link href="/users">
-                  <Box sx={{ marginRight: -1.2 }}>
-                    <Button sx={MenuItem} variant='text' color='secondary'>
-                      users
-                    </Button>
-                  </Box>
-                </Link>
-
-                <Link href="/exchanges">
-                  <Box sx={{ marginRight: -1.2 }}>
-                    <Button sx={MenuItem} variant='text' color='secondary'>
-                      exchanges
-                    </Button>
-                  </Box>
-                </Link>
-
                 <AvatarWrapper>
-                  <Link href="/account">
+                  <Link href={`/briefs/team`}>
                     <Fab size="small" color="primary" aria-label="add">
                       <HistoryEduRoundedIcon sx={{ color: '#ffffff' }} />
                     </Fab>
                   </Link>
                 </AvatarWrapper>
-
               </Box>
             </Grid>
 
@@ -164,8 +168,6 @@ const Component = () => {
 
       {/* header ends */}
 
-      <TickerMenu />
-
     </>
 
   );
@@ -175,10 +177,11 @@ const Component = () => {
 export default Component;
 
 const MenuItem = {
-  fontWeight: '600',
-  fontSize: '12px',
-  marginX: '4px',
+  fontWeight: '700',
+  fontSize: '11px',
+  marginX: '8px',
   textTransform: 'uppercase',
+  backgroundColor: '#7bed9f10',
   '&:hover': {
     backgroundColor: '#7bed9f20'
   }
@@ -196,6 +199,17 @@ const HeaderCard = styled(Card)(
   z-index: 999;
 `
 );
+
+const MenuIcon = {
+  cursor: 'pointer',
+  display: 'flex',
+  marginX: '6px',
+  alignItems: 'center',
+  color: '#2f3542',
+  '&:hover': {
+    color: '#2ed573'
+  }
+};
 
 const LogoWrapper = styled(Box)(
   ({ theme }) => `

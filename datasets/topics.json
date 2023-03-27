@@ -1,59 +1,42 @@
 [
     {
-        "topicUrl": "what-is-qarrington",
-        "topicTags": [
-            {
-                "topicTagName": "platform"
-            },
-            {
-                "topicTagName": "marketplace"
-            },
-            {
-                "topicTagName": "company"
-            }
-        ],
-        "topicTitle": "What is Qarrington",
-        "topicDetail": "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions. Imagine a stock exchange such as Nasdaq, where company shares are bought and sold, however, instead of shares, it's subscriptions, which are fully backed by products and services offered by the listed companies on Qarrington.",
-        "topicSummary": "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions.",
-        "topicPostedAt": "Fri, Apr 25, 2023, 11:45 PM",
-        "topictopicId": "rhhhukdk884js"
+        "topicSlug": "users",
+        "topicTitle": "Users",
+        "topicDetail": "Find topical answers to all types of questions about how to use Qarrington as a user. Alternatively, you can contact our account managers for 24/7 support."
     },
     {
-        "topicUrl": "what-does-qarrington-do",
-        "topicTags": [
-            {
-                "topicTagName": "platform"
-            },
-            {
-                "topicTagName": "marketplace"
-            },
-            {
-                "topicTagName": "company"
-            }
-        ],
-        "topicTitle": "What does Qarrington do",
-        "topicDetail": "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions. Imagine a stock exchange such as Nasdaq, where company shares are bought and sold, however, instead of shares, it's subscriptions, which are fully backed by products and services offered by the listed companies on Qarrington.",
-        "topicSummary": "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions.",
-        "topicPostedAt": "Fri, Apr 25, 2023, 11:45 PM",
-        "topictopicId": "rhhhukdk884js"
+        "topicSlug": "underwriters",
+        "topicTitle": "Underwriters",
+        "topicDetail": "Find answers to all types of questions about how to use Qarrington as an underwriter. Alternatively, you can contact our account managers for 24/7 support."
     },
     {
-        "topicUrl": "why-was-qarrington-created",
-        "topicTags": [
-            {
-                "topicTagName": "platform"
-            },
-            {
-                "topicTagName": "marketplace"
-            },
-            {
-                "topicTagName": "company"
-            }
-        ],
-        "topicTitle": "Why was Qarrington created",
-        "topicDetail": "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions. Imagine a stock exchange such as Nasdaq, where company shares are bought and sold, however, instead of shares, it's subscriptions, which are fully backed by products and services offered by the listed companies on Qarrington.",
-        "topicSummary": "Qarrington is a subscription exchange, where early-stage startup companies are listed so customers can buy, sell, and transfer their subscriptions.",
-        "topicPostedAt": "Fri, Apr 25, 2023, 11:45 PM",
-        "topictopicId": "rhhhukdk884js"
+        "topicSlug": "founders",
+        "topicTitle": "Founders",
+        "topicDetail": "Find topical answers to all types of questions about how to use Qarrington as a founder. Alternatively, you can contact our account managers for 24/7 help."
+    },
+    {
+        "topicSlug": "publishers",
+        "topicTitle": "Publishers",
+        "topicDetail": "Find topical answers to all types of questions about how to use Qarrington as a publisher. Alternatively, kindly contact our account managers for 24/7 help."
+    },
+    {
+        "topicSlug": "chronicles",
+        "topicTitle": "Chronicles",
+        "topicDetail": "Find topical answers to all types of questions about what Qarrington is and does. In addition to that, you can contact our account managers for 24/7 help."
+    },
+    {
+        "topicSlug": "bedrocks",
+        "topicTitle": "Bedrocks",
+        "topicDetail": "Find topical answers to all types of fundamental questions about how Qarrington works. Alternatively, you can contact our account managers for 24/7 support."
+    },
+    {
+        "topicSlug": "updates",
+        "topicTitle": "Updates",
+        "topicDetail": "Find topical answers to all types of status questions about the latest updates from the Qarrington team. Kindly contact our account managers for 24/7 help."
+    },
+    {
+        "topicSlug": "guidelines",
+        "topicTitle": "Guidelines",
+        "topicDetail": "Find topical answers to all types of legal questions about using Qarrington. Alternatively, you can always contact our account managers for 24/7 support."
     }
 ]

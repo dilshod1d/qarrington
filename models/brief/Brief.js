@@ -1,15 +1,11 @@
 import mongoose from 'mongoose';
 
 const BriefSchema = new mongoose.Schema({
-  briefUrl: { type: String },
-  briefTags: [
-    {
-      briefTagName: { type: String }
-    }
-  ],
+  briefSlug: { type: String },
   briefTitle: { type: String },
   briefDetail: { type: String },
   briefSummary: { type: String },
+  briefTopicId: { type: String },
   briefPostedAt: { type: String }
 });
 

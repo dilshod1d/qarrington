@@ -1,104 +1,152 @@
 import React from 'react';
 import Head from 'next/head';
+import useSWR from 'swr';
+import Link from 'next/link';
 import Navbar from '../../../components/topics/Navbar';
+import Admin from '../../../components/topics/Admin';
+import Company from '../../../components/topics/Company';
 import Footer from '../../../components/topics/Footer';
-import { Box, Container, Divider, Grid, Typography } from '@mui/material';
-import { createClient } from 'contentful';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Box, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
+import { Pagination } from '@mui/lab';
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRounded';
+import dbConnect from "@lib/dbConnect";
+import Brief from '@models/topic/Topic';
 
-const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-})
+const Page = ({ slug, title, detail }) => {
 
-const Page = ({ topicItem }) => {
-
-    const { topicTitle, topicDetail, topicSummary } = topicItem.fields
+    const fetcher = (...args) => fetch(...args).then(res => res.json());
+    const { data: topics } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/topics`, fetcher);
 
     return (
 
-        <>
+        <div>
 
             <Head>
-                <title>{topicTitle} • Qarrington</title>
+                <title>{title} • Qarrington</title>
                 <meta
                     name="description"
-                    content={topicSummary}
+                    content={detail}
                 />
             </Head>
 
-            <Grid style={{ backgroundColor: '#fff' }}>
+            <Navbar />
 
-                <Navbar />
+            <Container>
+                <Grid container spacing={2}>
 
-                <Container style={{ backgroundColor: '#fff' }}>
-                    <Grid container spacing={2}>
-
-                        <Grid item xs>
-                            {/* <LeftSide /> */}
-                        </Grid>
-
-                        <Grid my={8} item xs={7}>
-
-                            <Box style={{ padding: '0px 0px 0px 0px' }}>
-                                <Typography variant="h1" fontWeight={700} color="black">
-                                    {topicTitle}
-                                </Typography>
-                                <Divider sx={{ my: 3 }} />
-                                <Typography mt={1} variant="h5" fontWeight={500} color="secondary">
-                                    {topicSummary}
-                                </Typography>
-                                <Divider sx={{ my: 3 }} />
-                                <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
-                                    {documentToReactComponents(topicDetail)}
-                                </Typography>
-                            </Box>
-
-                            {/* footer starts */}
-
-                            <Footer />
-
-                            {/* footer ends */}
-
-                        </Grid>
-
-                        <Grid item xs>
-                            {/* <RightSide /> */}
-                        </Grid>
-
+                    <Grid item xs={12} md={6} lg={3}>
+                        <Admin />
                     </Grid>
-                </Container>
-            </Grid >
 
-        </>
+                    <Grid item xs={12} md={6} lg={6} mt={12} mb={4}>
+                        <Grid container spacing={1}>
+                            <Grid item xs={12}>
+
+                                <Card style={{ padding: '60px', backgroundColor: 'black', color: 'white', marginBottom: '10px' }}>
+                                    <ListItem disablePadding>
+                                        <Tooltip title="Post" placement="top">
+                                            <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
+                                                <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
+                                                    <Link href="/dashboard/briefs/manage">
+                                                        <AddCircleRoundedIcon />
+                                                    </Link>
+                                                </ListItemIcon>
+                                            </Grid>
+                                        </Tooltip>
+                                        <Grid item xs={12} md={6} lg={8} display="flex" justifyContent="center">
+                                            <Stack spacing={2} sx={{ width: '100%' }}>
+                                                <TextField
+                                                    required
+                                                    id="outlined-required"
+                                                    placeholder="Search from more than 24 topics ..."
+                                                    inputProps={{ style: { textAlign: 'center', color: 'white' } }}
+                                                />
+                                            </Stack>
+                                        </Grid>
+                                        <Tooltip title="Read" placement="top">
+                                            <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
+                                                <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
+                                                    <Link href="/briefs">
+                                                        <AccessTimeFilledRoundedIcon />
+                                                    </Link>
+                                                </ListItemIcon>
+                                            </Grid>
+                                        </Tooltip>
+                                    </ListItem>
+                                </Card>
+
+                                {topics && Array.isArray(topics) && topics?.slice(0, 3).map(({ _id, topicUrl, topicTags, topicTitle, topicDetail, topicSummary, topicPostedAt }) => (
+                                    <Grid item xs={12}>
+                                        <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                            <Link href={`/dashboard/briefs/manage`}>
+                                                <Typography textAlign="center" sx={ItemTitle} variant="h4" color="black" fontWeight={800}>
+                                                    {topicTitle}?
+                                                </Typography>
+                                            </Link>
+                                        </Card>
+                                    </Grid>
+                                ))}
+
+                                <Grid mt={2} item xs={12}>
+                                    <Box spacing={2} sx={{ display: 'flex', justifyContent: 'center' }}>
+                                        <Pagination count={10} variant="outlined" shape="rounded" />
+                                    </Box>
+                                </Grid>
+
+                                <Footer />
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid item xs={12} md={6} lg={3}>
+                        <Company />
+                    </Grid>
+
+                </Grid>
+            </Container>
+
+        </div>
 
     )
 }
 
 export default Page
 
-export const getStaticProps = async ({ params }) => {
-    const { items } = await client.getEntries({
-        content_type: 'topics',
-        'fields.topicUrl': params.topicId
-    });
-    return {
-        props: { topicItem: items[0] },
-        revalidate: 60
+const ItemTitle = {
+    cursor: 'pointer',
+    color: '#000000',
+    '&:hover': {
+        color: '#2ed573'
     }
+};
+
+export async function getStaticProps({ params }) {
+    await dbConnect()
+    const briefItem = await Brief.findOne({ briefSlug: params.briefId });
+    return {
+        props: {
+            slug: briefItem.briefSlug,
+            title: briefItem.briefTitle,
+            detail: briefItem.briefDetail
+        },
+        revalidate: 60,
+    };
 }
 
-export const getStaticPaths = async () => {
-    const res = await client.getEntries({
-        content_type: 'topics'
-    });
-    const paths = res.items.map(item => {
-        return {
-            params: { topicId: item.fields.topicUrl }
-        }
-    });
+export async function getStaticPaths() {
+    await dbConnect()
+    const briefItems = await Brief.find();
     return {
-        paths,
-        fallback: true
+        paths: briefItems.map(item => {
+            const briefId = item.briefSlug;
+            return {
+                params: {
+                    briefId
+                }
+            }
+        }),
+        fallback: false
     }
 }
