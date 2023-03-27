@@ -11,3 +11,23 @@ export const checkoutCardPayment = async (data) => {
     console.log('Something went wrong')
   }
 }
+
+export const cancelPullOf = async (id) => {
+  const url = `${apiUrl}/pulls?pullId=${id}`
+  const response = await axios.delete(url)
+  if(response.status === 204) {
+    return response
+  } else {
+    console.log('Something went wrong')
+  }
+}
+
+export const cancelPushOf = async (id) => {
+  const url = `${apiUrl}/pushes?pushId=${id}`
+  const response = await axios.delete(url)
+  if(response.status === 204) {
+    return response
+  } else {
+    console.log('Something went wrong')
+  }
+}
