@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Navbar from '../../../components/topics/Navbar';
-import Admin from '../../../components/topics/Admin';
-import Company from '../../../components/topics/Company';
-import Footer from '../../../components/topics/Footer';
+import LoggedOut from '../../components/navbar/LoggedOut';
+import Admin from '../../components/topics/Admin';
+import Company from '../../components/topics/Company';
+import Footer from '../../components/topics/Footer';
 import { blue } from '@mui/material/colors';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
@@ -25,7 +25,7 @@ const Page = () => {
                 />
             </Head>
 
-            <Navbar />
+            <LoggedOut />
 
             <Container>
                 <Grid container spacing={2}>

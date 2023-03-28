@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import useSWR from 'swr';
 import Link from 'next/link';
-import Navbar from '../../components/topics/Navbar';
+import LoggedOutin from '../../components/navbar/LoggedOutin';
 import Admin from '../../components/topics/Admin';
 import Company from '../../components/topics/Company';
 import Footer from '../../components/topics/Footer';
@@ -28,7 +28,7 @@ const Page = () => {
                 />
             </Head>
 
-            <Navbar />
+            <LoggedOutin />
 
             <Container>
                 <Grid container spacing={2}>

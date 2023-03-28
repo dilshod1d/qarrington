@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Navbar from '../../../components/topics/Navbar';
-import Admin from '../../../components/topics/Admin';
-import Company from '../../../components/topics/Company';
-import Footer from '../../../components/topics/Footer';
+import LoggedOut from '../../components/navbar/LoggedOut';
+import Admin from '../../components/topics/Admin';
+import Company from '../../components/topics/Company';
+import Footer from '../../components/topics/Footer';
 import { purple } from '@mui/material/colors';
 import InsertCommentRoundedIcon from '@mui/icons-material/InsertCommentRounded';
 import PhoneInTalkRoundedIcon from '@mui/icons-material/PhoneInTalkRounded';
@@ -25,7 +25,7 @@ const Page = () => {
                 />
             </Head>
 
-            <Navbar />
+            <LoggedOut />
 
             <Container>
                 <Grid container spacing={2}>
