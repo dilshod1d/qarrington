@@ -28,7 +28,7 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="flex-start">
                 <LogoWrapper>
-                  <Link href={`/`}>
+                  <Link href={`/account`}>
                     <Avatar
                       variant="rounded"
                       alt="Qarrington Logo"
@@ -100,7 +100,7 @@ const Component = () => {
             <Grid>
               <Box display="flex" justifyContent="flex-end">
                 <AvatarWrapper>
-                  <Link href={`/qa`}>
+                  <Link href={`/account`}>
                     <Fab size="small" color="primary" aria-label="add">
                       <HistoryEduRoundedIcon sx={{ color: '#ffffff' }} />
                     </Fab>
@@ -178,13 +178,13 @@ const menuItems = [
   {
     menuLeft: [
       {
-        menuUrl: "about"
+        menuUrl: "companies"
       },
       {
-        menuUrl: "approach"
+        menuUrl: "subscriptions"
       },
       {
-        menuUrl: "users"
+        menuUrl: "plans"
       },
       {
         menuUrl: "topics"
@@ -194,35 +194,35 @@ const menuItems = [
   {
     menuRight: [
       {
-        menuUrl: "list"
+        menuUrl: "account"
       },
       {
-        menuUrl: "raise"
+        menuUrl: "portfolio"
       },
       {
-        menuUrl: "transact"
+        menuUrl: "referrals"
       },
       {
-        menuUrl: "request"
+        menuUrl: "earnings"
       }
     ]
   },
   {
     menuCenter: [
       {
-        menuUrl: "compare",
+        menuUrl: "/deals",
         menuIcon: <MeetingRoomRoundedIcon sx={{ fontSize: '28px' }} />,
-        menuTitle: "Compare"
+        menuTitle: "Deals"
       },
       {
-        menuUrl: "topics",
+        menuUrl: "/portfolio",
         menuIcon: <GridViewRoundedIcon sx={{ fontSize: '28px' }} />,
-        menuTitle: "Topics"
+        menuTitle: "Portfolio"
       },
       {
-        menuUrl: "contact",
+        menuUrl: "/lists",
         menuIcon: <RoomPreferencesRoundedIcon sx={{ fontSize: '28px' }} />,
-        menuTitle: "Contact"
+        menuTitle: "Lists"
       }
     ]
   }

@@ -2,9 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import useSWR from 'swr';
 import Link from 'next/link';
-import Navbar from '../../../components/topics/Navbar';
-import Admin from '../../../components/topics/Admin';
-import Company from '../../../components/topics/Company';
+import TopicNavbar from '../../../components/navbar/TopicNavbar';
+import MainLeftbar from '../../../components/leftbar/MainLeftbar';
+import MainRightbar from '../../../components/rightbar/MainRightbar';
 import Footer from '../../../components/topics/Footer';
 import { Box, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
 import { Pagination } from '@mui/lab';
@@ -30,16 +30,16 @@ const Page = ({ slug, title, detail }) => {
                 />
             </Head>
 
-            <Navbar />
+            <TopicNavbar />
 
             <Container>
                 <Grid container spacing={2}>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Admin />
+                        <MainLeftbar />
                     </Grid>
 
-                    <Grid item xs={12} md={6} lg={6} mt={12} mb={4}>
+                    <Grid item xs={12} md={6} lg={6} mb={4}>
                         <Grid container spacing={1}>
                             <Grid item xs={12}>
 
@@ -101,7 +101,7 @@ const Page = ({ slug, title, detail }) => {
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Company />
+                        <MainRightbar />
                     </Grid>
 
                 </Grid>

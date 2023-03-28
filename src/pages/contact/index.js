@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import LoggedOut from '../../components/navbar/LoggedOut';
-import Admin from '../../components/topics/Admin';
-import Company from '../../components/topics/Company';
+import MainNavbar from '../../components/navbar/MainNavbar';
+import MainLeftbar from '../../components/leftbar/MainLeftbar';
+import MainRightbar from '../../components/rightbar/MainRightbar';
 import Footer from '../../components/topics/Footer';
 import { purple } from '@mui/material/colors';
 import InsertCommentRoundedIcon from '@mui/icons-material/InsertCommentRounded';
@@ -25,16 +25,16 @@ const Page = () => {
                 />
             </Head>
 
-            <LoggedOut />
+            <MainNavbar />
 
             <Container>
                 <Grid container spacing={2}>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Admin />
+                        <MainLeftbar />
                     </Grid>
 
-                    <Grid item xs={12} md={6} lg={6} mt={12} mb={4}>
+                    <Grid item xs={12} md={6} lg={6} mb={4}>
                         <Grid container spacing={1}>
                             <Grid item xs={12}>
 
@@ -88,7 +88,7 @@ const Page = () => {
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Company />
+                        <MainRightbar />
                     </Grid>
 
                 </Grid>
