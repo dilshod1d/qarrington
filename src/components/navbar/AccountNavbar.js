@@ -49,7 +49,7 @@ const Component = () => {
                 {menuItems && Array.isArray(menuItems) && menuItems?.map(({ menuLeft }) => (
                   <>
                     {menuLeft && Array.isArray(menuLeft) && menuLeft?.map(({ _id, menuUrl }) => (
-                      <Link href={menuUrl} key={_id}>
+                      <Link href={`/${menuUrl}`} key={_id}>
                         <Box>
                           <Button sx={MenuItem} variant='text' color='secondary'>
                             {menuUrl}
@@ -64,7 +64,7 @@ const Component = () => {
                   {menuItems && Array.isArray(menuItems) && menuItems?.map(({ menuCenter }) => (
                     <>
                       {menuCenter && Array.isArray(menuCenter) && menuCenter?.map(({ _id, menuUrl, menuIcon, menuTitle }) => (
-                        <Link href={menuUrl} key={_id}>
+                        <Link href={`/${menuUrl}`} key={_id}>
                           <Tooltip title={menuTitle} placement="top">
                             <Box sx={MenuIcon}>
                               {menuIcon}
@@ -79,7 +79,7 @@ const Component = () => {
                 {menuItems && Array.isArray(menuItems) && menuItems?.map(({ menuRight }) => (
                   <>
                     {menuRight && Array.isArray(menuRight) && menuRight?.map(({ _id, menuUrl }) => (
-                      <Link href={menuUrl} key={_id}>
+                      <Link href={`/${menuUrl}`} key={_id}>
                         <Box>
                           <Button sx={MenuItem} variant='text' color='secondary'>
                             {menuUrl}
@@ -210,17 +210,17 @@ const menuItems = [
   {
     menuCenter: [
       {
-        menuUrl: "/deals",
+        menuUrl: "deals",
         menuIcon: <MeetingRoomRoundedIcon sx={{ fontSize: '28px' }} />,
         menuTitle: "Deals"
       },
       {
-        menuUrl: "/portfolio",
+        menuUrl: "portfolio",
         menuIcon: <GridViewRoundedIcon sx={{ fontSize: '28px' }} />,
         menuTitle: "Portfolio"
       },
       {
-        menuUrl: "/lists",
+        menuUrl: "lists",
         menuIcon: <RoomPreferencesRoundedIcon sx={{ fontSize: '28px' }} />,
         menuTitle: "Lists"
       }

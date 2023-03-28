@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import HeaderMenu from '../../components/menus/HeaderMenu';
-import RightGrid from '../../components/grids/RightGrid';
+import MainNavbar from '../../components/navbar/MainNavbar';
+import MainRightbar from '../../components/rightbar/MainRightbar';
 import { Avatar, Badge, Box, Card, Container, Grid, styled, Typography } from '@mui/material';
-import Footer from '../../components/main/Footer';
+import DisclaimerFooter from '../../components/footer/DisclaimerFooter';
 
 const Page = () => {
 
@@ -15,11 +15,11 @@ const Page = () => {
                 <title>Challenges • Qarrington</title>
                 <meta
                     name="description"
-                    content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
+                    content="We created Qarrington as a subscription exchange so founders of early-stage startup companies can raise funds while keeping 100% of their equity ownership."
                 />
             </Head>
 
-            <HeaderMenu />
+            <MainNavbar />
 
             <Container>
                 <Grid container spacing={2}>
@@ -75,13 +75,13 @@ const Page = () => {
                                     </Grid>
                                 </Grid>
 
-                                <Footer />
+                                <DisclaimerFooter />
                             </Grid>
                         </Grid>
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <RightGrid />
+                        <MainRightbar />
                     </Grid>
 
                 </Grid>

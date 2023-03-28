@@ -1,14 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { pink } from '@mui/material/colors';
 import MainNavbar from '../../components/navbar/MainNavbar';
 import MainLeftbar from '../../components/leftbar/MainLeftbar';
 import MainRightbar from '../../components/rightbar/MainRightbar';
 import DisclaimerFooter from '../../components/footer/DisclaimerFooter';
-import { purple } from '@mui/material/colors';
-import InsertCommentRoundedIcon from '@mui/icons-material/InsertCommentRounded';
-import PhoneInTalkRoundedIcon from '@mui/icons-material/PhoneInTalkRounded';
-import SmsRoundedIcon from '@mui/icons-material/SmsRounded';
+import LooksOneRoundedIcon from '@mui/icons-material/LooksOneRounded';
+import LooksTwoRoundedIcon from '@mui/icons-material/LooksTwoRounded';
+import Looks3RoundedIcon from '@mui/icons-material/Looks3Rounded';
 import { Box, Card, Container, Grid, Tooltip, Typography } from '@mui/material';
 
 const Page = () => {
@@ -18,10 +18,10 @@ const Page = () => {
         <div>
 
             <Head>
-                <title>Contact • Qarrington</title>
+                <title>List • Qarrington</title>
                 <meta
                     name="description"
-                    content="If you're unable to find a brief that answers your question, kindly email, call, or text our 24/7 account managers & we'd reply in 12hrs."
+                    content="If you have a portfolio of early-stage startup companies looking forward to doing an ISO, follow the below steps for listing."
                 />
             </Head>
 
@@ -40,7 +40,7 @@ const Page = () => {
 
                                 <Card style={{ padding: '60px', marginBottom: '10px' }}>
                                     <Typography variant="body" color="secondary" fontWeight={600}>
-                                        If you're unable to find a brief that answers your question, kindly email, call, or text our 24/7 account managers & we'd reply in 12hrs.
+                                        If you have a portfolio of early-stage startup companies looking forward to raising funds thru an ISO, follow the below listing steps.
                                     </Typography>
                                 </Card>
 
@@ -49,9 +49,9 @@ const Page = () => {
 
                                         {arrayItems && arrayItems.map(({ _id, icon, title, detail, tooltip }) => (
                                             <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                <Link href={`/account`}>
+                                                <Link href={`/qa`}>
                                                     <Tooltip title={tooltip} placement="top">
-                                                        <Card style={{ padding: '40px' }}>
+                                                        <Card style={{ padding: '35px', cursor: 'pointer' }}>
                                                             <Box
                                                                 style={{
                                                                     display: 'flex',
@@ -104,23 +104,23 @@ export default Page
 const arrayItems = [
     {
         _id: 1,
-        icon: <InsertCommentRoundedIcon color="primary" sx={{ fontSize: '40px', color: purple[200] }} />,
-        title: "Email",
-        detail: "Send us an email, we're  24/7 online.",
-        tooltip: "support@site.com"
+        icon: <LooksOneRoundedIcon color="primary" sx={{ fontSize: '40px', color: pink[200] }} />,
+        title: "Pay",
+        detail: "Make the one-time company listing fee.",
+        tooltip: "You're required to pay a one-time listing fee, which is 100% refundable after the ISO of your first listed company."
     },
     {
         _id: 2,
-        icon: <PhoneInTalkRoundedIcon color="primary" sx={{ fontSize: '40px', color: purple[800] }} />,
-        title: "Call",
-        detail: "Give us a call from any country.",
-        tooltip: "+18743294580"
+        icon: <LooksTwoRoundedIcon color="primary" sx={{ fontSize: '40px', color: pink[800] }} />,
+        title: "Submit",
+        detail: "Submit a startup company for listing.",
+        tooltip: "You can list any type of startup company from any industry, but the business model must be subscription."
     },
     {
         _id: 3,
-        icon: <SmsRoundedIcon color="primary" sx={{ fontSize: '40px', color: purple[400] }} />,
-        title: "Text",
-        detail: "Send us an SMS, we reply globally.",
-        tooltip: "+18437840278"
+        icon: <Looks3RoundedIcon color="primary" sx={{ fontSize: '40px', color: pink[400] }} />,
+        title: "Get",
+        detail: "Receive proceeds after the ISO launch.",
+        tooltip: "You'd get 10% from a company's ISO proceeds & 80% goes to the company. We charge 10% as a platform fee."
     }
 ]

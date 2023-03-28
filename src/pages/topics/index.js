@@ -5,7 +5,7 @@ import Link from 'next/link';
 import TopicNavbar from '../../components/navbar/TopicNavbar';
 import MainLeftbar from '../../components/leftbar/MainLeftbar';
 import MainRightbar from '../../components/rightbar/MainRightbar';
-import Footer from '../../components/topics/Footer';
+import DisclaimerFooter from '../../components/footer/DisclaimerFooter';
 import { Box, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
 import { Pagination } from '@mui/lab';
 import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
@@ -92,7 +92,7 @@ const Page = () => {
                                     </Box>
                                 </Grid>
 
-                                <Footer />
+                                <DisclaimerFooter />
 
                             </Grid>
                         </Grid>

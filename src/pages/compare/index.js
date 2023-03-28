@@ -4,7 +4,7 @@ import Link from 'next/link';
 import MainNavbar from '../../components/navbar/MainNavbar';
 import MainLeftbar from '../../components/leftbar/MainLeftbar';
 import MainRightbar from '../../components/rightbar/MainRightbar';
-import Footer from '../../components/topics/Footer';
+import DisclaimerFooter from '../../components/footer/DisclaimerFooter';
 import { blue } from '@mui/material/colors';
 import { Avatar, Box, Card, Container, Grid, Tooltip, Typography } from '@mui/material';
 
@@ -122,7 +122,7 @@ const Page = () => {
                                     </Grid>
                                 </Grid>
 
-                                <Footer />
+                                <DisclaimerFooter />
 
                             </Grid>
                         </Grid>
