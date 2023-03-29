@@ -27,7 +27,7 @@ const Page = () => {
 
       <HomeNavbar />
 
-      <Grid container spacing={2}>
+      <Grid container>
         <Box
           style={{
             display: 'flex',
@@ -35,69 +35,113 @@ const Page = () => {
           }}
         >
 
-          {/* <Grid item xs={12} md={6} lg={3}>
-                        <MainLeftbar />
-                    </Grid> */}
-
           <Grid item xs={12} md={6} lg={8} mb={4}>
-            <>
-              <Grid item xs={12}>
+            <Grid item xs={12}>
 
-                <Card style={{ padding: '40px 0px 40px 0px', marginBottom: '20px' }}>
-                  <Typography variant="h2" color="black" fontWeight={800}>
-                    Buy, sell, & transfer subscriptions.
-                  </Typography>
-                  <Typography variant="body" color="secondary" fontWeight={600}>
-                    If you have a portfolio of early-stage startup companies looking forward to raising funds thru an ISO, follow the below listing steps.
-                  </Typography>
-                </Card>
+              {/* one */}
 
-                <Grid item xs={12} my={0}>
-                  <Grid container spacing={2}>
+              <Card style={{ padding: '40px 0px 40px 0px', marginBottom: '20px' }}>
+                <Typography variant="h2" color="black" fontWeight={800}>
+                  Buy, sell, & transfer subscriptions.
+                </Typography>
+                <Typography variant="body" color="secondary" fontWeight={600}>
+                  If you have a portfolio of early-stage startup companies looking forward to raising funds thru an ISO, follow the below listing steps.
+                </Typography>
+              </Card>
 
-                    {arrayItems && arrayItems.map(({ _id, icon, title, detail, tooltip }) => (
-                      <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                        <Link href={`/qa`}>
-                          <Tooltip title={tooltip} placement="top">
-                            <Card style={{ padding: '35px', cursor: 'pointer' }}>
-                              <Box
-                                style={{
-                                  display: 'flex',
-                                  justifyContent: 'center'
-                                }}
-                              >
-                                {icon}
+              <Grid item xs={12} my={0}>
+                <Grid container spacing={2}>
+
+                  {arrayItems && arrayItems.map(({ _id, icon, title, detail, tooltip }) => (
+                    <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                      <Link href={`/qa`}>
+                        <Tooltip title={tooltip} placement="top">
+                          <Card style={{ padding: '35px', cursor: 'pointer' }}>
+                            <Box
+                              style={{
+                                display: 'flex',
+                                justifyContent: 'center'
+                              }}
+                            >
+                              {icon}
+                            </Box>
+                            <Box mt={1} style={{ textAlign: 'center' }}>
+                              <Box mb={1}>
+                                <Typography gutterBottom variant="h4" fontWeight={700} color="black">
+                                  {title}
+                                </Typography>
                               </Box>
-                              <Box mt={1} style={{ textAlign: 'center' }}>
-                                <Box mb={1}>
-                                  <Typography gutterBottom variant="h4" fontWeight={700} color="black">
-                                    {title}
-                                  </Typography>
-                                </Box>
-                                <Box>
-                                  <Typography variant="body2" fontWeight={600} color="secondary">
-                                    {detail}
-                                  </Typography>
-                                </Box>
+                              <Box>
+                                <Typography variant="body2" fontWeight={600} color="secondary">
+                                  {detail}
+                                </Typography>
                               </Box>
-                            </Card>
-                          </Tooltip>
-                        </Link>
-                      </Grid>
-                    ))}
+                            </Box>
+                          </Card>
+                        </Tooltip>
+                      </Link>
+                    </Grid>
+                  ))}
 
-                  </Grid>
                 </Grid>
-
-                <DisclaimerFooter />
-
               </Grid>
-            </>
-          </Grid>
 
-          {/* <Grid item xs={12} md={6} lg={3}>
-                        <MainRightbar />
-                    </Grid> */}
+              {/* one */}
+
+              {/* two */}
+
+              <Card style={{ padding: '40px 0px 40px 0px', marginBottom: '20px' }}>
+                <Typography variant="h2" color="black" fontWeight={800}>
+                  Buy, sell, & transfer subscriptions.
+                </Typography>
+                <Typography variant="body" color="secondary" fontWeight={600}>
+                  If you have a portfolio of early-stage startup companies looking forward to raising funds thru an ISO, follow the below listing steps.
+                </Typography>
+              </Card>
+
+              <Grid item xs={12} my={0}>
+                <Grid container spacing={2}>
+
+                  {arrayItems && arrayItems.map(({ _id, icon, title, detail, tooltip }) => (
+                    <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                      <Link href={`/qa`}>
+                        <Tooltip title={tooltip} placement="top">
+                          <Card style={{ padding: '35px', cursor: 'pointer' }}>
+                            <Box
+                              style={{
+                                display: 'flex',
+                                justifyContent: 'center'
+                              }}
+                            >
+                              {icon}
+                            </Box>
+                            <Box mt={1} style={{ textAlign: 'center' }}>
+                              <Box mb={1}>
+                                <Typography gutterBottom variant="h4" fontWeight={700} color="black">
+                                  {title}
+                                </Typography>
+                              </Box>
+                              <Box>
+                                <Typography variant="body2" fontWeight={600} color="secondary">
+                                  {detail}
+                                </Typography>
+                              </Box>
+                            </Box>
+                          </Card>
+                        </Tooltip>
+                      </Link>
+                    </Grid>
+                  ))}
+
+                </Grid>
+              </Grid>
+
+              {/* two */}
+
+              <DisclaimerFooter />
+
+            </Grid>
+          </Grid>
 
         </Box>
       </Grid>
