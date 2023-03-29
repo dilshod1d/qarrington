@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button, Fab, Tooltip } from '@mui/material';
-import HistoryEduRoundedIcon from '@mui/icons-material/HistoryEduRounded';
+import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 import { Avatar, Box, Card, Container, Grid, Stack, styled } from '@mui/material';
 import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
 import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
@@ -95,21 +95,21 @@ const Component = () => {
 
             {/* menu items end */}
 
-            {/* user starts */}
+            {/* meet starts */}
 
             <Grid>
               <Box display="flex" justifyContent="flex-end">
                 <AvatarWrapper>
                   <Link href={`/account`}>
                     <Fab size="small" color="primary" aria-label="add">
-                      <HistoryEduRoundedIcon sx={{ color: '#ffffff' }} />
+                      <CalendarMonthRoundedIcon sx={{ color: '#ffffff' }} />
                     </Fab>
                   </Link>
                 </AvatarWrapper>
               </Box>
             </Grid>
 
-            {/* user ends */}
+            {/* meet ends */}
 
           </Box>
         </Container>

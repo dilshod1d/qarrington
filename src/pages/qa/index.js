@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import { Avatar, Box, Breadcrumbs, Button, Container, Grid, Stack, styled, Tooltip, Typography } from '@mui/material';
-import MainStoryGuideSlide from '../components/slide/MainStoryGuideSlide';
+import MainStoryGuideSlide from '../../components/slide/MainStoryGuideSlide';
 
 const Page = () => {
 
@@ -12,10 +12,10 @@ const Page = () => {
     <>
 
       <Head>
-        <title>Oops • Qarrington</title>
+        <title>Q&A • Qarrington</title>
         <meta
           name="description"
-          content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
+          content="If you'd like to list a startup company for an Initial Subscription Offering or ISO, kindly join our weekly Q&A so we can see how your business model fits."
         />
       </Head>
 
@@ -60,14 +60,24 @@ const Page = () => {
                 </Box>
 
                 <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  Sorry, we couldn't find the requested route
-                  <Tooltip title="Subscriptions only give you access to a company's products and services, they don't represent investments in the firm." placement="top">
+                  Imagine raising $85M with 0% equity dilution
+                  <Tooltip title="Subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
                     <InfoRoundedIcon fontSize="small" color="primary" />
                   </Tooltip>
                 </Typography>
 
                 <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  Qarrington is a subscription exchange, where you can buy and sell the subscriptions of technology companies to cover your expenses. It's like stocks and cryptos, but backed by products.
+                  Imagine a subscription exchange, where startups can raise funds thru <Tooltip title="This is the process of listing a company on a subscription exchange, where its subscriptions can be sold to customers." placement="top">
+                    <Typography
+                      component="span"
+                      fontWeight={700}
+                      color="primary"
+                      variant="h6"
+                      sx={{
+                        "&:hover": {
+                          color: '#000'
+                        }
+                      }}>Initial Subscription Offering</Typography></Tooltip>. If you want to list a company as a <b>founder</b> or list other companies as an <b>underwriter</b>, we're here.
                 </Typography>
 
               </Box>
@@ -89,7 +99,7 @@ const Page = () => {
                       </Button>
                     </Link>
 
-                    <Link href="/qa">
+                    <Link href="https://calendly.com/banjodeiyowun/qarrington">
                       <Button
                         size="large"
                         sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import { Avatar, Badge, Box, Button, Container, Grid, Hidden, Stack, styled, TextField, Tooltip, Typography, Snackbar } from '@mui/material';
+import { Avatar, Box, Button, Container, Grid, Stack, styled, TextField, Tooltip, Typography, Snackbar } from '@mui/material';
 import Company from '@models/company/Company';
 import dbConnect from '@lib/dbConnect';
 import { useEffect } from 'react';
@@ -10,11 +10,9 @@ import { parseToObj } from '@helpers/checkout-helpers';
 import { useCardList } from '@hooks/useCardList';
 import { checkoutCardPayment } from '@services/checkout-services';
 import { useRouter } from 'next/router';
-import RightGridGuidesStories from '@components/grids/rightGridGuidesStories';
-import Story from '@models/story/Story';
-import Guide from '@models/guide/Guide';
+import MainStoryGuideSlide from '../../../components/slide/MainStoryGuideSlide';
 
-const Page = ({ companySlug, companyName, companyDescription, companyLogo, stories, guides }) => {
+const Page = ({ companySlug, companyName, companyDescription, companyLogo }) => {
   const router = useRouter();
 
   const { contentData, currentContentData, goNext, goBack, error, errorMsg, cleanError, cleanErrorMsg, finish, lastInput } = useCardList();
@@ -47,7 +45,7 @@ const Page = ({ companySlug, companyName, companyDescription, companyLogo, stori
         const toSend = parseToObj(contentData);
 
         let response
-        if(router.query.type === "pick") {
+        if (router.query.type === "pick") {
           response = await checkoutCardPayment({
             ...toSend,
             type: router.query.type,
@@ -74,7 +72,7 @@ const Page = ({ companySlug, companyName, companyDescription, companyLogo, stori
           return router.push('/portfolio')
         }
         if (!response || response.success === false) console.log('Something went wrong!', response?.message);
-        
+
       } catch (error) {
         console.log(error);
       }
@@ -83,7 +81,9 @@ const Page = ({ companySlug, companyName, companyDescription, companyLogo, stori
   }, [finish]);
 
   return (
+
     <>
+
       <Head>
         <title>Hi {companySlug} • Qarrington</title>
         <meta
@@ -93,7 +93,9 @@ const Page = ({ companySlug, companyName, companyDescription, companyLogo, stori
       </Head>
 
       <MainContent style={Body}>
+
         <Grid container sx={{ height: '100%' }} alignItems="stretch" spacing={0}>
+
           {/* left container starts */}
 
           <Grid xs={12} md={6} alignItems="center" display="flex" justifyContent="center" item>
@@ -129,6 +131,7 @@ const Page = ({ companySlug, companyName, companyDescription, companyLogo, stori
               </Box>
 
               <form noValidate autoComplete="on" onSubmit={handleNext}>
+
                 <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px' }}>
                   <Stack spacing={1.2} sx={{ width: '100%' }}>
                     {finish || !currentContentData ? (
@@ -202,7 +205,9 @@ const Page = ({ companySlug, companyName, companyDescription, companyLogo, stori
                     advance its subscriptions to customers.
                   </Typography>
                 </Box>
+
               </form>
+
             </Container>
           </Grid>
 
@@ -210,20 +215,19 @@ const Page = ({ companySlug, companyName, companyDescription, companyLogo, stori
 
           {/* right container starts */}
 
-          <Hidden mdDown>
-            <GridWrapper xs={12} md={6} alignItems="center" display="flex" justifyContent="center" item>
-              <Container maxWidth="sm">
-                <RightGridGuidesStories stories={stories} guides={guides} />
-              </Container>
-            </GridWrapper>
-          </Hidden>
+          <MainStoryGuideSlide />
 
           {/* right container ends */}
+
         </Grid>
+
       </MainContent>
+
     </>
-  );
-};
+
+  )
+
+}
 
 export default Page;
 
@@ -231,29 +235,6 @@ const FormButton = {
   '&:hover': {
     color: 'white',
     backgroundColor: '#f5f5f5'
-  }
-};
-
-const AccountButton = {
-  fontWeight: '800',
-  fontSize: '12px',
-  padding: '20px 40px 20px 40px',
-  textTransform: 'uppercase',
-  backgroundColor: 'white',
-  color: '#2f3542',
-  '&:hover': {
-    backgroundColor: '#ffffff90'
-  }
-};
-
-const LinkItem = {
-  fontWeight: '700',
-  fontSize: '12px',
-  marginX: '4px',
-  textTransform: 'uppercase',
-  '&:hover': {
-    color: '#000',
-    backgroundColor: 'transparent'
   }
 };
 
@@ -269,44 +250,9 @@ const MainContent = styled(Box)(
 `
 );
 
-const GridWrapper = styled(Grid)(
-  ({ theme }) => `
-    background: ${theme.colors.gradients.green2};
-`
-);
-
 const Body = {
   backgroundColor: '#ffffff'
 };
-
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  '& .MuiBadge-badge': {
-    backgroundColor: '#44b700',
-    color: '#44b700',
-    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-    '&::after': {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      borderRadius: '50%',
-      animation: 'ripple 1.2s infinite ease-in-out',
-      border: '1px solid currentColor',
-      content: '""'
-    }
-  },
-  '@keyframes ripple': {
-    '0%': {
-      transform: 'scale(.8)',
-      opacity: 1
-    },
-    '100%': {
-      transform: 'scale(2.4)',
-      opacity: 0
-    }
-  }
-}));
 
 export async function getServerSideProps({ params }) {
   try {
@@ -314,10 +260,6 @@ export async function getServerSideProps({ params }) {
     const { companyId } = params;
     const company = await Company.findOne({ companySlug: companyId.toLowerCase() });
     const parsedCompany = JSON.parse(JSON.stringify(company));
-
-    const stories = await Story.find();
-    const guides = await Guide.find();
-
     const { companyListing, companySlug } = parsedCompany;
     const { companyName, companyDescription, companyLogo } = companyListing;
 
@@ -326,9 +268,7 @@ export async function getServerSideProps({ params }) {
         companySlug,
         companyName,
         companyDescription,
-        companyLogo,
-        stories: stories ? JSON.parse(JSON.stringify(stories)) : [],
-        guides: guides ? JSON.parse(JSON.stringify(stories)) : []
+        companyLogo
       }
     };
   } catch (error) {

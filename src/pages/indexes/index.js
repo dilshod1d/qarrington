@@ -1,28 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from 'next/link';
 import Head from 'next/head';
-import Carousel from 'react-material-ui-carousel';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tooltip, Typography } from '@mui/material';
-import useSWR from 'swr';
+import { Avatar, Box, Breadcrumbs, Button, Container, Grid, Stack, styled, Tooltip, Typography } from '@mui/material';
+import StockStoryGuideSlide from '../../components/slide/StockStoryGuideSlide';
 
 const Page = () => {
-
-    const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
-    const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
-
-    const [value, setValue] = useState('1');
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
 
     return (
 
         <>
 
-<Head>
+            <Head>
                 <title>How Subscriptions Can Outperform the S&P 500 • Qarrington</title>
                 <meta
                     name="description"
@@ -148,131 +137,7 @@ const Page = () => {
 
                     {/* right container starts */}
 
-                    <Hidden mdDown>
-                        <GridWrapper
-                            xs={12}
-                            md={6}
-                            alignItems="center"
-                            display="flex"
-                            justifyContent="center"
-                            item
-                        >
-
-                            <Container maxWidth="sm">
-
-                                {/* tab starts */}
-
-                                <Box style={{ marginBottom: '0px', marginTop: '16px' }}>
-
-                                    {/* founder tab starts */}
-
-                                    <Box textAlign="center" mb={2}>
-
-                                        <Box textAlign="center" mb={2}>
-                                            {stories && Array.isArray(stories) && stories?.map(({ _id, storyByTrader }) => (
-                                                <>
-                                                    <Carousel>
-                                                        {storyByTrader && Array.isArray(storyByTrader) && storyByTrader?.map(({ _id, storyByTraderName, storyByTraderTitle, storyByTraderAvatar, storyByTraderContent, storyByTraderIsActive }) => (
-                                                            <Box key={_id}>
-                                                                <Box
-                                                                    style={{
-                                                                        display: 'flex',
-                                                                        justifyContent: 'center'
-                                                                    }}
-                                                                >
-                                                                    <StyledBadge
-                                                                        overlap="circular"
-                                                                        anchorOrigin={{
-                                                                            vertical: 'bottom',
-                                                                            horizontal: 'right'
-                                                                        }}
-                                                                        variant={storyByTraderIsActive}
-                                                                    >
-                                                                        <Avatar
-                                                                            style={{ width: 80, height: 80 }}
-                                                                            alt={storyByTraderName}
-                                                                            src={storyByTraderAvatar}
-                                                                        />
-                                                                    </StyledBadge>
-                                                                </Box>
-                                                                <Box marginTop="16px">
-                                                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByTraderName}</Typography>
-                                                                    <Typography variant="body" component="div" gutterBottom>{storyByTraderTitle}</Typography>
-                                                                    <Typography variant="h5" component="div" fontWeight="600">{storyByTraderContent}</Typography>
-                                                                </Box>
-                                                            </Box>
-                                                        ))}
-                                                    </Carousel>
-                                                </>
-                                            ))}
-                                        </Box>
-
-                                    </Box>
-
-                                    <Grid item xs={12} mt={2}>
-                                        <Grid container spacing={1}>
-                                            {guides && Array.isArray(guides) && guides?.map(({ _id, guideForCustomer }) => (
-                                                <>
-                                                    {guideForCustomer && Array.isArray(guideForCustomer) && guideForCustomer?.map(({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
-                                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                                            <Tooltip title={guideForCustomerTooltip} placement="top">
-                                                                <Card style={{ padding: '22px' }}>
-                                                                    <Box
-                                                                        style={{
-                                                                            display: 'flex',
-                                                                            justifyContent: 'center'
-                                                                        }}
-                                                                    >
-                                                                        <Badge
-                                                                            overlap="circular"
-                                                                            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                                                            badgeContent={
-                                                                                <InfoRoundedIcon fontSize="small" color="primary" />
-                                                                            }
-                                                                        >
-                                                                            <Avatar
-                                                                                style={{ width: 50, height: 50 }}
-                                                                                alt={guideForCustomerTitle}
-                                                                                src={guideForCustomerIcon}
-                                                                            />
-                                                                        </Badge>
-                                                                    </Box>
-                                                                    <Box style={{ textAlign: 'center' }}>
-                                                                        <Box mt={1.2}>
-                                                                            <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
-                                                                                {guideForCustomerTitle}
-                                                                            </Typography>
-                                                                            <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
-                                                                                {guideForCustomerContent}
-                                                                            </Typography>
-                                                                        </Box>
-                                                                    </Box>
-                                                                </Card>
-                                                            </Tooltip>
-                                                        </Grid>
-                                                    ))}
-                                                </>
-                                            ))}
-                                        </Grid>
-                                    </Grid>
-
-                                    {/* founder tab ends */}
-
-                                </Box>
-
-                                <Box textAlign="center" mt={2}>
-                                    <Typography component="span" variant="body2" fontWeight={600} color="black">
-                                        An Initial Subscription Offering or ISO allows you to buy the subscriptions of innovative early-stage startup companies before they're listed on a subscription exchange.
-                                    </Typography>
-                                </Box>
-
-                                {/* tab stops */}
-
-                            </Container>
-
-                        </GridWrapper>
-
-                    </Hidden>
+                    <StockStoryGuideSlide />
 
                     {/* right container ends */}
 
@@ -287,35 +152,6 @@ const Page = () => {
 
 export default Page;
 
-const StyledBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-        backgroundColor: '#44b700',
-        color: '#44b700',
-        boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-        '&::after': {
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            borderRadius: '50%',
-            animation: 'ripple 1.2s infinite ease-in-out',
-            border: '1px solid currentColor',
-            content: '""',
-        },
-    },
-    '@keyframes ripple': {
-        '0%': {
-            transform: 'scale(.8)',
-            opacity: 1,
-        },
-        '100%': {
-            transform: 'scale(2.4)',
-            opacity: 0,
-        },
-    },
-}));
-
 const MainContent = styled(Box)(
     () => `
     height: 100%;
@@ -325,12 +161,6 @@ const MainContent = styled(Box)(
     flex-direction: column;
     align-items: center;
     justify-content: center;
-`
-);
-
-const GridWrapper = styled(Grid)(
-    ({ theme }) => `
-    background: ${theme.colors.gradients.green2};
 `
 );
 

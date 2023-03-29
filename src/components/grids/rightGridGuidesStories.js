@@ -43,17 +43,17 @@ const RightGridGuidesStories = ({ stories, guides }) => {
           <TabPanel sx={{ padding: 0 }} value="1">
             <Box textAlign="center" mb={2}>
               {stories.length > 0 &&
-                stories.map(({ _id, storyByCustomer }) => (
+                stories.map(({ _id, storyBySubscriber }) => (
                   <Carousel key={_id}>
-                    {storyByCustomer.length > 0 &&
-                      storyByCustomer.map(
+                    {storyBySubscriber.length > 0 &&
+                      storyBySubscriber.map(
                         ({
                           _id,
-                          storyByCustomerName,
-                          storyByCustomerTitle,
-                          storyByCustomerAvatar,
-                          storyByCustomerContent,
-                          storyByCustomerIsActive
+                          storyBySubscriberName,
+                          storyBySubscriberTitle,
+                          storyBySubscriberAvatar,
+                          storyBySubscriberContent,
+                          storyBySubscriberIsActive
                         }) => (
                           <Box key={_id}>
                             <Box
@@ -68,20 +68,20 @@ const RightGridGuidesStories = ({ stories, guides }) => {
                                   vertical: 'bottom',
                                   horizontal: 'right'
                                 }}
-                                variant={storyByCustomerIsActive}
+                                variant={storyBySubscriberIsActive}
                               >
-                                <Avatar style={{ width: 80, height: 80 }} alt={storyByCustomerName} src={storyByCustomerAvatar} />
+                                <Avatar style={{ width: 80, height: 80 }} alt={storyBySubscriberName} src={storyBySubscriberAvatar} />
                               </StyledBadge>
                             </Box>
                             <Box marginTop="16px">
                               <Typography variant="h5" component="div" fontWeight="600" gutterBottom>
-                                {storyByCustomerName}
+                                {storyBySubscriberName}
                               </Typography>
                               <Typography variant="body" component="div" gutterBottom>
-                                {storyByCustomerTitle}
+                                {storyBySubscriberTitle}
                               </Typography>
                               <Typography variant="h5" component="div" fontWeight="600">
-                                {storyByCustomerContent}
+                                {storyBySubscriberContent}
                               </Typography>
                             </Box>
                           </Box>
@@ -93,14 +93,14 @@ const RightGridGuidesStories = ({ stories, guides }) => {
 
             <Grid item xs={12} mt={2}>
               <Grid container spacing={1}>
-                {guides.length > 0 && guides.map(({ _id, guideForCustomer }) => (
+                {guides.length > 0 && guides.map(({ _id, guideForSubscriber }) => (
                     <div key={_id}>
-                      {guideForCustomer &&
-                        Array.isArray(guideForCustomer) &&
-                        guideForCustomer?.map(
-                          ({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
+                      {guideForSubscriber &&
+                        Array.isArray(guideForSubscriber) &&
+                        guideForSubscriber?.map(
+                          ({ _id, guideForSubscriberIcon, guideForSubscriberTitle, guideForSubscriberContent, guideForSubscriberTooltip }) => (
                             <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                              <Tooltip title={guideForCustomerTooltip} placement="top">
+                              <Tooltip title={guideForSubscriberTooltip} placement="top">
                                 <Card style={{ padding: '22px' }}>
                                   <Box
                                     style={{
@@ -113,16 +113,16 @@ const RightGridGuidesStories = ({ stories, guides }) => {
                                       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                                       badgeContent={<InfoRoundedIcon fontSize="small" color="primary" />}
                                     >
-                                      <Avatar style={{ width: 50, height: 50 }} alt={guideForCustomerTitle} src={guideForCustomerIcon} />
+                                      <Avatar style={{ width: 50, height: 50 }} alt={guideForSubscriberTitle} src={guideForSubscriberIcon} />
                                     </Badge>
                                   </Box>
                                   <Box style={{ textAlign: 'center' }}>
                                     <Box mt={1.2}>
                                       <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
-                                        {guideForCustomerTitle}
+                                        {guideForSubscriberTitle}
                                       </Typography>
                                       <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
-                                        {guideForCustomerContent}
+                                        {guideForSubscriberContent}
                                       </Typography>
                                     </Box>
                                   </Box>

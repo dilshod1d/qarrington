@@ -3,61 +3,81 @@
     "guideForUnderwriter": [
       {
         "guideForUnderwriterIcon": "",
-        "guideForUnderwriterTitle": "",
-        "guideForUnderwriterContent": "",
-        "guideForUnderwriterTooltip": ""
+        "guideForUnderwriterTitle": "Pay",
+        "guideForUnderwriterContent": "Make the one-time company listing fee.",
+        "guideForUnderwriterTooltip": "You're required to pay a one-time listing fee, which is 100% refundable after the ISO of your first listed company."
       },
       {
         "guideForUnderwriterIcon": "",
-        "guideForUnderwriterTitle": "",
-        "guideForUnderwriterContent": "",
-        "guideForUnderwriterTooltip": ""
+        "guideForUnderwriterTitle": "Submit",
+        "guideForUnderwriterContent": "Submit a startup company for listing.",
+        "guideForUnderwriterTooltip": "You can list any type of startup company from any industry, but the business model must be subscription."
       },
       {
         "guideForUnderwriterIcon": "",
-        "guideForUnderwriterTitle": "",
-        "guideForUnderwriterContent": "",
-        "guideForUnderwriterTooltip": ""
+        "guideForUnderwriterTitle": "Get",
+        "guideForUnderwriterContent": "Receive proceeds after the ISO launch.",
+        "guideForUnderwriterTooltip": "You'd get 10% from a company's ISO proceeds & 80% goes to the company. We charge 10% as a platform fee."
       }
     ],
     "guideForFounder": [
       {
-        "guideForFounderIcon": "/assets/media/guides/list.png",
-        "guideForFounderTitle": "List",
-        "guideForFounderContent": "Underwriter lists a company for ISO.",
-        "guideForFounderTooltip": "An underwriter can list a company for free, however, if a company wants to list directly, that comes with a cost."
+        "guideForFounderIcon": "",
+        "guideForFounderTitle": "Add",
+        "guideForFounderContent": "Whitelist users for your company's ISO.",
+        "guideForFounderTooltip": "You are required to have whitelisted a minimum of 1,000 subscribers before your company's ISO can be launched."
       },
       {
-        "guideForFounderIcon": "/assets/media/guides/whitelist.png",
-        "guideForFounderTitle": "Whitelist",
-        "guideForFounderContent": "Company whitelists customers for ISO.",
-        "guideForFounderTooltip": "Only the whitelisted customers will be able to buy the company's ISO, which will last no longer than 7 days."
+        "guideForFounderIcon": "",
+        "guideForFounderTitle": "Push",
+        "guideForFounderContent": "Sell subscriptions to the invited users.",
+        "guideForFounderTooltip": "Once your company's ISO is launched, your company's initial subscriptions can only be sold to whitelisted subscribers."
       },
       {
-        "guideForFounderIcon": "/assets/media/guides/sell.png",
-        "guideForFounderTitle": "Sell",
-        "guideForFounderContent": "Customers subscribe to the company's ISO.",
-        "guideForFounderTooltip": "After the ISO, the underwriter gets 5%, the company gets 80%, and the maker gets 15% from the ISO proceeds."
+        "guideForFounderIcon": "",
+        "guideForFounderTitle": "Get",
+        "guideForFounderContent": "Receive proceeds after the ISO launch.",
+        "guideForFounderTooltip": "You'd get up to 90% of the ISO proceeds. So, it'd only cost you a 10% platform fee and a 10% underwriter fee; if applicable."
       }
     ],
-    "guideForCustomer": [
+    "guideForSubscriber": [
       {
-        "guideForCustomerIcon": "/assets/media/guides/open.png",
-        "guideForCustomerTitle": "Open",
-        "guideForCustomerContent": "You must create a Qarrington account.",
-        "guideForCustomerTooltip": "Whether you're an underwriter, a founder, or an end user, you're required to have a verified Qarrington account."
+        "guideForSubscriberIcon": "",
+        "guideForSubscriberTitle": "Open",
+        "guideForSubscriberContent": "Create a Qarrington account, it's free.",
+        "guideForSubscriberTooltip": "Whether you're an underwriter, a founder, or an end user, you're required to have a verified Qarrington account."
       },
       {
-        "guideForCustomerIcon": "/assets/media/guides/connect.png",
-        "guideForCustomerTitle": "Connect",
-        "guideForCustomerContent": "You must link your bank account.",
-        "guideForCustomerTooltip": "Each time you sell subscriptions, the subscription payouts will automatically be sent to your linked bank account."
+        "guideForSubscriberIcon": "",
+        "guideForSubscriberTitle": "Connect",
+        "guideForSubscriberContent": "Link your preferred bank account.",
+        "guideForSubscriberTooltip": "Each time you sell subscriptions, the subscription payouts will automatically be sent to your linked bank account."
       },
       {
-        "guideForCustomerIcon": "/assets/media/guides/pull.png",
-        "guideForCustomerTitle": "Pull",
-        "guideForCustomerContent": "You can buy an ISO or subscriptions.",
-        "guideForCustomerTooltip": "You can always buy/pull subscriptions, but your account must be verified before you can create a sell/push request."
+        "guideForSubscriberIcon": "",
+        "guideForSubscriberTitle": "Pull",
+        "guideForSubscriberContent": "Buy subscriptions during/after an ISO.",
+        "guideForSubscriberTooltip": "You can always buy/pull subscriptions, but your account must be verified before you can create a sell/push request."
+      }
+    ],
+    "guideForPublisher": [
+      {
+        "guideForPublisherIcon": "",
+        "guideForPublisherTitle": "Select",
+        "guideForPublisherContent": "Choose the plan that fits your needs.",
+        "guideForPublisherTooltip": "You can select the monthly subscription data plan that best describes the use cases of your products or business."
+      },
+      {
+        "guideForPublisherIcon": "",
+        "guideForPublisherTitle": "Call",
+        "guideForPublisherContent": "Make API calls to get subscription data.",
+        "guideForPublisherTooltip": "Based on your current plan, you can make calls to our REST API to get timely, reliable, and accurate subscription data."
+      },
+      {
+        "guideForPublisherIcon": "",
+        "guideForPublisherTitle": "Manage",
+        "guideForPublisherContent": "Integrate the data into your products.",
+        "guideForPublisherTooltip": "You can use the subscription data from our REST API to facilitate commercial and non-commercial use cases."
       }
     ]
   }
