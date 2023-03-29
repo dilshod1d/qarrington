@@ -1,246 +1,134 @@
-import Link from 'next/link';
+import React from 'react';
 import Head from 'next/head';
-import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import { Avatar, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tooltip, Typography } from '@mui/material';
-import RightGridGuidesStories from "@components/grids/rightGridGuidesStories";
-import dbConnect from '@lib/dbConnect';
-import Story from '@models/story/Story';
-import Guide from '@models/guide/Guide';
+import Link from 'next/link';
+import { pink } from '@mui/material/colors';
+import HomeNavbar from '../components/navbar/HomeNavbar';
+import MainLeftbar from '../components/leftbar/MainLeftbar';
+import MainRightbar from '../components/rightbar/MainRightbar';
+import DisclaimerFooter from '../components/footer/DisclaimerFooter';
+import LooksOneRoundedIcon from '@mui/icons-material/LooksOneRounded';
+import LooksTwoRoundedIcon from '@mui/icons-material/LooksTwoRounded';
+import Looks3RoundedIcon from '@mui/icons-material/Looks3Rounded';
+import { Box, Card, Container, Grid, Tooltip, Typography } from '@mui/material';
 
-const Page = ({ stories, guides }) => {
+const Page = () => {
+
   return (
-    <>
+
+    <Box sx={{ background: 'white' }}>
+
       <Head>
-        <title>
-          Nasdaq for SaaS • Qarrington
-        </title>
+        <title>Nasdaq for SaaS • Qarrington</title>
         <meta
           name="description"
-          content="Qarrington is a subscription exchange that lets you buy and sell the subscriptions of your favorite technology companies with lower fees. Register without email!"
+          content="If you have a portfolio of early-stage startup companies looking forward to doing an ISO, follow the below steps for listing."
         />
       </Head>
 
-      <MainContent style={Body}>
+      <HomeNavbar />
 
-        <Grid
-          container
-          sx={{ height: '100%' }}
-          alignItems="stretch"
-          spacing={0}
+      <Grid container spacing={2}>
+        <Box
+          style={{
+            display: 'flex',
+            justifyContent: 'center'
+          }}
         >
 
-          {/* left container starts */}
+          {/* <Grid item xs={12} md={6} lg={3}>
+                        <MainLeftbar />
+                    </Grid> */}
 
-          <Grid
-            xs={12}
-            md={6}
-            alignItems="center"
-            display="flex"
-            justifyContent="center"
-            item
-          >
-            <Container maxWidth="sm">
+          <Grid item xs={12} md={6} lg={8} mb={4}>
+            <>
+              <Grid item xs={12}>
 
-              <Box style={{ textAlign: 'center' }}>
-
-                <Box
-                  style={{
-                    display: 'flex',
-                    cursor: 'pointer',
-                    marginBottom: '20px',
-                    justifyContent: 'center'
-                  }}
-                >
-                  <Link href="/">
-                    <Avatar
-                      style={{ width: 40, height: 40 }}
-                      alt="Qarrington Logo"
-                      src="/assets/media/companies/qarrington.png"
-                    />
-                  </Link>
-                </Box>
-
-                {/* <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  Raise funds through ISO, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>SAFE</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>IPO</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>VC</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>SPAC</s></Typography>, <Typography color="secondary" component="span" fontSize="42px" fontWeight="700"><s>ICO</s></Typography>
-                  <Tooltip title="Subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
-                    <InfoRoundedIcon fontSize="small" color="primary" />
-                  </Tooltip>
-                </Typography> */}
-
-                <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
-                  Imagine raising $85M with 0% equity dilution
-                  <Tooltip title="Subscriptions only give customers access to a company's products, they don't represent investments in the firm." placement="top">
-                    <InfoRoundedIcon fontSize="small" color="primary" />
-                  </Tooltip>
-                </Typography>
-
-                <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                  Imagine a subscription exchange, where startups can raise funds thru <Tooltip title="This is the process of listing a company on a subscription exchange, where its subscriptions can be sold to customers." placement="top">
-                    <Typography
-                      component="span"
-                      fontWeight={700}
-                      color="primary"
-                      variant="h6"
-                      sx={{
-                        "&:hover": {
-                          color: '#000'
-                        }
-                      }}>Initial Subscription Offering</Typography></Tooltip>. If you want to list a company as a <b>founder</b> or list other companies as an <b>underwriter</b>, we're here.
-                </Typography>
-
-              </Box>
-
-              <form noValidate autoComplete="on">
-
-                <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px' }}>
-
-                  <Stack spacing={1.2} sx={{ width: '100%' }}>
-
-                    <Link href="https://calendly.com/banjodeiyowun/qarrington">
-                      <Button
-                        size="large"
-                        sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
-                        variant="outlined"
-                        fullWidth={true}
-                      >
-                        talk to team
-                      </Button>
-                    </Link>
-
-                    <Link href="https://calendly.com/banjodeiyowun/qarrington">
-                      <Button
-                        size="large"
-                        sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
-                        variant="contained"
-                        fullWidth={true}
-                      >
-                        join weekly q&a
-                      </Button>
-                    </Link>
-
-                  </Stack>
-
-                </Box>
-
-                <Breadcrumbs separator="/" aria-label="breadcrumb"
-                  sx={{
-                    "& ol": {
-                      justifyContent: "center",
-                      margin: "auto",
-                      mt: "20px"
-                    }
-                  }}>
-                  <Link href="https://calendly.com/banjodeiyowun/qarrington">
-                    <Typography variant="body2" color="secondary" sx={Breadcrumb}>
-                      lower fees
-                    </Typography>
-                  </Link>
-
-                  <Link href="https://calendly.com/banjodeiyowun/qarrington">
-                    <Typography variant="body2" color="secondary" sx={Breadcrumb}>
-                      product-backed
-                    </Typography>
-                  </Link>
-
-                  <Link href="https://calendly.com/banjodeiyowun/qarrington">
-                    <Typography variant="body2" color="secondary" sx={Breadcrumb}>
-                      fewer risks
-                    </Typography>
-                  </Link>
-
-                </Breadcrumbs>
-
-                <Box textAlign="center">
-                  <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
-                    Kindly note that before a company can be listed, the company must have whitelisted an acceptable number of customers for its <b>Initial Subscription Offering</b>.
+                <Card style={{ padding: '40px 0px 40px 0px', marginBottom: '20px' }}>
+                  <Typography variant="h2" color="black" fontWeight={800}>
+                    Buy, sell, & transfer subscriptions.
                   </Typography>
-                </Box>
+                  <Typography variant="body" color="secondary" fontWeight={600}>
+                    If you have a portfolio of early-stage startup companies looking forward to raising funds thru an ISO, follow the below listing steps.
+                  </Typography>
+                </Card>
 
-              </form>
+                <Grid item xs={12} my={0}>
+                  <Grid container spacing={2}>
 
-            </Container>
+                    {arrayItems && arrayItems.map(({ _id, icon, title, detail, tooltip }) => (
+                      <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
+                        <Link href={`/qa`}>
+                          <Tooltip title={tooltip} placement="top">
+                            <Card style={{ padding: '35px', cursor: 'pointer' }}>
+                              <Box
+                                style={{
+                                  display: 'flex',
+                                  justifyContent: 'center'
+                                }}
+                              >
+                                {icon}
+                              </Box>
+                              <Box mt={1} style={{ textAlign: 'center' }}>
+                                <Box mb={1}>
+                                  <Typography gutterBottom variant="h4" fontWeight={700} color="black">
+                                    {title}
+                                  </Typography>
+                                </Box>
+                                <Box>
+                                  <Typography variant="body2" fontWeight={600} color="secondary">
+                                    {detail}
+                                  </Typography>
+                                </Box>
+                              </Box>
+                            </Card>
+                          </Tooltip>
+                        </Link>
+                      </Grid>
+                    ))}
+
+                  </Grid>
+                </Grid>
+
+                <DisclaimerFooter />
+
+              </Grid>
+            </>
           </Grid>
 
-          {/* left container ends */}
+          {/* <Grid item xs={12} md={6} lg={3}>
+                        <MainRightbar />
+                    </Grid> */}
 
-          {/* right container starts */}
+        </Box>
+      </Grid>
 
-          <Hidden mdDown>
-            <GridWrapper
-              xs={12}
-              md={6}
-              alignItems="center"
-              display="flex"
-              justifyContent="center"
-              item
-            >
-              <Container maxWidth="sm">
-                <RightGridGuidesStories stories={stories} guides={guides} />
-              </Container>
-            </GridWrapper>
-          </Hidden>
+    </Box>
 
-          {/* right container ends */}
-
-        </Grid>
-      </MainContent>
-
-    </>
-
-  );
-
+  )
 }
 
-export default Page;
+export default Page
 
-
-export async function getServerSideProps() {
-  try {
-    await dbConnect();
-
-    const stories = await Story.find()
-    const guides = await Guide.find()
-
-
-    return {
-      props: {
-        stories: stories ? JSON.parse(JSON.stringify(stories)) : [],
-        guides: guides ? JSON.parse(JSON.stringify(stories)) : []
-      }
-    };
-  } catch (error) {
-    return {
-      notFound: true
-    };
-  }
-}
-
-const Breadcrumb = {
-  cursor: "pointer",
-  fontWeight: "500",
-  "&:hover": {
-    color: '#000'
+const arrayItems = [
+  {
+    _id: 1,
+    icon: <LooksOneRoundedIcon color="primary" sx={{ fontSize: '40px', color: pink[200] }} />,
+    title: "Pay",
+    detail: "Make the one-time company listing fee.",
+    tooltip: "You're required to pay a one-time listing fee, which is 100% refundable after the ISO of your first listed company."
   },
-};
-
-const MainContent = styled(Box)(
-  () => `
-    height: 100%;
-    display: flex;
-    flex: 1;
-    overflow: auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`
-);
-
-const GridWrapper = styled(Grid)(
-  ({ theme }) => `
-    background: ${theme.colors.gradients.green2};
-`
-);
-
-const Body = {
-  backgroundColor: "#ffffff"
-};
+  {
+    _id: 2,
+    icon: <LooksTwoRoundedIcon color="primary" sx={{ fontSize: '40px', color: pink[800] }} />,
+    title: "Submit",
+    detail: "Submit a startup company for listing.",
+    tooltip: "You can list any type of startup company from any industry, but the business model must be subscription."
+  },
+  {
+    _id: 3,
+    icon: <Looks3RoundedIcon color="primary" sx={{ fontSize: '40px', color: pink[400] }} />,
+    title: "Get",
+    detail: "Receive proceeds after the ISO launch.",
+    tooltip: "You'd get 10% from a company's ISO proceeds & 80% goes to the company. We charge 10% as a platform fee."
+  }
+]
