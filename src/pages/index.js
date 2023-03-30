@@ -5,7 +5,8 @@ import DisclaimerFooter from '../components/footer/DisclaimerFooter';
 import { Box, Grid } from '@mui/material';
 import HeroBlock from '../components/block/HeroBlock';
 import FeatureBlock from '../components/block/FeatureBlock';
-import GuideBlock from '../components/block/GuideBlock';
+import StepBlock from '../components/block/ApproachBlock';
+import TickerBlock from '../components/block/TickerBlock';
 
 const Page = () => {
 
@@ -17,7 +18,7 @@ const Page = () => {
         <title>Nasdaq for SaaS • Qarrington</title>
         <meta
           name="description"
-          content="Qarrington is a subscription exchange, where startup companies are listed so customers can buy, sell, and transfer their subscriptions just like stocks."
+          content="Qarrington is a subscription exchange, where companies are listed so everyone can buy, sell, & transfer subscriptions that are backed by the underlying assets."
         />
       </Head>
 
@@ -38,7 +39,8 @@ const Page = () => {
 
               <HeroBlock />
               <FeatureBlock />
-              <GuideBlock />
+              <StepBlock />
+              <TickerBlock />
 
               {/* one */}
 

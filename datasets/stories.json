@@ -221,6 +221,43 @@
         "storyByHodlerContent": "I like Qarrington because both the risks and rewards of buying subscriptions are moderate. However, the risk of buying cryptos seems to be bigger than the rewards.",
         "storyByHodlerIsActive": "dot"
       }
+    ],
+    "storyByInvestor": [
+      {
+        "storyByInvestorName": "Shriya",
+        "storyByInvestorTitle": "Marketing Specialist",
+        "storyByInvestorAvatar": "/assets/media/investors/shriya.webp",
+        "storyByInvestorContent": "I am really looking forward to seeing how Qarrington will disrupt the commercial real estate market by allowing everyone to own a piece of property for as little as possible.",
+        "storyByInvestorIsActive": "dot"
+      },
+      {
+        "storyByInvestorName": "Daniel",
+        "storyByInvestorTitle": "Acquisition Manager",
+        "storyByInvestorAvatar": "/assets/media/investors/daniel.webp",
+        "storyByInvestorContent": "I am a huge advocate for innovation and Qarrington is doing really awesome for giving the less than 1% like me the ability to invest in commercial real estate.",
+        "storyByInvestorIsActive": ""
+      },
+      {
+        "storyByInvestorName": "Simona",
+        "storyByInvestorTitle": "Sales Manager",
+        "storyByInvestorAvatar": "/assets/media/investors/simona.webp",
+        "storyByInvestorContent": "What got me so excited about Qarrington is that each unit of my real estate share is 100% backed by the underlying property of the real estate. I can't do that with stocks.",
+        "storyByInvestorIsActive": "dot"
+      },
+      {
+        "storyByInvestorName": "Diego",
+        "storyByInvestorTitle": "Civil Engineer",
+        "storyByInvestorAvatar": "/assets/media/investors/diego.webp",
+        "storyByInvestorContent": "I've been looking for this opportunity for years. Today, I am so glad that a platform like Qarrington is finally giving me the opportunity to own real estate.",
+        "storyByInvestorIsActive": "dot"
+      },
+      {
+        "storyByInvestorName": "Veronica",
+        "storyByInvestorTitle": "Research Analysts",
+        "storyByInvestorAvatar": "/assets/media/investors/veronica.webp",
+        "storyByInvestorContent": "Although I've been investing in real estate for years, having the chance to become a part owner in several properties within minutes is just top-notch. Thanks to Qarrington.",
+        "storyByInvestorIsActive": ""
+      }
     ]
   }
 ]

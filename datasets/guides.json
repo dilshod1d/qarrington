@@ -45,7 +45,7 @@
         "guideForSubscriberIcon": "",
         "guideForSubscriberTitle": "Open",
         "guideForSubscriberContent": "Create a Qarrington account, it's free.",
-        "guideForSubscriberTooltip": "Whether you're an underwriter, a founder, or an end user, you're required to have a verified Qarrington account."
+        "guideForSubscriberTooltip": "Having a Qarrington account gives you the ability to buy the subscriptions of early-stage startup companies."
       },
       {
         "guideForSubscriberIcon": "",
@@ -78,6 +78,26 @@
         "guideForPublisherTitle": "Manage",
         "guideForPublisherContent": "Integrate the data into your products.",
         "guideForPublisherTooltip": "You can use the subscription data from our REST API to facilitate commercial and non-commercial use cases."
+      }
+    ],
+    "guideForInvestor": [
+      {
+        "guideForInvestorIcon": "",
+        "guideForInvestorTitle": "Open",
+        "guideForInvestorContent": "Create a Qarrington account, it's free.",
+        "guideForInvestorTooltip": "Having a Qarrington account gives you the ability to buy the subscriptions of commercial real estate companies."
+      },
+      {
+        "guideForInvestorIcon": "",
+        "guideForInvestorTitle": "Connect",
+        "guideForInvestorContent": "Link your preferred bank account.",
+        "guideForInvestorTooltip": "Each time you sell subscriptions, the subscription payouts will automatically be sent to your linked bank account."
+      },
+      {
+        "guideForInvestorIcon": "",
+        "guideForInvestorTitle": "Pull",
+        "guideForInvestorContent": "Buy subscriptions during/after an ISO.",
+        "guideForInvestorTooltip": "You can always buy/pull subscriptions, but your account must be verified before you can create a sell/push request."
       }
     ]
   }

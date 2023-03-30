@@ -146,11 +146,8 @@ const Component = () => {
                             </Box>
                             <Box style={{ textAlign: 'center' }}>
                               <Box mt={0.5}>
-                                <Typography component="span" variant="body2" color={variant} fontWeight={500}>
-                                  {movement}
-                                </Typography>
-                                <Typography component="span" variant="body2" fontWeight={400} color="secondary">
-                                  %
+                                <Typography component="span" variant="body2" color="secondary" fontWeight={500}>
+                                  ${ticker}
                                 </Typography>
                               </Box>
                             </Box>
@@ -303,7 +300,7 @@ const subscriptions = [
     _id: 3,
     name: "Qarrington",
     image: "/assets/media/companies/qarrington.png",
-    ticker: "QA",
+    ticker: "QAR",
     variant: "primary",
     movement: "1.62"
   },
@@ -335,7 +332,7 @@ const subscriptions = [
     _id: 7,
     name: "Highland",
     image: "/assets/media/companies/highland.png",
-    ticker: "HIGH",
+    ticker: "HGH",
     variant: "error",
     movement: "3.08"
   },
@@ -391,7 +388,7 @@ const subscriptions = [
     _id: 14,
     name: "Crossborder",
     image: "/assets/media/companies/crossborder.png",
-    ticker: "CROSS",
+    ticker: "CSS",
     variant: "primary",
     movement: "2.07"
   },
@@ -431,7 +428,7 @@ const subscriptions = [
     _id: 19,
     name: "Splitted",
     image: "/assets/media/companies/splitted.png",
-    ticker: "SPLIT",
+    ticker: "SPT",
     variant: "primary",
     movement: "6.05"
   },

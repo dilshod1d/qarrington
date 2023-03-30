@@ -33,7 +33,7 @@ const colors = {
     green1: 'linear-gradient(135deg, #FFF720 0%, #3CD500 100%)',
     green2: 'linear-gradient(to bottom, #00b09b, #96c93d)',
     black1: 'linear-gradient(100.66deg, #434343 6.56%, #000000 93.57%)',
-    black2: 'linear-gradient(60deg, #29323c 0%, #485563 100%)'
+    black2: 'linear-gradient(60deg, #f5f5f5 50%, #485563 100%)'
   },
   shadows: {
     success:
@@ -1167,7 +1167,7 @@ export const PureLightTheme = createTheme({
   },
   typography: {
     fontFamily:
-    '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+      '"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
     h1: {
       fontWeight: 700,
       fontSize: 60

@@ -33,6 +33,14 @@ const GuideSchema = new mongoose.Schema(
                 guideForPublisherContent: { type: String },
                 guideForPublisherTooltip: { type: String }
             }
+        ],
+        guideForInvestor: [
+            {
+                guideForInvestorIcon: { type: String },
+                guideForInvestorTitle: { type: String },
+                guideForInvestorContent: { type: String },
+                guideForInvestorTooltip: { type: String }
+            }
         ]
     }
 );

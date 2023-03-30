@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { pink } from '@mui/material/colors';
-import PublicRoundedIcon from '@mui/icons-material/PublicRounded';
-import AccountTreeRoundedIcon from '@mui/icons-material/AccountTreeRounded';
-import HealthAndSafetyRoundedIcon from '@mui/icons-material/HealthAndSafetyRounded';
+import { grey } from '@mui/material/colors';
 import { Box, Card, Grid, Tooltip, Typography } from '@mui/material';
+import PublicRoundedIcon from '@mui/icons-material/PublicRounded';
+import DatasetLinkedRoundedIcon from '@mui/icons-material/DatasetLinkedRounded';
+import LockClockRoundedIcon from '@mui/icons-material/LockClockRounded';
 
 const Component = () => {
 
@@ -14,29 +14,20 @@ const Component = () => {
 
             <Grid my={20}>
 
-                <Grid sx={{ textAlign: 'center', mb: 4 }}>
-                    <Typography variant="h2" color="black" fontWeight={800}>
-                        Build your first subscription portfolio on a leading subscription exchange.
-                    </Typography>
-                    <Typography sx={{ my: 2 }} variant="h5" color="secondary" fontWeight={600}>
-                        Qarrington allows you to build your first subscription portfolio by buying and selling the subscriptions of industry-leading startup companies that disrupt the world and touch lives.
-                    </Typography>
-                </Grid>
-
                 <Grid item xs={12}>
 
                     {/* globalization starts */}
 
                     <Grid container spacing={2} mb={2}>
                         <Grid item xs={12} sm={6} md={6} lg={6}>
-                            <Card style={{ padding: '100px' }}>
+                            <Card style={{ padding: '102px', background: grey[100] }}>
                                 <Box
                                     style={{
                                         display: 'flex',
                                         justifyContent: 'center'
                                     }}
                                 >
-                                    <PublicRoundedIcon sx={{ fontSize: '80px', color: '#2ed573' }} />
+                                    <PublicRoundedIcon sx={{ fontSize: '80px' }} />
                                 </Box>
                             </Card>
                         </Grid>
@@ -51,7 +42,7 @@ const Component = () => {
                                     </Typography>
                                 </Link>
                                 <Typography variant="body" fontWeight={500} color="secondary">
-                                    You can buy, sell, and transfer subscriptions from more than 120 countries without strict regulations as in stocks and cryptos.
+                                    You can buy, sell, and transfer subscriptions from more than 120 countries without strict regulation scares as in stocks and cryptos.
                                 </Typography>
                             </Card>
                         </Grid>
@@ -88,14 +79,14 @@ const Component = () => {
                             </Card>
                         </Grid>
                         <Grid item xs={12} sm={6} md={6} lg={6}>
-                            <Card style={{ padding: '100px' }}>
+                            <Card style={{ padding: '102px', background: grey[300] }}>
                                 <Box
                                     style={{
                                         display: 'flex',
                                         justifyContent: 'center'
                                     }}
                                 >
-                                    <AccountTreeRoundedIcon sx={{ fontSize: '80px', color: '#2ed573' }} />
+                                    <DatasetLinkedRoundedIcon sx={{ fontSize: '80px' }} />
                                 </Box>
                             </Card>
                         </Grid>
@@ -107,14 +98,14 @@ const Component = () => {
 
                     <Grid container spacing={2} mb={2}>
                         <Grid item xs={12} sm={6} md={6} lg={6}>
-                            <Card style={{ padding: '100px' }}>
+                            <Card style={{ padding: '102px', background: grey[200] }}>
                                 <Box
                                     style={{
                                         display: 'flex',
                                         justifyContent: 'center'
                                     }}
                                 >
-                                    <HealthAndSafetyRoundedIcon sx={{ fontSize: '80px', color: '#2ed573' }} />
+                                    <LockClockRoundedIcon sx={{ fontSize: '80px' }} />
                                 </Box>
                             </Card>
                         </Grid>
@@ -150,8 +141,8 @@ export default Component
 
 const CardTitle = {
     cursor: 'pointer',
-    color: '#2ed573',
+    color: '#000000',
     '&:hover': {
-        color: '#000000'
+        color: '#2ed573'
     }
 }

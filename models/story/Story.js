@@ -55,6 +55,15 @@ const StorySchema = new mongoose.Schema(
                 storyByHodlerContent: { type: String },
                 storyByHodlerIsActive: { type: String }
             }
+        ],
+        storyByInvestor: [
+            {
+                storyByInvestorName: { type: String },
+                storyByInvestorTitle: { type: String },
+                storyByInvestorAvatar: { type: String },
+                storyByInvestorContent: { type: String },
+                storyByInvestorIsActive: { type: String }
+            }
         ]
     }
 );
