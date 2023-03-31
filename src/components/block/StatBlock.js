@@ -24,7 +24,8 @@ const Component = () => {
                                     <Card style={{ padding: '40px', cursor: 'pointer' }}>
                                         <Box mt={1} style={{ textAlign: 'center' }}>
                                             <Box mb={1}>
-                                                <Typography gutterBottom variant="h2" fontWeight={700} color="black"
+                                                <Typography gutterBottom variant="h2"
+                                                    fontWeight={700} color="black"
                                                     sx={{ color: green[cardVariant] }}>
                                                     {cardValue}
                                                 </Typography>

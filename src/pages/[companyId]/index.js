@@ -8,7 +8,7 @@ import { useSession } from "next-auth/react"
 import { useRouter } from "next/router"
 import { subscribeToCompany } from "@services/companies-services"
 import { checkIfComanyHasFuturIsoDate, checkIfCompanyIsInIsoDate } from "@helpers/companies-helpers"
-import MainStoryGuideSlide from '../../../components/slide/MainStoryGuideSlide';
+import MainStoryGuideSlide from '../../components/slide/MainStoryGuideSlide';
 
 const Page = ({ name, ticker, description, logo, secondsLeft }) => {
 

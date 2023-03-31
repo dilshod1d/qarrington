@@ -16,7 +16,8 @@ const Component = () => {
                         Buy & sell <Tooltip title="Subscriptions only give you access to a company's products and services, they don't represent investments in the firm." placement="top">
                             <Typography
                                 component="span"
-                                variant="h1" color="#00000050" fontWeight={800}
+                                variant="h1" color="#00000050"
+                                fontWeight={800}
                                 sx={{
                                     "&:hover": {
                                         color: '#2ed573'

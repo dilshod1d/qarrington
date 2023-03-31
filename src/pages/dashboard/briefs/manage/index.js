@@ -1,14 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import Navbar from '../../../../components/dashboard/Navbar';
 import Admin from '../../../../components/dashboard/Admin';
 import Company from '../../../../components/dashboard/Company';
 import Footer from '../../../../components/dashboard/Footer';
-import { Box, Button, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
-import { Pagination } from '@mui/lab';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
+import { Button, Card, Container, Grid, Stack, TextField } from '@mui/material';
 
 const Page = () => {
 
