@@ -1,27 +1,19 @@
 import React from 'react';
-import Head from 'next/head';
-import useSWR from 'swr';
 import Link from 'next/link';
-import TopicNavbar from '../../../../components/navbar/TopicNavbar';
-import MainLeftbar from '../../../../components/leftbar/MainLeftbar';
-import MainRightbar from '../../../../components/rightbar/MainRightbar';
+import Head from 'next/head';
+import { green } from '@mui/material/colors';
+import BriefNavbar from '../../../../components/navbar/BriefNavbar';
 import DisclaimerFooter from '../../../../components/footer/DisclaimerFooter';
-import { Box, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
-import { Pagination } from '@mui/lab';
-import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
-import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRounded';
+import { Box, Card, Grid, Typography } from '@mui/material';
 import dbConnect from "@lib/dbConnect";
 import Brief from '@models/brief/Brief';
 import Divider from '@mui/material/Divider';
 
 const Page = ({ url, title, detail, summary, topic, postedAt }) => {
 
-    const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data: briefs } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/briefs`, fetcher);
-
     return (
 
-        <div>
+        <Box sx={{ background: 'white' }}>
 
             <Head>
                 <title>{title} • Qarrington</title>
@@ -31,64 +23,65 @@ const Page = ({ url, title, detail, summary, topic, postedAt }) => {
                 />
             </Head>
 
-            <TopicNavbar />
+            <BriefNavbar />
 
-            <Container>
-                <Grid container spacing={2}>
+            <Grid container>
+                <Box
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}
+                >
 
-                    <Grid item xs={12} md={6} lg={3}>
-                        <MainLeftbar />
-                    </Grid>
+                    <Grid item xs={10} md={6} lg={8} mb={4}>
+                        <Grid item xs={12}>
 
-                    <Grid item xs={12} md={6} lg={6} mb={4}>
-                        <Grid container spacing={1}>
-                            <Grid item xs={12}>
+                            {/* one */}
 
-                                <Grid item xs={12}>
-                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                        <Typography variant="h1" fontWeight={700} color="black">
-                                            {title}
-                                        </Typography>
-                                    </Card>
-                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                        <Typography variant="h5" fontWeight={500} color="secondary">
-                                            {summary}
-                                        </Typography>
-                                    </Card>
-                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                        <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
-                                            {detail}
-                                        </Typography>
-                                    </Card>
+                            <Grid mt={10} mb={3}>
+
+                                <Grid>
+                                    <Typography variant="h1" color="black" fontWeight={800}>
+                                        {title}?
+                                    </Typography>
+                                    <Divider sx={{ my: 4 }} />
+                                    <Typography sx={{ my: 1.5 }} variant="h5" color="secondary" fontWeight={400}>
+                                        {summary}
+                                    </Typography>
+                                    <Divider sx={{ my: 4 }} />
+                                    <Typography sx={{ my: 2 }} variant="body" color="secondary" fontWeight={600}>
+                                        {detail}
+                                    </Typography>
                                 </Grid>
 
-                                <DisclaimerFooter />
+                                <Grid item xs={12} mt={4}>
+                                    <Link href={`/contact`}>
+                                        <Card style={{ padding: '80px', textAlign: 'center', cursor: 'pointer', background: '#7bed9f' }}>
+                                            <Typography variant="h5" fontWeight={700}>
+                                                If you don't find this brief helpful, you can always reach out to our 24/7 account managers and we'd try to get in touch with you in less than 24 hours or so.
+                                            </Typography>
+                                        </Card>
+                                    </Link>
+                                </Grid>
 
                             </Grid>
+
+                            {/* one */}
+
+                            <DisclaimerFooter />
+
                         </Grid>
                     </Grid>
 
-                    <Grid item xs={12} md={6} lg={3}>
-                        <MainRightbar />
-                    </Grid>
+                </Box>
+            </Grid>
 
-                </Grid>
-            </Container>
-
-        </div>
+        </Box>
 
     )
 }
 
 export default Page
-
-const ItemTitle = {
-    cursor: 'pointer',
-    color: '#000000',
-    '&:hover': {
-        color: '#2ed573'
-    }
-};
 
 export async function getStaticProps({ params }) {
     await dbConnect()

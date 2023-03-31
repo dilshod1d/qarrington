@@ -15,7 +15,7 @@ const Component = () => {
 
       {/* header starts */}
 
-      <HeaderCard>
+      <HeaderCard sx={{ background: 'white' }}>
         <Container mb={8}>
           <Box
             display="flex"
@@ -183,7 +183,7 @@ const MenuItem = {
   }
 };
 
-const HeaderCard = styled(Card)(
+const HeaderCard = styled(Box)(
   ({ theme }) => `
   width: 100%;
   position: fixed;
