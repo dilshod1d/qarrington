@@ -45,34 +45,43 @@ const Component = () => {
               color="secondary"
               sx={BreadcrumbItem}
             >
-              Abou'
+              About
             </Typography>
           </Link>
-          <Link href="/preferences">
+          <Link href="/users">
             <Typography
               variant="body2"
               color="secondary"
               sx={BreadcrumbItem}
             >
-              Preferences
+              Users
             </Typography>
           </Link>
-          <Link href="/opportunities">
+          <Link href="/topics">
             <Typography
               variant="body2"
               color="secondary"
               sx={BreadcrumbItem}
             >
-              Opportunities
+              Topics
             </Typography>
           </Link>
-          <Link href="/help">
+          <Link href="/compare">
             <Typography
               variant="body2"
               color="secondary"
               sx={BreadcrumbItem}
             >
-              Help
+              Compare
+            </Typography>
+          </Link>
+          <Link href="/contact">
+            <Typography
+              variant="body2"
+              color="secondary"
+              sx={BreadcrumbItem}
+            >
+              Contact
             </Typography>
           </Link>
           <Link href="/terms">
@@ -93,7 +102,7 @@ const Component = () => {
               Privacy
             </Typography>
           </Link>
-          {
+          {/* {
             logged === undefined
               ? null
               : logged
@@ -122,7 +131,7 @@ const Component = () => {
                     Login
                   </Typography>
                 </Button>)
-          }
+          } */}
         </Breadcrumbs>
       </Box>
       <Box style={footerBrand}>

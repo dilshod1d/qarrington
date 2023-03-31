@@ -129,31 +129,27 @@ const Component = () => {
                   {subscriptions && Array.isArray(subscriptions) && subscriptions?.map(({ _id, name, image, ticker, variant, movement }) => (
                     <Grid key={_id} mt={0} mb={-2} mx={0.5}>
 
-                      <Link href={``}>
-                        <Tooltip title={name} placement="top">
-                          <Card style={{ padding: '16px', cursor: 'pointer' }}>
-                            <Box
-                              style={{
-                                display: 'flex',
-                                justifyContent: 'center'
-                              }}
-                            >
-                              <Avatar
-                                style={{ width: 24, height: 24 }}
-                                alt={name}
-                                src={image}
-                              />
+                        <Card style={{ padding: '16px' }}>
+                          <Box
+                            style={{
+                              display: 'flex',
+                              justifyContent: 'center'
+                            }}
+                          >
+                            <Avatar
+                              style={{ width: 24, height: 24 }}
+                              alt={name}
+                              src={image}
+                            />
+                          </Box>
+                          <Box style={{ textAlign: 'center' }}>
+                            <Box mt={0.5}>
+                              <Typography component="span" variant="body2" color="secondary" fontWeight={500}>
+                                ${ticker}
+                              </Typography>
                             </Box>
-                            <Box style={{ textAlign: 'center' }}>
-                              <Box mt={0.5}>
-                                <Typography component="span" variant="body2" color="secondary" fontWeight={500}>
-                                  ${ticker}
-                                </Typography>
-                              </Box>
-                            </Box>
-                          </Card>
-                        </Tooltip>
-                      </Link>
+                          </Box>
+                        </Card>
 
                     </Grid>
                   ))}

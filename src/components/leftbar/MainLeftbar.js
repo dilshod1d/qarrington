@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { Avatar, AvatarGroup, Badge, Box, Card, Grid, styled, Tooltip, Typography } from '@mui/material';
-import InsightsTwoToneIcon from '@mui/icons-material/InsightsTwoTone';
-import KeyboardCommandKeyTwoToneIcon from '@mui/icons-material/KeyboardCommandKeyTwoTone';
+import GrainTwoToneIcon from '@mui/icons-material/GrainTwoTone';
+import Diversity2TwoToneIcon from '@mui/icons-material/Diversity2TwoTone';
 import TagTwoToneIcon from '@mui/icons-material/TagTwoTone';
 
 const Component = () => {
@@ -42,30 +42,30 @@ const Component = () => {
                 fontWeight={500}
                 color="secondary"
               >
-                On Qarrington, our mission is to become the <Typography component="span" color="primary" fontWeight={600}>Nasdaq for SaaS</Typography> so everyone can buy and sell subscriptions with lower fees.
+                On Qarrington, our mission is to become the <Typography component="span" color="primary" fontWeight={600}>Nasdaq for SaaS</Typography> so everyone can buy, sell, and transfer subscriptions.
               </Typography>
             </Box>
             <Grid>
               <Box display="flex" justifyContent="center">
-                <Tooltip title="Products" placement="top">
+                <Tooltip title="Compare" placement="top">
                   <IconButtonWrapper>
-                    <Link href="/products">
-                      <InsightsTwoToneIcon />
+                    <Link href="/compare">
+                      <GrainTwoToneIcon />
                     </Link>
                   </IconButtonWrapper>
                 </Tooltip>
-                <Tooltip title="Comparisons" placement="top">
+                <Tooltip title="Underwrite" placement="top">
                   <IconButtonWrapper>
-                    <Link href="/comparisons">
+                    <Link href="/users/underwriters">
                       <Badge color="error" variant="dot">
-                        <KeyboardCommandKeyTwoToneIcon />
+                        <Diversity2TwoToneIcon />
                       </Badge>
                     </Link>
                   </IconButtonWrapper>
                 </Tooltip>
-                <Tooltip title="Plans" placement="top">
+                <Tooltip title="Contact" placement="top">
                   <IconButtonWrapper>
-                    <Link href="/plans">
+                    <Link href="/contact">
                       <TagTwoToneIcon />
                     </Link>
                   </IconButtonWrapper>
