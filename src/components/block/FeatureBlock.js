@@ -141,8 +141,8 @@ export default Component
 
 const CardTitle = {
     cursor: 'pointer',
-    color: '#000000',
+    color: '#2ed573',
     '&:hover': {
-        color: '#2ed573'
+        color: '#000000'
     }
 }

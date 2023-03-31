@@ -5,8 +5,12 @@ import DisclaimerFooter from '../components/footer/DisclaimerFooter';
 import { Box, Grid } from '@mui/material';
 import HeroBlock from '../components/block/HeroBlock';
 import FeatureBlock from '../components/block/FeatureBlock';
-import StepBlock from '../components/block/ApproachBlock';
+import StatBlock from '../components/block/StatBlock';
 import TickerBlock from '../components/block/TickerBlock';
+import UnderwriterBlock from '../components/block/UnderwriterBlock';
+import FounderBlock from '../components/block/FounderBlock';
+import SubscriberBlock from '../components/block/SubscriberBlock';
+import PublisherBlock from '../components/block/PublisherBlock';
 
 const Page = () => {
 
@@ -38,9 +42,13 @@ const Page = () => {
               {/* one */}
 
               <HeroBlock />
+              <StatBlock />
               <FeatureBlock />
-              <StepBlock />
               <TickerBlock />
+              <UnderwriterBlock />
+              <FounderBlock />
+              <SubscriberBlock />
+              <PublisherBlock />
 
               {/* one */}
 

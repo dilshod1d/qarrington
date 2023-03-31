@@ -14,20 +14,20 @@ const Component = () => {
                         Build your first subscription portfolio on a leading subscription exchange.
                     </Typography>
                     <Typography sx={{ my: 1.5 }} variant="h5" color="secondary" fontWeight={600}>
-                        Qarrington allows you to build your first subscription portfolio by buying and selling the subscriptions of industry-leading startup companies disrupting the world and touching lives.
+                        It's like buying stocks, but instead of shares, you'd be buying subscriptions that are fully backed by the underlying products of the listed companies, which is unlikely with stocks and cryptos.
                     </Typography>
                     <Link href={`/qa`}>
                         <Button
                             size="large"
-                            sx={{ py: 3, px: 6, fontWeight: 800, color: 'white', textTransform: 'uppercase', fontSize: '13px' }}
+                            sx={{ fontWeight: 700, color: 'white', textTransform: 'uppercase', fontSize: '12px' }}
                             variant="contained"
                             fullWidth={false}
                         >
-                            join our weekly q&a
+                            buy subscriptions
                         </Button>
                     </Link>
                     <Typography sx={{ my: 2 }} variant="body2" color="secondary" fontWeight={400}>
-                        In order to list a company, let's see whether there's a fit.
+                        At the moment, we only onboard subscribers through our weekly Q&A.
                     </Typography>
                 </Grid>
                 <Grid item xs={12} my={0}>
