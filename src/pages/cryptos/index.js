@@ -1,8 +1,9 @@
-import React from 'react';
+import React from "react";
+import Link from 'next/link';
 import Head from 'next/head';
-import Navbar from '../../components/topics/Navbar';
-import Footer from '../../components/topics/Footer';
-import { Box, Container, Divider, Grid, Typography } from '@mui/material';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
+import { Avatar, Box, Breadcrumbs, Button, Container, Grid, Stack, styled, Tooltip, Typography } from '@mui/material';
+import CryptoStoryGuideSlide from '../../components/slide/CryptoStoryGuideSlide';
 
 const Page = () => {
 
@@ -18,55 +19,151 @@ const Page = () => {
                 />
             </Head>
 
-            <Grid style={{ backgroundColor: '#fff' }}>
+            <MainContent style={Body}>
 
-                <Navbar />
+                <Grid
+                    container
+                    sx={{ height: '100%' }}
+                    alignItems="stretch"
+                    spacing={0}
+                >
 
-                <Container style={{ backgroundColor: '#fff' }}>
-                    <Grid container spacing={2}>
+                    {/* left container starts */}
 
-                        <Grid item xs>
-                            {/* <LeftSide /> */}
-                        </Grid>
+                    <Grid
+                        xs={12}
+                        md={6}
+                        alignItems="center"
+                        display="flex"
+                        justifyContent="center"
+                        item
+                    >
+                        <Container maxWidth="sm">
 
-                        <Grid my={8} item xs={7}>
+                            <Box style={{ textAlign: 'center' }}>
 
-                            <Box style={{ padding: '0px 0px 0px 0px' }}>
-                                <Typography variant="h1" fontWeight={700} color="black">
-                                    How subscriptions can outperform the crypto market in the future.
+                                <Box
+                                    style={{
+                                        display: 'flex',
+                                        cursor: 'pointer',
+                                        marginBottom: '20px',
+                                        justifyContent: 'center'
+                                    }}
+                                >
+                                    <Avatar
+                                        style={{ width: 40, height: 40 }}
+                                        alt="Qarrington Logo"
+                                        src="/assets/media/companies/qarrington.png"
+                                    />
+                                </Box>
+
+                                <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
+                                    How subscriptions can outperform cryptos
+                                    <Tooltip title="Subscriptions only give you access to a company's products and services, they don't represent investments in the firm." placement="top">
+                                        <InfoRoundedIcon fontSize="small" color="primary" />
+                                    </Tooltip>
                                 </Typography>
-                                <Divider sx={{ my: 3 }} />
-                                <Typography mt={1} variant="h5" fontWeight={500} color="secondary">
-                                    Buy, sell, and transfer the subscriptions of innovative startup companies. It's like buying cryptos, but instead of coins, it's product-backed subscriptions.
+
+                                <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
+                                    We're building a subscription exchange, where you can buy & sell the subscriptions of startup companies. It's like buying cryptos, but instead of coins, it's product-backed subscriptions.
                                 </Typography>
-                                <Divider sx={{ my: 3 }} />
-                                <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
-                                    Technically, the cryptocurrency market is an innovative space that is believed to play a critical role in the future financial market in several countries. Even though the rewards can be enormous, the risks involved are considered to outweigh the returns. With that being said, since subscriptions are mostly used to access digital products rather than for investment purposes, the rewards and risks involved in buying the subscriptions of an early-stage startup company are usually moderate.
-                                </Typography>
-                                <Typography component="div" mt={1.5} variant="body" fontWeight={500} color="secondary">
-                                    The introduction of a cryptocurrency i.e. bitcoin is an amazing mechanism for the global economy, but there's no single use case for the asset other than for investment purposes, which makes bitcoin and every single cryptocurrency to be radically volatile. Not only that subscriptions can be bought, sold, and transferred, but they can also be used to access problem-solving products.
-                                </Typography>
+
                             </Box>
 
-                            {/* footer starts */}
+                            <form noValidate autoComplete="on">
 
-                            <Footer />
+                                <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px' }}>
 
-                            {/* footer ends */}
+                                    <Stack spacing={1.2} sx={{ width: '100%' }}>
 
-                        </Grid>
+                                        <Link href="/account/access">
+                                            <Button
+                                                size="large"
+                                                sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                                                variant="outlined"
+                                                fullWidth={true}
+                                            >
+                                                i'm a qarrington
+                                            </Button>
+                                        </Link>
 
-                        <Grid item xs>
-                            {/* <RightSide /> */}
-                        </Grid>
+                                        <Link href="/account/open">
+                                            <Button
+                                                size="large"
+                                                sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                                                variant="contained"
+                                                fullWidth={true}
+                                            >
+                                                i'm not a qarrington yet
+                                            </Button>
+                                        </Link>
 
+                                    </Stack>
+
+                                </Box>
+
+                                <Breadcrumbs separator="/" aria-label="breadcrumb"
+                                    sx={{
+                                        "& ol": {
+                                            justifyContent: "center",
+                                            margin: "auto",
+                                            mt: "20px"
+                                        }
+                                    }}>
+                                    <Typography variant="body2" fontWeight={700} color="secondary">
+                                        lower fees
+                                    </Typography>
+                                    <Typography variant="body2" fontWeight={700} color="secondary">
+                                        global coverage
+                                    </Typography>
+                                    <Typography variant="body2" fontWeight={700} color="secondary">
+                                        fewer risks
+                                    </Typography>
+
+                                </Breadcrumbs>
+
+                                <Box textAlign="center">
+                                    <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
+                                        Once you log in to your account, kindly provide all the necessary account details and contacts for smooth payouts. Otherwise, your future payouts might be delayed.
+                                    </Typography>
+                                </Box>
+
+                            </form>
+
+                        </Container>
                     </Grid>
-                </Container>
-            </Grid >
+
+                    {/* left container ends */}
+
+                    {/* right container starts */}
+
+                    <CryptoStoryGuideSlide />
+
+                    {/* right container ends */}
+
+                </Grid>
+            </MainContent>
 
         </>
 
-    )
+    );
+
 }
 
-export default Page
+export default Page;
+
+const MainContent = styled(Box)(
+    () => `
+    height: 100%;
+    display: flex;
+    flex: 1;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+);
+
+const Body = {
+    backgroundColor: "#ffffff"
+};

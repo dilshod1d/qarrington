@@ -2,14 +2,14 @@ import React from 'react';
 import Head from 'next/head';
 import useSWR from 'swr';
 import Link from 'next/link';
-import Navbar from '../../components/topics/Navbar';
-import Admin from '../../components/topics/Admin';
-import Company from '../../components/topics/Company';
-import Footer from '../../components/topics/Footer';
+import TopicNavbar from '../../components/navbar/TopicNavbar';
+import MainLeftbar from '../../components/leftbar/MainLeftbar';
+import MainRightbar from '../../components/rightbar/MainRightbar';
+import DisclaimerFooter from '../../components/footer/DisclaimerFooter';
 import { Box, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
 import { Pagination } from '@mui/lab';
-import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
-import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRounded';
+import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
+import RoomPreferencesRoundedIcon from '@mui/icons-material/RoomPreferencesRounded';
 
 const Page = () => {
 
@@ -28,26 +28,26 @@ const Page = () => {
                 />
             </Head>
 
-            <Navbar />
+            <TopicNavbar />
 
             <Container>
                 <Grid container spacing={2}>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Admin />
+                        <MainLeftbar />
                     </Grid>
 
-                    <Grid item xs={12} md={6} lg={6} mt={12} mb={4}>
+                    <Grid item xs={12} md={6} lg={6} mb={4}>
                         <Grid container spacing={1}>
                             <Grid item xs={12}>
 
                                 <Card style={{ padding: '60px', backgroundColor: 'black', color: 'white', marginBottom: '10px' }}>
                                     <ListItem disablePadding>
-                                        <Tooltip title="Post" placement="top">
+                                        <Tooltip title="Contact" placement="top">
                                             <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
                                                 <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
-                                                    <Link href="/dashboard/briefs/manage">
-                                                        <AddCircleRoundedIcon />
+                                                    <Link href="/topics/contact">
+                                                        <RoomPreferencesRoundedIcon />
                                                     </Link>
                                                 </ListItemIcon>
                                             </Grid>
@@ -57,16 +57,16 @@ const Page = () => {
                                                 <TextField
                                                     required
                                                     id="outlined-required"
-                                                    placeholder="Search from more than 872 topics ..."
+                                                    placeholder="Search from more than 872 briefs ..."
                                                     inputProps={{ style: { textAlign: 'center', color: 'white' } }}
                                                 />
                                             </Stack>
                                         </Grid>
-                                        <Tooltip title="Read" placement="top">
+                                        <Tooltip title="Compare" placement="top">
                                             <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
                                                 <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
-                                                    <Link href="/briefs">
-                                                        <AccessTimeFilledRoundedIcon />
+                                                    <Link href="/topics/compare">
+                                                        <MeetingRoomRoundedIcon />
                                                     </Link>
                                                 </ListItemIcon>
                                             </Grid>
@@ -92,14 +92,14 @@ const Page = () => {
                                     </Box>
                                 </Grid>
 
-                                <Footer />
+                                <DisclaimerFooter />
 
                             </Grid>
                         </Grid>
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={3}>
-                        <Company />
+                        <MainRightbar />
                     </Grid>
 
                 </Grid>

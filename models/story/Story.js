@@ -20,13 +20,22 @@ const StorySchema = new mongoose.Schema(
                 storyByFounderIsActive: { type: String }
             }
         ],
-        storyByCustomer: [
+        storyBySubscriber: [
             {
-                storyByCustomerName: { type: String },
-                storyByCustomerTitle: { type: String },
-                storyByCustomerAvatar: { type: String },
-                storyByCustomerContent: { type: String },
-                storyByCustomerIsActive: { type: String }
+                storyBySubscriberName: { type: String },
+                storyBySubscriberTitle: { type: String },
+                storyBySubscriberAvatar: { type: String },
+                storyBySubscriberContent: { type: String },
+                storyBySubscriberIsActive: { type: String }
+            }
+        ],
+        storyByPublisher: [
+            {
+                storyByPublisherName: { type: String },
+                storyByPublisherTitle: { type: String },
+                storyByPublisherAvatar: { type: String },
+                storyByPublisherContent: { type: String },
+                storyByPublisherIsActive: { type: String }
             }
         ],
         storyByTrader: [
@@ -45,6 +54,15 @@ const StorySchema = new mongoose.Schema(
                 storyByHodlerAvatar: { type: String },
                 storyByHodlerContent: { type: String },
                 storyByHodlerIsActive: { type: String }
+            }
+        ],
+        storyByInvestor: [
+            {
+                storyByInvestorName: { type: String },
+                storyByInvestorTitle: { type: String },
+                storyByInvestorAvatar: { type: String },
+                storyByInvestorContent: { type: String },
+                storyByInvestorIsActive: { type: String }
             }
         ]
     }

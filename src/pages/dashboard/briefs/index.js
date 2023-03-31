@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import useSWR from 'swr';
 import Link from 'next/link';
-import Navbar from '../../../components/topics/Navbar';
+import Navbar from '../../../components/dashboard/Navbar';
 import Admin from '../../../components/topics/Admin';
 import Company from '../../../components/topics/Company';
 import Footer from '../../../components/topics/Footer';
@@ -10,10 +10,8 @@ import { Box, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, T
 import { Pagination } from '@mui/lab';
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import AccessTimeFilledRoundedIcon from '@mui/icons-material/AccessTimeFilledRounded';
-import dbConnect from "@lib/dbConnect";
-import Topic from '@models/topic/Topic';
 
-const Page = ({ slug, title, detail }) => {
+const Page = () => {
 
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data: briefs } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/briefs`, fetcher);
@@ -59,7 +57,7 @@ const Page = ({ slug, title, detail }) => {
                                                 <TextField
                                                     required
                                                     id="outlined-required"
-                                                    placeholder="Search from more than 24 briefs ..."
+                                                    placeholder="Search from more than 524 briefs ..."
                                                     inputProps={{ style: { textAlign: 'center', color: 'white' } }}
                                                 />
                                             </Stack>
@@ -67,7 +65,7 @@ const Page = ({ slug, title, detail }) => {
                                         <Tooltip title="Read" placement="top">
                                             <Grid item xs={12} md={6} lg={2} display="flex" justifyContent="flex-end">
                                                 <ListItemIcon sx={{ color: '#7bed9f', cursor: 'pointer' }}>
-                                                <Link href={`/topics/b/${slug}`}>
+                                                    <Link href={`/topics`}>
                                                         <AccessTimeFilledRoundedIcon />
                                                     </Link>
                                                 </ListItemIcon>
@@ -79,7 +77,7 @@ const Page = ({ slug, title, detail }) => {
                                 {briefs && Array.isArray(briefs) && briefs?.slice(0, 3).map(({ _id, briefSlug, briefTitle, briefDetail, briefSummary, briefTopicId, briefPostedAt }) => (
                                     <Grid key={_id} item xs={12}>
                                         <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                            <Link href={`/briefs/manage`}>
+                                            <Link href={`/dashboard/briefs/manage`}>
                                                 <Typography textAlign="center" sx={ItemTitle} variant="h4" color="black" fontWeight={800}>
                                                     {briefTitle}?
                                                 </Typography>
@@ -121,32 +119,3 @@ const ItemTitle = {
         color: '#2ed573'
     }
 };
-
-// export async function getStaticProps({ params }) {
-//     await dbConnect()
-//     const topicItem = await Topic.findOne({ topicSlug: params.topicId });
-//     return {
-//         props: {
-//             slug: topicItem.topicSlug,
-//             title: topicItem.topicTitle,
-//             detail: topicItem.topicDetail
-//         },
-//         revalidate: 60,
-//     };
-// }
-
-// export async function getStaticPaths() {
-//     await dbConnect()
-//     const topicItems = await Topic.find();
-//     return {
-//         paths: topicItems.map(item => {
-//             const topicId = item.topicSlug;
-//             return {
-//                 params: {
-//                     topicId
-//                 }
-//             }
-//         }),
-//         fallback: false
-//     }
-// }

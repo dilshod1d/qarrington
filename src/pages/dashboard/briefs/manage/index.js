@@ -1,14 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import Navbar from '../../../../components/dashboard/Navbar';
 import Admin from '../../../../components/dashboard/Admin';
 import Company from '../../../../components/dashboard/Company';
 import Footer from '../../../../components/dashboard/Footer';
-import { Box, Button, Card, Container, Grid, ListItem, ListItemIcon, Stack, TextField, Tooltip, Typography } from '@mui/material';
-import { Pagination } from '@mui/lab';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
+import { Button, Card, Container, Grid, Stack, TextField } from '@mui/material';
 
 const Page = () => {
 
@@ -78,30 +74,13 @@ const Page = () => {
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="topicTitle"
+                                                placeholder="briefTitle"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="topicUrl"
-                                                inputProps={{ style: { textAlign: 'center' } }}
-                                            />
-                                        </Stack>
-                                    </Card>
-
-                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                                        <Stack spacing={2} sx={{ width: '100%' }}>
-                                            <TextField
-                                                required
-                                                id="outlined-required"
-                                                placeholder="topicTags"
-                                                inputProps={{ style: { textAlign: 'center' } }}
-                                            />
-                                            <TextField
-                                                required
-                                                id="outlined-required"
-                                                placeholder="topicSummary"
+                                                placeholder="briefSlug"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                         </Stack>
@@ -112,13 +91,24 @@ const Page = () => {
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="topicBrief"
+                                                placeholder="briefTopic"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                             <TextField
                                                 required
                                                 id="outlined-required"
-                                                placeholder="topicDetail"
+                                                placeholder="briefSummary"
+                                                inputProps={{ style: { textAlign: 'center' } }}
+                                            />
+                                        </Stack>
+                                    </Card>
+
+                                    <Card style={{ padding: '60px', marginBottom: '10px' }}>
+                                        <Stack spacing={2} sx={{ width: '100%' }}>
+                                            <TextField
+                                                required
+                                                id="outlined-required"
+                                                placeholder="briefDetail"
                                                 inputProps={{ style: { textAlign: 'center' } }}
                                             />
                                         </Stack>

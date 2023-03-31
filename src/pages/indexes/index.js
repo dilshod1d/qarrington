@@ -1,13 +1,9 @@
-import React from 'react';
-import Head from 'next/head';
+import React from "react";
 import Link from 'next/link';
-import { blue } from '@mui/material/colors';
-import Navbar from '../../components/topics/Navbar';
-import Footer from '../../components/topics/Footer';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import AccountBalanceRoundedIcon from '@mui/icons-material/AccountBalanceRounded';
-import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
-import { Box, Card, Container, Divider, Grid, Typography } from '@mui/material';
+import Head from 'next/head';
+import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
+import { Avatar, Box, Breadcrumbs, Button, Container, Grid, Stack, styled, Tooltip, Typography } from '@mui/material';
+import StockStoryGuideSlide from '../../components/slide/StockStoryGuideSlide';
 
 const Page = () => {
 
@@ -16,118 +12,158 @@ const Page = () => {
         <>
 
             <Head>
-                <title>How Subscriptions Can Outrun the 3 Major Stock Indexes • Qarrington</title>
+                <title>How Subscriptions Can Outperform the S&P 500 • Qarrington</title>
                 <meta
                     name="description"
-                    content={`Buy & sell the subscriptions of innovative startups just like the S&P 500, DJIA, & Nasdaq Composite. But instead of shares, it's product-backed subscriptions.`}
+                    content={`Buy, sell, and trade the subscriptions of innovative startup companies just like the S&P 500. But instead of shares, it's product-backed subscriptions.`}
                 />
             </Head>
 
-            <Grid style={{ backgroundColor: '#fff' }}>
+            <MainContent style={Body}>
 
-                <Navbar />
+                <Grid
+                    container
+                    sx={{ height: '100%' }}
+                    alignItems="stretch"
+                    spacing={0}
+                >
 
-                <Container style={{ backgroundColor: '#fff' }}>
-                    <Grid container spacing={2}>
+                    {/* left container starts */}
 
-                        <Grid item xs>
-                            {/* <LeftSide /> */}
-                        </Grid>
+                    <Grid
+                        xs={12}
+                        md={6}
+                        alignItems="center"
+                        display="flex"
+                        justifyContent="center"
+                        item
+                    >
+                        <Container maxWidth="sm">
 
-                        <Grid my={8} item xs={7}>
+                            <Box style={{ textAlign: 'center' }}>
 
-                            <Box style={{ padding: '0px 0px 0px 0px' }}>
-                                <Typography variant="h1" fontWeight={700} color="black">
-                                    How subscriptions can outrun the 3 major stock indexes.
+                                <Box
+                                    style={{
+                                        display: 'flex',
+                                        cursor: 'pointer',
+                                        marginBottom: '20px',
+                                        justifyContent: 'center'
+                                    }}
+                                >
+                                    <Avatar
+                                        style={{ width: 40, height: 40 }}
+                                        alt="Qarrington Logo"
+                                        src="/assets/media/companies/qarrington.png"
+                                    />
+                                </Box>
+
+                                <Typography fontSize="42px" fontWeight="700" lineHeight="50px" component="div" sx={{ my: 1 }}>
+                                    How subscriptions can outrun stock indexes
+                                    <Tooltip title="Subscriptions only give you access to a company's products and services, they don't represent investments in the firm." placement="top">
+                                        <InfoRoundedIcon fontSize="small" color="primary" />
+                                    </Tooltip>
                                 </Typography>
-                                <Divider sx={{ my: 3 }} />
-                                <Typography mt={1} variant="h5" fontWeight={500} color="secondary">
-                                    Buy & sell the subscriptions of innovative startups just like the S&P 500, DJIA, & Nasdaq Composite. But instead of shares, it's product-backed subscriptions.
+
+                                <Typography variant="h6" component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
+                                    We're building a subscription exchange, where you can buy & sell the subscriptions of startup companies. It's like buying stocks, but instead of shares, it's product-backed subscriptions.
                                 </Typography>
+
                             </Box>
 
-                            {/* card starts */}
+                            <form noValidate autoComplete="on">
 
-                            <Grid item xs={12} my={4}>
-                                <Grid container spacing={1}>
+                                <Box style={{ textAlign: 'center', padding: '14px 60px 0px 60px' }}>
 
-                                    {arrayItems && arrayItems.map(({ _id, icon, title, detail, tooltip }) => (
-                                        <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                            <Link href={`/account`}>
-                                                <Card style={{ padding: '50px', cursor: 'pointer' }}>
-                                                    <Box
-                                                        style={{
-                                                            display: 'flex',
-                                                            justifyContent: 'center'
-                                                        }}
-                                                    >
-                                                        {icon}
-                                                    </Box>
-                                                    <Box mt={1} style={{ textAlign: 'center' }}>
-                                                        <Box mb={1}>
-                                                            <Typography gutterBottom variant="h4" fontWeight={700} color="black">
-                                                                {title}
-                                                            </Typography>
-                                                        </Box>
-                                                        <Box>
-                                                            <Typography variant="body2" fontWeight={600} color="secondary">
-                                                                {detail}
-                                                            </Typography>
-                                                        </Box>
-                                                    </Box>
-                                                </Card>
-                                            </Link>
-                                        </Grid>
-                                    ))}
+                                    <Stack spacing={1.2} sx={{ width: '100%' }}>
 
-                                </Grid>
-                            </Grid>
+                                        <Link href="/account/access">
+                                            <Button
+                                                size="large"
+                                                sx={{ py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                                                variant="outlined"
+                                                fullWidth={true}
+                                            >
+                                                i'm a qarrington
+                                            </Button>
+                                        </Link>
 
-                            {/* card ends */}
+                                        <Link href="/account/open">
+                                            <Button
+                                                size="large"
+                                                sx={{ color: 'white', py: 1.6, textTransform: 'uppercase', fontSize: '12px' }}
+                                                variant="contained"
+                                                fullWidth={true}
+                                            >
+                                                i'm not a qarrington yet
+                                            </Button>
+                                        </Link>
 
-                            {/* footer starts */}
+                                    </Stack>
 
-                            <Footer />
+                                </Box>
 
-                            {/* footer ends */}
+                                <Breadcrumbs separator="/" aria-label="breadcrumb"
+                                    sx={{
+                                        "& ol": {
+                                            justifyContent: "center",
+                                            margin: "auto",
+                                            mt: "20px"
+                                        }
+                                    }}>
+                                    <Typography variant="body2" fontWeight={700} color="secondary">
+                                        lower fees
+                                    </Typography>
+                                    <Typography variant="body2" fontWeight={700} color="secondary">
+                                        global coverage
+                                    </Typography>
+                                    <Typography variant="body2" fontWeight={700} color="secondary">
+                                        fewer risks
+                                    </Typography>
 
-                        </Grid>
+                                </Breadcrumbs>
 
-                        <Grid item xs>
-                            {/* <RightSide /> */}
-                        </Grid>
+                                <Box textAlign="center">
+                                    <Typography variant="body2" mt={1} component="div" color="secondary" padding="0px 20px 0px 20px" gutterBottom>
+                                        Once you log in to your account, kindly provide all the necessary account details and contacts for smooth payouts. Otherwise, your future payouts might be delayed.
+                                    </Typography>
+                                </Box>
 
+                            </form>
+
+                        </Container>
                     </Grid>
-                </Container>
-            </Grid >
+
+                    {/* left container ends */}
+
+                    {/* right container starts */}
+
+                    <StockStoryGuideSlide />
+
+                    {/* right container ends */}
+
+                </Grid>
+            </MainContent>
 
         </>
 
-    )
+    );
+
 }
 
-export default Page
+export default Page;
 
-const arrayItems = [
-    {
-        _id: 1,
-        icon: <AccountCircleIcon color="primary" sx={{ fontSize: '40px', color: blue[200] }} />,
-        title: "Open",
-        detail: "Create a Qarrington account, it's free.",
-        tooltip: ""
-    },
-    {
-        _id: 2,
-        icon: <AccountBalanceRoundedIcon color="primary" sx={{ fontSize: '40px', color: blue[800] }} />,
-        title: "Connect",
-        detail: "Link your preferred bank account.",
-        tooltip: ""
-    },
-    {
-        _id: 3,
-        icon: <ArrowCircleLeftRoundedIcon color="primary" sx={{ fontSize: '40px', color: blue[400] }} />,
-        title: "Pull",
-        detail: "Buy subscriptions during & after an ISO.",
-        tooltip: ""
-    }
-]
+const MainContent = styled(Box)(
+    () => `
+    height: 100%;
+    display: flex;
+    flex: 1;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+);
+
+const Body = {
+    backgroundColor: "#ffffff"
+};

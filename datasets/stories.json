@@ -74,41 +74,78 @@
         "storyByFounderIsActive": "dot"
       }
     ],
-    "storyByCustomer": [
+    "storyBySubscriber": [
       {
-        "storyByCustomerName": "Busra",
-        "storyByCustomerTitle": "Business Consultant",
-        "storyByCustomerAvatar": "/assets/media/customers/busra.webp",
-        "storyByCustomerContent": "Even though I'm not new to stocks and cryptocurrencies, the market volatility can be unbearable. For me, using Qarrington is just like hedging my monthly subscriptions. ",
-        "storyByCustomerIsActive": ""
+        "storyBySubscriberName": "Busra",
+        "storyBySubscriberTitle": "Business Consultant",
+        "storyBySubscriberAvatar": "/assets/media/customers/busra.webp",
+        "storyBySubscriberContent": "Even though I'm not new to stocks and cryptocurrencies, the market volatility can be unbearable. For me, using Qarrington is just like hedging my monthly subscriptions. ",
+        "storyBySubscriberIsActive": ""
       },
       {
-        "storyByCustomerName": "Biswa",
-        "storyByCustomerTitle": "Executive Assistant",
-        "storyByCustomerAvatar": "/assets/media/customers/biswa.webp",
-        "storyByCustomerContent": "I spend more than $200 per month on subscription services. Using Qarrington is helping me to put my subscriptions to work while making passing income.",
-        "storyByCustomerIsActive": "dot"
+        "storyBySubscriberName": "Biswa",
+        "storyBySubscriberTitle": "Executive Assistant",
+        "storyBySubscriberAvatar": "/assets/media/customers/biswa.webp",
+        "storyBySubscriberContent": "I spend more than $200 per month on subscription services. Using Qarrington is helping me to put my subscriptions to work while making passing income.",
+        "storyBySubscriberIsActive": "dot"
       },
       {
-        "storyByCustomerName": "Glan",
-        "storyByCustomerTitle": "Account Manager",
-        "storyByCustomerAvatar": "/assets/media/customers/glan.webp",
-        "storyByCustomerContent": "I'm so much into the idea, the values, and the interface of Qarrington. I mean, what else can I say about the exchange? It's so easy, smooth, and safe to use.",
-        "storyByCustomerIsActive": "dot"
+        "storyBySubscriberName": "Glan",
+        "storyBySubscriberTitle": "Account Manager",
+        "storyBySubscriberAvatar": "/assets/media/customers/glan.webp",
+        "storyBySubscriberContent": "I'm so much into the idea, the values, and the interface of Qarrington. I mean, what else can I say about the exchange? It's so easy, smooth, and safe to use.",
+        "storyBySubscriberIsActive": "dot"
       },
       {
-        "storyByCustomerName": "Ruby",
-        "storyByCustomerTitle": "Sales Executive",
-        "storyByCustomerAvatar": "/assets/media/customers/ruby.webp",
-        "storyByCustomerContent": "It used to be bullish stocks, thanks to Qarrington because we now have bullish subscriptions. Just how genius! I just wish there are more listed companies soon.",
-        "storyByCustomerIsActive": "dot"
+        "storyBySubscriberName": "Ruby",
+        "storyBySubscriberTitle": "Sales Executive",
+        "storyBySubscriberAvatar": "/assets/media/customers/ruby.webp",
+        "storyBySubscriberContent": "It used to be bullish stocks, thanks to Qarrington because we now have bullish subscriptions. Just how genius! I just wish there are more listed companies soon.",
+        "storyBySubscriberIsActive": "dot"
       },
       {
-        "storyByCustomerName": "Ifeoma",
-        "storyByCustomerTitle": "Retail Banker",
-        "storyByCustomerAvatar": "/assets/media/customers/ifeoma.webp",
-        "storyByCustomerContent": "When I subscribe to a platform, all I get are the features of the platform. However, Qarrington has made it possible for me to also make some side hustle from my subscription.",
-        "storyByCustomerIsActive": ""
+        "storyBySubscriberName": "Ifeoma",
+        "storyBySubscriberTitle": "Retail Banker",
+        "storyBySubscriberAvatar": "/assets/media/customers/ifeoma.webp",
+        "storyBySubscriberContent": "When I subscribe to a platform, all I get are the features of the platform. However, Qarrington has made it possible for me to also make some side hustle from my subscription.",
+        "storyBySubscriberIsActive": ""
+      }
+    ],
+    "storyByPublisher": [
+      {
+        "storyByPublisherName": "Adam",
+        "storyByPublisherTitle": "Founder @ ScaleUp",
+        "storyByPublisherAvatar": "/assets/media/publishers/adam.webp",
+        "storyByPublisherContent": "Getting the most accurate subscription data of early-stage startup companies is core to our business model and there's no other place to do so other than from Qarrington.",
+        "storyByPublisherIsActive": "dot"
+      },
+      {
+        "storyByPublisherName": "Janelle",
+        "storyByPublisherTitle": "Founder @ Marvens",
+        "storyByPublisherAvatar": "/assets/media/publishers/janelle.webp",
+        "storyByPublisherContent": "We wanted to get timely, accurate, and reliable financials of startup companies, and Qarrington as a subscription exchange is the best place to achieve such a goal.",
+        "storyByPublisherIsActive": ""
+      },
+      {
+        "storyByPublisherName": "Michal",
+        "storyByPublisherTitle": "Founder @ Bramod",
+        "storyByPublisherAvatar": "/assets/media/publishers/michal.webp",
+        "storyByPublisherContent": "Since most startups are private companies, it's hard to get their financials. But thanks to Qarrington for making it plausible to dive deeper into exclusive startup data.",
+        "storyByPublisherIsActive": "dot"
+      },
+      {
+        "storyByPublisherName": "Julie",
+        "storyByPublisherTitle": "Founder @ Cycle",
+        "storyByPublisherAvatar": "/assets/media/publishers/julie.webp",
+        "storyByPublisherContent": "In the coming years or so, I see Qarrington as the major source of subscription data that can help to analyze the financial health of startup companies of all types and sizes.",
+        "storyByPublisherIsActive": "dot"
+      },
+      {
+        "storyByPublisherName": "Oliver",
+        "storyByPublisherTitle": "Founder @ BraveStreet",
+        "storyByPublisherAvatar": "/assets/media/publishers/oliver.webp",
+        "storyByPublisherContent": "Although the current market is filled with the trading data of public companies, it's amazing to see Qarrington bringing startups into the space.",
+        "storyByPublisherIsActive": "dot"
       }
     ],
     "storyByTrader": [
@@ -183,6 +220,43 @@
         "storyByHodlerAvatar": "/assets/media/hodlers/zack.webp",
         "storyByHodlerContent": "I like Qarrington because both the risks and rewards of buying subscriptions are moderate. However, the risk of buying cryptos seems to be bigger than the rewards.",
         "storyByHodlerIsActive": "dot"
+      }
+    ],
+    "storyByInvestor": [
+      {
+        "storyByInvestorName": "Shriya",
+        "storyByInvestorTitle": "Marketing Specialist",
+        "storyByInvestorAvatar": "/assets/media/investors/shriya.webp",
+        "storyByInvestorContent": "I am really looking forward to seeing how Qarrington will disrupt the commercial real estate market by allowing everyone to own a piece of property for as little as possible.",
+        "storyByInvestorIsActive": "dot"
+      },
+      {
+        "storyByInvestorName": "Daniel",
+        "storyByInvestorTitle": "Acquisition Manager",
+        "storyByInvestorAvatar": "/assets/media/investors/daniel.webp",
+        "storyByInvestorContent": "I am a huge advocate for innovation and Qarrington is doing really awesome for giving the less than 1% like me the ability to invest in commercial real estate.",
+        "storyByInvestorIsActive": ""
+      },
+      {
+        "storyByInvestorName": "Simona",
+        "storyByInvestorTitle": "Sales Manager",
+        "storyByInvestorAvatar": "/assets/media/investors/simona.webp",
+        "storyByInvestorContent": "What got me so excited about Qarrington is that each unit of my real estate share is 100% backed by the underlying property of the real estate. I can't do that with stocks.",
+        "storyByInvestorIsActive": "dot"
+      },
+      {
+        "storyByInvestorName": "Diego",
+        "storyByInvestorTitle": "Civil Engineer",
+        "storyByInvestorAvatar": "/assets/media/investors/diego.webp",
+        "storyByInvestorContent": "I've been looking for this opportunity for years. Today, I am so glad that a platform like Qarrington is finally giving me the opportunity to own real estate.",
+        "storyByInvestorIsActive": "dot"
+      },
+      {
+        "storyByInvestorName": "Veronica",
+        "storyByInvestorTitle": "Research Analysts",
+        "storyByInvestorAvatar": "/assets/media/investors/veronica.webp",
+        "storyByInvestorContent": "Although I've been investing in real estate for years, having the chance to become a part owner in several properties within minutes is just top-notch. Thanks to Qarrington.",
+        "storyByInvestorIsActive": ""
       }
     ]
   }

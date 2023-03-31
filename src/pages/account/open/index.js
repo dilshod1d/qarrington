@@ -1,39 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from 'next/link';
 import Head from 'next/head';
-import Carousel from 'react-material-ui-carousel';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
-import TabContext from '@mui/lab/TabContext';
-import { Avatar, Badge, Box, Breadcrumbs, Button, Card, Container, Grid, Hidden, Stack, styled, Tab, TextField, Tooltip, Typography, Snackbar } from '@mui/material';
-import useSWR from 'swr';
+import { Avatar, Box, Breadcrumbs, Button, Container, Grid, Stack, styled, TextField, Tooltip, Typography, Snackbar } from '@mui/material';
 import { createAccount } from "@services/accounts-services";
 import { useRouter } from "next/router";
 import { useValidation } from "@hooks/useValidation";
 import { subscribeToCompany } from "@services/companies-services";
+import MainStoryGuideSlide from '../../../components/slide/MainStoryGuideSlide';
 
 const Page = () => {
-  const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data: stories } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/stories`, fetcher);
-  const { data: guides } = useSWR(`${process.env.NEXT_PUBLIC_APP_URL}/api/guides`, fetcher);
 
   const [accessKey, setAccessKey, { error, errorMsg }, cleanErrorMsg, throwError] = useValidation({ errorMsg: "Access needs to be 12 characters long", allowSpaces: false, limitCharacters: 12 })
-
-
   const router = useRouter()
-
-  const [value, setValue] = useState('2');
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
       const res = await createAccount({ accessKey })
-      if(res?.success) {
+      if (res?.success) {
         const { companySlug } = router.query
         if (companySlug) await subscribeToCompany({ accountId: res.data.id, companySlug })
         router.push('/account/access')
@@ -137,7 +122,7 @@ const Page = () => {
                       message={errorMsg}
                       autoHideDuration={3000}
                       onClose={cleanErrorMsg}
-                      sx={{ '&>div':{ textAlign:"center", width:"inherit", display: "flex", justifyContent: "center" } }}
+                      sx={{ '&>div': { textAlign: "center", width: "inherit", display: "flex", justifyContent: "center" } }}
                     />
                     <Button
                       size="large"
@@ -191,339 +176,7 @@ const Page = () => {
 
           {/* right container starts */}
 
-          <Hidden mdDown>
-            <GridWrapper
-              xs={12}
-              md={6}
-              alignItems="center"
-              display="flex"
-              justifyContent="center"
-              item
-            >
-
-              <Container maxWidth="sm">
-
-                {/* tab starts */}
-
-                <TabContext value={value}>
-
-                  <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                    <TabsWrapper
-                      onChange={handleChange}
-                      indicatorColor="transparent"
-                      TabIndicatorProps={{
-                        sx: { backgroundColor: 'transparent', height: 4 }
-                      }}
-                      sx={{
-                        "& button:hover": { backgroundColor: "#ffffff" },
-                        "& button:active": { backgroundColor: "#b6b6b6" },
-                        "& button.Mui-selected": { backgroundColor: "#000000" },
-                        "& div.MuiTabs-scroller": { overflowY: "auto" },
-                      }}
-                      scrollButtons="auto"
-                      aria-label="scrollable auto tabs example"
-                    >
-                      <TabLabel label="Customer" value="1" />
-                      <TabLabel label="Underwriter" value="2" />
-                      <TabLabel label="Founder" value="3" />
-                    </TabsWrapper>
-                  </Box>
-
-                  <Box style={{ marginBottom: '0px', marginTop: '16px' }}>
-
-                    {/* customer tab starts */}
-
-                    <TabPanel sx={{ padding: 0 }} value="1">
-
-                      <Box textAlign="center" mb={2}>
-                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByCustomer }) => (
-                          <>
-                            <Carousel>
-                              {storyByCustomer && Array.isArray(storyByCustomer) && storyByCustomer?.map(({ _id, storyByCustomerName, storyByCustomerTitle, storyByCustomerAvatar, storyByCustomerContent, storyByCustomerIsActive }) => (
-                                <Box key={_id}>
-                                  <Box
-                                    style={{
-                                      display: 'flex',
-                                      justifyContent: 'center'
-                                    }}
-                                  >
-                                    <StyledBadge
-                                      overlap="circular"
-                                      anchorOrigin={{
-                                        vertical: 'bottom',
-                                        horizontal: 'right'
-                                      }}
-                                      variant={storyByCustomerIsActive}
-                                    >
-                                      <Avatar
-                                        style={{ width: 80, height: 80 }}
-                                        alt={storyByCustomerName}
-                                        src={storyByCustomerAvatar}
-                                      />
-                                    </StyledBadge>
-                                  </Box>
-                                  <Box marginTop="16px">
-                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByCustomerName}</Typography>
-                                    <Typography variant="body" component="div" gutterBottom>{storyByCustomerTitle}</Typography>
-                                    <Typography variant="h5" component="div" fontWeight="600">{storyByCustomerContent}</Typography>
-                                  </Box>
-                                </Box>
-                              ))}
-                            </Carousel>
-                          </>
-                        ))}
-                      </Box>
-
-                      <Grid item xs={12} mt={2}>
-                        <Grid container spacing={1}>
-                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForCustomer }) => (
-                            <>
-                              {guideForCustomer && Array.isArray(guideForCustomer) && guideForCustomer?.map(({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
-                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                  <Tooltip title={guideForCustomerTooltip} placement="top">
-                                    <Card style={{ padding: '22px' }}>
-                                      <Box
-                                        style={{
-                                          display: 'flex',
-                                          justifyContent: 'center'
-                                        }}
-                                      >
-                                        <Badge
-                                          overlap="circular"
-                                          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                          badgeContent={
-                                            <InfoRoundedIcon fontSize="small" color="primary" />
-                                          }
-                                        >
-                                          <Avatar
-                                            style={{ width: 50, height: 50 }}
-                                            alt={guideForCustomerTitle}
-                                            src={guideForCustomerIcon}
-                                          />
-                                        </Badge>
-                                      </Box>
-                                      <Box style={{ textAlign: 'center' }}>
-                                        <Box mt={1.2}>
-                                          <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
-                                            {guideForCustomerTitle}
-                                          </Typography>
-                                          <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
-                                            {guideForCustomerContent}
-                                          </Typography>
-                                        </Box>
-                                      </Box>
-                                    </Card>
-                                  </Tooltip>
-                                </Grid>
-                              ))}
-                            </>
-                          ))}
-                        </Grid>
-                      </Grid>
-
-                    </TabPanel>
-
-                    {/* customer tab ends */}
-
-                    {/* underwriter tab starts */}
-
-                    <TabPanel sx={{ padding: 0 }} value="2">
-
-                      <Box textAlign="center" mb={2}>
-                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByUnderwriter }) => (
-                          <>
-                            <Carousel>
-                              {storyByUnderwriter && Array.isArray(storyByUnderwriter) && storyByUnderwriter?.map(({ _id, storyByUnderwriterName, storyByUnderwriterTitle, storyByUnderwriterAvatar, storyByUnderwriterContent, storyByUnderwriterIsActive }) => (
-                                <Box key={_id}>
-                                  <Box
-                                    style={{
-                                      display: 'flex',
-                                      justifyContent: 'center'
-                                    }}
-                                  >
-                                    <StyledBadge
-                                      overlap="circular"
-                                      anchorOrigin={{
-                                        vertical: 'bottom',
-                                        horizontal: 'right'
-                                      }}
-                                      variant={storyByUnderwriterIsActive}
-                                    >
-                                      <Avatar
-                                        style={{ width: 80, height: 80 }}
-                                        alt={storyByUnderwriterName}
-                                        src={storyByUnderwriterAvatar}
-                                      />
-                                    </StyledBadge>
-                                  </Box>
-                                  <Box marginTop="16px">
-                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByUnderwriterName}</Typography>
-                                    <Typography variant="body" component="div" gutterBottom>{storyByUnderwriterTitle}</Typography>
-                                    <Typography variant="h5" component="div" fontWeight="600">{storyByUnderwriterContent}</Typography>
-                                  </Box>
-                                </Box>
-                              ))}
-                            </Carousel>
-                          </>
-                        ))}
-                      </Box>
-
-                      <Grid item xs={12} mt={2}>
-                        <Grid container spacing={1}>
-                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForFounder }) => (
-                            <>
-                              {guideForFounder && Array.isArray(guideForFounder) && guideForFounder?.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
-                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                  <Tooltip title={guideForFounderTooltip} placement="top">
-                                    <Card style={{ padding: '22px' }}>
-                                      <Box
-                                        style={{
-                                          display: 'flex',
-                                          justifyContent: 'center'
-                                        }}
-                                      >
-                                        <Badge
-                                          overlap="circular"
-                                          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                          badgeContent={
-                                            <InfoRoundedIcon fontSize="small" color="primary" />
-                                          }
-                                        >
-                                          <Avatar
-                                            style={{ width: 50, height: 50 }}
-                                            alt={guideForFounderTitle}
-                                            src={guideForFounderIcon}
-                                          />
-                                        </Badge>
-                                      </Box>
-                                      <Box style={{ textAlign: 'center' }}>
-                                        <Box mt={1.2}>
-                                          <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
-                                            {guideForFounderTitle}
-                                          </Typography>
-                                          <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
-                                            {guideForFounderContent}
-                                          </Typography>
-                                        </Box>
-                                      </Box>
-                                    </Card>
-                                  </Tooltip>
-                                </Grid>
-                              ))}
-                            </>
-                          ))}
-                        </Grid>
-                      </Grid>
-
-                    </TabPanel>
-
-                    {/* underwriter tab ends */}
-
-                    {/* founder tab starts */}
-
-                    <TabPanel sx={{ padding: 0 }} value="3">
-
-                      <Box textAlign="center" mb={2}>
-                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByFounder }) => (
-                          <>
-                            <Carousel>
-                              {storyByFounder && Array.isArray(storyByFounder) && storyByFounder?.map(({ _id, storyByFounderName, storyByFounderTitle, storyByFounderAvatar, storyByFounderContent, storyByFounderIsActive }) => (
-                                <Box key={_id}>
-                                  <Box
-                                    style={{
-                                      display: 'flex',
-                                      justifyContent: 'center'
-                                    }}
-                                  >
-                                    <StyledBadge
-                                      overlap="circular"
-                                      anchorOrigin={{
-                                        vertical: 'bottom',
-                                        horizontal: 'right'
-                                      }}
-                                      variant={storyByFounderIsActive}
-                                    >
-                                      <Avatar
-                                        style={{ width: 80, height: 80 }}
-                                        alt={storyByFounderName}
-                                        src={storyByFounderAvatar}
-                                      />
-                                    </StyledBadge>
-                                  </Box>
-                                  <Box marginTop="16px">
-                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByFounderName}</Typography>
-                                    <Typography variant="body" component="div" gutterBottom>{storyByFounderTitle}</Typography>
-                                    <Typography variant="h5" component="div" fontWeight="600">{storyByFounderContent}</Typography>
-                                  </Box>
-                                </Box>
-                              ))}
-                            </Carousel>
-                          </>
-                        ))}
-                      </Box>
-
-                      <Grid item xs={12} mt={2}>
-                        <Grid container spacing={1}>
-                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForFounder }) => (
-                            <>
-                              {guideForFounder && Array.isArray(guideForFounder) && guideForFounder?.map(({ _id, guideForFounderIcon, guideForFounderTitle, guideForFounderContent, guideForFounderTooltip }) => (
-                                <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                  <Tooltip title={guideForFounderTooltip} placement="top">
-                                    <Card style={{ padding: '22px' }}>
-                                      <Box
-                                        style={{
-                                          display: 'flex',
-                                          justifyContent: 'center'
-                                        }}
-                                      >
-                                        <Badge
-                                          overlap="circular"
-                                          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                                          badgeContent={
-                                            <InfoRoundedIcon fontSize="small" color="primary" />
-                                          }
-                                        >
-                                          <Avatar
-                                            style={{ width: 50, height: 50 }}
-                                            alt={guideForFounderTitle}
-                                            src={guideForFounderIcon}
-                                          />
-                                        </Badge>
-                                      </Box>
-                                      <Box style={{ textAlign: 'center' }}>
-                                        <Box mt={1.2}>
-                                          <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
-                                            {guideForFounderTitle}
-                                          </Typography>
-                                          <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
-                                            {guideForFounderContent}
-                                          </Typography>
-                                        </Box>
-                                      </Box>
-                                    </Card>
-                                  </Tooltip>
-                                </Grid>
-                              ))}
-                            </>
-                          ))}
-                        </Grid>
-                      </Grid>
-
-                    </TabPanel>
-
-                    {/* founder tab ends */}
-
-                  </Box>
-
-                </TabContext>
-
-                {/* tab stops */}
-
-              </Container>
-
-            </GridWrapper>
-
-          </Hidden>
+          <MainStoryGuideSlide />
 
           {/* right container ends */}
 
@@ -538,23 +191,6 @@ const Page = () => {
 }
 
 export default Page;
-
-const TabsWrapper = styled(TabList)(
-  ({ theme }) => `
-        &.MuiTabs-root {
-          height: 0;
-          margin-bottom: 16px;
-        }
-  `
-);
-
-const TabLabel = styled(Tab)(
-  ({ theme }) => `
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-  `
-);
 
 const Breadcrumb = {
   cursor: "pointer",
@@ -576,41 +212,6 @@ const MainContent = styled(Box)(
 `
 );
 
-const GridWrapper = styled(Grid)(
-  ({ theme }) => `
-    background: ${theme.colors.gradients.green2};
-`
-);
-
 const Body = {
   backgroundColor: "#ffffff"
 };
-
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  '& .MuiBadge-badge': {
-    backgroundColor: '#44b700',
-    color: '#44b700',
-    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-    '&::after': {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      borderRadius: '50%',
-      animation: 'ripple 1.2s infinite ease-in-out',
-      border: '1px solid currentColor',
-      content: '""',
-    },
-  },
-  '@keyframes ripple': {
-    '0%': {
-      transform: 'scale(.8)',
-      opacity: 1,
-    },
-    '100%': {
-      transform: 'scale(2.4)',
-      opacity: 0,
-    },
-  },
-}));

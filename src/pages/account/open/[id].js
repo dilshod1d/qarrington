@@ -231,10 +231,10 @@ const Page = () => {
                     <TabPanel sx={{ padding: 0 }} value="1">
 
                       <Box textAlign="center" mb={2}>
-                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyByCustomer }) => (
+                        {stories && Array.isArray(stories) && stories?.map(({ _id, storyBySubscriber }) => (
                           <>
                             <Carousel>
-                              {storyByCustomer && Array.isArray(storyByCustomer) && storyByCustomer?.map(({ _id, storyByCustomerName, storyByCustomerTitle, storyByCustomerAvatar, storyByCustomerContent, storyByCustomerIsActive }) => (
+                              {storyBySubscriber && Array.isArray(storyBySubscriber) && storyBySubscriber?.map(({ _id, storyBySubscriberName, storyBySubscriberTitle, storyBySubscriberAvatar, storyBySubscriberContent, storyBySubscriberIsActive }) => (
                                 <Box key={_id}>
                                   <Box
                                     style={{
@@ -248,19 +248,19 @@ const Page = () => {
                                         vertical: 'bottom',
                                         horizontal: 'right'
                                       }}
-                                      variant={storyByCustomerIsActive}
+                                      variant={storyBySubscriberIsActive}
                                     >
                                       <Avatar
                                         style={{ width: 80, height: 80 }}
-                                        alt={storyByCustomerName}
-                                        src={storyByCustomerAvatar}
+                                        alt={storyBySubscriberName}
+                                        src={storyBySubscriberAvatar}
                                       />
                                     </StyledBadge>
                                   </Box>
                                   <Box marginTop="16px">
-                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyByCustomerName}</Typography>
-                                    <Typography variant="body" component="div" gutterBottom>{storyByCustomerTitle}</Typography>
-                                    <Typography variant="h5" component="div" fontWeight="600">{storyByCustomerContent}</Typography>
+                                    <Typography variant="h5" component="div" fontWeight="600" gutterBottom>{storyBySubscriberName}</Typography>
+                                    <Typography variant="body" component="div" gutterBottom>{storyBySubscriberTitle}</Typography>
+                                    <Typography variant="h5" component="div" fontWeight="600">{storyBySubscriberContent}</Typography>
                                   </Box>
                                 </Box>
                               ))}
@@ -271,11 +271,11 @@ const Page = () => {
 
                       <Grid item xs={12} mt={2}>
                         <Grid container spacing={1}>
-                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForCustomer }) => (
+                          {guides && Array.isArray(guides) && guides?.map(({ _id, guideForSubscriber }) => (
                             <>
-                              {guideForCustomer && Array.isArray(guideForCustomer) && guideForCustomer?.map(({ _id, guideForCustomerIcon, guideForCustomerTitle, guideForCustomerContent, guideForCustomerTooltip }) => (
+                              {guideForSubscriber && Array.isArray(guideForSubscriber) && guideForSubscriber?.map(({ _id, guideForSubscriberIcon, guideForSubscriberTitle, guideForSubscriberContent, guideForSubscriberTooltip }) => (
                                 <Grid key={_id} item xs={12} sm={6} md={6} lg={4}>
-                                  <Tooltip title={guideForCustomerTooltip} placement="top">
+                                  <Tooltip title={guideForSubscriberTooltip} placement="top">
                                     <Card style={{ padding: '22px' }}>
                                       <Box
                                         style={{
@@ -292,18 +292,18 @@ const Page = () => {
                                         >
                                           <Avatar
                                             style={{ width: 50, height: 50 }}
-                                            alt={guideForCustomerTitle}
-                                            src={guideForCustomerIcon}
+                                            alt={guideForSubscriberTitle}
+                                            src={guideForSubscriberIcon}
                                           />
                                         </Badge>
                                       </Box>
                                       <Box style={{ textAlign: 'center' }}>
                                         <Box mt={1.2}>
                                           <Typography variant="h6" fontWeight={700} color="black" textTransform="uppercase">
-                                            {guideForCustomerTitle}
+                                            {guideForSubscriberTitle}
                                           </Typography>
                                           <Typography mt={0.2} variant="body2" fontWeight={600} color="secondary">
-                                            {guideForCustomerContent}
+                                            {guideForSubscriberContent}
                                           </Typography>
                                         </Box>
                                       </Box>
