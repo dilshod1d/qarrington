@@ -1,5 +1,6 @@
 import dbConnect from '../../../lib/dbConnect';
 import Topic from '../../../../models/topic/Topic';
+import { getAllBriefs, searchBriefs } from '../../../../lib/briefs';
 
 async function handler(req, res) {
   const { method } = req;
@@ -9,7 +10,15 @@ async function handler(req, res) {
 
   // read items
 
-  if (method === "GET") {
+  if (method === 'GET') {
+    const searchQuery = req.query.search;
+    if (searchQuery) {
+      const matchedBriefs = await searchBriefs(searchQuery);
+      res.status(200).json(matchedBriefs);
+    } else {
+      const briefs = await getAllBriefs(3); // Get the latest 3 briefs
+      res.status(200).json(briefs);
+    }
     if (topicSlug) {
       try {
         const readItems = await Topic.findOne({ topicSlug: topicSlug });
