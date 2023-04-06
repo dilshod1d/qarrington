@@ -7,6 +7,7 @@ import Company from '@models/company/Company';
 import Pick from '@models/pick/Pick';
 import Pull from '@models/pull/Pull';
 import Push from '@models/push/Push';
+import { protectRoute } from '@lib/protectRoute';
 
 const validations = [
   check('cardNumber').notEmpty().withMessage('Company Ticker is invalid'),
@@ -19,6 +20,7 @@ const validations = [
 ];
 
 const managePickPost = async (req, res, id) => {
+  await protectRoute(req, res);
   const { pickTicker, pickUnits } = req.body;
   if (!pickTicker || !pickUnits) return res.status(400).json({ success: false, message: 'Missing ticker or units to pick' });
 

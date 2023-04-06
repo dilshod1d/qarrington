@@ -12,6 +12,8 @@ import MeetingRoomRoundedIcon from '@mui/icons-material/MeetingRoomRounded';
 import RoomPreferencesRoundedIcon from '@mui/icons-material/RoomPreferencesRounded';
 import dbConnect from "@lib/dbConnect";
 import Topic from '@models/topic/Topic';
+import ReactMarkdown from 'react-markdown';
+
 
 const Page = ({ slug, title, detail }) => {
 

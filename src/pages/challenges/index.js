@@ -5,6 +5,7 @@ import MainRightbar from '../../components/rightbar/MainRightbar';
 import { Avatar, Badge, Box, Card, Container, Grid, styled, Typography } from '@mui/material';
 import DisclaimerFooter from '../../components/footer/DisclaimerFooter';
 
+
 const Page = () => {
 
     return (

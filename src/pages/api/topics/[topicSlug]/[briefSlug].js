@@ -1,6 +1,8 @@
 import { getBriefBySlug } from '../../../../lib/briefs';
+import { protectRoute } from '@lib/protectRoute';
 
 export default async function handler(req, res) {
+  await protectRoute(req, res);
   const { topicSlug, briefSlug } = req.query;
 
   if (req.method === 'GET') {

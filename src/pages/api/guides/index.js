@@ -1,7 +1,9 @@
 import dbConnect from '../../../lib/dbConnect';
 import Guide from '../../../../models/guide/Guide';
+import { protectRoute } from '@lib/protectRoute';
 
 async function handler(req, res) {
+  await protectRoute(req, res);
   const { method } = req;
 
   await dbConnect();

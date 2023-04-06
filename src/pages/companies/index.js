@@ -86,7 +86,7 @@ export async function getServerSideProps({ params }) {
     return {
       props: {
         companies: JSON.parse(JSON.stringify(companies)).map((company) => {
-          const { _id, companySlug, companyListing } = company
+          const { _id, companySlug, companyListing } = company;
           return {
             id: _id.toString(),
             companySlug,

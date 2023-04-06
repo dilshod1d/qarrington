@@ -1,7 +1,9 @@
 import dbConnect from '../../../lib/dbConnect';
 import Institution from '../../../../models/institution/Institution';
+import { protectRoute } from '@lib/protectRoute';
 
 async function handler(req, res) {
+  await protectRoute(req, res);
   const { method } = req;
   const { institutionSlug } = req.query;
 

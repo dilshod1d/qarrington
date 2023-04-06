@@ -1,7 +1,9 @@
 import dbConnect from '../../../lib/dbConnect';
 import Stock from '../../../../models/djia/Stock';
+import { protectRoute } from '@lib/protectRoute';
 
 async function handler(req, res) {
+  await protectRoute(req, res);
   const { method } = req;
   const { stockRoute } = req.query;
 

@@ -1,219 +1,222 @@
 import dbConnect from '@lib/dbConnect';
 import Company from '@models/company/Company';
-import { validate, check } from '@lib/validations'
-import { createProduct } from "@lib/stripe"
-import { generateToken, getCurrentUserId } from "@lib/auth"
+import { validate, check } from '@lib/validations';
+import { createProduct } from '@lib/stripe';
+import { generateToken, getCurrentUserId } from '@lib/auth';
+import { protectRoute } from '@lib/protectRoute';
 
 const validations = [
-	check('companyTicker').notEmpty().withMessage('Company Ticker is invalid'),
-	check('companyName').notEmpty().withMessage('Company Name is invalid'),
-	check('companyLogo').notEmpty().withMessage('Company Logo is invalid'),
-	check('companyProduct').notEmpty().withMessage('Company Product Key is invalid'),
-	check('companyHeadline').notEmpty().withMessage('Company Headline is invalid'),
-	check('companyDescription').notEmpty().withMessage('Invalid Company Description'),
-	check('companyIndustry').notEmpty().withMessage('Invalid companyIndustry'),
-	check('companyWebsite').notEmpty().withMessage('Invalid copmapny website'),
-	check('companyEmail').notEmpty().withMessage('Invalid company email'),
-	check('companyMarket').notEmpty().withMessage('Invalid company market'),
-	check('companySize').notEmpty().withMessage('Invalid Company Size'),
-	check('companyIsoUnits').notEmpty().withMessage('Invalid Company Iso Units'),
-	check('companyIsoPrice').notEmpty().withMessage('Invalid Company Iso Price'),
-	check('companyIsoDate').notEmpty().withMessage('Invalid Company Iso Date'),
-	check('companyIsoTime').notEmpty().withMessage('Invalid Company Iso Time'),
-]
+  check('companyTicker').notEmpty().withMessage('Company Ticker is invalid'),
+  check('companyName').notEmpty().withMessage('Company Name is invalid'),
+  check('companyLogo').notEmpty().withMessage('Company Logo is invalid'),
+  check('companyProduct').notEmpty().withMessage('Company Product Key is invalid'),
+  check('companyHeadline').notEmpty().withMessage('Company Headline is invalid'),
+  check('companyDescription').notEmpty().withMessage('Invalid Company Description'),
+  check('companyIndustry').notEmpty().withMessage('Invalid companyIndustry'),
+  check('companyWebsite').notEmpty().withMessage('Invalid copmapny website'),
+  check('companyEmail').notEmpty().withMessage('Invalid company email'),
+  check('companyMarket').notEmpty().withMessage('Invalid company market'),
+  check('companySize').notEmpty().withMessage('Invalid Company Size'),
+  check('companyIsoUnits').notEmpty().withMessage('Invalid Company Iso Units'),
+  check('companyIsoPrice').notEmpty().withMessage('Invalid Company Iso Price'),
+  check('companyIsoDate').notEmpty().withMessage('Invalid Company Iso Date'),
+  check('companyIsoTime').notEmpty().withMessage('Invalid Company Iso Time')
+];
 
 const formatReqObject = (req) => {
-	const details = {
-		companyListing: {
-			companyTicker: req.body.companyTicker,
-			companyName: req.body.companyName,
-			companyLogo: req.body.companyLogo,
-			companyHeadline: req.body.companyHeadline,
-			companyProduct: req.body.companyProduct,
-			companyProductId: req.body.company, // stripe product id
-			companyDescription: req.body.companyDescription,
-			companyIndustry: req.body.companyIndustry,
-			companyWebsite: req.body.companyWebsite,
-			companyEmail: req.body.companyEmail,
-			companyMarket: req.body.companyMarket,
-			companySize: req.body.companySize,
-		},
-		companyIso: {
-			companyIsoUnits: Number(req.body.companyIsoUnits), // the inital total subscription
-			companyIsoPrice: Number(req.body.companyIsoPrice), // the initial price per subscription
-			companyIsoDate: req.body.companyIsoDate, // iso will end 7 days after this date
-			companyIsoTime: req.body.companyIsoTime,
-		}
-	}
-	return details
-}
-
+  const details = {
+    companyListing: {
+      companyTicker: req.body.companyTicker,
+      companyName: req.body.companyName,
+      companyLogo: req.body.companyLogo,
+      companyHeadline: req.body.companyHeadline,
+      companyProduct: req.body.companyProduct,
+      companyProductId: req.body.company, // stripe product id
+      companyDescription: req.body.companyDescription,
+      companyIndustry: req.body.companyIndustry,
+      companyWebsite: req.body.companyWebsite,
+      companyEmail: req.body.companyEmail,
+      companyMarket: req.body.companyMarket,
+      companySize: req.body.companySize
+    },
+    companyIso: {
+      companyIsoUnits: Number(req.body.companyIsoUnits), // the inital total subscription
+      companyIsoPrice: Number(req.body.companyIsoPrice), // the initial price per subscription
+      companyIsoDate: req.body.companyIsoDate, // iso will end 7 days after this date
+      companyIsoTime: req.body.companyIsoTime
+    }
+  };
+  return details;
+};
 
 export default async function handler(req, res) {
-	await dbConnect()
-	
-	if(req.method === 'GET') {
-		const id = await getCurrentUserId(req)
-		if(!id) return res.status(401).json({ success: false, message: 'Token missing or invalid' })
+  await protectRoute(req, res);
+  await dbConnect();
 
-		const { sortBy, limit } = req.query
+  if (req.method === 'GET') {
+    const id = await getCurrentUserId(req);
+    if (!id) return res.status(401).json({ success: false, message: 'Token missing or invalid' });
 
-		try {
-			const { companyId } = req.query
-			if(companyId) {
-				const company = await Company.findById(companyId)
-				if(!company) return res.status(400).json({ success: false, message: "Company not found" })
+    const { sortBy, limit } = req.query;
 
-				return res.status(201).json({ success: true, data: company })
-			}
+    try {
+      const { companyId } = req.query;
+      if (companyId) {
+        const company = await Company.findById(companyId);
+        if (!company) return res.status(400).json({ success: false, message: 'Company not found' });
 
-			let companies = await Company.find()
-			if(sortBy === "companyCapitalization") {
-				companies = companies.filter(({ companyKpi }) => {
-					if(companyKpi) {
-						const { companyNow } = companyKpi
-						if(companyNow.data[0]) {
-							const { companyCapitalization } = companyNow.data[0]
-							if(companyCapitalization) return true
-						}
-					}
-					return false
-				}).sort((a, b) => b.companyKpi.companyNow.data[0].companyCapitalization - a.companyKpi.companyNow.data[0].companyCapitalization)
-			}
+        return res.status(201).json({ success: true, data: company });
+      }
 
-			return res.status(201).json({ success: true, data: limit ? companies.slice(0, limit) : companies })
-		} catch (error) {
-			return res.status(500).json(error)
-		}
-	} else if (req.method === 'POST') {
-		await validate(validations, req, res)
+      let companies = await Company.find();
+      if (sortBy === 'companyCapitalization') {
+        companies = companies
+          .filter(({ companyKpi }) => {
+            if (companyKpi) {
+              const { companyNow } = companyKpi;
+              if (companyNow.data[0]) {
+                const { companyCapitalization } = companyNow.data[0];
+                if (companyCapitalization) return true;
+              }
+            }
+            return false;
+          })
+          .sort((a, b) => b.companyKpi.companyNow.data[0].companyCapitalization - a.companyKpi.companyNow.data[0].companyCapitalization);
+      }
 
-		const id = await getCurrentUserId(req)
-		if(!id) return res.status(401).json({ success: false, message: 'User not logged in, unable to create company' })
+      return res.status(201).json({ success: true, data: limit ? companies.slice(0, limit) : companies });
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  } else if (req.method === 'POST') {
+    await validate(validations, req, res);
 
-		try {
-			const companyDetail = formatReqObject(req)
+    const id = await getCurrentUserId(req);
+    if (!id) return res.status(401).json({ success: false, message: 'User not logged in, unable to create company' });
 
-			const company = await new Company(companyDetail)
+    try {
+      const companyDetail = formatReqObject(req);
 
-			const product = await createProduct({
-				name: req.body.companyTicker,
-				description: req.body.companyDescription,
-				images: [req.body.companyLogo],
-				default_price_data: {
-					unit_amount_decimal: Number(req.body.companyIsoPrice)*100,
-					currency: "usd"
-				}
-			})
-			
+      const company = await new Company(companyDetail);
 
-			const basicData = {
-				companyCapitalization: company.companyIso.companyIsoPrice * company.companyIso.companyIsoUnits,
-				companyVolume: 0,
-				companyBids: [],
-				companyAsks: [],
-				companyPrice: company.companyIso.companyIsoPrice,
-				companyPercentChange: 0,
-				companyPointChange: 0,
-				companyVariant: "primary",
-				companyActiveCustomers: 0,
-				companyIsRecordedAt: Date.now()
-			}
+      const product = await createProduct({
+        name: req.body.companyTicker,
+        description: req.body.companyDescription,
+        images: [req.body.companyLogo],
+        default_price_data: {
+          unit_amount_decimal: Number(req.body.companyIsoPrice) * 100,
+          currency: 'usd'
+        }
+      });
 
-			company.companyKpi.companyNow.data = [basicData]
-			company.companyKpi.companyToday.data = [basicData]
-			company.companyKpi.companyHour.data = [basicData]
-			company.companyKpi.companyDay.data = [basicData]
-			company.companyKpi.companyWeek.data = [basicData]
-			company.companyKpi.companyMonth.data = [basicData]
-			company.companyKpi.companyQuarter.data = [basicData]
-			company.companyKpi.companyYear.data = [basicData]
+      const basicData = {
+        companyCapitalization: company.companyIso.companyIsoPrice * company.companyIso.companyIsoUnits,
+        companyVolume: 0,
+        companyBids: [],
+        companyAsks: [],
+        companyPrice: company.companyIso.companyIsoPrice,
+        companyPercentChange: 0,
+        companyPointChange: 0,
+        companyVariant: 'primary',
+        companyActiveCustomers: 0,
+        companyIsRecordedAt: Date.now()
+      };
 
-			company.companySlug = req.body.companyTicker.toLowerCase()
-			company.companyListing.companyKey = generateToken(12)
-			company.companyListing.companyProductId = product.id
+      company.companyKpi.companyNow.data = [basicData];
+      company.companyKpi.companyToday.data = [basicData];
+      company.companyKpi.companyHour.data = [basicData];
+      company.companyKpi.companyDay.data = [basicData];
+      company.companyKpi.companyWeek.data = [basicData];
+      company.companyKpi.companyMonth.data = [basicData];
+      company.companyKpi.companyQuarter.data = [basicData];
+      company.companyKpi.companyYear.data = [basicData];
 
-			if(product.id) {
-				company.companyStatus.companyIsListed = true
-				company.companyStatus.companyIsListedAt = Date.now()
-			}
+      company.companySlug = req.body.companyTicker.toLowerCase();
+      company.companyListing.companyKey = generateToken(12);
+      company.companyListing.companyProductId = product.id;
 
-			company.companyLogo = req.body.companyLogo
-			company.companyAccountId = id
+      if (product.id) {
+        company.companyStatus.companyIsListed = true;
+        company.companyStatus.companyIsListedAt = Date.now();
+      }
 
-			company.companyUser = [{
-					companyUserType: "Total Subscribers",
-					companyUserTotal: 0
-				},
-				{
-					companyUserType: "Total Customers",
-					companyUserTotal: 0
-				},
-				{
-					companyUserType: "Active Customers",
-					companyUserTotal: 0
-				},
-				{
-					companyUserType: "Passive Customers",
-					companyUserTotal: 0
-				}
-			]
+      company.companyLogo = req.body.companyLogo;
+      company.companyAccountId = id;
 
-			await company.save()
-			
-			return res.status(201).json({ success: true, data: company, message: "Company listed successfully", })
-		} catch (error) {
-			return res.status(500).json(error)
-		}
-	} else if (req.method === "PUT") {
-			const { companySlug } = req.body
-			if(!companySlug) return res.status(400).json({ success: false, message: "Invalid company name" })
+      company.companyUser = [
+        {
+          companyUserType: 'Total Subscribers',
+          companyUserTotal: 0
+        },
+        {
+          companyUserType: 'Total Customers',
+          companyUserTotal: 0
+        },
+        {
+          companyUserType: 'Active Customers',
+          companyUserTotal: 0
+        },
+        {
+          companyUserType: 'Passive Customers',
+          companyUserTotal: 0
+        }
+      ];
 
-			try {
-				const id = await getCurrentUserId(req) || req.body.companySubscriberAccountId
-				if(!id) return res.status(401).json({ success: false, message: 'Token missing or invalid' })
-				
-				const company = await Company.findOne({ companySlug: companySlug })
+      await company.save();
 
-				
-				const { companySubscriberAccountId } = req.body
-				if(companySubscriberAccountId) {
-					if(company.companyIso.companyIsoSubscribers.find(({ companySubscriberAccountId }) => companySubscriberAccountId === id)) {
-						return res.status(200).json({ success: true, message: "Subscriber already added" })
-					}
+      return res.status(201).json({ success: true, data: company, message: 'Company listed successfully' });
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  } else if (req.method === 'PUT') {
+    const { companySlug } = req.body;
+    if (!companySlug) return res.status(400).json({ success: false, message: 'Invalid company name' });
 
-					company.companyIso.companyIsoSubscribers = [...company.companyIso.companyIsoSubscribers, {
-						companySubscriberAccountId,
-						companySubscriberAddedAt: Date.now()
-					}]
-					
-					company.companyUser = company.companyUser.map((x) => {
-						if (x.companyUserType === "Total Subscribers") {
-							if (company.companyIso.companyIsoSubscribers.length > 1000) {
-								company.companyStatus.companyIsLaunched = true,
-								company.companyStatus.companyIsLaunchedAt = Date.now()
-							}
-							
-							return {
-								...x,
-								companyUserTotal: company.companyIso.companyIsoSubscribers.length
-							}
-						}
-						
-						return x
-					})
+    try {
+      const id = (await getCurrentUserId(req)) || req.body.companySubscriberAccountId;
+      if (!id) return res.status(401).json({ success: false, message: 'Token missing or invalid' });
 
-					
-					await company.save()
-					return res.status(200).json({ success: true, company, message: "Subscriber added successfully" })
-				}
+      const company = await Company.findOne({ companySlug: companySlug });
 
-				await company.save()
-				return res.status(200).json({ success: true, company, message: "Company updated successfully" })
-		} catch (err) {
-				return res.status(500).json(err)
-		}
-	}
+      const { companySubscriberAccountId } = req.body;
+      if (companySubscriberAccountId) {
+        if (company.companyIso.companyIsoSubscribers.find(({ companySubscriberAccountId }) => companySubscriberAccountId === id)) {
+          return res.status(200).json({ success: true, message: 'Subscriber already added' });
+        }
+
+        company.companyIso.companyIsoSubscribers = [
+          ...company.companyIso.companyIsoSubscribers,
+          {
+            companySubscriberAccountId,
+            companySubscriberAddedAt: Date.now()
+          }
+        ];
+
+        company.companyUser = company.companyUser.map((x) => {
+          if (x.companyUserType === 'Total Subscribers') {
+            if (company.companyIso.companyIsoSubscribers.length > 1000) {
+              (company.companyStatus.companyIsLaunched = true), (company.companyStatus.companyIsLaunchedAt = Date.now());
+            }
+
+            return {
+              ...x,
+              companyUserTotal: company.companyIso.companyIsoSubscribers.length
+            };
+          }
+
+          return x;
+        });
+
+        await company.save();
+        return res.status(200).json({ success: true, company, message: 'Subscriber added successfully' });
+      }
+
+      await company.save();
+      return res.status(200).json({ success: true, company, message: 'Company updated successfully' });
+    } catch (err) {
+      return res.status(500).json(err);
+    }
+  }
 }
 
 // const validations = [
@@ -239,7 +242,6 @@ export default async function handler(req, res) {
 //     }
 //     const data = {}
 
-
 //     Object.keys(schema).forEach((key) => {
 //         if (typeof (schema[key]) == 'object' && schema[key][0]) {
 //             data[key] = {}
@@ -260,4 +262,3 @@ export default async function handler(req, res) {
 
 //     return data
 // }
-

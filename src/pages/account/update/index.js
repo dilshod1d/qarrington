@@ -9,8 +9,11 @@ import { useAccount } from "@hooks/useAccount";
 import { useUpdateAccount } from "@hooks/useUpdateAccount";
 import { parseToObj } from "@helpers/accounts-update-helpers";
 import MainStoryGuideSlide from '../../../components/slide/MainStoryGuideSlide';
+import AdminGuard from '../../../../components/isadmin';
+import { useSession } from 'next-auth/react';
 
 const Page = () => {
+  const { data: session, status } = useSession();
 
   const OPTIONS_LIMIT = 3
   const { account } = useAccount()

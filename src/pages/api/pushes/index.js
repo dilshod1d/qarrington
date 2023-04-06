@@ -2,8 +2,10 @@ import dbConnect from '../../../lib/dbConnect';
 import Push from '../../../../models/push/Push';
 import { getCurrentUserId } from '@lib/auth';
 import Account from '@models/account/Account';
+import { protectRoute } from '@lib/protectRoute';
 
 async function handler(req, res) {
+  await protectRoute(req, res);
   const { method } = req;
   const { pushTicker } = req.query;
 

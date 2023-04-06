@@ -1,5 +1,6 @@
 const withImages = require('next-images');
 
+
 const redirects = {
   async redirects() {
     return [
@@ -19,14 +20,15 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: ['res.cloudinary.com', 'ik.imagekit.io', 'img.icons8.com'],
-      },
-    ],
+        hostname: ['res.cloudinary.com', 'ik.imagekit.io', 'img.icons8.com']
+      }
+    ]
   },
   webpack: (config) => {
     config.experiments = { ...config.experiments, topLevelAwait: true };
     return config;
-  },
-}
+  }
 
-module.exports = {}
+};
+
+module.exports = {};

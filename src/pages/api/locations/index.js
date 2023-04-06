@@ -1,7 +1,9 @@
 import Location from '../../../../models/location/Location';
 import dbConnect from '../../../lib/dbConnect';
+import { protectRoute } from '@lib/protectRoute';
 
 async function handler(req, res) {
+  await protectRoute(req, res);
   const { method } = req;
   const { locationUrl } = req.query;
   const { query } = req.query;

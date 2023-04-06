@@ -12,6 +12,7 @@ import { checkoutCardPayment } from '@services/checkout-services';
 import { useRouter } from 'next/router';
 import MainStoryGuideSlide from '../../../components/slide/MainStoryGuideSlide';
 
+
 const Page = ({ companySlug, companyName, companyDescription, companyLogo }) => {
   const router = useRouter();
 

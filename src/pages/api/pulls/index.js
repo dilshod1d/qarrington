@@ -2,8 +2,10 @@ import { getCurrentUserId } from '@lib/auth';
 import dbConnect from '@lib/dbConnect';
 import Account from '@models/account/Account';
 import Pull from '@models/pull/Pull';
+import { protectRoute } from '@lib/protectRoute';
 
 async function handler(req, res) {
+  await protectRoute(req, res);
   const { method } = req;
   const { pullTicker } = req.query;
 

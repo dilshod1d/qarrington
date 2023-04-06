@@ -6,6 +6,7 @@ const AdminGuard = ({ children, isAdmin }) => {
 
   useEffect(() => {
     if (!isAdmin) {
+      console.log('user is not admin', isAdmin);
       router.push('/topics');
     }
   }, [isAdmin, router]);

@@ -1,10 +1,13 @@
-import { getSession } from 'next-auth/client';
-import { createBrief, getAllBriefs, searchBriefs } from '../../../../lib/briefs';
+import { getSession } from 'next-auth/react';
+import { createBrief, getAllBriefs, searchBriefs } from '@lib/briefs';
+import { protectRoute } from '@lib/protectRoute';
+import { getToken } from 'next-auth/jwt';
 
 export default async function handler(req, res) {
+  await protectRoute(req, res, () => {});
   const session = await getSession({ req });
 
-  if (!session || !session.isAdmin) {
+  if (!session || !session.user.isAdmin) {
     res.status(401).json({ message: 'Unauthorized' });
     return;
   }
@@ -20,14 +23,18 @@ export default async function handler(req, res) {
     }
   } else if (req.method === 'POST') {
     const { briefTitle, briefDetail, briefSummary, briefTopic } = req.body;
-    const brief = await createBrief({
-      briefTitle,
-      briefDetail,
-      briefSummary,
-      briefTopic,
-      briefPostedAt: new Date()
-    });
-    res.status(201).json(brief);
+    const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+    await createBrief(
+      {
+        briefTitle,
+        briefDetail,
+        briefSummary,
+        briefTopic,
+        briefPostedAt: new Date()
+      },
+      token,
+      res
+    );
   } else {
     res.status(405).json({ message: 'Method not allowed' });
   }

@@ -8,9 +8,17 @@ import Footer from '../../../../components/dashboard/Footer';
 import { Button, Card, Container, Grid, Stack, TextField } from '@mui/material';
 import slugify from '../../../../helpers/slugify';
 import AdminGuard from '../../../../components/isadmin';
+import { useSession } from 'next-auth/react';
+import dynamic from 'next/dynamic';
+import axios from 'axios';
+import 'easymde/dist/easymde.min.css';
+
+const SimpleMDE = dynamic(() => import('react-simplemde-editor'), { ssr: false });
 
 const Page = () => {
+  const { data: session, status } = useSession();
   const router = useRouter();
+
   const { briefId } = router.query;
   const [formData, setFormData] = useState({
     briefTitle: '',
@@ -43,12 +51,17 @@ const Page = () => {
     }
   }, [brief]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const handleChange = (e, name) => {
+    const { value } = e.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
+  if (status == 'loading') {
+    return <p>Loading...</p>;
+  }
+
   const handleSubmit = async (e) => {
+    console.log('formdata', formData);
     e.preventDefault();
     const briefSlug = slugify(formData.briefSlug);
 
@@ -87,7 +100,7 @@ const Page = () => {
   };
 
   return (
-    <AdminGuard>
+    <AdminGuard isAdmin={session?.user.isAdmin}>
       <div>
         <Head>
           <title>Manage Brief • Qarrington</title>
@@ -143,7 +156,7 @@ const Page = () => {
 
                   {/*  */}
 
-                  <form noValidate autoComplete="off">
+                  <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                     <Card style={{ padding: '60px', marginBottom: '10px' }}>
                       <Stack spacing={2} sx={{ width: '100%' }}>
                         <TextField
@@ -151,7 +164,7 @@ const Page = () => {
                           id="outlined-required"
                           name="briefTitle"
                           value={formData.briefTitle}
-                          onChange={handleChange}
+                          onChange={(e) => handleChange(e, 'briefTitle')}
                           placeholder="briefTitle"
                           inputProps={{ style: { textAlign: 'center' } }}
                         />
@@ -160,7 +173,7 @@ const Page = () => {
                           id="outlined-required"
                           name="briefSlug"
                           value={formData.briefSlug}
-                          onChange={handleChange}
+                          onChange={(e) => handleChange(e, 'briefSlug')}
                           placeholder="briefSlug"
                           inputProps={{ style: { textAlign: 'center' } }}
                         />
@@ -174,7 +187,7 @@ const Page = () => {
                           id="outlined-required"
                           name="briefTopic"
                           value={formData.briefTopic}
-                          onChange={handleChange}
+                          onChange={(e) => handleChange(e, 'briefTopic')}
                           placeholder="briefTopic"
                           inputProps={{ style: { textAlign: 'center' } }}
                         />
@@ -183,7 +196,7 @@ const Page = () => {
                           id="outlined-required"
                           name="briefSummary"
                           value={formData.briefSummary}
-                          onChange={handleChange}
+                          onChange={(e) => handleChange(e, 'briefSummary')}
                           placeholder="briefSummary"
                           inputProps={{ style: { textAlign: 'center' } }}
                         />
@@ -192,7 +205,7 @@ const Page = () => {
 
                     <Card style={{ padding: '60px', marginBottom: '10px' }}>
                       <Stack spacing={2} sx={{ width: '100%' }}>
-                        <TextField
+                        {/* <TextField
                           required
                           id="outlined-required"
                           name="briefDetail"
@@ -200,6 +213,41 @@ const Page = () => {
                           onChange={handleChange}
                           placeholder="briefDetail"
                           inputProps={{ style: { textAlign: 'center' } }}
+                        /> */}
+
+                        <SimpleMDE
+                          value={formData.briefDetail}
+                          onChange={(value) => setFormData({ ...formData, briefDetail: value })}
+                          options={{
+                            placeholder: 'briefDetai'
+                          }}
+                          inputProps={{ style: { textAlign: 'center' } }}
+                          sx={{
+                            '& .CodeMirror': {
+                              fontSize: '16px',
+                              fontFamily: 'monospace',
+                              border: '1px solid #ccc',
+                              borderRadius: '5px',
+                              minHeight: '200px'
+                            },
+                            '& .editor-toolbar': {
+                              backgroundColor: '#f7f7f7',
+                              border: '1px solid #ccc',
+                              borderRadius: '5px 5px 0 0'
+                            },
+                            '& .editor-toolbar .fa': {
+                              color: '#555'
+                            },
+                            '& .editor-toolbar .fa-header': {
+                              fontSize: '20px'
+                            },
+                            '& .editor-preview-side': {
+                              backgroundColor: '#fff',
+                              border: '1px solid #ccc',
+                              borderRadius: '0 0 5px 5px',
+                              minHeight: '200px'
+                            }
+                          }}
                         />
                       </Stack>
                     </Card>

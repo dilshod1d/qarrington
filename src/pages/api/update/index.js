@@ -5,6 +5,7 @@ import Company from '@models/company/Company';
 import Match from '@models/match/Match';
 import Pick from '@models/pick/Pick';
 import Pull from '@models/pull/Pull';
+import { protectRoute } from '@lib/protectRoute';
 
 const prevDictionaryrange = {
   N: 12,
@@ -259,6 +260,7 @@ const updateCompanyKpi = async (company, isOnIsoDate) => {
 };
 
 export default async function handler(req, res) {
+  await protectRoute(req, res);
   if (req.query.secret !== process.env.UPDATE_SECRET_TOKEN) return res.status(401).json({ message: 'Not authorized' });
 
   try {

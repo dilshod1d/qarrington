@@ -1,7 +1,9 @@
 import dbConnect from '../../../lib/dbConnect';
 import Expense from '../../../../models/expense/Expense';
+import { protectRoute } from '@lib/protectRoute';
 
 async function handler(req, res) {
+  await protectRoute(req, res);
   const { method } = req;
   const { expenseUrl } = req.query;
   const { query } = req.query;

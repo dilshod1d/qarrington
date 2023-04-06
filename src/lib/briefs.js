@@ -1,13 +1,17 @@
-// lib/briefs.js
 import Brief from '../../models/brief/Brief';
 import connectDb from './dbConnect';
 
-export async function createBrief(briefData) {
-  await connectDb();
-
-  const brief = new Brief(briefData);
-  await brief.save();
-  return brief;
+export async function createBrief(briefData, token, res) {
+  try {
+    const headers = { Authorization: `Bearer ${token}` };
+    await connectDb();
+    const brief = new Brief(briefData);
+    await brief.save();
+    res.status(200).json({ success: true, data: brief });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, error: 'Internal Server Error' });
+  }
 }
 
 export async function getAllBriefs(limit) {
@@ -63,7 +67,7 @@ export async function duplicateBrief(briefId) {
 export async function searchBriefs(searchQuery) {
   await connectDb();
 
-  const briefs = await Brief.find({ $text: { $search: searchQuery } }).exec;
+  const briefs = await Brief.find({ $text: { $search: searchQuery } }).exec();
   return briefs;
 }
 

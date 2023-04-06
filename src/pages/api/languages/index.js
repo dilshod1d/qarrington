@@ -1,7 +1,9 @@
 import dbConnect from '../../../lib/dbConnect';
 import Language from '../../../../models/language/Language';
+import { protectRoute } from '@lib/protectRoute';
 
 async function handler(req, res) {
+  await protectRoute(req, res);
   const { method } = req;
 
   await dbConnect();

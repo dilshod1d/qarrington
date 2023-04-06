@@ -32,6 +32,7 @@ export const authOptions = {
   callbacks: {
     async session({ session, token }) {
       session.user = { id: token.id, isAdmin: token.isAdmin };
+      console.log('session', session);
       return session;
     },
     async jwt({ token, user }) {

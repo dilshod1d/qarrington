@@ -1,8 +1,10 @@
 import dbConnect from '../../../lib/dbConnect';
 import Topic from '../../../../models/topic/Topic';
-import { getAllBriefs, searchBriefs } from '../../../../lib/briefs';
+import { getAllBriefs, searchBriefs } from '@lib/briefs';
+import { protectRoute } from '@lib/protectRoute';
 
 async function handler(req, res) {
+  await protectRoute(req, res);
   const { method } = req;
   const { topicSlug } = req.query;
 

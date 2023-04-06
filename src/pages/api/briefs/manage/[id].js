@@ -1,7 +1,9 @@
 import { getSession } from 'next-auth/client';
 import { getBriefById, updateBrief, deleteBrief, duplicateBrief } from '../../../../lib/briefs';
+import { protectRoute } from '@lib/protectRoute';
 
 export default async function handler(req, res) {
+  await protectRoute(req, res);
   const session = await getSession({ req });
 
   if (!session || !session.isAdmin) {

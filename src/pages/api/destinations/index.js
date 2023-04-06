@@ -1,7 +1,9 @@
 import Destination from '../../../../models/destination/Destination';
 import dbConnect from '../../../lib/dbConnect';
+import { protectRoute } from '@lib/protectRoute';
 
 async function handler(req, res) {
+  await protectRoute(req, res);
   const { method } = req;
   const { query } = req.query;
   const { destinationToUrl } = req.query;

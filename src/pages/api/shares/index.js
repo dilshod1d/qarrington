@@ -1,7 +1,9 @@
 import dbConnect from '../../../lib/dbConnect';
 import Question from '../../../../models/share/Share';
+import { protectRoute } from '@lib/protectRoute';
 
 async function handler(req, res) {
+  await protectRoute(req, res);
   const { method } = req;
   const { shareRoute } = req.query;
 
