@@ -76,7 +76,7 @@ const Page = () => {
                   briefs?.slice(0, 3).map(({ _id, briefSlug, briefTitle, briefDetail, briefSummary, briefTopicId, briefPostedAt }) => (
                     <Grid key={_id} item xs={12}>
                       <Card style={{ padding: '60px', marginBottom: '10px' }}>
-                        <Link href={`/topics/topicSlug/${briefSlug}`}>
+                        <Link href={`/topics/${briefTopicId}/${briefSlug}`}>
                           <Typography textAlign="center" sx={ItemTitle} variant="h4" color="black" fontWeight={800}>
                             {briefTitle}?
                           </Typography>

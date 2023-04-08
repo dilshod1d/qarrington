@@ -3,12 +3,12 @@ import axios from 'axios';
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export const getUserAccount = () => {
-  const url = `${apiUrl}accounts`;
+  const url = `${apiUrl}/api/accounts`;
   return axios.get(url);
 };
 
 export const createAccount = async ({ accessKey }) => {
-  const url = `${apiUrl}accounts`;
+  const url = `${apiUrl}/api/accounts`;
   try {
     const response = await axios.post(url, {
       accessKey

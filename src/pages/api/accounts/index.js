@@ -55,6 +55,7 @@ export default async function handler(req, res) {
 
         return res.status(201).json({ success: true, data: { id: account._id.toString() }, message: 'Account has been created successfully' });
       } catch (err) {
+        console.log('error creating account', err);
         return res.status(500).json(err);
       }
     } else {

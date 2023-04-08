@@ -5,19 +5,23 @@ import Navbar from '../../../../components/dashboard/Navbar';
 import Admin from '../../../../components/dashboard/Admin';
 import Company from '../../../../components/dashboard/Company';
 import Footer from '../../../../components/dashboard/Footer';
-import { Button, Card, Container, Grid, Stack, TextField } from '@mui/material';
+import { Button, Card, Container, Grid, Stack, TextField, Box } from '@mui/material';
 import slugify from '../../../../helpers/slugify';
 import AdminGuard from '../../../../components/isadmin';
 import { useSession } from 'next-auth/react';
 import dynamic from 'next/dynamic';
 import axios from 'axios';
 import 'easymde/dist/easymde.min.css';
+import Autocomplete from '@mui/lab/Autocomplete';
 
 const SimpleMDE = dynamic(() => import('react-simplemde-editor'), { ssr: false });
 
 const Page = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
+  const [topics, setTopics] = useState(null);
+  const [value, setValue] = useState(null);
+  const [inputValue, setInputValue] = useState('');
 
   const { briefId } = router.query;
   const [formData, setFormData] = useState({
@@ -51,12 +55,28 @@ const Page = () => {
     }
   }, [brief]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('/api/briefs/manage/topics');
+        const data = response.data;
+        setTopics(data);
+        console.log(data);
+      } catch (err) {
+        console.error(err);
+        setTopics();
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const handleChange = (e, name) => {
     const { value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  if (status == 'loading') {
+  if (status == 'loading' || topics === null) {
     return <p>Loading...</p>;
   }
 
@@ -97,6 +117,11 @@ const Page = () => {
       console.error('Error deleting the brief', error);
       alert('Error deleting the brief');
     }
+  };
+
+  const handleChangeAutocomplete = (e, newValue) => {
+    setValue(newValue);
+    setFormData((prevFormData) => ({ ...prevFormData, briefTopic: newValue._id }));
   };
 
   return (
@@ -182,15 +207,22 @@ const Page = () => {
 
                     <Card style={{ padding: '60px', marginBottom: '10px' }}>
                       <Stack spacing={2} sx={{ width: '100%' }}>
-                        <TextField
-                          required
-                          id="outlined-required"
-                          name="briefTopic"
-                          value={formData.briefTopic}
-                          onChange={(e) => handleChange(e, 'briefTopic')}
-                          placeholder="briefTopic"
-                          inputProps={{ style: { textAlign: 'center' } }}
-                        />
+                        {topics && (
+                          <Autocomplete
+                            value={value}
+                            onChange={handleChangeAutocomplete}
+                            inputValue={inputValue}
+                            onInputChange={(event, newInputValue) => {
+                              setInputValue(newInputValue);
+                            }}
+                            id="topic"
+                            options={topics}
+                            getOptionLabel={(option) => option.topicTitle}
+                            sx={{ width: '100%' }}
+                            renderInput={(params) => <TextField {...params} label="Search Topic Category" />}
+                          />
+                        )}
+
                         <TextField
                           required
                           id="outlined-required"
