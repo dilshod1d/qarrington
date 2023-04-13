@@ -34,17 +34,17 @@ const Page = ({ company, pulls, pushes, picks }) => {
 
   const handleSumbmitPick = (e) => {
     e.preventDefault();
-    router.push(`/checkout/${company.companySlug}?units=${pickUnits}&type=pick`);
+    router.push(`/api/checkout/${company.companySlug}?units=${pickUnits}&type=pick`);
   };
 
   const handleSubmitPull = (e) => {
     e.preventDefault();
-    router.push(`/checkout/${company.companySlug}?units=${pullUnits}&type=pull&price=${pullPrice}`);
+    router.push(`/api/checkout/${company.companySlug}?units=${pullUnits}&type=pull&price=${pullPrice}`);
   };
 
   const handleSubmitPush = (e) => {
     e.preventDefault();
-    router.push(`/checkout/${company.companySlug}?units=${pushUnits}&type=push&price=${pushPrice}`);
+    router.push(`/api/checkout/${company.companySlug}?units=${pushUnits}&type=push&price=${pushPrice}`);
   };
 
   return (
